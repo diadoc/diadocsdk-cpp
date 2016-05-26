@@ -70,51 +70,12 @@ Task("GenerateProtoFiles")
 		var sourceProtoDir = new DirectoryPath("./proto/").MakeAbsolute(Context.Environment);
 		var destinationProtoDir = new DirectoryPath("./src/protos/").MakeAbsolute(Context.Environment);
 
-		var files = GetFiles("./proto/**/*.proto");
-		foreach (var file in files)
-		{
-			var relativeFile = sourceProtoDir.GetRelativePath(file);
-			var destinationFile = destinationProtoDir.CombineWithFilePath(relativeFile).ChangeExtension("pb.h");
-			var destinationDir = destinationFile.GetDirectory(); 
-			
-			// if (FileExists(destinationFile) &&
-			// 	System.IO.File.GetLastWriteTime(file.FullPath) < System.IO.File.GetLastWriteTime(destinationFile.FullPath))
-			// {
-			// 	Debug("Skip protogen for file: {0}", file.FullPath);
-			// 	continue;
-			// }
-			
-			var protocArguments = new ProcessSettings()
-				.WithArguments(args => args
-					.Append("-I=" + sourceProtoDir.FullPath)
-					.Append("--cpp_out=" + destinationProtoDir.FullPath)
-					.Append(file.FullPath));
-			
-			var exitCode = StartProcess(protocExe, protocArguments);
-			if (exitCode != 0)
-			{
-				Error("Error processing file {0} to {1}, protoc exit code: {2}",
-					file,
-					destinationFile,
-					exitCode);
-			}
-		}
+		var protoFiles = GetFiles("./proto/**/*.proto");
+		CompileProtoFiles(protoFiles, sourceProtoDir, destinationProtoDir);
 
-		{
-			// Legacy code, is still used in 1C
-			var file = destinationProtoDir.CombineWithFilePath("BoxList.proto");
-			var protocArguments = new ProcessSettings()
-				.WithArguments(args => args
-					.Append("-I=" + destinationProtoDir.FullPath)
-					.Append("--cpp_out=" + destinationProtoDir.FullPath)
-					.Append(file.FullPath));
-		
-			var exitCode = StartProcess(protocExe, protocArguments);
-			if (exitCode != 0)
-			{
-				Error("Error processing file {0}, protoc exit code: {1}", file, exitCode);
-			}
-		}		
+		// Legacy code, is still used in 1C
+		var boxListFile = destinationProtoDir.CombineWithFilePath("BoxList.proto");
+		CompileProtoFiles(new [] { boxListFile }, destinationProtoDir, destinationProtoDir);
 	});
 	
 //////////////////////////////////////////////////////////////////////
@@ -129,3 +90,52 @@ Task("Default")
 //////////////////////////////////////////////////////////////////////
 
 RunTarget(target);
+
+//////////////////////////////////////////////////////////////////////
+// HELPERS
+//////////////////////////////////////////////////////////////////////
+
+public void CompileProtoFiles(IEnumerable<FilePath> files, DirectoryPath sourceProtoDir, DirectoryPath destinationProtoDir)
+{
+	var protocArguments = new ProcessSettings()
+		.WithArguments(args => args
+			.Append("-I=" + sourceProtoDir.FullPath)
+			.Append("--cpp_out=" + destinationProtoDir.FullPath));
+
+	var dirtyFiles = files.Where(file => {
+		var relativeFile = sourceProtoDir.GetRelativePath(file);
+		var destinationFileHeader = destinationProtoDir.CombineWithFilePath(relativeFile.ChangeExtension("pb.h"));
+		var destinationFileSource = destinationProtoDir.CombineWithFilePath(relativeFile.ChangeExtension("pb.cc"));
+		if (!NeedUpdateFile(file, destinationFileHeader) &&
+			!NeedUpdateFile(file, destinationFileSource))
+		{
+			Debug("Skip protoc for file: {0}", file.FullPath);
+			return false;
+		}
+		return true;
+	}).ToArray();
+	
+	if (dirtyFiles.Length == 0)
+	{
+		Information("All files are up to date");
+		return;
+	}
+	
+	foreach (var file in dirtyFiles)
+	{
+		protocArguments.WithArguments(args => args.Append(file.FullPath));
+	}
+	
+	var exitCode = StartProcess(protocExe, protocArguments);
+	if (exitCode != 0)
+	{
+		Error("Error processing proto files, protoc exit code: {0} ({1})", exitCode, protocArguments);
+	}
+}
+
+public bool NeedUpdateFile(FilePath file, FilePath destinationFile)
+{
+	return !(FileExists(destinationFile)
+		&& System.IO.File.GetLastWriteTime(file.FullPath) < System.IO.File.GetLastWriteTime(destinationFile.FullPath));
+}
+	
