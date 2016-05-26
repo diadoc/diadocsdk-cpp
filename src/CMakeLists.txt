@@ -1,3 +1,5 @@
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/protos")
+
 set (DIADOC_API_HEADERS
 	ApiException.h
 	Certificate.h
