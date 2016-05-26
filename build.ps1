@@ -13,6 +13,10 @@ The build script to execute.
 The build script target to run.
 .PARAMETER Configuration
 The build configuration to use.
+.PARAMETER Generator
+The cmake generator (optional). See `cmake --help`.
+.PARAMETER Toolset
+The Visual Studio toolset (optional).
 .PARAMETER Verbosity
 Specifies the amount of information to be displayed.
 .PARAMETER Experimental
@@ -33,6 +37,33 @@ Param(
     [string]$Script = "build.cake",
     [string]$Target = "Default",
     [string]$Configuration = "Release",
+    [ValidateSet("",
+        "Visual Studio 14 2015",
+        "Visual Studio 14 2015 Win64",
+        "Visual Studio 14 2015 ARM",
+        "Visual Studio 12 2013",
+        "Visual Studio 12 2013 Win64",
+        "Visual Studio 12 2013 ARM",
+        "Visual Studio 11 2012",
+        "Visual Studio 11 2012 Win64",
+        "Visual Studio 11 2012 ARM",
+        "Visual Studio 10 2010",
+        "Visual Studio 10 2010 Win64",
+        "Visual Studio 10 2010 IA64",
+        "Visual Studio 9 2008",
+        "Visual Studio 9 2008 Win64",
+        "Visual Studio 9 2008 IA64",
+        "Visual Studio 8 2005",
+        "Visual Studio 8 2005 Win64",
+        "Visual Studio 7 .NET 2003",
+        "Visual Studio 7",
+        "Visual Studio 6")]
+    [string]$Generator = "",
+    [ValidateSet("",
+        "v110", "v110_xp",
+        "v120", "v120_xp",
+        "v140", "v140_xp")]
+    [string]$Toolset = "",
     [ValidateSet("Quiet", "Minimal", "Normal", "Verbose", "Diagnostic")]
     [string]$Verbosity = "Verbose",
     [switch]$Experimental,
@@ -136,5 +167,5 @@ if (!(Test-Path $CAKE_EXE)) {
 
 # Start Cake
 Write-Host "Running build script..."
-Invoke-Expression "& `"$CAKE_EXE`" `"$Script`" -target=`"$Target`" -configuration=`"$Configuration`" -verbosity=`"$Verbosity`" $UseMono $UseDryRun $UseExperimental $ScriptArgs"
+Invoke-Expression "& `"$CAKE_EXE`" `"$Script`" -target=`"$Target`" -configuration=`"$Configuration`" -generator=`"$Generator`" -toolset=`"$Toolset`" -verbosity=`"$Verbosity`" $UseMono $UseDryRun $UseExperimental $ScriptArgs"
 exit $LASTEXITCODE

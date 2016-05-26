@@ -4,8 +4,15 @@ using System.Text.RegularExpressions;
 
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
+var generator = Argument("generator", "");
+var toolset = Argument("toolset", "");
 
-var buildDir = new DirectoryPath("./tmp").MakeAbsolute(Context.Environment);
+var tempParts = new [] {
+	"tmp",
+	generator,
+	toolset,
+}.Where(x => !string.IsNullOrEmpty(x));
+var buildDir = new DirectoryPath(string.Join(".", tempParts)).MakeAbsolute(Context.Environment);
 var protocExe = buildDir.CombineWithFilePath(string.Format("third-party/{0}/protoc.exe", configuration));
 
 //////////////////////////////////////////////////////////////////////
@@ -24,7 +31,9 @@ Task("CMake-Generate")
 		CreateDirectory(buildDir);
 		var settings = new CMakeSettings
 		{
-			OutputPath = buildDir
+			OutputPath = buildDir,
+			Generator = generator,
+			Toolset = toolset,
 		};
 		CMake("./", settings);
 	});
@@ -33,12 +42,9 @@ Task("CMake-Build-ProtoC")
 	.IsDependentOn("CMake-Generate")
 	.Does(() =>
 	{
-		var cmakeBuildSettings = new ProcessSettings()
-			.WithArguments(x => x
-				.AppendSwitch("--build", buildDir.FullPath)
-				.AppendSwitch("--target", "protoc")
-				.AppendSwitch("--config", configuration));
-
+		var cmakeBuildSettings = GetBuildCMakeSettings()
+			.WithArguments(args => args.AppendSwitch("--target", "protoc"));
+				
 		var exitCode = StartProcess("cmake", cmakeBuildSettings);
 		if (exitCode != 0)
 			throw new Exception("failed to build with cmake");
@@ -52,11 +58,7 @@ Task("CMake-Build")
 	.IsDependentOn("GenerateProtoFiles")
 	.Does(() =>
 	{
-		var cmakeBuildSettings = new ProcessSettings()
-			.WithArguments(x =>	x
-				.AppendSwitch("--build", buildDir.FullPath)
-				.AppendSwitch("--config", configuration));
-
+		var cmakeBuildSettings = GetBuildCMakeSettings();
 		var exitCode = StartProcess("cmake", cmakeBuildSettings);
 		if (exitCode != 0)
 			throw new Exception("failed to build with cmake"); 
@@ -94,6 +96,16 @@ RunTarget(target);
 //////////////////////////////////////////////////////////////////////
 // HELPERS
 //////////////////////////////////////////////////////////////////////
+
+public ProcessSettings GetBuildCMakeSettings()
+{
+	var cmakeBuildSettings = new ProcessSettings()
+		.WithArguments(x => x
+			.AppendSwitchQuoted("--build", buildDir.FullPath)
+			.AppendSwitch("--config", configuration));
+			
+	return cmakeBuildSettings;
+}
 
 public void CompileProtoFiles(IEnumerable<FilePath> files, DirectoryPath sourceProtoDir, DirectoryPath destinationProtoDir)
 {
@@ -138,4 +150,3 @@ public bool NeedUpdateFile(FilePath file, FilePath destinationFile)
 	return !(FileExists(destinationFile)
 		&& System.IO.File.GetLastWriteTime(file.FullPath) < System.IO.File.GetLastWriteTime(destinationFile.FullPath));
 }
-	
