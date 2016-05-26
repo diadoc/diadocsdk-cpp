@@ -1,0 +1,19 @@
+package Diadoc.Api.Proto;
+
+// Legacy code, is still used in 1C
+
+message BoxList {
+	repeated BoxInfo Boxes = 1;
+}
+
+message BoxInfo {
+	required string BoxId = 1;
+	required string BoxName = 2;
+	required OrgInfo Org = 3;
+}
+
+message OrgInfo {
+	required string Name = 1;
+	required string Inn = 2;
+	required string Kpp = 3; // Пустая строка, если КПП не предусмотрен.
+}
