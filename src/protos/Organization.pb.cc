@@ -61,7 +61,7 @@ void protobuf_AssignDesc_Organization_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(OrganizationList));
   Organization_descriptor_ = file->message_type(1);
-  static const int Organization_offsets_[18] = {
+  static const int Organization_offsets_[20] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, orgid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, inn_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, kpp_),
@@ -80,6 +80,8 @@ void protobuf_AssignDesc_Organization_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, isbranch_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, isroaming_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, isemployee_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, invitationcount_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, searchcount_),
   };
   Organization_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -178,7 +180,7 @@ void protobuf_AddDesc_Organization_2eproto() {
     "\n\022Organization.proto\022\020Diadoc.Api.Proto\032\r"
     "Address.proto\"I\n\020OrganizationList\0225\n\rOrg"
     "anizations\030\001 \003(\0132\036.Diadoc.Api.Proto.Orga"
-    "nization\"\244\003\n\014Organization\022\r\n\005OrgId\030\001 \002(\t"
+    "nization\"\322\003\n\014Organization\022\r\n\005OrgId\030\001 \002(\t"
     "\022\013\n\003Inn\030\002 \002(\t\022\013\n\003Kpp\030\003 \001(\t\022\020\n\010FullName\030\004"
     " \002(\t\022\021\n\tShortName\030\005 \001(\t\022$\n\005Boxes\030\007 \003(\0132\025"
     ".Diadoc.Api.Proto.Box\022\014\n\004Ogrn\030\010 \001(\t\022\030\n\020F"
@@ -188,18 +190,19 @@ void protobuf_AddDesc_Organization_2eproto() {
     "adoc.Api.Proto.Department\022\020\n\010IfnsCode\030\r "
     "\001(\t\022\017\n\007IsPilot\030\016 \001(\010\022\020\n\010IsActive\030\017 \001(\010\022\016"
     "\n\006IsTest\030\020 \001(\010\022\020\n\010IsBranch\030\021 \001(\010\022\021\n\tIsRo"
-    "aming\030\022 \001(\010\022\022\n\nIsEmployee\030\023 \001(\010\"\266\001\n\nDepa"
-    "rtment\022\024\n\014DepartmentId\030\001 \002(\t\022\032\n\022ParentDe"
-    "partmentId\030\002 \002(\t\022\014\n\004Name\030\003 \002(\t\022\024\n\014Abbrev"
-    "iation\030\004 \001(\t\022\013\n\003Kpp\030\005 \001(\t\022*\n\007Address\030\006 \001"
-    "(\0132\031.Diadoc.Api.Proto.Address\022\031\n\nIsDisab"
-    "led\030\007 \001(\010:\005false\"\262\001\n\003Box\022\r\n\005BoxId\030\001 \002(\t\022"
-    "\r\n\005Title\030\002 \002(\t\0224\n\014Organization\030\003 \001(\0132\036.D"
-    "iadoc.Api.Proto.Organization\022W\n\024InvoiceF"
-    "ormatVersion\030\004 \001(\01622.Diadoc.Api.Proto.Or"
-    "ganizationInvoiceFormatVersion:\005v5_02*8\n"
-    " OrganizationInvoiceFormatVersion\022\t\n\005v5_"
-    "01\020\001\022\t\n\005v5_02\020\002", 975);
+    "aming\030\022 \001(\010\022\022\n\nIsEmployee\030\023 \001(\010\022\027\n\017Invit"
+    "ationCount\030\024 \001(\005\022\023\n\013SearchCount\030\025 \001(\005\"\266\001"
+    "\n\nDepartment\022\024\n\014DepartmentId\030\001 \002(\t\022\032\n\022Pa"
+    "rentDepartmentId\030\002 \002(\t\022\014\n\004Name\030\003 \002(\t\022\024\n\014"
+    "Abbreviation\030\004 \001(\t\022\013\n\003Kpp\030\005 \001(\t\022*\n\007Addre"
+    "ss\030\006 \001(\0132\031.Diadoc.Api.Proto.Address\022\031\n\nI"
+    "sDisabled\030\007 \001(\010:\005false\"\262\001\n\003Box\022\r\n\005BoxId\030"
+    "\001 \002(\t\022\r\n\005Title\030\002 \002(\t\0224\n\014Organization\030\003 \001"
+    "(\0132\036.Diadoc.Api.Proto.Organization\022W\n\024In"
+    "voiceFormatVersion\030\004 \001(\01622.Diadoc.Api.Pr"
+    "oto.OrganizationInvoiceFormatVersion:\005v5"
+    "_02*8\n OrganizationInvoiceFormatVersion\022"
+    "\t\n\005v5_01\020\001\022\t\n\005v5_02\020\002", 1021);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Organization.proto", &protobuf_RegisterTypes);
   OrganizationList::default_instance_ = new OrganizationList();
@@ -475,6 +478,8 @@ const int Organization::kIsTestFieldNumber;
 const int Organization::kIsBranchFieldNumber;
 const int Organization::kIsRoamingFieldNumber;
 const int Organization::kIsEmployeeFieldNumber;
+const int Organization::kInvitationCountFieldNumber;
+const int Organization::kSearchCountFieldNumber;
 #endif  // !_MSC_VER
 
 Organization::Organization()
@@ -513,6 +518,8 @@ void Organization::SharedCtor() {
   isbranch_ = false;
   isroaming_ = false;
   isemployee_ = false;
+  invitationcount_ = 0;
+  searchcount_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -639,7 +646,7 @@ void Organization::Clear() {
       }
     }
   }
-  ZR_(isroaming_, isemployee_);
+  ZR_(isroaming_, searchcount_);
 
 #undef OFFSET_OF_FIELD_
 #undef ZR_
@@ -939,6 +946,36 @@ bool Organization::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(160)) goto parse_InvitationCount;
+        break;
+      }
+
+      // optional int32 InvitationCount = 20;
+      case 20: {
+        if (tag == 160) {
+         parse_InvitationCount:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &invitationcount_)));
+          set_has_invitationcount();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(168)) goto parse_SearchCount;
+        break;
+      }
+
+      // optional int32 SearchCount = 21;
+      case 21: {
+        if (tag == 168) {
+         parse_SearchCount:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &searchcount_)));
+          set_has_searchcount();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -1106,6 +1143,16 @@ void Organization::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(19, this->isemployee(), output);
   }
 
+  // optional int32 InvitationCount = 20;
+  if (has_invitationcount()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(20, this->invitationcount(), output);
+  }
+
+  // optional int32 SearchCount = 21;
+  if (has_searchcount()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(21, this->searchcount(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -1266,6 +1313,16 @@ void Organization::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(19, this->isemployee(), target);
   }
 
+  // optional int32 InvitationCount = 20;
+  if (has_invitationcount()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(20, this->invitationcount(), target);
+  }
+
+  // optional int32 SearchCount = 21;
+  if (has_searchcount()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(21, this->searchcount(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -1382,6 +1439,20 @@ int Organization::ByteSize() const {
       total_size += 2 + 1;
     }
 
+    // optional int32 InvitationCount = 20;
+    if (has_invitationcount()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->invitationcount());
+    }
+
+    // optional int32 SearchCount = 21;
+    if (has_searchcount()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->searchcount());
+    }
+
   }
   // repeated .Diadoc.Api.Proto.Box Boxes = 7;
   total_size += 1 * this->boxes_size();
@@ -1479,6 +1550,12 @@ void Organization::MergeFrom(const Organization& from) {
     if (from.has_isemployee()) {
       set_isemployee(from.isemployee());
     }
+    if (from.has_invitationcount()) {
+      set_invitationcount(from.invitationcount());
+    }
+    if (from.has_searchcount()) {
+      set_searchcount(from.searchcount());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -1526,6 +1603,8 @@ void Organization::Swap(Organization* other) {
     std::swap(isbranch_, other->isbranch_);
     std::swap(isroaming_, other->isroaming_);
     std::swap(isemployee_, other->isemployee_);
+    std::swap(invitationcount_, other->invitationcount_);
+    std::swap(searchcount_, other->searchcount_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

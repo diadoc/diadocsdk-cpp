@@ -1,5 +1,7 @@
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/protos")
 
+add_definitions(-D_SCL_SECURE_NO_WARNINGS)
+
 set (DIADOC_API_HEADERS
 	ApiException.h
 	Certificate.h
@@ -37,8 +39,8 @@ set (DIADOC_API_SOURCES
 )
 
 set (PROTO_SOURCES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/protos/")
-file(GLOB PROTO_HEADERS "${PROTO_SOURCES_DIR}/*.pb.h")
-file(GLOB PROTO_SOURCES "${PROTO_SOURCES_DIR}/*.pb.cc")
+file(GLOB_RECURSE PROTO_HEADERS "${PROTO_SOURCES_DIR}/*.pb.h")
+file(GLOB_RECURSE PROTO_SOURCES "${PROTO_SOURCES_DIR}/*.pb.cc")
 
 source_group(protos FILES ${PROTO_HEADERS} ${PROTO_SOURCES})
 

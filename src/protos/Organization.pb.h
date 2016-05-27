@@ -381,6 +381,20 @@ class Organization : public ::google::protobuf::Message {
   inline bool isemployee() const;
   inline void set_isemployee(bool value);
 
+  // optional int32 InvitationCount = 20;
+  inline bool has_invitationcount() const;
+  inline void clear_invitationcount();
+  static const int kInvitationCountFieldNumber = 20;
+  inline ::google::protobuf::int32 invitationcount() const;
+  inline void set_invitationcount(::google::protobuf::int32 value);
+
+  // optional int32 SearchCount = 21;
+  inline bool has_searchcount() const;
+  inline void clear_searchcount();
+  static const int kSearchCountFieldNumber = 21;
+  inline ::google::protobuf::int32 searchcount() const;
+  inline void set_searchcount(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Organization)
  private:
   inline void set_has_orgid();
@@ -415,6 +429,10 @@ class Organization : public ::google::protobuf::Message {
   inline void clear_has_isroaming();
   inline void set_has_isemployee();
   inline void clear_has_isemployee();
+  inline void set_has_invitationcount();
+  inline void clear_has_invitationcount();
+  inline void set_has_searchcount();
+  inline void clear_has_searchcount();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -438,6 +456,8 @@ class Organization : public ::google::protobuf::Message {
   bool isbranch_;
   bool isroaming_;
   bool isemployee_;
+  ::google::protobuf::int32 invitationcount_;
+  ::google::protobuf::int32 searchcount_;
   friend void  protobuf_AddDesc_Organization_2eproto();
   friend void protobuf_AssignDesc_Organization_2eproto();
   friend void protobuf_ShutdownFile_Organization_2eproto();
@@ -1700,6 +1720,54 @@ inline void Organization::set_isemployee(bool value) {
   set_has_isemployee();
   isemployee_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Organization.IsEmployee)
+}
+
+// optional int32 InvitationCount = 20;
+inline bool Organization::has_invitationcount() const {
+  return (_has_bits_[0] & 0x00040000u) != 0;
+}
+inline void Organization::set_has_invitationcount() {
+  _has_bits_[0] |= 0x00040000u;
+}
+inline void Organization::clear_has_invitationcount() {
+  _has_bits_[0] &= ~0x00040000u;
+}
+inline void Organization::clear_invitationcount() {
+  invitationcount_ = 0;
+  clear_has_invitationcount();
+}
+inline ::google::protobuf::int32 Organization::invitationcount() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Organization.InvitationCount)
+  return invitationcount_;
+}
+inline void Organization::set_invitationcount(::google::protobuf::int32 value) {
+  set_has_invitationcount();
+  invitationcount_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Organization.InvitationCount)
+}
+
+// optional int32 SearchCount = 21;
+inline bool Organization::has_searchcount() const {
+  return (_has_bits_[0] & 0x00080000u) != 0;
+}
+inline void Organization::set_has_searchcount() {
+  _has_bits_[0] |= 0x00080000u;
+}
+inline void Organization::clear_has_searchcount() {
+  _has_bits_[0] &= ~0x00080000u;
+}
+inline void Organization::clear_searchcount() {
+  searchcount_ = 0;
+  clear_has_searchcount();
+}
+inline ::google::protobuf::int32 Organization::searchcount() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Organization.SearchCount)
+  return searchcount_;
+}
+inline void Organization::set_searchcount(::google::protobuf::int32 value) {
+  set_has_searchcount();
+  searchcount_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Organization.SearchCount)
 }
 
 // -------------------------------------------------------------------
