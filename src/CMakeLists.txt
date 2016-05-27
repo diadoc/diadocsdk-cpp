@@ -51,4 +51,12 @@ add_library(DiadocApi
 	${DIADOC_API_SOURCES}
 )
 
-target_link_libraries(DiadocApi libprotobuf libprotobuf-lite libprotoc)
+target_link_libraries(DiadocApi
+	libprotobuf
+	libprotobuf-lite
+	libprotoc
+	crypt32.lib
+	cryptui.lib
+	version.lib
+	winhttp.lib
+)
