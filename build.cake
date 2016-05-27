@@ -13,7 +13,7 @@ var tempParts = new [] {
 	toolset,
 }.Where(x => !string.IsNullOrEmpty(x));
 var buildDir = new DirectoryPath(string.Join(".", tempParts)).MakeAbsolute(Context.Environment);
-var protocExe = buildDir.CombineWithFilePath(string.Format("third-party/{0}/protoc.exe", configuration));
+var protocExe = buildDir.CombineWithFilePath(string.Format("bin/{0}/protoc.exe", configuration));
 
 //////////////////////////////////////////////////////////////////////
 // TASKS
