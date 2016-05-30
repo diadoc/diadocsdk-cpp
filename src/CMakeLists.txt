@@ -60,3 +60,6 @@ target_link_libraries(DiadocApi
 	version.lib
 	winhttp.lib
 )
+
+include(precompiled-headers)
+add_precompiled_header(DiadocApi "StdAfx.h" "StdAfx.cpp")
