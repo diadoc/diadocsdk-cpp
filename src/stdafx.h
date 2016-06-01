@@ -10,13 +10,6 @@
 #include <WinHttp.h>
 #include <WinVer.h>
 
-#define _ATL_CSTRING_EXPLICIT_CONSTRUCTORS
-
-#include <atlbase.h>
-#include <atlstr.h>
-#include <atlenc.h>
-#include <atlutil.h>
-
 #include <iterator>
 #include <vector>
 #include <list>
@@ -26,5 +19,6 @@
 #include <algorithm>
 #include <map>
 
+#include <tchar.h>
 #include <strsafe.h>
 #include "trace.h"

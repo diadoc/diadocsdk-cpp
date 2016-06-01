@@ -1,4 +1,5 @@
 #include "StdAfx.h"
+#include <atlutil.h>
 #include "StringHelper.h"
 #include "ApiException.h"
 
