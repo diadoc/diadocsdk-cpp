@@ -1,0 +1,28 @@
+version: 1.0.{build}
+assembly_info:
+  patch: false
+configuration:
+  - Debug
+  - Release
+
+build_script:
+- ps: .\build.ps1 -Target "AppVeyor" -Configuration $env:configuration -Verbosity Diagnostic -Generator "Visual Studio 14 2015"
+- ps: .\build.ps1 -Target "AppVeyor" -Configuration $env:configuration -Verbosity Diagnostic -Generator "Visual Studio 12 2013"
+#- ps: .\build.ps1 -Target "AppVeyor" -Configuration $env:configuration -Verbosity Diagnostic -Generator "Visual Studio 11 2012"
+#- ps: .\build.ps1 -Target "AppVeyor" -Configuration $env:configuration -Verbosity Diagnostic -Generator "Visual Studio 10 2010"
+#- ps: .\build.ps1 -Target "AppVeyor" -Configuration $env:configuration -Verbosity Diagnostic -Generator "Visual Studio 9 2008"
+
+deploy:
+  - provider: GitHub
+    release: $(appveyor_repo_tag_name)
+    description: 'diadocsdk-cpp'
+    auth_token:
+      secure: BSnVMByuW1RN2cKD//7Y2+RRjsmhSfgBd2QK7IpyAadKDh8dIsYe4MF9bvX0SnEz # encrypted token from GitHub
+    artifact: /\.zip$/
+    draft: false
+    prerelease: false
+    on:
+      branch: master                 # release from master branch only
+      configuration: Release         # deploy release configuration
+      appveyor_repo_tag: true        # deploy on tag push only
+      appveyor_repo_tag_name: /^versions/
