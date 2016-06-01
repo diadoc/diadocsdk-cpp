@@ -9,10 +9,19 @@ var toolset = Argument("toolset", "");
 
 var tempParts = new [] {
 	"tmp",
-	generator,
+	SimplifyGeneratorName(generator),
 	toolset,
 }.Where(x => !string.IsNullOrEmpty(x));
-var buildDir = new DirectoryPath(string.Join(".", tempParts)).MakeAbsolute(Context.Environment);
+
+var zipFileParts = new [] {
+	"diadocsdk-cpp",
+	SimplifyGeneratorName(generator),
+	toolset,
+}.Where(x => !string.IsNullOrEmpty(x));
+
+var buildDir = new DirectoryPath(string.Join("/", tempParts)).MakeAbsolute(Context.Environment);
+var toolchainName = string.Join("-", tempParts.Skip(1));
+var zipFileName = buildDir.CombineWithFilePath(string.Join("-", zipFileParts) + ".zip");
 var protocExe = buildDir.CombineWithFilePath(string.Format("bin/{0}/protoc.exe", configuration));
 
 //////////////////////////////////////////////////////////////////////
@@ -28,7 +37,7 @@ Task("Clean")
 Task("CMake-Generate")
 	.Does(() =>
 	{
-		CreateDirectory(buildDir);
+		EnsureDirectoryExists(buildDir);
 		var settings = new CMakeSettings
 		{
 			OutputPath = buildDir,
@@ -80,12 +89,35 @@ Task("GenerateProtoFiles")
 		CompileProtoFiles(new [] { boxListFile }, destinationProtoDir, destinationProtoDir);
 	});
 	
+Task("PrepareBinaries")
+	.IsDependentOn("CMake-Build")
+	.Does(() =>
+	{
+		CopyDirectory("./third-party/include", buildDir.Combine(configuration + "/include"));
+		CopyFilesRelative(GetFiles("./src/**/*.h"), "./src", buildDir.Combine(configuration).Combine("include").Combine("DiadocApi"));
+		CopyDirectory(buildDir.Combine("bin/" + configuration), buildDir.Combine(configuration + "/bin"));
+		CopyDirectory(buildDir.Combine("lib/" + configuration), buildDir.Combine(configuration + "/lib"));
+		Zip(buildDir.Combine(configuration), zipFileName);
+	});
+	
+Task("PublishArtifactsToAppVeyor")
+	.IsDependentOn("PrepareBinaries")
+	.WithCriteria(x => BuildSystem.IsRunningOnAppVeyor)
+	.Does(() =>
+	{
+		AppVeyor.UploadArtifact(zipFileName);
+	});
+	
 //////////////////////////////////////////////////////////////////////
 // TASK TARGETS
 //////////////////////////////////////////////////////////////////////
 
 Task("Default")
-	.IsDependentOn("CMake-Build");
+	.IsDependentOn("AppVeyor");
+	
+Task("AppVeyor")
+	.IsDependentOn("PrepareBinaries")
+	.IsDependentOn("PublishArtifactsToAppVeyor");
 
 //////////////////////////////////////////////////////////////////////
 // EXECUTION
@@ -141,7 +173,7 @@ public void CompileProtoFiles(IEnumerable<FilePath> files, DirectoryPath sourceP
 	var exitCode = StartProcess(protocExe, protocArguments);
 	if (exitCode != 0)
 	{
-		Error("Error processing proto files, protoc exit code: {0} ({1})", exitCode, protocArguments);
+		throw new Exception(string.Format("Error processing proto files, protoc exit code: {0} ({1})", exitCode, protocArguments));
 	}
 }
 
@@ -149,4 +181,43 @@ public bool NeedUpdateFile(FilePath file, FilePath destinationFile)
 {
 	return !(FileExists(destinationFile)
 		&& System.IO.File.GetLastWriteTime(file.FullPath) < System.IO.File.GetLastWriteTime(destinationFile.FullPath));
+}
+
+public void CopyFilesRelative(IEnumerable<FilePath> files, DirectoryPath sourceDir, DirectoryPath destinationDir)
+{
+	sourceDir = sourceDir.MakeAbsolute(Context.Environment);
+	foreach (var file in files)
+	{
+		var relativeFile = sourceDir.GetRelativePath(file);
+		var destinationFile = destinationDir.CombineWithFilePath(relativeFile);
+		EnsureDirectoryExists(destinationFile.GetDirectory());
+		CopyFile(file, destinationFile);
+	}
+}
+
+static string SimplifyGeneratorName(string generator)
+{
+	switch (generator)
+	{
+		case "Visual Studio 14 2015": return "vs2015";
+		case "Visual Studio 14 2015 Win64": return "vs2015-x64";
+		case "Visual Studio 14 2015 ARM": return "vs2015-arm";
+		case "Visual Studio 12 2013": return "vs2013";
+		case "Visual Studio 12 2013 Win64": return "vs2013-x64";
+		case "Visual Studio 12 2013 ARM": return "vs2013-arm";
+		case "Visual Studio 11 2012": return "vs2012";
+		case "Visual Studio 11 2012 Win64": return "vs2012-x64";
+		case "Visual Studio 11 2012 ARM": return "vs2012-arm";
+		case "Visual Studio 10 2010": return "vs2010";
+		case "Visual Studio 10 2010 Win64": return "vs2010-x64";
+		case "Visual Studio 10 2010 IA64": return "vs2010-ia64";
+		case "Visual Studio 9 2008": return "vs2008";
+		case "Visual Studio 9 2008 Win64": return "vs2008-x64";
+		case "Visual Studio 9 2005": return "vs2005";
+		case "Visual Studio 9 2005 Win64": return "vs2005-x64";
+        case "Visual Studio 7 .NET 2003": return "vs2003";
+        case "Visual Studio 7": return "vs2002";
+        case "Visual Studio 6": return "msvs6";
+		default: return generator;
+	}
 }
