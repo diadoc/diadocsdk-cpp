@@ -20,7 +20,7 @@ if (NOT EXISTS ${GOOGLE_PROTOBUF_SOURCE_PATH})
 		COMMAND ${CMAKE_COMMAND} -E tar xvf ${GOOGLE_PROTOBUF_ARCHIVE_PATH}
 		WORKING_DIRECTORY ${GOOGLE_PROTOBUF_EXTRACT_ARCHIVE_WORKING_DIR})
 	if (NOT EXISTS ${GOOGLE_PROTOBUF_SOURCE_PATH})
-		error("Please, check where protobuf was extracted")
+		message(FATAL_ERROR "Please, check where protobuf was extracted")
 	endif()
 endif()
 
@@ -30,7 +30,7 @@ if (NOT EXISTS ${GOOGLE_PROTOBUF_INCLUDE_PATH})
 		WORKING_DIRECTORY "${GOOGLE_PROTOBUF_SOURCE_PATH}/vsprojects/")
 	file(COPY "${GOOGLE_PROTOBUF_SOURCE_PATH}/vsprojects/include" DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/")
 	if (NOT EXISTS ${GOOGLE_PROTOBUF_INCLUDE_PATH})
-		error("Please, check where protobuf include was copied")
+		message(FATAL_ERROR "Please, check where protobuf include was copied")
 	endif()
 endif()
 
