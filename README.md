@@ -55,3 +55,11 @@ PS> .\build.ps1 -Generator "Visual Studio 12 2013" -Toolset v120_xp
 
 
 Вы можете скомпилировать DiadocSDK C++ под 64 бита на свой страх и риск! Код компилируется, но выдает много предупреждений про конвертацию типов `size_t` в `int`, т.е. он не является корректным. Это ограничение связано с тем, что используемая библиотека `Google Protobuf v2` не поддерживает сборку под 64 бита. Также компилятор `protoc` генерирует код, некорректный для использования в 64-битных системах. 
+
+## Добавление функциональности
+
+- [Сделайте Fork](https://guides.github.com/activities/forking/)
+- Создайте ветку для новой фичи (git checkout -b my-new-feature)
+- Сделайте Commit изменений (git commit -am 'Add some feature')
+- Сделайте Push новой ветки (git push origin my-new-feature)
+- Создайте новый Pull Request
