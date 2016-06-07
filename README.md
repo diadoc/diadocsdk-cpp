@@ -1,7 +1,7 @@
              | Build Status
 -------------|--------------
 master       | [![Build status (master)](https://ci.appveyor.com/api/projects/status/m9tq79exw3qpaeuo/branch/master?svg=true)](https://ci.appveyor.com/project/diadoc-admin/diadocsdk-cpp/branch/master)
-lastest      | [![Build status (latest)](https://ci.appveyor.com/api/projects/status/m9tq79exw3qpaeuo?svg=true)](https://ci.appveyor.com/project/diadoc-admin/diadocsdk-cpp)
+latest      | [![Build status (latest)](https://ci.appveyor.com/api/projects/status/m9tq79exw3qpaeuo?svg=true)](https://ci.appveyor.com/project/diadoc-admin/diadocsdk-cpp)
 
 # diadocsdk-cpp
 
