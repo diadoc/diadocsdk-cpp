@@ -110,11 +110,13 @@ enum AttachmentType {
   ServiceDetails = 38,
   RoamingNotification = 39,
   SupplementaryAgreement = 40,
-  CustomData = 64
+  CustomData = 64,
+  MoveDocument = 65,
+  ResolutionChainAssignmentAttachment = 66
 };
 bool AttachmentType_IsValid(int value);
 const AttachmentType AttachmentType_MIN = UnknownAttachmentType;
-const AttachmentType AttachmentType_MAX = CustomData;
+const AttachmentType AttachmentType_MAX = ResolutionChainAssignmentAttachment;
 const int AttachmentType_ARRAYSIZE = AttachmentType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* AttachmentType_descriptor();
