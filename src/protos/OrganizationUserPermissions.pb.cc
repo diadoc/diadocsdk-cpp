@@ -37,7 +37,7 @@ void protobuf_AssignDesc_OrganizationUserPermissions_2eproto() {
       "OrganizationUserPermissions.proto");
   GOOGLE_CHECK(file != NULL);
   OrganizationUserPermissions_descriptor_ = file->message_type(0);
-  static const int OrganizationUserPermissions_offsets_[7] = {
+  static const int OrganizationUserPermissions_offsets_[8] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OrganizationUserPermissions, userdepartmentid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OrganizationUserPermissions, isadministrator_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OrganizationUserPermissions, documentaccesslevel_),
@@ -45,6 +45,7 @@ void protobuf_AssignDesc_OrganizationUserPermissions_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OrganizationUserPermissions, canaddresolutions_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OrganizationUserPermissions, canrequestresolutions_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OrganizationUserPermissions, selecteddepartmentids_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OrganizationUserPermissions, jobtitle_),
   };
   OrganizationUserPermissions_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -89,18 +90,19 @@ void protobuf_AddDesc_OrganizationUserPermissions_2eproto() {
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n!OrganizationUserPermissions.proto\022\020Dia"
-    "doc.Api.Proto\"\243\002\n\033OrganizationUserPermis"
+    "doc.Api.Proto\"\265\002\n\033OrganizationUserPermis"
     "sions\022\030\n\020UserDepartmentId\030\001 \002(\t\022\027\n\017IsAdm"
     "inistrator\030\002 \002(\010\022^\n\023DocumentAccessLevel\030"
     "\003 \001(\0162%.Diadoc.Api.Proto.DocumentAccessL"
     "evel:\032UnknownDocumentAccessLevel\022\030\n\020CanS"
     "ignDocuments\030\004 \002(\010\022\031\n\021CanAddResolutions\030"
     "\007 \002(\010\022\035\n\025CanRequestResolutions\030\010 \002(\010\022\035\n\025"
-    "SelectedDepartmentIds\030\t \003(\t*\236\001\n\023Document"
-    "AccessLevel\022\'\n\032UnknownDocumentAccessLeve"
-    "l\020\377\377\377\377\377\377\377\377\377\001\022\022\n\016DepartmentOnly\020\000\022\037\n\033Depa"
-    "rtmentAndSubdepartments\020\001\022\020\n\014AllDocument"
-    "s\020\002\022\027\n\023SelectedDepartments\020\003", 508);
+    "SelectedDepartmentIds\030\t \003(\t\022\020\n\010JobTitle\030"
+    "\n \001(\t*\236\001\n\023DocumentAccessLevel\022\'\n\032Unknown"
+    "DocumentAccessLevel\020\377\377\377\377\377\377\377\377\377\001\022\022\n\016Depart"
+    "mentOnly\020\000\022\037\n\033DepartmentAndSubdepartment"
+    "s\020\001\022\020\n\014AllDocuments\020\002\022\027\n\023SelectedDepartm"
+    "ents\020\003", 526);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "OrganizationUserPermissions.proto", &protobuf_RegisterTypes);
   OrganizationUserPermissions::default_instance_ = new OrganizationUserPermissions();
@@ -142,6 +144,7 @@ const int OrganizationUserPermissions::kCanSignDocumentsFieldNumber;
 const int OrganizationUserPermissions::kCanAddResolutionsFieldNumber;
 const int OrganizationUserPermissions::kCanRequestResolutionsFieldNumber;
 const int OrganizationUserPermissions::kSelectedDepartmentIdsFieldNumber;
+const int OrganizationUserPermissions::kJobTitleFieldNumber;
 #endif  // !_MSC_VER
 
 OrganizationUserPermissions::OrganizationUserPermissions()
@@ -169,6 +172,7 @@ void OrganizationUserPermissions::SharedCtor() {
   cansigndocuments_ = false;
   canaddresolutions_ = false;
   canrequestresolutions_ = false;
+  jobtitle_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -180,6 +184,9 @@ OrganizationUserPermissions::~OrganizationUserPermissions() {
 void OrganizationUserPermissions::SharedDtor() {
   if (userdepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete userdepartmentid_;
+  }
+  if (jobtitle_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete jobtitle_;
   }
   if (this != default_instance_) {
   }
@@ -217,7 +224,7 @@ void OrganizationUserPermissions::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 63) {
+  if (_has_bits_[0 / 32] & 191) {
     ZR_(isadministrator_, canrequestresolutions_);
     if (has_userdepartmentid()) {
       if (userdepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
@@ -225,6 +232,11 @@ void OrganizationUserPermissions::Clear() {
       }
     }
     documentaccesslevel_ = -1;
+    if (has_jobtitle()) {
+      if (jobtitle_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        jobtitle_->clear();
+      }
+    }
   }
 
 #undef OFFSET_OF_FIELD_
@@ -356,6 +368,23 @@ bool OrganizationUserPermissions::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(74)) goto parse_SelectedDepartmentIds;
+        if (input->ExpectTag(82)) goto parse_JobTitle;
+        break;
+      }
+
+      // optional string JobTitle = 10;
+      case 10: {
+        if (tag == 82) {
+         parse_JobTitle:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_jobtitle()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->jobtitle().data(), this->jobtitle().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "jobtitle");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -431,6 +460,16 @@ void OrganizationUserPermissions::SerializeWithCachedSizes(
       9, this->selecteddepartmentids(i), output);
   }
 
+  // optional string JobTitle = 10;
+  if (has_jobtitle()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->jobtitle().data(), this->jobtitle().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "jobtitle");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      10, this->jobtitle(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -488,6 +527,17 @@ void OrganizationUserPermissions::SerializeWithCachedSizes(
       WriteStringToArray(9, this->selecteddepartmentids(i), target);
   }
 
+  // optional string JobTitle = 10;
+  if (has_jobtitle()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->jobtitle().data(), this->jobtitle().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "jobtitle");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        10, this->jobtitle(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -531,6 +581,13 @@ int OrganizationUserPermissions::ByteSize() const {
     // required bool CanRequestResolutions = 8;
     if (has_canrequestresolutions()) {
       total_size += 1 + 1;
+    }
+
+    // optional string JobTitle = 10;
+    if (has_jobtitle()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->jobtitle());
     }
 
   }
@@ -586,6 +643,9 @@ void OrganizationUserPermissions::MergeFrom(const OrganizationUserPermissions& f
     if (from.has_canrequestresolutions()) {
       set_canrequestresolutions(from.canrequestresolutions());
     }
+    if (from.has_jobtitle()) {
+      set_jobtitle(from.jobtitle());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -617,6 +677,7 @@ void OrganizationUserPermissions::Swap(OrganizationUserPermissions* other) {
     std::swap(canaddresolutions_, other->canaddresolutions_);
     std::swap(canrequestresolutions_, other->canrequestresolutions_);
     selecteddepartmentids_.Swap(&other->selecteddepartmentids_);
+    std::swap(jobtitle_, other->jobtitle_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
