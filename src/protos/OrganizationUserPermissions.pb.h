@@ -178,6 +178,18 @@ class OrganizationUserPermissions : public ::google::protobuf::Message {
   inline const ::google::protobuf::RepeatedPtrField< ::std::string>& selecteddepartmentids() const;
   inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_selecteddepartmentids();
 
+  // optional string JobTitle = 10;
+  inline bool has_jobtitle() const;
+  inline void clear_jobtitle();
+  static const int kJobTitleFieldNumber = 10;
+  inline const ::std::string& jobtitle() const;
+  inline void set_jobtitle(const ::std::string& value);
+  inline void set_jobtitle(const char* value);
+  inline void set_jobtitle(const char* value, size_t size);
+  inline ::std::string* mutable_jobtitle();
+  inline ::std::string* release_jobtitle();
+  inline void set_allocated_jobtitle(::std::string* jobtitle);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.OrganizationUserPermissions)
  private:
   inline void set_has_userdepartmentid();
@@ -192,6 +204,8 @@ class OrganizationUserPermissions : public ::google::protobuf::Message {
   inline void clear_has_canaddresolutions();
   inline void set_has_canrequestresolutions();
   inline void clear_has_canrequestresolutions();
+  inline void set_has_jobtitle();
+  inline void clear_has_jobtitle();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -204,6 +218,7 @@ class OrganizationUserPermissions : public ::google::protobuf::Message {
   bool canaddresolutions_;
   bool canrequestresolutions_;
   ::google::protobuf::RepeatedPtrField< ::std::string> selecteddepartmentids_;
+  ::std::string* jobtitle_;
   friend void  protobuf_AddDesc_OrganizationUserPermissions_2eproto();
   friend void protobuf_AssignDesc_OrganizationUserPermissions_2eproto();
   friend void protobuf_ShutdownFile_OrganizationUserPermissions_2eproto();
@@ -467,6 +482,82 @@ inline ::google::protobuf::RepeatedPtrField< ::std::string>*
 OrganizationUserPermissions::mutable_selecteddepartmentids() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.OrganizationUserPermissions.SelectedDepartmentIds)
   return &selecteddepartmentids_;
+}
+
+// optional string JobTitle = 10;
+inline bool OrganizationUserPermissions::has_jobtitle() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void OrganizationUserPermissions::set_has_jobtitle() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void OrganizationUserPermissions::clear_has_jobtitle() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void OrganizationUserPermissions::clear_jobtitle() {
+  if (jobtitle_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    jobtitle_->clear();
+  }
+  clear_has_jobtitle();
+}
+inline const ::std::string& OrganizationUserPermissions::jobtitle() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.OrganizationUserPermissions.JobTitle)
+  return *jobtitle_;
+}
+inline void OrganizationUserPermissions::set_jobtitle(const ::std::string& value) {
+  set_has_jobtitle();
+  if (jobtitle_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    jobtitle_ = new ::std::string;
+  }
+  jobtitle_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.OrganizationUserPermissions.JobTitle)
+}
+inline void OrganizationUserPermissions::set_jobtitle(const char* value) {
+  set_has_jobtitle();
+  if (jobtitle_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    jobtitle_ = new ::std::string;
+  }
+  jobtitle_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.OrganizationUserPermissions.JobTitle)
+}
+inline void OrganizationUserPermissions::set_jobtitle(const char* value, size_t size) {
+  set_has_jobtitle();
+  if (jobtitle_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    jobtitle_ = new ::std::string;
+  }
+  jobtitle_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.OrganizationUserPermissions.JobTitle)
+}
+inline ::std::string* OrganizationUserPermissions::mutable_jobtitle() {
+  set_has_jobtitle();
+  if (jobtitle_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    jobtitle_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.OrganizationUserPermissions.JobTitle)
+  return jobtitle_;
+}
+inline ::std::string* OrganizationUserPermissions::release_jobtitle() {
+  clear_has_jobtitle();
+  if (jobtitle_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = jobtitle_;
+    jobtitle_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void OrganizationUserPermissions::set_allocated_jobtitle(::std::string* jobtitle) {
+  if (jobtitle_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete jobtitle_;
+  }
+  if (jobtitle) {
+    set_has_jobtitle();
+    jobtitle_ = jobtitle;
+  } else {
+    clear_has_jobtitle();
+    jobtitle_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.OrganizationUserPermissions.JobTitle)
 }
 
 
