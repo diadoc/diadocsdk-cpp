@@ -61,6 +61,25 @@ inline bool OrganizationInvoiceFormatVersion_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<OrganizationInvoiceFormatVersion>(
     OrganizationInvoiceFormatVersion_descriptor(), name, value);
 }
+enum Sociability {
+  AllOrganizations = 0,
+  CounteragentsOnly = 1
+};
+bool Sociability_IsValid(int value);
+const Sociability Sociability_MIN = AllOrganizations;
+const Sociability Sociability_MAX = CounteragentsOnly;
+const int Sociability_ARRAYSIZE = Sociability_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* Sociability_descriptor();
+inline const ::std::string& Sociability_Name(Sociability value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    Sociability_descriptor(), value);
+}
+inline bool Sociability_Parse(
+    const ::std::string& name, Sociability* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<Sociability>(
+    Sociability_descriptor(), name, value);
+}
 // ===================================================================
 
 class OrganizationList : public ::google::protobuf::Message {
@@ -395,6 +414,13 @@ class Organization : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 searchcount() const;
   inline void set_searchcount(::google::protobuf::int32 value);
 
+  // required .Diadoc.Api.Proto.Sociability Sociability = 22;
+  inline bool has_sociability() const;
+  inline void clear_sociability();
+  static const int kSociabilityFieldNumber = 22;
+  inline ::Diadoc::Api::Proto::Sociability sociability() const;
+  inline void set_sociability(::Diadoc::Api::Proto::Sociability value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Organization)
  private:
   inline void set_has_orgid();
@@ -433,6 +459,8 @@ class Organization : public ::google::protobuf::Message {
   inline void clear_has_invitationcount();
   inline void set_has_searchcount();
   inline void clear_has_searchcount();
+  inline void set_has_sociability();
+  inline void clear_has_sociability();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -458,6 +486,7 @@ class Organization : public ::google::protobuf::Message {
   bool isemployee_;
   ::google::protobuf::int32 invitationcount_;
   ::google::protobuf::int32 searchcount_;
+  int sociability_;
   friend void  protobuf_AddDesc_Organization_2eproto();
   friend void protobuf_AssignDesc_Organization_2eproto();
   friend void protobuf_ShutdownFile_Organization_2eproto();
@@ -1770,6 +1799,31 @@ inline void Organization::set_searchcount(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Organization.SearchCount)
 }
 
+// required .Diadoc.Api.Proto.Sociability Sociability = 22;
+inline bool Organization::has_sociability() const {
+  return (_has_bits_[0] & 0x00100000u) != 0;
+}
+inline void Organization::set_has_sociability() {
+  _has_bits_[0] |= 0x00100000u;
+}
+inline void Organization::clear_has_sociability() {
+  _has_bits_[0] &= ~0x00100000u;
+}
+inline void Organization::clear_sociability() {
+  sociability_ = 0;
+  clear_has_sociability();
+}
+inline ::Diadoc::Api::Proto::Sociability Organization::sociability() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Organization.Sociability)
+  return static_cast< ::Diadoc::Api::Proto::Sociability >(sociability_);
+}
+inline void Organization::set_sociability(::Diadoc::Api::Proto::Sociability value) {
+  assert(::Diadoc::Api::Proto::Sociability_IsValid(value));
+  set_has_sociability();
+  sociability_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Organization.Sociability)
+}
+
 // -------------------------------------------------------------------
 
 // Department
@@ -2456,6 +2510,11 @@ template <> struct is_proto_enum< ::Diadoc::Api::Proto::OrganizationInvoiceForma
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::Diadoc::Api::Proto::OrganizationInvoiceFormatVersion>() {
   return ::Diadoc::Api::Proto::OrganizationInvoiceFormatVersion_descriptor();
+}
+template <> struct is_proto_enum< ::Diadoc::Api::Proto::Sociability> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::Diadoc::Api::Proto::Sociability>() {
+  return ::Diadoc::Api::Proto::Sociability_descriptor();
 }
 
 }  // namespace google

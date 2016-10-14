@@ -60,7 +60,7 @@ void protobuf_AddDesc_DocumentType_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\022DocumentType.proto\022\020Diadoc.Api.Proto*\301"
+    "\n\022DocumentType.proto\022\020Diadoc.Api.Proto*\340"
     "\003\n\014DocumentType\022 \n\023UnknownDocumentType\020\377"
     "\377\377\377\377\377\377\377\377\001\022\021\n\rNonformalized\020\000\022\013\n\007Invoice\020"
     "\001\022\032\n\026TrustConnectionRequest\020\013\022\n\n\006Torg12\020"
@@ -72,7 +72,8 @@ void protobuf_AddDesc_DocumentType_2eproto() {
     "eement\020\036\022\027\n\023CertificateRegistry\020\"\022\025\n\021Rec"
     "onciliationAct\020#\022\014\n\010Contract\020$\022\n\n\006Torg13"
     "\020%\022\022\n\016ServiceDetails\020&\022\032\n\026SupplementaryA"
-    "greement\020(", 490);
+    "greement\020(\022\035\n\031UniversalTransferDocument\020"
+    ")", 521);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "DocumentType.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_DocumentType_2eproto);
@@ -110,6 +111,7 @@ bool DocumentType_IsValid(int value) {
     case 37:
     case 38:
     case 40:
+    case 41:
       return true;
     default:
       return false;

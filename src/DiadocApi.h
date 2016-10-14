@@ -18,6 +18,7 @@
 #include "protos\Invoicing\InvoiceInfo.pb.h"
 #include "protos\Invoicing\Torg12Info.pb.h"
 #include "protos\Invoicing\AcceptanceCertificateInfo.pb.h"
+#include "protos\Invoicing\UniversalTransferDocumentInfo.pb.h"
 #include "protos\KeyValueStorage\KeyValueStorage.pb.h"
 #include "protos\Counteragent.pb.h"
 #include "protos\Organization.pb.h"
@@ -144,9 +145,14 @@ public:
 	WebFile GenerateAcceptanceCertificateXmlForSeller(const Diadoc::Api::Proto::Invoicing::AcceptanceCertificateSellerTitleInfo& acceptanceCertificateSellerInfo, bool disableValidation = false);
 	WebFile GenerateAcceptanceCertificateXmlForBuyer(const Diadoc::Api::Proto::Invoicing::AcceptanceCertificateBuyerTitleInfo& acceptanceCertificateBuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId);
 
+	WebFile GenerateUniversalTransferDocumentXmlForSeller(const Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentSellerTitleInfo& utdSellerInfo, bool disableValidation = false);
+	WebFile GenerateUniversalTransferDocumentXmlForBuyer(const Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo& utdBuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId);
+
 	Diadoc::Api::Proto::Invoicing::InvoiceInfo ParseInvoiceXml(const Bytes_t& invoiceXmlContent);
 	Diadoc::Api::Proto::Invoicing::Torg12SellerTitleInfo ParseTorg12SellerTitleXml(const Bytes_t& sellerTitleXmlContent);
 	Diadoc::Api::Proto::Invoicing::AcceptanceCertificateSellerTitleInfo ParseAcceptanceCertificateSellerTitleXml(const Bytes_t& sellerTitleXmlContent);
+	Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentSellerTitleInfo ParseUniversalTransferDocumentSellerTitleXml(const Bytes_t& utdXmlContent);
+	Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo ParseUniversalTransferDocumentBuyerTitleXml(const Bytes_t& utdXmlContent);
 
 	Diadoc::Api::Proto::Invoicing::RevocationRequestInfo ParseRevocationRequestXml(const Bytes_t& xmlContent);
 	Diadoc::Api::Proto::Invoicing::SignatureRejectionInfo ParseSignatureRejectionXml(const Bytes_t& xmlContent);

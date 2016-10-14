@@ -42,9 +42,10 @@ void protobuf_AssignDesc_Address_2eproto() {
       "Address.proto");
   GOOGLE_CHECK(file != NULL);
   Address_descriptor_ = file->message_type(0);
-  static const int Address_offsets_[2] = {
+  static const int Address_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Address, russianaddress_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Address, foreignaddress_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Address, addresscode_),
   };
   Address_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -134,16 +135,17 @@ void protobuf_AddDesc_Address_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\rAddress.proto\022\020Diadoc.Api.Proto\"}\n\007Add"
-    "ress\0228\n\016RussianAddress\030\001 \001(\0132 .Diadoc.Ap"
-    "i.Proto.RussianAddress\0228\n\016ForeignAddress"
-    "\030\002 \001(\0132 .Diadoc.Api.Proto.ForeignAddress"
-    "\"\250\001\n\016RussianAddress\022\017\n\007ZipCode\030\001 \001(\t\022\016\n\006"
-    "Region\030\002 \002(\t\022\021\n\tTerritory\030\003 \001(\t\022\014\n\004City\030"
-    "\004 \001(\t\022\020\n\010Locality\030\005 \001(\t\022\016\n\006Street\030\006 \001(\t\022"
-    "\020\n\010Building\030\007 \001(\t\022\r\n\005Block\030\010 \001(\t\022\021\n\tApar"
-    "tment\030\t \001(\t\"2\n\016ForeignAddress\022\017\n\007Country"
-    "\030\001 \002(\t\022\017\n\007Address\030\002 \002(\t", 383);
+    "\n\rAddress.proto\022\020Diadoc.Api.Proto\"\222\001\n\007Ad"
+    "dress\0228\n\016RussianAddress\030\001 \001(\0132 .Diadoc.A"
+    "pi.Proto.RussianAddress\0228\n\016ForeignAddres"
+    "s\030\002 \001(\0132 .Diadoc.Api.Proto.ForeignAddres"
+    "s\022\023\n\013AddressCode\030\003 \001(\t\"\250\001\n\016RussianAddres"
+    "s\022\017\n\007ZipCode\030\001 \001(\t\022\016\n\006Region\030\002 \002(\t\022\021\n\tTe"
+    "rritory\030\003 \001(\t\022\014\n\004City\030\004 \001(\t\022\020\n\010Locality\030"
+    "\005 \001(\t\022\016\n\006Street\030\006 \001(\t\022\020\n\010Building\030\007 \001(\t\022"
+    "\r\n\005Block\030\010 \001(\t\022\021\n\tApartment\030\t \001(\t\"2\n\016For"
+    "eignAddress\022\017\n\007Country\030\001 \002(\t\022\017\n\007Address\030"
+    "\002 \002(\t", 405);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Address.proto", &protobuf_RegisterTypes);
   Address::default_instance_ = new Address();
@@ -167,6 +169,7 @@ struct StaticDescriptorInitializer_Address_2eproto {
 #ifndef _MSC_VER
 const int Address::kRussianAddressFieldNumber;
 const int Address::kForeignAddressFieldNumber;
+const int Address::kAddressCodeFieldNumber;
 #endif  // !_MSC_VER
 
 Address::Address()
@@ -188,9 +191,11 @@ Address::Address(const Address& from)
 }
 
 void Address::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   russianaddress_ = NULL;
   foreignaddress_ = NULL;
+  addresscode_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -200,6 +205,9 @@ Address::~Address() {
 }
 
 void Address::SharedDtor() {
+  if (addresscode_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete addresscode_;
+  }
   if (this != default_instance_) {
     delete russianaddress_;
     delete foreignaddress_;
@@ -228,12 +236,17 @@ Address* Address::New() const {
 }
 
 void Address::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+  if (_has_bits_[0 / 32] & 7) {
     if (has_russianaddress()) {
       if (russianaddress_ != NULL) russianaddress_->::Diadoc::Api::Proto::RussianAddress::Clear();
     }
     if (has_foreignaddress()) {
       if (foreignaddress_ != NULL) foreignaddress_->::Diadoc::Api::Proto::ForeignAddress::Clear();
+    }
+    if (has_addresscode()) {
+      if (addresscode_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        addresscode_->clear();
+      }
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -268,6 +281,23 @@ bool Address::MergePartialFromCodedStream(
          parse_ForeignAddress:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_foreignaddress()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_AddressCode;
+        break;
+      }
+
+      // optional string AddressCode = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_AddressCode:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_addresscode()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->addresscode().data(), this->addresscode().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "addresscode");
         } else {
           goto handle_unusual;
         }
@@ -312,6 +342,16 @@ void Address::SerializeWithCachedSizes(
       2, this->foreignaddress(), output);
   }
 
+  // optional string AddressCode = 3;
+  if (has_addresscode()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->addresscode().data(), this->addresscode().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "addresscode");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->addresscode(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -334,6 +374,17 @@ void Address::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         2, this->foreignaddress(), target);
+  }
+
+  // optional string AddressCode = 3;
+  if (has_addresscode()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->addresscode().data(), this->addresscode().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "addresscode");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->addresscode(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -360,6 +411,13 @@ int Address::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->foreignaddress());
+    }
+
+    // optional string AddressCode = 3;
+    if (has_addresscode()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->addresscode());
     }
 
   }
@@ -395,6 +453,9 @@ void Address::MergeFrom(const Address& from) {
     if (from.has_foreignaddress()) {
       mutable_foreignaddress()->::Diadoc::Api::Proto::ForeignAddress::MergeFrom(from.foreignaddress());
     }
+    if (from.has_addresscode()) {
+      set_addresscode(from.addresscode());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -426,6 +487,7 @@ void Address::Swap(Address* other) {
   if (other != this) {
     std::swap(russianaddress_, other->russianaddress_);
     std::swap(foreignaddress_, other->foreignaddress_);
+    std::swap(addresscode_, other->addresscode_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

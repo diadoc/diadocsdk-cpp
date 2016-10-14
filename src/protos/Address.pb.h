@@ -112,12 +112,26 @@ class Address : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::ForeignAddress* release_foreignaddress();
   inline void set_allocated_foreignaddress(::Diadoc::Api::Proto::ForeignAddress* foreignaddress);
 
+  // optional string AddressCode = 3;
+  inline bool has_addresscode() const;
+  inline void clear_addresscode();
+  static const int kAddressCodeFieldNumber = 3;
+  inline const ::std::string& addresscode() const;
+  inline void set_addresscode(const ::std::string& value);
+  inline void set_addresscode(const char* value);
+  inline void set_addresscode(const char* value, size_t size);
+  inline ::std::string* mutable_addresscode();
+  inline ::std::string* release_addresscode();
+  inline void set_allocated_addresscode(::std::string* addresscode);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Address)
  private:
   inline void set_has_russianaddress();
   inline void clear_has_russianaddress();
   inline void set_has_foreignaddress();
   inline void clear_has_foreignaddress();
+  inline void set_has_addresscode();
+  inline void clear_has_addresscode();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -125,6 +139,7 @@ class Address : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::Diadoc::Api::Proto::RussianAddress* russianaddress_;
   ::Diadoc::Api::Proto::ForeignAddress* foreignaddress_;
+  ::std::string* addresscode_;
   friend void  protobuf_AddDesc_Address_2eproto();
   friend void protobuf_AssignDesc_Address_2eproto();
   friend void protobuf_ShutdownFile_Address_2eproto();
@@ -522,6 +537,82 @@ inline void Address::set_allocated_foreignaddress(::Diadoc::Api::Proto::ForeignA
     clear_has_foreignaddress();
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Address.ForeignAddress)
+}
+
+// optional string AddressCode = 3;
+inline bool Address::has_addresscode() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void Address::set_has_addresscode() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void Address::clear_has_addresscode() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void Address::clear_addresscode() {
+  if (addresscode_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    addresscode_->clear();
+  }
+  clear_has_addresscode();
+}
+inline const ::std::string& Address::addresscode() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Address.AddressCode)
+  return *addresscode_;
+}
+inline void Address::set_addresscode(const ::std::string& value) {
+  set_has_addresscode();
+  if (addresscode_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    addresscode_ = new ::std::string;
+  }
+  addresscode_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Address.AddressCode)
+}
+inline void Address::set_addresscode(const char* value) {
+  set_has_addresscode();
+  if (addresscode_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    addresscode_ = new ::std::string;
+  }
+  addresscode_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Address.AddressCode)
+}
+inline void Address::set_addresscode(const char* value, size_t size) {
+  set_has_addresscode();
+  if (addresscode_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    addresscode_ = new ::std::string;
+  }
+  addresscode_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Address.AddressCode)
+}
+inline ::std::string* Address::mutable_addresscode() {
+  set_has_addresscode();
+  if (addresscode_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    addresscode_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Address.AddressCode)
+  return addresscode_;
+}
+inline ::std::string* Address::release_addresscode() {
+  clear_has_addresscode();
+  if (addresscode_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = addresscode_;
+    addresscode_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void Address::set_allocated_addresscode(::std::string* addresscode) {
+  if (addresscode_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete addresscode_;
+  }
+  if (addresscode) {
+    set_has_addresscode();
+    addresscode_ = addresscode;
+  } else {
+    clear_has_addresscode();
+    addresscode_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Address.AddressCode)
 }
 
 // -------------------------------------------------------------------

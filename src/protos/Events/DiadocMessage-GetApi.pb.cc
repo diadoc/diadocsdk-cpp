@@ -321,7 +321,7 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
     ":\005false\022\037\n\020ContentIsPatched\030\005 \001(\010:\005false"
     "\022\030\n\020ForwardedToBoxId\030\006 \001(\t*B\n\nEntityType"
     "\022\025\n\021UnknownEntityType\020\000\022\016\n\nAttachment\020\001\022"
-    "\r\n\tSignature\020\002*\200\010\n\016AttachmentType\022\"\n\025Unk"
+    "\r\n\tSignature\020\002*\357\010\n\016AttachmentType\022\"\n\025Unk"
     "nownAttachmentType\020\377\377\377\377\377\377\377\377\377\001\022\021\n\rNonform"
     "alized\020\000\022\013\n\007Invoice\020\001\022\022\n\016InvoiceReceipt\020"
     "\002\022\027\n\023InvoiceConfirmation\020\003\022\034\n\030InvoiceCor"
@@ -345,9 +345,11 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
     "ry\020\"\022\025\n\021ReconciliationAct\020#\022\014\n\010Contract\020"
     "$\022\n\n\006Torg13\020%\022\022\n\016ServiceDetails\020&\022\027\n\023Roa"
     "mingNotification\020\'\022\032\n\026SupplementaryAgree"
-    "ment\020(\022\016\n\nCustomData\020@\022\020\n\014MoveDocument\020A"
-    "\022\'\n#ResolutionChainAssignmentAttachment\020"
-    "B", 3561);
+    "ment\020(\022\035\n\031UniversalTransferDocument\020)\022\'\n"
+    "#UniversalTransferDocumentBuyerTitle\020*\022%"
+    "\n!UniversalTransferDocumentRevision\020-\022\016\n"
+    "\nCustomData\020@\022\020\n\014MoveDocument\020A\022\'\n#Resol"
+    "utionChainAssignmentAttachment\020B", 3672);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Events/DiadocMessage-GetApi.proto", &protobuf_RegisterTypes);
   BoxEventList::default_instance_ = new BoxEventList();
@@ -431,6 +433,9 @@ bool AttachmentType_IsValid(int value) {
     case 38:
     case 39:
     case 40:
+    case 41:
+    case 42:
+    case 45:
     case 64:
     case 65:
     case 66:

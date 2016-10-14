@@ -852,6 +852,32 @@ DiadocApi::WebFile DiadocApi::GenerateAcceptanceCertificateXmlForBuyer(const Dia
 	return WebFile(request);
 }
 
+DiadocApi::WebFile DiadocApi::GenerateUniversalTransferDocumentXmlForSeller(const Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentSellerTitleInfo& utdSellerInfo, bool disableValidation)
+{
+	WppTraceDebugOut("GenerateUniversalTransferDocumentXmlForSeller...");
+	auto requestBody = ToProtoBytes(utdSellerInfo);
+	auto connect = session_.Connect(api_url_.c_str(), api_port_);
+	std::wstringstream queryString;
+	queryString << L"/GenerateUniversalTransferDocumentXmlForSeller" << (disableValidation ? L"?disableValidation" : L"");
+	auto request = connect.OpenRequest(POST.c_str(), queryString.str().c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
+	SendRequest(request, requestBody);
+	return WebFile(request);
+}
+
+DiadocApi::WebFile DiadocApi::GenerateUniversalTransferDocumentXmlForBuyer(const Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo& utdBuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId)
+{
+	WppTraceDebugOut("GenerateUniversalTransferDocumentXmlForBuyer...");
+	std::wstringstream queryString;
+	queryString << L"/GenerateUniversalTransferDocumentXmlForBuyer?boxId=" << StringHelper::CanonicalizeUrl(boxId)
+		<< L"&sellerTitleMessageId=" << StringHelper::CanonicalizeUrl(sellerTitleMessageId)
+		<< L"&sellerTitleAttachmentId=" << StringHelper::CanonicalizeUrl(sellerTitleAttachmentId);
+	auto requestBody = ToProtoBytes(utdBuyerInfo);
+	auto connect = session_.Connect(api_url_.c_str(), api_port_);
+	auto request = connect.OpenRequest(POST.c_str(), queryString.str().c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
+	SendRequest(request, requestBody);
+	return WebFile(request);
+}
+
 InvoiceInfo DiadocApi::ParseInvoiceXml(const Bytes_t& invoiceXmlContent)
 {
 	WppTraceDebugOut("ParseInvoiceXml...");
@@ -868,6 +894,18 @@ AcceptanceCertificateSellerTitleInfo DiadocApi::ParseAcceptanceCertificateSeller
 {
 	WppTraceDebugOut("ParseAcceptanceCertificateSellerTitleXml...");
 	return FromProtoBytes<AcceptanceCertificateSellerTitleInfo>(PerformHttpRequest(L"/ParseAcceptanceCertificateSellerTitleXml", sellerTitleXmlContent, L"POST"));
+}
+
+Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentSellerTitleInfo DiadocApi::ParseUniversalTransferDocumentSellerTitleXml(const Bytes_t& utdXmlContent)
+{
+	WppTraceDebugOut("ParseUniversalTransferDocumentSellerTitleXml...");
+	return FromProtoBytes<UniversalTransferDocumentSellerTitleInfo>(PerformHttpRequest(L"/ParseUniversalTransferDocumentSellerTitleXml", utdXmlContent, L"POST"));
+}
+
+Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo DiadocApi::ParseUniversalTransferDocumentBuyerTitleXml(const Bytes_t& utdXmlContent)
+{
+	WppTraceDebugOut("ParseUniversalTransferDocumentBuyerTitleXml...");
+	return FromProtoBytes<UniversalTransferDocumentBuyerTitleInfo>(PerformHttpRequest(L"/ParseUniversalTransferDocumentBuyerTitleXml", utdXmlContent, L"POST"));
 }
 
 RevocationRequestInfo DiadocApi::ParseRevocationRequestXml(const Bytes_t& xmlContent)

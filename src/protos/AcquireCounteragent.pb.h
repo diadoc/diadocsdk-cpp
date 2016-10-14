@@ -38,6 +38,7 @@ void protobuf_ShutdownFile_AcquireCounteragent_2eproto();
 
 class AcquireCounteragentRequest;
 class InvitationDocument;
+class CustomDocument;
 class AcquireCounteragentResult;
 
 // ===================================================================
@@ -249,6 +250,18 @@ class InvitationDocument : public ::google::protobuf::Message {
   inline bool signaturerequested() const;
   inline void set_signaturerequested(bool value);
 
+  // optional string Type = 4;
+  inline bool has_type() const;
+  inline void clear_type();
+  static const int kTypeFieldNumber = 4;
+  inline const ::std::string& type() const;
+  inline void set_type(const ::std::string& value);
+  inline void set_type(const char* value);
+  inline void set_type(const char* value, size_t size);
+  inline ::std::string* mutable_type();
+  inline ::std::string* release_type();
+  inline void set_allocated_type(::std::string* type);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.InvitationDocument)
  private:
   inline void set_has_signedcontent();
@@ -257,6 +270,8 @@ class InvitationDocument : public ::google::protobuf::Message {
   inline void clear_has_filename();
   inline void set_has_signaturerequested();
   inline void clear_has_signaturerequested();
+  inline void set_has_type();
+  inline void clear_has_type();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -264,6 +279,7 @@ class InvitationDocument : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::Diadoc::Api::Proto::Events::SignedContent* signedcontent_;
   ::std::string* filename_;
+  ::std::string* type_;
   bool signaturerequested_;
   friend void  protobuf_AddDesc_AcquireCounteragent_2eproto();
   friend void protobuf_AssignDesc_AcquireCounteragent_2eproto();
@@ -271,6 +287,90 @@ class InvitationDocument : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static InvitationDocument* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CustomDocument : public ::google::protobuf::Message {
+ public:
+  CustomDocument();
+  virtual ~CustomDocument();
+
+  CustomDocument(const CustomDocument& from);
+
+  inline CustomDocument& operator=(const CustomDocument& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CustomDocument& default_instance();
+
+  void Swap(CustomDocument* other);
+
+  // implements Message ----------------------------------------------
+
+  CustomDocument* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CustomDocument& from);
+  void MergeFrom(const CustomDocument& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string Type = 1;
+  inline bool has_type() const;
+  inline void clear_type();
+  static const int kTypeFieldNumber = 1;
+  inline const ::std::string& type() const;
+  inline void set_type(const ::std::string& value);
+  inline void set_type(const char* value);
+  inline void set_type(const char* value, size_t size);
+  inline ::std::string* mutable_type();
+  inline ::std::string* release_type();
+  inline void set_allocated_type(::std::string* type);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.CustomDocument)
+ private:
+  inline void set_has_type();
+  inline void clear_has_type();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* type_;
+  friend void  protobuf_AddDesc_AcquireCounteragent_2eproto();
+  friend void protobuf_AssignDesc_AcquireCounteragent_2eproto();
+  friend void protobuf_ShutdownFile_AcquireCounteragent_2eproto();
+
+  void InitAsDefaultInstance();
+  static CustomDocument* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -775,6 +875,162 @@ inline void InvitationDocument::set_signaturerequested(bool value) {
   set_has_signaturerequested();
   signaturerequested_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.InvitationDocument.SignatureRequested)
+}
+
+// optional string Type = 4;
+inline bool InvitationDocument::has_type() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void InvitationDocument::set_has_type() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void InvitationDocument::clear_has_type() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void InvitationDocument::clear_type() {
+  if (type_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    type_->clear();
+  }
+  clear_has_type();
+}
+inline const ::std::string& InvitationDocument::type() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.InvitationDocument.Type)
+  return *type_;
+}
+inline void InvitationDocument::set_type(const ::std::string& value) {
+  set_has_type();
+  if (type_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    type_ = new ::std::string;
+  }
+  type_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.InvitationDocument.Type)
+}
+inline void InvitationDocument::set_type(const char* value) {
+  set_has_type();
+  if (type_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    type_ = new ::std::string;
+  }
+  type_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.InvitationDocument.Type)
+}
+inline void InvitationDocument::set_type(const char* value, size_t size) {
+  set_has_type();
+  if (type_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    type_ = new ::std::string;
+  }
+  type_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.InvitationDocument.Type)
+}
+inline ::std::string* InvitationDocument::mutable_type() {
+  set_has_type();
+  if (type_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    type_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.InvitationDocument.Type)
+  return type_;
+}
+inline ::std::string* InvitationDocument::release_type() {
+  clear_has_type();
+  if (type_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = type_;
+    type_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void InvitationDocument::set_allocated_type(::std::string* type) {
+  if (type_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete type_;
+  }
+  if (type) {
+    set_has_type();
+    type_ = type;
+  } else {
+    clear_has_type();
+    type_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.InvitationDocument.Type)
+}
+
+// -------------------------------------------------------------------
+
+// CustomDocument
+
+// required string Type = 1;
+inline bool CustomDocument::has_type() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CustomDocument::set_has_type() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CustomDocument::clear_has_type() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CustomDocument::clear_type() {
+  if (type_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    type_->clear();
+  }
+  clear_has_type();
+}
+inline const ::std::string& CustomDocument::type() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.CustomDocument.Type)
+  return *type_;
+}
+inline void CustomDocument::set_type(const ::std::string& value) {
+  set_has_type();
+  if (type_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    type_ = new ::std::string;
+  }
+  type_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.CustomDocument.Type)
+}
+inline void CustomDocument::set_type(const char* value) {
+  set_has_type();
+  if (type_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    type_ = new ::std::string;
+  }
+  type_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.CustomDocument.Type)
+}
+inline void CustomDocument::set_type(const char* value, size_t size) {
+  set_has_type();
+  if (type_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    type_ = new ::std::string;
+  }
+  type_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.CustomDocument.Type)
+}
+inline ::std::string* CustomDocument::mutable_type() {
+  set_has_type();
+  if (type_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    type_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.CustomDocument.Type)
+  return type_;
+}
+inline ::std::string* CustomDocument::release_type() {
+  clear_has_type();
+  if (type_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = type_;
+    type_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CustomDocument::set_allocated_type(::std::string* type) {
+  if (type_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete type_;
+  }
+  if (type) {
+    set_has_type();
+    type_ = type;
+  } else {
+    clear_has_type();
+    type_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.CustomDocument.Type)
 }
 
 // -------------------------------------------------------------------
