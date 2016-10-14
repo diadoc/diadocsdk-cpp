@@ -55,11 +55,12 @@ enum DocumentType {
   Contract = 36,
   Torg13 = 37,
   ServiceDetails = 38,
-  SupplementaryAgreement = 40
+  SupplementaryAgreement = 40,
+  UniversalTransferDocument = 41
 };
 bool DocumentType_IsValid(int value);
 const DocumentType DocumentType_MIN = UnknownDocumentType;
-const DocumentType DocumentType_MAX = SupplementaryAgreement;
+const DocumentType DocumentType_MAX = UniversalTransferDocument;
 const int DocumentType_ARRAYSIZE = DocumentType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* DocumentType_descriptor();

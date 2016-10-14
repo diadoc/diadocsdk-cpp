@@ -30,13 +30,14 @@
 #include "CustomDataItem.pb.h"
 #include "DocumentType.pb.h"
 #include "DocumentDirection.pb.h"
+#include "Documents/AcceptanceCertificateDocument.pb.h"
+#include "Documents/BilateralDocument.pb.h"
+#include "Documents/InvoiceDocument.pb.h"
+#include "Documents/NonformalizedDocument.pb.h"
+#include "Documents/UnilateralDocument.pb.h"
+#include "Documents/UniversalTransferDocument.pb.h"
 #include "ResolutionTarget.pb.h"
 #include "ForwardDocumentEvent.pb.h"
-#include "Documents/InvoiceDocument.pb.h"
-#include "Documents/BilateralDocument.pb.h"
-#include "Documents/UnilateralDocument.pb.h"
-#include "Documents/NonformalizedDocument.pb.h"
-#include "Documents/AcceptanceCertificateDocument.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace Diadoc {
@@ -695,6 +696,15 @@ class Document : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Documents::NonformalizedDocument::NonformalizedDocumentMetadata* release_certificateregistrymetadata();
   inline void set_allocated_certificateregistrymetadata(::Diadoc::Api::Proto::Documents::NonformalizedDocument::NonformalizedDocumentMetadata* certificateregistrymetadata);
 
+  // optional .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentMetadata UniversalTransferDocumentMetadata = 56;
+  inline bool has_universaltransferdocumentmetadata() const;
+  inline void clear_universaltransferdocumentmetadata();
+  static const int kUniversalTransferDocumentMetadataFieldNumber = 56;
+  inline const ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentMetadata& universaltransferdocumentmetadata() const;
+  inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentMetadata* mutable_universaltransferdocumentmetadata();
+  inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentMetadata* release_universaltransferdocumentmetadata();
+  inline void set_allocated_universaltransferdocumentmetadata(::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentMetadata* universaltransferdocumentmetadata);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.Document)
  private:
   inline void set_has_indexkey();
@@ -795,6 +805,8 @@ class Document : public ::google::protobuf::Message {
   inline void clear_has_pricelistagreementmetadata();
   inline void set_has_certificateregistrymetadata();
   inline void clear_has_certificateregistrymetadata();
+  inline void set_has_universaltransferdocumentmetadata();
+  inline void clear_has_universaltransferdocumentmetadata();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -850,6 +862,7 @@ class Document : public ::google::protobuf::Message {
   ::std::string* roamingnotificationstatusdescription_;
   ::Diadoc::Api::Proto::Documents::NonformalizedDocument::NonformalizedDocumentMetadata* pricelistagreementmetadata_;
   ::Diadoc::Api::Proto::Documents::NonformalizedDocument::NonformalizedDocumentMetadata* certificateregistrymetadata_;
+  ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentMetadata* universaltransferdocumentmetadata_;
   bool isread_;
   bool packetislocked_;
   mutable int _cached_size_;
@@ -3320,6 +3333,47 @@ inline void Document::set_allocated_certificateregistrymetadata(::Diadoc::Api::P
     clear_has_certificateregistrymetadata();
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.CertificateRegistryMetadata)
+}
+
+// optional .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentMetadata UniversalTransferDocumentMetadata = 56;
+inline bool Document::has_universaltransferdocumentmetadata() const {
+  return (_has_bits_[1] & 0x00200000u) != 0;
+}
+inline void Document::set_has_universaltransferdocumentmetadata() {
+  _has_bits_[1] |= 0x00200000u;
+}
+inline void Document::clear_has_universaltransferdocumentmetadata() {
+  _has_bits_[1] &= ~0x00200000u;
+}
+inline void Document::clear_universaltransferdocumentmetadata() {
+  if (universaltransferdocumentmetadata_ != NULL) universaltransferdocumentmetadata_->::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentMetadata::Clear();
+  clear_has_universaltransferdocumentmetadata();
+}
+inline const ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentMetadata& Document::universaltransferdocumentmetadata() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Document.UniversalTransferDocumentMetadata)
+  return universaltransferdocumentmetadata_ != NULL ? *universaltransferdocumentmetadata_ : *default_instance_->universaltransferdocumentmetadata_;
+}
+inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentMetadata* Document::mutable_universaltransferdocumentmetadata() {
+  set_has_universaltransferdocumentmetadata();
+  if (universaltransferdocumentmetadata_ == NULL) universaltransferdocumentmetadata_ = new ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentMetadata;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.Document.UniversalTransferDocumentMetadata)
+  return universaltransferdocumentmetadata_;
+}
+inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentMetadata* Document::release_universaltransferdocumentmetadata() {
+  clear_has_universaltransferdocumentmetadata();
+  ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentMetadata* temp = universaltransferdocumentmetadata_;
+  universaltransferdocumentmetadata_ = NULL;
+  return temp;
+}
+inline void Document::set_allocated_universaltransferdocumentmetadata(::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentMetadata* universaltransferdocumentmetadata) {
+  delete universaltransferdocumentmetadata_;
+  universaltransferdocumentmetadata_ = universaltransferdocumentmetadata;
+  if (universaltransferdocumentmetadata) {
+    set_has_universaltransferdocumentmetadata();
+  } else {
+    clear_has_universaltransferdocumentmetadata();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.UniversalTransferDocumentMetadata)
 }
 
 // -------------------------------------------------------------------
