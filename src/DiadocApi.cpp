@@ -1245,6 +1245,22 @@ TaskResult<CloudSignConfirmResult> DiadocApi::CloudSignConfirmResult(const std::
 	return PerformAsyncHttpRequest<Diadoc::Api::Proto::CloudSignConfirmResult>("CloudSignConfirmResult", L"taskId=" + StringHelper::CanonicalizeUrl(taskId), GET);
 }
 
+AsyncMethodResult DiadocApi::AutoSignReceipts(const std::wstring& boxId, const std::wstring& certificateThumbprint, const std::wstring& batchKey)
+{
+	std::wstringstream params;
+	params << "boxId=" << StringHelper::CanonicalizeUrl(boxId);
+	if (!certificateThumbprint.empty())
+		params << "&certificateThumbprint=" << StringHelper::CanonicalizeUrl(certificateThumbprint);
+	if (!batchKey.empty())
+		params << "&batchKey=" << StringHelper::CanonicalizeUrl(batchKey);
+	return PerformHttpRequest<AsyncMethodResult>("AutoSignReceipts", params.str());
+}
+
+TaskResult<AutosignReceiptsResult> DiadocApi::WaitAutosignReceiptsResult(const std::wstring &taskId)
+{
+	return PerformAsyncHttpRequest<Diadoc::Api::Proto::AutosignReceiptsResult>("AutosignReceiptsResult", L"taskId=" + StringHelper::CanonicalizeUrl(taskId), GET);
+}
+
 DocumentList DiadocApi::GetDocumentsByMessageId(const std::wstring& boxId, const std::wstring& messageId)
 {
 	auto queryString = L"/GetDocumentsByMessageId?boxId=" + StringHelper::CanonicalizeUrl(boxId)

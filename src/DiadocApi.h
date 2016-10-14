@@ -234,6 +234,8 @@ public:
 	TaskResult<Diadoc::Api::Proto::CloudSignResult> CloudSignResult(const std::wstring& taskId);
 	Diadoc::Api::Proto::AsyncMethodResult CloudSignConfirm(const std::wstring& token, const std::wstring& confirmationCode);
 	TaskResult<Diadoc::Api::Proto::CloudSignConfirmResult> CloudSignConfirmResult(const std::wstring& taskId);
+	Diadoc::Api::Proto::AsyncMethodResult AutoSignReceipts(const std::wstring& boxId, const std::wstring& certificateThumbprint, const std::wstring& batchKey);
+	TaskResult<Diadoc::Api::Proto::AutosignReceiptsResult> WaitAutosignReceiptsResult(const std::wstring& taskId);
 	Diadoc::Api::Proto::Documents::DocumentList GetDocumentsByMessageId(const std::wstring& boxId, const std::wstring& messageId);
 
 protected:

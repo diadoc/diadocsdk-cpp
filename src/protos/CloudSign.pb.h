@@ -40,6 +40,7 @@ class CloudSignRequest;
 class CloudSignFile;
 class CloudSignResult;
 class CloudSignConfirmResult;
+class AutosignReceiptsResult;
 
 // ===================================================================
 
@@ -385,6 +386,100 @@ class CloudSignConfirmResult : public ::google::protobuf::Message {
   void InitAsDefaultInstance();
   static CloudSignConfirmResult* default_instance_;
 };
+// -------------------------------------------------------------------
+
+class AutosignReceiptsResult : public ::google::protobuf::Message {
+ public:
+  AutosignReceiptsResult();
+  virtual ~AutosignReceiptsResult();
+
+  AutosignReceiptsResult(const AutosignReceiptsResult& from);
+
+  inline AutosignReceiptsResult& operator=(const AutosignReceiptsResult& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const AutosignReceiptsResult& default_instance();
+
+  void Swap(AutosignReceiptsResult* other);
+
+  // implements Message ----------------------------------------------
+
+  AutosignReceiptsResult* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const AutosignReceiptsResult& from);
+  void MergeFrom(const AutosignReceiptsResult& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string NextBatchKey = 1;
+  inline bool has_nextbatchkey() const;
+  inline void clear_nextbatchkey();
+  static const int kNextBatchKeyFieldNumber = 1;
+  inline const ::std::string& nextbatchkey() const;
+  inline void set_nextbatchkey(const ::std::string& value);
+  inline void set_nextbatchkey(const char* value);
+  inline void set_nextbatchkey(const char* value, size_t size);
+  inline ::std::string* mutable_nextbatchkey();
+  inline ::std::string* release_nextbatchkey();
+  inline void set_allocated_nextbatchkey(::std::string* nextbatchkey);
+
+  // required int32 SignedReceiptsCount = 2;
+  inline bool has_signedreceiptscount() const;
+  inline void clear_signedreceiptscount();
+  static const int kSignedReceiptsCountFieldNumber = 2;
+  inline ::google::protobuf::int32 signedreceiptscount() const;
+  inline void set_signedreceiptscount(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.AutosignReceiptsResult)
+ private:
+  inline void set_has_nextbatchkey();
+  inline void clear_has_nextbatchkey();
+  inline void set_has_signedreceiptscount();
+  inline void clear_has_signedreceiptscount();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* nextbatchkey_;
+  ::google::protobuf::int32 signedreceiptscount_;
+  friend void  protobuf_AddDesc_CloudSign_2eproto();
+  friend void protobuf_AssignDesc_CloudSign_2eproto();
+  friend void protobuf_ShutdownFile_CloudSign_2eproto();
+
+  void InitAsDefaultInstance();
+  static AutosignReceiptsResult* default_instance_;
+};
 // ===================================================================
 
 
@@ -655,6 +750,110 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Content_v2 >*
 CloudSignConfirmResult::mutable_signatures() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.CloudSignConfirmResult.Signatures)
   return &signatures_;
+}
+
+// -------------------------------------------------------------------
+
+// AutosignReceiptsResult
+
+// required string NextBatchKey = 1;
+inline bool AutosignReceiptsResult::has_nextbatchkey() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void AutosignReceiptsResult::set_has_nextbatchkey() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void AutosignReceiptsResult::clear_has_nextbatchkey() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void AutosignReceiptsResult::clear_nextbatchkey() {
+  if (nextbatchkey_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    nextbatchkey_->clear();
+  }
+  clear_has_nextbatchkey();
+}
+inline const ::std::string& AutosignReceiptsResult::nextbatchkey() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.AutosignReceiptsResult.NextBatchKey)
+  return *nextbatchkey_;
+}
+inline void AutosignReceiptsResult::set_nextbatchkey(const ::std::string& value) {
+  set_has_nextbatchkey();
+  if (nextbatchkey_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    nextbatchkey_ = new ::std::string;
+  }
+  nextbatchkey_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.AutosignReceiptsResult.NextBatchKey)
+}
+inline void AutosignReceiptsResult::set_nextbatchkey(const char* value) {
+  set_has_nextbatchkey();
+  if (nextbatchkey_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    nextbatchkey_ = new ::std::string;
+  }
+  nextbatchkey_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.AutosignReceiptsResult.NextBatchKey)
+}
+inline void AutosignReceiptsResult::set_nextbatchkey(const char* value, size_t size) {
+  set_has_nextbatchkey();
+  if (nextbatchkey_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    nextbatchkey_ = new ::std::string;
+  }
+  nextbatchkey_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.AutosignReceiptsResult.NextBatchKey)
+}
+inline ::std::string* AutosignReceiptsResult::mutable_nextbatchkey() {
+  set_has_nextbatchkey();
+  if (nextbatchkey_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    nextbatchkey_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.AutosignReceiptsResult.NextBatchKey)
+  return nextbatchkey_;
+}
+inline ::std::string* AutosignReceiptsResult::release_nextbatchkey() {
+  clear_has_nextbatchkey();
+  if (nextbatchkey_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = nextbatchkey_;
+    nextbatchkey_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void AutosignReceiptsResult::set_allocated_nextbatchkey(::std::string* nextbatchkey) {
+  if (nextbatchkey_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete nextbatchkey_;
+  }
+  if (nextbatchkey) {
+    set_has_nextbatchkey();
+    nextbatchkey_ = nextbatchkey;
+  } else {
+    clear_has_nextbatchkey();
+    nextbatchkey_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.AutosignReceiptsResult.NextBatchKey)
+}
+
+// required int32 SignedReceiptsCount = 2;
+inline bool AutosignReceiptsResult::has_signedreceiptscount() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void AutosignReceiptsResult::set_has_signedreceiptscount() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void AutosignReceiptsResult::clear_has_signedreceiptscount() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void AutosignReceiptsResult::clear_signedreceiptscount() {
+  signedreceiptscount_ = 0;
+  clear_has_signedreceiptscount();
+}
+inline ::google::protobuf::int32 AutosignReceiptsResult::signedreceiptscount() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.AutosignReceiptsResult.SignedReceiptsCount)
+  return signedreceiptscount_;
+}
+inline void AutosignReceiptsResult::set_signedreceiptscount(::google::protobuf::int32 value) {
+  set_has_signedreceiptscount();
+  signedreceiptscount_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.AutosignReceiptsResult.SignedReceiptsCount)
 }
 
 

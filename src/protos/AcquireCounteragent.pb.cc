@@ -28,9 +28,6 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* InvitationDocument_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   InvitationDocument_reflection_ = NULL;
-const ::google::protobuf::Descriptor* CustomDocument_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  CustomDocument_reflection_ = NULL;
 const ::google::protobuf::Descriptor* AcquireCounteragentResult_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   AcquireCounteragentResult_reflection_ = NULL;
@@ -80,22 +77,7 @@ void protobuf_AssignDesc_AcquireCounteragent_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(InvitationDocument));
-  CustomDocument_descriptor_ = file->message_type(2);
-  static const int CustomDocument_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CustomDocument, type_),
-  };
-  CustomDocument_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      CustomDocument_descriptor_,
-      CustomDocument::default_instance_,
-      CustomDocument_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CustomDocument, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CustomDocument, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(CustomDocument));
-  AcquireCounteragentResult_descriptor_ = file->message_type(3);
+  AcquireCounteragentResult_descriptor_ = file->message_type(2);
   static const int AcquireCounteragentResult_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AcquireCounteragentResult, orgid_),
   };
@@ -127,8 +109,6 @@ void protobuf_RegisterTypes(const ::std::string&) {
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     InvitationDocument_descriptor_, &InvitationDocument::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    CustomDocument_descriptor_, &CustomDocument::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     AcquireCounteragentResult_descriptor_, &AcquireCounteragentResult::default_instance());
 }
 
@@ -139,8 +119,6 @@ void protobuf_ShutdownFile_AcquireCounteragent_2eproto() {
   delete AcquireCounteragentRequest_reflection_;
   delete InvitationDocument::default_instance_;
   delete InvitationDocument_reflection_;
-  delete CustomDocument::default_instance_;
-  delete CustomDocument_reflection_;
   delete AcquireCounteragentResult::default_instance_;
   delete AcquireCounteragentResult_reflection_;
 }
@@ -162,18 +140,15 @@ void protobuf_AddDesc_AcquireCounteragent_2eproto() {
     "\n\022InvitationDocument\022=\n\rSignedContent\030\001 "
     "\002(\0132&.Diadoc.Api.Proto.Events.SignedCont"
     "ent\022\020\n\010FileName\030\002 \002(\t\022!\n\022SignatureReques"
-    "ted\030\003 \001(\010:\005false\022\014\n\004Type\030\004 \001(\t\"\036\n\016Custom"
-    "Document\022\014\n\004Type\030\001 \002(\t\"*\n\031AcquireCounter"
-    "agentResult\022\r\n\005OrgId\030\001 \002(\t", 466);
+    "ted\030\003 \001(\010:\005false\022\014\n\004Type\030\004 \001(\t\"*\n\031Acquir"
+    "eCounteragentResult\022\r\n\005OrgId\030\001 \002(\t", 434);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "AcquireCounteragent.proto", &protobuf_RegisterTypes);
   AcquireCounteragentRequest::default_instance_ = new AcquireCounteragentRequest();
   InvitationDocument::default_instance_ = new InvitationDocument();
-  CustomDocument::default_instance_ = new CustomDocument();
   AcquireCounteragentResult::default_instance_ = new AcquireCounteragentResult();
   AcquireCounteragentRequest::default_instance_->InitAsDefaultInstance();
   InvitationDocument::default_instance_->InitAsDefaultInstance();
-  CustomDocument::default_instance_->InitAsDefaultInstance();
   AcquireCounteragentResult::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_AcquireCounteragent_2eproto);
 }
@@ -977,250 +952,6 @@ void InvitationDocument::Swap(InvitationDocument* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = InvitationDocument_descriptor_;
   metadata.reflection = InvitationDocument_reflection_;
-  return metadata;
-}
-
-
-// ===================================================================
-
-#ifndef _MSC_VER
-const int CustomDocument::kTypeFieldNumber;
-#endif  // !_MSC_VER
-
-CustomDocument::CustomDocument()
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.CustomDocument)
-}
-
-void CustomDocument::InitAsDefaultInstance() {
-}
-
-CustomDocument::CustomDocument(const CustomDocument& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.CustomDocument)
-}
-
-void CustomDocument::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
-  _cached_size_ = 0;
-  type_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-}
-
-CustomDocument::~CustomDocument() {
-  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.CustomDocument)
-  SharedDtor();
-}
-
-void CustomDocument::SharedDtor() {
-  if (type_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete type_;
-  }
-  if (this != default_instance_) {
-  }
-}
-
-void CustomDocument::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* CustomDocument::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return CustomDocument_descriptor_;
-}
-
-const CustomDocument& CustomDocument::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_AcquireCounteragent_2eproto();
-  return *default_instance_;
-}
-
-CustomDocument* CustomDocument::default_instance_ = NULL;
-
-CustomDocument* CustomDocument::New() const {
-  return new CustomDocument;
-}
-
-void CustomDocument::Clear() {
-  if (has_type()) {
-    if (type_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-      type_->clear();
-    }
-  }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
-}
-
-bool CustomDocument::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.CustomDocument)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string Type = 1;
-      case 1: {
-        if (tag == 10) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_type()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->type().data(), this->type().length(),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "type");
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectAtEnd()) goto success;
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.CustomDocument)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.CustomDocument)
-  return false;
-#undef DO_
-}
-
-void CustomDocument::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.CustomDocument)
-  // required string Type = 1;
-  if (has_type()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->type().data(), this->type().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "type");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->type(), output);
-  }
-
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.CustomDocument)
-}
-
-::google::protobuf::uint8* CustomDocument::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.CustomDocument)
-  // required string Type = 1;
-  if (has_type()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->type().data(), this->type().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "type");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->type(), target);
-  }
-
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.CustomDocument)
-  return target;
-}
-
-int CustomDocument::ByteSize() const {
-  int total_size = 0;
-
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required string Type = 1;
-    if (has_type()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->type());
-    }
-
-  }
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void CustomDocument::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const CustomDocument* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const CustomDocument*>(
-      &from);
-  if (source == NULL) {
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-    MergeFrom(*source);
-  }
-}
-
-void CustomDocument::MergeFrom(const CustomDocument& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_type()) {
-      set_type(from.type());
-    }
-  }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-}
-
-void CustomDocument::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void CustomDocument::CopyFrom(const CustomDocument& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool CustomDocument::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
-
-  return true;
-}
-
-void CustomDocument::Swap(CustomDocument* other) {
-  if (other != this) {
-    std::swap(type_, other->type_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
-}
-
-::google::protobuf::Metadata CustomDocument::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = CustomDocument_descriptor_;
-  metadata.reflection = CustomDocument_reflection_;
   return metadata;
 }
 
