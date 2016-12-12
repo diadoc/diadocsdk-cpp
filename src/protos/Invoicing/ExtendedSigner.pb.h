@@ -40,6 +40,7 @@ void protobuf_ShutdownFile_Invoicing_2fExtendedSigner_2eproto();
 
 class ExtendedSigner;
 class ExtendedSignerDetails;
+class ExtendedSignerDetailsToPost;
 
 enum SignerType {
   LegalEntity = 1,
@@ -480,6 +481,180 @@ class ExtendedSignerDetails : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static ExtendedSignerDetails* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class ExtendedSignerDetailsToPost : public ::google::protobuf::Message {
+ public:
+  ExtendedSignerDetailsToPost();
+  virtual ~ExtendedSignerDetailsToPost();
+
+  ExtendedSignerDetailsToPost(const ExtendedSignerDetailsToPost& from);
+
+  inline ExtendedSignerDetailsToPost& operator=(const ExtendedSignerDetailsToPost& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ExtendedSignerDetailsToPost& default_instance();
+
+  void Swap(ExtendedSignerDetailsToPost* other);
+
+  // implements Message ----------------------------------------------
+
+  ExtendedSignerDetailsToPost* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const ExtendedSignerDetailsToPost& from);
+  void MergeFrom(const ExtendedSignerDetailsToPost& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional string JobTitle = 1;
+  inline bool has_jobtitle() const;
+  inline void clear_jobtitle();
+  static const int kJobTitleFieldNumber = 1;
+  inline const ::std::string& jobtitle() const;
+  inline void set_jobtitle(const ::std::string& value);
+  inline void set_jobtitle(const char* value);
+  inline void set_jobtitle(const char* value, size_t size);
+  inline ::std::string* mutable_jobtitle();
+  inline ::std::string* release_jobtitle();
+  inline void set_allocated_jobtitle(::std::string* jobtitle);
+
+  // optional string RegistrationCertificate = 2;
+  inline bool has_registrationcertificate() const;
+  inline void clear_registrationcertificate();
+  static const int kRegistrationCertificateFieldNumber = 2;
+  inline const ::std::string& registrationcertificate() const;
+  inline void set_registrationcertificate(const ::std::string& value);
+  inline void set_registrationcertificate(const char* value);
+  inline void set_registrationcertificate(const char* value, size_t size);
+  inline ::std::string* mutable_registrationcertificate();
+  inline ::std::string* release_registrationcertificate();
+  inline void set_allocated_registrationcertificate(::std::string* registrationcertificate);
+
+  // required .Diadoc.Api.Proto.Invoicing.Signers.SignerType SignerType = 3;
+  inline bool has_signertype() const;
+  inline void clear_signertype();
+  static const int kSignerTypeFieldNumber = 3;
+  inline ::Diadoc::Api::Proto::Invoicing::Signers::SignerType signertype() const;
+  inline void set_signertype(::Diadoc::Api::Proto::Invoicing::Signers::SignerType value);
+
+  // optional string SignerInfo = 4;
+  inline bool has_signerinfo() const;
+  inline void clear_signerinfo();
+  static const int kSignerInfoFieldNumber = 4;
+  inline const ::std::string& signerinfo() const;
+  inline void set_signerinfo(const ::std::string& value);
+  inline void set_signerinfo(const char* value);
+  inline void set_signerinfo(const char* value, size_t size);
+  inline ::std::string* mutable_signerinfo();
+  inline ::std::string* release_signerinfo();
+  inline void set_allocated_signerinfo(::std::string* signerinfo);
+
+  // required .Diadoc.Api.Proto.Invoicing.Signers.SignerPowers SignerPowers = 5;
+  inline bool has_signerpowers() const;
+  inline void clear_signerpowers();
+  static const int kSignerPowersFieldNumber = 5;
+  inline ::Diadoc::Api::Proto::Invoicing::Signers::SignerPowers signerpowers() const;
+  inline void set_signerpowers(::Diadoc::Api::Proto::Invoicing::Signers::SignerPowers value);
+
+  // required .Diadoc.Api.Proto.Invoicing.Signers.SignerStatus SignerStatus = 6;
+  inline bool has_signerstatus() const;
+  inline void clear_signerstatus();
+  static const int kSignerStatusFieldNumber = 6;
+  inline ::Diadoc::Api::Proto::Invoicing::Signers::SignerStatus signerstatus() const;
+  inline void set_signerstatus(::Diadoc::Api::Proto::Invoicing::Signers::SignerStatus value);
+
+  // optional string SignerPowersBase = 7;
+  inline bool has_signerpowersbase() const;
+  inline void clear_signerpowersbase();
+  static const int kSignerPowersBaseFieldNumber = 7;
+  inline const ::std::string& signerpowersbase() const;
+  inline void set_signerpowersbase(const ::std::string& value);
+  inline void set_signerpowersbase(const char* value);
+  inline void set_signerpowersbase(const char* value, size_t size);
+  inline ::std::string* mutable_signerpowersbase();
+  inline ::std::string* release_signerpowersbase();
+  inline void set_allocated_signerpowersbase(::std::string* signerpowersbase);
+
+  // optional string SignerOrgPowersBase = 8;
+  inline bool has_signerorgpowersbase() const;
+  inline void clear_signerorgpowersbase();
+  static const int kSignerOrgPowersBaseFieldNumber = 8;
+  inline const ::std::string& signerorgpowersbase() const;
+  inline void set_signerorgpowersbase(const ::std::string& value);
+  inline void set_signerorgpowersbase(const char* value);
+  inline void set_signerorgpowersbase(const char* value, size_t size);
+  inline ::std::string* mutable_signerorgpowersbase();
+  inline ::std::string* release_signerorgpowersbase();
+  inline void set_allocated_signerorgpowersbase(::std::string* signerorgpowersbase);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost)
+ private:
+  inline void set_has_jobtitle();
+  inline void clear_has_jobtitle();
+  inline void set_has_registrationcertificate();
+  inline void clear_has_registrationcertificate();
+  inline void set_has_signertype();
+  inline void clear_has_signertype();
+  inline void set_has_signerinfo();
+  inline void clear_has_signerinfo();
+  inline void set_has_signerpowers();
+  inline void clear_has_signerpowers();
+  inline void set_has_signerstatus();
+  inline void clear_has_signerstatus();
+  inline void set_has_signerpowersbase();
+  inline void clear_has_signerpowersbase();
+  inline void set_has_signerorgpowersbase();
+  inline void clear_has_signerorgpowersbase();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* jobtitle_;
+  ::std::string* registrationcertificate_;
+  ::std::string* signerinfo_;
+  int signertype_;
+  int signerpowers_;
+  ::std::string* signerpowersbase_;
+  ::std::string* signerorgpowersbase_;
+  int signerstatus_;
+  friend void  protobuf_AddDesc_Invoicing_2fExtendedSigner_2eproto();
+  friend void protobuf_AssignDesc_Invoicing_2fExtendedSigner_2eproto();
+  friend void protobuf_ShutdownFile_Invoicing_2fExtendedSigner_2eproto();
+
+  void InitAsDefaultInstance();
+  static ExtendedSignerDetailsToPost* default_instance_;
 };
 // ===================================================================
 
@@ -1594,6 +1769,465 @@ inline void ExtendedSignerDetails::set_allocated_signerorgpowersbase(::std::stri
     signerorgpowersbase_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetails.SignerOrgPowersBase)
+}
+
+// -------------------------------------------------------------------
+
+// ExtendedSignerDetailsToPost
+
+// optional string JobTitle = 1;
+inline bool ExtendedSignerDetailsToPost::has_jobtitle() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void ExtendedSignerDetailsToPost::set_has_jobtitle() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void ExtendedSignerDetailsToPost::clear_has_jobtitle() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void ExtendedSignerDetailsToPost::clear_jobtitle() {
+  if (jobtitle_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    jobtitle_->clear();
+  }
+  clear_has_jobtitle();
+}
+inline const ::std::string& ExtendedSignerDetailsToPost::jobtitle() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.JobTitle)
+  return *jobtitle_;
+}
+inline void ExtendedSignerDetailsToPost::set_jobtitle(const ::std::string& value) {
+  set_has_jobtitle();
+  if (jobtitle_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    jobtitle_ = new ::std::string;
+  }
+  jobtitle_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.JobTitle)
+}
+inline void ExtendedSignerDetailsToPost::set_jobtitle(const char* value) {
+  set_has_jobtitle();
+  if (jobtitle_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    jobtitle_ = new ::std::string;
+  }
+  jobtitle_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.JobTitle)
+}
+inline void ExtendedSignerDetailsToPost::set_jobtitle(const char* value, size_t size) {
+  set_has_jobtitle();
+  if (jobtitle_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    jobtitle_ = new ::std::string;
+  }
+  jobtitle_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.JobTitle)
+}
+inline ::std::string* ExtendedSignerDetailsToPost::mutable_jobtitle() {
+  set_has_jobtitle();
+  if (jobtitle_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    jobtitle_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.JobTitle)
+  return jobtitle_;
+}
+inline ::std::string* ExtendedSignerDetailsToPost::release_jobtitle() {
+  clear_has_jobtitle();
+  if (jobtitle_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = jobtitle_;
+    jobtitle_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void ExtendedSignerDetailsToPost::set_allocated_jobtitle(::std::string* jobtitle) {
+  if (jobtitle_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete jobtitle_;
+  }
+  if (jobtitle) {
+    set_has_jobtitle();
+    jobtitle_ = jobtitle;
+  } else {
+    clear_has_jobtitle();
+    jobtitle_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.JobTitle)
+}
+
+// optional string RegistrationCertificate = 2;
+inline bool ExtendedSignerDetailsToPost::has_registrationcertificate() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void ExtendedSignerDetailsToPost::set_has_registrationcertificate() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void ExtendedSignerDetailsToPost::clear_has_registrationcertificate() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void ExtendedSignerDetailsToPost::clear_registrationcertificate() {
+  if (registrationcertificate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    registrationcertificate_->clear();
+  }
+  clear_has_registrationcertificate();
+}
+inline const ::std::string& ExtendedSignerDetailsToPost::registrationcertificate() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.RegistrationCertificate)
+  return *registrationcertificate_;
+}
+inline void ExtendedSignerDetailsToPost::set_registrationcertificate(const ::std::string& value) {
+  set_has_registrationcertificate();
+  if (registrationcertificate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    registrationcertificate_ = new ::std::string;
+  }
+  registrationcertificate_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.RegistrationCertificate)
+}
+inline void ExtendedSignerDetailsToPost::set_registrationcertificate(const char* value) {
+  set_has_registrationcertificate();
+  if (registrationcertificate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    registrationcertificate_ = new ::std::string;
+  }
+  registrationcertificate_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.RegistrationCertificate)
+}
+inline void ExtendedSignerDetailsToPost::set_registrationcertificate(const char* value, size_t size) {
+  set_has_registrationcertificate();
+  if (registrationcertificate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    registrationcertificate_ = new ::std::string;
+  }
+  registrationcertificate_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.RegistrationCertificate)
+}
+inline ::std::string* ExtendedSignerDetailsToPost::mutable_registrationcertificate() {
+  set_has_registrationcertificate();
+  if (registrationcertificate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    registrationcertificate_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.RegistrationCertificate)
+  return registrationcertificate_;
+}
+inline ::std::string* ExtendedSignerDetailsToPost::release_registrationcertificate() {
+  clear_has_registrationcertificate();
+  if (registrationcertificate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = registrationcertificate_;
+    registrationcertificate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void ExtendedSignerDetailsToPost::set_allocated_registrationcertificate(::std::string* registrationcertificate) {
+  if (registrationcertificate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete registrationcertificate_;
+  }
+  if (registrationcertificate) {
+    set_has_registrationcertificate();
+    registrationcertificate_ = registrationcertificate;
+  } else {
+    clear_has_registrationcertificate();
+    registrationcertificate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.RegistrationCertificate)
+}
+
+// required .Diadoc.Api.Proto.Invoicing.Signers.SignerType SignerType = 3;
+inline bool ExtendedSignerDetailsToPost::has_signertype() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void ExtendedSignerDetailsToPost::set_has_signertype() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void ExtendedSignerDetailsToPost::clear_has_signertype() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void ExtendedSignerDetailsToPost::clear_signertype() {
+  signertype_ = 1;
+  clear_has_signertype();
+}
+inline ::Diadoc::Api::Proto::Invoicing::Signers::SignerType ExtendedSignerDetailsToPost::signertype() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerType)
+  return static_cast< ::Diadoc::Api::Proto::Invoicing::Signers::SignerType >(signertype_);
+}
+inline void ExtendedSignerDetailsToPost::set_signertype(::Diadoc::Api::Proto::Invoicing::Signers::SignerType value) {
+  assert(::Diadoc::Api::Proto::Invoicing::Signers::SignerType_IsValid(value));
+  set_has_signertype();
+  signertype_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerType)
+}
+
+// optional string SignerInfo = 4;
+inline bool ExtendedSignerDetailsToPost::has_signerinfo() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void ExtendedSignerDetailsToPost::set_has_signerinfo() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void ExtendedSignerDetailsToPost::clear_has_signerinfo() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void ExtendedSignerDetailsToPost::clear_signerinfo() {
+  if (signerinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    signerinfo_->clear();
+  }
+  clear_has_signerinfo();
+}
+inline const ::std::string& ExtendedSignerDetailsToPost::signerinfo() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerInfo)
+  return *signerinfo_;
+}
+inline void ExtendedSignerDetailsToPost::set_signerinfo(const ::std::string& value) {
+  set_has_signerinfo();
+  if (signerinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    signerinfo_ = new ::std::string;
+  }
+  signerinfo_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerInfo)
+}
+inline void ExtendedSignerDetailsToPost::set_signerinfo(const char* value) {
+  set_has_signerinfo();
+  if (signerinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    signerinfo_ = new ::std::string;
+  }
+  signerinfo_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerInfo)
+}
+inline void ExtendedSignerDetailsToPost::set_signerinfo(const char* value, size_t size) {
+  set_has_signerinfo();
+  if (signerinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    signerinfo_ = new ::std::string;
+  }
+  signerinfo_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerInfo)
+}
+inline ::std::string* ExtendedSignerDetailsToPost::mutable_signerinfo() {
+  set_has_signerinfo();
+  if (signerinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    signerinfo_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerInfo)
+  return signerinfo_;
+}
+inline ::std::string* ExtendedSignerDetailsToPost::release_signerinfo() {
+  clear_has_signerinfo();
+  if (signerinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = signerinfo_;
+    signerinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void ExtendedSignerDetailsToPost::set_allocated_signerinfo(::std::string* signerinfo) {
+  if (signerinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete signerinfo_;
+  }
+  if (signerinfo) {
+    set_has_signerinfo();
+    signerinfo_ = signerinfo;
+  } else {
+    clear_has_signerinfo();
+    signerinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerInfo)
+}
+
+// required .Diadoc.Api.Proto.Invoicing.Signers.SignerPowers SignerPowers = 5;
+inline bool ExtendedSignerDetailsToPost::has_signerpowers() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void ExtendedSignerDetailsToPost::set_has_signerpowers() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void ExtendedSignerDetailsToPost::clear_has_signerpowers() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void ExtendedSignerDetailsToPost::clear_signerpowers() {
+  signerpowers_ = 0;
+  clear_has_signerpowers();
+}
+inline ::Diadoc::Api::Proto::Invoicing::Signers::SignerPowers ExtendedSignerDetailsToPost::signerpowers() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerPowers)
+  return static_cast< ::Diadoc::Api::Proto::Invoicing::Signers::SignerPowers >(signerpowers_);
+}
+inline void ExtendedSignerDetailsToPost::set_signerpowers(::Diadoc::Api::Proto::Invoicing::Signers::SignerPowers value) {
+  assert(::Diadoc::Api::Proto::Invoicing::Signers::SignerPowers_IsValid(value));
+  set_has_signerpowers();
+  signerpowers_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerPowers)
+}
+
+// required .Diadoc.Api.Proto.Invoicing.Signers.SignerStatus SignerStatus = 6;
+inline bool ExtendedSignerDetailsToPost::has_signerstatus() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void ExtendedSignerDetailsToPost::set_has_signerstatus() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void ExtendedSignerDetailsToPost::clear_has_signerstatus() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void ExtendedSignerDetailsToPost::clear_signerstatus() {
+  signerstatus_ = 1;
+  clear_has_signerstatus();
+}
+inline ::Diadoc::Api::Proto::Invoicing::Signers::SignerStatus ExtendedSignerDetailsToPost::signerstatus() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerStatus)
+  return static_cast< ::Diadoc::Api::Proto::Invoicing::Signers::SignerStatus >(signerstatus_);
+}
+inline void ExtendedSignerDetailsToPost::set_signerstatus(::Diadoc::Api::Proto::Invoicing::Signers::SignerStatus value) {
+  assert(::Diadoc::Api::Proto::Invoicing::Signers::SignerStatus_IsValid(value));
+  set_has_signerstatus();
+  signerstatus_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerStatus)
+}
+
+// optional string SignerPowersBase = 7;
+inline bool ExtendedSignerDetailsToPost::has_signerpowersbase() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void ExtendedSignerDetailsToPost::set_has_signerpowersbase() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void ExtendedSignerDetailsToPost::clear_has_signerpowersbase() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void ExtendedSignerDetailsToPost::clear_signerpowersbase() {
+  if (signerpowersbase_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    signerpowersbase_->clear();
+  }
+  clear_has_signerpowersbase();
+}
+inline const ::std::string& ExtendedSignerDetailsToPost::signerpowersbase() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerPowersBase)
+  return *signerpowersbase_;
+}
+inline void ExtendedSignerDetailsToPost::set_signerpowersbase(const ::std::string& value) {
+  set_has_signerpowersbase();
+  if (signerpowersbase_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    signerpowersbase_ = new ::std::string;
+  }
+  signerpowersbase_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerPowersBase)
+}
+inline void ExtendedSignerDetailsToPost::set_signerpowersbase(const char* value) {
+  set_has_signerpowersbase();
+  if (signerpowersbase_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    signerpowersbase_ = new ::std::string;
+  }
+  signerpowersbase_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerPowersBase)
+}
+inline void ExtendedSignerDetailsToPost::set_signerpowersbase(const char* value, size_t size) {
+  set_has_signerpowersbase();
+  if (signerpowersbase_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    signerpowersbase_ = new ::std::string;
+  }
+  signerpowersbase_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerPowersBase)
+}
+inline ::std::string* ExtendedSignerDetailsToPost::mutable_signerpowersbase() {
+  set_has_signerpowersbase();
+  if (signerpowersbase_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    signerpowersbase_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerPowersBase)
+  return signerpowersbase_;
+}
+inline ::std::string* ExtendedSignerDetailsToPost::release_signerpowersbase() {
+  clear_has_signerpowersbase();
+  if (signerpowersbase_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = signerpowersbase_;
+    signerpowersbase_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void ExtendedSignerDetailsToPost::set_allocated_signerpowersbase(::std::string* signerpowersbase) {
+  if (signerpowersbase_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete signerpowersbase_;
+  }
+  if (signerpowersbase) {
+    set_has_signerpowersbase();
+    signerpowersbase_ = signerpowersbase;
+  } else {
+    clear_has_signerpowersbase();
+    signerpowersbase_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerPowersBase)
+}
+
+// optional string SignerOrgPowersBase = 8;
+inline bool ExtendedSignerDetailsToPost::has_signerorgpowersbase() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void ExtendedSignerDetailsToPost::set_has_signerorgpowersbase() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void ExtendedSignerDetailsToPost::clear_has_signerorgpowersbase() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void ExtendedSignerDetailsToPost::clear_signerorgpowersbase() {
+  if (signerorgpowersbase_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    signerorgpowersbase_->clear();
+  }
+  clear_has_signerorgpowersbase();
+}
+inline const ::std::string& ExtendedSignerDetailsToPost::signerorgpowersbase() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerOrgPowersBase)
+  return *signerorgpowersbase_;
+}
+inline void ExtendedSignerDetailsToPost::set_signerorgpowersbase(const ::std::string& value) {
+  set_has_signerorgpowersbase();
+  if (signerorgpowersbase_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    signerorgpowersbase_ = new ::std::string;
+  }
+  signerorgpowersbase_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerOrgPowersBase)
+}
+inline void ExtendedSignerDetailsToPost::set_signerorgpowersbase(const char* value) {
+  set_has_signerorgpowersbase();
+  if (signerorgpowersbase_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    signerorgpowersbase_ = new ::std::string;
+  }
+  signerorgpowersbase_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerOrgPowersBase)
+}
+inline void ExtendedSignerDetailsToPost::set_signerorgpowersbase(const char* value, size_t size) {
+  set_has_signerorgpowersbase();
+  if (signerorgpowersbase_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    signerorgpowersbase_ = new ::std::string;
+  }
+  signerorgpowersbase_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerOrgPowersBase)
+}
+inline ::std::string* ExtendedSignerDetailsToPost::mutable_signerorgpowersbase() {
+  set_has_signerorgpowersbase();
+  if (signerorgpowersbase_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    signerorgpowersbase_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerOrgPowersBase)
+  return signerorgpowersbase_;
+}
+inline ::std::string* ExtendedSignerDetailsToPost::release_signerorgpowersbase() {
+  clear_has_signerorgpowersbase();
+  if (signerorgpowersbase_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = signerorgpowersbase_;
+    signerorgpowersbase_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void ExtendedSignerDetailsToPost::set_allocated_signerorgpowersbase(::std::string* signerorgpowersbase) {
+  if (signerorgpowersbase_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete signerorgpowersbase_;
+  }
+  if (signerorgpowersbase) {
+    set_has_signerorgpowersbase();
+    signerorgpowersbase_ = signerorgpowersbase;
+  } else {
+    clear_has_signerorgpowersbase();
+    signerorgpowersbase_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.Signers.ExtendedSignerDetailsToPost.SignerOrgPowersBase)
 }
 
 
