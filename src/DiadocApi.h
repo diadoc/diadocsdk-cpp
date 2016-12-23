@@ -146,7 +146,11 @@ public:
 	WebFile GenerateAcceptanceCertificateXmlForBuyer(const Diadoc::Api::Proto::Invoicing::AcceptanceCertificateBuyerTitleInfo& acceptanceCertificateBuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId);
 
 	WebFile GenerateUniversalTransferDocumentXmlForSeller(const Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentSellerTitleInfo& utdSellerInfo, bool disableValidation = false);
+	WebFile GenerateUniversalCorrectionDocumentXmlForSeller(const Diadoc::Api::Proto::Invoicing::UniversalCorrectionDocumentSellerTitleInfo& utdSellerInfo, bool disableValidation = false);
 	WebFile GenerateUniversalTransferDocumentXmlForBuyer(const Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo& utdBuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId);
+
+	Diadoc::Api::Proto::Invoicing::Signers::ExtendedSignerDetails GetExtendedSignerDetails(const std::wstring& token, const std::wstring& boxId, const std::wstring& thumbprint, bool forBuyer, bool forCorrection);
+	Diadoc::Api::Proto::Invoicing::Signers::ExtendedSignerDetails PostExtendedSignerDetails(const std::wstring& token, const std::wstring& boxId, const std::wstring& thumbprint, bool forBuyer, bool forCorrection, const Diadoc::Api::Proto::Invoicing::Signers::ExtendedSignerDetailsToPost &signerDetails);
 
 	Diadoc::Api::Proto::Invoicing::InvoiceInfo ParseInvoiceXml(const Bytes_t& invoiceXmlContent);
 	Diadoc::Api::Proto::Invoicing::Torg12SellerTitleInfo ParseTorg12SellerTitleXml(const Bytes_t& sellerTitleXmlContent);

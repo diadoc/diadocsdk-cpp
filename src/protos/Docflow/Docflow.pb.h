@@ -34,6 +34,7 @@
 #include "Docflow/XmlBilateralDocflow.pb.h"
 #include "Docflow/RevocationDocflow.pb.h"
 #include "Docflow/ResolutionDocflow.pb.h"
+#include "Docflow/UniversalTransferDocumentDocflow.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace Diadoc {
@@ -283,6 +284,24 @@ class Docflow : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::CustomDataItem >*
       mutable_customdata();
 
+  // optional .Diadoc.Api.Proto.Docflow.InboundUniversalTransferDocumentDocflow InboundUniversalTransferDocumentDocflow = 18;
+  inline bool has_inbounduniversaltransferdocumentdocflow() const;
+  inline void clear_inbounduniversaltransferdocumentdocflow();
+  static const int kInboundUniversalTransferDocumentDocflowFieldNumber = 18;
+  inline const ::Diadoc::Api::Proto::Docflow::InboundUniversalTransferDocumentDocflow& inbounduniversaltransferdocumentdocflow() const;
+  inline ::Diadoc::Api::Proto::Docflow::InboundUniversalTransferDocumentDocflow* mutable_inbounduniversaltransferdocumentdocflow();
+  inline ::Diadoc::Api::Proto::Docflow::InboundUniversalTransferDocumentDocflow* release_inbounduniversaltransferdocumentdocflow();
+  inline void set_allocated_inbounduniversaltransferdocumentdocflow(::Diadoc::Api::Proto::Docflow::InboundUniversalTransferDocumentDocflow* inbounduniversaltransferdocumentdocflow);
+
+  // optional .Diadoc.Api.Proto.Docflow.OutboundUniversalTransferDocumentDocflow OutboundUniversalTransferDocumentDocflow = 19;
+  inline bool has_outbounduniversaltransferdocumentdocflow() const;
+  inline void clear_outbounduniversaltransferdocumentdocflow();
+  static const int kOutboundUniversalTransferDocumentDocflowFieldNumber = 19;
+  inline const ::Diadoc::Api::Proto::Docflow::OutboundUniversalTransferDocumentDocflow& outbounduniversaltransferdocumentdocflow() const;
+  inline ::Diadoc::Api::Proto::Docflow::OutboundUniversalTransferDocumentDocflow* mutable_outbounduniversaltransferdocumentdocflow();
+  inline ::Diadoc::Api::Proto::Docflow::OutboundUniversalTransferDocumentDocflow* release_outbounduniversaltransferdocumentdocflow();
+  inline void set_allocated_outbounduniversaltransferdocumentdocflow(::Diadoc::Api::Proto::Docflow::OutboundUniversalTransferDocumentDocflow* outbounduniversaltransferdocumentdocflow);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Docflow.Docflow)
  private:
   inline void set_has_isfinished();
@@ -317,6 +336,10 @@ class Docflow : public ::google::protobuf::Message {
   inline void clear_has_candocumentberevokedunilaterallybysender();
   inline void set_has_packetid();
   inline void clear_has_packetid();
+  inline void set_has_inbounduniversaltransferdocumentdocflow();
+  inline void clear_has_inbounduniversaltransferdocumentdocflow();
+  inline void set_has_outbounduniversaltransferdocumentdocflow();
+  inline void clear_has_outbounduniversaltransferdocumentdocflow();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -336,6 +359,8 @@ class Docflow : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Docflow::ResolutionDocflow* resolutiondocflow_;
   ::std::string* packetid_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::CustomDataItem > customdata_;
+  ::Diadoc::Api::Proto::Docflow::InboundUniversalTransferDocumentDocflow* inbounduniversaltransferdocumentdocflow_;
+  ::Diadoc::Api::Proto::Docflow::OutboundUniversalTransferDocumentDocflow* outbounduniversaltransferdocumentdocflow_;
   bool isfinished_;
   bool documentisdeleted_;
   bool candocumentberevokedunilaterallybysender_;
@@ -1258,6 +1283,88 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::CustomDataIte
 Docflow::mutable_customdata() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Docflow.Docflow.CustomData)
   return &customdata_;
+}
+
+// optional .Diadoc.Api.Proto.Docflow.InboundUniversalTransferDocumentDocflow InboundUniversalTransferDocumentDocflow = 18;
+inline bool Docflow::has_inbounduniversaltransferdocumentdocflow() const {
+  return (_has_bits_[0] & 0x00020000u) != 0;
+}
+inline void Docflow::set_has_inbounduniversaltransferdocumentdocflow() {
+  _has_bits_[0] |= 0x00020000u;
+}
+inline void Docflow::clear_has_inbounduniversaltransferdocumentdocflow() {
+  _has_bits_[0] &= ~0x00020000u;
+}
+inline void Docflow::clear_inbounduniversaltransferdocumentdocflow() {
+  if (inbounduniversaltransferdocumentdocflow_ != NULL) inbounduniversaltransferdocumentdocflow_->::Diadoc::Api::Proto::Docflow::InboundUniversalTransferDocumentDocflow::Clear();
+  clear_has_inbounduniversaltransferdocumentdocflow();
+}
+inline const ::Diadoc::Api::Proto::Docflow::InboundUniversalTransferDocumentDocflow& Docflow::inbounduniversaltransferdocumentdocflow() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.Docflow.InboundUniversalTransferDocumentDocflow)
+  return inbounduniversaltransferdocumentdocflow_ != NULL ? *inbounduniversaltransferdocumentdocflow_ : *default_instance_->inbounduniversaltransferdocumentdocflow_;
+}
+inline ::Diadoc::Api::Proto::Docflow::InboundUniversalTransferDocumentDocflow* Docflow::mutable_inbounduniversaltransferdocumentdocflow() {
+  set_has_inbounduniversaltransferdocumentdocflow();
+  if (inbounduniversaltransferdocumentdocflow_ == NULL) inbounduniversaltransferdocumentdocflow_ = new ::Diadoc::Api::Proto::Docflow::InboundUniversalTransferDocumentDocflow;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.Docflow.InboundUniversalTransferDocumentDocflow)
+  return inbounduniversaltransferdocumentdocflow_;
+}
+inline ::Diadoc::Api::Proto::Docflow::InboundUniversalTransferDocumentDocflow* Docflow::release_inbounduniversaltransferdocumentdocflow() {
+  clear_has_inbounduniversaltransferdocumentdocflow();
+  ::Diadoc::Api::Proto::Docflow::InboundUniversalTransferDocumentDocflow* temp = inbounduniversaltransferdocumentdocflow_;
+  inbounduniversaltransferdocumentdocflow_ = NULL;
+  return temp;
+}
+inline void Docflow::set_allocated_inbounduniversaltransferdocumentdocflow(::Diadoc::Api::Proto::Docflow::InboundUniversalTransferDocumentDocflow* inbounduniversaltransferdocumentdocflow) {
+  delete inbounduniversaltransferdocumentdocflow_;
+  inbounduniversaltransferdocumentdocflow_ = inbounduniversaltransferdocumentdocflow;
+  if (inbounduniversaltransferdocumentdocflow) {
+    set_has_inbounduniversaltransferdocumentdocflow();
+  } else {
+    clear_has_inbounduniversaltransferdocumentdocflow();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.Docflow.InboundUniversalTransferDocumentDocflow)
+}
+
+// optional .Diadoc.Api.Proto.Docflow.OutboundUniversalTransferDocumentDocflow OutboundUniversalTransferDocumentDocflow = 19;
+inline bool Docflow::has_outbounduniversaltransferdocumentdocflow() const {
+  return (_has_bits_[0] & 0x00040000u) != 0;
+}
+inline void Docflow::set_has_outbounduniversaltransferdocumentdocflow() {
+  _has_bits_[0] |= 0x00040000u;
+}
+inline void Docflow::clear_has_outbounduniversaltransferdocumentdocflow() {
+  _has_bits_[0] &= ~0x00040000u;
+}
+inline void Docflow::clear_outbounduniversaltransferdocumentdocflow() {
+  if (outbounduniversaltransferdocumentdocflow_ != NULL) outbounduniversaltransferdocumentdocflow_->::Diadoc::Api::Proto::Docflow::OutboundUniversalTransferDocumentDocflow::Clear();
+  clear_has_outbounduniversaltransferdocumentdocflow();
+}
+inline const ::Diadoc::Api::Proto::Docflow::OutboundUniversalTransferDocumentDocflow& Docflow::outbounduniversaltransferdocumentdocflow() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.Docflow.OutboundUniversalTransferDocumentDocflow)
+  return outbounduniversaltransferdocumentdocflow_ != NULL ? *outbounduniversaltransferdocumentdocflow_ : *default_instance_->outbounduniversaltransferdocumentdocflow_;
+}
+inline ::Diadoc::Api::Proto::Docflow::OutboundUniversalTransferDocumentDocflow* Docflow::mutable_outbounduniversaltransferdocumentdocflow() {
+  set_has_outbounduniversaltransferdocumentdocflow();
+  if (outbounduniversaltransferdocumentdocflow_ == NULL) outbounduniversaltransferdocumentdocflow_ = new ::Diadoc::Api::Proto::Docflow::OutboundUniversalTransferDocumentDocflow;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.Docflow.OutboundUniversalTransferDocumentDocflow)
+  return outbounduniversaltransferdocumentdocflow_;
+}
+inline ::Diadoc::Api::Proto::Docflow::OutboundUniversalTransferDocumentDocflow* Docflow::release_outbounduniversaltransferdocumentdocflow() {
+  clear_has_outbounduniversaltransferdocumentdocflow();
+  ::Diadoc::Api::Proto::Docflow::OutboundUniversalTransferDocumentDocflow* temp = outbounduniversaltransferdocumentdocflow_;
+  outbounduniversaltransferdocumentdocflow_ = NULL;
+  return temp;
+}
+inline void Docflow::set_allocated_outbounduniversaltransferdocumentdocflow(::Diadoc::Api::Proto::Docflow::OutboundUniversalTransferDocumentDocflow* outbounduniversaltransferdocumentdocflow) {
+  delete outbounduniversaltransferdocumentdocflow_;
+  outbounduniversaltransferdocumentdocflow_ = outbounduniversaltransferdocumentdocflow;
+  if (outbounduniversaltransferdocumentdocflow) {
+    set_has_outbounduniversaltransferdocumentdocflow();
+  } else {
+    clear_has_outbounduniversaltransferdocumentdocflow();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.Docflow.OutboundUniversalTransferDocumentDocflow)
 }
 
 // -------------------------------------------------------------------

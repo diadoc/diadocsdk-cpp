@@ -56,6 +56,27 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* UniversalTransferDocumentBuyerTitleInfo_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   UniversalTransferDocumentBuyerTitleInfo_reflection_ = NULL;
+const ::google::protobuf::Descriptor* UniversalCorrectionDocumentSellerTitleInfo_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  UniversalCorrectionDocumentSellerTitleInfo_reflection_ = NULL;
+const ::google::protobuf::Descriptor* InvoiceForCorrectionInfo_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  InvoiceForCorrectionInfo_reflection_ = NULL;
+const ::google::protobuf::Descriptor* InvoiceRevisionInfo_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  InvoiceRevisionInfo_reflection_ = NULL;
+const ::google::protobuf::Descriptor* EventContent_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  EventContent_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CorrectionBase_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CorrectionBase_reflection_ = NULL;
+const ::google::protobuf::Descriptor* InvoiceCorrectionTable_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  InvoiceCorrectionTable_reflection_ = NULL;
+const ::google::protobuf::Descriptor* ExtendedInvoiceCorrectionItem_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  ExtendedInvoiceCorrectionItem_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* FunctionType_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* ItemMark_descriptor_ = NULL;
 
@@ -89,7 +110,7 @@ void protobuf_AssignDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalTransferDocumentSellerTitleInfo, transferinfo_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalTransferDocumentSellerTitleInfo, documentcreator_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalTransferDocumentSellerTitleInfo, documentcreatorbase_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalTransferDocumentSellerTitleInfo, govermentcontractinfo_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalTransferDocumentSellerTitleInfo, governmentcontractinfo_),
   };
   UniversalTransferDocumentSellerTitleInfo_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -310,6 +331,147 @@ void protobuf_AssignDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(UniversalTransferDocumentBuyerTitleInfo));
+  UniversalCorrectionDocumentSellerTitleInfo_descriptor_ = file->message_type(11);
+  static const int UniversalCorrectionDocumentSellerTitleInfo_offsets_[18] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentSellerTitleInfo, function_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentSellerTitleInfo, documentname_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentSellerTitleInfo, documentdate_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentSellerTitleInfo, documentnumber_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentSellerTitleInfo, invoices_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentSellerTitleInfo, seller_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentSellerTitleInfo, buyer_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentSellerTitleInfo, signers_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentSellerTitleInfo, eventcontent_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentSellerTitleInfo, invoicecorrectiontable_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentSellerTitleInfo, currency_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentSellerTitleInfo, currencyrate_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentSellerTitleInfo, correctionrevisiondate_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentSellerTitleInfo, correctionrevisionnumber_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentSellerTitleInfo, additionalinfoid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentSellerTitleInfo, documentcreator_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentSellerTitleInfo, documentcreatorbase_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentSellerTitleInfo, governmentcontractinfo_),
+  };
+  UniversalCorrectionDocumentSellerTitleInfo_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      UniversalCorrectionDocumentSellerTitleInfo_descriptor_,
+      UniversalCorrectionDocumentSellerTitleInfo::default_instance_,
+      UniversalCorrectionDocumentSellerTitleInfo_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentSellerTitleInfo, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentSellerTitleInfo, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(UniversalCorrectionDocumentSellerTitleInfo));
+  InvoiceForCorrectionInfo_descriptor_ = file->message_type(12);
+  static const int InvoiceForCorrectionInfo_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InvoiceForCorrectionInfo, invoicedate_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InvoiceForCorrectionInfo, invoicenumber_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InvoiceForCorrectionInfo, invoicerevisions_),
+  };
+  InvoiceForCorrectionInfo_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      InvoiceForCorrectionInfo_descriptor_,
+      InvoiceForCorrectionInfo::default_instance_,
+      InvoiceForCorrectionInfo_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InvoiceForCorrectionInfo, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InvoiceForCorrectionInfo, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(InvoiceForCorrectionInfo));
+  InvoiceRevisionInfo_descriptor_ = file->message_type(13);
+  static const int InvoiceRevisionInfo_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InvoiceRevisionInfo, invoicerevisiondate_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InvoiceRevisionInfo, invoicerevisionnumber_),
+  };
+  InvoiceRevisionInfo_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      InvoiceRevisionInfo_descriptor_,
+      InvoiceRevisionInfo::default_instance_,
+      InvoiceRevisionInfo_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InvoiceRevisionInfo, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InvoiceRevisionInfo, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(InvoiceRevisionInfo));
+  EventContent_descriptor_ = file->message_type(14);
+  static const int EventContent_offsets_[5] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EventContent, costchangeinfo_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EventContent, transferdocdetails_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EventContent, operationcontent_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EventContent, notificationdate_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EventContent, correctionbase_),
+  };
+  EventContent_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      EventContent_descriptor_,
+      EventContent::default_instance_,
+      EventContent_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EventContent, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EventContent, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(EventContent));
+  CorrectionBase_descriptor_ = file->message_type(15);
+  static const int CorrectionBase_offsets_[4] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CorrectionBase, basedocumentname_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CorrectionBase, basedocumentnumber_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CorrectionBase, basedocumentdate_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CorrectionBase, additionalinfo_),
+  };
+  CorrectionBase_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CorrectionBase_descriptor_,
+      CorrectionBase::default_instance_,
+      CorrectionBase_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CorrectionBase, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CorrectionBase, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CorrectionBase));
+  InvoiceCorrectionTable_descriptor_ = file->message_type(16);
+  static const int InvoiceCorrectionTable_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InvoiceCorrectionTable, items_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InvoiceCorrectionTable, totalsinc_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InvoiceCorrectionTable, totalsdec_),
+  };
+  InvoiceCorrectionTable_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      InvoiceCorrectionTable_descriptor_,
+      InvoiceCorrectionTable::default_instance_,
+      InvoiceCorrectionTable_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InvoiceCorrectionTable, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InvoiceCorrectionTable, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(InvoiceCorrectionTable));
+  ExtendedInvoiceCorrectionItem_descriptor_ = file->message_type(17);
+  static const int ExtendedInvoiceCorrectionItem_offsets_[8] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ExtendedInvoiceCorrectionItem, product_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ExtendedInvoiceCorrectionItem, originalvalues_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ExtendedInvoiceCorrectionItem, correctedvalues_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ExtendedInvoiceCorrectionItem, amountsinc_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ExtendedInvoiceCorrectionItem, amountsdec_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ExtendedInvoiceCorrectionItem, itemaccountdebit_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ExtendedInvoiceCorrectionItem, itemaccountcredit_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ExtendedInvoiceCorrectionItem, additionalinfo_),
+  };
+  ExtendedInvoiceCorrectionItem_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      ExtendedInvoiceCorrectionItem_descriptor_,
+      ExtendedInvoiceCorrectionItem::default_instance_,
+      ExtendedInvoiceCorrectionItem_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ExtendedInvoiceCorrectionItem, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ExtendedInvoiceCorrectionItem, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(ExtendedInvoiceCorrectionItem));
   FunctionType_descriptor_ = file->enum_type(0);
   ItemMark_descriptor_ = file->enum_type(1);
 }
@@ -346,6 +508,20 @@ void protobuf_RegisterTypes(const ::std::string&) {
     AdditionalInfoId_descriptor_, &AdditionalInfoId::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     UniversalTransferDocumentBuyerTitleInfo_descriptor_, &UniversalTransferDocumentBuyerTitleInfo::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    UniversalCorrectionDocumentSellerTitleInfo_descriptor_, &UniversalCorrectionDocumentSellerTitleInfo::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    InvoiceForCorrectionInfo_descriptor_, &InvoiceForCorrectionInfo::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    InvoiceRevisionInfo_descriptor_, &InvoiceRevisionInfo::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    EventContent_descriptor_, &EventContent::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CorrectionBase_descriptor_, &CorrectionBase::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    InvoiceCorrectionTable_descriptor_, &InvoiceCorrectionTable::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    ExtendedInvoiceCorrectionItem_descriptor_, &ExtendedInvoiceCorrectionItem::default_instance());
 }
 
 }  // namespace
@@ -373,6 +549,20 @@ void protobuf_ShutdownFile_Invoicing_2fUniversalTransferDocumentInfo_2eproto() {
   delete AdditionalInfoId_reflection_;
   delete UniversalTransferDocumentBuyerTitleInfo::default_instance_;
   delete UniversalTransferDocumentBuyerTitleInfo_reflection_;
+  delete UniversalCorrectionDocumentSellerTitleInfo::default_instance_;
+  delete UniversalCorrectionDocumentSellerTitleInfo_reflection_;
+  delete InvoiceForCorrectionInfo::default_instance_;
+  delete InvoiceForCorrectionInfo_reflection_;
+  delete InvoiceRevisionInfo::default_instance_;
+  delete InvoiceRevisionInfo_reflection_;
+  delete EventContent::default_instance_;
+  delete EventContent_reflection_;
+  delete CorrectionBase::default_instance_;
+  delete CorrectionBase_reflection_;
+  delete InvoiceCorrectionTable::default_instance_;
+  delete InvoiceCorrectionTable_reflection_;
+  delete ExtendedInvoiceCorrectionItem::default_instance_;
+  delete ExtendedInvoiceCorrectionItem_reflection_;
 }
 
 void protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto() {
@@ -389,7 +579,7 @@ void protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto() {
     "o.proto\022\032Diadoc.Api.Proto.Invoicing\032\033Inv"
     "oicing/InvoiceInfo.proto\032\036Invoicing/Exte"
     "ndedSigner.proto\032(Invoicing/ExtendedOrga"
-    "nizationInfo.proto\"\341\007\n(UniversalTransfer"
+    "nizationInfo.proto\"\342\007\n(UniversalTransfer"
     "DocumentSellerTitleInfo\022:\n\010Function\030\001 \002("
     "\0162(.Diadoc.Api.Proto.Invoicing.FunctionT"
     "ype\022\024\n\014DocumentName\030\002 \001(\t\022\024\n\014DocumentDat"
@@ -413,76 +603,130 @@ void protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto() {
     "nvoicing.AdditionalInfoId\022>\n\014TransferInf"
     "o\030\021 \001(\0132(.Diadoc.Api.Proto.Invoicing.Tra"
     "nsferInfo\022\027\n\017DocumentCreator\030\022 \002(\t\022\033\n\023Do"
-    "cumentCreatorBase\030\023 \001(\t\022\035\n\025GovermentCont"
-    "ractInfo\030\024 \001(\t\"t\n\007Shipper\022\024\n\014SameAsSelle"
-    "r\030\001 \001(\010\022S\n\007OrgInfo\030\002 \001(\0132B.Diadoc.Api.Pr"
-    "oto.Invoicing.Organizations.ExtendedOrga"
-    "nizationInfo\"\232\001\n\014InvoiceTable\022>\n\005Items\030\001"
-    " \003(\0132/.Diadoc.Api.Proto.Invoicing.Extend"
-    "edInvoiceItem\022\034\n\024TotalWithVatExcluded\030\002 "
-    "\001(\t\022\013\n\003Vat\030\003 \002(\t\022\r\n\005Total\030\004 \002(\t\022\020\n\010Total"
-    "Net\030\005 \001(\t\"\266\004\n\023ExtendedInvoiceItem\022\017\n\007Pro"
-    "duct\030\001 \002(\t\022\014\n\004Unit\030\002 \001(\t\022\020\n\010UnitName\030\003 \001"
-    "(\t\022\020\n\010Quantity\030\004 \001(\t\022\r\n\005Price\030\005 \001(\t\022\016\n\006E"
-    "xcise\030\006 \001(\t\0224\n\007TaxRate\030\007 \002(\0162#.Diadoc.Ap"
-    "i.Proto.Invoicing.TaxRate\022\037\n\027SubtotalWit"
-    "hVatExcluded\030\010 \001(\t\022\013\n\003Vat\030\t \001(\t\022\020\n\010Subto"
-    "tal\030\n \002(\t\022K\n\023CustomsDeclarations\030\013 \003(\0132."
-    ".Diadoc.Api.Proto.Invoicing.CustomsDecla"
-    "ration\0226\n\010ItemMark\030\014 \001(\0162$.Diadoc.Api.Pr"
-    "oto.Invoicing.ItemMark\022\032\n\022AdditionalProp"
-    "erty\030\r \001(\t\022\026\n\016ItemVendorCode\030\016 \001(\t\022\025\n\rIt"
-    "emToRelease\030\017 \001(\t\022\030\n\020ItemAccountDebit\030\020 "
-    "\001(\t\022\031\n\021ItemAccountCredit\030\021 \001(\t\022B\n\016Additi"
-    "onalInfo\030\022 \003(\0132*.Diadoc.Api.Proto.Invoic"
-    "ing.AdditionalInfo\"\261\004\n\014TransferInfo\022\025\n\rO"
-    "perationInfo\030\001 \002(\t\022\025\n\rOperationType\030\002 \001("
-    "\t\022\024\n\014TransferDate\030\003 \001(\t\022>\n\014TransferBase\030"
-    "\004 \003(\0132(.Diadoc.Api.Proto.Invoicing.Trans"
-    "ferBase\022\030\n\020TransferTextInfo\030\005 \001(\t\0224\n\007Way"
-    "bill\030\006 \003(\0132#.Diadoc.Api.Proto.Invoicing."
-    "Waybill\022S\n\007Carrier\030\007 \001(\0132B.Diadoc.Api.Pr"
-    "oto.Invoicing.Organizations.ExtendedOrga"
-    "nizationInfo\0226\n\010Employee\030\010 \001(\0132$.Diadoc."
-    "Api.Proto.Invoicing.Employee\022<\n\013OtherIss"
-    "uer\030\t \001(\0132\'.Diadoc.Api.Proto.Invoicing.O"
-    "therIssuer\022 \n\030CreatedThingTransferDate\030\n"
-    " \001(\t\022\030\n\020CreatedThingInfo\030\013 \001(\t\022F\n\020Additi"
-    "onalInfoId\030\014 \001(\0132,.Diadoc.Api.Proto.Invo"
-    "icing.AdditionalInfoId\"x\n\014TransferBase\022\030"
-    "\n\020BaseDocumentName\030\001 \002(\t\022\032\n\022BaseDocument"
-    "Number\030\002 \001(\t\022\030\n\020BaseDocumentDate\030\003 \001(\t\022\030"
-    "\n\020BaseDocumentInfo\030\004 \001(\t\"G\n\007Waybill\022\036\n\026T"
-    "ransferDocumentNumber\030\001 \002(\t\022\034\n\024TransferD"
-    "ocumentDate\030\002 \002(\t\"\240\001\n\010Employee\022\030\n\020Employ"
-    "eePosition\030\001 \002(\t\022\024\n\014EmployeeInfo\030\002 \001(\t\022\024"
-    "\n\014EmployeeBase\030\003 \001(\t\022\027\n\017TransferSurname\030"
-    "\004 \002(\t\022\031\n\021TransferFirstName\030\005 \002(\t\022\032\n\022Tran"
-    "sferPatronymic\030\006 \001(\t\"\377\001\n\013OtherIssuer\022 \n\030"
-    "TransferEmployeePosition\030\001 \001(\t\022\034\n\024Transf"
-    "erEmployeeInfo\030\002 \001(\t\022 \n\030TransferOrganiza"
-    "tionName\030\003 \001(\t\022 \n\030TransferOrganizationBa"
-    "se\030\004 \001(\t\022\034\n\024TransferEmployeeBase\030\005 \001(\t\022\027"
-    "\n\017TransferSurname\030\006 \002(\t\022\031\n\021TransferFirst"
-    "Name\030\007 \002(\t\022\032\n\022TransferPatronymic\030\010 \001(\t\"j"
-    "\n\020AdditionalInfoId\022\022\n\nInfoFileId\030\001 \001(\t\022B"
-    "\n\016AdditionalInfo\030\002 \003(\0132*.Diadoc.Api.Prot"
-    "o.Invoicing.AdditionalInfo\"\253\003\n\'Universal"
-    "TransferDocumentBuyerTitleInfo\022\027\n\017Docume"
-    "ntCreator\030\001 \002(\t\022\033\n\023DocumentCreatorBase\030\002"
-    " \001(\t\022\025\n\rOperationCode\030\003 \001(\t\022\030\n\020Operation"
-    "Content\030\004 \002(\t\022\026\n\016AcceptanceDate\030\005 \001(\t\0226\n"
-    "\010Employee\030\006 \001(\0132$.Diadoc.Api.Proto.Invoi"
-    "cing.Employee\022<\n\013OtherIssuer\030\007 \001(\0132\'.Dia"
-    "doc.Api.Proto.Invoicing.OtherIssuer\022F\n\020A"
-    "dditionalInfoId\030\010 \001(\0132,.Diadoc.Api.Proto"
-    ".Invoicing.AdditionalInfoId\022C\n\007Signers\030\t"
-    " \003(\01322.Diadoc.Api.Proto.Invoicing.Signer"
-    "s.ExtendedSigner*;\n\014FunctionType\022\013\n\007Invo"
-    "ice\020\000\022\t\n\005Basic\020\001\022\023\n\017InvoiceAndBasic\020\002*_\n"
-    "\010ItemMark\022\020\n\014NotSpecified\020\000\022\014\n\010Property\020"
-    "\001\022\007\n\003Job\020\002\022\013\n\007Service\020\003\022\022\n\016PropertyRight"
-    "s\020\004\022\t\n\005Other\020\005", 3894);
+    "cumentCreatorBase\030\023 \001(\t\022\036\n\026GovernmentCon"
+    "tractInfo\030\024 \001(\t\"t\n\007Shipper\022\024\n\014SameAsSell"
+    "er\030\001 \001(\010\022S\n\007OrgInfo\030\002 \001(\0132B.Diadoc.Api.P"
+    "roto.Invoicing.Organizations.ExtendedOrg"
+    "anizationInfo\"\232\001\n\014InvoiceTable\022>\n\005Items\030"
+    "\001 \003(\0132/.Diadoc.Api.Proto.Invoicing.Exten"
+    "dedInvoiceItem\022\034\n\024TotalWithVatExcluded\030\002"
+    " \001(\t\022\013\n\003Vat\030\003 \002(\t\022\r\n\005Total\030\004 \002(\t\022\020\n\010Tota"
+    "lNet\030\005 \001(\t\"\266\004\n\023ExtendedInvoiceItem\022\017\n\007Pr"
+    "oduct\030\001 \002(\t\022\014\n\004Unit\030\002 \001(\t\022\020\n\010UnitName\030\003 "
+    "\001(\t\022\020\n\010Quantity\030\004 \001(\t\022\r\n\005Price\030\005 \001(\t\022\016\n\006"
+    "Excise\030\006 \001(\t\0224\n\007TaxRate\030\007 \002(\0162#.Diadoc.A"
+    "pi.Proto.Invoicing.TaxRate\022\037\n\027SubtotalWi"
+    "thVatExcluded\030\010 \001(\t\022\013\n\003Vat\030\t \001(\t\022\020\n\010Subt"
+    "otal\030\n \002(\t\022K\n\023CustomsDeclarations\030\013 \003(\0132"
+    "..Diadoc.Api.Proto.Invoicing.CustomsDecl"
+    "aration\0226\n\010ItemMark\030\014 \001(\0162$.Diadoc.Api.P"
+    "roto.Invoicing.ItemMark\022\032\n\022AdditionalPro"
+    "perty\030\r \001(\t\022\026\n\016ItemVendorCode\030\016 \001(\t\022\025\n\rI"
+    "temToRelease\030\017 \001(\t\022\030\n\020ItemAccountDebit\030\020"
+    " \001(\t\022\031\n\021ItemAccountCredit\030\021 \001(\t\022B\n\016Addit"
+    "ionalInfo\030\022 \003(\0132*.Diadoc.Api.Proto.Invoi"
+    "cing.AdditionalInfo\"\261\004\n\014TransferInfo\022\025\n\r"
+    "OperationInfo\030\001 \002(\t\022\025\n\rOperationType\030\002 \001"
+    "(\t\022\024\n\014TransferDate\030\003 \001(\t\022>\n\014TransferBase"
+    "\030\004 \003(\0132(.Diadoc.Api.Proto.Invoicing.Tran"
+    "sferBase\022\030\n\020TransferTextInfo\030\005 \001(\t\0224\n\007Wa"
+    "ybill\030\006 \003(\0132#.Diadoc.Api.Proto.Invoicing"
+    ".Waybill\022S\n\007Carrier\030\007 \001(\0132B.Diadoc.Api.P"
+    "roto.Invoicing.Organizations.ExtendedOrg"
+    "anizationInfo\0226\n\010Employee\030\010 \001(\0132$.Diadoc"
+    ".Api.Proto.Invoicing.Employee\022<\n\013OtherIs"
+    "suer\030\t \001(\0132\'.Diadoc.Api.Proto.Invoicing."
+    "OtherIssuer\022 \n\030CreatedThingTransferDate\030"
+    "\n \001(\t\022\030\n\020CreatedThingInfo\030\013 \001(\t\022F\n\020Addit"
+    "ionalInfoId\030\014 \001(\0132,.Diadoc.Api.Proto.Inv"
+    "oicing.AdditionalInfoId\"x\n\014TransferBase\022"
+    "\030\n\020BaseDocumentName\030\001 \002(\t\022\032\n\022BaseDocumen"
+    "tNumber\030\002 \001(\t\022\030\n\020BaseDocumentDate\030\003 \001(\t\022"
+    "\030\n\020BaseDocumentInfo\030\004 \001(\t\"G\n\007Waybill\022\036\n\026"
+    "TransferDocumentNumber\030\001 \002(\t\022\034\n\024Transfer"
+    "DocumentDate\030\002 \002(\t\"\240\001\n\010Employee\022\030\n\020Emplo"
+    "yeePosition\030\001 \002(\t\022\024\n\014EmployeeInfo\030\002 \001(\t\022"
+    "\024\n\014EmployeeBase\030\003 \001(\t\022\027\n\017TransferSurname"
+    "\030\004 \002(\t\022\031\n\021TransferFirstName\030\005 \002(\t\022\032\n\022Tra"
+    "nsferPatronymic\030\006 \001(\t\"\377\001\n\013OtherIssuer\022 \n"
+    "\030TransferEmployeePosition\030\001 \001(\t\022\034\n\024Trans"
+    "ferEmployeeInfo\030\002 \001(\t\022 \n\030TransferOrganiz"
+    "ationName\030\003 \001(\t\022 \n\030TransferOrganizationB"
+    "ase\030\004 \001(\t\022\034\n\024TransferEmployeeBase\030\005 \001(\t\022"
+    "\027\n\017TransferSurname\030\006 \002(\t\022\031\n\021TransferFirs"
+    "tName\030\007 \002(\t\022\032\n\022TransferPatronymic\030\010 \001(\t\""
+    "j\n\020AdditionalInfoId\022\022\n\nInfoFileId\030\001 \001(\t\022"
+    "B\n\016AdditionalInfo\030\002 \003(\0132*.Diadoc.Api.Pro"
+    "to.Invoicing.AdditionalInfo\"\253\003\n\'Universa"
+    "lTransferDocumentBuyerTitleInfo\022\027\n\017Docum"
+    "entCreator\030\001 \002(\t\022\033\n\023DocumentCreatorBase\030"
+    "\002 \001(\t\022\025\n\rOperationCode\030\003 \001(\t\022\030\n\020Operatio"
+    "nContent\030\004 \002(\t\022\026\n\016AcceptanceDate\030\005 \001(\t\0226"
+    "\n\010Employee\030\006 \001(\0132$.Diadoc.Api.Proto.Invo"
+    "icing.Employee\022<\n\013OtherIssuer\030\007 \001(\0132\'.Di"
+    "adoc.Api.Proto.Invoicing.OtherIssuer\022F\n\020"
+    "AdditionalInfoId\030\010 \001(\0132,.Diadoc.Api.Prot"
+    "o.Invoicing.AdditionalInfoId\022C\n\007Signers\030"
+    "\t \003(\01322.Diadoc.Api.Proto.Invoicing.Signe"
+    "rs.ExtendedSigner\"\374\006\n*UniversalCorrectio"
+    "nDocumentSellerTitleInfo\022:\n\010Function\030\001 \002"
+    "(\0162(.Diadoc.Api.Proto.Invoicing.Function"
+    "Type\022\024\n\014DocumentName\030\002 \001(\t\022\024\n\014DocumentDa"
+    "te\030\003 \002(\t\022\026\n\016DocumentNumber\030\004 \002(\t\022F\n\010Invo"
+    "ices\030\005 \003(\01324.Diadoc.Api.Proto.Invoicing."
+    "InvoiceForCorrectionInfo\022R\n\006Seller\030\006 \002(\013"
+    "2B.Diadoc.Api.Proto.Invoicing.Organizati"
+    "ons.ExtendedOrganizationInfo\022Q\n\005Buyer\030\007 "
+    "\002(\0132B.Diadoc.Api.Proto.Invoicing.Organiz"
+    "ations.ExtendedOrganizationInfo\022C\n\007Signe"
+    "rs\030\010 \003(\01322.Diadoc.Api.Proto.Invoicing.Si"
+    "gners.ExtendedSigner\022>\n\014EventContent\030\t \002"
+    "(\0132(.Diadoc.Api.Proto.Invoicing.EventCon"
+    "tent\022R\n\026InvoiceCorrectionTable\030\n \002(\01322.D"
+    "iadoc.Api.Proto.Invoicing.InvoiceCorrect"
+    "ionTable\022\020\n\010Currency\030\013 \002(\t\022\024\n\014CurrencyRa"
+    "te\030\014 \001(\t\022\036\n\026CorrectionRevisionDate\030\r \001(\t"
+    "\022 \n\030CorrectionRevisionNumber\030\016 \001(\t\022F\n\020Ad"
+    "ditionalInfoId\030\017 \001(\0132,.Diadoc.Api.Proto."
+    "Invoicing.AdditionalInfoId\022\027\n\017DocumentCr"
+    "eator\030\020 \002(\t\022\033\n\023DocumentCreatorBase\030\021 \001(\t"
+    "\022\036\n\026GovernmentContractInfo\030\022 \001(\t\"\221\001\n\030Inv"
+    "oiceForCorrectionInfo\022\023\n\013InvoiceDate\030\001 \002"
+    "(\t\022\025\n\rInvoiceNumber\030\002 \002(\t\022I\n\020InvoiceRevi"
+    "sions\030\003 \003(\0132/.Diadoc.Api.Proto.Invoicing"
+    ".InvoiceRevisionInfo\"Q\n\023InvoiceRevisionI"
+    "nfo\022\033\n\023InvoiceRevisionDate\030\001 \002(\t\022\035\n\025Invo"
+    "iceRevisionNumber\030\002 \002(\t\"\272\001\n\014EventContent"
+    "\022\026\n\016CostChangeInfo\030\001 \001(\t\022\032\n\022TransferDocD"
+    "etails\030\002 \002(\t\022\030\n\020OperationContent\030\003 \002(\t\022\030"
+    "\n\020NotificationDate\030\004 \001(\t\022B\n\016CorrectionBa"
+    "se\030\005 \003(\0132*.Diadoc.Api.Proto.Invoicing.Co"
+    "rrectionBase\"x\n\016CorrectionBase\022\030\n\020BaseDo"
+    "cumentName\030\001 \002(\t\022\032\n\022BaseDocumentNumber\030\002"
+    " \001(\t\022\030\n\020BaseDocumentDate\030\003 \001(\t\022\026\n\016Additi"
+    "onalInfo\030\004 \001(\t\"\346\001\n\026InvoiceCorrectionTabl"
+    "e\022H\n\005Items\030\001 \003(\01329.Diadoc.Api.Proto.Invo"
+    "icing.ExtendedInvoiceCorrectionItem\022@\n\tT"
+    "otalsInc\030\002 \001(\0132-.Diadoc.Api.Proto.Invoic"
+    "ing.InvoiceTotalsDiff\022@\n\tTotalsDec\030\003 \001(\013"
+    "2-.Diadoc.Api.Proto.Invoicing.InvoiceTot"
+    "alsDiff\"\336\003\n\035ExtendedInvoiceCorrectionIte"
+    "m\022\017\n\007Product\030\001 \002(\t\022P\n\016OriginalValues\030\002 \002"
+    "(\01328.Diadoc.Api.Proto.Invoicing.Correcta"
+    "bleInvoiceItemFields\022Q\n\017CorrectedValues\030"
+    "\003 \002(\01328.Diadoc.Api.Proto.Invoicing.Corre"
+    "ctableInvoiceItemFields\022F\n\nAmountsInc\030\004 "
+    "\001(\01322.Diadoc.Api.Proto.Invoicing.Invoice"
+    "ItemAmountsDiff\022F\n\nAmountsDec\030\005 \001(\01322.Di"
+    "adoc.Api.Proto.Invoicing.InvoiceItemAmou"
+    "ntsDiff\022\030\n\020ItemAccountDebit\030\006 \001(\t\022\031\n\021Ite"
+    "mAccountCredit\030\007 \001(\t\022B\n\016AdditionalInfo\030\010"
+    " \003(\0132*.Diadoc.Api.Proto.Invoicing.Additi"
+    "onalInfo*;\n\014FunctionType\022\013\n\007Invoice\020\000\022\t\n"
+    "\005Basic\020\001\022\023\n\017InvoiceAndBasic\020\002*_\n\010ItemMar"
+    "k\022\020\n\014NotSpecified\020\000\022\014\n\010Property\020\001\022\007\n\003Job"
+    "\020\002\022\013\n\007Service\020\003\022\022\n\016PropertyRights\020\004\022\t\n\005O"
+    "ther\020\005", 6046);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Invoicing/UniversalTransferDocumentInfo.proto", &protobuf_RegisterTypes);
   UniversalTransferDocumentSellerTitleInfo::default_instance_ = new UniversalTransferDocumentSellerTitleInfo();
@@ -496,6 +740,13 @@ void protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto() {
   OtherIssuer::default_instance_ = new OtherIssuer();
   AdditionalInfoId::default_instance_ = new AdditionalInfoId();
   UniversalTransferDocumentBuyerTitleInfo::default_instance_ = new UniversalTransferDocumentBuyerTitleInfo();
+  UniversalCorrectionDocumentSellerTitleInfo::default_instance_ = new UniversalCorrectionDocumentSellerTitleInfo();
+  InvoiceForCorrectionInfo::default_instance_ = new InvoiceForCorrectionInfo();
+  InvoiceRevisionInfo::default_instance_ = new InvoiceRevisionInfo();
+  EventContent::default_instance_ = new EventContent();
+  CorrectionBase::default_instance_ = new CorrectionBase();
+  InvoiceCorrectionTable::default_instance_ = new InvoiceCorrectionTable();
+  ExtendedInvoiceCorrectionItem::default_instance_ = new ExtendedInvoiceCorrectionItem();
   UniversalTransferDocumentSellerTitleInfo::default_instance_->InitAsDefaultInstance();
   Shipper::default_instance_->InitAsDefaultInstance();
   InvoiceTable::default_instance_->InitAsDefaultInstance();
@@ -507,6 +758,13 @@ void protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto() {
   OtherIssuer::default_instance_->InitAsDefaultInstance();
   AdditionalInfoId::default_instance_->InitAsDefaultInstance();
   UniversalTransferDocumentBuyerTitleInfo::default_instance_->InitAsDefaultInstance();
+  UniversalCorrectionDocumentSellerTitleInfo::default_instance_->InitAsDefaultInstance();
+  InvoiceForCorrectionInfo::default_instance_->InitAsDefaultInstance();
+  InvoiceRevisionInfo::default_instance_->InitAsDefaultInstance();
+  EventContent::default_instance_->InitAsDefaultInstance();
+  CorrectionBase::default_instance_->InitAsDefaultInstance();
+  InvoiceCorrectionTable::default_instance_->InitAsDefaultInstance();
+  ExtendedInvoiceCorrectionItem::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_Invoicing_2fUniversalTransferDocumentInfo_2eproto);
 }
 
@@ -572,7 +830,7 @@ const int UniversalTransferDocumentSellerTitleInfo::kAdditionalInfoIdFieldNumber
 const int UniversalTransferDocumentSellerTitleInfo::kTransferInfoFieldNumber;
 const int UniversalTransferDocumentSellerTitleInfo::kDocumentCreatorFieldNumber;
 const int UniversalTransferDocumentSellerTitleInfo::kDocumentCreatorBaseFieldNumber;
-const int UniversalTransferDocumentSellerTitleInfo::kGovermentContractInfoFieldNumber;
+const int UniversalTransferDocumentSellerTitleInfo::kGovernmentContractInfoFieldNumber;
 #endif  // !_MSC_VER
 
 UniversalTransferDocumentSellerTitleInfo::UniversalTransferDocumentSellerTitleInfo()
@@ -618,7 +876,7 @@ void UniversalTransferDocumentSellerTitleInfo::SharedCtor() {
   transferinfo_ = NULL;
   documentcreator_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   documentcreatorbase_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  govermentcontractinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  governmentcontractinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -655,8 +913,8 @@ void UniversalTransferDocumentSellerTitleInfo::SharedDtor() {
   if (documentcreatorbase_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete documentcreatorbase_;
   }
-  if (govermentcontractinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete govermentcontractinfo_;
+  if (governmentcontractinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete governmentcontractinfo_;
   }
   if (this != default_instance_) {
     delete seller_;
@@ -763,9 +1021,9 @@ void UniversalTransferDocumentSellerTitleInfo::Clear() {
         documentcreatorbase_->clear();
       }
     }
-    if (has_govermentcontractinfo()) {
-      if (govermentcontractinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        govermentcontractinfo_->clear();
+    if (has_governmentcontractinfo()) {
+      if (governmentcontractinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        governmentcontractinfo_->clear();
       }
     }
   }
@@ -1072,20 +1330,20 @@ bool UniversalTransferDocumentSellerTitleInfo::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(162)) goto parse_GovermentContractInfo;
+        if (input->ExpectTag(162)) goto parse_GovernmentContractInfo;
         break;
       }
 
-      // optional string GovermentContractInfo = 20;
+      // optional string GovernmentContractInfo = 20;
       case 20: {
         if (tag == 162) {
-         parse_GovermentContractInfo:
+         parse_GovernmentContractInfo:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_govermentcontractinfo()));
+                input, this->mutable_governmentcontractinfo()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->govermentcontractinfo().data(), this->govermentcontractinfo().length(),
+            this->governmentcontractinfo().data(), this->governmentcontractinfo().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "govermentcontractinfo");
+            "governmentcontractinfo");
         } else {
           goto handle_unusual;
         }
@@ -1268,14 +1526,14 @@ void UniversalTransferDocumentSellerTitleInfo::SerializeWithCachedSizes(
       19, this->documentcreatorbase(), output);
   }
 
-  // optional string GovermentContractInfo = 20;
-  if (has_govermentcontractinfo()) {
+  // optional string GovernmentContractInfo = 20;
+  if (has_governmentcontractinfo()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->govermentcontractinfo().data(), this->govermentcontractinfo().length(),
+      this->governmentcontractinfo().data(), this->governmentcontractinfo().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "govermentcontractinfo");
+      "governmentcontractinfo");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      20, this->govermentcontractinfo(), output);
+      20, this->governmentcontractinfo(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -1456,15 +1714,15 @@ void UniversalTransferDocumentSellerTitleInfo::SerializeWithCachedSizes(
         19, this->documentcreatorbase(), target);
   }
 
-  // optional string GovermentContractInfo = 20;
-  if (has_govermentcontractinfo()) {
+  // optional string GovernmentContractInfo = 20;
+  if (has_governmentcontractinfo()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->govermentcontractinfo().data(), this->govermentcontractinfo().length(),
+      this->governmentcontractinfo().data(), this->governmentcontractinfo().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "govermentcontractinfo");
+      "governmentcontractinfo");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        20, this->govermentcontractinfo(), target);
+        20, this->governmentcontractinfo(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -1601,11 +1859,11 @@ int UniversalTransferDocumentSellerTitleInfo::ByteSize() const {
           this->documentcreatorbase());
     }
 
-    // optional string GovermentContractInfo = 20;
-    if (has_govermentcontractinfo()) {
+    // optional string GovernmentContractInfo = 20;
+    if (has_governmentcontractinfo()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->govermentcontractinfo());
+          this->governmentcontractinfo());
     }
 
   }
@@ -1708,8 +1966,8 @@ void UniversalTransferDocumentSellerTitleInfo::MergeFrom(const UniversalTransfer
     if (from.has_documentcreatorbase()) {
       set_documentcreatorbase(from.documentcreatorbase());
     }
-    if (from.has_govermentcontractinfo()) {
-      set_govermentcontractinfo(from.govermentcontractinfo());
+    if (from.has_governmentcontractinfo()) {
+      set_governmentcontractinfo(from.governmentcontractinfo());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -1777,7 +2035,7 @@ void UniversalTransferDocumentSellerTitleInfo::Swap(UniversalTransferDocumentSel
     std::swap(transferinfo_, other->transferinfo_);
     std::swap(documentcreator_, other->documentcreator_);
     std::swap(documentcreatorbase_, other->documentcreatorbase_);
-    std::swap(govermentcontractinfo_, other->govermentcontractinfo_);
+    std::swap(governmentcontractinfo_, other->governmentcontractinfo_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -7404,6 +7662,3603 @@ void UniversalTransferDocumentBuyerTitleInfo::Swap(UniversalTransferDocumentBuye
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = UniversalTransferDocumentBuyerTitleInfo_descriptor_;
   metadata.reflection = UniversalTransferDocumentBuyerTitleInfo_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int UniversalCorrectionDocumentSellerTitleInfo::kFunctionFieldNumber;
+const int UniversalCorrectionDocumentSellerTitleInfo::kDocumentNameFieldNumber;
+const int UniversalCorrectionDocumentSellerTitleInfo::kDocumentDateFieldNumber;
+const int UniversalCorrectionDocumentSellerTitleInfo::kDocumentNumberFieldNumber;
+const int UniversalCorrectionDocumentSellerTitleInfo::kInvoicesFieldNumber;
+const int UniversalCorrectionDocumentSellerTitleInfo::kSellerFieldNumber;
+const int UniversalCorrectionDocumentSellerTitleInfo::kBuyerFieldNumber;
+const int UniversalCorrectionDocumentSellerTitleInfo::kSignersFieldNumber;
+const int UniversalCorrectionDocumentSellerTitleInfo::kEventContentFieldNumber;
+const int UniversalCorrectionDocumentSellerTitleInfo::kInvoiceCorrectionTableFieldNumber;
+const int UniversalCorrectionDocumentSellerTitleInfo::kCurrencyFieldNumber;
+const int UniversalCorrectionDocumentSellerTitleInfo::kCurrencyRateFieldNumber;
+const int UniversalCorrectionDocumentSellerTitleInfo::kCorrectionRevisionDateFieldNumber;
+const int UniversalCorrectionDocumentSellerTitleInfo::kCorrectionRevisionNumberFieldNumber;
+const int UniversalCorrectionDocumentSellerTitleInfo::kAdditionalInfoIdFieldNumber;
+const int UniversalCorrectionDocumentSellerTitleInfo::kDocumentCreatorFieldNumber;
+const int UniversalCorrectionDocumentSellerTitleInfo::kDocumentCreatorBaseFieldNumber;
+const int UniversalCorrectionDocumentSellerTitleInfo::kGovernmentContractInfoFieldNumber;
+#endif  // !_MSC_VER
+
+UniversalCorrectionDocumentSellerTitleInfo::UniversalCorrectionDocumentSellerTitleInfo()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo)
+}
+
+void UniversalCorrectionDocumentSellerTitleInfo::InitAsDefaultInstance() {
+  seller_ = const_cast< ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo*>(&::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo::default_instance());
+  buyer_ = const_cast< ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo*>(&::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo::default_instance());
+  eventcontent_ = const_cast< ::Diadoc::Api::Proto::Invoicing::EventContent*>(&::Diadoc::Api::Proto::Invoicing::EventContent::default_instance());
+  invoicecorrectiontable_ = const_cast< ::Diadoc::Api::Proto::Invoicing::InvoiceCorrectionTable*>(&::Diadoc::Api::Proto::Invoicing::InvoiceCorrectionTable::default_instance());
+  additionalinfoid_ = const_cast< ::Diadoc::Api::Proto::Invoicing::AdditionalInfoId*>(&::Diadoc::Api::Proto::Invoicing::AdditionalInfoId::default_instance());
+}
+
+UniversalCorrectionDocumentSellerTitleInfo::UniversalCorrectionDocumentSellerTitleInfo(const UniversalCorrectionDocumentSellerTitleInfo& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo)
+}
+
+void UniversalCorrectionDocumentSellerTitleInfo::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  function_ = 0;
+  documentname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  documentdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  documentnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  seller_ = NULL;
+  buyer_ = NULL;
+  eventcontent_ = NULL;
+  invoicecorrectiontable_ = NULL;
+  currency_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  currencyrate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  correctionrevisiondate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  correctionrevisionnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  additionalinfoid_ = NULL;
+  documentcreator_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  documentcreatorbase_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  governmentcontractinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+UniversalCorrectionDocumentSellerTitleInfo::~UniversalCorrectionDocumentSellerTitleInfo() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo)
+  SharedDtor();
+}
+
+void UniversalCorrectionDocumentSellerTitleInfo::SharedDtor() {
+  if (documentname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete documentname_;
+  }
+  if (documentdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete documentdate_;
+  }
+  if (documentnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete documentnumber_;
+  }
+  if (currency_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete currency_;
+  }
+  if (currencyrate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete currencyrate_;
+  }
+  if (correctionrevisiondate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete correctionrevisiondate_;
+  }
+  if (correctionrevisionnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete correctionrevisionnumber_;
+  }
+  if (documentcreator_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete documentcreator_;
+  }
+  if (documentcreatorbase_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete documentcreatorbase_;
+  }
+  if (governmentcontractinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete governmentcontractinfo_;
+  }
+  if (this != default_instance_) {
+    delete seller_;
+    delete buyer_;
+    delete eventcontent_;
+    delete invoicecorrectiontable_;
+    delete additionalinfoid_;
+  }
+}
+
+void UniversalCorrectionDocumentSellerTitleInfo::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* UniversalCorrectionDocumentSellerTitleInfo::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return UniversalCorrectionDocumentSellerTitleInfo_descriptor_;
+}
+
+const UniversalCorrectionDocumentSellerTitleInfo& UniversalCorrectionDocumentSellerTitleInfo::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  return *default_instance_;
+}
+
+UniversalCorrectionDocumentSellerTitleInfo* UniversalCorrectionDocumentSellerTitleInfo::default_instance_ = NULL;
+
+UniversalCorrectionDocumentSellerTitleInfo* UniversalCorrectionDocumentSellerTitleInfo::New() const {
+  return new UniversalCorrectionDocumentSellerTitleInfo;
+}
+
+void UniversalCorrectionDocumentSellerTitleInfo::Clear() {
+  if (_has_bits_[0 / 32] & 111) {
+    function_ = 0;
+    if (has_documentname()) {
+      if (documentname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        documentname_->clear();
+      }
+    }
+    if (has_documentdate()) {
+      if (documentdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        documentdate_->clear();
+      }
+    }
+    if (has_documentnumber()) {
+      if (documentnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        documentnumber_->clear();
+      }
+    }
+    if (has_seller()) {
+      if (seller_ != NULL) seller_->::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo::Clear();
+    }
+    if (has_buyer()) {
+      if (buyer_ != NULL) buyer_->::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo::Clear();
+    }
+  }
+  if (_has_bits_[8 / 32] & 65280) {
+    if (has_eventcontent()) {
+      if (eventcontent_ != NULL) eventcontent_->::Diadoc::Api::Proto::Invoicing::EventContent::Clear();
+    }
+    if (has_invoicecorrectiontable()) {
+      if (invoicecorrectiontable_ != NULL) invoicecorrectiontable_->::Diadoc::Api::Proto::Invoicing::InvoiceCorrectionTable::Clear();
+    }
+    if (has_currency()) {
+      if (currency_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        currency_->clear();
+      }
+    }
+    if (has_currencyrate()) {
+      if (currencyrate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        currencyrate_->clear();
+      }
+    }
+    if (has_correctionrevisiondate()) {
+      if (correctionrevisiondate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        correctionrevisiondate_->clear();
+      }
+    }
+    if (has_correctionrevisionnumber()) {
+      if (correctionrevisionnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        correctionrevisionnumber_->clear();
+      }
+    }
+    if (has_additionalinfoid()) {
+      if (additionalinfoid_ != NULL) additionalinfoid_->::Diadoc::Api::Proto::Invoicing::AdditionalInfoId::Clear();
+    }
+    if (has_documentcreator()) {
+      if (documentcreator_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        documentcreator_->clear();
+      }
+    }
+  }
+  if (_has_bits_[16 / 32] & 196608) {
+    if (has_documentcreatorbase()) {
+      if (documentcreatorbase_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        documentcreatorbase_->clear();
+      }
+    }
+    if (has_governmentcontractinfo()) {
+      if (governmentcontractinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        governmentcontractinfo_->clear();
+      }
+    }
+  }
+  invoices_.Clear();
+  signers_.Clear();
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool UniversalCorrectionDocumentSellerTitleInfo::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(16383);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required .Diadoc.Api.Proto.Invoicing.FunctionType Function = 1;
+      case 1: {
+        if (tag == 8) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Diadoc::Api::Proto::Invoicing::FunctionType_IsValid(value)) {
+            set_function(static_cast< ::Diadoc::Api::Proto::Invoicing::FunctionType >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(1, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_DocumentName;
+        break;
+      }
+
+      // optional string DocumentName = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_DocumentName:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_documentname()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->documentname().data(), this->documentname().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "documentname");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_DocumentDate;
+        break;
+      }
+
+      // required string DocumentDate = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_DocumentDate:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_documentdate()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->documentdate().data(), this->documentdate().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "documentdate");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_DocumentNumber;
+        break;
+      }
+
+      // required string DocumentNumber = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_DocumentNumber:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_documentnumber()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->documentnumber().data(), this->documentnumber().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "documentnumber");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_Invoices;
+        break;
+      }
+
+      // repeated .Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo Invoices = 5;
+      case 5: {
+        if (tag == 42) {
+         parse_Invoices:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_invoices()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_Invoices;
+        if (input->ExpectTag(50)) goto parse_Seller;
+        break;
+      }
+
+      // required .Diadoc.Api.Proto.Invoicing.Organizations.ExtendedOrganizationInfo Seller = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_Seller:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_seller()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(58)) goto parse_Buyer;
+        break;
+      }
+
+      // required .Diadoc.Api.Proto.Invoicing.Organizations.ExtendedOrganizationInfo Buyer = 7;
+      case 7: {
+        if (tag == 58) {
+         parse_Buyer:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_buyer()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(66)) goto parse_Signers;
+        break;
+      }
+
+      // repeated .Diadoc.Api.Proto.Invoicing.Signers.ExtendedSigner Signers = 8;
+      case 8: {
+        if (tag == 66) {
+         parse_Signers:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_signers()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(66)) goto parse_Signers;
+        if (input->ExpectTag(74)) goto parse_EventContent;
+        break;
+      }
+
+      // required .Diadoc.Api.Proto.Invoicing.EventContent EventContent = 9;
+      case 9: {
+        if (tag == 74) {
+         parse_EventContent:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_eventcontent()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(82)) goto parse_InvoiceCorrectionTable;
+        break;
+      }
+
+      // required .Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable InvoiceCorrectionTable = 10;
+      case 10: {
+        if (tag == 82) {
+         parse_InvoiceCorrectionTable:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_invoicecorrectiontable()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(90)) goto parse_Currency;
+        break;
+      }
+
+      // required string Currency = 11;
+      case 11: {
+        if (tag == 90) {
+         parse_Currency:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_currency()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->currency().data(), this->currency().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "currency");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(98)) goto parse_CurrencyRate;
+        break;
+      }
+
+      // optional string CurrencyRate = 12;
+      case 12: {
+        if (tag == 98) {
+         parse_CurrencyRate:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_currencyrate()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->currencyrate().data(), this->currencyrate().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "currencyrate");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(106)) goto parse_CorrectionRevisionDate;
+        break;
+      }
+
+      // optional string CorrectionRevisionDate = 13;
+      case 13: {
+        if (tag == 106) {
+         parse_CorrectionRevisionDate:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_correctionrevisiondate()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->correctionrevisiondate().data(), this->correctionrevisiondate().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "correctionrevisiondate");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(114)) goto parse_CorrectionRevisionNumber;
+        break;
+      }
+
+      // optional string CorrectionRevisionNumber = 14;
+      case 14: {
+        if (tag == 114) {
+         parse_CorrectionRevisionNumber:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_correctionrevisionnumber()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->correctionrevisionnumber().data(), this->correctionrevisionnumber().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "correctionrevisionnumber");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(122)) goto parse_AdditionalInfoId;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Invoicing.AdditionalInfoId AdditionalInfoId = 15;
+      case 15: {
+        if (tag == 122) {
+         parse_AdditionalInfoId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_additionalinfoid()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(130)) goto parse_DocumentCreator;
+        break;
+      }
+
+      // required string DocumentCreator = 16;
+      case 16: {
+        if (tag == 130) {
+         parse_DocumentCreator:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_documentcreator()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->documentcreator().data(), this->documentcreator().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "documentcreator");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(138)) goto parse_DocumentCreatorBase;
+        break;
+      }
+
+      // optional string DocumentCreatorBase = 17;
+      case 17: {
+        if (tag == 138) {
+         parse_DocumentCreatorBase:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_documentcreatorbase()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->documentcreatorbase().data(), this->documentcreatorbase().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "documentcreatorbase");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(146)) goto parse_GovernmentContractInfo;
+        break;
+      }
+
+      // optional string GovernmentContractInfo = 18;
+      case 18: {
+        if (tag == 146) {
+         parse_GovernmentContractInfo:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_governmentcontractinfo()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->governmentcontractinfo().data(), this->governmentcontractinfo().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "governmentcontractinfo");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo)
+  return false;
+#undef DO_
+}
+
+void UniversalCorrectionDocumentSellerTitleInfo::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo)
+  // required .Diadoc.Api.Proto.Invoicing.FunctionType Function = 1;
+  if (has_function()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->function(), output);
+  }
+
+  // optional string DocumentName = 2;
+  if (has_documentname()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->documentname().data(), this->documentname().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "documentname");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->documentname(), output);
+  }
+
+  // required string DocumentDate = 3;
+  if (has_documentdate()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->documentdate().data(), this->documentdate().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "documentdate");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->documentdate(), output);
+  }
+
+  // required string DocumentNumber = 4;
+  if (has_documentnumber()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->documentnumber().data(), this->documentnumber().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "documentnumber");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->documentnumber(), output);
+  }
+
+  // repeated .Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo Invoices = 5;
+  for (int i = 0; i < this->invoices_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      5, this->invoices(i), output);
+  }
+
+  // required .Diadoc.Api.Proto.Invoicing.Organizations.ExtendedOrganizationInfo Seller = 6;
+  if (has_seller()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6, this->seller(), output);
+  }
+
+  // required .Diadoc.Api.Proto.Invoicing.Organizations.ExtendedOrganizationInfo Buyer = 7;
+  if (has_buyer()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      7, this->buyer(), output);
+  }
+
+  // repeated .Diadoc.Api.Proto.Invoicing.Signers.ExtendedSigner Signers = 8;
+  for (int i = 0; i < this->signers_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      8, this->signers(i), output);
+  }
+
+  // required .Diadoc.Api.Proto.Invoicing.EventContent EventContent = 9;
+  if (has_eventcontent()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      9, this->eventcontent(), output);
+  }
+
+  // required .Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable InvoiceCorrectionTable = 10;
+  if (has_invoicecorrectiontable()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      10, this->invoicecorrectiontable(), output);
+  }
+
+  // required string Currency = 11;
+  if (has_currency()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->currency().data(), this->currency().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "currency");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      11, this->currency(), output);
+  }
+
+  // optional string CurrencyRate = 12;
+  if (has_currencyrate()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->currencyrate().data(), this->currencyrate().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "currencyrate");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      12, this->currencyrate(), output);
+  }
+
+  // optional string CorrectionRevisionDate = 13;
+  if (has_correctionrevisiondate()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->correctionrevisiondate().data(), this->correctionrevisiondate().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "correctionrevisiondate");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      13, this->correctionrevisiondate(), output);
+  }
+
+  // optional string CorrectionRevisionNumber = 14;
+  if (has_correctionrevisionnumber()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->correctionrevisionnumber().data(), this->correctionrevisionnumber().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "correctionrevisionnumber");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      14, this->correctionrevisionnumber(), output);
+  }
+
+  // optional .Diadoc.Api.Proto.Invoicing.AdditionalInfoId AdditionalInfoId = 15;
+  if (has_additionalinfoid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      15, this->additionalinfoid(), output);
+  }
+
+  // required string DocumentCreator = 16;
+  if (has_documentcreator()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->documentcreator().data(), this->documentcreator().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "documentcreator");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      16, this->documentcreator(), output);
+  }
+
+  // optional string DocumentCreatorBase = 17;
+  if (has_documentcreatorbase()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->documentcreatorbase().data(), this->documentcreatorbase().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "documentcreatorbase");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      17, this->documentcreatorbase(), output);
+  }
+
+  // optional string GovernmentContractInfo = 18;
+  if (has_governmentcontractinfo()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->governmentcontractinfo().data(), this->governmentcontractinfo().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "governmentcontractinfo");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      18, this->governmentcontractinfo(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo)
+}
+
+::google::protobuf::uint8* UniversalCorrectionDocumentSellerTitleInfo::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo)
+  // required .Diadoc.Api.Proto.Invoicing.FunctionType Function = 1;
+  if (has_function()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->function(), target);
+  }
+
+  // optional string DocumentName = 2;
+  if (has_documentname()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->documentname().data(), this->documentname().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "documentname");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->documentname(), target);
+  }
+
+  // required string DocumentDate = 3;
+  if (has_documentdate()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->documentdate().data(), this->documentdate().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "documentdate");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->documentdate(), target);
+  }
+
+  // required string DocumentNumber = 4;
+  if (has_documentnumber()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->documentnumber().data(), this->documentnumber().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "documentnumber");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->documentnumber(), target);
+  }
+
+  // repeated .Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo Invoices = 5;
+  for (int i = 0; i < this->invoices_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        5, this->invoices(i), target);
+  }
+
+  // required .Diadoc.Api.Proto.Invoicing.Organizations.ExtendedOrganizationInfo Seller = 6;
+  if (has_seller()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        6, this->seller(), target);
+  }
+
+  // required .Diadoc.Api.Proto.Invoicing.Organizations.ExtendedOrganizationInfo Buyer = 7;
+  if (has_buyer()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        7, this->buyer(), target);
+  }
+
+  // repeated .Diadoc.Api.Proto.Invoicing.Signers.ExtendedSigner Signers = 8;
+  for (int i = 0; i < this->signers_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        8, this->signers(i), target);
+  }
+
+  // required .Diadoc.Api.Proto.Invoicing.EventContent EventContent = 9;
+  if (has_eventcontent()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        9, this->eventcontent(), target);
+  }
+
+  // required .Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable InvoiceCorrectionTable = 10;
+  if (has_invoicecorrectiontable()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        10, this->invoicecorrectiontable(), target);
+  }
+
+  // required string Currency = 11;
+  if (has_currency()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->currency().data(), this->currency().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "currency");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        11, this->currency(), target);
+  }
+
+  // optional string CurrencyRate = 12;
+  if (has_currencyrate()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->currencyrate().data(), this->currencyrate().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "currencyrate");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        12, this->currencyrate(), target);
+  }
+
+  // optional string CorrectionRevisionDate = 13;
+  if (has_correctionrevisiondate()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->correctionrevisiondate().data(), this->correctionrevisiondate().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "correctionrevisiondate");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        13, this->correctionrevisiondate(), target);
+  }
+
+  // optional string CorrectionRevisionNumber = 14;
+  if (has_correctionrevisionnumber()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->correctionrevisionnumber().data(), this->correctionrevisionnumber().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "correctionrevisionnumber");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        14, this->correctionrevisionnumber(), target);
+  }
+
+  // optional .Diadoc.Api.Proto.Invoicing.AdditionalInfoId AdditionalInfoId = 15;
+  if (has_additionalinfoid()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        15, this->additionalinfoid(), target);
+  }
+
+  // required string DocumentCreator = 16;
+  if (has_documentcreator()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->documentcreator().data(), this->documentcreator().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "documentcreator");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        16, this->documentcreator(), target);
+  }
+
+  // optional string DocumentCreatorBase = 17;
+  if (has_documentcreatorbase()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->documentcreatorbase().data(), this->documentcreatorbase().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "documentcreatorbase");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        17, this->documentcreatorbase(), target);
+  }
+
+  // optional string GovernmentContractInfo = 18;
+  if (has_governmentcontractinfo()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->governmentcontractinfo().data(), this->governmentcontractinfo().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "governmentcontractinfo");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        18, this->governmentcontractinfo(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo)
+  return target;
+}
+
+int UniversalCorrectionDocumentSellerTitleInfo::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required .Diadoc.Api.Proto.Invoicing.FunctionType Function = 1;
+    if (has_function()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->function());
+    }
+
+    // optional string DocumentName = 2;
+    if (has_documentname()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->documentname());
+    }
+
+    // required string DocumentDate = 3;
+    if (has_documentdate()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->documentdate());
+    }
+
+    // required string DocumentNumber = 4;
+    if (has_documentnumber()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->documentnumber());
+    }
+
+    // required .Diadoc.Api.Proto.Invoicing.Organizations.ExtendedOrganizationInfo Seller = 6;
+    if (has_seller()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->seller());
+    }
+
+    // required .Diadoc.Api.Proto.Invoicing.Organizations.ExtendedOrganizationInfo Buyer = 7;
+    if (has_buyer()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->buyer());
+    }
+
+  }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    // required .Diadoc.Api.Proto.Invoicing.EventContent EventContent = 9;
+    if (has_eventcontent()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->eventcontent());
+    }
+
+    // required .Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable InvoiceCorrectionTable = 10;
+    if (has_invoicecorrectiontable()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->invoicecorrectiontable());
+    }
+
+    // required string Currency = 11;
+    if (has_currency()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->currency());
+    }
+
+    // optional string CurrencyRate = 12;
+    if (has_currencyrate()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->currencyrate());
+    }
+
+    // optional string CorrectionRevisionDate = 13;
+    if (has_correctionrevisiondate()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->correctionrevisiondate());
+    }
+
+    // optional string CorrectionRevisionNumber = 14;
+    if (has_correctionrevisionnumber()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->correctionrevisionnumber());
+    }
+
+    // optional .Diadoc.Api.Proto.Invoicing.AdditionalInfoId AdditionalInfoId = 15;
+    if (has_additionalinfoid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->additionalinfoid());
+    }
+
+    // required string DocumentCreator = 16;
+    if (has_documentcreator()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->documentcreator());
+    }
+
+  }
+  if (_has_bits_[16 / 32] & (0xffu << (16 % 32))) {
+    // optional string DocumentCreatorBase = 17;
+    if (has_documentcreatorbase()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->documentcreatorbase());
+    }
+
+    // optional string GovernmentContractInfo = 18;
+    if (has_governmentcontractinfo()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->governmentcontractinfo());
+    }
+
+  }
+  // repeated .Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo Invoices = 5;
+  total_size += 1 * this->invoices_size();
+  for (int i = 0; i < this->invoices_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->invoices(i));
+  }
+
+  // repeated .Diadoc.Api.Proto.Invoicing.Signers.ExtendedSigner Signers = 8;
+  total_size += 1 * this->signers_size();
+  for (int i = 0; i < this->signers_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->signers(i));
+  }
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void UniversalCorrectionDocumentSellerTitleInfo::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const UniversalCorrectionDocumentSellerTitleInfo* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const UniversalCorrectionDocumentSellerTitleInfo*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void UniversalCorrectionDocumentSellerTitleInfo::MergeFrom(const UniversalCorrectionDocumentSellerTitleInfo& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  invoices_.MergeFrom(from.invoices_);
+  signers_.MergeFrom(from.signers_);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_function()) {
+      set_function(from.function());
+    }
+    if (from.has_documentname()) {
+      set_documentname(from.documentname());
+    }
+    if (from.has_documentdate()) {
+      set_documentdate(from.documentdate());
+    }
+    if (from.has_documentnumber()) {
+      set_documentnumber(from.documentnumber());
+    }
+    if (from.has_seller()) {
+      mutable_seller()->::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo::MergeFrom(from.seller());
+    }
+    if (from.has_buyer()) {
+      mutable_buyer()->::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo::MergeFrom(from.buyer());
+    }
+  }
+  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    if (from.has_eventcontent()) {
+      mutable_eventcontent()->::Diadoc::Api::Proto::Invoicing::EventContent::MergeFrom(from.eventcontent());
+    }
+    if (from.has_invoicecorrectiontable()) {
+      mutable_invoicecorrectiontable()->::Diadoc::Api::Proto::Invoicing::InvoiceCorrectionTable::MergeFrom(from.invoicecorrectiontable());
+    }
+    if (from.has_currency()) {
+      set_currency(from.currency());
+    }
+    if (from.has_currencyrate()) {
+      set_currencyrate(from.currencyrate());
+    }
+    if (from.has_correctionrevisiondate()) {
+      set_correctionrevisiondate(from.correctionrevisiondate());
+    }
+    if (from.has_correctionrevisionnumber()) {
+      set_correctionrevisionnumber(from.correctionrevisionnumber());
+    }
+    if (from.has_additionalinfoid()) {
+      mutable_additionalinfoid()->::Diadoc::Api::Proto::Invoicing::AdditionalInfoId::MergeFrom(from.additionalinfoid());
+    }
+    if (from.has_documentcreator()) {
+      set_documentcreator(from.documentcreator());
+    }
+  }
+  if (from._has_bits_[16 / 32] & (0xffu << (16 % 32))) {
+    if (from.has_documentcreatorbase()) {
+      set_documentcreatorbase(from.documentcreatorbase());
+    }
+    if (from.has_governmentcontractinfo()) {
+      set_governmentcontractinfo(from.governmentcontractinfo());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void UniversalCorrectionDocumentSellerTitleInfo::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void UniversalCorrectionDocumentSellerTitleInfo::CopyFrom(const UniversalCorrectionDocumentSellerTitleInfo& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UniversalCorrectionDocumentSellerTitleInfo::IsInitialized() const {
+  if ((_has_bits_[0] & 0x0000876d) != 0x0000876d) return false;
+
+  if (!::google::protobuf::internal::AllAreInitialized(this->invoices())) return false;
+  if (has_seller()) {
+    if (!this->seller().IsInitialized()) return false;
+  }
+  if (has_buyer()) {
+    if (!this->buyer().IsInitialized()) return false;
+  }
+  if (!::google::protobuf::internal::AllAreInitialized(this->signers())) return false;
+  if (has_eventcontent()) {
+    if (!this->eventcontent().IsInitialized()) return false;
+  }
+  if (has_invoicecorrectiontable()) {
+    if (!this->invoicecorrectiontable().IsInitialized()) return false;
+  }
+  if (has_additionalinfoid()) {
+    if (!this->additionalinfoid().IsInitialized()) return false;
+  }
+  return true;
+}
+
+void UniversalCorrectionDocumentSellerTitleInfo::Swap(UniversalCorrectionDocumentSellerTitleInfo* other) {
+  if (other != this) {
+    std::swap(function_, other->function_);
+    std::swap(documentname_, other->documentname_);
+    std::swap(documentdate_, other->documentdate_);
+    std::swap(documentnumber_, other->documentnumber_);
+    invoices_.Swap(&other->invoices_);
+    std::swap(seller_, other->seller_);
+    std::swap(buyer_, other->buyer_);
+    signers_.Swap(&other->signers_);
+    std::swap(eventcontent_, other->eventcontent_);
+    std::swap(invoicecorrectiontable_, other->invoicecorrectiontable_);
+    std::swap(currency_, other->currency_);
+    std::swap(currencyrate_, other->currencyrate_);
+    std::swap(correctionrevisiondate_, other->correctionrevisiondate_);
+    std::swap(correctionrevisionnumber_, other->correctionrevisionnumber_);
+    std::swap(additionalinfoid_, other->additionalinfoid_);
+    std::swap(documentcreator_, other->documentcreator_);
+    std::swap(documentcreatorbase_, other->documentcreatorbase_);
+    std::swap(governmentcontractinfo_, other->governmentcontractinfo_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata UniversalCorrectionDocumentSellerTitleInfo::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = UniversalCorrectionDocumentSellerTitleInfo_descriptor_;
+  metadata.reflection = UniversalCorrectionDocumentSellerTitleInfo_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int InvoiceForCorrectionInfo::kInvoiceDateFieldNumber;
+const int InvoiceForCorrectionInfo::kInvoiceNumberFieldNumber;
+const int InvoiceForCorrectionInfo::kInvoiceRevisionsFieldNumber;
+#endif  // !_MSC_VER
+
+InvoiceForCorrectionInfo::InvoiceForCorrectionInfo()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo)
+}
+
+void InvoiceForCorrectionInfo::InitAsDefaultInstance() {
+}
+
+InvoiceForCorrectionInfo::InvoiceForCorrectionInfo(const InvoiceForCorrectionInfo& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo)
+}
+
+void InvoiceForCorrectionInfo::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  invoicedate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  invoicenumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+InvoiceForCorrectionInfo::~InvoiceForCorrectionInfo() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo)
+  SharedDtor();
+}
+
+void InvoiceForCorrectionInfo::SharedDtor() {
+  if (invoicedate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete invoicedate_;
+  }
+  if (invoicenumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete invoicenumber_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void InvoiceForCorrectionInfo::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* InvoiceForCorrectionInfo::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return InvoiceForCorrectionInfo_descriptor_;
+}
+
+const InvoiceForCorrectionInfo& InvoiceForCorrectionInfo::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  return *default_instance_;
+}
+
+InvoiceForCorrectionInfo* InvoiceForCorrectionInfo::default_instance_ = NULL;
+
+InvoiceForCorrectionInfo* InvoiceForCorrectionInfo::New() const {
+  return new InvoiceForCorrectionInfo;
+}
+
+void InvoiceForCorrectionInfo::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    if (has_invoicedate()) {
+      if (invoicedate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        invoicedate_->clear();
+      }
+    }
+    if (has_invoicenumber()) {
+      if (invoicenumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        invoicenumber_->clear();
+      }
+    }
+  }
+  invoicerevisions_.Clear();
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool InvoiceForCorrectionInfo::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required string InvoiceDate = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_invoicedate()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->invoicedate().data(), this->invoicedate().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "invoicedate");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_InvoiceNumber;
+        break;
+      }
+
+      // required string InvoiceNumber = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_InvoiceNumber:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_invoicenumber()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->invoicenumber().data(), this->invoicenumber().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "invoicenumber");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_InvoiceRevisions;
+        break;
+      }
+
+      // repeated .Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo InvoiceRevisions = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_InvoiceRevisions:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_invoicerevisions()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_InvoiceRevisions;
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo)
+  return false;
+#undef DO_
+}
+
+void InvoiceForCorrectionInfo::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo)
+  // required string InvoiceDate = 1;
+  if (has_invoicedate()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->invoicedate().data(), this->invoicedate().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "invoicedate");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->invoicedate(), output);
+  }
+
+  // required string InvoiceNumber = 2;
+  if (has_invoicenumber()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->invoicenumber().data(), this->invoicenumber().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "invoicenumber");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->invoicenumber(), output);
+  }
+
+  // repeated .Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo InvoiceRevisions = 3;
+  for (int i = 0; i < this->invoicerevisions_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, this->invoicerevisions(i), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo)
+}
+
+::google::protobuf::uint8* InvoiceForCorrectionInfo::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo)
+  // required string InvoiceDate = 1;
+  if (has_invoicedate()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->invoicedate().data(), this->invoicedate().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "invoicedate");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->invoicedate(), target);
+  }
+
+  // required string InvoiceNumber = 2;
+  if (has_invoicenumber()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->invoicenumber().data(), this->invoicenumber().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "invoicenumber");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->invoicenumber(), target);
+  }
+
+  // repeated .Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo InvoiceRevisions = 3;
+  for (int i = 0; i < this->invoicerevisions_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        3, this->invoicerevisions(i), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo)
+  return target;
+}
+
+int InvoiceForCorrectionInfo::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required string InvoiceDate = 1;
+    if (has_invoicedate()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->invoicedate());
+    }
+
+    // required string InvoiceNumber = 2;
+    if (has_invoicenumber()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->invoicenumber());
+    }
+
+  }
+  // repeated .Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo InvoiceRevisions = 3;
+  total_size += 1 * this->invoicerevisions_size();
+  for (int i = 0; i < this->invoicerevisions_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->invoicerevisions(i));
+  }
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void InvoiceForCorrectionInfo::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const InvoiceForCorrectionInfo* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const InvoiceForCorrectionInfo*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void InvoiceForCorrectionInfo::MergeFrom(const InvoiceForCorrectionInfo& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  invoicerevisions_.MergeFrom(from.invoicerevisions_);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_invoicedate()) {
+      set_invoicedate(from.invoicedate());
+    }
+    if (from.has_invoicenumber()) {
+      set_invoicenumber(from.invoicenumber());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void InvoiceForCorrectionInfo::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void InvoiceForCorrectionInfo::CopyFrom(const InvoiceForCorrectionInfo& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool InvoiceForCorrectionInfo::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+
+  if (!::google::protobuf::internal::AllAreInitialized(this->invoicerevisions())) return false;
+  return true;
+}
+
+void InvoiceForCorrectionInfo::Swap(InvoiceForCorrectionInfo* other) {
+  if (other != this) {
+    std::swap(invoicedate_, other->invoicedate_);
+    std::swap(invoicenumber_, other->invoicenumber_);
+    invoicerevisions_.Swap(&other->invoicerevisions_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata InvoiceForCorrectionInfo::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = InvoiceForCorrectionInfo_descriptor_;
+  metadata.reflection = InvoiceForCorrectionInfo_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int InvoiceRevisionInfo::kInvoiceRevisionDateFieldNumber;
+const int InvoiceRevisionInfo::kInvoiceRevisionNumberFieldNumber;
+#endif  // !_MSC_VER
+
+InvoiceRevisionInfo::InvoiceRevisionInfo()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo)
+}
+
+void InvoiceRevisionInfo::InitAsDefaultInstance() {
+}
+
+InvoiceRevisionInfo::InvoiceRevisionInfo(const InvoiceRevisionInfo& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo)
+}
+
+void InvoiceRevisionInfo::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  invoicerevisiondate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  invoicerevisionnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+InvoiceRevisionInfo::~InvoiceRevisionInfo() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo)
+  SharedDtor();
+}
+
+void InvoiceRevisionInfo::SharedDtor() {
+  if (invoicerevisiondate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete invoicerevisiondate_;
+  }
+  if (invoicerevisionnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete invoicerevisionnumber_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void InvoiceRevisionInfo::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* InvoiceRevisionInfo::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return InvoiceRevisionInfo_descriptor_;
+}
+
+const InvoiceRevisionInfo& InvoiceRevisionInfo::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  return *default_instance_;
+}
+
+InvoiceRevisionInfo* InvoiceRevisionInfo::default_instance_ = NULL;
+
+InvoiceRevisionInfo* InvoiceRevisionInfo::New() const {
+  return new InvoiceRevisionInfo;
+}
+
+void InvoiceRevisionInfo::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    if (has_invoicerevisiondate()) {
+      if (invoicerevisiondate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        invoicerevisiondate_->clear();
+      }
+    }
+    if (has_invoicerevisionnumber()) {
+      if (invoicerevisionnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        invoicerevisionnumber_->clear();
+      }
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool InvoiceRevisionInfo::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required string InvoiceRevisionDate = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_invoicerevisiondate()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->invoicerevisiondate().data(), this->invoicerevisiondate().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "invoicerevisiondate");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_InvoiceRevisionNumber;
+        break;
+      }
+
+      // required string InvoiceRevisionNumber = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_InvoiceRevisionNumber:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_invoicerevisionnumber()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->invoicerevisionnumber().data(), this->invoicerevisionnumber().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "invoicerevisionnumber");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo)
+  return false;
+#undef DO_
+}
+
+void InvoiceRevisionInfo::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo)
+  // required string InvoiceRevisionDate = 1;
+  if (has_invoicerevisiondate()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->invoicerevisiondate().data(), this->invoicerevisiondate().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "invoicerevisiondate");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->invoicerevisiondate(), output);
+  }
+
+  // required string InvoiceRevisionNumber = 2;
+  if (has_invoicerevisionnumber()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->invoicerevisionnumber().data(), this->invoicerevisionnumber().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "invoicerevisionnumber");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->invoicerevisionnumber(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo)
+}
+
+::google::protobuf::uint8* InvoiceRevisionInfo::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo)
+  // required string InvoiceRevisionDate = 1;
+  if (has_invoicerevisiondate()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->invoicerevisiondate().data(), this->invoicerevisiondate().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "invoicerevisiondate");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->invoicerevisiondate(), target);
+  }
+
+  // required string InvoiceRevisionNumber = 2;
+  if (has_invoicerevisionnumber()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->invoicerevisionnumber().data(), this->invoicerevisionnumber().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "invoicerevisionnumber");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->invoicerevisionnumber(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo)
+  return target;
+}
+
+int InvoiceRevisionInfo::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required string InvoiceRevisionDate = 1;
+    if (has_invoicerevisiondate()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->invoicerevisiondate());
+    }
+
+    // required string InvoiceRevisionNumber = 2;
+    if (has_invoicerevisionnumber()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->invoicerevisionnumber());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void InvoiceRevisionInfo::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const InvoiceRevisionInfo* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const InvoiceRevisionInfo*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void InvoiceRevisionInfo::MergeFrom(const InvoiceRevisionInfo& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_invoicerevisiondate()) {
+      set_invoicerevisiondate(from.invoicerevisiondate());
+    }
+    if (from.has_invoicerevisionnumber()) {
+      set_invoicerevisionnumber(from.invoicerevisionnumber());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void InvoiceRevisionInfo::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void InvoiceRevisionInfo::CopyFrom(const InvoiceRevisionInfo& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool InvoiceRevisionInfo::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+
+  return true;
+}
+
+void InvoiceRevisionInfo::Swap(InvoiceRevisionInfo* other) {
+  if (other != this) {
+    std::swap(invoicerevisiondate_, other->invoicerevisiondate_);
+    std::swap(invoicerevisionnumber_, other->invoicerevisionnumber_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata InvoiceRevisionInfo::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = InvoiceRevisionInfo_descriptor_;
+  metadata.reflection = InvoiceRevisionInfo_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int EventContent::kCostChangeInfoFieldNumber;
+const int EventContent::kTransferDocDetailsFieldNumber;
+const int EventContent::kOperationContentFieldNumber;
+const int EventContent::kNotificationDateFieldNumber;
+const int EventContent::kCorrectionBaseFieldNumber;
+#endif  // !_MSC_VER
+
+EventContent::EventContent()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Invoicing.EventContent)
+}
+
+void EventContent::InitAsDefaultInstance() {
+}
+
+EventContent::EventContent(const EventContent& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Invoicing.EventContent)
+}
+
+void EventContent::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  costchangeinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  transferdocdetails_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  operationcontent_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  notificationdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+EventContent::~EventContent() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Invoicing.EventContent)
+  SharedDtor();
+}
+
+void EventContent::SharedDtor() {
+  if (costchangeinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete costchangeinfo_;
+  }
+  if (transferdocdetails_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete transferdocdetails_;
+  }
+  if (operationcontent_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete operationcontent_;
+  }
+  if (notificationdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete notificationdate_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void EventContent::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* EventContent::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return EventContent_descriptor_;
+}
+
+const EventContent& EventContent::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  return *default_instance_;
+}
+
+EventContent* EventContent::default_instance_ = NULL;
+
+EventContent* EventContent::New() const {
+  return new EventContent;
+}
+
+void EventContent::Clear() {
+  if (_has_bits_[0 / 32] & 15) {
+    if (has_costchangeinfo()) {
+      if (costchangeinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        costchangeinfo_->clear();
+      }
+    }
+    if (has_transferdocdetails()) {
+      if (transferdocdetails_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        transferdocdetails_->clear();
+      }
+    }
+    if (has_operationcontent()) {
+      if (operationcontent_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        operationcontent_->clear();
+      }
+    }
+    if (has_notificationdate()) {
+      if (notificationdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        notificationdate_->clear();
+      }
+    }
+  }
+  correctionbase_.Clear();
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool EventContent::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Invoicing.EventContent)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional string CostChangeInfo = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_costchangeinfo()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->costchangeinfo().data(), this->costchangeinfo().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "costchangeinfo");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_TransferDocDetails;
+        break;
+      }
+
+      // required string TransferDocDetails = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_TransferDocDetails:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_transferdocdetails()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->transferdocdetails().data(), this->transferdocdetails().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "transferdocdetails");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_OperationContent;
+        break;
+      }
+
+      // required string OperationContent = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_OperationContent:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_operationcontent()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->operationcontent().data(), this->operationcontent().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "operationcontent");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_NotificationDate;
+        break;
+      }
+
+      // optional string NotificationDate = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_NotificationDate:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_notificationdate()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->notificationdate().data(), this->notificationdate().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "notificationdate");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_CorrectionBase;
+        break;
+      }
+
+      // repeated .Diadoc.Api.Proto.Invoicing.CorrectionBase CorrectionBase = 5;
+      case 5: {
+        if (tag == 42) {
+         parse_CorrectionBase:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_correctionbase()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_CorrectionBase;
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Invoicing.EventContent)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Invoicing.EventContent)
+  return false;
+#undef DO_
+}
+
+void EventContent::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Invoicing.EventContent)
+  // optional string CostChangeInfo = 1;
+  if (has_costchangeinfo()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->costchangeinfo().data(), this->costchangeinfo().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "costchangeinfo");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->costchangeinfo(), output);
+  }
+
+  // required string TransferDocDetails = 2;
+  if (has_transferdocdetails()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->transferdocdetails().data(), this->transferdocdetails().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "transferdocdetails");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->transferdocdetails(), output);
+  }
+
+  // required string OperationContent = 3;
+  if (has_operationcontent()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->operationcontent().data(), this->operationcontent().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "operationcontent");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->operationcontent(), output);
+  }
+
+  // optional string NotificationDate = 4;
+  if (has_notificationdate()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->notificationdate().data(), this->notificationdate().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "notificationdate");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->notificationdate(), output);
+  }
+
+  // repeated .Diadoc.Api.Proto.Invoicing.CorrectionBase CorrectionBase = 5;
+  for (int i = 0; i < this->correctionbase_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      5, this->correctionbase(i), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Invoicing.EventContent)
+}
+
+::google::protobuf::uint8* EventContent::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Invoicing.EventContent)
+  // optional string CostChangeInfo = 1;
+  if (has_costchangeinfo()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->costchangeinfo().data(), this->costchangeinfo().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "costchangeinfo");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->costchangeinfo(), target);
+  }
+
+  // required string TransferDocDetails = 2;
+  if (has_transferdocdetails()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->transferdocdetails().data(), this->transferdocdetails().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "transferdocdetails");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->transferdocdetails(), target);
+  }
+
+  // required string OperationContent = 3;
+  if (has_operationcontent()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->operationcontent().data(), this->operationcontent().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "operationcontent");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->operationcontent(), target);
+  }
+
+  // optional string NotificationDate = 4;
+  if (has_notificationdate()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->notificationdate().data(), this->notificationdate().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "notificationdate");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->notificationdate(), target);
+  }
+
+  // repeated .Diadoc.Api.Proto.Invoicing.CorrectionBase CorrectionBase = 5;
+  for (int i = 0; i < this->correctionbase_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        5, this->correctionbase(i), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Invoicing.EventContent)
+  return target;
+}
+
+int EventContent::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional string CostChangeInfo = 1;
+    if (has_costchangeinfo()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->costchangeinfo());
+    }
+
+    // required string TransferDocDetails = 2;
+    if (has_transferdocdetails()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->transferdocdetails());
+    }
+
+    // required string OperationContent = 3;
+    if (has_operationcontent()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->operationcontent());
+    }
+
+    // optional string NotificationDate = 4;
+    if (has_notificationdate()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->notificationdate());
+    }
+
+  }
+  // repeated .Diadoc.Api.Proto.Invoicing.CorrectionBase CorrectionBase = 5;
+  total_size += 1 * this->correctionbase_size();
+  for (int i = 0; i < this->correctionbase_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->correctionbase(i));
+  }
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void EventContent::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const EventContent* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const EventContent*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void EventContent::MergeFrom(const EventContent& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  correctionbase_.MergeFrom(from.correctionbase_);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_costchangeinfo()) {
+      set_costchangeinfo(from.costchangeinfo());
+    }
+    if (from.has_transferdocdetails()) {
+      set_transferdocdetails(from.transferdocdetails());
+    }
+    if (from.has_operationcontent()) {
+      set_operationcontent(from.operationcontent());
+    }
+    if (from.has_notificationdate()) {
+      set_notificationdate(from.notificationdate());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void EventContent::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void EventContent::CopyFrom(const EventContent& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool EventContent::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000006) != 0x00000006) return false;
+
+  if (!::google::protobuf::internal::AllAreInitialized(this->correctionbase())) return false;
+  return true;
+}
+
+void EventContent::Swap(EventContent* other) {
+  if (other != this) {
+    std::swap(costchangeinfo_, other->costchangeinfo_);
+    std::swap(transferdocdetails_, other->transferdocdetails_);
+    std::swap(operationcontent_, other->operationcontent_);
+    std::swap(notificationdate_, other->notificationdate_);
+    correctionbase_.Swap(&other->correctionbase_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata EventContent::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = EventContent_descriptor_;
+  metadata.reflection = EventContent_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CorrectionBase::kBaseDocumentNameFieldNumber;
+const int CorrectionBase::kBaseDocumentNumberFieldNumber;
+const int CorrectionBase::kBaseDocumentDateFieldNumber;
+const int CorrectionBase::kAdditionalInfoFieldNumber;
+#endif  // !_MSC_VER
+
+CorrectionBase::CorrectionBase()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Invoicing.CorrectionBase)
+}
+
+void CorrectionBase::InitAsDefaultInstance() {
+}
+
+CorrectionBase::CorrectionBase(const CorrectionBase& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Invoicing.CorrectionBase)
+}
+
+void CorrectionBase::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  basedocumentname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  basedocumentnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  basedocumentdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  additionalinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CorrectionBase::~CorrectionBase() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Invoicing.CorrectionBase)
+  SharedDtor();
+}
+
+void CorrectionBase::SharedDtor() {
+  if (basedocumentname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete basedocumentname_;
+  }
+  if (basedocumentnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete basedocumentnumber_;
+  }
+  if (basedocumentdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete basedocumentdate_;
+  }
+  if (additionalinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete additionalinfo_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void CorrectionBase::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CorrectionBase::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CorrectionBase_descriptor_;
+}
+
+const CorrectionBase& CorrectionBase::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  return *default_instance_;
+}
+
+CorrectionBase* CorrectionBase::default_instance_ = NULL;
+
+CorrectionBase* CorrectionBase::New() const {
+  return new CorrectionBase;
+}
+
+void CorrectionBase::Clear() {
+  if (_has_bits_[0 / 32] & 15) {
+    if (has_basedocumentname()) {
+      if (basedocumentname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        basedocumentname_->clear();
+      }
+    }
+    if (has_basedocumentnumber()) {
+      if (basedocumentnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        basedocumentnumber_->clear();
+      }
+    }
+    if (has_basedocumentdate()) {
+      if (basedocumentdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        basedocumentdate_->clear();
+      }
+    }
+    if (has_additionalinfo()) {
+      if (additionalinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        additionalinfo_->clear();
+      }
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CorrectionBase::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Invoicing.CorrectionBase)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required string BaseDocumentName = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_basedocumentname()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->basedocumentname().data(), this->basedocumentname().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "basedocumentname");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_BaseDocumentNumber;
+        break;
+      }
+
+      // optional string BaseDocumentNumber = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_BaseDocumentNumber:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_basedocumentnumber()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->basedocumentnumber().data(), this->basedocumentnumber().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "basedocumentnumber");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_BaseDocumentDate;
+        break;
+      }
+
+      // optional string BaseDocumentDate = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_BaseDocumentDate:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_basedocumentdate()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->basedocumentdate().data(), this->basedocumentdate().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "basedocumentdate");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_AdditionalInfo;
+        break;
+      }
+
+      // optional string AdditionalInfo = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_AdditionalInfo:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_additionalinfo()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->additionalinfo().data(), this->additionalinfo().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "additionalinfo");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Invoicing.CorrectionBase)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Invoicing.CorrectionBase)
+  return false;
+#undef DO_
+}
+
+void CorrectionBase::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Invoicing.CorrectionBase)
+  // required string BaseDocumentName = 1;
+  if (has_basedocumentname()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->basedocumentname().data(), this->basedocumentname().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "basedocumentname");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->basedocumentname(), output);
+  }
+
+  // optional string BaseDocumentNumber = 2;
+  if (has_basedocumentnumber()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->basedocumentnumber().data(), this->basedocumentnumber().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "basedocumentnumber");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->basedocumentnumber(), output);
+  }
+
+  // optional string BaseDocumentDate = 3;
+  if (has_basedocumentdate()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->basedocumentdate().data(), this->basedocumentdate().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "basedocumentdate");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->basedocumentdate(), output);
+  }
+
+  // optional string AdditionalInfo = 4;
+  if (has_additionalinfo()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->additionalinfo().data(), this->additionalinfo().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "additionalinfo");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->additionalinfo(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Invoicing.CorrectionBase)
+}
+
+::google::protobuf::uint8* CorrectionBase::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Invoicing.CorrectionBase)
+  // required string BaseDocumentName = 1;
+  if (has_basedocumentname()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->basedocumentname().data(), this->basedocumentname().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "basedocumentname");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->basedocumentname(), target);
+  }
+
+  // optional string BaseDocumentNumber = 2;
+  if (has_basedocumentnumber()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->basedocumentnumber().data(), this->basedocumentnumber().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "basedocumentnumber");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->basedocumentnumber(), target);
+  }
+
+  // optional string BaseDocumentDate = 3;
+  if (has_basedocumentdate()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->basedocumentdate().data(), this->basedocumentdate().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "basedocumentdate");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->basedocumentdate(), target);
+  }
+
+  // optional string AdditionalInfo = 4;
+  if (has_additionalinfo()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->additionalinfo().data(), this->additionalinfo().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "additionalinfo");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->additionalinfo(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Invoicing.CorrectionBase)
+  return target;
+}
+
+int CorrectionBase::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required string BaseDocumentName = 1;
+    if (has_basedocumentname()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->basedocumentname());
+    }
+
+    // optional string BaseDocumentNumber = 2;
+    if (has_basedocumentnumber()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->basedocumentnumber());
+    }
+
+    // optional string BaseDocumentDate = 3;
+    if (has_basedocumentdate()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->basedocumentdate());
+    }
+
+    // optional string AdditionalInfo = 4;
+    if (has_additionalinfo()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->additionalinfo());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CorrectionBase::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CorrectionBase* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CorrectionBase*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CorrectionBase::MergeFrom(const CorrectionBase& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_basedocumentname()) {
+      set_basedocumentname(from.basedocumentname());
+    }
+    if (from.has_basedocumentnumber()) {
+      set_basedocumentnumber(from.basedocumentnumber());
+    }
+    if (from.has_basedocumentdate()) {
+      set_basedocumentdate(from.basedocumentdate());
+    }
+    if (from.has_additionalinfo()) {
+      set_additionalinfo(from.additionalinfo());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CorrectionBase::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CorrectionBase::CopyFrom(const CorrectionBase& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CorrectionBase::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+
+  return true;
+}
+
+void CorrectionBase::Swap(CorrectionBase* other) {
+  if (other != this) {
+    std::swap(basedocumentname_, other->basedocumentname_);
+    std::swap(basedocumentnumber_, other->basedocumentnumber_);
+    std::swap(basedocumentdate_, other->basedocumentdate_);
+    std::swap(additionalinfo_, other->additionalinfo_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CorrectionBase::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CorrectionBase_descriptor_;
+  metadata.reflection = CorrectionBase_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int InvoiceCorrectionTable::kItemsFieldNumber;
+const int InvoiceCorrectionTable::kTotalsIncFieldNumber;
+const int InvoiceCorrectionTable::kTotalsDecFieldNumber;
+#endif  // !_MSC_VER
+
+InvoiceCorrectionTable::InvoiceCorrectionTable()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable)
+}
+
+void InvoiceCorrectionTable::InitAsDefaultInstance() {
+  totalsinc_ = const_cast< ::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff*>(&::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff::default_instance());
+  totalsdec_ = const_cast< ::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff*>(&::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff::default_instance());
+}
+
+InvoiceCorrectionTable::InvoiceCorrectionTable(const InvoiceCorrectionTable& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable)
+}
+
+void InvoiceCorrectionTable::SharedCtor() {
+  _cached_size_ = 0;
+  totalsinc_ = NULL;
+  totalsdec_ = NULL;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+InvoiceCorrectionTable::~InvoiceCorrectionTable() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable)
+  SharedDtor();
+}
+
+void InvoiceCorrectionTable::SharedDtor() {
+  if (this != default_instance_) {
+    delete totalsinc_;
+    delete totalsdec_;
+  }
+}
+
+void InvoiceCorrectionTable::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* InvoiceCorrectionTable::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return InvoiceCorrectionTable_descriptor_;
+}
+
+const InvoiceCorrectionTable& InvoiceCorrectionTable::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  return *default_instance_;
+}
+
+InvoiceCorrectionTable* InvoiceCorrectionTable::default_instance_ = NULL;
+
+InvoiceCorrectionTable* InvoiceCorrectionTable::New() const {
+  return new InvoiceCorrectionTable;
+}
+
+void InvoiceCorrectionTable::Clear() {
+  if (_has_bits_[0 / 32] & 6) {
+    if (has_totalsinc()) {
+      if (totalsinc_ != NULL) totalsinc_->::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff::Clear();
+    }
+    if (has_totalsdec()) {
+      if (totalsdec_ != NULL) totalsdec_->::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff::Clear();
+    }
+  }
+  items_.Clear();
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool InvoiceCorrectionTable::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // repeated .Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem Items = 1;
+      case 1: {
+        if (tag == 10) {
+         parse_Items:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_items()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(10)) goto parse_Items;
+        if (input->ExpectTag(18)) goto parse_TotalsInc;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Invoicing.InvoiceTotalsDiff TotalsInc = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_TotalsInc:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_totalsinc()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_TotalsDec;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Invoicing.InvoiceTotalsDiff TotalsDec = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_TotalsDec:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_totalsdec()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable)
+  return false;
+#undef DO_
+}
+
+void InvoiceCorrectionTable::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable)
+  // repeated .Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem Items = 1;
+  for (int i = 0; i < this->items_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->items(i), output);
+  }
+
+  // optional .Diadoc.Api.Proto.Invoicing.InvoiceTotalsDiff TotalsInc = 2;
+  if (has_totalsinc()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->totalsinc(), output);
+  }
+
+  // optional .Diadoc.Api.Proto.Invoicing.InvoiceTotalsDiff TotalsDec = 3;
+  if (has_totalsdec()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, this->totalsdec(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable)
+}
+
+::google::protobuf::uint8* InvoiceCorrectionTable::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable)
+  // repeated .Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem Items = 1;
+  for (int i = 0; i < this->items_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, this->items(i), target);
+  }
+
+  // optional .Diadoc.Api.Proto.Invoicing.InvoiceTotalsDiff TotalsInc = 2;
+  if (has_totalsinc()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        2, this->totalsinc(), target);
+  }
+
+  // optional .Diadoc.Api.Proto.Invoicing.InvoiceTotalsDiff TotalsDec = 3;
+  if (has_totalsdec()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        3, this->totalsdec(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable)
+  return target;
+}
+
+int InvoiceCorrectionTable::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[1 / 32] & (0xffu << (1 % 32))) {
+    // optional .Diadoc.Api.Proto.Invoicing.InvoiceTotalsDiff TotalsInc = 2;
+    if (has_totalsinc()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->totalsinc());
+    }
+
+    // optional .Diadoc.Api.Proto.Invoicing.InvoiceTotalsDiff TotalsDec = 3;
+    if (has_totalsdec()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->totalsdec());
+    }
+
+  }
+  // repeated .Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem Items = 1;
+  total_size += 1 * this->items_size();
+  for (int i = 0; i < this->items_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->items(i));
+  }
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void InvoiceCorrectionTable::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const InvoiceCorrectionTable* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const InvoiceCorrectionTable*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void InvoiceCorrectionTable::MergeFrom(const InvoiceCorrectionTable& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  items_.MergeFrom(from.items_);
+  if (from._has_bits_[1 / 32] & (0xffu << (1 % 32))) {
+    if (from.has_totalsinc()) {
+      mutable_totalsinc()->::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff::MergeFrom(from.totalsinc());
+    }
+    if (from.has_totalsdec()) {
+      mutable_totalsdec()->::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff::MergeFrom(from.totalsdec());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void InvoiceCorrectionTable::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void InvoiceCorrectionTable::CopyFrom(const InvoiceCorrectionTable& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool InvoiceCorrectionTable::IsInitialized() const {
+
+  if (!::google::protobuf::internal::AllAreInitialized(this->items())) return false;
+  if (has_totalsinc()) {
+    if (!this->totalsinc().IsInitialized()) return false;
+  }
+  if (has_totalsdec()) {
+    if (!this->totalsdec().IsInitialized()) return false;
+  }
+  return true;
+}
+
+void InvoiceCorrectionTable::Swap(InvoiceCorrectionTable* other) {
+  if (other != this) {
+    items_.Swap(&other->items_);
+    std::swap(totalsinc_, other->totalsinc_);
+    std::swap(totalsdec_, other->totalsdec_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata InvoiceCorrectionTable::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = InvoiceCorrectionTable_descriptor_;
+  metadata.reflection = InvoiceCorrectionTable_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int ExtendedInvoiceCorrectionItem::kProductFieldNumber;
+const int ExtendedInvoiceCorrectionItem::kOriginalValuesFieldNumber;
+const int ExtendedInvoiceCorrectionItem::kCorrectedValuesFieldNumber;
+const int ExtendedInvoiceCorrectionItem::kAmountsIncFieldNumber;
+const int ExtendedInvoiceCorrectionItem::kAmountsDecFieldNumber;
+const int ExtendedInvoiceCorrectionItem::kItemAccountDebitFieldNumber;
+const int ExtendedInvoiceCorrectionItem::kItemAccountCreditFieldNumber;
+const int ExtendedInvoiceCorrectionItem::kAdditionalInfoFieldNumber;
+#endif  // !_MSC_VER
+
+ExtendedInvoiceCorrectionItem::ExtendedInvoiceCorrectionItem()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem)
+}
+
+void ExtendedInvoiceCorrectionItem::InitAsDefaultInstance() {
+  originalvalues_ = const_cast< ::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields*>(&::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields::default_instance());
+  correctedvalues_ = const_cast< ::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields*>(&::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields::default_instance());
+  amountsinc_ = const_cast< ::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff*>(&::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff::default_instance());
+  amountsdec_ = const_cast< ::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff*>(&::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff::default_instance());
+}
+
+ExtendedInvoiceCorrectionItem::ExtendedInvoiceCorrectionItem(const ExtendedInvoiceCorrectionItem& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem)
+}
+
+void ExtendedInvoiceCorrectionItem::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  product_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  originalvalues_ = NULL;
+  correctedvalues_ = NULL;
+  amountsinc_ = NULL;
+  amountsdec_ = NULL;
+  itemaccountdebit_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  itemaccountcredit_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+ExtendedInvoiceCorrectionItem::~ExtendedInvoiceCorrectionItem() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem)
+  SharedDtor();
+}
+
+void ExtendedInvoiceCorrectionItem::SharedDtor() {
+  if (product_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete product_;
+  }
+  if (itemaccountdebit_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete itemaccountdebit_;
+  }
+  if (itemaccountcredit_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete itemaccountcredit_;
+  }
+  if (this != default_instance_) {
+    delete originalvalues_;
+    delete correctedvalues_;
+    delete amountsinc_;
+    delete amountsdec_;
+  }
+}
+
+void ExtendedInvoiceCorrectionItem::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* ExtendedInvoiceCorrectionItem::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return ExtendedInvoiceCorrectionItem_descriptor_;
+}
+
+const ExtendedInvoiceCorrectionItem& ExtendedInvoiceCorrectionItem::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  return *default_instance_;
+}
+
+ExtendedInvoiceCorrectionItem* ExtendedInvoiceCorrectionItem::default_instance_ = NULL;
+
+ExtendedInvoiceCorrectionItem* ExtendedInvoiceCorrectionItem::New() const {
+  return new ExtendedInvoiceCorrectionItem;
+}
+
+void ExtendedInvoiceCorrectionItem::Clear() {
+  if (_has_bits_[0 / 32] & 127) {
+    if (has_product()) {
+      if (product_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        product_->clear();
+      }
+    }
+    if (has_originalvalues()) {
+      if (originalvalues_ != NULL) originalvalues_->::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields::Clear();
+    }
+    if (has_correctedvalues()) {
+      if (correctedvalues_ != NULL) correctedvalues_->::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields::Clear();
+    }
+    if (has_amountsinc()) {
+      if (amountsinc_ != NULL) amountsinc_->::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff::Clear();
+    }
+    if (has_amountsdec()) {
+      if (amountsdec_ != NULL) amountsdec_->::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff::Clear();
+    }
+    if (has_itemaccountdebit()) {
+      if (itemaccountdebit_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        itemaccountdebit_->clear();
+      }
+    }
+    if (has_itemaccountcredit()) {
+      if (itemaccountcredit_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        itemaccountcredit_->clear();
+      }
+    }
+  }
+  additionalinfo_.Clear();
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool ExtendedInvoiceCorrectionItem::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required string Product = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_product()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->product().data(), this->product().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "product");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_OriginalValues;
+        break;
+      }
+
+      // required .Diadoc.Api.Proto.Invoicing.CorrectableInvoiceItemFields OriginalValues = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_OriginalValues:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_originalvalues()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_CorrectedValues;
+        break;
+      }
+
+      // required .Diadoc.Api.Proto.Invoicing.CorrectableInvoiceItemFields CorrectedValues = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_CorrectedValues:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_correctedvalues()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_AmountsInc;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Invoicing.InvoiceItemAmountsDiff AmountsInc = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_AmountsInc:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_amountsinc()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_AmountsDec;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Invoicing.InvoiceItemAmountsDiff AmountsDec = 5;
+      case 5: {
+        if (tag == 42) {
+         parse_AmountsDec:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_amountsdec()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(50)) goto parse_ItemAccountDebit;
+        break;
+      }
+
+      // optional string ItemAccountDebit = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_ItemAccountDebit:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_itemaccountdebit()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->itemaccountdebit().data(), this->itemaccountdebit().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "itemaccountdebit");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(58)) goto parse_ItemAccountCredit;
+        break;
+      }
+
+      // optional string ItemAccountCredit = 7;
+      case 7: {
+        if (tag == 58) {
+         parse_ItemAccountCredit:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_itemaccountcredit()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->itemaccountcredit().data(), this->itemaccountcredit().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "itemaccountcredit");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(66)) goto parse_AdditionalInfo;
+        break;
+      }
+
+      // repeated .Diadoc.Api.Proto.Invoicing.AdditionalInfo AdditionalInfo = 8;
+      case 8: {
+        if (tag == 66) {
+         parse_AdditionalInfo:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_additionalinfo()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(66)) goto parse_AdditionalInfo;
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem)
+  return false;
+#undef DO_
+}
+
+void ExtendedInvoiceCorrectionItem::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem)
+  // required string Product = 1;
+  if (has_product()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->product().data(), this->product().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "product");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->product(), output);
+  }
+
+  // required .Diadoc.Api.Proto.Invoicing.CorrectableInvoiceItemFields OriginalValues = 2;
+  if (has_originalvalues()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->originalvalues(), output);
+  }
+
+  // required .Diadoc.Api.Proto.Invoicing.CorrectableInvoiceItemFields CorrectedValues = 3;
+  if (has_correctedvalues()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, this->correctedvalues(), output);
+  }
+
+  // optional .Diadoc.Api.Proto.Invoicing.InvoiceItemAmountsDiff AmountsInc = 4;
+  if (has_amountsinc()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, this->amountsinc(), output);
+  }
+
+  // optional .Diadoc.Api.Proto.Invoicing.InvoiceItemAmountsDiff AmountsDec = 5;
+  if (has_amountsdec()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      5, this->amountsdec(), output);
+  }
+
+  // optional string ItemAccountDebit = 6;
+  if (has_itemaccountdebit()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->itemaccountdebit().data(), this->itemaccountdebit().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "itemaccountdebit");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      6, this->itemaccountdebit(), output);
+  }
+
+  // optional string ItemAccountCredit = 7;
+  if (has_itemaccountcredit()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->itemaccountcredit().data(), this->itemaccountcredit().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "itemaccountcredit");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      7, this->itemaccountcredit(), output);
+  }
+
+  // repeated .Diadoc.Api.Proto.Invoicing.AdditionalInfo AdditionalInfo = 8;
+  for (int i = 0; i < this->additionalinfo_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      8, this->additionalinfo(i), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem)
+}
+
+::google::protobuf::uint8* ExtendedInvoiceCorrectionItem::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem)
+  // required string Product = 1;
+  if (has_product()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->product().data(), this->product().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "product");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->product(), target);
+  }
+
+  // required .Diadoc.Api.Proto.Invoicing.CorrectableInvoiceItemFields OriginalValues = 2;
+  if (has_originalvalues()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        2, this->originalvalues(), target);
+  }
+
+  // required .Diadoc.Api.Proto.Invoicing.CorrectableInvoiceItemFields CorrectedValues = 3;
+  if (has_correctedvalues()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        3, this->correctedvalues(), target);
+  }
+
+  // optional .Diadoc.Api.Proto.Invoicing.InvoiceItemAmountsDiff AmountsInc = 4;
+  if (has_amountsinc()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        4, this->amountsinc(), target);
+  }
+
+  // optional .Diadoc.Api.Proto.Invoicing.InvoiceItemAmountsDiff AmountsDec = 5;
+  if (has_amountsdec()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        5, this->amountsdec(), target);
+  }
+
+  // optional string ItemAccountDebit = 6;
+  if (has_itemaccountdebit()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->itemaccountdebit().data(), this->itemaccountdebit().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "itemaccountdebit");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        6, this->itemaccountdebit(), target);
+  }
+
+  // optional string ItemAccountCredit = 7;
+  if (has_itemaccountcredit()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->itemaccountcredit().data(), this->itemaccountcredit().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "itemaccountcredit");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        7, this->itemaccountcredit(), target);
+  }
+
+  // repeated .Diadoc.Api.Proto.Invoicing.AdditionalInfo AdditionalInfo = 8;
+  for (int i = 0; i < this->additionalinfo_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        8, this->additionalinfo(i), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem)
+  return target;
+}
+
+int ExtendedInvoiceCorrectionItem::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required string Product = 1;
+    if (has_product()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->product());
+    }
+
+    // required .Diadoc.Api.Proto.Invoicing.CorrectableInvoiceItemFields OriginalValues = 2;
+    if (has_originalvalues()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->originalvalues());
+    }
+
+    // required .Diadoc.Api.Proto.Invoicing.CorrectableInvoiceItemFields CorrectedValues = 3;
+    if (has_correctedvalues()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->correctedvalues());
+    }
+
+    // optional .Diadoc.Api.Proto.Invoicing.InvoiceItemAmountsDiff AmountsInc = 4;
+    if (has_amountsinc()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->amountsinc());
+    }
+
+    // optional .Diadoc.Api.Proto.Invoicing.InvoiceItemAmountsDiff AmountsDec = 5;
+    if (has_amountsdec()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->amountsdec());
+    }
+
+    // optional string ItemAccountDebit = 6;
+    if (has_itemaccountdebit()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->itemaccountdebit());
+    }
+
+    // optional string ItemAccountCredit = 7;
+    if (has_itemaccountcredit()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->itemaccountcredit());
+    }
+
+  }
+  // repeated .Diadoc.Api.Proto.Invoicing.AdditionalInfo AdditionalInfo = 8;
+  total_size += 1 * this->additionalinfo_size();
+  for (int i = 0; i < this->additionalinfo_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->additionalinfo(i));
+  }
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void ExtendedInvoiceCorrectionItem::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const ExtendedInvoiceCorrectionItem* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const ExtendedInvoiceCorrectionItem*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void ExtendedInvoiceCorrectionItem::MergeFrom(const ExtendedInvoiceCorrectionItem& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  additionalinfo_.MergeFrom(from.additionalinfo_);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_product()) {
+      set_product(from.product());
+    }
+    if (from.has_originalvalues()) {
+      mutable_originalvalues()->::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields::MergeFrom(from.originalvalues());
+    }
+    if (from.has_correctedvalues()) {
+      mutable_correctedvalues()->::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields::MergeFrom(from.correctedvalues());
+    }
+    if (from.has_amountsinc()) {
+      mutable_amountsinc()->::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff::MergeFrom(from.amountsinc());
+    }
+    if (from.has_amountsdec()) {
+      mutable_amountsdec()->::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff::MergeFrom(from.amountsdec());
+    }
+    if (from.has_itemaccountdebit()) {
+      set_itemaccountdebit(from.itemaccountdebit());
+    }
+    if (from.has_itemaccountcredit()) {
+      set_itemaccountcredit(from.itemaccountcredit());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void ExtendedInvoiceCorrectionItem::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ExtendedInvoiceCorrectionItem::CopyFrom(const ExtendedInvoiceCorrectionItem& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ExtendedInvoiceCorrectionItem::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
+
+  if (has_originalvalues()) {
+    if (!this->originalvalues().IsInitialized()) return false;
+  }
+  if (has_correctedvalues()) {
+    if (!this->correctedvalues().IsInitialized()) return false;
+  }
+  if (has_amountsinc()) {
+    if (!this->amountsinc().IsInitialized()) return false;
+  }
+  if (has_amountsdec()) {
+    if (!this->amountsdec().IsInitialized()) return false;
+  }
+  if (!::google::protobuf::internal::AllAreInitialized(this->additionalinfo())) return false;
+  return true;
+}
+
+void ExtendedInvoiceCorrectionItem::Swap(ExtendedInvoiceCorrectionItem* other) {
+  if (other != this) {
+    std::swap(product_, other->product_);
+    std::swap(originalvalues_, other->originalvalues_);
+    std::swap(correctedvalues_, other->correctedvalues_);
+    std::swap(amountsinc_, other->amountsinc_);
+    std::swap(amountsdec_, other->amountsdec_);
+    std::swap(itemaccountdebit_, other->itemaccountdebit_);
+    std::swap(itemaccountcredit_, other->itemaccountcredit_);
+    additionalinfo_.Swap(&other->additionalinfo_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata ExtendedInvoiceCorrectionItem::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = ExtendedInvoiceCorrectionItem_descriptor_;
+  metadata.reflection = ExtendedInvoiceCorrectionItem_reflection_;
   return metadata;
 }
 

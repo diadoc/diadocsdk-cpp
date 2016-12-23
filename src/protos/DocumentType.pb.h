@@ -56,11 +56,14 @@ enum DocumentType {
   Torg13 = 37,
   ServiceDetails = 38,
   SupplementaryAgreement = 40,
-  UniversalTransferDocument = 41
+  UniversalTransferDocument = 41,
+  UniversalTransferDocumentRevision = 45,
+  UniversalCorrectionDocument = 49,
+  UniversalCorrectionDocumentRevision = 50
 };
 bool DocumentType_IsValid(int value);
 const DocumentType DocumentType_MIN = UnknownDocumentType;
-const DocumentType DocumentType_MAX = UniversalTransferDocument;
+const DocumentType DocumentType_MAX = UniversalCorrectionDocumentRevision;
 const int DocumentType_ARRAYSIZE = DocumentType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* DocumentType_descriptor();

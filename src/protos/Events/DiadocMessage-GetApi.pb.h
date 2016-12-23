@@ -113,6 +113,9 @@ enum AttachmentType {
   UniversalTransferDocument = 41,
   UniversalTransferDocumentBuyerTitle = 42,
   UniversalTransferDocumentRevision = 45,
+  UniversalCorrectionDocument = 49,
+  UniversalCorrectionDocumentRevision = 50,
+  UniversalCorrectionDocumentBuyerTitle = 51,
   CustomData = 64,
   MoveDocument = 65,
   ResolutionChainAssignmentAttachment = 66
@@ -1111,6 +1114,18 @@ class Entity : public ::google::protobuf::Message {
   inline bool isencryptedcontent() const;
   inline void set_isencryptedcontent(bool value);
 
+  // optional string AttachmentFormat = 21;
+  inline bool has_attachmentformat() const;
+  inline void clear_attachmentformat();
+  static const int kAttachmentFormatFieldNumber = 21;
+  inline const ::std::string& attachmentformat() const;
+  inline void set_attachmentformat(const ::std::string& value);
+  inline void set_attachmentformat(const char* value);
+  inline void set_attachmentformat(const char* value, size_t size);
+  inline ::std::string* mutable_attachmentformat();
+  inline ::std::string* release_attachmentformat();
+  inline void set_allocated_attachmentformat(::std::string* attachmentformat);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.Entity)
  private:
   inline void set_has_entitytype();
@@ -1151,6 +1166,8 @@ class Entity : public ::google::protobuf::Message {
   inline void clear_has_isapprovementsignature();
   inline void set_has_isencryptedcontent();
   inline void clear_has_isencryptedcontent();
+  inline void set_has_attachmentformat();
+  inline void clear_has_attachmentformat();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1171,6 +1188,7 @@ class Entity : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Events::ResolutionRequestInfo* resolutionrequestinfo_;
   ::Diadoc::Api::Proto::Events::ResolutionRequestDenialInfo* resolutionrequestdenialinfo_;
   ::std::string* packetid_;
+  ::std::string* attachmentformat_;
   bool needrecipientsignature_;
   bool needreceipt_;
   bool isapprovementsignature_;
@@ -3908,6 +3926,82 @@ inline void Entity::set_isencryptedcontent(bool value) {
   set_has_isencryptedcontent();
   isencryptedcontent_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Entity.IsEncryptedContent)
+}
+
+// optional string AttachmentFormat = 21;
+inline bool Entity::has_attachmentformat() const {
+  return (_has_bits_[0] & 0x00080000u) != 0;
+}
+inline void Entity::set_has_attachmentformat() {
+  _has_bits_[0] |= 0x00080000u;
+}
+inline void Entity::clear_has_attachmentformat() {
+  _has_bits_[0] &= ~0x00080000u;
+}
+inline void Entity::clear_attachmentformat() {
+  if (attachmentformat_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attachmentformat_->clear();
+  }
+  clear_has_attachmentformat();
+}
+inline const ::std::string& Entity::attachmentformat() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Entity.AttachmentFormat)
+  return *attachmentformat_;
+}
+inline void Entity::set_attachmentformat(const ::std::string& value) {
+  set_has_attachmentformat();
+  if (attachmentformat_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attachmentformat_ = new ::std::string;
+  }
+  attachmentformat_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Entity.AttachmentFormat)
+}
+inline void Entity::set_attachmentformat(const char* value) {
+  set_has_attachmentformat();
+  if (attachmentformat_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attachmentformat_ = new ::std::string;
+  }
+  attachmentformat_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.Entity.AttachmentFormat)
+}
+inline void Entity::set_attachmentformat(const char* value, size_t size) {
+  set_has_attachmentformat();
+  if (attachmentformat_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attachmentformat_ = new ::std::string;
+  }
+  attachmentformat_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.Entity.AttachmentFormat)
+}
+inline ::std::string* Entity::mutable_attachmentformat() {
+  set_has_attachmentformat();
+  if (attachmentformat_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attachmentformat_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Entity.AttachmentFormat)
+  return attachmentformat_;
+}
+inline ::std::string* Entity::release_attachmentformat() {
+  clear_has_attachmentformat();
+  if (attachmentformat_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = attachmentformat_;
+    attachmentformat_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void Entity::set_allocated_attachmentformat(::std::string* attachmentformat) {
+  if (attachmentformat_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete attachmentformat_;
+  }
+  if (attachmentformat) {
+    set_has_attachmentformat();
+    attachmentformat_ = attachmentformat;
+  } else {
+    clear_has_attachmentformat();
+    attachmentformat_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Entity.AttachmentFormat)
 }
 
 // -------------------------------------------------------------------

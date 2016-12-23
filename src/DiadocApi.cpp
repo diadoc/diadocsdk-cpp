@@ -852,19 +852,34 @@ DiadocApi::WebFile DiadocApi::GenerateAcceptanceCertificateXmlForBuyer(const Dia
 	return WebFile(request);
 }
 
-DiadocApi::WebFile DiadocApi::GenerateUniversalTransferDocumentXmlForSeller(const Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentSellerTitleInfo& utdSellerInfo, bool disableValidation)
+DiadocApi::WebFile DiadocApi::GenerateUniversalTransferDocumentXmlForSeller(const UniversalTransferDocumentSellerTitleInfo& utdSellerInfo, bool disableValidation)
 {
 	WppTraceDebugOut("GenerateUniversalTransferDocumentXmlForSeller...");
 	auto requestBody = ToProtoBytes(utdSellerInfo);
 	auto connect = session_.Connect(api_url_.c_str(), api_port_);
 	std::wstringstream queryString;
-	queryString << L"/GenerateUniversalTransferDocumentXmlForSeller" << (disableValidation ? L"?disableValidation" : L"");
+	queryString << L"/GenerateUniversalTransferDocumentXmlForSeller"
+		<< (disableValidation ? L"?disableValidation" : L"");
 	auto request = connect.OpenRequest(POST.c_str(), queryString.str().c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
 	SendRequest(request, requestBody);
 	return WebFile(request);
 }
 
-DiadocApi::WebFile DiadocApi::GenerateUniversalTransferDocumentXmlForBuyer(const Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo& utdBuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId)
+DiadocApi::WebFile DiadocApi::GenerateUniversalCorrectionDocumentXmlForSeller(const UniversalCorrectionDocumentSellerTitleInfo& utdSellerInfo, bool disableValidation)
+{
+	WppTraceDebugOut("GenerateUniversalCorrectionDocumentXmlForSeller...");
+	auto requestBody = ToProtoBytes(utdSellerInfo);
+	auto connect = session_.Connect(api_url_.c_str(), api_port_);
+	std::wstringstream queryString;
+	queryString << L"/GenerateUniversalTransferDocumentXmlForSeller"
+		<< L"?correction"
+		<< (disableValidation ? L"&disableValidation" : L"");
+	auto request = connect.OpenRequest(POST.c_str(), queryString.str().c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
+	SendRequest(request, requestBody);
+	return WebFile(request);
+}
+
+DiadocApi::WebFile DiadocApi::GenerateUniversalTransferDocumentXmlForBuyer(const UniversalTransferDocumentBuyerTitleInfo& utdBuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId)
 {
 	WppTraceDebugOut("GenerateUniversalTransferDocumentXmlForBuyer...");
 	std::wstringstream queryString;
@@ -876,6 +891,29 @@ DiadocApi::WebFile DiadocApi::GenerateUniversalTransferDocumentXmlForBuyer(const
 	auto request = connect.OpenRequest(POST.c_str(), queryString.str().c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
 	SendRequest(request, requestBody);
 	return WebFile(request);
+}
+
+Signers::ExtendedSignerDetails DiadocApi::GetExtendedSignerDetails(const std::wstring& token, const std::wstring& boxId, const std::wstring& thumbprint, bool forBuyer, bool forCorrection)
+{
+	WppTraceDebugOut("GetExtendedSignerDetails...");
+	std::wstringstream queryString;
+	queryString << L"/ExtendedSignerDetails?boxId=" << StringHelper::CanonicalizeUrl(boxId)
+		<< L"&thumbprint=" << StringHelper::CanonicalizeUrl(thumbprint)
+		<< (forBuyer ? L"&buyer" : L"")
+		<< (forCorrection ? L"&correction" : L"");
+	return PerformHttpRequest<Signers::ExtendedSignerDetails>("GET", queryString.str());
+}
+
+Signers::ExtendedSignerDetails DiadocApi::PostExtendedSignerDetails(const std::wstring& token, const std::wstring& boxId, const std::wstring& thumbprint, bool forBuyer, bool forCorrection, const Signers::ExtendedSignerDetailsToPost& signerDetails)
+{
+	WppTraceDebugOut("PostExtendedSignerDetails...");
+	std::wstringstream queryString;
+	queryString << L"/ExtendedSignerDetails?boxId=" << StringHelper::CanonicalizeUrl(boxId)
+		<< L"&thumbprint=" << StringHelper::CanonicalizeUrl(thumbprint)
+		<< (forBuyer ? L"&buyer" : L"")
+		<< (forCorrection ? L"&correction" : L"");
+	return PerformHttpRequest<Signers::ExtendedSignerDetailsToPost, Signers::ExtendedSignerDetails>(
+		"POST", queryString.str(), signerDetails);
 }
 
 InvoiceInfo DiadocApi::ParseInvoiceXml(const Bytes_t& invoiceXmlContent)

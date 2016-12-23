@@ -44,7 +44,7 @@ void protobuf_AssignDesc_Docflow_2fDocflow_2eproto() {
       "Docflow/Docflow.proto");
   GOOGLE_CHECK(file != NULL);
   Docflow_descriptor_ = file->message_type(0);
-  static const int Docflow_offsets_[17] = {
+  static const int Docflow_offsets_[19] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Docflow, isfinished_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Docflow, documentattachment_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Docflow, departmentid_),
@@ -62,6 +62,8 @@ void protobuf_AssignDesc_Docflow_2fDocflow_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Docflow, candocumentberevokedunilaterallybysender_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Docflow, packetid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Docflow, customdata_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Docflow, inbounduniversaltransferdocumentdocflow_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Docflow, outbounduniversaltransferdocumentdocflow_),
   };
   Docflow_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -154,6 +156,7 @@ void protobuf_AddDesc_Docflow_2fDocflow_2eproto() {
   ::Diadoc::Api::Proto::Docflow::protobuf_AddDesc_Docflow_2fXmlBilateralDocflow_2eproto();
   ::Diadoc::Api::Proto::Docflow::protobuf_AddDesc_Docflow_2fRevocationDocflow_2eproto();
   ::Diadoc::Api::Proto::Docflow::protobuf_AddDesc_Docflow_2fResolutionDocflow_2eproto();
+  ::Diadoc::Api::Proto::Docflow::protobuf_AddDesc_Docflow_2fUniversalTransferDocumentDocflow_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\025Docflow/Docflow.proto\022\030Diadoc.Api.Prot"
     "o.Docflow\032\017Timestamp.proto\032\024CustomDataIt"
@@ -162,42 +165,49 @@ void protobuf_AddDesc_Docflow_2fDocflow_2eproto() {
     "eralDocflow.proto\032\036Docflow/BilateralDocf"
     "low.proto\032!Docflow/XmlBilateralDocflow.p"
     "roto\032\037Docflow/RevocationDocflow.proto\032\037D"
-    "ocflow/ResolutionDocflow.proto\"\310\007\n\007Docfl"
-    "ow\022\022\n\nIsFinished\030\001 \001(\010\022F\n\022DocumentAttach"
-    "ment\030\002 \001(\0132*.Diadoc.Api.Proto.Docflow.Si"
-    "gnedAttachment\022\024\n\014DepartmentId\030\003 \001(\t\022\031\n\021"
-    "DocumentIsDeleted\030\004 \001(\010\022>\n\rDocflowStatus"
-    "\030\005 \001(\0132\'.Diadoc.Api.Proto.Docflow.Docflo"
-    "wStatus\0222\n\rSendTimestamp\030\006 \001(\0132\033.Diadoc."
-    "Api.Proto.Timestamp\0226\n\021DeliveryTimestamp"
-    "\030\007 \001(\0132\033.Diadoc.Api.Proto.Timestamp\022N\n\025I"
-    "nboundInvoiceDocflow\030\010 \001(\0132/.Diadoc.Api."
-    "Proto.Docflow.InboundInvoiceDocflow\022P\n\026O"
-    "utboundInvoiceDocflow\030\t \001(\01320.Diadoc.Api"
-    ".Proto.Docflow.OutboundInvoiceDocflow\022J\n"
-    "\023XmlBilateralDocflow\030\n \001(\0132-.Diadoc.Api."
-    "Proto.Docflow.XmlBilateralDocflow\022D\n\020Bil"
-    "ateralDocflow\030\013 \001(\0132*.Diadoc.Api.Proto.D"
-    "ocflow.BilateralDocflow\022F\n\021UnilateralDoc"
-    "flow\030\014 \001(\0132+.Diadoc.Api.Proto.Docflow.Un"
-    "ilateralDocflow\022F\n\021RevocationDocflow\030\r \001"
-    "(\0132+.Diadoc.Api.Proto.Docflow.Revocation"
-    "Docflow\022F\n\021ResolutionDocflow\030\016 \001(\0132+.Dia"
-    "doc.Api.Proto.Docflow.ResolutionDocflow\022"
-    "0\n(CanDocumentBeRevokedUnilaterallyBySen"
-    "der\030\017 \001(\010\022\020\n\010PacketId\030\020 \001(\t\0224\n\nCustomDat"
-    "a\030\021 \003(\0132 .Diadoc.Api.Proto.CustomDataIte"
-    "m\"\233\001\n\rDocflowStatus\022C\n\rPrimaryStatus\030\001 \001"
-    "(\0132,.Diadoc.Api.Proto.Docflow.DocflowSta"
-    "tusModel\022E\n\017SecondaryStatus\030\002 \001(\0132,.Diad"
-    "oc.Api.Proto.Docflow.DocflowStatusModel\""
-    "\235\001\n\022DocflowStatusModel\022_\n\010Severity\030\001 \001(\016"
-    "2/.Diadoc.Api.Proto.Docflow.DocflowStatu"
-    "sSeverity:\034UnknownDocflowStatusSeverity\022"
-    "\022\n\nStatusText\030\002 \001(\t\022\022\n\nStatusHint\030\003 \001(\t*"
-    "h\n\025DocflowStatusSeverity\022 \n\034UnknownDocfl"
-    "owStatusSeverity\020\000\022\010\n\004Info\020\001\022\013\n\007Success\020"
-    "\002\022\013\n\007Warning\020\003\022\t\n\005Error\020\004", 1705);
+    "ocflow/ResolutionDocflow.proto\032.Docflow/"
+    "UniversalTransferDocumentDocflow.proto\"\262"
+    "\t\n\007Docflow\022\022\n\nIsFinished\030\001 \001(\010\022F\n\022Docume"
+    "ntAttachment\030\002 \001(\0132*.Diadoc.Api.Proto.Do"
+    "cflow.SignedAttachment\022\024\n\014DepartmentId\030\003"
+    " \001(\t\022\031\n\021DocumentIsDeleted\030\004 \001(\010\022>\n\rDocfl"
+    "owStatus\030\005 \001(\0132\'.Diadoc.Api.Proto.Docflo"
+    "w.DocflowStatus\0222\n\rSendTimestamp\030\006 \001(\0132\033"
+    ".Diadoc.Api.Proto.Timestamp\0226\n\021DeliveryT"
+    "imestamp\030\007 \001(\0132\033.Diadoc.Api.Proto.Timest"
+    "amp\022N\n\025InboundInvoiceDocflow\030\010 \001(\0132/.Dia"
+    "doc.Api.Proto.Docflow.InboundInvoiceDocf"
+    "low\022P\n\026OutboundInvoiceDocflow\030\t \001(\01320.Di"
+    "adoc.Api.Proto.Docflow.OutboundInvoiceDo"
+    "cflow\022J\n\023XmlBilateralDocflow\030\n \001(\0132-.Dia"
+    "doc.Api.Proto.Docflow.XmlBilateralDocflo"
+    "w\022D\n\020BilateralDocflow\030\013 \001(\0132*.Diadoc.Api"
+    ".Proto.Docflow.BilateralDocflow\022F\n\021Unila"
+    "teralDocflow\030\014 \001(\0132+.Diadoc.Api.Proto.Do"
+    "cflow.UnilateralDocflow\022F\n\021RevocationDoc"
+    "flow\030\r \001(\0132+.Diadoc.Api.Proto.Docflow.Re"
+    "vocationDocflow\022F\n\021ResolutionDocflow\030\016 \001"
+    "(\0132+.Diadoc.Api.Proto.Docflow.Resolution"
+    "Docflow\0220\n(CanDocumentBeRevokedUnilatera"
+    "llyBySender\030\017 \001(\010\022\020\n\010PacketId\030\020 \001(\t\0224\n\nC"
+    "ustomData\030\021 \003(\0132 .Diadoc.Api.Proto.Custo"
+    "mDataItem\022r\n\'InboundUniversalTransferDoc"
+    "umentDocflow\030\022 \001(\0132A.Diadoc.Api.Proto.Do"
+    "cflow.InboundUniversalTransferDocumentDo"
+    "cflow\022t\n(OutboundUniversalTransferDocume"
+    "ntDocflow\030\023 \001(\0132B.Diadoc.Api.Proto.Docfl"
+    "ow.OutboundUniversalTransferDocumentDocf"
+    "low\"\233\001\n\rDocflowStatus\022C\n\rPrimaryStatus\030\001"
+    " \001(\0132,.Diadoc.Api.Proto.Docflow.DocflowS"
+    "tatusModel\022E\n\017SecondaryStatus\030\002 \001(\0132,.Di"
+    "adoc.Api.Proto.Docflow.DocflowStatusMode"
+    "l\"\235\001\n\022DocflowStatusModel\022_\n\010Severity\030\001 \001"
+    "(\0162/.Diadoc.Api.Proto.Docflow.DocflowSta"
+    "tusSeverity:\034UnknownDocflowStatusSeverit"
+    "y\022\022\n\nStatusText\030\002 \001(\t\022\022\n\nStatusHint\030\003 \001("
+    "\t*h\n\025DocflowStatusSeverity\022 \n\034UnknownDoc"
+    "flowStatusSeverity\020\000\022\010\n\004Info\020\001\022\013\n\007Succes"
+    "s\020\002\022\013\n\007Warning\020\003\022\t\n\005Error\020\004", 1987);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Docflow/Docflow.proto", &protobuf_RegisterTypes);
   Docflow::default_instance_ = new Docflow();
@@ -253,6 +263,8 @@ const int Docflow::kResolutionDocflowFieldNumber;
 const int Docflow::kCanDocumentBeRevokedUnilaterallyBySenderFieldNumber;
 const int Docflow::kPacketIdFieldNumber;
 const int Docflow::kCustomDataFieldNumber;
+const int Docflow::kInboundUniversalTransferDocumentDocflowFieldNumber;
+const int Docflow::kOutboundUniversalTransferDocumentDocflowFieldNumber;
 #endif  // !_MSC_VER
 
 Docflow::Docflow()
@@ -273,6 +285,8 @@ void Docflow::InitAsDefaultInstance() {
   unilateraldocflow_ = const_cast< ::Diadoc::Api::Proto::Docflow::UnilateralDocflow*>(&::Diadoc::Api::Proto::Docflow::UnilateralDocflow::default_instance());
   revocationdocflow_ = const_cast< ::Diadoc::Api::Proto::Docflow::RevocationDocflow*>(&::Diadoc::Api::Proto::Docflow::RevocationDocflow::default_instance());
   resolutiondocflow_ = const_cast< ::Diadoc::Api::Proto::Docflow::ResolutionDocflow*>(&::Diadoc::Api::Proto::Docflow::ResolutionDocflow::default_instance());
+  inbounduniversaltransferdocumentdocflow_ = const_cast< ::Diadoc::Api::Proto::Docflow::InboundUniversalTransferDocumentDocflow*>(&::Diadoc::Api::Proto::Docflow::InboundUniversalTransferDocumentDocflow::default_instance());
+  outbounduniversaltransferdocumentdocflow_ = const_cast< ::Diadoc::Api::Proto::Docflow::OutboundUniversalTransferDocumentDocflow*>(&::Diadoc::Api::Proto::Docflow::OutboundUniversalTransferDocumentDocflow::default_instance());
 }
 
 Docflow::Docflow(const Docflow& from)
@@ -301,6 +315,8 @@ void Docflow::SharedCtor() {
   resolutiondocflow_ = NULL;
   candocumentberevokedunilaterallybysender_ = false;
   packetid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  inbounduniversaltransferdocumentdocflow_ = NULL;
+  outbounduniversaltransferdocumentdocflow_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -328,6 +344,8 @@ void Docflow::SharedDtor() {
     delete unilateraldocflow_;
     delete revocationdocflow_;
     delete resolutiondocflow_;
+    delete inbounduniversaltransferdocumentdocflow_;
+    delete outbounduniversaltransferdocumentdocflow_;
   }
 }
 
@@ -410,6 +428,14 @@ void Docflow::Clear() {
       if (packetid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         packetid_->clear();
       }
+    }
+  }
+  if (_has_bits_[16 / 32] & 393216) {
+    if (has_inbounduniversaltransferdocumentdocflow()) {
+      if (inbounduniversaltransferdocumentdocflow_ != NULL) inbounduniversaltransferdocumentdocflow_->::Diadoc::Api::Proto::Docflow::InboundUniversalTransferDocumentDocflow::Clear();
+    }
+    if (has_outbounduniversaltransferdocumentdocflow()) {
+      if (outbounduniversaltransferdocumentdocflow_ != NULL) outbounduniversaltransferdocumentdocflow_->::Diadoc::Api::Proto::Docflow::OutboundUniversalTransferDocumentDocflow::Clear();
     }
   }
 
@@ -662,6 +688,32 @@ bool Docflow::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(138)) goto parse_CustomData;
+        if (input->ExpectTag(146)) goto parse_InboundUniversalTransferDocumentDocflow;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Docflow.InboundUniversalTransferDocumentDocflow InboundUniversalTransferDocumentDocflow = 18;
+      case 18: {
+        if (tag == 146) {
+         parse_InboundUniversalTransferDocumentDocflow:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_inbounduniversaltransferdocumentdocflow()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(154)) goto parse_OutboundUniversalTransferDocumentDocflow;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Docflow.OutboundUniversalTransferDocumentDocflow OutboundUniversalTransferDocumentDocflow = 19;
+      case 19: {
+        if (tag == 154) {
+         parse_OutboundUniversalTransferDocumentDocflow:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_outbounduniversaltransferdocumentdocflow()));
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -798,6 +850,18 @@ void Docflow::SerializeWithCachedSizes(
       17, this->customdata(i), output);
   }
 
+  // optional .Diadoc.Api.Proto.Docflow.InboundUniversalTransferDocumentDocflow InboundUniversalTransferDocumentDocflow = 18;
+  if (has_inbounduniversaltransferdocumentdocflow()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      18, this->inbounduniversaltransferdocumentdocflow(), output);
+  }
+
+  // optional .Diadoc.Api.Proto.Docflow.OutboundUniversalTransferDocumentDocflow OutboundUniversalTransferDocumentDocflow = 19;
+  if (has_outbounduniversaltransferdocumentdocflow()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      19, this->outbounduniversaltransferdocumentdocflow(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -929,6 +993,20 @@ void Docflow::SerializeWithCachedSizes(
         17, this->customdata(i), target);
   }
 
+  // optional .Diadoc.Api.Proto.Docflow.InboundUniversalTransferDocumentDocflow InboundUniversalTransferDocumentDocflow = 18;
+  if (has_inbounduniversaltransferdocumentdocflow()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        18, this->inbounduniversaltransferdocumentdocflow(), target);
+  }
+
+  // optional .Diadoc.Api.Proto.Docflow.OutboundUniversalTransferDocumentDocflow OutboundUniversalTransferDocumentDocflow = 19;
+  if (has_outbounduniversaltransferdocumentdocflow()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        19, this->outbounduniversaltransferdocumentdocflow(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -1050,6 +1128,22 @@ int Docflow::ByteSize() const {
     }
 
   }
+  if (_has_bits_[17 / 32] & (0xffu << (17 % 32))) {
+    // optional .Diadoc.Api.Proto.Docflow.InboundUniversalTransferDocumentDocflow InboundUniversalTransferDocumentDocflow = 18;
+    if (has_inbounduniversaltransferdocumentdocflow()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->inbounduniversaltransferdocumentdocflow());
+    }
+
+    // optional .Diadoc.Api.Proto.Docflow.OutboundUniversalTransferDocumentDocflow OutboundUniversalTransferDocumentDocflow = 19;
+    if (has_outbounduniversaltransferdocumentdocflow()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->outbounduniversaltransferdocumentdocflow());
+    }
+
+  }
   // repeated .Diadoc.Api.Proto.CustomDataItem CustomData = 17;
   total_size += 2 * this->customdata_size();
   for (int i = 0; i < this->customdata_size(); i++) {
@@ -1136,6 +1230,14 @@ void Docflow::MergeFrom(const Docflow& from) {
       set_packetid(from.packetid());
     }
   }
+  if (from._has_bits_[17 / 32] & (0xffu << (17 % 32))) {
+    if (from.has_inbounduniversaltransferdocumentdocflow()) {
+      mutable_inbounduniversaltransferdocumentdocflow()->::Diadoc::Api::Proto::Docflow::InboundUniversalTransferDocumentDocflow::MergeFrom(from.inbounduniversaltransferdocumentdocflow());
+    }
+    if (from.has_outbounduniversaltransferdocumentdocflow()) {
+      mutable_outbounduniversaltransferdocumentdocflow()->::Diadoc::Api::Proto::Docflow::OutboundUniversalTransferDocumentDocflow::MergeFrom(from.outbounduniversaltransferdocumentdocflow());
+    }
+  }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
@@ -1181,6 +1283,12 @@ bool Docflow::IsInitialized() const {
     if (!this->revocationdocflow().IsInitialized()) return false;
   }
   if (!::google::protobuf::internal::AllAreInitialized(this->customdata())) return false;
+  if (has_inbounduniversaltransferdocumentdocflow()) {
+    if (!this->inbounduniversaltransferdocumentdocflow().IsInitialized()) return false;
+  }
+  if (has_outbounduniversaltransferdocumentdocflow()) {
+    if (!this->outbounduniversaltransferdocumentdocflow().IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -1203,6 +1311,8 @@ void Docflow::Swap(Docflow* other) {
     std::swap(candocumentberevokedunilaterallybysender_, other->candocumentberevokedunilaterallybysender_);
     std::swap(packetid_, other->packetid_);
     customdata_.Swap(&other->customdata_);
+    std::swap(inbounduniversaltransferdocumentdocflow_, other->inbounduniversaltransferdocumentdocflow_);
+    std::swap(outbounduniversaltransferdocumentdocflow_, other->outbounduniversaltransferdocumentdocflow_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

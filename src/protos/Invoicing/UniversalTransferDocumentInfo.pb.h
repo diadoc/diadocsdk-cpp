@@ -51,6 +51,13 @@ class Employee;
 class OtherIssuer;
 class AdditionalInfoId;
 class UniversalTransferDocumentBuyerTitleInfo;
+class UniversalCorrectionDocumentSellerTitleInfo;
+class InvoiceForCorrectionInfo;
+class InvoiceRevisionInfo;
+class EventContent;
+class CorrectionBase;
+class InvoiceCorrectionTable;
+class ExtendedInvoiceCorrectionItem;
 
 enum FunctionType {
   Invoice = 0,
@@ -352,17 +359,17 @@ class UniversalTransferDocumentSellerTitleInfo : public ::google::protobuf::Mess
   inline ::std::string* release_documentcreatorbase();
   inline void set_allocated_documentcreatorbase(::std::string* documentcreatorbase);
 
-  // optional string GovermentContractInfo = 20;
-  inline bool has_govermentcontractinfo() const;
-  inline void clear_govermentcontractinfo();
-  static const int kGovermentContractInfoFieldNumber = 20;
-  inline const ::std::string& govermentcontractinfo() const;
-  inline void set_govermentcontractinfo(const ::std::string& value);
-  inline void set_govermentcontractinfo(const char* value);
-  inline void set_govermentcontractinfo(const char* value, size_t size);
-  inline ::std::string* mutable_govermentcontractinfo();
-  inline ::std::string* release_govermentcontractinfo();
-  inline void set_allocated_govermentcontractinfo(::std::string* govermentcontractinfo);
+  // optional string GovernmentContractInfo = 20;
+  inline bool has_governmentcontractinfo() const;
+  inline void clear_governmentcontractinfo();
+  static const int kGovernmentContractInfoFieldNumber = 20;
+  inline const ::std::string& governmentcontractinfo() const;
+  inline void set_governmentcontractinfo(const ::std::string& value);
+  inline void set_governmentcontractinfo(const char* value);
+  inline void set_governmentcontractinfo(const char* value, size_t size);
+  inline ::std::string* mutable_governmentcontractinfo();
+  inline ::std::string* release_governmentcontractinfo();
+  inline void set_allocated_governmentcontractinfo(::std::string* governmentcontractinfo);
 
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Invoicing.UniversalTransferDocumentSellerTitleInfo)
  private:
@@ -400,8 +407,8 @@ class UniversalTransferDocumentSellerTitleInfo : public ::google::protobuf::Mess
   inline void clear_has_documentcreator();
   inline void set_has_documentcreatorbase();
   inline void clear_has_documentcreatorbase();
-  inline void set_has_govermentcontractinfo();
-  inline void clear_has_govermentcontractinfo();
+  inline void set_has_governmentcontractinfo();
+  inline void clear_has_governmentcontractinfo();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -425,7 +432,7 @@ class UniversalTransferDocumentSellerTitleInfo : public ::google::protobuf::Mess
   ::Diadoc::Api::Proto::Invoicing::TransferInfo* transferinfo_;
   ::std::string* documentcreator_;
   ::std::string* documentcreatorbase_;
-  ::std::string* govermentcontractinfo_;
+  ::std::string* governmentcontractinfo_;
   int function_;
   friend void  protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
   friend void protobuf_AssignDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
@@ -2091,6 +2098,1084 @@ class UniversalTransferDocumentBuyerTitleInfo : public ::google::protobuf::Messa
   void InitAsDefaultInstance();
   static UniversalTransferDocumentBuyerTitleInfo* default_instance_;
 };
+// -------------------------------------------------------------------
+
+class UniversalCorrectionDocumentSellerTitleInfo : public ::google::protobuf::Message {
+ public:
+  UniversalCorrectionDocumentSellerTitleInfo();
+  virtual ~UniversalCorrectionDocumentSellerTitleInfo();
+
+  UniversalCorrectionDocumentSellerTitleInfo(const UniversalCorrectionDocumentSellerTitleInfo& from);
+
+  inline UniversalCorrectionDocumentSellerTitleInfo& operator=(const UniversalCorrectionDocumentSellerTitleInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const UniversalCorrectionDocumentSellerTitleInfo& default_instance();
+
+  void Swap(UniversalCorrectionDocumentSellerTitleInfo* other);
+
+  // implements Message ----------------------------------------------
+
+  UniversalCorrectionDocumentSellerTitleInfo* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const UniversalCorrectionDocumentSellerTitleInfo& from);
+  void MergeFrom(const UniversalCorrectionDocumentSellerTitleInfo& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required .Diadoc.Api.Proto.Invoicing.FunctionType Function = 1;
+  inline bool has_function() const;
+  inline void clear_function();
+  static const int kFunctionFieldNumber = 1;
+  inline ::Diadoc::Api::Proto::Invoicing::FunctionType function() const;
+  inline void set_function(::Diadoc::Api::Proto::Invoicing::FunctionType value);
+
+  // optional string DocumentName = 2;
+  inline bool has_documentname() const;
+  inline void clear_documentname();
+  static const int kDocumentNameFieldNumber = 2;
+  inline const ::std::string& documentname() const;
+  inline void set_documentname(const ::std::string& value);
+  inline void set_documentname(const char* value);
+  inline void set_documentname(const char* value, size_t size);
+  inline ::std::string* mutable_documentname();
+  inline ::std::string* release_documentname();
+  inline void set_allocated_documentname(::std::string* documentname);
+
+  // required string DocumentDate = 3;
+  inline bool has_documentdate() const;
+  inline void clear_documentdate();
+  static const int kDocumentDateFieldNumber = 3;
+  inline const ::std::string& documentdate() const;
+  inline void set_documentdate(const ::std::string& value);
+  inline void set_documentdate(const char* value);
+  inline void set_documentdate(const char* value, size_t size);
+  inline ::std::string* mutable_documentdate();
+  inline ::std::string* release_documentdate();
+  inline void set_allocated_documentdate(::std::string* documentdate);
+
+  // required string DocumentNumber = 4;
+  inline bool has_documentnumber() const;
+  inline void clear_documentnumber();
+  static const int kDocumentNumberFieldNumber = 4;
+  inline const ::std::string& documentnumber() const;
+  inline void set_documentnumber(const ::std::string& value);
+  inline void set_documentnumber(const char* value);
+  inline void set_documentnumber(const char* value, size_t size);
+  inline ::std::string* mutable_documentnumber();
+  inline ::std::string* release_documentnumber();
+  inline void set_allocated_documentnumber(::std::string* documentnumber);
+
+  // repeated .Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo Invoices = 5;
+  inline int invoices_size() const;
+  inline void clear_invoices();
+  static const int kInvoicesFieldNumber = 5;
+  inline const ::Diadoc::Api::Proto::Invoicing::InvoiceForCorrectionInfo& invoices(int index) const;
+  inline ::Diadoc::Api::Proto::Invoicing::InvoiceForCorrectionInfo* mutable_invoices(int index);
+  inline ::Diadoc::Api::Proto::Invoicing::InvoiceForCorrectionInfo* add_invoices();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::InvoiceForCorrectionInfo >&
+      invoices() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::InvoiceForCorrectionInfo >*
+      mutable_invoices();
+
+  // required .Diadoc.Api.Proto.Invoicing.Organizations.ExtendedOrganizationInfo Seller = 6;
+  inline bool has_seller() const;
+  inline void clear_seller();
+  static const int kSellerFieldNumber = 6;
+  inline const ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo& seller() const;
+  inline ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo* mutable_seller();
+  inline ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo* release_seller();
+  inline void set_allocated_seller(::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo* seller);
+
+  // required .Diadoc.Api.Proto.Invoicing.Organizations.ExtendedOrganizationInfo Buyer = 7;
+  inline bool has_buyer() const;
+  inline void clear_buyer();
+  static const int kBuyerFieldNumber = 7;
+  inline const ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo& buyer() const;
+  inline ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo* mutable_buyer();
+  inline ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo* release_buyer();
+  inline void set_allocated_buyer(::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo* buyer);
+
+  // repeated .Diadoc.Api.Proto.Invoicing.Signers.ExtendedSigner Signers = 8;
+  inline int signers_size() const;
+  inline void clear_signers();
+  static const int kSignersFieldNumber = 8;
+  inline const ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner& signers(int index) const;
+  inline ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner* mutable_signers(int index);
+  inline ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner* add_signers();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner >&
+      signers() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner >*
+      mutable_signers();
+
+  // required .Diadoc.Api.Proto.Invoicing.EventContent EventContent = 9;
+  inline bool has_eventcontent() const;
+  inline void clear_eventcontent();
+  static const int kEventContentFieldNumber = 9;
+  inline const ::Diadoc::Api::Proto::Invoicing::EventContent& eventcontent() const;
+  inline ::Diadoc::Api::Proto::Invoicing::EventContent* mutable_eventcontent();
+  inline ::Diadoc::Api::Proto::Invoicing::EventContent* release_eventcontent();
+  inline void set_allocated_eventcontent(::Diadoc::Api::Proto::Invoicing::EventContent* eventcontent);
+
+  // required .Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable InvoiceCorrectionTable = 10;
+  inline bool has_invoicecorrectiontable() const;
+  inline void clear_invoicecorrectiontable();
+  static const int kInvoiceCorrectionTableFieldNumber = 10;
+  inline const ::Diadoc::Api::Proto::Invoicing::InvoiceCorrectionTable& invoicecorrectiontable() const;
+  inline ::Diadoc::Api::Proto::Invoicing::InvoiceCorrectionTable* mutable_invoicecorrectiontable();
+  inline ::Diadoc::Api::Proto::Invoicing::InvoiceCorrectionTable* release_invoicecorrectiontable();
+  inline void set_allocated_invoicecorrectiontable(::Diadoc::Api::Proto::Invoicing::InvoiceCorrectionTable* invoicecorrectiontable);
+
+  // required string Currency = 11;
+  inline bool has_currency() const;
+  inline void clear_currency();
+  static const int kCurrencyFieldNumber = 11;
+  inline const ::std::string& currency() const;
+  inline void set_currency(const ::std::string& value);
+  inline void set_currency(const char* value);
+  inline void set_currency(const char* value, size_t size);
+  inline ::std::string* mutable_currency();
+  inline ::std::string* release_currency();
+  inline void set_allocated_currency(::std::string* currency);
+
+  // optional string CurrencyRate = 12;
+  inline bool has_currencyrate() const;
+  inline void clear_currencyrate();
+  static const int kCurrencyRateFieldNumber = 12;
+  inline const ::std::string& currencyrate() const;
+  inline void set_currencyrate(const ::std::string& value);
+  inline void set_currencyrate(const char* value);
+  inline void set_currencyrate(const char* value, size_t size);
+  inline ::std::string* mutable_currencyrate();
+  inline ::std::string* release_currencyrate();
+  inline void set_allocated_currencyrate(::std::string* currencyrate);
+
+  // optional string CorrectionRevisionDate = 13;
+  inline bool has_correctionrevisiondate() const;
+  inline void clear_correctionrevisiondate();
+  static const int kCorrectionRevisionDateFieldNumber = 13;
+  inline const ::std::string& correctionrevisiondate() const;
+  inline void set_correctionrevisiondate(const ::std::string& value);
+  inline void set_correctionrevisiondate(const char* value);
+  inline void set_correctionrevisiondate(const char* value, size_t size);
+  inline ::std::string* mutable_correctionrevisiondate();
+  inline ::std::string* release_correctionrevisiondate();
+  inline void set_allocated_correctionrevisiondate(::std::string* correctionrevisiondate);
+
+  // optional string CorrectionRevisionNumber = 14;
+  inline bool has_correctionrevisionnumber() const;
+  inline void clear_correctionrevisionnumber();
+  static const int kCorrectionRevisionNumberFieldNumber = 14;
+  inline const ::std::string& correctionrevisionnumber() const;
+  inline void set_correctionrevisionnumber(const ::std::string& value);
+  inline void set_correctionrevisionnumber(const char* value);
+  inline void set_correctionrevisionnumber(const char* value, size_t size);
+  inline ::std::string* mutable_correctionrevisionnumber();
+  inline ::std::string* release_correctionrevisionnumber();
+  inline void set_allocated_correctionrevisionnumber(::std::string* correctionrevisionnumber);
+
+  // optional .Diadoc.Api.Proto.Invoicing.AdditionalInfoId AdditionalInfoId = 15;
+  inline bool has_additionalinfoid() const;
+  inline void clear_additionalinfoid();
+  static const int kAdditionalInfoIdFieldNumber = 15;
+  inline const ::Diadoc::Api::Proto::Invoicing::AdditionalInfoId& additionalinfoid() const;
+  inline ::Diadoc::Api::Proto::Invoicing::AdditionalInfoId* mutable_additionalinfoid();
+  inline ::Diadoc::Api::Proto::Invoicing::AdditionalInfoId* release_additionalinfoid();
+  inline void set_allocated_additionalinfoid(::Diadoc::Api::Proto::Invoicing::AdditionalInfoId* additionalinfoid);
+
+  // required string DocumentCreator = 16;
+  inline bool has_documentcreator() const;
+  inline void clear_documentcreator();
+  static const int kDocumentCreatorFieldNumber = 16;
+  inline const ::std::string& documentcreator() const;
+  inline void set_documentcreator(const ::std::string& value);
+  inline void set_documentcreator(const char* value);
+  inline void set_documentcreator(const char* value, size_t size);
+  inline ::std::string* mutable_documentcreator();
+  inline ::std::string* release_documentcreator();
+  inline void set_allocated_documentcreator(::std::string* documentcreator);
+
+  // optional string DocumentCreatorBase = 17;
+  inline bool has_documentcreatorbase() const;
+  inline void clear_documentcreatorbase();
+  static const int kDocumentCreatorBaseFieldNumber = 17;
+  inline const ::std::string& documentcreatorbase() const;
+  inline void set_documentcreatorbase(const ::std::string& value);
+  inline void set_documentcreatorbase(const char* value);
+  inline void set_documentcreatorbase(const char* value, size_t size);
+  inline ::std::string* mutable_documentcreatorbase();
+  inline ::std::string* release_documentcreatorbase();
+  inline void set_allocated_documentcreatorbase(::std::string* documentcreatorbase);
+
+  // optional string GovernmentContractInfo = 18;
+  inline bool has_governmentcontractinfo() const;
+  inline void clear_governmentcontractinfo();
+  static const int kGovernmentContractInfoFieldNumber = 18;
+  inline const ::std::string& governmentcontractinfo() const;
+  inline void set_governmentcontractinfo(const ::std::string& value);
+  inline void set_governmentcontractinfo(const char* value);
+  inline void set_governmentcontractinfo(const char* value, size_t size);
+  inline ::std::string* mutable_governmentcontractinfo();
+  inline ::std::string* release_governmentcontractinfo();
+  inline void set_allocated_governmentcontractinfo(::std::string* governmentcontractinfo);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo)
+ private:
+  inline void set_has_function();
+  inline void clear_has_function();
+  inline void set_has_documentname();
+  inline void clear_has_documentname();
+  inline void set_has_documentdate();
+  inline void clear_has_documentdate();
+  inline void set_has_documentnumber();
+  inline void clear_has_documentnumber();
+  inline void set_has_seller();
+  inline void clear_has_seller();
+  inline void set_has_buyer();
+  inline void clear_has_buyer();
+  inline void set_has_eventcontent();
+  inline void clear_has_eventcontent();
+  inline void set_has_invoicecorrectiontable();
+  inline void clear_has_invoicecorrectiontable();
+  inline void set_has_currency();
+  inline void clear_has_currency();
+  inline void set_has_currencyrate();
+  inline void clear_has_currencyrate();
+  inline void set_has_correctionrevisiondate();
+  inline void clear_has_correctionrevisiondate();
+  inline void set_has_correctionrevisionnumber();
+  inline void clear_has_correctionrevisionnumber();
+  inline void set_has_additionalinfoid();
+  inline void clear_has_additionalinfoid();
+  inline void set_has_documentcreator();
+  inline void clear_has_documentcreator();
+  inline void set_has_documentcreatorbase();
+  inline void clear_has_documentcreatorbase();
+  inline void set_has_governmentcontractinfo();
+  inline void clear_has_governmentcontractinfo();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* documentname_;
+  ::std::string* documentdate_;
+  ::std::string* documentnumber_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::InvoiceForCorrectionInfo > invoices_;
+  ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo* seller_;
+  ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo* buyer_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner > signers_;
+  ::Diadoc::Api::Proto::Invoicing::EventContent* eventcontent_;
+  ::Diadoc::Api::Proto::Invoicing::InvoiceCorrectionTable* invoicecorrectiontable_;
+  ::std::string* currency_;
+  ::std::string* currencyrate_;
+  ::std::string* correctionrevisiondate_;
+  ::std::string* correctionrevisionnumber_;
+  ::Diadoc::Api::Proto::Invoicing::AdditionalInfoId* additionalinfoid_;
+  ::std::string* documentcreator_;
+  ::std::string* documentcreatorbase_;
+  ::std::string* governmentcontractinfo_;
+  int function_;
+  friend void  protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  friend void protobuf_AssignDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  friend void protobuf_ShutdownFile_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+
+  void InitAsDefaultInstance();
+  static UniversalCorrectionDocumentSellerTitleInfo* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class InvoiceForCorrectionInfo : public ::google::protobuf::Message {
+ public:
+  InvoiceForCorrectionInfo();
+  virtual ~InvoiceForCorrectionInfo();
+
+  InvoiceForCorrectionInfo(const InvoiceForCorrectionInfo& from);
+
+  inline InvoiceForCorrectionInfo& operator=(const InvoiceForCorrectionInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const InvoiceForCorrectionInfo& default_instance();
+
+  void Swap(InvoiceForCorrectionInfo* other);
+
+  // implements Message ----------------------------------------------
+
+  InvoiceForCorrectionInfo* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const InvoiceForCorrectionInfo& from);
+  void MergeFrom(const InvoiceForCorrectionInfo& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string InvoiceDate = 1;
+  inline bool has_invoicedate() const;
+  inline void clear_invoicedate();
+  static const int kInvoiceDateFieldNumber = 1;
+  inline const ::std::string& invoicedate() const;
+  inline void set_invoicedate(const ::std::string& value);
+  inline void set_invoicedate(const char* value);
+  inline void set_invoicedate(const char* value, size_t size);
+  inline ::std::string* mutable_invoicedate();
+  inline ::std::string* release_invoicedate();
+  inline void set_allocated_invoicedate(::std::string* invoicedate);
+
+  // required string InvoiceNumber = 2;
+  inline bool has_invoicenumber() const;
+  inline void clear_invoicenumber();
+  static const int kInvoiceNumberFieldNumber = 2;
+  inline const ::std::string& invoicenumber() const;
+  inline void set_invoicenumber(const ::std::string& value);
+  inline void set_invoicenumber(const char* value);
+  inline void set_invoicenumber(const char* value, size_t size);
+  inline ::std::string* mutable_invoicenumber();
+  inline ::std::string* release_invoicenumber();
+  inline void set_allocated_invoicenumber(::std::string* invoicenumber);
+
+  // repeated .Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo InvoiceRevisions = 3;
+  inline int invoicerevisions_size() const;
+  inline void clear_invoicerevisions();
+  static const int kInvoiceRevisionsFieldNumber = 3;
+  inline const ::Diadoc::Api::Proto::Invoicing::InvoiceRevisionInfo& invoicerevisions(int index) const;
+  inline ::Diadoc::Api::Proto::Invoicing::InvoiceRevisionInfo* mutable_invoicerevisions(int index);
+  inline ::Diadoc::Api::Proto::Invoicing::InvoiceRevisionInfo* add_invoicerevisions();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::InvoiceRevisionInfo >&
+      invoicerevisions() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::InvoiceRevisionInfo >*
+      mutable_invoicerevisions();
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo)
+ private:
+  inline void set_has_invoicedate();
+  inline void clear_has_invoicedate();
+  inline void set_has_invoicenumber();
+  inline void clear_has_invoicenumber();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* invoicedate_;
+  ::std::string* invoicenumber_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::InvoiceRevisionInfo > invoicerevisions_;
+  friend void  protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  friend void protobuf_AssignDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  friend void protobuf_ShutdownFile_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+
+  void InitAsDefaultInstance();
+  static InvoiceForCorrectionInfo* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class InvoiceRevisionInfo : public ::google::protobuf::Message {
+ public:
+  InvoiceRevisionInfo();
+  virtual ~InvoiceRevisionInfo();
+
+  InvoiceRevisionInfo(const InvoiceRevisionInfo& from);
+
+  inline InvoiceRevisionInfo& operator=(const InvoiceRevisionInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const InvoiceRevisionInfo& default_instance();
+
+  void Swap(InvoiceRevisionInfo* other);
+
+  // implements Message ----------------------------------------------
+
+  InvoiceRevisionInfo* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const InvoiceRevisionInfo& from);
+  void MergeFrom(const InvoiceRevisionInfo& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string InvoiceRevisionDate = 1;
+  inline bool has_invoicerevisiondate() const;
+  inline void clear_invoicerevisiondate();
+  static const int kInvoiceRevisionDateFieldNumber = 1;
+  inline const ::std::string& invoicerevisiondate() const;
+  inline void set_invoicerevisiondate(const ::std::string& value);
+  inline void set_invoicerevisiondate(const char* value);
+  inline void set_invoicerevisiondate(const char* value, size_t size);
+  inline ::std::string* mutable_invoicerevisiondate();
+  inline ::std::string* release_invoicerevisiondate();
+  inline void set_allocated_invoicerevisiondate(::std::string* invoicerevisiondate);
+
+  // required string InvoiceRevisionNumber = 2;
+  inline bool has_invoicerevisionnumber() const;
+  inline void clear_invoicerevisionnumber();
+  static const int kInvoiceRevisionNumberFieldNumber = 2;
+  inline const ::std::string& invoicerevisionnumber() const;
+  inline void set_invoicerevisionnumber(const ::std::string& value);
+  inline void set_invoicerevisionnumber(const char* value);
+  inline void set_invoicerevisionnumber(const char* value, size_t size);
+  inline ::std::string* mutable_invoicerevisionnumber();
+  inline ::std::string* release_invoicerevisionnumber();
+  inline void set_allocated_invoicerevisionnumber(::std::string* invoicerevisionnumber);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo)
+ private:
+  inline void set_has_invoicerevisiondate();
+  inline void clear_has_invoicerevisiondate();
+  inline void set_has_invoicerevisionnumber();
+  inline void clear_has_invoicerevisionnumber();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* invoicerevisiondate_;
+  ::std::string* invoicerevisionnumber_;
+  friend void  protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  friend void protobuf_AssignDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  friend void protobuf_ShutdownFile_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+
+  void InitAsDefaultInstance();
+  static InvoiceRevisionInfo* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class EventContent : public ::google::protobuf::Message {
+ public:
+  EventContent();
+  virtual ~EventContent();
+
+  EventContent(const EventContent& from);
+
+  inline EventContent& operator=(const EventContent& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const EventContent& default_instance();
+
+  void Swap(EventContent* other);
+
+  // implements Message ----------------------------------------------
+
+  EventContent* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const EventContent& from);
+  void MergeFrom(const EventContent& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional string CostChangeInfo = 1;
+  inline bool has_costchangeinfo() const;
+  inline void clear_costchangeinfo();
+  static const int kCostChangeInfoFieldNumber = 1;
+  inline const ::std::string& costchangeinfo() const;
+  inline void set_costchangeinfo(const ::std::string& value);
+  inline void set_costchangeinfo(const char* value);
+  inline void set_costchangeinfo(const char* value, size_t size);
+  inline ::std::string* mutable_costchangeinfo();
+  inline ::std::string* release_costchangeinfo();
+  inline void set_allocated_costchangeinfo(::std::string* costchangeinfo);
+
+  // required string TransferDocDetails = 2;
+  inline bool has_transferdocdetails() const;
+  inline void clear_transferdocdetails();
+  static const int kTransferDocDetailsFieldNumber = 2;
+  inline const ::std::string& transferdocdetails() const;
+  inline void set_transferdocdetails(const ::std::string& value);
+  inline void set_transferdocdetails(const char* value);
+  inline void set_transferdocdetails(const char* value, size_t size);
+  inline ::std::string* mutable_transferdocdetails();
+  inline ::std::string* release_transferdocdetails();
+  inline void set_allocated_transferdocdetails(::std::string* transferdocdetails);
+
+  // required string OperationContent = 3;
+  inline bool has_operationcontent() const;
+  inline void clear_operationcontent();
+  static const int kOperationContentFieldNumber = 3;
+  inline const ::std::string& operationcontent() const;
+  inline void set_operationcontent(const ::std::string& value);
+  inline void set_operationcontent(const char* value);
+  inline void set_operationcontent(const char* value, size_t size);
+  inline ::std::string* mutable_operationcontent();
+  inline ::std::string* release_operationcontent();
+  inline void set_allocated_operationcontent(::std::string* operationcontent);
+
+  // optional string NotificationDate = 4;
+  inline bool has_notificationdate() const;
+  inline void clear_notificationdate();
+  static const int kNotificationDateFieldNumber = 4;
+  inline const ::std::string& notificationdate() const;
+  inline void set_notificationdate(const ::std::string& value);
+  inline void set_notificationdate(const char* value);
+  inline void set_notificationdate(const char* value, size_t size);
+  inline ::std::string* mutable_notificationdate();
+  inline ::std::string* release_notificationdate();
+  inline void set_allocated_notificationdate(::std::string* notificationdate);
+
+  // repeated .Diadoc.Api.Proto.Invoicing.CorrectionBase CorrectionBase = 5;
+  inline int correctionbase_size() const;
+  inline void clear_correctionbase();
+  static const int kCorrectionBaseFieldNumber = 5;
+  inline const ::Diadoc::Api::Proto::Invoicing::CorrectionBase& correctionbase(int index) const;
+  inline ::Diadoc::Api::Proto::Invoicing::CorrectionBase* mutable_correctionbase(int index);
+  inline ::Diadoc::Api::Proto::Invoicing::CorrectionBase* add_correctionbase();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::CorrectionBase >&
+      correctionbase() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::CorrectionBase >*
+      mutable_correctionbase();
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Invoicing.EventContent)
+ private:
+  inline void set_has_costchangeinfo();
+  inline void clear_has_costchangeinfo();
+  inline void set_has_transferdocdetails();
+  inline void clear_has_transferdocdetails();
+  inline void set_has_operationcontent();
+  inline void clear_has_operationcontent();
+  inline void set_has_notificationdate();
+  inline void clear_has_notificationdate();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* costchangeinfo_;
+  ::std::string* transferdocdetails_;
+  ::std::string* operationcontent_;
+  ::std::string* notificationdate_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::CorrectionBase > correctionbase_;
+  friend void  protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  friend void protobuf_AssignDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  friend void protobuf_ShutdownFile_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+
+  void InitAsDefaultInstance();
+  static EventContent* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CorrectionBase : public ::google::protobuf::Message {
+ public:
+  CorrectionBase();
+  virtual ~CorrectionBase();
+
+  CorrectionBase(const CorrectionBase& from);
+
+  inline CorrectionBase& operator=(const CorrectionBase& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CorrectionBase& default_instance();
+
+  void Swap(CorrectionBase* other);
+
+  // implements Message ----------------------------------------------
+
+  CorrectionBase* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CorrectionBase& from);
+  void MergeFrom(const CorrectionBase& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string BaseDocumentName = 1;
+  inline bool has_basedocumentname() const;
+  inline void clear_basedocumentname();
+  static const int kBaseDocumentNameFieldNumber = 1;
+  inline const ::std::string& basedocumentname() const;
+  inline void set_basedocumentname(const ::std::string& value);
+  inline void set_basedocumentname(const char* value);
+  inline void set_basedocumentname(const char* value, size_t size);
+  inline ::std::string* mutable_basedocumentname();
+  inline ::std::string* release_basedocumentname();
+  inline void set_allocated_basedocumentname(::std::string* basedocumentname);
+
+  // optional string BaseDocumentNumber = 2;
+  inline bool has_basedocumentnumber() const;
+  inline void clear_basedocumentnumber();
+  static const int kBaseDocumentNumberFieldNumber = 2;
+  inline const ::std::string& basedocumentnumber() const;
+  inline void set_basedocumentnumber(const ::std::string& value);
+  inline void set_basedocumentnumber(const char* value);
+  inline void set_basedocumentnumber(const char* value, size_t size);
+  inline ::std::string* mutable_basedocumentnumber();
+  inline ::std::string* release_basedocumentnumber();
+  inline void set_allocated_basedocumentnumber(::std::string* basedocumentnumber);
+
+  // optional string BaseDocumentDate = 3;
+  inline bool has_basedocumentdate() const;
+  inline void clear_basedocumentdate();
+  static const int kBaseDocumentDateFieldNumber = 3;
+  inline const ::std::string& basedocumentdate() const;
+  inline void set_basedocumentdate(const ::std::string& value);
+  inline void set_basedocumentdate(const char* value);
+  inline void set_basedocumentdate(const char* value, size_t size);
+  inline ::std::string* mutable_basedocumentdate();
+  inline ::std::string* release_basedocumentdate();
+  inline void set_allocated_basedocumentdate(::std::string* basedocumentdate);
+
+  // optional string AdditionalInfo = 4;
+  inline bool has_additionalinfo() const;
+  inline void clear_additionalinfo();
+  static const int kAdditionalInfoFieldNumber = 4;
+  inline const ::std::string& additionalinfo() const;
+  inline void set_additionalinfo(const ::std::string& value);
+  inline void set_additionalinfo(const char* value);
+  inline void set_additionalinfo(const char* value, size_t size);
+  inline ::std::string* mutable_additionalinfo();
+  inline ::std::string* release_additionalinfo();
+  inline void set_allocated_additionalinfo(::std::string* additionalinfo);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Invoicing.CorrectionBase)
+ private:
+  inline void set_has_basedocumentname();
+  inline void clear_has_basedocumentname();
+  inline void set_has_basedocumentnumber();
+  inline void clear_has_basedocumentnumber();
+  inline void set_has_basedocumentdate();
+  inline void clear_has_basedocumentdate();
+  inline void set_has_additionalinfo();
+  inline void clear_has_additionalinfo();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* basedocumentname_;
+  ::std::string* basedocumentnumber_;
+  ::std::string* basedocumentdate_;
+  ::std::string* additionalinfo_;
+  friend void  protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  friend void protobuf_AssignDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  friend void protobuf_ShutdownFile_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+
+  void InitAsDefaultInstance();
+  static CorrectionBase* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class InvoiceCorrectionTable : public ::google::protobuf::Message {
+ public:
+  InvoiceCorrectionTable();
+  virtual ~InvoiceCorrectionTable();
+
+  InvoiceCorrectionTable(const InvoiceCorrectionTable& from);
+
+  inline InvoiceCorrectionTable& operator=(const InvoiceCorrectionTable& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const InvoiceCorrectionTable& default_instance();
+
+  void Swap(InvoiceCorrectionTable* other);
+
+  // implements Message ----------------------------------------------
+
+  InvoiceCorrectionTable* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const InvoiceCorrectionTable& from);
+  void MergeFrom(const InvoiceCorrectionTable& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem Items = 1;
+  inline int items_size() const;
+  inline void clear_items();
+  static const int kItemsFieldNumber = 1;
+  inline const ::Diadoc::Api::Proto::Invoicing::ExtendedInvoiceCorrectionItem& items(int index) const;
+  inline ::Diadoc::Api::Proto::Invoicing::ExtendedInvoiceCorrectionItem* mutable_items(int index);
+  inline ::Diadoc::Api::Proto::Invoicing::ExtendedInvoiceCorrectionItem* add_items();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::ExtendedInvoiceCorrectionItem >&
+      items() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::ExtendedInvoiceCorrectionItem >*
+      mutable_items();
+
+  // optional .Diadoc.Api.Proto.Invoicing.InvoiceTotalsDiff TotalsInc = 2;
+  inline bool has_totalsinc() const;
+  inline void clear_totalsinc();
+  static const int kTotalsIncFieldNumber = 2;
+  inline const ::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff& totalsinc() const;
+  inline ::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff* mutable_totalsinc();
+  inline ::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff* release_totalsinc();
+  inline void set_allocated_totalsinc(::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff* totalsinc);
+
+  // optional .Diadoc.Api.Proto.Invoicing.InvoiceTotalsDiff TotalsDec = 3;
+  inline bool has_totalsdec() const;
+  inline void clear_totalsdec();
+  static const int kTotalsDecFieldNumber = 3;
+  inline const ::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff& totalsdec() const;
+  inline ::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff* mutable_totalsdec();
+  inline ::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff* release_totalsdec();
+  inline void set_allocated_totalsdec(::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff* totalsdec);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable)
+ private:
+  inline void set_has_totalsinc();
+  inline void clear_has_totalsinc();
+  inline void set_has_totalsdec();
+  inline void clear_has_totalsdec();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::ExtendedInvoiceCorrectionItem > items_;
+  ::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff* totalsinc_;
+  ::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff* totalsdec_;
+  friend void  protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  friend void protobuf_AssignDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  friend void protobuf_ShutdownFile_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+
+  void InitAsDefaultInstance();
+  static InvoiceCorrectionTable* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class ExtendedInvoiceCorrectionItem : public ::google::protobuf::Message {
+ public:
+  ExtendedInvoiceCorrectionItem();
+  virtual ~ExtendedInvoiceCorrectionItem();
+
+  ExtendedInvoiceCorrectionItem(const ExtendedInvoiceCorrectionItem& from);
+
+  inline ExtendedInvoiceCorrectionItem& operator=(const ExtendedInvoiceCorrectionItem& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ExtendedInvoiceCorrectionItem& default_instance();
+
+  void Swap(ExtendedInvoiceCorrectionItem* other);
+
+  // implements Message ----------------------------------------------
+
+  ExtendedInvoiceCorrectionItem* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const ExtendedInvoiceCorrectionItem& from);
+  void MergeFrom(const ExtendedInvoiceCorrectionItem& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string Product = 1;
+  inline bool has_product() const;
+  inline void clear_product();
+  static const int kProductFieldNumber = 1;
+  inline const ::std::string& product() const;
+  inline void set_product(const ::std::string& value);
+  inline void set_product(const char* value);
+  inline void set_product(const char* value, size_t size);
+  inline ::std::string* mutable_product();
+  inline ::std::string* release_product();
+  inline void set_allocated_product(::std::string* product);
+
+  // required .Diadoc.Api.Proto.Invoicing.CorrectableInvoiceItemFields OriginalValues = 2;
+  inline bool has_originalvalues() const;
+  inline void clear_originalvalues();
+  static const int kOriginalValuesFieldNumber = 2;
+  inline const ::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields& originalvalues() const;
+  inline ::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields* mutable_originalvalues();
+  inline ::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields* release_originalvalues();
+  inline void set_allocated_originalvalues(::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields* originalvalues);
+
+  // required .Diadoc.Api.Proto.Invoicing.CorrectableInvoiceItemFields CorrectedValues = 3;
+  inline bool has_correctedvalues() const;
+  inline void clear_correctedvalues();
+  static const int kCorrectedValuesFieldNumber = 3;
+  inline const ::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields& correctedvalues() const;
+  inline ::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields* mutable_correctedvalues();
+  inline ::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields* release_correctedvalues();
+  inline void set_allocated_correctedvalues(::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields* correctedvalues);
+
+  // optional .Diadoc.Api.Proto.Invoicing.InvoiceItemAmountsDiff AmountsInc = 4;
+  inline bool has_amountsinc() const;
+  inline void clear_amountsinc();
+  static const int kAmountsIncFieldNumber = 4;
+  inline const ::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff& amountsinc() const;
+  inline ::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff* mutable_amountsinc();
+  inline ::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff* release_amountsinc();
+  inline void set_allocated_amountsinc(::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff* amountsinc);
+
+  // optional .Diadoc.Api.Proto.Invoicing.InvoiceItemAmountsDiff AmountsDec = 5;
+  inline bool has_amountsdec() const;
+  inline void clear_amountsdec();
+  static const int kAmountsDecFieldNumber = 5;
+  inline const ::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff& amountsdec() const;
+  inline ::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff* mutable_amountsdec();
+  inline ::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff* release_amountsdec();
+  inline void set_allocated_amountsdec(::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff* amountsdec);
+
+  // optional string ItemAccountDebit = 6;
+  inline bool has_itemaccountdebit() const;
+  inline void clear_itemaccountdebit();
+  static const int kItemAccountDebitFieldNumber = 6;
+  inline const ::std::string& itemaccountdebit() const;
+  inline void set_itemaccountdebit(const ::std::string& value);
+  inline void set_itemaccountdebit(const char* value);
+  inline void set_itemaccountdebit(const char* value, size_t size);
+  inline ::std::string* mutable_itemaccountdebit();
+  inline ::std::string* release_itemaccountdebit();
+  inline void set_allocated_itemaccountdebit(::std::string* itemaccountdebit);
+
+  // optional string ItemAccountCredit = 7;
+  inline bool has_itemaccountcredit() const;
+  inline void clear_itemaccountcredit();
+  static const int kItemAccountCreditFieldNumber = 7;
+  inline const ::std::string& itemaccountcredit() const;
+  inline void set_itemaccountcredit(const ::std::string& value);
+  inline void set_itemaccountcredit(const char* value);
+  inline void set_itemaccountcredit(const char* value, size_t size);
+  inline ::std::string* mutable_itemaccountcredit();
+  inline ::std::string* release_itemaccountcredit();
+  inline void set_allocated_itemaccountcredit(::std::string* itemaccountcredit);
+
+  // repeated .Diadoc.Api.Proto.Invoicing.AdditionalInfo AdditionalInfo = 8;
+  inline int additionalinfo_size() const;
+  inline void clear_additionalinfo();
+  static const int kAdditionalInfoFieldNumber = 8;
+  inline const ::Diadoc::Api::Proto::Invoicing::AdditionalInfo& additionalinfo(int index) const;
+  inline ::Diadoc::Api::Proto::Invoicing::AdditionalInfo* mutable_additionalinfo(int index);
+  inline ::Diadoc::Api::Proto::Invoicing::AdditionalInfo* add_additionalinfo();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::AdditionalInfo >&
+      additionalinfo() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::AdditionalInfo >*
+      mutable_additionalinfo();
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem)
+ private:
+  inline void set_has_product();
+  inline void clear_has_product();
+  inline void set_has_originalvalues();
+  inline void clear_has_originalvalues();
+  inline void set_has_correctedvalues();
+  inline void clear_has_correctedvalues();
+  inline void set_has_amountsinc();
+  inline void clear_has_amountsinc();
+  inline void set_has_amountsdec();
+  inline void clear_has_amountsdec();
+  inline void set_has_itemaccountdebit();
+  inline void clear_has_itemaccountdebit();
+  inline void set_has_itemaccountcredit();
+  inline void clear_has_itemaccountcredit();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* product_;
+  ::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields* originalvalues_;
+  ::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields* correctedvalues_;
+  ::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff* amountsinc_;
+  ::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff* amountsdec_;
+  ::std::string* itemaccountdebit_;
+  ::std::string* itemaccountcredit_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::AdditionalInfo > additionalinfo_;
+  friend void  protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  friend void protobuf_AssignDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+  friend void protobuf_ShutdownFile_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
+
+  void InitAsDefaultInstance();
+  static ExtendedInvoiceCorrectionItem* default_instance_;
+};
 // ===================================================================
 
 
@@ -3154,80 +4239,80 @@ inline void UniversalTransferDocumentSellerTitleInfo::set_allocated_documentcrea
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.UniversalTransferDocumentSellerTitleInfo.DocumentCreatorBase)
 }
 
-// optional string GovermentContractInfo = 20;
-inline bool UniversalTransferDocumentSellerTitleInfo::has_govermentcontractinfo() const {
+// optional string GovernmentContractInfo = 20;
+inline bool UniversalTransferDocumentSellerTitleInfo::has_governmentcontractinfo() const {
   return (_has_bits_[0] & 0x00080000u) != 0;
 }
-inline void UniversalTransferDocumentSellerTitleInfo::set_has_govermentcontractinfo() {
+inline void UniversalTransferDocumentSellerTitleInfo::set_has_governmentcontractinfo() {
   _has_bits_[0] |= 0x00080000u;
 }
-inline void UniversalTransferDocumentSellerTitleInfo::clear_has_govermentcontractinfo() {
+inline void UniversalTransferDocumentSellerTitleInfo::clear_has_governmentcontractinfo() {
   _has_bits_[0] &= ~0x00080000u;
 }
-inline void UniversalTransferDocumentSellerTitleInfo::clear_govermentcontractinfo() {
-  if (govermentcontractinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    govermentcontractinfo_->clear();
+inline void UniversalTransferDocumentSellerTitleInfo::clear_governmentcontractinfo() {
+  if (governmentcontractinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    governmentcontractinfo_->clear();
   }
-  clear_has_govermentcontractinfo();
+  clear_has_governmentcontractinfo();
 }
-inline const ::std::string& UniversalTransferDocumentSellerTitleInfo::govermentcontractinfo() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.UniversalTransferDocumentSellerTitleInfo.GovermentContractInfo)
-  return *govermentcontractinfo_;
+inline const ::std::string& UniversalTransferDocumentSellerTitleInfo::governmentcontractinfo() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.UniversalTransferDocumentSellerTitleInfo.GovernmentContractInfo)
+  return *governmentcontractinfo_;
 }
-inline void UniversalTransferDocumentSellerTitleInfo::set_govermentcontractinfo(const ::std::string& value) {
-  set_has_govermentcontractinfo();
-  if (govermentcontractinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    govermentcontractinfo_ = new ::std::string;
+inline void UniversalTransferDocumentSellerTitleInfo::set_governmentcontractinfo(const ::std::string& value) {
+  set_has_governmentcontractinfo();
+  if (governmentcontractinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    governmentcontractinfo_ = new ::std::string;
   }
-  govermentcontractinfo_->assign(value);
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.UniversalTransferDocumentSellerTitleInfo.GovermentContractInfo)
+  governmentcontractinfo_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.UniversalTransferDocumentSellerTitleInfo.GovernmentContractInfo)
 }
-inline void UniversalTransferDocumentSellerTitleInfo::set_govermentcontractinfo(const char* value) {
-  set_has_govermentcontractinfo();
-  if (govermentcontractinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    govermentcontractinfo_ = new ::std::string;
+inline void UniversalTransferDocumentSellerTitleInfo::set_governmentcontractinfo(const char* value) {
+  set_has_governmentcontractinfo();
+  if (governmentcontractinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    governmentcontractinfo_ = new ::std::string;
   }
-  govermentcontractinfo_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.UniversalTransferDocumentSellerTitleInfo.GovermentContractInfo)
+  governmentcontractinfo_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.UniversalTransferDocumentSellerTitleInfo.GovernmentContractInfo)
 }
-inline void UniversalTransferDocumentSellerTitleInfo::set_govermentcontractinfo(const char* value, size_t size) {
-  set_has_govermentcontractinfo();
-  if (govermentcontractinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    govermentcontractinfo_ = new ::std::string;
+inline void UniversalTransferDocumentSellerTitleInfo::set_governmentcontractinfo(const char* value, size_t size) {
+  set_has_governmentcontractinfo();
+  if (governmentcontractinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    governmentcontractinfo_ = new ::std::string;
   }
-  govermentcontractinfo_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.UniversalTransferDocumentSellerTitleInfo.GovermentContractInfo)
+  governmentcontractinfo_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.UniversalTransferDocumentSellerTitleInfo.GovernmentContractInfo)
 }
-inline ::std::string* UniversalTransferDocumentSellerTitleInfo::mutable_govermentcontractinfo() {
-  set_has_govermentcontractinfo();
-  if (govermentcontractinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    govermentcontractinfo_ = new ::std::string;
+inline ::std::string* UniversalTransferDocumentSellerTitleInfo::mutable_governmentcontractinfo() {
+  set_has_governmentcontractinfo();
+  if (governmentcontractinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    governmentcontractinfo_ = new ::std::string;
   }
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.UniversalTransferDocumentSellerTitleInfo.GovermentContractInfo)
-  return govermentcontractinfo_;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.UniversalTransferDocumentSellerTitleInfo.GovernmentContractInfo)
+  return governmentcontractinfo_;
 }
-inline ::std::string* UniversalTransferDocumentSellerTitleInfo::release_govermentcontractinfo() {
-  clear_has_govermentcontractinfo();
-  if (govermentcontractinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+inline ::std::string* UniversalTransferDocumentSellerTitleInfo::release_governmentcontractinfo() {
+  clear_has_governmentcontractinfo();
+  if (governmentcontractinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     return NULL;
   } else {
-    ::std::string* temp = govermentcontractinfo_;
-    govermentcontractinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    ::std::string* temp = governmentcontractinfo_;
+    governmentcontractinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     return temp;
   }
 }
-inline void UniversalTransferDocumentSellerTitleInfo::set_allocated_govermentcontractinfo(::std::string* govermentcontractinfo) {
-  if (govermentcontractinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete govermentcontractinfo_;
+inline void UniversalTransferDocumentSellerTitleInfo::set_allocated_governmentcontractinfo(::std::string* governmentcontractinfo) {
+  if (governmentcontractinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete governmentcontractinfo_;
   }
-  if (govermentcontractinfo) {
-    set_has_govermentcontractinfo();
-    govermentcontractinfo_ = govermentcontractinfo;
+  if (governmentcontractinfo) {
+    set_has_governmentcontractinfo();
+    governmentcontractinfo_ = governmentcontractinfo;
   } else {
-    clear_has_govermentcontractinfo();
-    govermentcontractinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_governmentcontractinfo();
+    governmentcontractinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.UniversalTransferDocumentSellerTitleInfo.GovermentContractInfo)
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.UniversalTransferDocumentSellerTitleInfo.GovernmentContractInfo)
 }
 
 // -------------------------------------------------------------------
@@ -7680,6 +8765,2590 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::Si
 UniversalTransferDocumentBuyerTitleInfo::mutable_signers() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Invoicing.UniversalTransferDocumentBuyerTitleInfo.Signers)
   return &signers_;
+}
+
+// -------------------------------------------------------------------
+
+// UniversalCorrectionDocumentSellerTitleInfo
+
+// required .Diadoc.Api.Proto.Invoicing.FunctionType Function = 1;
+inline bool UniversalCorrectionDocumentSellerTitleInfo::has_function() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_has_function() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_has_function() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_function() {
+  function_ = 0;
+  clear_has_function();
+}
+inline ::Diadoc::Api::Proto::Invoicing::FunctionType UniversalCorrectionDocumentSellerTitleInfo::function() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Function)
+  return static_cast< ::Diadoc::Api::Proto::Invoicing::FunctionType >(function_);
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_function(::Diadoc::Api::Proto::Invoicing::FunctionType value) {
+  assert(::Diadoc::Api::Proto::Invoicing::FunctionType_IsValid(value));
+  set_has_function();
+  function_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Function)
+}
+
+// optional string DocumentName = 2;
+inline bool UniversalCorrectionDocumentSellerTitleInfo::has_documentname() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_has_documentname() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_has_documentname() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_documentname() {
+  if (documentname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentname_->clear();
+  }
+  clear_has_documentname();
+}
+inline const ::std::string& UniversalCorrectionDocumentSellerTitleInfo::documentname() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentName)
+  return *documentname_;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_documentname(const ::std::string& value) {
+  set_has_documentname();
+  if (documentname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentname_ = new ::std::string;
+  }
+  documentname_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentName)
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_documentname(const char* value) {
+  set_has_documentname();
+  if (documentname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentname_ = new ::std::string;
+  }
+  documentname_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentName)
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_documentname(const char* value, size_t size) {
+  set_has_documentname();
+  if (documentname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentname_ = new ::std::string;
+  }
+  documentname_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentName)
+}
+inline ::std::string* UniversalCorrectionDocumentSellerTitleInfo::mutable_documentname() {
+  set_has_documentname();
+  if (documentname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentname_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentName)
+  return documentname_;
+}
+inline ::std::string* UniversalCorrectionDocumentSellerTitleInfo::release_documentname() {
+  clear_has_documentname();
+  if (documentname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = documentname_;
+    documentname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_allocated_documentname(::std::string* documentname) {
+  if (documentname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete documentname_;
+  }
+  if (documentname) {
+    set_has_documentname();
+    documentname_ = documentname;
+  } else {
+    clear_has_documentname();
+    documentname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentName)
+}
+
+// required string DocumentDate = 3;
+inline bool UniversalCorrectionDocumentSellerTitleInfo::has_documentdate() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_has_documentdate() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_has_documentdate() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_documentdate() {
+  if (documentdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentdate_->clear();
+  }
+  clear_has_documentdate();
+}
+inline const ::std::string& UniversalCorrectionDocumentSellerTitleInfo::documentdate() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentDate)
+  return *documentdate_;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_documentdate(const ::std::string& value) {
+  set_has_documentdate();
+  if (documentdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentdate_ = new ::std::string;
+  }
+  documentdate_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentDate)
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_documentdate(const char* value) {
+  set_has_documentdate();
+  if (documentdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentdate_ = new ::std::string;
+  }
+  documentdate_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentDate)
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_documentdate(const char* value, size_t size) {
+  set_has_documentdate();
+  if (documentdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentdate_ = new ::std::string;
+  }
+  documentdate_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentDate)
+}
+inline ::std::string* UniversalCorrectionDocumentSellerTitleInfo::mutable_documentdate() {
+  set_has_documentdate();
+  if (documentdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentdate_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentDate)
+  return documentdate_;
+}
+inline ::std::string* UniversalCorrectionDocumentSellerTitleInfo::release_documentdate() {
+  clear_has_documentdate();
+  if (documentdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = documentdate_;
+    documentdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_allocated_documentdate(::std::string* documentdate) {
+  if (documentdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete documentdate_;
+  }
+  if (documentdate) {
+    set_has_documentdate();
+    documentdate_ = documentdate;
+  } else {
+    clear_has_documentdate();
+    documentdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentDate)
+}
+
+// required string DocumentNumber = 4;
+inline bool UniversalCorrectionDocumentSellerTitleInfo::has_documentnumber() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_has_documentnumber() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_has_documentnumber() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_documentnumber() {
+  if (documentnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentnumber_->clear();
+  }
+  clear_has_documentnumber();
+}
+inline const ::std::string& UniversalCorrectionDocumentSellerTitleInfo::documentnumber() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentNumber)
+  return *documentnumber_;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_documentnumber(const ::std::string& value) {
+  set_has_documentnumber();
+  if (documentnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentnumber_ = new ::std::string;
+  }
+  documentnumber_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentNumber)
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_documentnumber(const char* value) {
+  set_has_documentnumber();
+  if (documentnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentnumber_ = new ::std::string;
+  }
+  documentnumber_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentNumber)
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_documentnumber(const char* value, size_t size) {
+  set_has_documentnumber();
+  if (documentnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentnumber_ = new ::std::string;
+  }
+  documentnumber_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentNumber)
+}
+inline ::std::string* UniversalCorrectionDocumentSellerTitleInfo::mutable_documentnumber() {
+  set_has_documentnumber();
+  if (documentnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentnumber_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentNumber)
+  return documentnumber_;
+}
+inline ::std::string* UniversalCorrectionDocumentSellerTitleInfo::release_documentnumber() {
+  clear_has_documentnumber();
+  if (documentnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = documentnumber_;
+    documentnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_allocated_documentnumber(::std::string* documentnumber) {
+  if (documentnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete documentnumber_;
+  }
+  if (documentnumber) {
+    set_has_documentnumber();
+    documentnumber_ = documentnumber;
+  } else {
+    clear_has_documentnumber();
+    documentnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentNumber)
+}
+
+// repeated .Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo Invoices = 5;
+inline int UniversalCorrectionDocumentSellerTitleInfo::invoices_size() const {
+  return invoices_.size();
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_invoices() {
+  invoices_.Clear();
+}
+inline const ::Diadoc::Api::Proto::Invoicing::InvoiceForCorrectionInfo& UniversalCorrectionDocumentSellerTitleInfo::invoices(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Invoices)
+  return invoices_.Get(index);
+}
+inline ::Diadoc::Api::Proto::Invoicing::InvoiceForCorrectionInfo* UniversalCorrectionDocumentSellerTitleInfo::mutable_invoices(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Invoices)
+  return invoices_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::Invoicing::InvoiceForCorrectionInfo* UniversalCorrectionDocumentSellerTitleInfo::add_invoices() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Invoices)
+  return invoices_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::InvoiceForCorrectionInfo >&
+UniversalCorrectionDocumentSellerTitleInfo::invoices() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Invoices)
+  return invoices_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::InvoiceForCorrectionInfo >*
+UniversalCorrectionDocumentSellerTitleInfo::mutable_invoices() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Invoices)
+  return &invoices_;
+}
+
+// required .Diadoc.Api.Proto.Invoicing.Organizations.ExtendedOrganizationInfo Seller = 6;
+inline bool UniversalCorrectionDocumentSellerTitleInfo::has_seller() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_has_seller() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_has_seller() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_seller() {
+  if (seller_ != NULL) seller_->::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo::Clear();
+  clear_has_seller();
+}
+inline const ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo& UniversalCorrectionDocumentSellerTitleInfo::seller() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Seller)
+  return seller_ != NULL ? *seller_ : *default_instance_->seller_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo* UniversalCorrectionDocumentSellerTitleInfo::mutable_seller() {
+  set_has_seller();
+  if (seller_ == NULL) seller_ = new ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Seller)
+  return seller_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo* UniversalCorrectionDocumentSellerTitleInfo::release_seller() {
+  clear_has_seller();
+  ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo* temp = seller_;
+  seller_ = NULL;
+  return temp;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_allocated_seller(::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo* seller) {
+  delete seller_;
+  seller_ = seller;
+  if (seller) {
+    set_has_seller();
+  } else {
+    clear_has_seller();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Seller)
+}
+
+// required .Diadoc.Api.Proto.Invoicing.Organizations.ExtendedOrganizationInfo Buyer = 7;
+inline bool UniversalCorrectionDocumentSellerTitleInfo::has_buyer() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_has_buyer() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_has_buyer() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_buyer() {
+  if (buyer_ != NULL) buyer_->::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo::Clear();
+  clear_has_buyer();
+}
+inline const ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo& UniversalCorrectionDocumentSellerTitleInfo::buyer() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Buyer)
+  return buyer_ != NULL ? *buyer_ : *default_instance_->buyer_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo* UniversalCorrectionDocumentSellerTitleInfo::mutable_buyer() {
+  set_has_buyer();
+  if (buyer_ == NULL) buyer_ = new ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Buyer)
+  return buyer_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo* UniversalCorrectionDocumentSellerTitleInfo::release_buyer() {
+  clear_has_buyer();
+  ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo* temp = buyer_;
+  buyer_ = NULL;
+  return temp;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_allocated_buyer(::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo* buyer) {
+  delete buyer_;
+  buyer_ = buyer;
+  if (buyer) {
+    set_has_buyer();
+  } else {
+    clear_has_buyer();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Buyer)
+}
+
+// repeated .Diadoc.Api.Proto.Invoicing.Signers.ExtendedSigner Signers = 8;
+inline int UniversalCorrectionDocumentSellerTitleInfo::signers_size() const {
+  return signers_.size();
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_signers() {
+  signers_.Clear();
+}
+inline const ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner& UniversalCorrectionDocumentSellerTitleInfo::signers(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Signers)
+  return signers_.Get(index);
+}
+inline ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner* UniversalCorrectionDocumentSellerTitleInfo::mutable_signers(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Signers)
+  return signers_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner* UniversalCorrectionDocumentSellerTitleInfo::add_signers() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Signers)
+  return signers_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner >&
+UniversalCorrectionDocumentSellerTitleInfo::signers() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Signers)
+  return signers_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner >*
+UniversalCorrectionDocumentSellerTitleInfo::mutable_signers() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Signers)
+  return &signers_;
+}
+
+// required .Diadoc.Api.Proto.Invoicing.EventContent EventContent = 9;
+inline bool UniversalCorrectionDocumentSellerTitleInfo::has_eventcontent() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_has_eventcontent() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_has_eventcontent() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_eventcontent() {
+  if (eventcontent_ != NULL) eventcontent_->::Diadoc::Api::Proto::Invoicing::EventContent::Clear();
+  clear_has_eventcontent();
+}
+inline const ::Diadoc::Api::Proto::Invoicing::EventContent& UniversalCorrectionDocumentSellerTitleInfo::eventcontent() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.EventContent)
+  return eventcontent_ != NULL ? *eventcontent_ : *default_instance_->eventcontent_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::EventContent* UniversalCorrectionDocumentSellerTitleInfo::mutable_eventcontent() {
+  set_has_eventcontent();
+  if (eventcontent_ == NULL) eventcontent_ = new ::Diadoc::Api::Proto::Invoicing::EventContent;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.EventContent)
+  return eventcontent_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::EventContent* UniversalCorrectionDocumentSellerTitleInfo::release_eventcontent() {
+  clear_has_eventcontent();
+  ::Diadoc::Api::Proto::Invoicing::EventContent* temp = eventcontent_;
+  eventcontent_ = NULL;
+  return temp;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_allocated_eventcontent(::Diadoc::Api::Proto::Invoicing::EventContent* eventcontent) {
+  delete eventcontent_;
+  eventcontent_ = eventcontent;
+  if (eventcontent) {
+    set_has_eventcontent();
+  } else {
+    clear_has_eventcontent();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.EventContent)
+}
+
+// required .Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable InvoiceCorrectionTable = 10;
+inline bool UniversalCorrectionDocumentSellerTitleInfo::has_invoicecorrectiontable() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_has_invoicecorrectiontable() {
+  _has_bits_[0] |= 0x00000200u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_has_invoicecorrectiontable() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_invoicecorrectiontable() {
+  if (invoicecorrectiontable_ != NULL) invoicecorrectiontable_->::Diadoc::Api::Proto::Invoicing::InvoiceCorrectionTable::Clear();
+  clear_has_invoicecorrectiontable();
+}
+inline const ::Diadoc::Api::Proto::Invoicing::InvoiceCorrectionTable& UniversalCorrectionDocumentSellerTitleInfo::invoicecorrectiontable() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.InvoiceCorrectionTable)
+  return invoicecorrectiontable_ != NULL ? *invoicecorrectiontable_ : *default_instance_->invoicecorrectiontable_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::InvoiceCorrectionTable* UniversalCorrectionDocumentSellerTitleInfo::mutable_invoicecorrectiontable() {
+  set_has_invoicecorrectiontable();
+  if (invoicecorrectiontable_ == NULL) invoicecorrectiontable_ = new ::Diadoc::Api::Proto::Invoicing::InvoiceCorrectionTable;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.InvoiceCorrectionTable)
+  return invoicecorrectiontable_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::InvoiceCorrectionTable* UniversalCorrectionDocumentSellerTitleInfo::release_invoicecorrectiontable() {
+  clear_has_invoicecorrectiontable();
+  ::Diadoc::Api::Proto::Invoicing::InvoiceCorrectionTable* temp = invoicecorrectiontable_;
+  invoicecorrectiontable_ = NULL;
+  return temp;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_allocated_invoicecorrectiontable(::Diadoc::Api::Proto::Invoicing::InvoiceCorrectionTable* invoicecorrectiontable) {
+  delete invoicecorrectiontable_;
+  invoicecorrectiontable_ = invoicecorrectiontable;
+  if (invoicecorrectiontable) {
+    set_has_invoicecorrectiontable();
+  } else {
+    clear_has_invoicecorrectiontable();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.InvoiceCorrectionTable)
+}
+
+// required string Currency = 11;
+inline bool UniversalCorrectionDocumentSellerTitleInfo::has_currency() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_has_currency() {
+  _has_bits_[0] |= 0x00000400u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_has_currency() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_currency() {
+  if (currency_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    currency_->clear();
+  }
+  clear_has_currency();
+}
+inline const ::std::string& UniversalCorrectionDocumentSellerTitleInfo::currency() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Currency)
+  return *currency_;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_currency(const ::std::string& value) {
+  set_has_currency();
+  if (currency_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    currency_ = new ::std::string;
+  }
+  currency_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Currency)
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_currency(const char* value) {
+  set_has_currency();
+  if (currency_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    currency_ = new ::std::string;
+  }
+  currency_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Currency)
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_currency(const char* value, size_t size) {
+  set_has_currency();
+  if (currency_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    currency_ = new ::std::string;
+  }
+  currency_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Currency)
+}
+inline ::std::string* UniversalCorrectionDocumentSellerTitleInfo::mutable_currency() {
+  set_has_currency();
+  if (currency_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    currency_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Currency)
+  return currency_;
+}
+inline ::std::string* UniversalCorrectionDocumentSellerTitleInfo::release_currency() {
+  clear_has_currency();
+  if (currency_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = currency_;
+    currency_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_allocated_currency(::std::string* currency) {
+  if (currency_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete currency_;
+  }
+  if (currency) {
+    set_has_currency();
+    currency_ = currency;
+  } else {
+    clear_has_currency();
+    currency_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.Currency)
+}
+
+// optional string CurrencyRate = 12;
+inline bool UniversalCorrectionDocumentSellerTitleInfo::has_currencyrate() const {
+  return (_has_bits_[0] & 0x00000800u) != 0;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_has_currencyrate() {
+  _has_bits_[0] |= 0x00000800u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_has_currencyrate() {
+  _has_bits_[0] &= ~0x00000800u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_currencyrate() {
+  if (currencyrate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    currencyrate_->clear();
+  }
+  clear_has_currencyrate();
+}
+inline const ::std::string& UniversalCorrectionDocumentSellerTitleInfo::currencyrate() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.CurrencyRate)
+  return *currencyrate_;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_currencyrate(const ::std::string& value) {
+  set_has_currencyrate();
+  if (currencyrate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    currencyrate_ = new ::std::string;
+  }
+  currencyrate_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.CurrencyRate)
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_currencyrate(const char* value) {
+  set_has_currencyrate();
+  if (currencyrate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    currencyrate_ = new ::std::string;
+  }
+  currencyrate_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.CurrencyRate)
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_currencyrate(const char* value, size_t size) {
+  set_has_currencyrate();
+  if (currencyrate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    currencyrate_ = new ::std::string;
+  }
+  currencyrate_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.CurrencyRate)
+}
+inline ::std::string* UniversalCorrectionDocumentSellerTitleInfo::mutable_currencyrate() {
+  set_has_currencyrate();
+  if (currencyrate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    currencyrate_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.CurrencyRate)
+  return currencyrate_;
+}
+inline ::std::string* UniversalCorrectionDocumentSellerTitleInfo::release_currencyrate() {
+  clear_has_currencyrate();
+  if (currencyrate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = currencyrate_;
+    currencyrate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_allocated_currencyrate(::std::string* currencyrate) {
+  if (currencyrate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete currencyrate_;
+  }
+  if (currencyrate) {
+    set_has_currencyrate();
+    currencyrate_ = currencyrate;
+  } else {
+    clear_has_currencyrate();
+    currencyrate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.CurrencyRate)
+}
+
+// optional string CorrectionRevisionDate = 13;
+inline bool UniversalCorrectionDocumentSellerTitleInfo::has_correctionrevisiondate() const {
+  return (_has_bits_[0] & 0x00001000u) != 0;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_has_correctionrevisiondate() {
+  _has_bits_[0] |= 0x00001000u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_has_correctionrevisiondate() {
+  _has_bits_[0] &= ~0x00001000u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_correctionrevisiondate() {
+  if (correctionrevisiondate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    correctionrevisiondate_->clear();
+  }
+  clear_has_correctionrevisiondate();
+}
+inline const ::std::string& UniversalCorrectionDocumentSellerTitleInfo::correctionrevisiondate() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.CorrectionRevisionDate)
+  return *correctionrevisiondate_;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_correctionrevisiondate(const ::std::string& value) {
+  set_has_correctionrevisiondate();
+  if (correctionrevisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    correctionrevisiondate_ = new ::std::string;
+  }
+  correctionrevisiondate_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.CorrectionRevisionDate)
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_correctionrevisiondate(const char* value) {
+  set_has_correctionrevisiondate();
+  if (correctionrevisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    correctionrevisiondate_ = new ::std::string;
+  }
+  correctionrevisiondate_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.CorrectionRevisionDate)
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_correctionrevisiondate(const char* value, size_t size) {
+  set_has_correctionrevisiondate();
+  if (correctionrevisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    correctionrevisiondate_ = new ::std::string;
+  }
+  correctionrevisiondate_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.CorrectionRevisionDate)
+}
+inline ::std::string* UniversalCorrectionDocumentSellerTitleInfo::mutable_correctionrevisiondate() {
+  set_has_correctionrevisiondate();
+  if (correctionrevisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    correctionrevisiondate_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.CorrectionRevisionDate)
+  return correctionrevisiondate_;
+}
+inline ::std::string* UniversalCorrectionDocumentSellerTitleInfo::release_correctionrevisiondate() {
+  clear_has_correctionrevisiondate();
+  if (correctionrevisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = correctionrevisiondate_;
+    correctionrevisiondate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_allocated_correctionrevisiondate(::std::string* correctionrevisiondate) {
+  if (correctionrevisiondate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete correctionrevisiondate_;
+  }
+  if (correctionrevisiondate) {
+    set_has_correctionrevisiondate();
+    correctionrevisiondate_ = correctionrevisiondate;
+  } else {
+    clear_has_correctionrevisiondate();
+    correctionrevisiondate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.CorrectionRevisionDate)
+}
+
+// optional string CorrectionRevisionNumber = 14;
+inline bool UniversalCorrectionDocumentSellerTitleInfo::has_correctionrevisionnumber() const {
+  return (_has_bits_[0] & 0x00002000u) != 0;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_has_correctionrevisionnumber() {
+  _has_bits_[0] |= 0x00002000u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_has_correctionrevisionnumber() {
+  _has_bits_[0] &= ~0x00002000u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_correctionrevisionnumber() {
+  if (correctionrevisionnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    correctionrevisionnumber_->clear();
+  }
+  clear_has_correctionrevisionnumber();
+}
+inline const ::std::string& UniversalCorrectionDocumentSellerTitleInfo::correctionrevisionnumber() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.CorrectionRevisionNumber)
+  return *correctionrevisionnumber_;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_correctionrevisionnumber(const ::std::string& value) {
+  set_has_correctionrevisionnumber();
+  if (correctionrevisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    correctionrevisionnumber_ = new ::std::string;
+  }
+  correctionrevisionnumber_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.CorrectionRevisionNumber)
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_correctionrevisionnumber(const char* value) {
+  set_has_correctionrevisionnumber();
+  if (correctionrevisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    correctionrevisionnumber_ = new ::std::string;
+  }
+  correctionrevisionnumber_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.CorrectionRevisionNumber)
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_correctionrevisionnumber(const char* value, size_t size) {
+  set_has_correctionrevisionnumber();
+  if (correctionrevisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    correctionrevisionnumber_ = new ::std::string;
+  }
+  correctionrevisionnumber_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.CorrectionRevisionNumber)
+}
+inline ::std::string* UniversalCorrectionDocumentSellerTitleInfo::mutable_correctionrevisionnumber() {
+  set_has_correctionrevisionnumber();
+  if (correctionrevisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    correctionrevisionnumber_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.CorrectionRevisionNumber)
+  return correctionrevisionnumber_;
+}
+inline ::std::string* UniversalCorrectionDocumentSellerTitleInfo::release_correctionrevisionnumber() {
+  clear_has_correctionrevisionnumber();
+  if (correctionrevisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = correctionrevisionnumber_;
+    correctionrevisionnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_allocated_correctionrevisionnumber(::std::string* correctionrevisionnumber) {
+  if (correctionrevisionnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete correctionrevisionnumber_;
+  }
+  if (correctionrevisionnumber) {
+    set_has_correctionrevisionnumber();
+    correctionrevisionnumber_ = correctionrevisionnumber;
+  } else {
+    clear_has_correctionrevisionnumber();
+    correctionrevisionnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.CorrectionRevisionNumber)
+}
+
+// optional .Diadoc.Api.Proto.Invoicing.AdditionalInfoId AdditionalInfoId = 15;
+inline bool UniversalCorrectionDocumentSellerTitleInfo::has_additionalinfoid() const {
+  return (_has_bits_[0] & 0x00004000u) != 0;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_has_additionalinfoid() {
+  _has_bits_[0] |= 0x00004000u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_has_additionalinfoid() {
+  _has_bits_[0] &= ~0x00004000u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_additionalinfoid() {
+  if (additionalinfoid_ != NULL) additionalinfoid_->::Diadoc::Api::Proto::Invoicing::AdditionalInfoId::Clear();
+  clear_has_additionalinfoid();
+}
+inline const ::Diadoc::Api::Proto::Invoicing::AdditionalInfoId& UniversalCorrectionDocumentSellerTitleInfo::additionalinfoid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.AdditionalInfoId)
+  return additionalinfoid_ != NULL ? *additionalinfoid_ : *default_instance_->additionalinfoid_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::AdditionalInfoId* UniversalCorrectionDocumentSellerTitleInfo::mutable_additionalinfoid() {
+  set_has_additionalinfoid();
+  if (additionalinfoid_ == NULL) additionalinfoid_ = new ::Diadoc::Api::Proto::Invoicing::AdditionalInfoId;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.AdditionalInfoId)
+  return additionalinfoid_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::AdditionalInfoId* UniversalCorrectionDocumentSellerTitleInfo::release_additionalinfoid() {
+  clear_has_additionalinfoid();
+  ::Diadoc::Api::Proto::Invoicing::AdditionalInfoId* temp = additionalinfoid_;
+  additionalinfoid_ = NULL;
+  return temp;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_allocated_additionalinfoid(::Diadoc::Api::Proto::Invoicing::AdditionalInfoId* additionalinfoid) {
+  delete additionalinfoid_;
+  additionalinfoid_ = additionalinfoid;
+  if (additionalinfoid) {
+    set_has_additionalinfoid();
+  } else {
+    clear_has_additionalinfoid();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.AdditionalInfoId)
+}
+
+// required string DocumentCreator = 16;
+inline bool UniversalCorrectionDocumentSellerTitleInfo::has_documentcreator() const {
+  return (_has_bits_[0] & 0x00008000u) != 0;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_has_documentcreator() {
+  _has_bits_[0] |= 0x00008000u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_has_documentcreator() {
+  _has_bits_[0] &= ~0x00008000u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_documentcreator() {
+  if (documentcreator_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentcreator_->clear();
+  }
+  clear_has_documentcreator();
+}
+inline const ::std::string& UniversalCorrectionDocumentSellerTitleInfo::documentcreator() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentCreator)
+  return *documentcreator_;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_documentcreator(const ::std::string& value) {
+  set_has_documentcreator();
+  if (documentcreator_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentcreator_ = new ::std::string;
+  }
+  documentcreator_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentCreator)
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_documentcreator(const char* value) {
+  set_has_documentcreator();
+  if (documentcreator_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentcreator_ = new ::std::string;
+  }
+  documentcreator_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentCreator)
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_documentcreator(const char* value, size_t size) {
+  set_has_documentcreator();
+  if (documentcreator_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentcreator_ = new ::std::string;
+  }
+  documentcreator_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentCreator)
+}
+inline ::std::string* UniversalCorrectionDocumentSellerTitleInfo::mutable_documentcreator() {
+  set_has_documentcreator();
+  if (documentcreator_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentcreator_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentCreator)
+  return documentcreator_;
+}
+inline ::std::string* UniversalCorrectionDocumentSellerTitleInfo::release_documentcreator() {
+  clear_has_documentcreator();
+  if (documentcreator_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = documentcreator_;
+    documentcreator_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_allocated_documentcreator(::std::string* documentcreator) {
+  if (documentcreator_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete documentcreator_;
+  }
+  if (documentcreator) {
+    set_has_documentcreator();
+    documentcreator_ = documentcreator;
+  } else {
+    clear_has_documentcreator();
+    documentcreator_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentCreator)
+}
+
+// optional string DocumentCreatorBase = 17;
+inline bool UniversalCorrectionDocumentSellerTitleInfo::has_documentcreatorbase() const {
+  return (_has_bits_[0] & 0x00010000u) != 0;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_has_documentcreatorbase() {
+  _has_bits_[0] |= 0x00010000u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_has_documentcreatorbase() {
+  _has_bits_[0] &= ~0x00010000u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_documentcreatorbase() {
+  if (documentcreatorbase_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentcreatorbase_->clear();
+  }
+  clear_has_documentcreatorbase();
+}
+inline const ::std::string& UniversalCorrectionDocumentSellerTitleInfo::documentcreatorbase() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentCreatorBase)
+  return *documentcreatorbase_;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_documentcreatorbase(const ::std::string& value) {
+  set_has_documentcreatorbase();
+  if (documentcreatorbase_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentcreatorbase_ = new ::std::string;
+  }
+  documentcreatorbase_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentCreatorBase)
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_documentcreatorbase(const char* value) {
+  set_has_documentcreatorbase();
+  if (documentcreatorbase_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentcreatorbase_ = new ::std::string;
+  }
+  documentcreatorbase_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentCreatorBase)
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_documentcreatorbase(const char* value, size_t size) {
+  set_has_documentcreatorbase();
+  if (documentcreatorbase_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentcreatorbase_ = new ::std::string;
+  }
+  documentcreatorbase_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentCreatorBase)
+}
+inline ::std::string* UniversalCorrectionDocumentSellerTitleInfo::mutable_documentcreatorbase() {
+  set_has_documentcreatorbase();
+  if (documentcreatorbase_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentcreatorbase_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentCreatorBase)
+  return documentcreatorbase_;
+}
+inline ::std::string* UniversalCorrectionDocumentSellerTitleInfo::release_documentcreatorbase() {
+  clear_has_documentcreatorbase();
+  if (documentcreatorbase_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = documentcreatorbase_;
+    documentcreatorbase_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_allocated_documentcreatorbase(::std::string* documentcreatorbase) {
+  if (documentcreatorbase_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete documentcreatorbase_;
+  }
+  if (documentcreatorbase) {
+    set_has_documentcreatorbase();
+    documentcreatorbase_ = documentcreatorbase;
+  } else {
+    clear_has_documentcreatorbase();
+    documentcreatorbase_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.DocumentCreatorBase)
+}
+
+// optional string GovernmentContractInfo = 18;
+inline bool UniversalCorrectionDocumentSellerTitleInfo::has_governmentcontractinfo() const {
+  return (_has_bits_[0] & 0x00020000u) != 0;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_has_governmentcontractinfo() {
+  _has_bits_[0] |= 0x00020000u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_has_governmentcontractinfo() {
+  _has_bits_[0] &= ~0x00020000u;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::clear_governmentcontractinfo() {
+  if (governmentcontractinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    governmentcontractinfo_->clear();
+  }
+  clear_has_governmentcontractinfo();
+}
+inline const ::std::string& UniversalCorrectionDocumentSellerTitleInfo::governmentcontractinfo() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.GovernmentContractInfo)
+  return *governmentcontractinfo_;
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_governmentcontractinfo(const ::std::string& value) {
+  set_has_governmentcontractinfo();
+  if (governmentcontractinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    governmentcontractinfo_ = new ::std::string;
+  }
+  governmentcontractinfo_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.GovernmentContractInfo)
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_governmentcontractinfo(const char* value) {
+  set_has_governmentcontractinfo();
+  if (governmentcontractinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    governmentcontractinfo_ = new ::std::string;
+  }
+  governmentcontractinfo_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.GovernmentContractInfo)
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_governmentcontractinfo(const char* value, size_t size) {
+  set_has_governmentcontractinfo();
+  if (governmentcontractinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    governmentcontractinfo_ = new ::std::string;
+  }
+  governmentcontractinfo_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.GovernmentContractInfo)
+}
+inline ::std::string* UniversalCorrectionDocumentSellerTitleInfo::mutable_governmentcontractinfo() {
+  set_has_governmentcontractinfo();
+  if (governmentcontractinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    governmentcontractinfo_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.GovernmentContractInfo)
+  return governmentcontractinfo_;
+}
+inline ::std::string* UniversalCorrectionDocumentSellerTitleInfo::release_governmentcontractinfo() {
+  clear_has_governmentcontractinfo();
+  if (governmentcontractinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = governmentcontractinfo_;
+    governmentcontractinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentSellerTitleInfo::set_allocated_governmentcontractinfo(::std::string* governmentcontractinfo) {
+  if (governmentcontractinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete governmentcontractinfo_;
+  }
+  if (governmentcontractinfo) {
+    set_has_governmentcontractinfo();
+    governmentcontractinfo_ = governmentcontractinfo;
+  } else {
+    clear_has_governmentcontractinfo();
+    governmentcontractinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.UniversalCorrectionDocumentSellerTitleInfo.GovernmentContractInfo)
+}
+
+// -------------------------------------------------------------------
+
+// InvoiceForCorrectionInfo
+
+// required string InvoiceDate = 1;
+inline bool InvoiceForCorrectionInfo::has_invoicedate() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void InvoiceForCorrectionInfo::set_has_invoicedate() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void InvoiceForCorrectionInfo::clear_has_invoicedate() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void InvoiceForCorrectionInfo::clear_invoicedate() {
+  if (invoicedate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    invoicedate_->clear();
+  }
+  clear_has_invoicedate();
+}
+inline const ::std::string& InvoiceForCorrectionInfo::invoicedate() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo.InvoiceDate)
+  return *invoicedate_;
+}
+inline void InvoiceForCorrectionInfo::set_invoicedate(const ::std::string& value) {
+  set_has_invoicedate();
+  if (invoicedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    invoicedate_ = new ::std::string;
+  }
+  invoicedate_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo.InvoiceDate)
+}
+inline void InvoiceForCorrectionInfo::set_invoicedate(const char* value) {
+  set_has_invoicedate();
+  if (invoicedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    invoicedate_ = new ::std::string;
+  }
+  invoicedate_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo.InvoiceDate)
+}
+inline void InvoiceForCorrectionInfo::set_invoicedate(const char* value, size_t size) {
+  set_has_invoicedate();
+  if (invoicedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    invoicedate_ = new ::std::string;
+  }
+  invoicedate_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo.InvoiceDate)
+}
+inline ::std::string* InvoiceForCorrectionInfo::mutable_invoicedate() {
+  set_has_invoicedate();
+  if (invoicedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    invoicedate_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo.InvoiceDate)
+  return invoicedate_;
+}
+inline ::std::string* InvoiceForCorrectionInfo::release_invoicedate() {
+  clear_has_invoicedate();
+  if (invoicedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = invoicedate_;
+    invoicedate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void InvoiceForCorrectionInfo::set_allocated_invoicedate(::std::string* invoicedate) {
+  if (invoicedate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete invoicedate_;
+  }
+  if (invoicedate) {
+    set_has_invoicedate();
+    invoicedate_ = invoicedate;
+  } else {
+    clear_has_invoicedate();
+    invoicedate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo.InvoiceDate)
+}
+
+// required string InvoiceNumber = 2;
+inline bool InvoiceForCorrectionInfo::has_invoicenumber() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void InvoiceForCorrectionInfo::set_has_invoicenumber() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void InvoiceForCorrectionInfo::clear_has_invoicenumber() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void InvoiceForCorrectionInfo::clear_invoicenumber() {
+  if (invoicenumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    invoicenumber_->clear();
+  }
+  clear_has_invoicenumber();
+}
+inline const ::std::string& InvoiceForCorrectionInfo::invoicenumber() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo.InvoiceNumber)
+  return *invoicenumber_;
+}
+inline void InvoiceForCorrectionInfo::set_invoicenumber(const ::std::string& value) {
+  set_has_invoicenumber();
+  if (invoicenumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    invoicenumber_ = new ::std::string;
+  }
+  invoicenumber_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo.InvoiceNumber)
+}
+inline void InvoiceForCorrectionInfo::set_invoicenumber(const char* value) {
+  set_has_invoicenumber();
+  if (invoicenumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    invoicenumber_ = new ::std::string;
+  }
+  invoicenumber_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo.InvoiceNumber)
+}
+inline void InvoiceForCorrectionInfo::set_invoicenumber(const char* value, size_t size) {
+  set_has_invoicenumber();
+  if (invoicenumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    invoicenumber_ = new ::std::string;
+  }
+  invoicenumber_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo.InvoiceNumber)
+}
+inline ::std::string* InvoiceForCorrectionInfo::mutable_invoicenumber() {
+  set_has_invoicenumber();
+  if (invoicenumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    invoicenumber_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo.InvoiceNumber)
+  return invoicenumber_;
+}
+inline ::std::string* InvoiceForCorrectionInfo::release_invoicenumber() {
+  clear_has_invoicenumber();
+  if (invoicenumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = invoicenumber_;
+    invoicenumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void InvoiceForCorrectionInfo::set_allocated_invoicenumber(::std::string* invoicenumber) {
+  if (invoicenumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete invoicenumber_;
+  }
+  if (invoicenumber) {
+    set_has_invoicenumber();
+    invoicenumber_ = invoicenumber;
+  } else {
+    clear_has_invoicenumber();
+    invoicenumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo.InvoiceNumber)
+}
+
+// repeated .Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo InvoiceRevisions = 3;
+inline int InvoiceForCorrectionInfo::invoicerevisions_size() const {
+  return invoicerevisions_.size();
+}
+inline void InvoiceForCorrectionInfo::clear_invoicerevisions() {
+  invoicerevisions_.Clear();
+}
+inline const ::Diadoc::Api::Proto::Invoicing::InvoiceRevisionInfo& InvoiceForCorrectionInfo::invoicerevisions(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo.InvoiceRevisions)
+  return invoicerevisions_.Get(index);
+}
+inline ::Diadoc::Api::Proto::Invoicing::InvoiceRevisionInfo* InvoiceForCorrectionInfo::mutable_invoicerevisions(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo.InvoiceRevisions)
+  return invoicerevisions_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::Invoicing::InvoiceRevisionInfo* InvoiceForCorrectionInfo::add_invoicerevisions() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo.InvoiceRevisions)
+  return invoicerevisions_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::InvoiceRevisionInfo >&
+InvoiceForCorrectionInfo::invoicerevisions() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo.InvoiceRevisions)
+  return invoicerevisions_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::InvoiceRevisionInfo >*
+InvoiceForCorrectionInfo::mutable_invoicerevisions() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Invoicing.InvoiceForCorrectionInfo.InvoiceRevisions)
+  return &invoicerevisions_;
+}
+
+// -------------------------------------------------------------------
+
+// InvoiceRevisionInfo
+
+// required string InvoiceRevisionDate = 1;
+inline bool InvoiceRevisionInfo::has_invoicerevisiondate() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void InvoiceRevisionInfo::set_has_invoicerevisiondate() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void InvoiceRevisionInfo::clear_has_invoicerevisiondate() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void InvoiceRevisionInfo::clear_invoicerevisiondate() {
+  if (invoicerevisiondate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    invoicerevisiondate_->clear();
+  }
+  clear_has_invoicerevisiondate();
+}
+inline const ::std::string& InvoiceRevisionInfo::invoicerevisiondate() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo.InvoiceRevisionDate)
+  return *invoicerevisiondate_;
+}
+inline void InvoiceRevisionInfo::set_invoicerevisiondate(const ::std::string& value) {
+  set_has_invoicerevisiondate();
+  if (invoicerevisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    invoicerevisiondate_ = new ::std::string;
+  }
+  invoicerevisiondate_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo.InvoiceRevisionDate)
+}
+inline void InvoiceRevisionInfo::set_invoicerevisiondate(const char* value) {
+  set_has_invoicerevisiondate();
+  if (invoicerevisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    invoicerevisiondate_ = new ::std::string;
+  }
+  invoicerevisiondate_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo.InvoiceRevisionDate)
+}
+inline void InvoiceRevisionInfo::set_invoicerevisiondate(const char* value, size_t size) {
+  set_has_invoicerevisiondate();
+  if (invoicerevisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    invoicerevisiondate_ = new ::std::string;
+  }
+  invoicerevisiondate_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo.InvoiceRevisionDate)
+}
+inline ::std::string* InvoiceRevisionInfo::mutable_invoicerevisiondate() {
+  set_has_invoicerevisiondate();
+  if (invoicerevisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    invoicerevisiondate_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo.InvoiceRevisionDate)
+  return invoicerevisiondate_;
+}
+inline ::std::string* InvoiceRevisionInfo::release_invoicerevisiondate() {
+  clear_has_invoicerevisiondate();
+  if (invoicerevisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = invoicerevisiondate_;
+    invoicerevisiondate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void InvoiceRevisionInfo::set_allocated_invoicerevisiondate(::std::string* invoicerevisiondate) {
+  if (invoicerevisiondate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete invoicerevisiondate_;
+  }
+  if (invoicerevisiondate) {
+    set_has_invoicerevisiondate();
+    invoicerevisiondate_ = invoicerevisiondate;
+  } else {
+    clear_has_invoicerevisiondate();
+    invoicerevisiondate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo.InvoiceRevisionDate)
+}
+
+// required string InvoiceRevisionNumber = 2;
+inline bool InvoiceRevisionInfo::has_invoicerevisionnumber() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void InvoiceRevisionInfo::set_has_invoicerevisionnumber() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void InvoiceRevisionInfo::clear_has_invoicerevisionnumber() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void InvoiceRevisionInfo::clear_invoicerevisionnumber() {
+  if (invoicerevisionnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    invoicerevisionnumber_->clear();
+  }
+  clear_has_invoicerevisionnumber();
+}
+inline const ::std::string& InvoiceRevisionInfo::invoicerevisionnumber() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo.InvoiceRevisionNumber)
+  return *invoicerevisionnumber_;
+}
+inline void InvoiceRevisionInfo::set_invoicerevisionnumber(const ::std::string& value) {
+  set_has_invoicerevisionnumber();
+  if (invoicerevisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    invoicerevisionnumber_ = new ::std::string;
+  }
+  invoicerevisionnumber_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo.InvoiceRevisionNumber)
+}
+inline void InvoiceRevisionInfo::set_invoicerevisionnumber(const char* value) {
+  set_has_invoicerevisionnumber();
+  if (invoicerevisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    invoicerevisionnumber_ = new ::std::string;
+  }
+  invoicerevisionnumber_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo.InvoiceRevisionNumber)
+}
+inline void InvoiceRevisionInfo::set_invoicerevisionnumber(const char* value, size_t size) {
+  set_has_invoicerevisionnumber();
+  if (invoicerevisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    invoicerevisionnumber_ = new ::std::string;
+  }
+  invoicerevisionnumber_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo.InvoiceRevisionNumber)
+}
+inline ::std::string* InvoiceRevisionInfo::mutable_invoicerevisionnumber() {
+  set_has_invoicerevisionnumber();
+  if (invoicerevisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    invoicerevisionnumber_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo.InvoiceRevisionNumber)
+  return invoicerevisionnumber_;
+}
+inline ::std::string* InvoiceRevisionInfo::release_invoicerevisionnumber() {
+  clear_has_invoicerevisionnumber();
+  if (invoicerevisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = invoicerevisionnumber_;
+    invoicerevisionnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void InvoiceRevisionInfo::set_allocated_invoicerevisionnumber(::std::string* invoicerevisionnumber) {
+  if (invoicerevisionnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete invoicerevisionnumber_;
+  }
+  if (invoicerevisionnumber) {
+    set_has_invoicerevisionnumber();
+    invoicerevisionnumber_ = invoicerevisionnumber;
+  } else {
+    clear_has_invoicerevisionnumber();
+    invoicerevisionnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.InvoiceRevisionInfo.InvoiceRevisionNumber)
+}
+
+// -------------------------------------------------------------------
+
+// EventContent
+
+// optional string CostChangeInfo = 1;
+inline bool EventContent::has_costchangeinfo() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void EventContent::set_has_costchangeinfo() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void EventContent::clear_has_costchangeinfo() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void EventContent::clear_costchangeinfo() {
+  if (costchangeinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    costchangeinfo_->clear();
+  }
+  clear_has_costchangeinfo();
+}
+inline const ::std::string& EventContent::costchangeinfo() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.EventContent.CostChangeInfo)
+  return *costchangeinfo_;
+}
+inline void EventContent::set_costchangeinfo(const ::std::string& value) {
+  set_has_costchangeinfo();
+  if (costchangeinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    costchangeinfo_ = new ::std::string;
+  }
+  costchangeinfo_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.EventContent.CostChangeInfo)
+}
+inline void EventContent::set_costchangeinfo(const char* value) {
+  set_has_costchangeinfo();
+  if (costchangeinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    costchangeinfo_ = new ::std::string;
+  }
+  costchangeinfo_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.EventContent.CostChangeInfo)
+}
+inline void EventContent::set_costchangeinfo(const char* value, size_t size) {
+  set_has_costchangeinfo();
+  if (costchangeinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    costchangeinfo_ = new ::std::string;
+  }
+  costchangeinfo_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.EventContent.CostChangeInfo)
+}
+inline ::std::string* EventContent::mutable_costchangeinfo() {
+  set_has_costchangeinfo();
+  if (costchangeinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    costchangeinfo_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.EventContent.CostChangeInfo)
+  return costchangeinfo_;
+}
+inline ::std::string* EventContent::release_costchangeinfo() {
+  clear_has_costchangeinfo();
+  if (costchangeinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = costchangeinfo_;
+    costchangeinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void EventContent::set_allocated_costchangeinfo(::std::string* costchangeinfo) {
+  if (costchangeinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete costchangeinfo_;
+  }
+  if (costchangeinfo) {
+    set_has_costchangeinfo();
+    costchangeinfo_ = costchangeinfo;
+  } else {
+    clear_has_costchangeinfo();
+    costchangeinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.EventContent.CostChangeInfo)
+}
+
+// required string TransferDocDetails = 2;
+inline bool EventContent::has_transferdocdetails() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void EventContent::set_has_transferdocdetails() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void EventContent::clear_has_transferdocdetails() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void EventContent::clear_transferdocdetails() {
+  if (transferdocdetails_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    transferdocdetails_->clear();
+  }
+  clear_has_transferdocdetails();
+}
+inline const ::std::string& EventContent::transferdocdetails() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.EventContent.TransferDocDetails)
+  return *transferdocdetails_;
+}
+inline void EventContent::set_transferdocdetails(const ::std::string& value) {
+  set_has_transferdocdetails();
+  if (transferdocdetails_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    transferdocdetails_ = new ::std::string;
+  }
+  transferdocdetails_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.EventContent.TransferDocDetails)
+}
+inline void EventContent::set_transferdocdetails(const char* value) {
+  set_has_transferdocdetails();
+  if (transferdocdetails_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    transferdocdetails_ = new ::std::string;
+  }
+  transferdocdetails_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.EventContent.TransferDocDetails)
+}
+inline void EventContent::set_transferdocdetails(const char* value, size_t size) {
+  set_has_transferdocdetails();
+  if (transferdocdetails_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    transferdocdetails_ = new ::std::string;
+  }
+  transferdocdetails_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.EventContent.TransferDocDetails)
+}
+inline ::std::string* EventContent::mutable_transferdocdetails() {
+  set_has_transferdocdetails();
+  if (transferdocdetails_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    transferdocdetails_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.EventContent.TransferDocDetails)
+  return transferdocdetails_;
+}
+inline ::std::string* EventContent::release_transferdocdetails() {
+  clear_has_transferdocdetails();
+  if (transferdocdetails_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = transferdocdetails_;
+    transferdocdetails_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void EventContent::set_allocated_transferdocdetails(::std::string* transferdocdetails) {
+  if (transferdocdetails_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete transferdocdetails_;
+  }
+  if (transferdocdetails) {
+    set_has_transferdocdetails();
+    transferdocdetails_ = transferdocdetails;
+  } else {
+    clear_has_transferdocdetails();
+    transferdocdetails_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.EventContent.TransferDocDetails)
+}
+
+// required string OperationContent = 3;
+inline bool EventContent::has_operationcontent() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void EventContent::set_has_operationcontent() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void EventContent::clear_has_operationcontent() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void EventContent::clear_operationcontent() {
+  if (operationcontent_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    operationcontent_->clear();
+  }
+  clear_has_operationcontent();
+}
+inline const ::std::string& EventContent::operationcontent() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.EventContent.OperationContent)
+  return *operationcontent_;
+}
+inline void EventContent::set_operationcontent(const ::std::string& value) {
+  set_has_operationcontent();
+  if (operationcontent_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    operationcontent_ = new ::std::string;
+  }
+  operationcontent_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.EventContent.OperationContent)
+}
+inline void EventContent::set_operationcontent(const char* value) {
+  set_has_operationcontent();
+  if (operationcontent_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    operationcontent_ = new ::std::string;
+  }
+  operationcontent_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.EventContent.OperationContent)
+}
+inline void EventContent::set_operationcontent(const char* value, size_t size) {
+  set_has_operationcontent();
+  if (operationcontent_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    operationcontent_ = new ::std::string;
+  }
+  operationcontent_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.EventContent.OperationContent)
+}
+inline ::std::string* EventContent::mutable_operationcontent() {
+  set_has_operationcontent();
+  if (operationcontent_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    operationcontent_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.EventContent.OperationContent)
+  return operationcontent_;
+}
+inline ::std::string* EventContent::release_operationcontent() {
+  clear_has_operationcontent();
+  if (operationcontent_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = operationcontent_;
+    operationcontent_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void EventContent::set_allocated_operationcontent(::std::string* operationcontent) {
+  if (operationcontent_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete operationcontent_;
+  }
+  if (operationcontent) {
+    set_has_operationcontent();
+    operationcontent_ = operationcontent;
+  } else {
+    clear_has_operationcontent();
+    operationcontent_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.EventContent.OperationContent)
+}
+
+// optional string NotificationDate = 4;
+inline bool EventContent::has_notificationdate() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void EventContent::set_has_notificationdate() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void EventContent::clear_has_notificationdate() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void EventContent::clear_notificationdate() {
+  if (notificationdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    notificationdate_->clear();
+  }
+  clear_has_notificationdate();
+}
+inline const ::std::string& EventContent::notificationdate() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.EventContent.NotificationDate)
+  return *notificationdate_;
+}
+inline void EventContent::set_notificationdate(const ::std::string& value) {
+  set_has_notificationdate();
+  if (notificationdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    notificationdate_ = new ::std::string;
+  }
+  notificationdate_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.EventContent.NotificationDate)
+}
+inline void EventContent::set_notificationdate(const char* value) {
+  set_has_notificationdate();
+  if (notificationdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    notificationdate_ = new ::std::string;
+  }
+  notificationdate_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.EventContent.NotificationDate)
+}
+inline void EventContent::set_notificationdate(const char* value, size_t size) {
+  set_has_notificationdate();
+  if (notificationdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    notificationdate_ = new ::std::string;
+  }
+  notificationdate_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.EventContent.NotificationDate)
+}
+inline ::std::string* EventContent::mutable_notificationdate() {
+  set_has_notificationdate();
+  if (notificationdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    notificationdate_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.EventContent.NotificationDate)
+  return notificationdate_;
+}
+inline ::std::string* EventContent::release_notificationdate() {
+  clear_has_notificationdate();
+  if (notificationdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = notificationdate_;
+    notificationdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void EventContent::set_allocated_notificationdate(::std::string* notificationdate) {
+  if (notificationdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete notificationdate_;
+  }
+  if (notificationdate) {
+    set_has_notificationdate();
+    notificationdate_ = notificationdate;
+  } else {
+    clear_has_notificationdate();
+    notificationdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.EventContent.NotificationDate)
+}
+
+// repeated .Diadoc.Api.Proto.Invoicing.CorrectionBase CorrectionBase = 5;
+inline int EventContent::correctionbase_size() const {
+  return correctionbase_.size();
+}
+inline void EventContent::clear_correctionbase() {
+  correctionbase_.Clear();
+}
+inline const ::Diadoc::Api::Proto::Invoicing::CorrectionBase& EventContent::correctionbase(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.EventContent.CorrectionBase)
+  return correctionbase_.Get(index);
+}
+inline ::Diadoc::Api::Proto::Invoicing::CorrectionBase* EventContent::mutable_correctionbase(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.EventContent.CorrectionBase)
+  return correctionbase_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::Invoicing::CorrectionBase* EventContent::add_correctionbase() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Invoicing.EventContent.CorrectionBase)
+  return correctionbase_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::CorrectionBase >&
+EventContent::correctionbase() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Invoicing.EventContent.CorrectionBase)
+  return correctionbase_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::CorrectionBase >*
+EventContent::mutable_correctionbase() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Invoicing.EventContent.CorrectionBase)
+  return &correctionbase_;
+}
+
+// -------------------------------------------------------------------
+
+// CorrectionBase
+
+// required string BaseDocumentName = 1;
+inline bool CorrectionBase::has_basedocumentname() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CorrectionBase::set_has_basedocumentname() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CorrectionBase::clear_has_basedocumentname() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CorrectionBase::clear_basedocumentname() {
+  if (basedocumentname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    basedocumentname_->clear();
+  }
+  clear_has_basedocumentname();
+}
+inline const ::std::string& CorrectionBase::basedocumentname() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.CorrectionBase.BaseDocumentName)
+  return *basedocumentname_;
+}
+inline void CorrectionBase::set_basedocumentname(const ::std::string& value) {
+  set_has_basedocumentname();
+  if (basedocumentname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    basedocumentname_ = new ::std::string;
+  }
+  basedocumentname_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.CorrectionBase.BaseDocumentName)
+}
+inline void CorrectionBase::set_basedocumentname(const char* value) {
+  set_has_basedocumentname();
+  if (basedocumentname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    basedocumentname_ = new ::std::string;
+  }
+  basedocumentname_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.CorrectionBase.BaseDocumentName)
+}
+inline void CorrectionBase::set_basedocumentname(const char* value, size_t size) {
+  set_has_basedocumentname();
+  if (basedocumentname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    basedocumentname_ = new ::std::string;
+  }
+  basedocumentname_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.CorrectionBase.BaseDocumentName)
+}
+inline ::std::string* CorrectionBase::mutable_basedocumentname() {
+  set_has_basedocumentname();
+  if (basedocumentname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    basedocumentname_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.CorrectionBase.BaseDocumentName)
+  return basedocumentname_;
+}
+inline ::std::string* CorrectionBase::release_basedocumentname() {
+  clear_has_basedocumentname();
+  if (basedocumentname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = basedocumentname_;
+    basedocumentname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CorrectionBase::set_allocated_basedocumentname(::std::string* basedocumentname) {
+  if (basedocumentname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete basedocumentname_;
+  }
+  if (basedocumentname) {
+    set_has_basedocumentname();
+    basedocumentname_ = basedocumentname;
+  } else {
+    clear_has_basedocumentname();
+    basedocumentname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.CorrectionBase.BaseDocumentName)
+}
+
+// optional string BaseDocumentNumber = 2;
+inline bool CorrectionBase::has_basedocumentnumber() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CorrectionBase::set_has_basedocumentnumber() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CorrectionBase::clear_has_basedocumentnumber() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CorrectionBase::clear_basedocumentnumber() {
+  if (basedocumentnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    basedocumentnumber_->clear();
+  }
+  clear_has_basedocumentnumber();
+}
+inline const ::std::string& CorrectionBase::basedocumentnumber() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.CorrectionBase.BaseDocumentNumber)
+  return *basedocumentnumber_;
+}
+inline void CorrectionBase::set_basedocumentnumber(const ::std::string& value) {
+  set_has_basedocumentnumber();
+  if (basedocumentnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    basedocumentnumber_ = new ::std::string;
+  }
+  basedocumentnumber_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.CorrectionBase.BaseDocumentNumber)
+}
+inline void CorrectionBase::set_basedocumentnumber(const char* value) {
+  set_has_basedocumentnumber();
+  if (basedocumentnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    basedocumentnumber_ = new ::std::string;
+  }
+  basedocumentnumber_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.CorrectionBase.BaseDocumentNumber)
+}
+inline void CorrectionBase::set_basedocumentnumber(const char* value, size_t size) {
+  set_has_basedocumentnumber();
+  if (basedocumentnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    basedocumentnumber_ = new ::std::string;
+  }
+  basedocumentnumber_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.CorrectionBase.BaseDocumentNumber)
+}
+inline ::std::string* CorrectionBase::mutable_basedocumentnumber() {
+  set_has_basedocumentnumber();
+  if (basedocumentnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    basedocumentnumber_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.CorrectionBase.BaseDocumentNumber)
+  return basedocumentnumber_;
+}
+inline ::std::string* CorrectionBase::release_basedocumentnumber() {
+  clear_has_basedocumentnumber();
+  if (basedocumentnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = basedocumentnumber_;
+    basedocumentnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CorrectionBase::set_allocated_basedocumentnumber(::std::string* basedocumentnumber) {
+  if (basedocumentnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete basedocumentnumber_;
+  }
+  if (basedocumentnumber) {
+    set_has_basedocumentnumber();
+    basedocumentnumber_ = basedocumentnumber;
+  } else {
+    clear_has_basedocumentnumber();
+    basedocumentnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.CorrectionBase.BaseDocumentNumber)
+}
+
+// optional string BaseDocumentDate = 3;
+inline bool CorrectionBase::has_basedocumentdate() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CorrectionBase::set_has_basedocumentdate() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CorrectionBase::clear_has_basedocumentdate() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CorrectionBase::clear_basedocumentdate() {
+  if (basedocumentdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    basedocumentdate_->clear();
+  }
+  clear_has_basedocumentdate();
+}
+inline const ::std::string& CorrectionBase::basedocumentdate() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.CorrectionBase.BaseDocumentDate)
+  return *basedocumentdate_;
+}
+inline void CorrectionBase::set_basedocumentdate(const ::std::string& value) {
+  set_has_basedocumentdate();
+  if (basedocumentdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    basedocumentdate_ = new ::std::string;
+  }
+  basedocumentdate_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.CorrectionBase.BaseDocumentDate)
+}
+inline void CorrectionBase::set_basedocumentdate(const char* value) {
+  set_has_basedocumentdate();
+  if (basedocumentdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    basedocumentdate_ = new ::std::string;
+  }
+  basedocumentdate_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.CorrectionBase.BaseDocumentDate)
+}
+inline void CorrectionBase::set_basedocumentdate(const char* value, size_t size) {
+  set_has_basedocumentdate();
+  if (basedocumentdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    basedocumentdate_ = new ::std::string;
+  }
+  basedocumentdate_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.CorrectionBase.BaseDocumentDate)
+}
+inline ::std::string* CorrectionBase::mutable_basedocumentdate() {
+  set_has_basedocumentdate();
+  if (basedocumentdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    basedocumentdate_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.CorrectionBase.BaseDocumentDate)
+  return basedocumentdate_;
+}
+inline ::std::string* CorrectionBase::release_basedocumentdate() {
+  clear_has_basedocumentdate();
+  if (basedocumentdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = basedocumentdate_;
+    basedocumentdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CorrectionBase::set_allocated_basedocumentdate(::std::string* basedocumentdate) {
+  if (basedocumentdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete basedocumentdate_;
+  }
+  if (basedocumentdate) {
+    set_has_basedocumentdate();
+    basedocumentdate_ = basedocumentdate;
+  } else {
+    clear_has_basedocumentdate();
+    basedocumentdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.CorrectionBase.BaseDocumentDate)
+}
+
+// optional string AdditionalInfo = 4;
+inline bool CorrectionBase::has_additionalinfo() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CorrectionBase::set_has_additionalinfo() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CorrectionBase::clear_has_additionalinfo() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CorrectionBase::clear_additionalinfo() {
+  if (additionalinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    additionalinfo_->clear();
+  }
+  clear_has_additionalinfo();
+}
+inline const ::std::string& CorrectionBase::additionalinfo() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.CorrectionBase.AdditionalInfo)
+  return *additionalinfo_;
+}
+inline void CorrectionBase::set_additionalinfo(const ::std::string& value) {
+  set_has_additionalinfo();
+  if (additionalinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    additionalinfo_ = new ::std::string;
+  }
+  additionalinfo_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.CorrectionBase.AdditionalInfo)
+}
+inline void CorrectionBase::set_additionalinfo(const char* value) {
+  set_has_additionalinfo();
+  if (additionalinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    additionalinfo_ = new ::std::string;
+  }
+  additionalinfo_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.CorrectionBase.AdditionalInfo)
+}
+inline void CorrectionBase::set_additionalinfo(const char* value, size_t size) {
+  set_has_additionalinfo();
+  if (additionalinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    additionalinfo_ = new ::std::string;
+  }
+  additionalinfo_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.CorrectionBase.AdditionalInfo)
+}
+inline ::std::string* CorrectionBase::mutable_additionalinfo() {
+  set_has_additionalinfo();
+  if (additionalinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    additionalinfo_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.CorrectionBase.AdditionalInfo)
+  return additionalinfo_;
+}
+inline ::std::string* CorrectionBase::release_additionalinfo() {
+  clear_has_additionalinfo();
+  if (additionalinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = additionalinfo_;
+    additionalinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CorrectionBase::set_allocated_additionalinfo(::std::string* additionalinfo) {
+  if (additionalinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete additionalinfo_;
+  }
+  if (additionalinfo) {
+    set_has_additionalinfo();
+    additionalinfo_ = additionalinfo;
+  } else {
+    clear_has_additionalinfo();
+    additionalinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.CorrectionBase.AdditionalInfo)
+}
+
+// -------------------------------------------------------------------
+
+// InvoiceCorrectionTable
+
+// repeated .Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem Items = 1;
+inline int InvoiceCorrectionTable::items_size() const {
+  return items_.size();
+}
+inline void InvoiceCorrectionTable::clear_items() {
+  items_.Clear();
+}
+inline const ::Diadoc::Api::Proto::Invoicing::ExtendedInvoiceCorrectionItem& InvoiceCorrectionTable::items(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable.Items)
+  return items_.Get(index);
+}
+inline ::Diadoc::Api::Proto::Invoicing::ExtendedInvoiceCorrectionItem* InvoiceCorrectionTable::mutable_items(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable.Items)
+  return items_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::Invoicing::ExtendedInvoiceCorrectionItem* InvoiceCorrectionTable::add_items() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable.Items)
+  return items_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::ExtendedInvoiceCorrectionItem >&
+InvoiceCorrectionTable::items() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable.Items)
+  return items_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::ExtendedInvoiceCorrectionItem >*
+InvoiceCorrectionTable::mutable_items() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable.Items)
+  return &items_;
+}
+
+// optional .Diadoc.Api.Proto.Invoicing.InvoiceTotalsDiff TotalsInc = 2;
+inline bool InvoiceCorrectionTable::has_totalsinc() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void InvoiceCorrectionTable::set_has_totalsinc() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void InvoiceCorrectionTable::clear_has_totalsinc() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void InvoiceCorrectionTable::clear_totalsinc() {
+  if (totalsinc_ != NULL) totalsinc_->::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff::Clear();
+  clear_has_totalsinc();
+}
+inline const ::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff& InvoiceCorrectionTable::totalsinc() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable.TotalsInc)
+  return totalsinc_ != NULL ? *totalsinc_ : *default_instance_->totalsinc_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff* InvoiceCorrectionTable::mutable_totalsinc() {
+  set_has_totalsinc();
+  if (totalsinc_ == NULL) totalsinc_ = new ::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable.TotalsInc)
+  return totalsinc_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff* InvoiceCorrectionTable::release_totalsinc() {
+  clear_has_totalsinc();
+  ::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff* temp = totalsinc_;
+  totalsinc_ = NULL;
+  return temp;
+}
+inline void InvoiceCorrectionTable::set_allocated_totalsinc(::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff* totalsinc) {
+  delete totalsinc_;
+  totalsinc_ = totalsinc;
+  if (totalsinc) {
+    set_has_totalsinc();
+  } else {
+    clear_has_totalsinc();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable.TotalsInc)
+}
+
+// optional .Diadoc.Api.Proto.Invoicing.InvoiceTotalsDiff TotalsDec = 3;
+inline bool InvoiceCorrectionTable::has_totalsdec() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void InvoiceCorrectionTable::set_has_totalsdec() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void InvoiceCorrectionTable::clear_has_totalsdec() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void InvoiceCorrectionTable::clear_totalsdec() {
+  if (totalsdec_ != NULL) totalsdec_->::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff::Clear();
+  clear_has_totalsdec();
+}
+inline const ::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff& InvoiceCorrectionTable::totalsdec() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable.TotalsDec)
+  return totalsdec_ != NULL ? *totalsdec_ : *default_instance_->totalsdec_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff* InvoiceCorrectionTable::mutable_totalsdec() {
+  set_has_totalsdec();
+  if (totalsdec_ == NULL) totalsdec_ = new ::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable.TotalsDec)
+  return totalsdec_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff* InvoiceCorrectionTable::release_totalsdec() {
+  clear_has_totalsdec();
+  ::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff* temp = totalsdec_;
+  totalsdec_ = NULL;
+  return temp;
+}
+inline void InvoiceCorrectionTable::set_allocated_totalsdec(::Diadoc::Api::Proto::Invoicing::InvoiceTotalsDiff* totalsdec) {
+  delete totalsdec_;
+  totalsdec_ = totalsdec;
+  if (totalsdec) {
+    set_has_totalsdec();
+  } else {
+    clear_has_totalsdec();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.InvoiceCorrectionTable.TotalsDec)
+}
+
+// -------------------------------------------------------------------
+
+// ExtendedInvoiceCorrectionItem
+
+// required string Product = 1;
+inline bool ExtendedInvoiceCorrectionItem::has_product() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void ExtendedInvoiceCorrectionItem::set_has_product() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void ExtendedInvoiceCorrectionItem::clear_has_product() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void ExtendedInvoiceCorrectionItem::clear_product() {
+  if (product_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    product_->clear();
+  }
+  clear_has_product();
+}
+inline const ::std::string& ExtendedInvoiceCorrectionItem::product() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.Product)
+  return *product_;
+}
+inline void ExtendedInvoiceCorrectionItem::set_product(const ::std::string& value) {
+  set_has_product();
+  if (product_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    product_ = new ::std::string;
+  }
+  product_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.Product)
+}
+inline void ExtendedInvoiceCorrectionItem::set_product(const char* value) {
+  set_has_product();
+  if (product_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    product_ = new ::std::string;
+  }
+  product_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.Product)
+}
+inline void ExtendedInvoiceCorrectionItem::set_product(const char* value, size_t size) {
+  set_has_product();
+  if (product_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    product_ = new ::std::string;
+  }
+  product_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.Product)
+}
+inline ::std::string* ExtendedInvoiceCorrectionItem::mutable_product() {
+  set_has_product();
+  if (product_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    product_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.Product)
+  return product_;
+}
+inline ::std::string* ExtendedInvoiceCorrectionItem::release_product() {
+  clear_has_product();
+  if (product_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = product_;
+    product_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void ExtendedInvoiceCorrectionItem::set_allocated_product(::std::string* product) {
+  if (product_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete product_;
+  }
+  if (product) {
+    set_has_product();
+    product_ = product;
+  } else {
+    clear_has_product();
+    product_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.Product)
+}
+
+// required .Diadoc.Api.Proto.Invoicing.CorrectableInvoiceItemFields OriginalValues = 2;
+inline bool ExtendedInvoiceCorrectionItem::has_originalvalues() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void ExtendedInvoiceCorrectionItem::set_has_originalvalues() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void ExtendedInvoiceCorrectionItem::clear_has_originalvalues() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void ExtendedInvoiceCorrectionItem::clear_originalvalues() {
+  if (originalvalues_ != NULL) originalvalues_->::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields::Clear();
+  clear_has_originalvalues();
+}
+inline const ::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields& ExtendedInvoiceCorrectionItem::originalvalues() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.OriginalValues)
+  return originalvalues_ != NULL ? *originalvalues_ : *default_instance_->originalvalues_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields* ExtendedInvoiceCorrectionItem::mutable_originalvalues() {
+  set_has_originalvalues();
+  if (originalvalues_ == NULL) originalvalues_ = new ::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.OriginalValues)
+  return originalvalues_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields* ExtendedInvoiceCorrectionItem::release_originalvalues() {
+  clear_has_originalvalues();
+  ::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields* temp = originalvalues_;
+  originalvalues_ = NULL;
+  return temp;
+}
+inline void ExtendedInvoiceCorrectionItem::set_allocated_originalvalues(::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields* originalvalues) {
+  delete originalvalues_;
+  originalvalues_ = originalvalues;
+  if (originalvalues) {
+    set_has_originalvalues();
+  } else {
+    clear_has_originalvalues();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.OriginalValues)
+}
+
+// required .Diadoc.Api.Proto.Invoicing.CorrectableInvoiceItemFields CorrectedValues = 3;
+inline bool ExtendedInvoiceCorrectionItem::has_correctedvalues() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void ExtendedInvoiceCorrectionItem::set_has_correctedvalues() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void ExtendedInvoiceCorrectionItem::clear_has_correctedvalues() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void ExtendedInvoiceCorrectionItem::clear_correctedvalues() {
+  if (correctedvalues_ != NULL) correctedvalues_->::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields::Clear();
+  clear_has_correctedvalues();
+}
+inline const ::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields& ExtendedInvoiceCorrectionItem::correctedvalues() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.CorrectedValues)
+  return correctedvalues_ != NULL ? *correctedvalues_ : *default_instance_->correctedvalues_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields* ExtendedInvoiceCorrectionItem::mutable_correctedvalues() {
+  set_has_correctedvalues();
+  if (correctedvalues_ == NULL) correctedvalues_ = new ::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.CorrectedValues)
+  return correctedvalues_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields* ExtendedInvoiceCorrectionItem::release_correctedvalues() {
+  clear_has_correctedvalues();
+  ::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields* temp = correctedvalues_;
+  correctedvalues_ = NULL;
+  return temp;
+}
+inline void ExtendedInvoiceCorrectionItem::set_allocated_correctedvalues(::Diadoc::Api::Proto::Invoicing::CorrectableInvoiceItemFields* correctedvalues) {
+  delete correctedvalues_;
+  correctedvalues_ = correctedvalues;
+  if (correctedvalues) {
+    set_has_correctedvalues();
+  } else {
+    clear_has_correctedvalues();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.CorrectedValues)
+}
+
+// optional .Diadoc.Api.Proto.Invoicing.InvoiceItemAmountsDiff AmountsInc = 4;
+inline bool ExtendedInvoiceCorrectionItem::has_amountsinc() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void ExtendedInvoiceCorrectionItem::set_has_amountsinc() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void ExtendedInvoiceCorrectionItem::clear_has_amountsinc() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void ExtendedInvoiceCorrectionItem::clear_amountsinc() {
+  if (amountsinc_ != NULL) amountsinc_->::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff::Clear();
+  clear_has_amountsinc();
+}
+inline const ::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff& ExtendedInvoiceCorrectionItem::amountsinc() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.AmountsInc)
+  return amountsinc_ != NULL ? *amountsinc_ : *default_instance_->amountsinc_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff* ExtendedInvoiceCorrectionItem::mutable_amountsinc() {
+  set_has_amountsinc();
+  if (amountsinc_ == NULL) amountsinc_ = new ::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.AmountsInc)
+  return amountsinc_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff* ExtendedInvoiceCorrectionItem::release_amountsinc() {
+  clear_has_amountsinc();
+  ::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff* temp = amountsinc_;
+  amountsinc_ = NULL;
+  return temp;
+}
+inline void ExtendedInvoiceCorrectionItem::set_allocated_amountsinc(::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff* amountsinc) {
+  delete amountsinc_;
+  amountsinc_ = amountsinc;
+  if (amountsinc) {
+    set_has_amountsinc();
+  } else {
+    clear_has_amountsinc();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.AmountsInc)
+}
+
+// optional .Diadoc.Api.Proto.Invoicing.InvoiceItemAmountsDiff AmountsDec = 5;
+inline bool ExtendedInvoiceCorrectionItem::has_amountsdec() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void ExtendedInvoiceCorrectionItem::set_has_amountsdec() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void ExtendedInvoiceCorrectionItem::clear_has_amountsdec() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void ExtendedInvoiceCorrectionItem::clear_amountsdec() {
+  if (amountsdec_ != NULL) amountsdec_->::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff::Clear();
+  clear_has_amountsdec();
+}
+inline const ::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff& ExtendedInvoiceCorrectionItem::amountsdec() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.AmountsDec)
+  return amountsdec_ != NULL ? *amountsdec_ : *default_instance_->amountsdec_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff* ExtendedInvoiceCorrectionItem::mutable_amountsdec() {
+  set_has_amountsdec();
+  if (amountsdec_ == NULL) amountsdec_ = new ::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.AmountsDec)
+  return amountsdec_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff* ExtendedInvoiceCorrectionItem::release_amountsdec() {
+  clear_has_amountsdec();
+  ::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff* temp = amountsdec_;
+  amountsdec_ = NULL;
+  return temp;
+}
+inline void ExtendedInvoiceCorrectionItem::set_allocated_amountsdec(::Diadoc::Api::Proto::Invoicing::InvoiceItemAmountsDiff* amountsdec) {
+  delete amountsdec_;
+  amountsdec_ = amountsdec;
+  if (amountsdec) {
+    set_has_amountsdec();
+  } else {
+    clear_has_amountsdec();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.AmountsDec)
+}
+
+// optional string ItemAccountDebit = 6;
+inline bool ExtendedInvoiceCorrectionItem::has_itemaccountdebit() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void ExtendedInvoiceCorrectionItem::set_has_itemaccountdebit() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void ExtendedInvoiceCorrectionItem::clear_has_itemaccountdebit() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void ExtendedInvoiceCorrectionItem::clear_itemaccountdebit() {
+  if (itemaccountdebit_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    itemaccountdebit_->clear();
+  }
+  clear_has_itemaccountdebit();
+}
+inline const ::std::string& ExtendedInvoiceCorrectionItem::itemaccountdebit() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.ItemAccountDebit)
+  return *itemaccountdebit_;
+}
+inline void ExtendedInvoiceCorrectionItem::set_itemaccountdebit(const ::std::string& value) {
+  set_has_itemaccountdebit();
+  if (itemaccountdebit_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    itemaccountdebit_ = new ::std::string;
+  }
+  itemaccountdebit_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.ItemAccountDebit)
+}
+inline void ExtendedInvoiceCorrectionItem::set_itemaccountdebit(const char* value) {
+  set_has_itemaccountdebit();
+  if (itemaccountdebit_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    itemaccountdebit_ = new ::std::string;
+  }
+  itemaccountdebit_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.ItemAccountDebit)
+}
+inline void ExtendedInvoiceCorrectionItem::set_itemaccountdebit(const char* value, size_t size) {
+  set_has_itemaccountdebit();
+  if (itemaccountdebit_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    itemaccountdebit_ = new ::std::string;
+  }
+  itemaccountdebit_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.ItemAccountDebit)
+}
+inline ::std::string* ExtendedInvoiceCorrectionItem::mutable_itemaccountdebit() {
+  set_has_itemaccountdebit();
+  if (itemaccountdebit_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    itemaccountdebit_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.ItemAccountDebit)
+  return itemaccountdebit_;
+}
+inline ::std::string* ExtendedInvoiceCorrectionItem::release_itemaccountdebit() {
+  clear_has_itemaccountdebit();
+  if (itemaccountdebit_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = itemaccountdebit_;
+    itemaccountdebit_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void ExtendedInvoiceCorrectionItem::set_allocated_itemaccountdebit(::std::string* itemaccountdebit) {
+  if (itemaccountdebit_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete itemaccountdebit_;
+  }
+  if (itemaccountdebit) {
+    set_has_itemaccountdebit();
+    itemaccountdebit_ = itemaccountdebit;
+  } else {
+    clear_has_itemaccountdebit();
+    itemaccountdebit_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.ItemAccountDebit)
+}
+
+// optional string ItemAccountCredit = 7;
+inline bool ExtendedInvoiceCorrectionItem::has_itemaccountcredit() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void ExtendedInvoiceCorrectionItem::set_has_itemaccountcredit() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void ExtendedInvoiceCorrectionItem::clear_has_itemaccountcredit() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void ExtendedInvoiceCorrectionItem::clear_itemaccountcredit() {
+  if (itemaccountcredit_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    itemaccountcredit_->clear();
+  }
+  clear_has_itemaccountcredit();
+}
+inline const ::std::string& ExtendedInvoiceCorrectionItem::itemaccountcredit() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.ItemAccountCredit)
+  return *itemaccountcredit_;
+}
+inline void ExtendedInvoiceCorrectionItem::set_itemaccountcredit(const ::std::string& value) {
+  set_has_itemaccountcredit();
+  if (itemaccountcredit_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    itemaccountcredit_ = new ::std::string;
+  }
+  itemaccountcredit_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.ItemAccountCredit)
+}
+inline void ExtendedInvoiceCorrectionItem::set_itemaccountcredit(const char* value) {
+  set_has_itemaccountcredit();
+  if (itemaccountcredit_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    itemaccountcredit_ = new ::std::string;
+  }
+  itemaccountcredit_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.ItemAccountCredit)
+}
+inline void ExtendedInvoiceCorrectionItem::set_itemaccountcredit(const char* value, size_t size) {
+  set_has_itemaccountcredit();
+  if (itemaccountcredit_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    itemaccountcredit_ = new ::std::string;
+  }
+  itemaccountcredit_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.ItemAccountCredit)
+}
+inline ::std::string* ExtendedInvoiceCorrectionItem::mutable_itemaccountcredit() {
+  set_has_itemaccountcredit();
+  if (itemaccountcredit_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    itemaccountcredit_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.ItemAccountCredit)
+  return itemaccountcredit_;
+}
+inline ::std::string* ExtendedInvoiceCorrectionItem::release_itemaccountcredit() {
+  clear_has_itemaccountcredit();
+  if (itemaccountcredit_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = itemaccountcredit_;
+    itemaccountcredit_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void ExtendedInvoiceCorrectionItem::set_allocated_itemaccountcredit(::std::string* itemaccountcredit) {
+  if (itemaccountcredit_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete itemaccountcredit_;
+  }
+  if (itemaccountcredit) {
+    set_has_itemaccountcredit();
+    itemaccountcredit_ = itemaccountcredit;
+  } else {
+    clear_has_itemaccountcredit();
+    itemaccountcredit_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.ItemAccountCredit)
+}
+
+// repeated .Diadoc.Api.Proto.Invoicing.AdditionalInfo AdditionalInfo = 8;
+inline int ExtendedInvoiceCorrectionItem::additionalinfo_size() const {
+  return additionalinfo_.size();
+}
+inline void ExtendedInvoiceCorrectionItem::clear_additionalinfo() {
+  additionalinfo_.Clear();
+}
+inline const ::Diadoc::Api::Proto::Invoicing::AdditionalInfo& ExtendedInvoiceCorrectionItem::additionalinfo(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.AdditionalInfo)
+  return additionalinfo_.Get(index);
+}
+inline ::Diadoc::Api::Proto::Invoicing::AdditionalInfo* ExtendedInvoiceCorrectionItem::mutable_additionalinfo(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.AdditionalInfo)
+  return additionalinfo_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::Invoicing::AdditionalInfo* ExtendedInvoiceCorrectionItem::add_additionalinfo() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.AdditionalInfo)
+  return additionalinfo_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::AdditionalInfo >&
+ExtendedInvoiceCorrectionItem::additionalinfo() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.AdditionalInfo)
+  return additionalinfo_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::AdditionalInfo >*
+ExtendedInvoiceCorrectionItem::mutable_additionalinfo() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Invoicing.ExtendedInvoiceCorrectionItem.AdditionalInfo)
+  return &additionalinfo_;
 }
 
 
