@@ -47,6 +47,12 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* SupplementaryAgreementDocumentInfo_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   SupplementaryAgreementDocumentInfo_reflection_ = NULL;
+const ::google::protobuf::Descriptor* UniversalTransferDocumentInfo_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  UniversalTransferDocumentInfo_reflection_ = NULL;
+const ::google::protobuf::Descriptor* UniversalCorrectionDocumentInfo_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  UniversalCorrectionDocumentInfo_reflection_ = NULL;
 
 }  // namespace
 
@@ -58,7 +64,7 @@ void protobuf_AssignDesc_Docflow_2fDocumentInfo_2eproto() {
       "Docflow/DocumentInfo.proto");
   GOOGLE_CHECK(file != NULL);
   DocumentInfo_descriptor_ = file->message_type(0);
-  static const int DocumentInfo_offsets_[14] = {
+  static const int DocumentInfo_offsets_[16] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfo, documenttype_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfo, documentdirection_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfo, istest_),
@@ -73,6 +79,8 @@ void protobuf_AssignDesc_Docflow_2fDocumentInfo_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfo, pricelistinfo_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfo, contractinfo_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfo, supplementaryagreementinfo_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfo, universaltransferdocumentinfo_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfo, universalcorrectiondocumentinfo_),
   };
   DocumentInfo_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -209,6 +217,50 @@ void protobuf_AssignDesc_Docflow_2fDocumentInfo_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(SupplementaryAgreementDocumentInfo));
+  UniversalTransferDocumentInfo_descriptor_ = file->message_type(8);
+  static const int UniversalTransferDocumentInfo_offsets_[6] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalTransferDocumentInfo, total_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalTransferDocumentInfo, vat_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalTransferDocumentInfo, currencycode_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalTransferDocumentInfo, grounds_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalTransferDocumentInfo, function_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalTransferDocumentInfo, originaldocumentdateandnumber_),
+  };
+  UniversalTransferDocumentInfo_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      UniversalTransferDocumentInfo_descriptor_,
+      UniversalTransferDocumentInfo::default_instance_,
+      UniversalTransferDocumentInfo_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalTransferDocumentInfo, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalTransferDocumentInfo, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(UniversalTransferDocumentInfo));
+  UniversalCorrectionDocumentInfo_descriptor_ = file->message_type(9);
+  static const int UniversalCorrectionDocumentInfo_offsets_[10] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentInfo, totalinc_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentInfo, totaldec_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentInfo, vatinc_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentInfo, vatdec_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentInfo, currencycode_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentInfo, grounds_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentInfo, function_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentInfo, originaldocumentdateandnumber_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentInfo, originaldocumentrevisiondateandnumber_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentInfo, originaldocumentcorrectiondateandnumber_),
+  };
+  UniversalCorrectionDocumentInfo_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      UniversalCorrectionDocumentInfo_descriptor_,
+      UniversalCorrectionDocumentInfo::default_instance_,
+      UniversalCorrectionDocumentInfo_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentInfo, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UniversalCorrectionDocumentInfo, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(UniversalCorrectionDocumentInfo));
 }
 
 namespace {
@@ -237,6 +289,10 @@ void protobuf_RegisterTypes(const ::std::string&) {
     ContractDocumentInfo_descriptor_, &ContractDocumentInfo::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     SupplementaryAgreementDocumentInfo_descriptor_, &SupplementaryAgreementDocumentInfo::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    UniversalTransferDocumentInfo_descriptor_, &UniversalTransferDocumentInfo::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    UniversalCorrectionDocumentInfo_descriptor_, &UniversalCorrectionDocumentInfo::default_instance());
 }
 
 }  // namespace
@@ -258,6 +314,10 @@ void protobuf_ShutdownFile_Docflow_2fDocumentInfo_2eproto() {
   delete ContractDocumentInfo_reflection_;
   delete SupplementaryAgreementDocumentInfo::default_instance_;
   delete SupplementaryAgreementDocumentInfo_reflection_;
+  delete UniversalTransferDocumentInfo::default_instance_;
+  delete UniversalTransferDocumentInfo_reflection_;
+  delete UniversalCorrectionDocumentInfo::default_instance_;
+  delete UniversalCorrectionDocumentInfo_reflection_;
 }
 
 void protobuf_AddDesc_Docflow_2fDocumentInfo_2eproto() {
@@ -268,57 +328,83 @@ void protobuf_AddDesc_Docflow_2fDocumentInfo_2eproto() {
 
   ::Diadoc::Api::Proto::protobuf_AddDesc_DocumentType_2eproto();
   ::Diadoc::Api::Proto::protobuf_AddDesc_DocumentDirection_2eproto();
+  ::Diadoc::Api::Proto::Invoicing::protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\032Docflow/DocumentInfo.proto\022\030Diadoc.Api"
     ".Proto.Docflow\032\022DocumentType.proto\032\027Docu"
-    "mentDirection.proto\"\316\006\n\014DocumentInfo\022I\n\014"
-    "DocumentType\030\001 \001(\0162\036.Diadoc.Api.Proto.Do"
-    "cumentType:\023UnknownDocumentType\022X\n\021Docum"
-    "entDirection\030\002 \001(\0162#.Diadoc.Api.Proto.Do"
-    "cumentDirection:\030UnknownDocumentDirectio"
-    "n\022\016\n\006IsTest\030\003 \001(\010\022\030\n\020CustomDocumentId\030\004 "
-    "\001(\t\022\030\n\020FromDepartmentId\030\005 \001(\t\022\026\n\016ToDepar"
-    "tmentId\030\006 \001(\t\022\031\n\021CounteragentBoxId\030\007 \001(\t"
-    "\022N\n\025DocumentDateAndNumber\030\010 \001(\0132/.Diadoc"
-    ".Api.Proto.Docflow.DocumentDateAndNumber"
-    "\022F\n\021BasicDocumentInfo\030\t \001(\0132+.Diadoc.Api"
-    ".Proto.Docflow.BasicDocumentInfo\022B\n\013Invo"
-    "iceInfo\030\n \001(\0132-.Diadoc.Api.Proto.Docflow"
-    ".InvoiceDocumentInfo\022V\n\025InvoiceCorrectio"
-    "nInfo\030\013 \001(\01327.Diadoc.Api.Proto.Docflow.I"
-    "nvoiceCorrectionDocumentInfo\022F\n\rPriceLis"
-    "tInfo\030\014 \001(\0132/.Diadoc.Api.Proto.Docflow.P"
-    "riceListDocumentInfo\022D\n\014ContractInfo\030\r \001"
-    "(\0132..Diadoc.Api.Proto.Docflow.ContractDo"
-    "cumentInfo\022`\n\032SupplementaryAgreementInfo"
-    "\030\016 \001(\0132<.Diadoc.Api.Proto.Docflow.Supple"
-    "mentaryAgreementDocumentInfo\"E\n\025Document"
-    "DateAndNumber\022\024\n\014DocumentDate\030\001 \001(\t\022\026\n\016D"
-    "ocumentNumber\030\002 \001(\t\"O\n\021BasicDocumentInfo"
-    "\022\r\n\005Total\030\001 \001(\t\022\r\n\005NoVat\030\002 \001(\010\022\013\n\003Vat\030\003 "
-    "\001(\t\022\017\n\007Grounds\030\004 \001(\t\"\236\001\n\023InvoiceDocument"
-    "Info\022\r\n\005Total\030\001 \001(\t\022\013\n\003Vat\030\002 \001(\t\022\024\n\014Curr"
-    "encyCode\030\003 \001(\005\022U\n\034OriginalInvoiceDateAnd"
-    "Number\030\004 \001(\0132/.Diadoc.Api.Proto.Docflow."
-    "DocumentDateAndNumber\"\220\003\n\035InvoiceCorrect"
-    "ionDocumentInfo\022\020\n\010TotalInc\030\001 \001(\t\022\020\n\010Tot"
-    "alDec\030\002 \001(\t\022\016\n\006VatInc\030\003 \001(\t\022\016\n\006VatDec\030\004 "
-    "\001(\t\022\024\n\014CurrencyCode\030\005 \001(\005\022U\n\034OriginalInv"
-    "oiceDateAndNumber\030\006 \001(\0132/.Diadoc.Api.Pro"
-    "to.Docflow.DocumentDateAndNumber\022]\n$Orig"
-    "inalInvoiceRevisionDateAndNumber\030\007 \001(\0132/"
+    "mentDirection.proto\032-Invoicing/Universal"
+    "TransferDocumentInfo.proto\"\222\010\n\014DocumentI"
+    "nfo\022I\n\014DocumentType\030\001 \001(\0162\036.Diadoc.Api.P"
+    "roto.DocumentType:\023UnknownDocumentType\022X"
+    "\n\021DocumentDirection\030\002 \001(\0162#.Diadoc.Api.P"
+    "roto.DocumentDirection:\030UnknownDocumentD"
+    "irection\022\016\n\006IsTest\030\003 \001(\010\022\030\n\020CustomDocume"
+    "ntId\030\004 \001(\t\022\030\n\020FromDepartmentId\030\005 \001(\t\022\026\n\016"
+    "ToDepartmentId\030\006 \001(\t\022\031\n\021CounteragentBoxI"
+    "d\030\007 \001(\t\022N\n\025DocumentDateAndNumber\030\010 \001(\0132/"
     ".Diadoc.Api.Proto.Docflow.DocumentDateAn"
-    "dNumber\022_\n&OriginalInvoiceCorrectionDate"
-    "AndNumber\030\010 \001(\0132/.Diadoc.Api.Proto.Docfl"
-    "ow.DocumentDateAndNumber\"\217\001\n\025PriceListDo"
-    "cumentInfo\022\036\n\026PriceListEffectiveDate\030\001 \001"
-    "(\t\022V\n\035ContractDocumentDateAndNumber\030\002 \001("
+    "dNumber\022F\n\021BasicDocumentInfo\030\t \001(\0132+.Dia"
+    "doc.Api.Proto.Docflow.BasicDocumentInfo\022"
+    "B\n\013InvoiceInfo\030\n \001(\0132-.Diadoc.Api.Proto."
+    "Docflow.InvoiceDocumentInfo\022V\n\025InvoiceCo"
+    "rrectionInfo\030\013 \001(\01327.Diadoc.Api.Proto.Do"
+    "cflow.InvoiceCorrectionDocumentInfo\022F\n\rP"
+    "riceListInfo\030\014 \001(\0132/.Diadoc.Api.Proto.Do"
+    "cflow.PriceListDocumentInfo\022D\n\014ContractI"
+    "nfo\030\r \001(\0132..Diadoc.Api.Proto.Docflow.Con"
+    "tractDocumentInfo\022`\n\032SupplementaryAgreem"
+    "entInfo\030\016 \001(\0132<.Diadoc.Api.Proto.Docflow"
+    ".SupplementaryAgreementDocumentInfo\022^\n\035U"
+    "niversalTransferDocumentInfo\030\017 \001(\01327.Dia"
+    "doc.Api.Proto.Docflow.UniversalTransferD"
+    "ocumentInfo\022b\n\037UniversalCorrectionDocume"
+    "ntInfo\030\020 \001(\01329.Diadoc.Api.Proto.Docflow."
+    "UniversalCorrectionDocumentInfo\"E\n\025Docum"
+    "entDateAndNumber\022\024\n\014DocumentDate\030\001 \001(\t\022\026"
+    "\n\016DocumentNumber\030\002 \001(\t\"O\n\021BasicDocumentI"
+    "nfo\022\r\n\005Total\030\001 \001(\t\022\r\n\005NoVat\030\002 \001(\010\022\013\n\003Vat"
+    "\030\003 \001(\t\022\017\n\007Grounds\030\004 \001(\t\"\236\001\n\023InvoiceDocum"
+    "entInfo\022\r\n\005Total\030\001 \001(\t\022\013\n\003Vat\030\002 \001(\t\022\024\n\014C"
+    "urrencyCode\030\003 \001(\005\022U\n\034OriginalInvoiceDate"
+    "AndNumber\030\004 \001(\0132/.Diadoc.Api.Proto.Docfl"
+    "ow.DocumentDateAndNumber\"\220\003\n\035InvoiceCorr"
+    "ectionDocumentInfo\022\020\n\010TotalInc\030\001 \001(\t\022\020\n\010"
+    "TotalDec\030\002 \001(\t\022\016\n\006VatInc\030\003 \001(\t\022\016\n\006VatDec"
+    "\030\004 \001(\t\022\024\n\014CurrencyCode\030\005 \001(\005\022U\n\034Original"
+    "InvoiceDateAndNumber\030\006 \001(\0132/.Diadoc.Api."
+    "Proto.Docflow.DocumentDateAndNumber\022]\n$O"
+    "riginalInvoiceRevisionDateAndNumber\030\007 \001("
     "\0132/.Diadoc.Api.Proto.Docflow.DocumentDat"
-    "eAndNumber\"C\n\024ContractDocumentInfo\022\025\n\rCo"
-    "ntractPrice\030\001 \001(\t\022\024\n\014ContractType\030\002 \001(\t\""
-    "w\n\"SupplementaryAgreementDocumentInfo\022\r\n"
-    "\005Total\030\001 \001(\t\022\024\n\014ContractType\030\002 \001(\t\022\026\n\016Co"
-    "ntractNumber\030\003 \001(\t\022\024\n\014ContractDate\030\004 \001(\t", 2000);
+    "eAndNumber\022_\n&OriginalInvoiceCorrectionD"
+    "ateAndNumber\030\010 \001(\0132/.Diadoc.Api.Proto.Do"
+    "cflow.DocumentDateAndNumber\"\217\001\n\025PriceLis"
+    "tDocumentInfo\022\036\n\026PriceListEffectiveDate\030"
+    "\001 \001(\t\022V\n\035ContractDocumentDateAndNumber\030\002"
+    " \001(\0132/.Diadoc.Api.Proto.Docflow.Document"
+    "DateAndNumber\"C\n\024ContractDocumentInfo\022\025\n"
+    "\rContractPrice\030\001 \001(\t\022\024\n\014ContractType\030\002 \001"
+    "(\t\"w\n\"SupplementaryAgreementDocumentInfo"
+    "\022\r\n\005Total\030\001 \001(\t\022\024\n\014ContractType\030\002 \001(\t\022\026\n"
+    "\016ContractNumber\030\003 \001(\t\022\024\n\014ContractDate\030\004 "
+    "\001(\t\"\366\001\n\035UniversalTransferDocumentInfo\022\r\n"
+    "\005Total\030\001 \001(\t\022\013\n\003Vat\030\002 \001(\t\022\024\n\014CurrencyCod"
+    "e\030\003 \001(\005\022\017\n\007Grounds\030\004 \001(\t\022:\n\010Function\030\005 \002"
+    "(\0162(.Diadoc.Api.Proto.Invoicing.Function"
+    "Type\022V\n\035OriginalDocumentDateAndNumber\030\006 "
+    "\001(\0132/.Diadoc.Api.Proto.Docflow.DocumentD"
+    "ateAndNumber\"\342\003\n\037UniversalCorrectionDocu"
+    "mentInfo\022\020\n\010TotalInc\030\001 \001(\t\022\020\n\010TotalDec\030\002"
+    " \001(\t\022\016\n\006VatInc\030\003 \001(\t\022\016\n\006VatDec\030\004 \001(\t\022\024\n\014"
+    "CurrencyCode\030\005 \001(\005\022\017\n\007Grounds\030\006 \001(\t\022:\n\010F"
+    "unction\030\007 \002(\0162(.Diadoc.Api.Proto.Invoici"
+    "ng.FunctionType\022V\n\035OriginalDocumentDateA"
+    "ndNumber\030\010 \001(\0132/.Diadoc.Api.Proto.Docflo"
+    "w.DocumentDateAndNumber\022^\n%OriginalDocum"
+    "entRevisionDateAndNumber\030\t \001(\0132/.Diadoc."
+    "Api.Proto.Docflow.DocumentDateAndNumber\022"
+    "`\n\'OriginalDocumentCorrectionDateAndNumb"
+    "er\030\n \001(\0132/.Diadoc.Api.Proto.Docflow.Docu"
+    "mentDateAndNumber", 2977);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Docflow/DocumentInfo.proto", &protobuf_RegisterTypes);
   DocumentInfo::default_instance_ = new DocumentInfo();
@@ -329,6 +415,8 @@ void protobuf_AddDesc_Docflow_2fDocumentInfo_2eproto() {
   PriceListDocumentInfo::default_instance_ = new PriceListDocumentInfo();
   ContractDocumentInfo::default_instance_ = new ContractDocumentInfo();
   SupplementaryAgreementDocumentInfo::default_instance_ = new SupplementaryAgreementDocumentInfo();
+  UniversalTransferDocumentInfo::default_instance_ = new UniversalTransferDocumentInfo();
+  UniversalCorrectionDocumentInfo::default_instance_ = new UniversalCorrectionDocumentInfo();
   DocumentInfo::default_instance_->InitAsDefaultInstance();
   DocumentDateAndNumber::default_instance_->InitAsDefaultInstance();
   BasicDocumentInfo::default_instance_->InitAsDefaultInstance();
@@ -337,6 +425,8 @@ void protobuf_AddDesc_Docflow_2fDocumentInfo_2eproto() {
   PriceListDocumentInfo::default_instance_->InitAsDefaultInstance();
   ContractDocumentInfo::default_instance_->InitAsDefaultInstance();
   SupplementaryAgreementDocumentInfo::default_instance_->InitAsDefaultInstance();
+  UniversalTransferDocumentInfo::default_instance_->InitAsDefaultInstance();
+  UniversalCorrectionDocumentInfo::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_Docflow_2fDocumentInfo_2eproto);
 }
 
@@ -364,6 +454,8 @@ const int DocumentInfo::kInvoiceCorrectionInfoFieldNumber;
 const int DocumentInfo::kPriceListInfoFieldNumber;
 const int DocumentInfo::kContractInfoFieldNumber;
 const int DocumentInfo::kSupplementaryAgreementInfoFieldNumber;
+const int DocumentInfo::kUniversalTransferDocumentInfoFieldNumber;
+const int DocumentInfo::kUniversalCorrectionDocumentInfoFieldNumber;
 #endif  // !_MSC_VER
 
 DocumentInfo::DocumentInfo()
@@ -380,6 +472,8 @@ void DocumentInfo::InitAsDefaultInstance() {
   pricelistinfo_ = const_cast< ::Diadoc::Api::Proto::Docflow::PriceListDocumentInfo*>(&::Diadoc::Api::Proto::Docflow::PriceListDocumentInfo::default_instance());
   contractinfo_ = const_cast< ::Diadoc::Api::Proto::Docflow::ContractDocumentInfo*>(&::Diadoc::Api::Proto::Docflow::ContractDocumentInfo::default_instance());
   supplementaryagreementinfo_ = const_cast< ::Diadoc::Api::Proto::Docflow::SupplementaryAgreementDocumentInfo*>(&::Diadoc::Api::Proto::Docflow::SupplementaryAgreementDocumentInfo::default_instance());
+  universaltransferdocumentinfo_ = const_cast< ::Diadoc::Api::Proto::Docflow::UniversalTransferDocumentInfo*>(&::Diadoc::Api::Proto::Docflow::UniversalTransferDocumentInfo::default_instance());
+  universalcorrectiondocumentinfo_ = const_cast< ::Diadoc::Api::Proto::Docflow::UniversalCorrectionDocumentInfo*>(&::Diadoc::Api::Proto::Docflow::UniversalCorrectionDocumentInfo::default_instance());
 }
 
 DocumentInfo::DocumentInfo(const DocumentInfo& from)
@@ -406,6 +500,8 @@ void DocumentInfo::SharedCtor() {
   pricelistinfo_ = NULL;
   contractinfo_ = NULL;
   supplementaryagreementinfo_ = NULL;
+  universaltransferdocumentinfo_ = NULL;
+  universalcorrectiondocumentinfo_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -435,6 +531,8 @@ void DocumentInfo::SharedDtor() {
     delete pricelistinfo_;
     delete contractinfo_;
     delete supplementaryagreementinfo_;
+    delete universaltransferdocumentinfo_;
+    delete universalcorrectiondocumentinfo_;
   }
 }
 
@@ -488,7 +586,7 @@ void DocumentInfo::Clear() {
       if (documentdateandnumber_ != NULL) documentdateandnumber_->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::Clear();
     }
   }
-  if (_has_bits_[8 / 32] & 16128) {
+  if (_has_bits_[8 / 32] & 65280) {
     if (has_basicdocumentinfo()) {
       if (basicdocumentinfo_ != NULL) basicdocumentinfo_->::Diadoc::Api::Proto::Docflow::BasicDocumentInfo::Clear();
     }
@@ -507,6 +605,12 @@ void DocumentInfo::Clear() {
     if (has_supplementaryagreementinfo()) {
       if (supplementaryagreementinfo_ != NULL) supplementaryagreementinfo_->::Diadoc::Api::Proto::Docflow::SupplementaryAgreementDocumentInfo::Clear();
     }
+    if (has_universaltransferdocumentinfo()) {
+      if (universaltransferdocumentinfo_ != NULL) universaltransferdocumentinfo_->::Diadoc::Api::Proto::Docflow::UniversalTransferDocumentInfo::Clear();
+    }
+    if (has_universalcorrectiondocumentinfo()) {
+      if (universalcorrectiondocumentinfo_ != NULL) universalcorrectiondocumentinfo_->::Diadoc::Api::Proto::Docflow::UniversalCorrectionDocumentInfo::Clear();
+    }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -518,7 +622,7 @@ bool DocumentInfo::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Docflow.DocumentInfo)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(16383);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -731,6 +835,32 @@ bool DocumentInfo::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(122)) goto parse_UniversalTransferDocumentInfo;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo UniversalTransferDocumentInfo = 15;
+      case 15: {
+        if (tag == 122) {
+         parse_UniversalTransferDocumentInfo:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_universaltransferdocumentinfo()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(130)) goto parse_UniversalCorrectionDocumentInfo;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo UniversalCorrectionDocumentInfo = 16;
+      case 16: {
+        if (tag == 130) {
+         parse_UniversalCorrectionDocumentInfo:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_universalcorrectiondocumentinfo()));
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -859,6 +989,18 @@ void DocumentInfo::SerializeWithCachedSizes(
       14, this->supplementaryagreementinfo(), output);
   }
 
+  // optional .Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo UniversalTransferDocumentInfo = 15;
+  if (has_universaltransferdocumentinfo()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      15, this->universaltransferdocumentinfo(), output);
+  }
+
+  // optional .Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo UniversalCorrectionDocumentInfo = 16;
+  if (has_universalcorrectiondocumentinfo()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      16, this->universalcorrectiondocumentinfo(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -979,6 +1121,20 @@ void DocumentInfo::SerializeWithCachedSizes(
         14, this->supplementaryagreementinfo(), target);
   }
 
+  // optional .Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo UniversalTransferDocumentInfo = 15;
+  if (has_universaltransferdocumentinfo()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        15, this->universaltransferdocumentinfo(), target);
+  }
+
+  // optional .Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo UniversalCorrectionDocumentInfo = 16;
+  if (has_universalcorrectiondocumentinfo()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        16, this->universalcorrectiondocumentinfo(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -1087,6 +1243,20 @@ int DocumentInfo::ByteSize() const {
           this->supplementaryagreementinfo());
     }
 
+    // optional .Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo UniversalTransferDocumentInfo = 15;
+    if (has_universaltransferdocumentinfo()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->universaltransferdocumentinfo());
+    }
+
+    // optional .Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo UniversalCorrectionDocumentInfo = 16;
+    if (has_universalcorrectiondocumentinfo()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->universalcorrectiondocumentinfo());
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -1158,6 +1328,12 @@ void DocumentInfo::MergeFrom(const DocumentInfo& from) {
     if (from.has_supplementaryagreementinfo()) {
       mutable_supplementaryagreementinfo()->::Diadoc::Api::Proto::Docflow::SupplementaryAgreementDocumentInfo::MergeFrom(from.supplementaryagreementinfo());
     }
+    if (from.has_universaltransferdocumentinfo()) {
+      mutable_universaltransferdocumentinfo()->::Diadoc::Api::Proto::Docflow::UniversalTransferDocumentInfo::MergeFrom(from.universaltransferdocumentinfo());
+    }
+    if (from.has_universalcorrectiondocumentinfo()) {
+      mutable_universalcorrectiondocumentinfo()->::Diadoc::Api::Proto::Docflow::UniversalCorrectionDocumentInfo::MergeFrom(from.universalcorrectiondocumentinfo());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -1176,6 +1352,12 @@ void DocumentInfo::CopyFrom(const DocumentInfo& from) {
 
 bool DocumentInfo::IsInitialized() const {
 
+  if (has_universaltransferdocumentinfo()) {
+    if (!this->universaltransferdocumentinfo().IsInitialized()) return false;
+  }
+  if (has_universalcorrectiondocumentinfo()) {
+    if (!this->universalcorrectiondocumentinfo().IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -1195,6 +1377,8 @@ void DocumentInfo::Swap(DocumentInfo* other) {
     std::swap(pricelistinfo_, other->pricelistinfo_);
     std::swap(contractinfo_, other->contractinfo_);
     std::swap(supplementaryagreementinfo_, other->supplementaryagreementinfo_);
+    std::swap(universaltransferdocumentinfo_, other->universaltransferdocumentinfo_);
+    std::swap(universalcorrectiondocumentinfo_, other->universalcorrectiondocumentinfo_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -3905,6 +4089,1228 @@ void SupplementaryAgreementDocumentInfo::Swap(SupplementaryAgreementDocumentInfo
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = SupplementaryAgreementDocumentInfo_descriptor_;
   metadata.reflection = SupplementaryAgreementDocumentInfo_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int UniversalTransferDocumentInfo::kTotalFieldNumber;
+const int UniversalTransferDocumentInfo::kVatFieldNumber;
+const int UniversalTransferDocumentInfo::kCurrencyCodeFieldNumber;
+const int UniversalTransferDocumentInfo::kGroundsFieldNumber;
+const int UniversalTransferDocumentInfo::kFunctionFieldNumber;
+const int UniversalTransferDocumentInfo::kOriginalDocumentDateAndNumberFieldNumber;
+#endif  // !_MSC_VER
+
+UniversalTransferDocumentInfo::UniversalTransferDocumentInfo()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo)
+}
+
+void UniversalTransferDocumentInfo::InitAsDefaultInstance() {
+  originaldocumentdateandnumber_ = const_cast< ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber*>(&::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::default_instance());
+}
+
+UniversalTransferDocumentInfo::UniversalTransferDocumentInfo(const UniversalTransferDocumentInfo& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo)
+}
+
+void UniversalTransferDocumentInfo::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  total_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  vat_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  currencycode_ = 0;
+  grounds_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  function_ = 0;
+  originaldocumentdateandnumber_ = NULL;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+UniversalTransferDocumentInfo::~UniversalTransferDocumentInfo() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo)
+  SharedDtor();
+}
+
+void UniversalTransferDocumentInfo::SharedDtor() {
+  if (total_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete total_;
+  }
+  if (vat_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete vat_;
+  }
+  if (grounds_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete grounds_;
+  }
+  if (this != default_instance_) {
+    delete originaldocumentdateandnumber_;
+  }
+}
+
+void UniversalTransferDocumentInfo::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* UniversalTransferDocumentInfo::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return UniversalTransferDocumentInfo_descriptor_;
+}
+
+const UniversalTransferDocumentInfo& UniversalTransferDocumentInfo::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Docflow_2fDocumentInfo_2eproto();
+  return *default_instance_;
+}
+
+UniversalTransferDocumentInfo* UniversalTransferDocumentInfo::default_instance_ = NULL;
+
+UniversalTransferDocumentInfo* UniversalTransferDocumentInfo::New() const {
+  return new UniversalTransferDocumentInfo;
+}
+
+void UniversalTransferDocumentInfo::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<UniversalTransferDocumentInfo*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  if (_has_bits_[0 / 32] & 63) {
+    ZR_(currencycode_, function_);
+    if (has_total()) {
+      if (total_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        total_->clear();
+      }
+    }
+    if (has_vat()) {
+      if (vat_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        vat_->clear();
+      }
+    }
+    if (has_grounds()) {
+      if (grounds_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        grounds_->clear();
+      }
+    }
+    if (has_originaldocumentdateandnumber()) {
+      if (originaldocumentdateandnumber_ != NULL) originaldocumentdateandnumber_->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::Clear();
+    }
+  }
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool UniversalTransferDocumentInfo::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional string Total = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_total()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->total().data(), this->total().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "total");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_Vat;
+        break;
+      }
+
+      // optional string Vat = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_Vat:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_vat()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->vat().data(), this->vat().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "vat");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_CurrencyCode;
+        break;
+      }
+
+      // optional int32 CurrencyCode = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_CurrencyCode:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &currencycode_)));
+          set_has_currencycode();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_Grounds;
+        break;
+      }
+
+      // optional string Grounds = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_Grounds:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_grounds()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->grounds().data(), this->grounds().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "grounds");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(40)) goto parse_Function;
+        break;
+      }
+
+      // required .Diadoc.Api.Proto.Invoicing.FunctionType Function = 5;
+      case 5: {
+        if (tag == 40) {
+         parse_Function:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Diadoc::Api::Proto::Invoicing::FunctionType_IsValid(value)) {
+            set_function(static_cast< ::Diadoc::Api::Proto::Invoicing::FunctionType >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(5, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(50)) goto parse_OriginalDocumentDateAndNumber;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentDateAndNumber = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_OriginalDocumentDateAndNumber:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_originaldocumentdateandnumber()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo)
+  return false;
+#undef DO_
+}
+
+void UniversalTransferDocumentInfo::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo)
+  // optional string Total = 1;
+  if (has_total()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->total().data(), this->total().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "total");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->total(), output);
+  }
+
+  // optional string Vat = 2;
+  if (has_vat()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->vat().data(), this->vat().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "vat");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->vat(), output);
+  }
+
+  // optional int32 CurrencyCode = 3;
+  if (has_currencycode()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->currencycode(), output);
+  }
+
+  // optional string Grounds = 4;
+  if (has_grounds()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->grounds().data(), this->grounds().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "grounds");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->grounds(), output);
+  }
+
+  // required .Diadoc.Api.Proto.Invoicing.FunctionType Function = 5;
+  if (has_function()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      5, this->function(), output);
+  }
+
+  // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentDateAndNumber = 6;
+  if (has_originaldocumentdateandnumber()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6, this->originaldocumentdateandnumber(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo)
+}
+
+::google::protobuf::uint8* UniversalTransferDocumentInfo::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo)
+  // optional string Total = 1;
+  if (has_total()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->total().data(), this->total().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "total");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->total(), target);
+  }
+
+  // optional string Vat = 2;
+  if (has_vat()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->vat().data(), this->vat().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "vat");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->vat(), target);
+  }
+
+  // optional int32 CurrencyCode = 3;
+  if (has_currencycode()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->currencycode(), target);
+  }
+
+  // optional string Grounds = 4;
+  if (has_grounds()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->grounds().data(), this->grounds().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "grounds");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->grounds(), target);
+  }
+
+  // required .Diadoc.Api.Proto.Invoicing.FunctionType Function = 5;
+  if (has_function()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      5, this->function(), target);
+  }
+
+  // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentDateAndNumber = 6;
+  if (has_originaldocumentdateandnumber()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        6, this->originaldocumentdateandnumber(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo)
+  return target;
+}
+
+int UniversalTransferDocumentInfo::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional string Total = 1;
+    if (has_total()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->total());
+    }
+
+    // optional string Vat = 2;
+    if (has_vat()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->vat());
+    }
+
+    // optional int32 CurrencyCode = 3;
+    if (has_currencycode()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->currencycode());
+    }
+
+    // optional string Grounds = 4;
+    if (has_grounds()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->grounds());
+    }
+
+    // required .Diadoc.Api.Proto.Invoicing.FunctionType Function = 5;
+    if (has_function()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->function());
+    }
+
+    // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentDateAndNumber = 6;
+    if (has_originaldocumentdateandnumber()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->originaldocumentdateandnumber());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void UniversalTransferDocumentInfo::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const UniversalTransferDocumentInfo* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const UniversalTransferDocumentInfo*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void UniversalTransferDocumentInfo::MergeFrom(const UniversalTransferDocumentInfo& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_total()) {
+      set_total(from.total());
+    }
+    if (from.has_vat()) {
+      set_vat(from.vat());
+    }
+    if (from.has_currencycode()) {
+      set_currencycode(from.currencycode());
+    }
+    if (from.has_grounds()) {
+      set_grounds(from.grounds());
+    }
+    if (from.has_function()) {
+      set_function(from.function());
+    }
+    if (from.has_originaldocumentdateandnumber()) {
+      mutable_originaldocumentdateandnumber()->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::MergeFrom(from.originaldocumentdateandnumber());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void UniversalTransferDocumentInfo::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void UniversalTransferDocumentInfo::CopyFrom(const UniversalTransferDocumentInfo& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UniversalTransferDocumentInfo::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000010) != 0x00000010) return false;
+
+  return true;
+}
+
+void UniversalTransferDocumentInfo::Swap(UniversalTransferDocumentInfo* other) {
+  if (other != this) {
+    std::swap(total_, other->total_);
+    std::swap(vat_, other->vat_);
+    std::swap(currencycode_, other->currencycode_);
+    std::swap(grounds_, other->grounds_);
+    std::swap(function_, other->function_);
+    std::swap(originaldocumentdateandnumber_, other->originaldocumentdateandnumber_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata UniversalTransferDocumentInfo::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = UniversalTransferDocumentInfo_descriptor_;
+  metadata.reflection = UniversalTransferDocumentInfo_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int UniversalCorrectionDocumentInfo::kTotalIncFieldNumber;
+const int UniversalCorrectionDocumentInfo::kTotalDecFieldNumber;
+const int UniversalCorrectionDocumentInfo::kVatIncFieldNumber;
+const int UniversalCorrectionDocumentInfo::kVatDecFieldNumber;
+const int UniversalCorrectionDocumentInfo::kCurrencyCodeFieldNumber;
+const int UniversalCorrectionDocumentInfo::kGroundsFieldNumber;
+const int UniversalCorrectionDocumentInfo::kFunctionFieldNumber;
+const int UniversalCorrectionDocumentInfo::kOriginalDocumentDateAndNumberFieldNumber;
+const int UniversalCorrectionDocumentInfo::kOriginalDocumentRevisionDateAndNumberFieldNumber;
+const int UniversalCorrectionDocumentInfo::kOriginalDocumentCorrectionDateAndNumberFieldNumber;
+#endif  // !_MSC_VER
+
+UniversalCorrectionDocumentInfo::UniversalCorrectionDocumentInfo()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo)
+}
+
+void UniversalCorrectionDocumentInfo::InitAsDefaultInstance() {
+  originaldocumentdateandnumber_ = const_cast< ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber*>(&::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::default_instance());
+  originaldocumentrevisiondateandnumber_ = const_cast< ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber*>(&::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::default_instance());
+  originaldocumentcorrectiondateandnumber_ = const_cast< ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber*>(&::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::default_instance());
+}
+
+UniversalCorrectionDocumentInfo::UniversalCorrectionDocumentInfo(const UniversalCorrectionDocumentInfo& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo)
+}
+
+void UniversalCorrectionDocumentInfo::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  totalinc_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  totaldec_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  vatinc_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  vatdec_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  currencycode_ = 0;
+  grounds_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  function_ = 0;
+  originaldocumentdateandnumber_ = NULL;
+  originaldocumentrevisiondateandnumber_ = NULL;
+  originaldocumentcorrectiondateandnumber_ = NULL;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+UniversalCorrectionDocumentInfo::~UniversalCorrectionDocumentInfo() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo)
+  SharedDtor();
+}
+
+void UniversalCorrectionDocumentInfo::SharedDtor() {
+  if (totalinc_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete totalinc_;
+  }
+  if (totaldec_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete totaldec_;
+  }
+  if (vatinc_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete vatinc_;
+  }
+  if (vatdec_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete vatdec_;
+  }
+  if (grounds_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete grounds_;
+  }
+  if (this != default_instance_) {
+    delete originaldocumentdateandnumber_;
+    delete originaldocumentrevisiondateandnumber_;
+    delete originaldocumentcorrectiondateandnumber_;
+  }
+}
+
+void UniversalCorrectionDocumentInfo::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* UniversalCorrectionDocumentInfo::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return UniversalCorrectionDocumentInfo_descriptor_;
+}
+
+const UniversalCorrectionDocumentInfo& UniversalCorrectionDocumentInfo::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Docflow_2fDocumentInfo_2eproto();
+  return *default_instance_;
+}
+
+UniversalCorrectionDocumentInfo* UniversalCorrectionDocumentInfo::default_instance_ = NULL;
+
+UniversalCorrectionDocumentInfo* UniversalCorrectionDocumentInfo::New() const {
+  return new UniversalCorrectionDocumentInfo;
+}
+
+void UniversalCorrectionDocumentInfo::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<UniversalCorrectionDocumentInfo*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  if (_has_bits_[0 / 32] & 255) {
+    ZR_(currencycode_, function_);
+    if (has_totalinc()) {
+      if (totalinc_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        totalinc_->clear();
+      }
+    }
+    if (has_totaldec()) {
+      if (totaldec_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        totaldec_->clear();
+      }
+    }
+    if (has_vatinc()) {
+      if (vatinc_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        vatinc_->clear();
+      }
+    }
+    if (has_vatdec()) {
+      if (vatdec_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        vatdec_->clear();
+      }
+    }
+    if (has_grounds()) {
+      if (grounds_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        grounds_->clear();
+      }
+    }
+    if (has_originaldocumentdateandnumber()) {
+      if (originaldocumentdateandnumber_ != NULL) originaldocumentdateandnumber_->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::Clear();
+    }
+  }
+  if (_has_bits_[8 / 32] & 768) {
+    if (has_originaldocumentrevisiondateandnumber()) {
+      if (originaldocumentrevisiondateandnumber_ != NULL) originaldocumentrevisiondateandnumber_->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::Clear();
+    }
+    if (has_originaldocumentcorrectiondateandnumber()) {
+      if (originaldocumentcorrectiondateandnumber_ != NULL) originaldocumentcorrectiondateandnumber_->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::Clear();
+    }
+  }
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool UniversalCorrectionDocumentInfo::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional string TotalInc = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_totalinc()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->totalinc().data(), this->totalinc().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "totalinc");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_TotalDec;
+        break;
+      }
+
+      // optional string TotalDec = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_TotalDec:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_totaldec()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->totaldec().data(), this->totaldec().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "totaldec");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_VatInc;
+        break;
+      }
+
+      // optional string VatInc = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_VatInc:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_vatinc()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->vatinc().data(), this->vatinc().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "vatinc");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_VatDec;
+        break;
+      }
+
+      // optional string VatDec = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_VatDec:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_vatdec()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->vatdec().data(), this->vatdec().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "vatdec");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(40)) goto parse_CurrencyCode;
+        break;
+      }
+
+      // optional int32 CurrencyCode = 5;
+      case 5: {
+        if (tag == 40) {
+         parse_CurrencyCode:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &currencycode_)));
+          set_has_currencycode();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(50)) goto parse_Grounds;
+        break;
+      }
+
+      // optional string Grounds = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_Grounds:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_grounds()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->grounds().data(), this->grounds().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "grounds");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(56)) goto parse_Function;
+        break;
+      }
+
+      // required .Diadoc.Api.Proto.Invoicing.FunctionType Function = 7;
+      case 7: {
+        if (tag == 56) {
+         parse_Function:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Diadoc::Api::Proto::Invoicing::FunctionType_IsValid(value)) {
+            set_function(static_cast< ::Diadoc::Api::Proto::Invoicing::FunctionType >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(7, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(66)) goto parse_OriginalDocumentDateAndNumber;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentDateAndNumber = 8;
+      case 8: {
+        if (tag == 66) {
+         parse_OriginalDocumentDateAndNumber:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_originaldocumentdateandnumber()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(74)) goto parse_OriginalDocumentRevisionDateAndNumber;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentRevisionDateAndNumber = 9;
+      case 9: {
+        if (tag == 74) {
+         parse_OriginalDocumentRevisionDateAndNumber:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_originaldocumentrevisiondateandnumber()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(82)) goto parse_OriginalDocumentCorrectionDateAndNumber;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentCorrectionDateAndNumber = 10;
+      case 10: {
+        if (tag == 82) {
+         parse_OriginalDocumentCorrectionDateAndNumber:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_originaldocumentcorrectiondateandnumber()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo)
+  return false;
+#undef DO_
+}
+
+void UniversalCorrectionDocumentInfo::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo)
+  // optional string TotalInc = 1;
+  if (has_totalinc()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->totalinc().data(), this->totalinc().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "totalinc");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->totalinc(), output);
+  }
+
+  // optional string TotalDec = 2;
+  if (has_totaldec()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->totaldec().data(), this->totaldec().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "totaldec");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->totaldec(), output);
+  }
+
+  // optional string VatInc = 3;
+  if (has_vatinc()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->vatinc().data(), this->vatinc().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "vatinc");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->vatinc(), output);
+  }
+
+  // optional string VatDec = 4;
+  if (has_vatdec()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->vatdec().data(), this->vatdec().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "vatdec");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->vatdec(), output);
+  }
+
+  // optional int32 CurrencyCode = 5;
+  if (has_currencycode()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->currencycode(), output);
+  }
+
+  // optional string Grounds = 6;
+  if (has_grounds()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->grounds().data(), this->grounds().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "grounds");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      6, this->grounds(), output);
+  }
+
+  // required .Diadoc.Api.Proto.Invoicing.FunctionType Function = 7;
+  if (has_function()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      7, this->function(), output);
+  }
+
+  // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentDateAndNumber = 8;
+  if (has_originaldocumentdateandnumber()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      8, this->originaldocumentdateandnumber(), output);
+  }
+
+  // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentRevisionDateAndNumber = 9;
+  if (has_originaldocumentrevisiondateandnumber()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      9, this->originaldocumentrevisiondateandnumber(), output);
+  }
+
+  // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentCorrectionDateAndNumber = 10;
+  if (has_originaldocumentcorrectiondateandnumber()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      10, this->originaldocumentcorrectiondateandnumber(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo)
+}
+
+::google::protobuf::uint8* UniversalCorrectionDocumentInfo::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo)
+  // optional string TotalInc = 1;
+  if (has_totalinc()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->totalinc().data(), this->totalinc().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "totalinc");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->totalinc(), target);
+  }
+
+  // optional string TotalDec = 2;
+  if (has_totaldec()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->totaldec().data(), this->totaldec().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "totaldec");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->totaldec(), target);
+  }
+
+  // optional string VatInc = 3;
+  if (has_vatinc()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->vatinc().data(), this->vatinc().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "vatinc");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->vatinc(), target);
+  }
+
+  // optional string VatDec = 4;
+  if (has_vatdec()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->vatdec().data(), this->vatdec().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "vatdec");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->vatdec(), target);
+  }
+
+  // optional int32 CurrencyCode = 5;
+  if (has_currencycode()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->currencycode(), target);
+  }
+
+  // optional string Grounds = 6;
+  if (has_grounds()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->grounds().data(), this->grounds().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "grounds");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        6, this->grounds(), target);
+  }
+
+  // required .Diadoc.Api.Proto.Invoicing.FunctionType Function = 7;
+  if (has_function()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      7, this->function(), target);
+  }
+
+  // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentDateAndNumber = 8;
+  if (has_originaldocumentdateandnumber()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        8, this->originaldocumentdateandnumber(), target);
+  }
+
+  // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentRevisionDateAndNumber = 9;
+  if (has_originaldocumentrevisiondateandnumber()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        9, this->originaldocumentrevisiondateandnumber(), target);
+  }
+
+  // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentCorrectionDateAndNumber = 10;
+  if (has_originaldocumentcorrectiondateandnumber()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        10, this->originaldocumentcorrectiondateandnumber(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo)
+  return target;
+}
+
+int UniversalCorrectionDocumentInfo::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional string TotalInc = 1;
+    if (has_totalinc()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->totalinc());
+    }
+
+    // optional string TotalDec = 2;
+    if (has_totaldec()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->totaldec());
+    }
+
+    // optional string VatInc = 3;
+    if (has_vatinc()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->vatinc());
+    }
+
+    // optional string VatDec = 4;
+    if (has_vatdec()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->vatdec());
+    }
+
+    // optional int32 CurrencyCode = 5;
+    if (has_currencycode()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->currencycode());
+    }
+
+    // optional string Grounds = 6;
+    if (has_grounds()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->grounds());
+    }
+
+    // required .Diadoc.Api.Proto.Invoicing.FunctionType Function = 7;
+    if (has_function()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->function());
+    }
+
+    // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentDateAndNumber = 8;
+    if (has_originaldocumentdateandnumber()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->originaldocumentdateandnumber());
+    }
+
+  }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentRevisionDateAndNumber = 9;
+    if (has_originaldocumentrevisiondateandnumber()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->originaldocumentrevisiondateandnumber());
+    }
+
+    // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentCorrectionDateAndNumber = 10;
+    if (has_originaldocumentcorrectiondateandnumber()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->originaldocumentcorrectiondateandnumber());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void UniversalCorrectionDocumentInfo::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const UniversalCorrectionDocumentInfo* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const UniversalCorrectionDocumentInfo*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void UniversalCorrectionDocumentInfo::MergeFrom(const UniversalCorrectionDocumentInfo& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_totalinc()) {
+      set_totalinc(from.totalinc());
+    }
+    if (from.has_totaldec()) {
+      set_totaldec(from.totaldec());
+    }
+    if (from.has_vatinc()) {
+      set_vatinc(from.vatinc());
+    }
+    if (from.has_vatdec()) {
+      set_vatdec(from.vatdec());
+    }
+    if (from.has_currencycode()) {
+      set_currencycode(from.currencycode());
+    }
+    if (from.has_grounds()) {
+      set_grounds(from.grounds());
+    }
+    if (from.has_function()) {
+      set_function(from.function());
+    }
+    if (from.has_originaldocumentdateandnumber()) {
+      mutable_originaldocumentdateandnumber()->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::MergeFrom(from.originaldocumentdateandnumber());
+    }
+  }
+  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    if (from.has_originaldocumentrevisiondateandnumber()) {
+      mutable_originaldocumentrevisiondateandnumber()->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::MergeFrom(from.originaldocumentrevisiondateandnumber());
+    }
+    if (from.has_originaldocumentcorrectiondateandnumber()) {
+      mutable_originaldocumentcorrectiondateandnumber()->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::MergeFrom(from.originaldocumentcorrectiondateandnumber());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void UniversalCorrectionDocumentInfo::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void UniversalCorrectionDocumentInfo::CopyFrom(const UniversalCorrectionDocumentInfo& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UniversalCorrectionDocumentInfo::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000040) != 0x00000040) return false;
+
+  return true;
+}
+
+void UniversalCorrectionDocumentInfo::Swap(UniversalCorrectionDocumentInfo* other) {
+  if (other != this) {
+    std::swap(totalinc_, other->totalinc_);
+    std::swap(totaldec_, other->totaldec_);
+    std::swap(vatinc_, other->vatinc_);
+    std::swap(vatdec_, other->vatdec_);
+    std::swap(currencycode_, other->currencycode_);
+    std::swap(grounds_, other->grounds_);
+    std::swap(function_, other->function_);
+    std::swap(originaldocumentdateandnumber_, other->originaldocumentdateandnumber_);
+    std::swap(originaldocumentrevisiondateandnumber_, other->originaldocumentrevisiondateandnumber_);
+    std::swap(originaldocumentcorrectiondateandnumber_, other->originaldocumentcorrectiondateandnumber_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata UniversalCorrectionDocumentInfo::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = UniversalCorrectionDocumentInfo_descriptor_;
+  metadata.reflection = UniversalCorrectionDocumentInfo_reflection_;
   return metadata;
 }
 

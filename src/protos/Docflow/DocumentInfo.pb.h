@@ -26,6 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "DocumentType.pb.h"
 #include "DocumentDirection.pb.h"
+#include "Invoicing/UniversalTransferDocumentInfo.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace Diadoc {
@@ -46,6 +47,8 @@ class InvoiceCorrectionDocumentInfo;
 class PriceListDocumentInfo;
 class ContractDocumentInfo;
 class SupplementaryAgreementDocumentInfo;
+class UniversalTransferDocumentInfo;
+class UniversalCorrectionDocumentInfo;
 
 // ===================================================================
 
@@ -234,6 +237,24 @@ class DocumentInfo : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Docflow::SupplementaryAgreementDocumentInfo* release_supplementaryagreementinfo();
   inline void set_allocated_supplementaryagreementinfo(::Diadoc::Api::Proto::Docflow::SupplementaryAgreementDocumentInfo* supplementaryagreementinfo);
 
+  // optional .Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo UniversalTransferDocumentInfo = 15;
+  inline bool has_universaltransferdocumentinfo() const;
+  inline void clear_universaltransferdocumentinfo();
+  static const int kUniversalTransferDocumentInfoFieldNumber = 15;
+  inline const ::Diadoc::Api::Proto::Docflow::UniversalTransferDocumentInfo& universaltransferdocumentinfo() const;
+  inline ::Diadoc::Api::Proto::Docflow::UniversalTransferDocumentInfo* mutable_universaltransferdocumentinfo();
+  inline ::Diadoc::Api::Proto::Docflow::UniversalTransferDocumentInfo* release_universaltransferdocumentinfo();
+  inline void set_allocated_universaltransferdocumentinfo(::Diadoc::Api::Proto::Docflow::UniversalTransferDocumentInfo* universaltransferdocumentinfo);
+
+  // optional .Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo UniversalCorrectionDocumentInfo = 16;
+  inline bool has_universalcorrectiondocumentinfo() const;
+  inline void clear_universalcorrectiondocumentinfo();
+  static const int kUniversalCorrectionDocumentInfoFieldNumber = 16;
+  inline const ::Diadoc::Api::Proto::Docflow::UniversalCorrectionDocumentInfo& universalcorrectiondocumentinfo() const;
+  inline ::Diadoc::Api::Proto::Docflow::UniversalCorrectionDocumentInfo* mutable_universalcorrectiondocumentinfo();
+  inline ::Diadoc::Api::Proto::Docflow::UniversalCorrectionDocumentInfo* release_universalcorrectiondocumentinfo();
+  inline void set_allocated_universalcorrectiondocumentinfo(::Diadoc::Api::Proto::Docflow::UniversalCorrectionDocumentInfo* universalcorrectiondocumentinfo);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Docflow.DocumentInfo)
  private:
   inline void set_has_documenttype();
@@ -264,6 +285,10 @@ class DocumentInfo : public ::google::protobuf::Message {
   inline void clear_has_contractinfo();
   inline void set_has_supplementaryagreementinfo();
   inline void clear_has_supplementaryagreementinfo();
+  inline void set_has_universaltransferdocumentinfo();
+  inline void clear_has_universaltransferdocumentinfo();
+  inline void set_has_universalcorrectiondocumentinfo();
+  inline void clear_has_universalcorrectiondocumentinfo();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -282,6 +307,8 @@ class DocumentInfo : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Docflow::PriceListDocumentInfo* pricelistinfo_;
   ::Diadoc::Api::Proto::Docflow::ContractDocumentInfo* contractinfo_;
   ::Diadoc::Api::Proto::Docflow::SupplementaryAgreementDocumentInfo* supplementaryagreementinfo_;
+  ::Diadoc::Api::Proto::Docflow::UniversalTransferDocumentInfo* universaltransferdocumentinfo_;
+  ::Diadoc::Api::Proto::Docflow::UniversalCorrectionDocumentInfo* universalcorrectiondocumentinfo_;
   bool istest_;
   friend void  protobuf_AddDesc_Docflow_2fDocumentInfo_2eproto();
   friend void protobuf_AssignDesc_Docflow_2fDocumentInfo_2eproto();
@@ -1133,6 +1160,352 @@ class SupplementaryAgreementDocumentInfo : public ::google::protobuf::Message {
   void InitAsDefaultInstance();
   static SupplementaryAgreementDocumentInfo* default_instance_;
 };
+// -------------------------------------------------------------------
+
+class UniversalTransferDocumentInfo : public ::google::protobuf::Message {
+ public:
+  UniversalTransferDocumentInfo();
+  virtual ~UniversalTransferDocumentInfo();
+
+  UniversalTransferDocumentInfo(const UniversalTransferDocumentInfo& from);
+
+  inline UniversalTransferDocumentInfo& operator=(const UniversalTransferDocumentInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const UniversalTransferDocumentInfo& default_instance();
+
+  void Swap(UniversalTransferDocumentInfo* other);
+
+  // implements Message ----------------------------------------------
+
+  UniversalTransferDocumentInfo* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const UniversalTransferDocumentInfo& from);
+  void MergeFrom(const UniversalTransferDocumentInfo& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional string Total = 1;
+  inline bool has_total() const;
+  inline void clear_total();
+  static const int kTotalFieldNumber = 1;
+  inline const ::std::string& total() const;
+  inline void set_total(const ::std::string& value);
+  inline void set_total(const char* value);
+  inline void set_total(const char* value, size_t size);
+  inline ::std::string* mutable_total();
+  inline ::std::string* release_total();
+  inline void set_allocated_total(::std::string* total);
+
+  // optional string Vat = 2;
+  inline bool has_vat() const;
+  inline void clear_vat();
+  static const int kVatFieldNumber = 2;
+  inline const ::std::string& vat() const;
+  inline void set_vat(const ::std::string& value);
+  inline void set_vat(const char* value);
+  inline void set_vat(const char* value, size_t size);
+  inline ::std::string* mutable_vat();
+  inline ::std::string* release_vat();
+  inline void set_allocated_vat(::std::string* vat);
+
+  // optional int32 CurrencyCode = 3;
+  inline bool has_currencycode() const;
+  inline void clear_currencycode();
+  static const int kCurrencyCodeFieldNumber = 3;
+  inline ::google::protobuf::int32 currencycode() const;
+  inline void set_currencycode(::google::protobuf::int32 value);
+
+  // optional string Grounds = 4;
+  inline bool has_grounds() const;
+  inline void clear_grounds();
+  static const int kGroundsFieldNumber = 4;
+  inline const ::std::string& grounds() const;
+  inline void set_grounds(const ::std::string& value);
+  inline void set_grounds(const char* value);
+  inline void set_grounds(const char* value, size_t size);
+  inline ::std::string* mutable_grounds();
+  inline ::std::string* release_grounds();
+  inline void set_allocated_grounds(::std::string* grounds);
+
+  // required .Diadoc.Api.Proto.Invoicing.FunctionType Function = 5;
+  inline bool has_function() const;
+  inline void clear_function();
+  static const int kFunctionFieldNumber = 5;
+  inline ::Diadoc::Api::Proto::Invoicing::FunctionType function() const;
+  inline void set_function(::Diadoc::Api::Proto::Invoicing::FunctionType value);
+
+  // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentDateAndNumber = 6;
+  inline bool has_originaldocumentdateandnumber() const;
+  inline void clear_originaldocumentdateandnumber();
+  static const int kOriginalDocumentDateAndNumberFieldNumber = 6;
+  inline const ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber& originaldocumentdateandnumber() const;
+  inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* mutable_originaldocumentdateandnumber();
+  inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* release_originaldocumentdateandnumber();
+  inline void set_allocated_originaldocumentdateandnumber(::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* originaldocumentdateandnumber);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo)
+ private:
+  inline void set_has_total();
+  inline void clear_has_total();
+  inline void set_has_vat();
+  inline void clear_has_vat();
+  inline void set_has_currencycode();
+  inline void clear_has_currencycode();
+  inline void set_has_grounds();
+  inline void clear_has_grounds();
+  inline void set_has_function();
+  inline void clear_has_function();
+  inline void set_has_originaldocumentdateandnumber();
+  inline void clear_has_originaldocumentdateandnumber();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* total_;
+  ::std::string* vat_;
+  ::std::string* grounds_;
+  ::google::protobuf::int32 currencycode_;
+  int function_;
+  ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* originaldocumentdateandnumber_;
+  friend void  protobuf_AddDesc_Docflow_2fDocumentInfo_2eproto();
+  friend void protobuf_AssignDesc_Docflow_2fDocumentInfo_2eproto();
+  friend void protobuf_ShutdownFile_Docflow_2fDocumentInfo_2eproto();
+
+  void InitAsDefaultInstance();
+  static UniversalTransferDocumentInfo* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class UniversalCorrectionDocumentInfo : public ::google::protobuf::Message {
+ public:
+  UniversalCorrectionDocumentInfo();
+  virtual ~UniversalCorrectionDocumentInfo();
+
+  UniversalCorrectionDocumentInfo(const UniversalCorrectionDocumentInfo& from);
+
+  inline UniversalCorrectionDocumentInfo& operator=(const UniversalCorrectionDocumentInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const UniversalCorrectionDocumentInfo& default_instance();
+
+  void Swap(UniversalCorrectionDocumentInfo* other);
+
+  // implements Message ----------------------------------------------
+
+  UniversalCorrectionDocumentInfo* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const UniversalCorrectionDocumentInfo& from);
+  void MergeFrom(const UniversalCorrectionDocumentInfo& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional string TotalInc = 1;
+  inline bool has_totalinc() const;
+  inline void clear_totalinc();
+  static const int kTotalIncFieldNumber = 1;
+  inline const ::std::string& totalinc() const;
+  inline void set_totalinc(const ::std::string& value);
+  inline void set_totalinc(const char* value);
+  inline void set_totalinc(const char* value, size_t size);
+  inline ::std::string* mutable_totalinc();
+  inline ::std::string* release_totalinc();
+  inline void set_allocated_totalinc(::std::string* totalinc);
+
+  // optional string TotalDec = 2;
+  inline bool has_totaldec() const;
+  inline void clear_totaldec();
+  static const int kTotalDecFieldNumber = 2;
+  inline const ::std::string& totaldec() const;
+  inline void set_totaldec(const ::std::string& value);
+  inline void set_totaldec(const char* value);
+  inline void set_totaldec(const char* value, size_t size);
+  inline ::std::string* mutable_totaldec();
+  inline ::std::string* release_totaldec();
+  inline void set_allocated_totaldec(::std::string* totaldec);
+
+  // optional string VatInc = 3;
+  inline bool has_vatinc() const;
+  inline void clear_vatinc();
+  static const int kVatIncFieldNumber = 3;
+  inline const ::std::string& vatinc() const;
+  inline void set_vatinc(const ::std::string& value);
+  inline void set_vatinc(const char* value);
+  inline void set_vatinc(const char* value, size_t size);
+  inline ::std::string* mutable_vatinc();
+  inline ::std::string* release_vatinc();
+  inline void set_allocated_vatinc(::std::string* vatinc);
+
+  // optional string VatDec = 4;
+  inline bool has_vatdec() const;
+  inline void clear_vatdec();
+  static const int kVatDecFieldNumber = 4;
+  inline const ::std::string& vatdec() const;
+  inline void set_vatdec(const ::std::string& value);
+  inline void set_vatdec(const char* value);
+  inline void set_vatdec(const char* value, size_t size);
+  inline ::std::string* mutable_vatdec();
+  inline ::std::string* release_vatdec();
+  inline void set_allocated_vatdec(::std::string* vatdec);
+
+  // optional int32 CurrencyCode = 5;
+  inline bool has_currencycode() const;
+  inline void clear_currencycode();
+  static const int kCurrencyCodeFieldNumber = 5;
+  inline ::google::protobuf::int32 currencycode() const;
+  inline void set_currencycode(::google::protobuf::int32 value);
+
+  // optional string Grounds = 6;
+  inline bool has_grounds() const;
+  inline void clear_grounds();
+  static const int kGroundsFieldNumber = 6;
+  inline const ::std::string& grounds() const;
+  inline void set_grounds(const ::std::string& value);
+  inline void set_grounds(const char* value);
+  inline void set_grounds(const char* value, size_t size);
+  inline ::std::string* mutable_grounds();
+  inline ::std::string* release_grounds();
+  inline void set_allocated_grounds(::std::string* grounds);
+
+  // required .Diadoc.Api.Proto.Invoicing.FunctionType Function = 7;
+  inline bool has_function() const;
+  inline void clear_function();
+  static const int kFunctionFieldNumber = 7;
+  inline ::Diadoc::Api::Proto::Invoicing::FunctionType function() const;
+  inline void set_function(::Diadoc::Api::Proto::Invoicing::FunctionType value);
+
+  // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentDateAndNumber = 8;
+  inline bool has_originaldocumentdateandnumber() const;
+  inline void clear_originaldocumentdateandnumber();
+  static const int kOriginalDocumentDateAndNumberFieldNumber = 8;
+  inline const ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber& originaldocumentdateandnumber() const;
+  inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* mutable_originaldocumentdateandnumber();
+  inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* release_originaldocumentdateandnumber();
+  inline void set_allocated_originaldocumentdateandnumber(::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* originaldocumentdateandnumber);
+
+  // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentRevisionDateAndNumber = 9;
+  inline bool has_originaldocumentrevisiondateandnumber() const;
+  inline void clear_originaldocumentrevisiondateandnumber();
+  static const int kOriginalDocumentRevisionDateAndNumberFieldNumber = 9;
+  inline const ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber& originaldocumentrevisiondateandnumber() const;
+  inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* mutable_originaldocumentrevisiondateandnumber();
+  inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* release_originaldocumentrevisiondateandnumber();
+  inline void set_allocated_originaldocumentrevisiondateandnumber(::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* originaldocumentrevisiondateandnumber);
+
+  // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentCorrectionDateAndNumber = 10;
+  inline bool has_originaldocumentcorrectiondateandnumber() const;
+  inline void clear_originaldocumentcorrectiondateandnumber();
+  static const int kOriginalDocumentCorrectionDateAndNumberFieldNumber = 10;
+  inline const ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber& originaldocumentcorrectiondateandnumber() const;
+  inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* mutable_originaldocumentcorrectiondateandnumber();
+  inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* release_originaldocumentcorrectiondateandnumber();
+  inline void set_allocated_originaldocumentcorrectiondateandnumber(::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* originaldocumentcorrectiondateandnumber);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo)
+ private:
+  inline void set_has_totalinc();
+  inline void clear_has_totalinc();
+  inline void set_has_totaldec();
+  inline void clear_has_totaldec();
+  inline void set_has_vatinc();
+  inline void clear_has_vatinc();
+  inline void set_has_vatdec();
+  inline void clear_has_vatdec();
+  inline void set_has_currencycode();
+  inline void clear_has_currencycode();
+  inline void set_has_grounds();
+  inline void clear_has_grounds();
+  inline void set_has_function();
+  inline void clear_has_function();
+  inline void set_has_originaldocumentdateandnumber();
+  inline void clear_has_originaldocumentdateandnumber();
+  inline void set_has_originaldocumentrevisiondateandnumber();
+  inline void clear_has_originaldocumentrevisiondateandnumber();
+  inline void set_has_originaldocumentcorrectiondateandnumber();
+  inline void clear_has_originaldocumentcorrectiondateandnumber();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* totalinc_;
+  ::std::string* totaldec_;
+  ::std::string* vatinc_;
+  ::std::string* vatdec_;
+  ::std::string* grounds_;
+  ::google::protobuf::int32 currencycode_;
+  int function_;
+  ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* originaldocumentdateandnumber_;
+  ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* originaldocumentrevisiondateandnumber_;
+  ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* originaldocumentcorrectiondateandnumber_;
+  friend void  protobuf_AddDesc_Docflow_2fDocumentInfo_2eproto();
+  friend void protobuf_AssignDesc_Docflow_2fDocumentInfo_2eproto();
+  friend void protobuf_ShutdownFile_Docflow_2fDocumentInfo_2eproto();
+
+  void InitAsDefaultInstance();
+  static UniversalCorrectionDocumentInfo* default_instance_;
+};
 // ===================================================================
 
 
@@ -1803,6 +2176,88 @@ inline void DocumentInfo::set_allocated_supplementaryagreementinfo(::Diadoc::Api
     clear_has_supplementaryagreementinfo();
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.DocumentInfo.SupplementaryAgreementInfo)
+}
+
+// optional .Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo UniversalTransferDocumentInfo = 15;
+inline bool DocumentInfo::has_universaltransferdocumentinfo() const {
+  return (_has_bits_[0] & 0x00004000u) != 0;
+}
+inline void DocumentInfo::set_has_universaltransferdocumentinfo() {
+  _has_bits_[0] |= 0x00004000u;
+}
+inline void DocumentInfo::clear_has_universaltransferdocumentinfo() {
+  _has_bits_[0] &= ~0x00004000u;
+}
+inline void DocumentInfo::clear_universaltransferdocumentinfo() {
+  if (universaltransferdocumentinfo_ != NULL) universaltransferdocumentinfo_->::Diadoc::Api::Proto::Docflow::UniversalTransferDocumentInfo::Clear();
+  clear_has_universaltransferdocumentinfo();
+}
+inline const ::Diadoc::Api::Proto::Docflow::UniversalTransferDocumentInfo& DocumentInfo::universaltransferdocumentinfo() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.DocumentInfo.UniversalTransferDocumentInfo)
+  return universaltransferdocumentinfo_ != NULL ? *universaltransferdocumentinfo_ : *default_instance_->universaltransferdocumentinfo_;
+}
+inline ::Diadoc::Api::Proto::Docflow::UniversalTransferDocumentInfo* DocumentInfo::mutable_universaltransferdocumentinfo() {
+  set_has_universaltransferdocumentinfo();
+  if (universaltransferdocumentinfo_ == NULL) universaltransferdocumentinfo_ = new ::Diadoc::Api::Proto::Docflow::UniversalTransferDocumentInfo;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.DocumentInfo.UniversalTransferDocumentInfo)
+  return universaltransferdocumentinfo_;
+}
+inline ::Diadoc::Api::Proto::Docflow::UniversalTransferDocumentInfo* DocumentInfo::release_universaltransferdocumentinfo() {
+  clear_has_universaltransferdocumentinfo();
+  ::Diadoc::Api::Proto::Docflow::UniversalTransferDocumentInfo* temp = universaltransferdocumentinfo_;
+  universaltransferdocumentinfo_ = NULL;
+  return temp;
+}
+inline void DocumentInfo::set_allocated_universaltransferdocumentinfo(::Diadoc::Api::Proto::Docflow::UniversalTransferDocumentInfo* universaltransferdocumentinfo) {
+  delete universaltransferdocumentinfo_;
+  universaltransferdocumentinfo_ = universaltransferdocumentinfo;
+  if (universaltransferdocumentinfo) {
+    set_has_universaltransferdocumentinfo();
+  } else {
+    clear_has_universaltransferdocumentinfo();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.DocumentInfo.UniversalTransferDocumentInfo)
+}
+
+// optional .Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo UniversalCorrectionDocumentInfo = 16;
+inline bool DocumentInfo::has_universalcorrectiondocumentinfo() const {
+  return (_has_bits_[0] & 0x00008000u) != 0;
+}
+inline void DocumentInfo::set_has_universalcorrectiondocumentinfo() {
+  _has_bits_[0] |= 0x00008000u;
+}
+inline void DocumentInfo::clear_has_universalcorrectiondocumentinfo() {
+  _has_bits_[0] &= ~0x00008000u;
+}
+inline void DocumentInfo::clear_universalcorrectiondocumentinfo() {
+  if (universalcorrectiondocumentinfo_ != NULL) universalcorrectiondocumentinfo_->::Diadoc::Api::Proto::Docflow::UniversalCorrectionDocumentInfo::Clear();
+  clear_has_universalcorrectiondocumentinfo();
+}
+inline const ::Diadoc::Api::Proto::Docflow::UniversalCorrectionDocumentInfo& DocumentInfo::universalcorrectiondocumentinfo() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.DocumentInfo.UniversalCorrectionDocumentInfo)
+  return universalcorrectiondocumentinfo_ != NULL ? *universalcorrectiondocumentinfo_ : *default_instance_->universalcorrectiondocumentinfo_;
+}
+inline ::Diadoc::Api::Proto::Docflow::UniversalCorrectionDocumentInfo* DocumentInfo::mutable_universalcorrectiondocumentinfo() {
+  set_has_universalcorrectiondocumentinfo();
+  if (universalcorrectiondocumentinfo_ == NULL) universalcorrectiondocumentinfo_ = new ::Diadoc::Api::Proto::Docflow::UniversalCorrectionDocumentInfo;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.DocumentInfo.UniversalCorrectionDocumentInfo)
+  return universalcorrectiondocumentinfo_;
+}
+inline ::Diadoc::Api::Proto::Docflow::UniversalCorrectionDocumentInfo* DocumentInfo::release_universalcorrectiondocumentinfo() {
+  clear_has_universalcorrectiondocumentinfo();
+  ::Diadoc::Api::Proto::Docflow::UniversalCorrectionDocumentInfo* temp = universalcorrectiondocumentinfo_;
+  universalcorrectiondocumentinfo_ = NULL;
+  return temp;
+}
+inline void DocumentInfo::set_allocated_universalcorrectiondocumentinfo(::Diadoc::Api::Proto::Docflow::UniversalCorrectionDocumentInfo* universalcorrectiondocumentinfo) {
+  delete universalcorrectiondocumentinfo_;
+  universalcorrectiondocumentinfo_ = universalcorrectiondocumentinfo;
+  if (universalcorrectiondocumentinfo) {
+    set_has_universalcorrectiondocumentinfo();
+  } else {
+    clear_has_universalcorrectiondocumentinfo();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.DocumentInfo.UniversalCorrectionDocumentInfo)
 }
 
 // -------------------------------------------------------------------
@@ -3476,6 +3931,884 @@ inline void SupplementaryAgreementDocumentInfo::set_allocated_contractdate(::std
     contractdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.ContractDate)
+}
+
+// -------------------------------------------------------------------
+
+// UniversalTransferDocumentInfo
+
+// optional string Total = 1;
+inline bool UniversalTransferDocumentInfo::has_total() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void UniversalTransferDocumentInfo::set_has_total() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void UniversalTransferDocumentInfo::clear_has_total() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void UniversalTransferDocumentInfo::clear_total() {
+  if (total_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    total_->clear();
+  }
+  clear_has_total();
+}
+inline const ::std::string& UniversalTransferDocumentInfo::total() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.Total)
+  return *total_;
+}
+inline void UniversalTransferDocumentInfo::set_total(const ::std::string& value) {
+  set_has_total();
+  if (total_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    total_ = new ::std::string;
+  }
+  total_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.Total)
+}
+inline void UniversalTransferDocumentInfo::set_total(const char* value) {
+  set_has_total();
+  if (total_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    total_ = new ::std::string;
+  }
+  total_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.Total)
+}
+inline void UniversalTransferDocumentInfo::set_total(const char* value, size_t size) {
+  set_has_total();
+  if (total_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    total_ = new ::std::string;
+  }
+  total_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.Total)
+}
+inline ::std::string* UniversalTransferDocumentInfo::mutable_total() {
+  set_has_total();
+  if (total_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    total_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.Total)
+  return total_;
+}
+inline ::std::string* UniversalTransferDocumentInfo::release_total() {
+  clear_has_total();
+  if (total_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = total_;
+    total_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalTransferDocumentInfo::set_allocated_total(::std::string* total) {
+  if (total_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete total_;
+  }
+  if (total) {
+    set_has_total();
+    total_ = total;
+  } else {
+    clear_has_total();
+    total_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.Total)
+}
+
+// optional string Vat = 2;
+inline bool UniversalTransferDocumentInfo::has_vat() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void UniversalTransferDocumentInfo::set_has_vat() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void UniversalTransferDocumentInfo::clear_has_vat() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void UniversalTransferDocumentInfo::clear_vat() {
+  if (vat_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vat_->clear();
+  }
+  clear_has_vat();
+}
+inline const ::std::string& UniversalTransferDocumentInfo::vat() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.Vat)
+  return *vat_;
+}
+inline void UniversalTransferDocumentInfo::set_vat(const ::std::string& value) {
+  set_has_vat();
+  if (vat_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vat_ = new ::std::string;
+  }
+  vat_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.Vat)
+}
+inline void UniversalTransferDocumentInfo::set_vat(const char* value) {
+  set_has_vat();
+  if (vat_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vat_ = new ::std::string;
+  }
+  vat_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.Vat)
+}
+inline void UniversalTransferDocumentInfo::set_vat(const char* value, size_t size) {
+  set_has_vat();
+  if (vat_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vat_ = new ::std::string;
+  }
+  vat_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.Vat)
+}
+inline ::std::string* UniversalTransferDocumentInfo::mutable_vat() {
+  set_has_vat();
+  if (vat_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vat_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.Vat)
+  return vat_;
+}
+inline ::std::string* UniversalTransferDocumentInfo::release_vat() {
+  clear_has_vat();
+  if (vat_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = vat_;
+    vat_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalTransferDocumentInfo::set_allocated_vat(::std::string* vat) {
+  if (vat_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete vat_;
+  }
+  if (vat) {
+    set_has_vat();
+    vat_ = vat;
+  } else {
+    clear_has_vat();
+    vat_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.Vat)
+}
+
+// optional int32 CurrencyCode = 3;
+inline bool UniversalTransferDocumentInfo::has_currencycode() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void UniversalTransferDocumentInfo::set_has_currencycode() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void UniversalTransferDocumentInfo::clear_has_currencycode() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void UniversalTransferDocumentInfo::clear_currencycode() {
+  currencycode_ = 0;
+  clear_has_currencycode();
+}
+inline ::google::protobuf::int32 UniversalTransferDocumentInfo::currencycode() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.CurrencyCode)
+  return currencycode_;
+}
+inline void UniversalTransferDocumentInfo::set_currencycode(::google::protobuf::int32 value) {
+  set_has_currencycode();
+  currencycode_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.CurrencyCode)
+}
+
+// optional string Grounds = 4;
+inline bool UniversalTransferDocumentInfo::has_grounds() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void UniversalTransferDocumentInfo::set_has_grounds() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void UniversalTransferDocumentInfo::clear_has_grounds() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void UniversalTransferDocumentInfo::clear_grounds() {
+  if (grounds_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_->clear();
+  }
+  clear_has_grounds();
+}
+inline const ::std::string& UniversalTransferDocumentInfo::grounds() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.Grounds)
+  return *grounds_;
+}
+inline void UniversalTransferDocumentInfo::set_grounds(const ::std::string& value) {
+  set_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_ = new ::std::string;
+  }
+  grounds_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.Grounds)
+}
+inline void UniversalTransferDocumentInfo::set_grounds(const char* value) {
+  set_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_ = new ::std::string;
+  }
+  grounds_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.Grounds)
+}
+inline void UniversalTransferDocumentInfo::set_grounds(const char* value, size_t size) {
+  set_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_ = new ::std::string;
+  }
+  grounds_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.Grounds)
+}
+inline ::std::string* UniversalTransferDocumentInfo::mutable_grounds() {
+  set_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.Grounds)
+  return grounds_;
+}
+inline ::std::string* UniversalTransferDocumentInfo::release_grounds() {
+  clear_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = grounds_;
+    grounds_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalTransferDocumentInfo::set_allocated_grounds(::std::string* grounds) {
+  if (grounds_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete grounds_;
+  }
+  if (grounds) {
+    set_has_grounds();
+    grounds_ = grounds;
+  } else {
+    clear_has_grounds();
+    grounds_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.Grounds)
+}
+
+// required .Diadoc.Api.Proto.Invoicing.FunctionType Function = 5;
+inline bool UniversalTransferDocumentInfo::has_function() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void UniversalTransferDocumentInfo::set_has_function() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void UniversalTransferDocumentInfo::clear_has_function() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void UniversalTransferDocumentInfo::clear_function() {
+  function_ = 0;
+  clear_has_function();
+}
+inline ::Diadoc::Api::Proto::Invoicing::FunctionType UniversalTransferDocumentInfo::function() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.Function)
+  return static_cast< ::Diadoc::Api::Proto::Invoicing::FunctionType >(function_);
+}
+inline void UniversalTransferDocumentInfo::set_function(::Diadoc::Api::Proto::Invoicing::FunctionType value) {
+  assert(::Diadoc::Api::Proto::Invoicing::FunctionType_IsValid(value));
+  set_has_function();
+  function_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.Function)
+}
+
+// optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentDateAndNumber = 6;
+inline bool UniversalTransferDocumentInfo::has_originaldocumentdateandnumber() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void UniversalTransferDocumentInfo::set_has_originaldocumentdateandnumber() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void UniversalTransferDocumentInfo::clear_has_originaldocumentdateandnumber() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void UniversalTransferDocumentInfo::clear_originaldocumentdateandnumber() {
+  if (originaldocumentdateandnumber_ != NULL) originaldocumentdateandnumber_->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::Clear();
+  clear_has_originaldocumentdateandnumber();
+}
+inline const ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber& UniversalTransferDocumentInfo::originaldocumentdateandnumber() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.OriginalDocumentDateAndNumber)
+  return originaldocumentdateandnumber_ != NULL ? *originaldocumentdateandnumber_ : *default_instance_->originaldocumentdateandnumber_;
+}
+inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* UniversalTransferDocumentInfo::mutable_originaldocumentdateandnumber() {
+  set_has_originaldocumentdateandnumber();
+  if (originaldocumentdateandnumber_ == NULL) originaldocumentdateandnumber_ = new ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.OriginalDocumentDateAndNumber)
+  return originaldocumentdateandnumber_;
+}
+inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* UniversalTransferDocumentInfo::release_originaldocumentdateandnumber() {
+  clear_has_originaldocumentdateandnumber();
+  ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* temp = originaldocumentdateandnumber_;
+  originaldocumentdateandnumber_ = NULL;
+  return temp;
+}
+inline void UniversalTransferDocumentInfo::set_allocated_originaldocumentdateandnumber(::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* originaldocumentdateandnumber) {
+  delete originaldocumentdateandnumber_;
+  originaldocumentdateandnumber_ = originaldocumentdateandnumber;
+  if (originaldocumentdateandnumber) {
+    set_has_originaldocumentdateandnumber();
+  } else {
+    clear_has_originaldocumentdateandnumber();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.UniversalTransferDocumentInfo.OriginalDocumentDateAndNumber)
+}
+
+// -------------------------------------------------------------------
+
+// UniversalCorrectionDocumentInfo
+
+// optional string TotalInc = 1;
+inline bool UniversalCorrectionDocumentInfo::has_totalinc() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void UniversalCorrectionDocumentInfo::set_has_totalinc() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void UniversalCorrectionDocumentInfo::clear_has_totalinc() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void UniversalCorrectionDocumentInfo::clear_totalinc() {
+  if (totalinc_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totalinc_->clear();
+  }
+  clear_has_totalinc();
+}
+inline const ::std::string& UniversalCorrectionDocumentInfo::totalinc() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.TotalInc)
+  return *totalinc_;
+}
+inline void UniversalCorrectionDocumentInfo::set_totalinc(const ::std::string& value) {
+  set_has_totalinc();
+  if (totalinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totalinc_ = new ::std::string;
+  }
+  totalinc_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.TotalInc)
+}
+inline void UniversalCorrectionDocumentInfo::set_totalinc(const char* value) {
+  set_has_totalinc();
+  if (totalinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totalinc_ = new ::std::string;
+  }
+  totalinc_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.TotalInc)
+}
+inline void UniversalCorrectionDocumentInfo::set_totalinc(const char* value, size_t size) {
+  set_has_totalinc();
+  if (totalinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totalinc_ = new ::std::string;
+  }
+  totalinc_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.TotalInc)
+}
+inline ::std::string* UniversalCorrectionDocumentInfo::mutable_totalinc() {
+  set_has_totalinc();
+  if (totalinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totalinc_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.TotalInc)
+  return totalinc_;
+}
+inline ::std::string* UniversalCorrectionDocumentInfo::release_totalinc() {
+  clear_has_totalinc();
+  if (totalinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = totalinc_;
+    totalinc_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentInfo::set_allocated_totalinc(::std::string* totalinc) {
+  if (totalinc_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete totalinc_;
+  }
+  if (totalinc) {
+    set_has_totalinc();
+    totalinc_ = totalinc;
+  } else {
+    clear_has_totalinc();
+    totalinc_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.TotalInc)
+}
+
+// optional string TotalDec = 2;
+inline bool UniversalCorrectionDocumentInfo::has_totaldec() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void UniversalCorrectionDocumentInfo::set_has_totaldec() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void UniversalCorrectionDocumentInfo::clear_has_totaldec() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void UniversalCorrectionDocumentInfo::clear_totaldec() {
+  if (totaldec_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totaldec_->clear();
+  }
+  clear_has_totaldec();
+}
+inline const ::std::string& UniversalCorrectionDocumentInfo::totaldec() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.TotalDec)
+  return *totaldec_;
+}
+inline void UniversalCorrectionDocumentInfo::set_totaldec(const ::std::string& value) {
+  set_has_totaldec();
+  if (totaldec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totaldec_ = new ::std::string;
+  }
+  totaldec_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.TotalDec)
+}
+inline void UniversalCorrectionDocumentInfo::set_totaldec(const char* value) {
+  set_has_totaldec();
+  if (totaldec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totaldec_ = new ::std::string;
+  }
+  totaldec_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.TotalDec)
+}
+inline void UniversalCorrectionDocumentInfo::set_totaldec(const char* value, size_t size) {
+  set_has_totaldec();
+  if (totaldec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totaldec_ = new ::std::string;
+  }
+  totaldec_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.TotalDec)
+}
+inline ::std::string* UniversalCorrectionDocumentInfo::mutable_totaldec() {
+  set_has_totaldec();
+  if (totaldec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totaldec_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.TotalDec)
+  return totaldec_;
+}
+inline ::std::string* UniversalCorrectionDocumentInfo::release_totaldec() {
+  clear_has_totaldec();
+  if (totaldec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = totaldec_;
+    totaldec_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentInfo::set_allocated_totaldec(::std::string* totaldec) {
+  if (totaldec_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete totaldec_;
+  }
+  if (totaldec) {
+    set_has_totaldec();
+    totaldec_ = totaldec;
+  } else {
+    clear_has_totaldec();
+    totaldec_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.TotalDec)
+}
+
+// optional string VatInc = 3;
+inline bool UniversalCorrectionDocumentInfo::has_vatinc() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void UniversalCorrectionDocumentInfo::set_has_vatinc() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void UniversalCorrectionDocumentInfo::clear_has_vatinc() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void UniversalCorrectionDocumentInfo::clear_vatinc() {
+  if (vatinc_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatinc_->clear();
+  }
+  clear_has_vatinc();
+}
+inline const ::std::string& UniversalCorrectionDocumentInfo::vatinc() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.VatInc)
+  return *vatinc_;
+}
+inline void UniversalCorrectionDocumentInfo::set_vatinc(const ::std::string& value) {
+  set_has_vatinc();
+  if (vatinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatinc_ = new ::std::string;
+  }
+  vatinc_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.VatInc)
+}
+inline void UniversalCorrectionDocumentInfo::set_vatinc(const char* value) {
+  set_has_vatinc();
+  if (vatinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatinc_ = new ::std::string;
+  }
+  vatinc_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.VatInc)
+}
+inline void UniversalCorrectionDocumentInfo::set_vatinc(const char* value, size_t size) {
+  set_has_vatinc();
+  if (vatinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatinc_ = new ::std::string;
+  }
+  vatinc_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.VatInc)
+}
+inline ::std::string* UniversalCorrectionDocumentInfo::mutable_vatinc() {
+  set_has_vatinc();
+  if (vatinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatinc_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.VatInc)
+  return vatinc_;
+}
+inline ::std::string* UniversalCorrectionDocumentInfo::release_vatinc() {
+  clear_has_vatinc();
+  if (vatinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = vatinc_;
+    vatinc_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentInfo::set_allocated_vatinc(::std::string* vatinc) {
+  if (vatinc_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete vatinc_;
+  }
+  if (vatinc) {
+    set_has_vatinc();
+    vatinc_ = vatinc;
+  } else {
+    clear_has_vatinc();
+    vatinc_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.VatInc)
+}
+
+// optional string VatDec = 4;
+inline bool UniversalCorrectionDocumentInfo::has_vatdec() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void UniversalCorrectionDocumentInfo::set_has_vatdec() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void UniversalCorrectionDocumentInfo::clear_has_vatdec() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void UniversalCorrectionDocumentInfo::clear_vatdec() {
+  if (vatdec_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatdec_->clear();
+  }
+  clear_has_vatdec();
+}
+inline const ::std::string& UniversalCorrectionDocumentInfo::vatdec() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.VatDec)
+  return *vatdec_;
+}
+inline void UniversalCorrectionDocumentInfo::set_vatdec(const ::std::string& value) {
+  set_has_vatdec();
+  if (vatdec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatdec_ = new ::std::string;
+  }
+  vatdec_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.VatDec)
+}
+inline void UniversalCorrectionDocumentInfo::set_vatdec(const char* value) {
+  set_has_vatdec();
+  if (vatdec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatdec_ = new ::std::string;
+  }
+  vatdec_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.VatDec)
+}
+inline void UniversalCorrectionDocumentInfo::set_vatdec(const char* value, size_t size) {
+  set_has_vatdec();
+  if (vatdec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatdec_ = new ::std::string;
+  }
+  vatdec_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.VatDec)
+}
+inline ::std::string* UniversalCorrectionDocumentInfo::mutable_vatdec() {
+  set_has_vatdec();
+  if (vatdec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatdec_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.VatDec)
+  return vatdec_;
+}
+inline ::std::string* UniversalCorrectionDocumentInfo::release_vatdec() {
+  clear_has_vatdec();
+  if (vatdec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = vatdec_;
+    vatdec_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentInfo::set_allocated_vatdec(::std::string* vatdec) {
+  if (vatdec_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete vatdec_;
+  }
+  if (vatdec) {
+    set_has_vatdec();
+    vatdec_ = vatdec;
+  } else {
+    clear_has_vatdec();
+    vatdec_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.VatDec)
+}
+
+// optional int32 CurrencyCode = 5;
+inline bool UniversalCorrectionDocumentInfo::has_currencycode() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void UniversalCorrectionDocumentInfo::set_has_currencycode() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void UniversalCorrectionDocumentInfo::clear_has_currencycode() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void UniversalCorrectionDocumentInfo::clear_currencycode() {
+  currencycode_ = 0;
+  clear_has_currencycode();
+}
+inline ::google::protobuf::int32 UniversalCorrectionDocumentInfo::currencycode() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.CurrencyCode)
+  return currencycode_;
+}
+inline void UniversalCorrectionDocumentInfo::set_currencycode(::google::protobuf::int32 value) {
+  set_has_currencycode();
+  currencycode_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.CurrencyCode)
+}
+
+// optional string Grounds = 6;
+inline bool UniversalCorrectionDocumentInfo::has_grounds() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void UniversalCorrectionDocumentInfo::set_has_grounds() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void UniversalCorrectionDocumentInfo::clear_has_grounds() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void UniversalCorrectionDocumentInfo::clear_grounds() {
+  if (grounds_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_->clear();
+  }
+  clear_has_grounds();
+}
+inline const ::std::string& UniversalCorrectionDocumentInfo::grounds() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.Grounds)
+  return *grounds_;
+}
+inline void UniversalCorrectionDocumentInfo::set_grounds(const ::std::string& value) {
+  set_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_ = new ::std::string;
+  }
+  grounds_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.Grounds)
+}
+inline void UniversalCorrectionDocumentInfo::set_grounds(const char* value) {
+  set_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_ = new ::std::string;
+  }
+  grounds_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.Grounds)
+}
+inline void UniversalCorrectionDocumentInfo::set_grounds(const char* value, size_t size) {
+  set_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_ = new ::std::string;
+  }
+  grounds_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.Grounds)
+}
+inline ::std::string* UniversalCorrectionDocumentInfo::mutable_grounds() {
+  set_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.Grounds)
+  return grounds_;
+}
+inline ::std::string* UniversalCorrectionDocumentInfo::release_grounds() {
+  clear_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = grounds_;
+    grounds_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentInfo::set_allocated_grounds(::std::string* grounds) {
+  if (grounds_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete grounds_;
+  }
+  if (grounds) {
+    set_has_grounds();
+    grounds_ = grounds;
+  } else {
+    clear_has_grounds();
+    grounds_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.Grounds)
+}
+
+// required .Diadoc.Api.Proto.Invoicing.FunctionType Function = 7;
+inline bool UniversalCorrectionDocumentInfo::has_function() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void UniversalCorrectionDocumentInfo::set_has_function() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void UniversalCorrectionDocumentInfo::clear_has_function() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void UniversalCorrectionDocumentInfo::clear_function() {
+  function_ = 0;
+  clear_has_function();
+}
+inline ::Diadoc::Api::Proto::Invoicing::FunctionType UniversalCorrectionDocumentInfo::function() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.Function)
+  return static_cast< ::Diadoc::Api::Proto::Invoicing::FunctionType >(function_);
+}
+inline void UniversalCorrectionDocumentInfo::set_function(::Diadoc::Api::Proto::Invoicing::FunctionType value) {
+  assert(::Diadoc::Api::Proto::Invoicing::FunctionType_IsValid(value));
+  set_has_function();
+  function_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.Function)
+}
+
+// optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentDateAndNumber = 8;
+inline bool UniversalCorrectionDocumentInfo::has_originaldocumentdateandnumber() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void UniversalCorrectionDocumentInfo::set_has_originaldocumentdateandnumber() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void UniversalCorrectionDocumentInfo::clear_has_originaldocumentdateandnumber() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void UniversalCorrectionDocumentInfo::clear_originaldocumentdateandnumber() {
+  if (originaldocumentdateandnumber_ != NULL) originaldocumentdateandnumber_->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::Clear();
+  clear_has_originaldocumentdateandnumber();
+}
+inline const ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber& UniversalCorrectionDocumentInfo::originaldocumentdateandnumber() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.OriginalDocumentDateAndNumber)
+  return originaldocumentdateandnumber_ != NULL ? *originaldocumentdateandnumber_ : *default_instance_->originaldocumentdateandnumber_;
+}
+inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* UniversalCorrectionDocumentInfo::mutable_originaldocumentdateandnumber() {
+  set_has_originaldocumentdateandnumber();
+  if (originaldocumentdateandnumber_ == NULL) originaldocumentdateandnumber_ = new ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.OriginalDocumentDateAndNumber)
+  return originaldocumentdateandnumber_;
+}
+inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* UniversalCorrectionDocumentInfo::release_originaldocumentdateandnumber() {
+  clear_has_originaldocumentdateandnumber();
+  ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* temp = originaldocumentdateandnumber_;
+  originaldocumentdateandnumber_ = NULL;
+  return temp;
+}
+inline void UniversalCorrectionDocumentInfo::set_allocated_originaldocumentdateandnumber(::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* originaldocumentdateandnumber) {
+  delete originaldocumentdateandnumber_;
+  originaldocumentdateandnumber_ = originaldocumentdateandnumber;
+  if (originaldocumentdateandnumber) {
+    set_has_originaldocumentdateandnumber();
+  } else {
+    clear_has_originaldocumentdateandnumber();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.OriginalDocumentDateAndNumber)
+}
+
+// optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentRevisionDateAndNumber = 9;
+inline bool UniversalCorrectionDocumentInfo::has_originaldocumentrevisiondateandnumber() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void UniversalCorrectionDocumentInfo::set_has_originaldocumentrevisiondateandnumber() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void UniversalCorrectionDocumentInfo::clear_has_originaldocumentrevisiondateandnumber() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void UniversalCorrectionDocumentInfo::clear_originaldocumentrevisiondateandnumber() {
+  if (originaldocumentrevisiondateandnumber_ != NULL) originaldocumentrevisiondateandnumber_->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::Clear();
+  clear_has_originaldocumentrevisiondateandnumber();
+}
+inline const ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber& UniversalCorrectionDocumentInfo::originaldocumentrevisiondateandnumber() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.OriginalDocumentRevisionDateAndNumber)
+  return originaldocumentrevisiondateandnumber_ != NULL ? *originaldocumentrevisiondateandnumber_ : *default_instance_->originaldocumentrevisiondateandnumber_;
+}
+inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* UniversalCorrectionDocumentInfo::mutable_originaldocumentrevisiondateandnumber() {
+  set_has_originaldocumentrevisiondateandnumber();
+  if (originaldocumentrevisiondateandnumber_ == NULL) originaldocumentrevisiondateandnumber_ = new ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.OriginalDocumentRevisionDateAndNumber)
+  return originaldocumentrevisiondateandnumber_;
+}
+inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* UniversalCorrectionDocumentInfo::release_originaldocumentrevisiondateandnumber() {
+  clear_has_originaldocumentrevisiondateandnumber();
+  ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* temp = originaldocumentrevisiondateandnumber_;
+  originaldocumentrevisiondateandnumber_ = NULL;
+  return temp;
+}
+inline void UniversalCorrectionDocumentInfo::set_allocated_originaldocumentrevisiondateandnumber(::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* originaldocumentrevisiondateandnumber) {
+  delete originaldocumentrevisiondateandnumber_;
+  originaldocumentrevisiondateandnumber_ = originaldocumentrevisiondateandnumber;
+  if (originaldocumentrevisiondateandnumber) {
+    set_has_originaldocumentrevisiondateandnumber();
+  } else {
+    clear_has_originaldocumentrevisiondateandnumber();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.OriginalDocumentRevisionDateAndNumber)
+}
+
+// optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber OriginalDocumentCorrectionDateAndNumber = 10;
+inline bool UniversalCorrectionDocumentInfo::has_originaldocumentcorrectiondateandnumber() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+inline void UniversalCorrectionDocumentInfo::set_has_originaldocumentcorrectiondateandnumber() {
+  _has_bits_[0] |= 0x00000200u;
+}
+inline void UniversalCorrectionDocumentInfo::clear_has_originaldocumentcorrectiondateandnumber() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+inline void UniversalCorrectionDocumentInfo::clear_originaldocumentcorrectiondateandnumber() {
+  if (originaldocumentcorrectiondateandnumber_ != NULL) originaldocumentcorrectiondateandnumber_->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::Clear();
+  clear_has_originaldocumentcorrectiondateandnumber();
+}
+inline const ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber& UniversalCorrectionDocumentInfo::originaldocumentcorrectiondateandnumber() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.OriginalDocumentCorrectionDateAndNumber)
+  return originaldocumentcorrectiondateandnumber_ != NULL ? *originaldocumentcorrectiondateandnumber_ : *default_instance_->originaldocumentcorrectiondateandnumber_;
+}
+inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* UniversalCorrectionDocumentInfo::mutable_originaldocumentcorrectiondateandnumber() {
+  set_has_originaldocumentcorrectiondateandnumber();
+  if (originaldocumentcorrectiondateandnumber_ == NULL) originaldocumentcorrectiondateandnumber_ = new ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.OriginalDocumentCorrectionDateAndNumber)
+  return originaldocumentcorrectiondateandnumber_;
+}
+inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* UniversalCorrectionDocumentInfo::release_originaldocumentcorrectiondateandnumber() {
+  clear_has_originaldocumentcorrectiondateandnumber();
+  ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* temp = originaldocumentcorrectiondateandnumber_;
+  originaldocumentcorrectiondateandnumber_ = NULL;
+  return temp;
+}
+inline void UniversalCorrectionDocumentInfo::set_allocated_originaldocumentcorrectiondateandnumber(::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* originaldocumentcorrectiondateandnumber) {
+  delete originaldocumentcorrectiondateandnumber_;
+  originaldocumentcorrectiondateandnumber_ = originaldocumentcorrectiondateandnumber;
+  if (originaldocumentcorrectiondateandnumber) {
+    set_has_originaldocumentcorrectiondateandnumber();
+  } else {
+    clear_has_originaldocumentcorrectiondateandnumber();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.UniversalCorrectionDocumentInfo.OriginalDocumentCorrectionDateAndNumber)
 }
 
 

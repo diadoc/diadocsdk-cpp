@@ -44,7 +44,7 @@ void protobuf_AssignDesc_Documents_2fDocument_2eproto() {
       "Documents/Document.proto");
   GOOGLE_CHECK(file != NULL);
   Document_descriptor_ = file->message_type(0);
-  static const int Document_offsets_[54] = {
+  static const int Document_offsets_[57] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, indexkey_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, messageid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, entityid_),
@@ -99,6 +99,9 @@ void protobuf_AssignDesc_Documents_2fDocument_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, pricelistagreementmetadata_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, certificateregistrymetadata_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, universaltransferdocumentmetadata_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, universaltransferdocumentrevisionmetadata_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, universalcorrectiondocumentmetadata_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, universalcorrectiondocumentrevisionmetadata_),
   };
   Document_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -191,7 +194,7 @@ void protobuf_AddDesc_Documents_2fDocument_2eproto() {
     "UnilateralDocument.proto\032)Documents/Univ"
     "ersalTransferDocument.proto\032\026ResolutionT"
     "arget.proto\032\032ForwardDocumentEvent.proto\""
-    "\262\034\n\010Document\022\020\n\010IndexKey\030\001 \001(\t\022\021\n\tMessag"
+    "\351\037\n\010Document\022\020\n\010IndexKey\030\001 \001(\t\022\021\n\tMessag"
     "eId\030\002 \002(\t\022\020\n\010EntityId\030\003 \002(\t\022\036\n\026CreationT"
     "imestampTicks\030\004 \002(\020\022\031\n\021CounteragentBoxId"
     "\030\005 \001(\t\022I\n\014DocumentType\030\006 \001(\0162\036.Diadoc.Ap"
@@ -281,31 +284,42 @@ void protobuf_AddDesc_Documents_2fDocument_2eproto() {
     "malizedDocumentMetadata\022\202\001\n!UniversalTra"
     "nsferDocumentMetadata\0308 \001(\0132W.Diadoc.Api"
     ".Proto.Documents.UniversalTransferDocume"
-    "nt.UniversalTransferDocumentMetadata\"\310\001\n"
-    "\020ResolutionStatus\022W\n\004Type\030\001 \001(\01620.Diadoc"
-    ".Api.Proto.Documents.ResolutionStatusTyp"
-    "e:\027UnknownResolutionStatus\0222\n\006Target\030\002 \001"
-    "(\0132\".Diadoc.Api.Proto.ResolutionTarget\022\024"
-    "\n\014AuthorUserId\030\003 \002(\t\022\021\n\tAuthorFIO\030\004 \002(\t*"
-    "\254\001\n\024ResolutionStatusType\022$\n\027UnknownResol"
-    "utionStatus\020\377\377\377\377\377\377\377\377\377\001\022\010\n\004None\020\000\022\014\n\010Appr"
-    "oved\020\001\022\017\n\013Disapproved\020\002\022\030\n\024ApprovementRe"
-    "quested\020\003\022\026\n\022SignatureRequested\020\004\022\023\n\017Sig"
-    "natureDenied\020\005*\262\001\n\020RevocationStatus\022\033\n\027U"
-    "nknownRevocationStatus\020\000\022\030\n\024RevocationSt"
-    "atusNone\020\001\022\035\n\031RevocationIsRequestedByMe\020"
-    "\002\022\030\n\024RequestsMyRevocation\020\003\022\026\n\022Revocatio"
-    "nAccepted\020\004\022\026\n\022RevocationRejected\020\005*\256\001\n\031"
-    "RoamingNotificationStatus\022$\n UnknownRoam"
-    "ingNotificationStatus\020\000\022!\n\035RoamingNotifi"
-    "cationStatusNone\020\001\022$\n RoamingNotificatio"
-    "nStatusSuccess\020\002\022\"\n\036RoamingNotificationS"
-    "tatusError\020\003*\300\001\n\025SenderSignatureStatus\022 "
-    "\n\034UnknownSenderSignatureStatus\020\000\022\035\n\031Wait"
-    "ingForSenderSignature\020\001\022\034\n\030SenderSignatu"
-    "reUnchecked\020\002\022\"\n\036SenderSignatureCheckedA"
-    "ndValid\020\003\022$\n SenderSignatureCheckedAndIn"
-    "valid\020\004", 5007);
+    "nt.UniversalTransferDocumentMetadata\022\222\001\n"
+    ")UniversalTransferDocumentRevisionMetada"
+    "ta\0309 \001(\0132_.Diadoc.Api.Proto.Documents.Un"
+    "iversalTransferDocument.UniversalTransfe"
+    "rDocumentRevisionMetadata\022\206\001\n#UniversalC"
+    "orrectionDocumentMetadata\030: \001(\0132Y.Diadoc"
+    ".Api.Proto.Documents.UniversalTransferDo"
+    "cument.UniversalCorrectionDocumentMetada"
+    "ta\022\226\001\n+UniversalCorrectionDocumentRevisi"
+    "onMetadata\030; \001(\0132a.Diadoc.Api.Proto.Docu"
+    "ments.UniversalTransferDocument.Universa"
+    "lCorrectionDocumentRevisionMetadata\"\310\001\n\020"
+    "ResolutionStatus\022W\n\004Type\030\001 \001(\01620.Diadoc."
+    "Api.Proto.Documents.ResolutionStatusType"
+    ":\027UnknownResolutionStatus\0222\n\006Target\030\002 \001("
+    "\0132\".Diadoc.Api.Proto.ResolutionTarget\022\024\n"
+    "\014AuthorUserId\030\003 \002(\t\022\021\n\tAuthorFIO\030\004 \002(\t*\254"
+    "\001\n\024ResolutionStatusType\022$\n\027UnknownResolu"
+    "tionStatus\020\377\377\377\377\377\377\377\377\377\001\022\010\n\004None\020\000\022\014\n\010Appro"
+    "ved\020\001\022\017\n\013Disapproved\020\002\022\030\n\024ApprovementReq"
+    "uested\020\003\022\026\n\022SignatureRequested\020\004\022\023\n\017Sign"
+    "atureDenied\020\005*\262\001\n\020RevocationStatus\022\033\n\027Un"
+    "knownRevocationStatus\020\000\022\030\n\024RevocationSta"
+    "tusNone\020\001\022\035\n\031RevocationIsRequestedByMe\020\002"
+    "\022\030\n\024RequestsMyRevocation\020\003\022\026\n\022Revocation"
+    "Accepted\020\004\022\026\n\022RevocationRejected\020\005*\256\001\n\031R"
+    "oamingNotificationStatus\022$\n UnknownRoami"
+    "ngNotificationStatus\020\000\022!\n\035RoamingNotific"
+    "ationStatusNone\020\001\022$\n RoamingNotification"
+    "StatusSuccess\020\002\022\"\n\036RoamingNotificationSt"
+    "atusError\020\003*\300\001\n\025SenderSignatureStatus\022 \n"
+    "\034UnknownSenderSignatureStatus\020\000\022\035\n\031Waiti"
+    "ngForSenderSignature\020\001\022\034\n\030SenderSignatur"
+    "eUnchecked\020\002\022\"\n\036SenderSignatureCheckedAn"
+    "dValid\020\003\022$\n SenderSignatureCheckedAndInv"
+    "alid\020\004", 5446);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Documents/Document.proto", &protobuf_RegisterTypes);
   Document::default_instance_ = new Document();
@@ -449,6 +463,9 @@ const int Document::kPacketIsLockedFieldNumber;
 const int Document::kPriceListAgreementMetadataFieldNumber;
 const int Document::kCertificateRegistryMetadataFieldNumber;
 const int Document::kUniversalTransferDocumentMetadataFieldNumber;
+const int Document::kUniversalTransferDocumentRevisionMetadataFieldNumber;
+const int Document::kUniversalCorrectionDocumentMetadataFieldNumber;
+const int Document::kUniversalCorrectionDocumentRevisionMetadataFieldNumber;
 #endif  // !_MSC_VER
 
 Document::Document()
@@ -480,6 +497,9 @@ void Document::InitAsDefaultInstance() {
   pricelistagreementmetadata_ = const_cast< ::Diadoc::Api::Proto::Documents::NonformalizedDocument::NonformalizedDocumentMetadata*>(&::Diadoc::Api::Proto::Documents::NonformalizedDocument::NonformalizedDocumentMetadata::default_instance());
   certificateregistrymetadata_ = const_cast< ::Diadoc::Api::Proto::Documents::NonformalizedDocument::NonformalizedDocumentMetadata*>(&::Diadoc::Api::Proto::Documents::NonformalizedDocument::NonformalizedDocumentMetadata::default_instance());
   universaltransferdocumentmetadata_ = const_cast< ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentMetadata*>(&::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentMetadata::default_instance());
+  universaltransferdocumentrevisionmetadata_ = const_cast< ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentRevisionMetadata*>(&::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentRevisionMetadata::default_instance());
+  universalcorrectiondocumentmetadata_ = const_cast< ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata*>(&::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata::default_instance());
+  universalcorrectiondocumentrevisionmetadata_ = const_cast< ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata*>(&::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata::default_instance());
 }
 
 Document::Document(const Document& from)
@@ -542,6 +562,9 @@ void Document::SharedCtor() {
   pricelistagreementmetadata_ = NULL;
   certificateregistrymetadata_ = NULL;
   universaltransferdocumentmetadata_ = NULL;
+  universaltransferdocumentrevisionmetadata_ = NULL;
+  universalcorrectiondocumentmetadata_ = NULL;
+  universalcorrectiondocumentrevisionmetadata_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -613,6 +636,9 @@ void Document::SharedDtor() {
     delete pricelistagreementmetadata_;
     delete certificateregistrymetadata_;
     delete universaltransferdocumentmetadata_;
+    delete universaltransferdocumentrevisionmetadata_;
+    delete universalcorrectiondocumentmetadata_;
+    delete universalcorrectiondocumentrevisionmetadata_;
   }
 }
 
@@ -786,7 +812,7 @@ void Document::Clear() {
       if (supplementaryagreementmetadata_ != NULL) supplementaryagreementmetadata_->::Diadoc::Api::Proto::Documents::BilateralDocument::SupplementaryAgreementMetadata::Clear();
     }
   }
-  if (_has_bits_[48 / 32] & 4128768) {
+  if (_has_bits_[48 / 32] & 16711680) {
     ZR_(isread_, packetislocked_);
     if (has_roamingnotificationstatusdescription()) {
       if (roamingnotificationstatusdescription_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
@@ -802,6 +828,15 @@ void Document::Clear() {
     if (has_universaltransferdocumentmetadata()) {
       if (universaltransferdocumentmetadata_ != NULL) universaltransferdocumentmetadata_->::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentMetadata::Clear();
     }
+    if (has_universaltransferdocumentrevisionmetadata()) {
+      if (universaltransferdocumentrevisionmetadata_ != NULL) universaltransferdocumentrevisionmetadata_->::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentRevisionMetadata::Clear();
+    }
+    if (has_universalcorrectiondocumentmetadata()) {
+      if (universalcorrectiondocumentmetadata_ != NULL) universalcorrectiondocumentmetadata_->::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata::Clear();
+    }
+  }
+  if (has_universalcorrectiondocumentrevisionmetadata()) {
+    if (universalcorrectiondocumentrevisionmetadata_ != NULL) universalcorrectiondocumentrevisionmetadata_->::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata::Clear();
   }
 
 #undef OFFSET_OF_FIELD_
@@ -1633,6 +1668,45 @@ bool Document::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(458)) goto parse_UniversalTransferDocumentRevisionMetadata;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata UniversalTransferDocumentRevisionMetadata = 57;
+      case 57: {
+        if (tag == 458) {
+         parse_UniversalTransferDocumentRevisionMetadata:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_universaltransferdocumentrevisionmetadata()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(466)) goto parse_UniversalCorrectionDocumentMetadata;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata UniversalCorrectionDocumentMetadata = 58;
+      case 58: {
+        if (tag == 466) {
+         parse_UniversalCorrectionDocumentMetadata:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_universalcorrectiondocumentmetadata()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(474)) goto parse_UniversalCorrectionDocumentRevisionMetadata;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata UniversalCorrectionDocumentRevisionMetadata = 59;
+      case 59: {
+        if (tag == 474) {
+         parse_UniversalCorrectionDocumentRevisionMetadata:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_universalcorrectiondocumentrevisionmetadata()));
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -2026,6 +2100,24 @@ void Document::SerializeWithCachedSizes(
   if (has_universaltransferdocumentmetadata()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       56, this->universaltransferdocumentmetadata(), output);
+  }
+
+  // optional .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata UniversalTransferDocumentRevisionMetadata = 57;
+  if (has_universaltransferdocumentrevisionmetadata()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      57, this->universaltransferdocumentrevisionmetadata(), output);
+  }
+
+  // optional .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata UniversalCorrectionDocumentMetadata = 58;
+  if (has_universalcorrectiondocumentmetadata()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      58, this->universalcorrectiondocumentmetadata(), output);
+  }
+
+  // optional .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata UniversalCorrectionDocumentRevisionMetadata = 59;
+  if (has_universalcorrectiondocumentrevisionmetadata()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      59, this->universalcorrectiondocumentrevisionmetadata(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -2443,6 +2535,27 @@ void Document::SerializeWithCachedSizes(
         56, this->universaltransferdocumentmetadata(), target);
   }
 
+  // optional .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata UniversalTransferDocumentRevisionMetadata = 57;
+  if (has_universaltransferdocumentrevisionmetadata()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        57, this->universaltransferdocumentrevisionmetadata(), target);
+  }
+
+  // optional .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata UniversalCorrectionDocumentMetadata = 58;
+  if (has_universalcorrectiondocumentmetadata()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        58, this->universalcorrectiondocumentmetadata(), target);
+  }
+
+  // optional .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata UniversalCorrectionDocumentRevisionMetadata = 59;
+  if (has_universalcorrectiondocumentrevisionmetadata()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        59, this->universalcorrectiondocumentrevisionmetadata(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -2792,6 +2905,29 @@ int Document::ByteSize() const {
           this->universaltransferdocumentmetadata());
     }
 
+    // optional .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata UniversalTransferDocumentRevisionMetadata = 57;
+    if (has_universaltransferdocumentrevisionmetadata()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->universaltransferdocumentrevisionmetadata());
+    }
+
+    // optional .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata UniversalCorrectionDocumentMetadata = 58;
+    if (has_universalcorrectiondocumentmetadata()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->universalcorrectiondocumentmetadata());
+    }
+
+  }
+  if (_has_bits_[56 / 32] & (0xffu << (56 % 32))) {
+    // optional .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata UniversalCorrectionDocumentRevisionMetadata = 59;
+    if (has_universalcorrectiondocumentrevisionmetadata()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->universalcorrectiondocumentrevisionmetadata());
+    }
+
   }
   // repeated .Diadoc.Api.Proto.DocumentId InitialDocumentIds = 7;
   total_size += 1 * this->initialdocumentids_size();
@@ -3017,6 +3153,17 @@ void Document::MergeFrom(const Document& from) {
     if (from.has_universaltransferdocumentmetadata()) {
       mutable_universaltransferdocumentmetadata()->::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentMetadata::MergeFrom(from.universaltransferdocumentmetadata());
     }
+    if (from.has_universaltransferdocumentrevisionmetadata()) {
+      mutable_universaltransferdocumentrevisionmetadata()->::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentRevisionMetadata::MergeFrom(from.universaltransferdocumentrevisionmetadata());
+    }
+    if (from.has_universalcorrectiondocumentmetadata()) {
+      mutable_universalcorrectiondocumentmetadata()->::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata::MergeFrom(from.universalcorrectiondocumentmetadata());
+    }
+  }
+  if (from._has_bits_[56 / 32] & (0xffu << (56 % 32))) {
+    if (from.has_universalcorrectiondocumentrevisionmetadata()) {
+      mutable_universalcorrectiondocumentrevisionmetadata()->::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata::MergeFrom(from.universalcorrectiondocumentrevisionmetadata());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -3085,6 +3232,15 @@ bool Document::IsInitialized() const {
   if (has_universaltransferdocumentmetadata()) {
     if (!this->universaltransferdocumentmetadata().IsInitialized()) return false;
   }
+  if (has_universaltransferdocumentrevisionmetadata()) {
+    if (!this->universaltransferdocumentrevisionmetadata().IsInitialized()) return false;
+  }
+  if (has_universalcorrectiondocumentmetadata()) {
+    if (!this->universalcorrectiondocumentmetadata().IsInitialized()) return false;
+  }
+  if (has_universalcorrectiondocumentrevisionmetadata()) {
+    if (!this->universalcorrectiondocumentrevisionmetadata().IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -3144,6 +3300,9 @@ void Document::Swap(Document* other) {
     std::swap(pricelistagreementmetadata_, other->pricelistagreementmetadata_);
     std::swap(certificateregistrymetadata_, other->certificateregistrymetadata_);
     std::swap(universaltransferdocumentmetadata_, other->universaltransferdocumentmetadata_);
+    std::swap(universaltransferdocumentrevisionmetadata_, other->universaltransferdocumentrevisionmetadata_);
+    std::swap(universalcorrectiondocumentmetadata_, other->universalcorrectiondocumentmetadata_);
+    std::swap(universalcorrectiondocumentrevisionmetadata_, other->universalcorrectiondocumentrevisionmetadata_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     std::swap(_has_bits_[1], other->_has_bits_[1]);
     _unknown_fields_.Swap(&other->_unknown_fields_);

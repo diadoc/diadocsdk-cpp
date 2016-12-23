@@ -705,6 +705,33 @@ class Document : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentMetadata* release_universaltransferdocumentmetadata();
   inline void set_allocated_universaltransferdocumentmetadata(::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentMetadata* universaltransferdocumentmetadata);
 
+  // optional .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata UniversalTransferDocumentRevisionMetadata = 57;
+  inline bool has_universaltransferdocumentrevisionmetadata() const;
+  inline void clear_universaltransferdocumentrevisionmetadata();
+  static const int kUniversalTransferDocumentRevisionMetadataFieldNumber = 57;
+  inline const ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentRevisionMetadata& universaltransferdocumentrevisionmetadata() const;
+  inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentRevisionMetadata* mutable_universaltransferdocumentrevisionmetadata();
+  inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentRevisionMetadata* release_universaltransferdocumentrevisionmetadata();
+  inline void set_allocated_universaltransferdocumentrevisionmetadata(::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentRevisionMetadata* universaltransferdocumentrevisionmetadata);
+
+  // optional .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata UniversalCorrectionDocumentMetadata = 58;
+  inline bool has_universalcorrectiondocumentmetadata() const;
+  inline void clear_universalcorrectiondocumentmetadata();
+  static const int kUniversalCorrectionDocumentMetadataFieldNumber = 58;
+  inline const ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata& universalcorrectiondocumentmetadata() const;
+  inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata* mutable_universalcorrectiondocumentmetadata();
+  inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata* release_universalcorrectiondocumentmetadata();
+  inline void set_allocated_universalcorrectiondocumentmetadata(::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata* universalcorrectiondocumentmetadata);
+
+  // optional .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata UniversalCorrectionDocumentRevisionMetadata = 59;
+  inline bool has_universalcorrectiondocumentrevisionmetadata() const;
+  inline void clear_universalcorrectiondocumentrevisionmetadata();
+  static const int kUniversalCorrectionDocumentRevisionMetadataFieldNumber = 59;
+  inline const ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata& universalcorrectiondocumentrevisionmetadata() const;
+  inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata* mutable_universalcorrectiondocumentrevisionmetadata();
+  inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata* release_universalcorrectiondocumentrevisionmetadata();
+  inline void set_allocated_universalcorrectiondocumentrevisionmetadata(::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata* universalcorrectiondocumentrevisionmetadata);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.Document)
  private:
   inline void set_has_indexkey();
@@ -807,6 +834,12 @@ class Document : public ::google::protobuf::Message {
   inline void clear_has_certificateregistrymetadata();
   inline void set_has_universaltransferdocumentmetadata();
   inline void clear_has_universaltransferdocumentmetadata();
+  inline void set_has_universaltransferdocumentrevisionmetadata();
+  inline void clear_has_universaltransferdocumentrevisionmetadata();
+  inline void set_has_universalcorrectiondocumentmetadata();
+  inline void clear_has_universalcorrectiondocumentmetadata();
+  inline void set_has_universalcorrectiondocumentrevisionmetadata();
+  inline void clear_has_universalcorrectiondocumentrevisionmetadata();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -863,6 +896,9 @@ class Document : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Documents::NonformalizedDocument::NonformalizedDocumentMetadata* pricelistagreementmetadata_;
   ::Diadoc::Api::Proto::Documents::NonformalizedDocument::NonformalizedDocumentMetadata* certificateregistrymetadata_;
   ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentMetadata* universaltransferdocumentmetadata_;
+  ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentRevisionMetadata* universaltransferdocumentrevisionmetadata_;
+  ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata* universalcorrectiondocumentmetadata_;
+  ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata* universalcorrectiondocumentrevisionmetadata_;
   bool isread_;
   bool packetislocked_;
   mutable int _cached_size_;
@@ -3374,6 +3410,129 @@ inline void Document::set_allocated_universaltransferdocumentmetadata(::Diadoc::
     clear_has_universaltransferdocumentmetadata();
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.UniversalTransferDocumentMetadata)
+}
+
+// optional .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata UniversalTransferDocumentRevisionMetadata = 57;
+inline bool Document::has_universaltransferdocumentrevisionmetadata() const {
+  return (_has_bits_[1] & 0x00400000u) != 0;
+}
+inline void Document::set_has_universaltransferdocumentrevisionmetadata() {
+  _has_bits_[1] |= 0x00400000u;
+}
+inline void Document::clear_has_universaltransferdocumentrevisionmetadata() {
+  _has_bits_[1] &= ~0x00400000u;
+}
+inline void Document::clear_universaltransferdocumentrevisionmetadata() {
+  if (universaltransferdocumentrevisionmetadata_ != NULL) universaltransferdocumentrevisionmetadata_->::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentRevisionMetadata::Clear();
+  clear_has_universaltransferdocumentrevisionmetadata();
+}
+inline const ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentRevisionMetadata& Document::universaltransferdocumentrevisionmetadata() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Document.UniversalTransferDocumentRevisionMetadata)
+  return universaltransferdocumentrevisionmetadata_ != NULL ? *universaltransferdocumentrevisionmetadata_ : *default_instance_->universaltransferdocumentrevisionmetadata_;
+}
+inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentRevisionMetadata* Document::mutable_universaltransferdocumentrevisionmetadata() {
+  set_has_universaltransferdocumentrevisionmetadata();
+  if (universaltransferdocumentrevisionmetadata_ == NULL) universaltransferdocumentrevisionmetadata_ = new ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentRevisionMetadata;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.Document.UniversalTransferDocumentRevisionMetadata)
+  return universaltransferdocumentrevisionmetadata_;
+}
+inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentRevisionMetadata* Document::release_universaltransferdocumentrevisionmetadata() {
+  clear_has_universaltransferdocumentrevisionmetadata();
+  ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentRevisionMetadata* temp = universaltransferdocumentrevisionmetadata_;
+  universaltransferdocumentrevisionmetadata_ = NULL;
+  return temp;
+}
+inline void Document::set_allocated_universaltransferdocumentrevisionmetadata(::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentRevisionMetadata* universaltransferdocumentrevisionmetadata) {
+  delete universaltransferdocumentrevisionmetadata_;
+  universaltransferdocumentrevisionmetadata_ = universaltransferdocumentrevisionmetadata;
+  if (universaltransferdocumentrevisionmetadata) {
+    set_has_universaltransferdocumentrevisionmetadata();
+  } else {
+    clear_has_universaltransferdocumentrevisionmetadata();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.UniversalTransferDocumentRevisionMetadata)
+}
+
+// optional .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata UniversalCorrectionDocumentMetadata = 58;
+inline bool Document::has_universalcorrectiondocumentmetadata() const {
+  return (_has_bits_[1] & 0x00800000u) != 0;
+}
+inline void Document::set_has_universalcorrectiondocumentmetadata() {
+  _has_bits_[1] |= 0x00800000u;
+}
+inline void Document::clear_has_universalcorrectiondocumentmetadata() {
+  _has_bits_[1] &= ~0x00800000u;
+}
+inline void Document::clear_universalcorrectiondocumentmetadata() {
+  if (universalcorrectiondocumentmetadata_ != NULL) universalcorrectiondocumentmetadata_->::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata::Clear();
+  clear_has_universalcorrectiondocumentmetadata();
+}
+inline const ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata& Document::universalcorrectiondocumentmetadata() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Document.UniversalCorrectionDocumentMetadata)
+  return universalcorrectiondocumentmetadata_ != NULL ? *universalcorrectiondocumentmetadata_ : *default_instance_->universalcorrectiondocumentmetadata_;
+}
+inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata* Document::mutable_universalcorrectiondocumentmetadata() {
+  set_has_universalcorrectiondocumentmetadata();
+  if (universalcorrectiondocumentmetadata_ == NULL) universalcorrectiondocumentmetadata_ = new ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.Document.UniversalCorrectionDocumentMetadata)
+  return universalcorrectiondocumentmetadata_;
+}
+inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata* Document::release_universalcorrectiondocumentmetadata() {
+  clear_has_universalcorrectiondocumentmetadata();
+  ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata* temp = universalcorrectiondocumentmetadata_;
+  universalcorrectiondocumentmetadata_ = NULL;
+  return temp;
+}
+inline void Document::set_allocated_universalcorrectiondocumentmetadata(::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata* universalcorrectiondocumentmetadata) {
+  delete universalcorrectiondocumentmetadata_;
+  universalcorrectiondocumentmetadata_ = universalcorrectiondocumentmetadata;
+  if (universalcorrectiondocumentmetadata) {
+    set_has_universalcorrectiondocumentmetadata();
+  } else {
+    clear_has_universalcorrectiondocumentmetadata();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.UniversalCorrectionDocumentMetadata)
+}
+
+// optional .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata UniversalCorrectionDocumentRevisionMetadata = 59;
+inline bool Document::has_universalcorrectiondocumentrevisionmetadata() const {
+  return (_has_bits_[1] & 0x01000000u) != 0;
+}
+inline void Document::set_has_universalcorrectiondocumentrevisionmetadata() {
+  _has_bits_[1] |= 0x01000000u;
+}
+inline void Document::clear_has_universalcorrectiondocumentrevisionmetadata() {
+  _has_bits_[1] &= ~0x01000000u;
+}
+inline void Document::clear_universalcorrectiondocumentrevisionmetadata() {
+  if (universalcorrectiondocumentrevisionmetadata_ != NULL) universalcorrectiondocumentrevisionmetadata_->::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata::Clear();
+  clear_has_universalcorrectiondocumentrevisionmetadata();
+}
+inline const ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata& Document::universalcorrectiondocumentrevisionmetadata() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Document.UniversalCorrectionDocumentRevisionMetadata)
+  return universalcorrectiondocumentrevisionmetadata_ != NULL ? *universalcorrectiondocumentrevisionmetadata_ : *default_instance_->universalcorrectiondocumentrevisionmetadata_;
+}
+inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata* Document::mutable_universalcorrectiondocumentrevisionmetadata() {
+  set_has_universalcorrectiondocumentrevisionmetadata();
+  if (universalcorrectiondocumentrevisionmetadata_ == NULL) universalcorrectiondocumentrevisionmetadata_ = new ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.Document.UniversalCorrectionDocumentRevisionMetadata)
+  return universalcorrectiondocumentrevisionmetadata_;
+}
+inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata* Document::release_universalcorrectiondocumentrevisionmetadata() {
+  clear_has_universalcorrectiondocumentrevisionmetadata();
+  ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata* temp = universalcorrectiondocumentrevisionmetadata_;
+  universalcorrectiondocumentrevisionmetadata_ = NULL;
+  return temp;
+}
+inline void Document::set_allocated_universalcorrectiondocumentrevisionmetadata(::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata* universalcorrectiondocumentrevisionmetadata) {
+  delete universalcorrectiondocumentrevisionmetadata_;
+  universalcorrectiondocumentrevisionmetadata_ = universalcorrectiondocumentrevisionmetadata;
+  if (universalcorrectiondocumentrevisionmetadata) {
+    set_has_universalcorrectiondocumentrevisionmetadata();
+  } else {
+    clear_has_universalcorrectiondocumentrevisionmetadata();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.UniversalCorrectionDocumentRevisionMetadata)
 }
 
 // -------------------------------------------------------------------

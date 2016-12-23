@@ -60,8 +60,8 @@ void protobuf_AddDesc_DocumentType_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\022DocumentType.proto\022\020Diadoc.Api.Proto*\340"
-    "\003\n\014DocumentType\022 \n\023UnknownDocumentType\020\377"
+    "\n\022DocumentType.proto\022\020Diadoc.Api.Proto*\321"
+    "\004\n\014DocumentType\022 \n\023UnknownDocumentType\020\377"
     "\377\377\377\377\377\377\377\377\001\022\021\n\rNonformalized\020\000\022\013\n\007Invoice\020"
     "\001\022\032\n\026TrustConnectionRequest\020\013\022\n\n\006Torg12\020"
     "\014\022\023\n\017InvoiceRevision\020\r\022\025\n\021InvoiceCorrect"
@@ -73,7 +73,9 @@ void protobuf_AddDesc_DocumentType_2eproto() {
     "onciliationAct\020#\022\014\n\010Contract\020$\022\n\n\006Torg13"
     "\020%\022\022\n\016ServiceDetails\020&\022\032\n\026SupplementaryA"
     "greement\020(\022\035\n\031UniversalTransferDocument\020"
-    ")", 521);
+    ")\022%\n!UniversalTransferDocumentRevision\020-"
+    "\022\037\n\033UniversalCorrectionDocument\0201\022\'\n#Uni"
+    "versalCorrectionDocumentRevision\0202", 634);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "DocumentType.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_DocumentType_2eproto);
@@ -112,6 +114,9 @@ bool DocumentType_IsValid(int value) {
     case 38:
     case 40:
     case 41:
+    case 45:
+    case 49:
+    case 50:
       return true;
     default:
       return false;

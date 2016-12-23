@@ -25,7 +25,6 @@
 #include <google/protobuf/extension_set.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
-#include "Documents/ReceiptStatus.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace Diadoc {
@@ -40,6 +39,9 @@ void protobuf_AssignDesc_Documents_2fUniversalTransferDocument_2eproto();
 void protobuf_ShutdownFile_Documents_2fUniversalTransferDocument_2eproto();
 
 class UniversalTransferDocumentMetadata;
+class UniversalTransferDocumentRevisionMetadata;
+class UniversalCorrectionDocumentMetadata;
+class UniversalCorrectionDocumentRevisionMetadata;
 
 enum UniversalTransferDocumentStatus {
   UnknownDocumentStatus = 0,
@@ -47,16 +49,21 @@ enum UniversalTransferDocumentStatus {
   OutboundWaitingForInvoiceReceiptAndRecipientSignature = 2,
   OutboundWaitingForInvoiceReceipt = 3,
   OutboundWaitingForRecipientSignature = 4,
-  OutboundInvalidSenderSignature = 5,
-  InboundWaitingForInvoiceReceiptAndRecipientSignature = 6,
-  InboundWaitingForRecipientSignature = 7,
-  InboundWaitingForInvoiceReceipt = 8,
-  InboundWithRecipientSignature = 9,
-  InboundInvalidRecipientSignature = 10
+  OutboundWithRecipientSignature = 5,
+  OutboundRecipientSignatureRequestRejected = 6,
+  OutboundInvalidSenderSignature = 7,
+  OutboundNotFinished = 8,
+  OutboundFinished = 9,
+  InboundWaitingForRecipientSignature = 16,
+  InboundWithRecipientSignature = 17,
+  InboundRecipientSignatureRequestRejected = 18,
+  InboundInvalidRecipientSignature = 19,
+  InboundNotFinished = 20,
+  InboundFinished = 21
 };
 bool UniversalTransferDocumentStatus_IsValid(int value);
 const UniversalTransferDocumentStatus UniversalTransferDocumentStatus_MIN = UnknownDocumentStatus;
-const UniversalTransferDocumentStatus UniversalTransferDocumentStatus_MAX = InboundInvalidRecipientSignature;
+const UniversalTransferDocumentStatus UniversalTransferDocumentStatus_MAX = InboundFinished;
 const int UniversalTransferDocumentStatus_ARRAYSIZE = UniversalTransferDocumentStatus_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* UniversalTransferDocumentStatus_descriptor();
@@ -186,12 +193,19 @@ class UniversalTransferDocumentMetadata : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 currency() const;
   inline void set_currency(::google::protobuf::int32 value);
 
-  // optional .Diadoc.Api.Proto.Documents.ReceiptStatus ReceiptStatus = 7 [default = UnknownReceiptStatus];
-  inline bool has_receiptstatus() const;
-  inline void clear_receiptstatus();
-  static const int kReceiptStatusFieldNumber = 7;
-  inline ::Diadoc::Api::Proto::Documents::ReceiptStatus receiptstatus() const;
-  inline void set_receiptstatus(::Diadoc::Api::Proto::Documents::ReceiptStatus value);
+  // optional sfixed64 ConfirmationDateTimeTicks = 8;
+  inline bool has_confirmationdatetimeticks() const;
+  inline void clear_confirmationdatetimeticks();
+  static const int kConfirmationDateTimeTicksFieldNumber = 8;
+  inline ::google::protobuf::int64 confirmationdatetimeticks() const;
+  inline void set_confirmationdatetimeticks(::google::protobuf::int64 value);
+
+  // optional int32 InvoiceAmendmentFlags = 9;
+  inline bool has_invoiceamendmentflags() const;
+  inline void clear_invoiceamendmentflags();
+  static const int kInvoiceAmendmentFlagsFieldNumber = 9;
+  inline ::google::protobuf::int32 invoiceamendmentflags() const;
+  inline void set_invoiceamendmentflags(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentMetadata)
  private:
@@ -207,8 +221,10 @@ class UniversalTransferDocumentMetadata : public ::google::protobuf::Message {
   inline void clear_has_documentfunction();
   inline void set_has_currency();
   inline void clear_has_currency();
-  inline void set_has_receiptstatus();
-  inline void clear_has_receiptstatus();
+  inline void set_has_confirmationdatetimeticks();
+  inline void clear_has_confirmationdatetimeticks();
+  inline void set_has_invoiceamendmentflags();
+  inline void clear_has_invoiceamendmentflags();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -220,13 +236,761 @@ class UniversalTransferDocumentMetadata : public ::google::protobuf::Message {
   ::google::protobuf::int32 currency_;
   ::std::string* grounds_;
   ::std::string* documentfunction_;
-  int receiptstatus_;
+  ::google::protobuf::int64 confirmationdatetimeticks_;
+  ::google::protobuf::int32 invoiceamendmentflags_;
   friend void  protobuf_AddDesc_Documents_2fUniversalTransferDocument_2eproto();
   friend void protobuf_AssignDesc_Documents_2fUniversalTransferDocument_2eproto();
   friend void protobuf_ShutdownFile_Documents_2fUniversalTransferDocument_2eproto();
 
   void InitAsDefaultInstance();
   static UniversalTransferDocumentMetadata* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class UniversalTransferDocumentRevisionMetadata : public ::google::protobuf::Message {
+ public:
+  UniversalTransferDocumentRevisionMetadata();
+  virtual ~UniversalTransferDocumentRevisionMetadata();
+
+  UniversalTransferDocumentRevisionMetadata(const UniversalTransferDocumentRevisionMetadata& from);
+
+  inline UniversalTransferDocumentRevisionMetadata& operator=(const UniversalTransferDocumentRevisionMetadata& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const UniversalTransferDocumentRevisionMetadata& default_instance();
+
+  void Swap(UniversalTransferDocumentRevisionMetadata* other);
+
+  // implements Message ----------------------------------------------
+
+  UniversalTransferDocumentRevisionMetadata* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const UniversalTransferDocumentRevisionMetadata& from);
+  void MergeFrom(const UniversalTransferDocumentRevisionMetadata& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentStatus DocumentStatus = 1;
+  inline bool has_documentstatus() const;
+  inline void clear_documentstatus();
+  static const int kDocumentStatusFieldNumber = 1;
+  inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentStatus documentstatus() const;
+  inline void set_documentstatus(::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentStatus value);
+
+  // required string Total = 2;
+  inline bool has_total() const;
+  inline void clear_total();
+  static const int kTotalFieldNumber = 2;
+  inline const ::std::string& total() const;
+  inline void set_total(const ::std::string& value);
+  inline void set_total(const char* value);
+  inline void set_total(const char* value, size_t size);
+  inline ::std::string* mutable_total();
+  inline ::std::string* release_total();
+  inline void set_allocated_total(::std::string* total);
+
+  // optional string Vat = 3;
+  inline bool has_vat() const;
+  inline void clear_vat();
+  static const int kVatFieldNumber = 3;
+  inline const ::std::string& vat() const;
+  inline void set_vat(const ::std::string& value);
+  inline void set_vat(const char* value);
+  inline void set_vat(const char* value, size_t size);
+  inline ::std::string* mutable_vat();
+  inline ::std::string* release_vat();
+  inline void set_allocated_vat(::std::string* vat);
+
+  // optional string Grounds = 4;
+  inline bool has_grounds() const;
+  inline void clear_grounds();
+  static const int kGroundsFieldNumber = 4;
+  inline const ::std::string& grounds() const;
+  inline void set_grounds(const ::std::string& value);
+  inline void set_grounds(const char* value);
+  inline void set_grounds(const char* value, size_t size);
+  inline ::std::string* mutable_grounds();
+  inline ::std::string* release_grounds();
+  inline void set_allocated_grounds(::std::string* grounds);
+
+  // required string DocumentFunction = 5;
+  inline bool has_documentfunction() const;
+  inline void clear_documentfunction();
+  static const int kDocumentFunctionFieldNumber = 5;
+  inline const ::std::string& documentfunction() const;
+  inline void set_documentfunction(const ::std::string& value);
+  inline void set_documentfunction(const char* value);
+  inline void set_documentfunction(const char* value, size_t size);
+  inline ::std::string* mutable_documentfunction();
+  inline ::std::string* release_documentfunction();
+  inline void set_allocated_documentfunction(::std::string* documentfunction);
+
+  // required int32 Currency = 6;
+  inline bool has_currency() const;
+  inline void clear_currency();
+  static const int kCurrencyFieldNumber = 6;
+  inline ::google::protobuf::int32 currency() const;
+  inline void set_currency(::google::protobuf::int32 value);
+
+  // optional sfixed64 ConfirmationDateTimeTicks = 7;
+  inline bool has_confirmationdatetimeticks() const;
+  inline void clear_confirmationdatetimeticks();
+  static const int kConfirmationDateTimeTicksFieldNumber = 7;
+  inline ::google::protobuf::int64 confirmationdatetimeticks() const;
+  inline void set_confirmationdatetimeticks(::google::protobuf::int64 value);
+
+  // required int32 InvoiceAmendmentFlags = 8;
+  inline bool has_invoiceamendmentflags() const;
+  inline void clear_invoiceamendmentflags();
+  static const int kInvoiceAmendmentFlagsFieldNumber = 8;
+  inline ::google::protobuf::int32 invoiceamendmentflags() const;
+  inline void set_invoiceamendmentflags(::google::protobuf::int32 value);
+
+  // required string OriginalInvoiceNumber = 9;
+  inline bool has_originalinvoicenumber() const;
+  inline void clear_originalinvoicenumber();
+  static const int kOriginalInvoiceNumberFieldNumber = 9;
+  inline const ::std::string& originalinvoicenumber() const;
+  inline void set_originalinvoicenumber(const ::std::string& value);
+  inline void set_originalinvoicenumber(const char* value);
+  inline void set_originalinvoicenumber(const char* value, size_t size);
+  inline ::std::string* mutable_originalinvoicenumber();
+  inline ::std::string* release_originalinvoicenumber();
+  inline void set_allocated_originalinvoicenumber(::std::string* originalinvoicenumber);
+
+  // required string OriginalInvoiceDate = 10;
+  inline bool has_originalinvoicedate() const;
+  inline void clear_originalinvoicedate();
+  static const int kOriginalInvoiceDateFieldNumber = 10;
+  inline const ::std::string& originalinvoicedate() const;
+  inline void set_originalinvoicedate(const ::std::string& value);
+  inline void set_originalinvoicedate(const char* value);
+  inline void set_originalinvoicedate(const char* value, size_t size);
+  inline ::std::string* mutable_originalinvoicedate();
+  inline ::std::string* release_originalinvoicedate();
+  inline void set_allocated_originalinvoicedate(::std::string* originalinvoicedate);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata)
+ private:
+  inline void set_has_documentstatus();
+  inline void clear_has_documentstatus();
+  inline void set_has_total();
+  inline void clear_has_total();
+  inline void set_has_vat();
+  inline void clear_has_vat();
+  inline void set_has_grounds();
+  inline void clear_has_grounds();
+  inline void set_has_documentfunction();
+  inline void clear_has_documentfunction();
+  inline void set_has_currency();
+  inline void clear_has_currency();
+  inline void set_has_confirmationdatetimeticks();
+  inline void clear_has_confirmationdatetimeticks();
+  inline void set_has_invoiceamendmentflags();
+  inline void clear_has_invoiceamendmentflags();
+  inline void set_has_originalinvoicenumber();
+  inline void clear_has_originalinvoicenumber();
+  inline void set_has_originalinvoicedate();
+  inline void clear_has_originalinvoicedate();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* total_;
+  ::std::string* vat_;
+  int documentstatus_;
+  ::google::protobuf::int32 currency_;
+  ::std::string* grounds_;
+  ::std::string* documentfunction_;
+  ::google::protobuf::int64 confirmationdatetimeticks_;
+  ::std::string* originalinvoicenumber_;
+  ::std::string* originalinvoicedate_;
+  ::google::protobuf::int32 invoiceamendmentflags_;
+  friend void  protobuf_AddDesc_Documents_2fUniversalTransferDocument_2eproto();
+  friend void protobuf_AssignDesc_Documents_2fUniversalTransferDocument_2eproto();
+  friend void protobuf_ShutdownFile_Documents_2fUniversalTransferDocument_2eproto();
+
+  void InitAsDefaultInstance();
+  static UniversalTransferDocumentRevisionMetadata* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class UniversalCorrectionDocumentMetadata : public ::google::protobuf::Message {
+ public:
+  UniversalCorrectionDocumentMetadata();
+  virtual ~UniversalCorrectionDocumentMetadata();
+
+  UniversalCorrectionDocumentMetadata(const UniversalCorrectionDocumentMetadata& from);
+
+  inline UniversalCorrectionDocumentMetadata& operator=(const UniversalCorrectionDocumentMetadata& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const UniversalCorrectionDocumentMetadata& default_instance();
+
+  void Swap(UniversalCorrectionDocumentMetadata* other);
+
+  // implements Message ----------------------------------------------
+
+  UniversalCorrectionDocumentMetadata* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const UniversalCorrectionDocumentMetadata& from);
+  void MergeFrom(const UniversalCorrectionDocumentMetadata& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentStatus DocumentStatus = 1;
+  inline bool has_documentstatus() const;
+  inline void clear_documentstatus();
+  static const int kDocumentStatusFieldNumber = 1;
+  inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentStatus documentstatus() const;
+  inline void set_documentstatus(::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentStatus value);
+
+  // required string TotalInc = 2;
+  inline bool has_totalinc() const;
+  inline void clear_totalinc();
+  static const int kTotalIncFieldNumber = 2;
+  inline const ::std::string& totalinc() const;
+  inline void set_totalinc(const ::std::string& value);
+  inline void set_totalinc(const char* value);
+  inline void set_totalinc(const char* value, size_t size);
+  inline ::std::string* mutable_totalinc();
+  inline ::std::string* release_totalinc();
+  inline void set_allocated_totalinc(::std::string* totalinc);
+
+  // required string TotalDec = 3;
+  inline bool has_totaldec() const;
+  inline void clear_totaldec();
+  static const int kTotalDecFieldNumber = 3;
+  inline const ::std::string& totaldec() const;
+  inline void set_totaldec(const ::std::string& value);
+  inline void set_totaldec(const char* value);
+  inline void set_totaldec(const char* value, size_t size);
+  inline ::std::string* mutable_totaldec();
+  inline ::std::string* release_totaldec();
+  inline void set_allocated_totaldec(::std::string* totaldec);
+
+  // required string VatInc = 4;
+  inline bool has_vatinc() const;
+  inline void clear_vatinc();
+  static const int kVatIncFieldNumber = 4;
+  inline const ::std::string& vatinc() const;
+  inline void set_vatinc(const ::std::string& value);
+  inline void set_vatinc(const char* value);
+  inline void set_vatinc(const char* value, size_t size);
+  inline ::std::string* mutable_vatinc();
+  inline ::std::string* release_vatinc();
+  inline void set_allocated_vatinc(::std::string* vatinc);
+
+  // required string VatDec = 5;
+  inline bool has_vatdec() const;
+  inline void clear_vatdec();
+  static const int kVatDecFieldNumber = 5;
+  inline const ::std::string& vatdec() const;
+  inline void set_vatdec(const ::std::string& value);
+  inline void set_vatdec(const char* value);
+  inline void set_vatdec(const char* value, size_t size);
+  inline ::std::string* mutable_vatdec();
+  inline ::std::string* release_vatdec();
+  inline void set_allocated_vatdec(::std::string* vatdec);
+
+  // optional string Grounds = 6;
+  inline bool has_grounds() const;
+  inline void clear_grounds();
+  static const int kGroundsFieldNumber = 6;
+  inline const ::std::string& grounds() const;
+  inline void set_grounds(const ::std::string& value);
+  inline void set_grounds(const char* value);
+  inline void set_grounds(const char* value, size_t size);
+  inline ::std::string* mutable_grounds();
+  inline ::std::string* release_grounds();
+  inline void set_allocated_grounds(::std::string* grounds);
+
+  // required string DocumentFunction = 7;
+  inline bool has_documentfunction() const;
+  inline void clear_documentfunction();
+  static const int kDocumentFunctionFieldNumber = 7;
+  inline const ::std::string& documentfunction() const;
+  inline void set_documentfunction(const ::std::string& value);
+  inline void set_documentfunction(const char* value);
+  inline void set_documentfunction(const char* value, size_t size);
+  inline ::std::string* mutable_documentfunction();
+  inline ::std::string* release_documentfunction();
+  inline void set_allocated_documentfunction(::std::string* documentfunction);
+
+  // required int32 Currency = 8;
+  inline bool has_currency() const;
+  inline void clear_currency();
+  static const int kCurrencyFieldNumber = 8;
+  inline ::google::protobuf::int32 currency() const;
+  inline void set_currency(::google::protobuf::int32 value);
+
+  // required sfixed64 ConfirmationDateTimeTicks = 9;
+  inline bool has_confirmationdatetimeticks() const;
+  inline void clear_confirmationdatetimeticks();
+  static const int kConfirmationDateTimeTicksFieldNumber = 9;
+  inline ::google::protobuf::int64 confirmationdatetimeticks() const;
+  inline void set_confirmationdatetimeticks(::google::protobuf::int64 value);
+
+  // required int32 InvoiceAmendmentFlags = 10;
+  inline bool has_invoiceamendmentflags() const;
+  inline void clear_invoiceamendmentflags();
+  static const int kInvoiceAmendmentFlagsFieldNumber = 10;
+  inline ::google::protobuf::int32 invoiceamendmentflags() const;
+  inline void set_invoiceamendmentflags(::google::protobuf::int32 value);
+
+  // required string OriginalInvoiceNumber = 11;
+  inline bool has_originalinvoicenumber() const;
+  inline void clear_originalinvoicenumber();
+  static const int kOriginalInvoiceNumberFieldNumber = 11;
+  inline const ::std::string& originalinvoicenumber() const;
+  inline void set_originalinvoicenumber(const ::std::string& value);
+  inline void set_originalinvoicenumber(const char* value);
+  inline void set_originalinvoicenumber(const char* value, size_t size);
+  inline ::std::string* mutable_originalinvoicenumber();
+  inline ::std::string* release_originalinvoicenumber();
+  inline void set_allocated_originalinvoicenumber(::std::string* originalinvoicenumber);
+
+  // required string OriginalInvoiceDate = 12;
+  inline bool has_originalinvoicedate() const;
+  inline void clear_originalinvoicedate();
+  static const int kOriginalInvoiceDateFieldNumber = 12;
+  inline const ::std::string& originalinvoicedate() const;
+  inline void set_originalinvoicedate(const ::std::string& value);
+  inline void set_originalinvoicedate(const char* value);
+  inline void set_originalinvoicedate(const char* value, size_t size);
+  inline ::std::string* mutable_originalinvoicedate();
+  inline ::std::string* release_originalinvoicedate();
+  inline void set_allocated_originalinvoicedate(::std::string* originalinvoicedate);
+
+  // optional string OriginalInvoiceRevisionNumber = 13;
+  inline bool has_originalinvoicerevisionnumber() const;
+  inline void clear_originalinvoicerevisionnumber();
+  static const int kOriginalInvoiceRevisionNumberFieldNumber = 13;
+  inline const ::std::string& originalinvoicerevisionnumber() const;
+  inline void set_originalinvoicerevisionnumber(const ::std::string& value);
+  inline void set_originalinvoicerevisionnumber(const char* value);
+  inline void set_originalinvoicerevisionnumber(const char* value, size_t size);
+  inline ::std::string* mutable_originalinvoicerevisionnumber();
+  inline ::std::string* release_originalinvoicerevisionnumber();
+  inline void set_allocated_originalinvoicerevisionnumber(::std::string* originalinvoicerevisionnumber);
+
+  // optional string OriginalInvoiceRevisionDate = 14;
+  inline bool has_originalinvoicerevisiondate() const;
+  inline void clear_originalinvoicerevisiondate();
+  static const int kOriginalInvoiceRevisionDateFieldNumber = 14;
+  inline const ::std::string& originalinvoicerevisiondate() const;
+  inline void set_originalinvoicerevisiondate(const ::std::string& value);
+  inline void set_originalinvoicerevisiondate(const char* value);
+  inline void set_originalinvoicerevisiondate(const char* value, size_t size);
+  inline ::std::string* mutable_originalinvoicerevisiondate();
+  inline ::std::string* release_originalinvoicerevisiondate();
+  inline void set_allocated_originalinvoicerevisiondate(::std::string* originalinvoicerevisiondate);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata)
+ private:
+  inline void set_has_documentstatus();
+  inline void clear_has_documentstatus();
+  inline void set_has_totalinc();
+  inline void clear_has_totalinc();
+  inline void set_has_totaldec();
+  inline void clear_has_totaldec();
+  inline void set_has_vatinc();
+  inline void clear_has_vatinc();
+  inline void set_has_vatdec();
+  inline void clear_has_vatdec();
+  inline void set_has_grounds();
+  inline void clear_has_grounds();
+  inline void set_has_documentfunction();
+  inline void clear_has_documentfunction();
+  inline void set_has_currency();
+  inline void clear_has_currency();
+  inline void set_has_confirmationdatetimeticks();
+  inline void clear_has_confirmationdatetimeticks();
+  inline void set_has_invoiceamendmentflags();
+  inline void clear_has_invoiceamendmentflags();
+  inline void set_has_originalinvoicenumber();
+  inline void clear_has_originalinvoicenumber();
+  inline void set_has_originalinvoicedate();
+  inline void clear_has_originalinvoicedate();
+  inline void set_has_originalinvoicerevisionnumber();
+  inline void clear_has_originalinvoicerevisionnumber();
+  inline void set_has_originalinvoicerevisiondate();
+  inline void clear_has_originalinvoicerevisiondate();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* totalinc_;
+  ::std::string* totaldec_;
+  ::std::string* vatinc_;
+  int documentstatus_;
+  ::google::protobuf::int32 currency_;
+  ::std::string* vatdec_;
+  ::std::string* grounds_;
+  ::std::string* documentfunction_;
+  ::google::protobuf::int64 confirmationdatetimeticks_;
+  ::std::string* originalinvoicenumber_;
+  ::std::string* originalinvoicedate_;
+  ::std::string* originalinvoicerevisionnumber_;
+  ::std::string* originalinvoicerevisiondate_;
+  ::google::protobuf::int32 invoiceamendmentflags_;
+  friend void  protobuf_AddDesc_Documents_2fUniversalTransferDocument_2eproto();
+  friend void protobuf_AssignDesc_Documents_2fUniversalTransferDocument_2eproto();
+  friend void protobuf_ShutdownFile_Documents_2fUniversalTransferDocument_2eproto();
+
+  void InitAsDefaultInstance();
+  static UniversalCorrectionDocumentMetadata* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class UniversalCorrectionDocumentRevisionMetadata : public ::google::protobuf::Message {
+ public:
+  UniversalCorrectionDocumentRevisionMetadata();
+  virtual ~UniversalCorrectionDocumentRevisionMetadata();
+
+  UniversalCorrectionDocumentRevisionMetadata(const UniversalCorrectionDocumentRevisionMetadata& from);
+
+  inline UniversalCorrectionDocumentRevisionMetadata& operator=(const UniversalCorrectionDocumentRevisionMetadata& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const UniversalCorrectionDocumentRevisionMetadata& default_instance();
+
+  void Swap(UniversalCorrectionDocumentRevisionMetadata* other);
+
+  // implements Message ----------------------------------------------
+
+  UniversalCorrectionDocumentRevisionMetadata* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const UniversalCorrectionDocumentRevisionMetadata& from);
+  void MergeFrom(const UniversalCorrectionDocumentRevisionMetadata& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentStatus DocumentStatus = 1;
+  inline bool has_documentstatus() const;
+  inline void clear_documentstatus();
+  static const int kDocumentStatusFieldNumber = 1;
+  inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentStatus documentstatus() const;
+  inline void set_documentstatus(::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentStatus value);
+
+  // required string TotalInc = 2;
+  inline bool has_totalinc() const;
+  inline void clear_totalinc();
+  static const int kTotalIncFieldNumber = 2;
+  inline const ::std::string& totalinc() const;
+  inline void set_totalinc(const ::std::string& value);
+  inline void set_totalinc(const char* value);
+  inline void set_totalinc(const char* value, size_t size);
+  inline ::std::string* mutable_totalinc();
+  inline ::std::string* release_totalinc();
+  inline void set_allocated_totalinc(::std::string* totalinc);
+
+  // required string TotalDec = 3;
+  inline bool has_totaldec() const;
+  inline void clear_totaldec();
+  static const int kTotalDecFieldNumber = 3;
+  inline const ::std::string& totaldec() const;
+  inline void set_totaldec(const ::std::string& value);
+  inline void set_totaldec(const char* value);
+  inline void set_totaldec(const char* value, size_t size);
+  inline ::std::string* mutable_totaldec();
+  inline ::std::string* release_totaldec();
+  inline void set_allocated_totaldec(::std::string* totaldec);
+
+  // required string VatInc = 4;
+  inline bool has_vatinc() const;
+  inline void clear_vatinc();
+  static const int kVatIncFieldNumber = 4;
+  inline const ::std::string& vatinc() const;
+  inline void set_vatinc(const ::std::string& value);
+  inline void set_vatinc(const char* value);
+  inline void set_vatinc(const char* value, size_t size);
+  inline ::std::string* mutable_vatinc();
+  inline ::std::string* release_vatinc();
+  inline void set_allocated_vatinc(::std::string* vatinc);
+
+  // required string VatDec = 5;
+  inline bool has_vatdec() const;
+  inline void clear_vatdec();
+  static const int kVatDecFieldNumber = 5;
+  inline const ::std::string& vatdec() const;
+  inline void set_vatdec(const ::std::string& value);
+  inline void set_vatdec(const char* value);
+  inline void set_vatdec(const char* value, size_t size);
+  inline ::std::string* mutable_vatdec();
+  inline ::std::string* release_vatdec();
+  inline void set_allocated_vatdec(::std::string* vatdec);
+
+  // optional string Grounds = 6;
+  inline bool has_grounds() const;
+  inline void clear_grounds();
+  static const int kGroundsFieldNumber = 6;
+  inline const ::std::string& grounds() const;
+  inline void set_grounds(const ::std::string& value);
+  inline void set_grounds(const char* value);
+  inline void set_grounds(const char* value, size_t size);
+  inline ::std::string* mutable_grounds();
+  inline ::std::string* release_grounds();
+  inline void set_allocated_grounds(::std::string* grounds);
+
+  // required string DocumentFunction = 7;
+  inline bool has_documentfunction() const;
+  inline void clear_documentfunction();
+  static const int kDocumentFunctionFieldNumber = 7;
+  inline const ::std::string& documentfunction() const;
+  inline void set_documentfunction(const ::std::string& value);
+  inline void set_documentfunction(const char* value);
+  inline void set_documentfunction(const char* value, size_t size);
+  inline ::std::string* mutable_documentfunction();
+  inline ::std::string* release_documentfunction();
+  inline void set_allocated_documentfunction(::std::string* documentfunction);
+
+  // required int32 Currency = 8;
+  inline bool has_currency() const;
+  inline void clear_currency();
+  static const int kCurrencyFieldNumber = 8;
+  inline ::google::protobuf::int32 currency() const;
+  inline void set_currency(::google::protobuf::int32 value);
+
+  // required sfixed64 ConfirmationDateTimeTicks = 9;
+  inline bool has_confirmationdatetimeticks() const;
+  inline void clear_confirmationdatetimeticks();
+  static const int kConfirmationDateTimeTicksFieldNumber = 9;
+  inline ::google::protobuf::int64 confirmationdatetimeticks() const;
+  inline void set_confirmationdatetimeticks(::google::protobuf::int64 value);
+
+  // required int32 InvoiceAmendmentFlags = 10;
+  inline bool has_invoiceamendmentflags() const;
+  inline void clear_invoiceamendmentflags();
+  static const int kInvoiceAmendmentFlagsFieldNumber = 10;
+  inline ::google::protobuf::int32 invoiceamendmentflags() const;
+  inline void set_invoiceamendmentflags(::google::protobuf::int32 value);
+
+  // required string OriginalInvoiceNumber = 11;
+  inline bool has_originalinvoicenumber() const;
+  inline void clear_originalinvoicenumber();
+  static const int kOriginalInvoiceNumberFieldNumber = 11;
+  inline const ::std::string& originalinvoicenumber() const;
+  inline void set_originalinvoicenumber(const ::std::string& value);
+  inline void set_originalinvoicenumber(const char* value);
+  inline void set_originalinvoicenumber(const char* value, size_t size);
+  inline ::std::string* mutable_originalinvoicenumber();
+  inline ::std::string* release_originalinvoicenumber();
+  inline void set_allocated_originalinvoicenumber(::std::string* originalinvoicenumber);
+
+  // required string OriginalInvoiceDate = 12;
+  inline bool has_originalinvoicedate() const;
+  inline void clear_originalinvoicedate();
+  static const int kOriginalInvoiceDateFieldNumber = 12;
+  inline const ::std::string& originalinvoicedate() const;
+  inline void set_originalinvoicedate(const ::std::string& value);
+  inline void set_originalinvoicedate(const char* value);
+  inline void set_originalinvoicedate(const char* value, size_t size);
+  inline ::std::string* mutable_originalinvoicedate();
+  inline ::std::string* release_originalinvoicedate();
+  inline void set_allocated_originalinvoicedate(::std::string* originalinvoicedate);
+
+  // optional string OriginalInvoiceRevisionNumber = 13;
+  inline bool has_originalinvoicerevisionnumber() const;
+  inline void clear_originalinvoicerevisionnumber();
+  static const int kOriginalInvoiceRevisionNumberFieldNumber = 13;
+  inline const ::std::string& originalinvoicerevisionnumber() const;
+  inline void set_originalinvoicerevisionnumber(const ::std::string& value);
+  inline void set_originalinvoicerevisionnumber(const char* value);
+  inline void set_originalinvoicerevisionnumber(const char* value, size_t size);
+  inline ::std::string* mutable_originalinvoicerevisionnumber();
+  inline ::std::string* release_originalinvoicerevisionnumber();
+  inline void set_allocated_originalinvoicerevisionnumber(::std::string* originalinvoicerevisionnumber);
+
+  // optional string OriginalInvoiceRevisionDate = 14;
+  inline bool has_originalinvoicerevisiondate() const;
+  inline void clear_originalinvoicerevisiondate();
+  static const int kOriginalInvoiceRevisionDateFieldNumber = 14;
+  inline const ::std::string& originalinvoicerevisiondate() const;
+  inline void set_originalinvoicerevisiondate(const ::std::string& value);
+  inline void set_originalinvoicerevisiondate(const char* value);
+  inline void set_originalinvoicerevisiondate(const char* value, size_t size);
+  inline ::std::string* mutable_originalinvoicerevisiondate();
+  inline ::std::string* release_originalinvoicerevisiondate();
+  inline void set_allocated_originalinvoicerevisiondate(::std::string* originalinvoicerevisiondate);
+
+  // required string OriginalInvoiceCorrectionNumber = 15;
+  inline bool has_originalinvoicecorrectionnumber() const;
+  inline void clear_originalinvoicecorrectionnumber();
+  static const int kOriginalInvoiceCorrectionNumberFieldNumber = 15;
+  inline const ::std::string& originalinvoicecorrectionnumber() const;
+  inline void set_originalinvoicecorrectionnumber(const ::std::string& value);
+  inline void set_originalinvoicecorrectionnumber(const char* value);
+  inline void set_originalinvoicecorrectionnumber(const char* value, size_t size);
+  inline ::std::string* mutable_originalinvoicecorrectionnumber();
+  inline ::std::string* release_originalinvoicecorrectionnumber();
+  inline void set_allocated_originalinvoicecorrectionnumber(::std::string* originalinvoicecorrectionnumber);
+
+  // required string OriginalInvoiceCorrectionDate = 16;
+  inline bool has_originalinvoicecorrectiondate() const;
+  inline void clear_originalinvoicecorrectiondate();
+  static const int kOriginalInvoiceCorrectionDateFieldNumber = 16;
+  inline const ::std::string& originalinvoicecorrectiondate() const;
+  inline void set_originalinvoicecorrectiondate(const ::std::string& value);
+  inline void set_originalinvoicecorrectiondate(const char* value);
+  inline void set_originalinvoicecorrectiondate(const char* value, size_t size);
+  inline ::std::string* mutable_originalinvoicecorrectiondate();
+  inline ::std::string* release_originalinvoicecorrectiondate();
+  inline void set_allocated_originalinvoicecorrectiondate(::std::string* originalinvoicecorrectiondate);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata)
+ private:
+  inline void set_has_documentstatus();
+  inline void clear_has_documentstatus();
+  inline void set_has_totalinc();
+  inline void clear_has_totalinc();
+  inline void set_has_totaldec();
+  inline void clear_has_totaldec();
+  inline void set_has_vatinc();
+  inline void clear_has_vatinc();
+  inline void set_has_vatdec();
+  inline void clear_has_vatdec();
+  inline void set_has_grounds();
+  inline void clear_has_grounds();
+  inline void set_has_documentfunction();
+  inline void clear_has_documentfunction();
+  inline void set_has_currency();
+  inline void clear_has_currency();
+  inline void set_has_confirmationdatetimeticks();
+  inline void clear_has_confirmationdatetimeticks();
+  inline void set_has_invoiceamendmentflags();
+  inline void clear_has_invoiceamendmentflags();
+  inline void set_has_originalinvoicenumber();
+  inline void clear_has_originalinvoicenumber();
+  inline void set_has_originalinvoicedate();
+  inline void clear_has_originalinvoicedate();
+  inline void set_has_originalinvoicerevisionnumber();
+  inline void clear_has_originalinvoicerevisionnumber();
+  inline void set_has_originalinvoicerevisiondate();
+  inline void clear_has_originalinvoicerevisiondate();
+  inline void set_has_originalinvoicecorrectionnumber();
+  inline void clear_has_originalinvoicecorrectionnumber();
+  inline void set_has_originalinvoicecorrectiondate();
+  inline void clear_has_originalinvoicecorrectiondate();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* totalinc_;
+  ::std::string* totaldec_;
+  ::std::string* vatinc_;
+  int documentstatus_;
+  ::google::protobuf::int32 currency_;
+  ::std::string* vatdec_;
+  ::std::string* grounds_;
+  ::std::string* documentfunction_;
+  ::google::protobuf::int64 confirmationdatetimeticks_;
+  ::std::string* originalinvoicenumber_;
+  ::std::string* originalinvoicedate_;
+  ::std::string* originalinvoicerevisionnumber_;
+  ::std::string* originalinvoicerevisiondate_;
+  ::std::string* originalinvoicecorrectionnumber_;
+  ::std::string* originalinvoicecorrectiondate_;
+  ::google::protobuf::int32 invoiceamendmentflags_;
+  friend void  protobuf_AddDesc_Documents_2fUniversalTransferDocument_2eproto();
+  friend void protobuf_AssignDesc_Documents_2fUniversalTransferDocument_2eproto();
+  friend void protobuf_ShutdownFile_Documents_2fUniversalTransferDocument_2eproto();
+
+  void InitAsDefaultInstance();
+  static UniversalCorrectionDocumentRevisionMetadata* default_instance_;
 };
 // ===================================================================
 
@@ -588,29 +1352,2483 @@ inline void UniversalTransferDocumentMetadata::set_currency(::google::protobuf::
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentMetadata.Currency)
 }
 
-// optional .Diadoc.Api.Proto.Documents.ReceiptStatus ReceiptStatus = 7 [default = UnknownReceiptStatus];
-inline bool UniversalTransferDocumentMetadata::has_receiptstatus() const {
+// optional sfixed64 ConfirmationDateTimeTicks = 8;
+inline bool UniversalTransferDocumentMetadata::has_confirmationdatetimeticks() const {
   return (_has_bits_[0] & 0x00000040u) != 0;
 }
-inline void UniversalTransferDocumentMetadata::set_has_receiptstatus() {
+inline void UniversalTransferDocumentMetadata::set_has_confirmationdatetimeticks() {
   _has_bits_[0] |= 0x00000040u;
 }
-inline void UniversalTransferDocumentMetadata::clear_has_receiptstatus() {
+inline void UniversalTransferDocumentMetadata::clear_has_confirmationdatetimeticks() {
   _has_bits_[0] &= ~0x00000040u;
 }
-inline void UniversalTransferDocumentMetadata::clear_receiptstatus() {
-  receiptstatus_ = 0;
-  clear_has_receiptstatus();
+inline void UniversalTransferDocumentMetadata::clear_confirmationdatetimeticks() {
+  confirmationdatetimeticks_ = GOOGLE_LONGLONG(0);
+  clear_has_confirmationdatetimeticks();
 }
-inline ::Diadoc::Api::Proto::Documents::ReceiptStatus UniversalTransferDocumentMetadata::receiptstatus() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentMetadata.ReceiptStatus)
-  return static_cast< ::Diadoc::Api::Proto::Documents::ReceiptStatus >(receiptstatus_);
+inline ::google::protobuf::int64 UniversalTransferDocumentMetadata::confirmationdatetimeticks() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentMetadata.ConfirmationDateTimeTicks)
+  return confirmationdatetimeticks_;
 }
-inline void UniversalTransferDocumentMetadata::set_receiptstatus(::Diadoc::Api::Proto::Documents::ReceiptStatus value) {
-  assert(::Diadoc::Api::Proto::Documents::ReceiptStatus_IsValid(value));
-  set_has_receiptstatus();
-  receiptstatus_ = value;
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentMetadata.ReceiptStatus)
+inline void UniversalTransferDocumentMetadata::set_confirmationdatetimeticks(::google::protobuf::int64 value) {
+  set_has_confirmationdatetimeticks();
+  confirmationdatetimeticks_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentMetadata.ConfirmationDateTimeTicks)
+}
+
+// optional int32 InvoiceAmendmentFlags = 9;
+inline bool UniversalTransferDocumentMetadata::has_invoiceamendmentflags() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void UniversalTransferDocumentMetadata::set_has_invoiceamendmentflags() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void UniversalTransferDocumentMetadata::clear_has_invoiceamendmentflags() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void UniversalTransferDocumentMetadata::clear_invoiceamendmentflags() {
+  invoiceamendmentflags_ = 0;
+  clear_has_invoiceamendmentflags();
+}
+inline ::google::protobuf::int32 UniversalTransferDocumentMetadata::invoiceamendmentflags() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentMetadata.InvoiceAmendmentFlags)
+  return invoiceamendmentflags_;
+}
+inline void UniversalTransferDocumentMetadata::set_invoiceamendmentflags(::google::protobuf::int32 value) {
+  set_has_invoiceamendmentflags();
+  invoiceamendmentflags_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentMetadata.InvoiceAmendmentFlags)
+}
+
+// -------------------------------------------------------------------
+
+// UniversalTransferDocumentRevisionMetadata
+
+// required .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentStatus DocumentStatus = 1;
+inline bool UniversalTransferDocumentRevisionMetadata::has_documentstatus() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_has_documentstatus() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void UniversalTransferDocumentRevisionMetadata::clear_has_documentstatus() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void UniversalTransferDocumentRevisionMetadata::clear_documentstatus() {
+  documentstatus_ = 0;
+  clear_has_documentstatus();
+}
+inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentStatus UniversalTransferDocumentRevisionMetadata::documentstatus() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.DocumentStatus)
+  return static_cast< ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentStatus >(documentstatus_);
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_documentstatus(::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentStatus value) {
+  assert(::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentStatus_IsValid(value));
+  set_has_documentstatus();
+  documentstatus_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.DocumentStatus)
+}
+
+// required string Total = 2;
+inline bool UniversalTransferDocumentRevisionMetadata::has_total() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_has_total() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void UniversalTransferDocumentRevisionMetadata::clear_has_total() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void UniversalTransferDocumentRevisionMetadata::clear_total() {
+  if (total_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    total_->clear();
+  }
+  clear_has_total();
+}
+inline const ::std::string& UniversalTransferDocumentRevisionMetadata::total() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.Total)
+  return *total_;
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_total(const ::std::string& value) {
+  set_has_total();
+  if (total_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    total_ = new ::std::string;
+  }
+  total_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.Total)
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_total(const char* value) {
+  set_has_total();
+  if (total_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    total_ = new ::std::string;
+  }
+  total_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.Total)
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_total(const char* value, size_t size) {
+  set_has_total();
+  if (total_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    total_ = new ::std::string;
+  }
+  total_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.Total)
+}
+inline ::std::string* UniversalTransferDocumentRevisionMetadata::mutable_total() {
+  set_has_total();
+  if (total_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    total_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.Total)
+  return total_;
+}
+inline ::std::string* UniversalTransferDocumentRevisionMetadata::release_total() {
+  clear_has_total();
+  if (total_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = total_;
+    total_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_allocated_total(::std::string* total) {
+  if (total_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete total_;
+  }
+  if (total) {
+    set_has_total();
+    total_ = total;
+  } else {
+    clear_has_total();
+    total_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.Total)
+}
+
+// optional string Vat = 3;
+inline bool UniversalTransferDocumentRevisionMetadata::has_vat() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_has_vat() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void UniversalTransferDocumentRevisionMetadata::clear_has_vat() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void UniversalTransferDocumentRevisionMetadata::clear_vat() {
+  if (vat_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vat_->clear();
+  }
+  clear_has_vat();
+}
+inline const ::std::string& UniversalTransferDocumentRevisionMetadata::vat() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.Vat)
+  return *vat_;
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_vat(const ::std::string& value) {
+  set_has_vat();
+  if (vat_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vat_ = new ::std::string;
+  }
+  vat_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.Vat)
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_vat(const char* value) {
+  set_has_vat();
+  if (vat_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vat_ = new ::std::string;
+  }
+  vat_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.Vat)
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_vat(const char* value, size_t size) {
+  set_has_vat();
+  if (vat_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vat_ = new ::std::string;
+  }
+  vat_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.Vat)
+}
+inline ::std::string* UniversalTransferDocumentRevisionMetadata::mutable_vat() {
+  set_has_vat();
+  if (vat_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vat_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.Vat)
+  return vat_;
+}
+inline ::std::string* UniversalTransferDocumentRevisionMetadata::release_vat() {
+  clear_has_vat();
+  if (vat_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = vat_;
+    vat_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_allocated_vat(::std::string* vat) {
+  if (vat_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete vat_;
+  }
+  if (vat) {
+    set_has_vat();
+    vat_ = vat;
+  } else {
+    clear_has_vat();
+    vat_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.Vat)
+}
+
+// optional string Grounds = 4;
+inline bool UniversalTransferDocumentRevisionMetadata::has_grounds() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_has_grounds() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void UniversalTransferDocumentRevisionMetadata::clear_has_grounds() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void UniversalTransferDocumentRevisionMetadata::clear_grounds() {
+  if (grounds_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_->clear();
+  }
+  clear_has_grounds();
+}
+inline const ::std::string& UniversalTransferDocumentRevisionMetadata::grounds() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.Grounds)
+  return *grounds_;
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_grounds(const ::std::string& value) {
+  set_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_ = new ::std::string;
+  }
+  grounds_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.Grounds)
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_grounds(const char* value) {
+  set_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_ = new ::std::string;
+  }
+  grounds_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.Grounds)
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_grounds(const char* value, size_t size) {
+  set_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_ = new ::std::string;
+  }
+  grounds_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.Grounds)
+}
+inline ::std::string* UniversalTransferDocumentRevisionMetadata::mutable_grounds() {
+  set_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.Grounds)
+  return grounds_;
+}
+inline ::std::string* UniversalTransferDocumentRevisionMetadata::release_grounds() {
+  clear_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = grounds_;
+    grounds_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_allocated_grounds(::std::string* grounds) {
+  if (grounds_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete grounds_;
+  }
+  if (grounds) {
+    set_has_grounds();
+    grounds_ = grounds;
+  } else {
+    clear_has_grounds();
+    grounds_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.Grounds)
+}
+
+// required string DocumentFunction = 5;
+inline bool UniversalTransferDocumentRevisionMetadata::has_documentfunction() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_has_documentfunction() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void UniversalTransferDocumentRevisionMetadata::clear_has_documentfunction() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void UniversalTransferDocumentRevisionMetadata::clear_documentfunction() {
+  if (documentfunction_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentfunction_->clear();
+  }
+  clear_has_documentfunction();
+}
+inline const ::std::string& UniversalTransferDocumentRevisionMetadata::documentfunction() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.DocumentFunction)
+  return *documentfunction_;
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_documentfunction(const ::std::string& value) {
+  set_has_documentfunction();
+  if (documentfunction_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentfunction_ = new ::std::string;
+  }
+  documentfunction_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.DocumentFunction)
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_documentfunction(const char* value) {
+  set_has_documentfunction();
+  if (documentfunction_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentfunction_ = new ::std::string;
+  }
+  documentfunction_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.DocumentFunction)
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_documentfunction(const char* value, size_t size) {
+  set_has_documentfunction();
+  if (documentfunction_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentfunction_ = new ::std::string;
+  }
+  documentfunction_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.DocumentFunction)
+}
+inline ::std::string* UniversalTransferDocumentRevisionMetadata::mutable_documentfunction() {
+  set_has_documentfunction();
+  if (documentfunction_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentfunction_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.DocumentFunction)
+  return documentfunction_;
+}
+inline ::std::string* UniversalTransferDocumentRevisionMetadata::release_documentfunction() {
+  clear_has_documentfunction();
+  if (documentfunction_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = documentfunction_;
+    documentfunction_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_allocated_documentfunction(::std::string* documentfunction) {
+  if (documentfunction_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete documentfunction_;
+  }
+  if (documentfunction) {
+    set_has_documentfunction();
+    documentfunction_ = documentfunction;
+  } else {
+    clear_has_documentfunction();
+    documentfunction_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.DocumentFunction)
+}
+
+// required int32 Currency = 6;
+inline bool UniversalTransferDocumentRevisionMetadata::has_currency() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_has_currency() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void UniversalTransferDocumentRevisionMetadata::clear_has_currency() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void UniversalTransferDocumentRevisionMetadata::clear_currency() {
+  currency_ = 0;
+  clear_has_currency();
+}
+inline ::google::protobuf::int32 UniversalTransferDocumentRevisionMetadata::currency() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.Currency)
+  return currency_;
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_currency(::google::protobuf::int32 value) {
+  set_has_currency();
+  currency_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.Currency)
+}
+
+// optional sfixed64 ConfirmationDateTimeTicks = 7;
+inline bool UniversalTransferDocumentRevisionMetadata::has_confirmationdatetimeticks() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_has_confirmationdatetimeticks() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void UniversalTransferDocumentRevisionMetadata::clear_has_confirmationdatetimeticks() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void UniversalTransferDocumentRevisionMetadata::clear_confirmationdatetimeticks() {
+  confirmationdatetimeticks_ = GOOGLE_LONGLONG(0);
+  clear_has_confirmationdatetimeticks();
+}
+inline ::google::protobuf::int64 UniversalTransferDocumentRevisionMetadata::confirmationdatetimeticks() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.ConfirmationDateTimeTicks)
+  return confirmationdatetimeticks_;
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_confirmationdatetimeticks(::google::protobuf::int64 value) {
+  set_has_confirmationdatetimeticks();
+  confirmationdatetimeticks_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.ConfirmationDateTimeTicks)
+}
+
+// required int32 InvoiceAmendmentFlags = 8;
+inline bool UniversalTransferDocumentRevisionMetadata::has_invoiceamendmentflags() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_has_invoiceamendmentflags() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void UniversalTransferDocumentRevisionMetadata::clear_has_invoiceamendmentflags() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void UniversalTransferDocumentRevisionMetadata::clear_invoiceamendmentflags() {
+  invoiceamendmentflags_ = 0;
+  clear_has_invoiceamendmentflags();
+}
+inline ::google::protobuf::int32 UniversalTransferDocumentRevisionMetadata::invoiceamendmentflags() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.InvoiceAmendmentFlags)
+  return invoiceamendmentflags_;
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_invoiceamendmentflags(::google::protobuf::int32 value) {
+  set_has_invoiceamendmentflags();
+  invoiceamendmentflags_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.InvoiceAmendmentFlags)
+}
+
+// required string OriginalInvoiceNumber = 9;
+inline bool UniversalTransferDocumentRevisionMetadata::has_originalinvoicenumber() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_has_originalinvoicenumber() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void UniversalTransferDocumentRevisionMetadata::clear_has_originalinvoicenumber() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void UniversalTransferDocumentRevisionMetadata::clear_originalinvoicenumber() {
+  if (originalinvoicenumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicenumber_->clear();
+  }
+  clear_has_originalinvoicenumber();
+}
+inline const ::std::string& UniversalTransferDocumentRevisionMetadata::originalinvoicenumber() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.OriginalInvoiceNumber)
+  return *originalinvoicenumber_;
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_originalinvoicenumber(const ::std::string& value) {
+  set_has_originalinvoicenumber();
+  if (originalinvoicenumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicenumber_ = new ::std::string;
+  }
+  originalinvoicenumber_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.OriginalInvoiceNumber)
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_originalinvoicenumber(const char* value) {
+  set_has_originalinvoicenumber();
+  if (originalinvoicenumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicenumber_ = new ::std::string;
+  }
+  originalinvoicenumber_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.OriginalInvoiceNumber)
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_originalinvoicenumber(const char* value, size_t size) {
+  set_has_originalinvoicenumber();
+  if (originalinvoicenumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicenumber_ = new ::std::string;
+  }
+  originalinvoicenumber_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.OriginalInvoiceNumber)
+}
+inline ::std::string* UniversalTransferDocumentRevisionMetadata::mutable_originalinvoicenumber() {
+  set_has_originalinvoicenumber();
+  if (originalinvoicenumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicenumber_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.OriginalInvoiceNumber)
+  return originalinvoicenumber_;
+}
+inline ::std::string* UniversalTransferDocumentRevisionMetadata::release_originalinvoicenumber() {
+  clear_has_originalinvoicenumber();
+  if (originalinvoicenumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = originalinvoicenumber_;
+    originalinvoicenumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_allocated_originalinvoicenumber(::std::string* originalinvoicenumber) {
+  if (originalinvoicenumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete originalinvoicenumber_;
+  }
+  if (originalinvoicenumber) {
+    set_has_originalinvoicenumber();
+    originalinvoicenumber_ = originalinvoicenumber;
+  } else {
+    clear_has_originalinvoicenumber();
+    originalinvoicenumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.OriginalInvoiceNumber)
+}
+
+// required string OriginalInvoiceDate = 10;
+inline bool UniversalTransferDocumentRevisionMetadata::has_originalinvoicedate() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_has_originalinvoicedate() {
+  _has_bits_[0] |= 0x00000200u;
+}
+inline void UniversalTransferDocumentRevisionMetadata::clear_has_originalinvoicedate() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+inline void UniversalTransferDocumentRevisionMetadata::clear_originalinvoicedate() {
+  if (originalinvoicedate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicedate_->clear();
+  }
+  clear_has_originalinvoicedate();
+}
+inline const ::std::string& UniversalTransferDocumentRevisionMetadata::originalinvoicedate() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.OriginalInvoiceDate)
+  return *originalinvoicedate_;
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_originalinvoicedate(const ::std::string& value) {
+  set_has_originalinvoicedate();
+  if (originalinvoicedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicedate_ = new ::std::string;
+  }
+  originalinvoicedate_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.OriginalInvoiceDate)
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_originalinvoicedate(const char* value) {
+  set_has_originalinvoicedate();
+  if (originalinvoicedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicedate_ = new ::std::string;
+  }
+  originalinvoicedate_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.OriginalInvoiceDate)
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_originalinvoicedate(const char* value, size_t size) {
+  set_has_originalinvoicedate();
+  if (originalinvoicedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicedate_ = new ::std::string;
+  }
+  originalinvoicedate_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.OriginalInvoiceDate)
+}
+inline ::std::string* UniversalTransferDocumentRevisionMetadata::mutable_originalinvoicedate() {
+  set_has_originalinvoicedate();
+  if (originalinvoicedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicedate_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.OriginalInvoiceDate)
+  return originalinvoicedate_;
+}
+inline ::std::string* UniversalTransferDocumentRevisionMetadata::release_originalinvoicedate() {
+  clear_has_originalinvoicedate();
+  if (originalinvoicedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = originalinvoicedate_;
+    originalinvoicedate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalTransferDocumentRevisionMetadata::set_allocated_originalinvoicedate(::std::string* originalinvoicedate) {
+  if (originalinvoicedate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete originalinvoicedate_;
+  }
+  if (originalinvoicedate) {
+    set_has_originalinvoicedate();
+    originalinvoicedate_ = originalinvoicedate;
+  } else {
+    clear_has_originalinvoicedate();
+    originalinvoicedate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentRevisionMetadata.OriginalInvoiceDate)
+}
+
+// -------------------------------------------------------------------
+
+// UniversalCorrectionDocumentMetadata
+
+// required .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentStatus DocumentStatus = 1;
+inline bool UniversalCorrectionDocumentMetadata::has_documentstatus() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void UniversalCorrectionDocumentMetadata::set_has_documentstatus() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_has_documentstatus() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_documentstatus() {
+  documentstatus_ = 0;
+  clear_has_documentstatus();
+}
+inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentStatus UniversalCorrectionDocumentMetadata::documentstatus() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.DocumentStatus)
+  return static_cast< ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentStatus >(documentstatus_);
+}
+inline void UniversalCorrectionDocumentMetadata::set_documentstatus(::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentStatus value) {
+  assert(::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentStatus_IsValid(value));
+  set_has_documentstatus();
+  documentstatus_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.DocumentStatus)
+}
+
+// required string TotalInc = 2;
+inline bool UniversalCorrectionDocumentMetadata::has_totalinc() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void UniversalCorrectionDocumentMetadata::set_has_totalinc() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_has_totalinc() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_totalinc() {
+  if (totalinc_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totalinc_->clear();
+  }
+  clear_has_totalinc();
+}
+inline const ::std::string& UniversalCorrectionDocumentMetadata::totalinc() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.TotalInc)
+  return *totalinc_;
+}
+inline void UniversalCorrectionDocumentMetadata::set_totalinc(const ::std::string& value) {
+  set_has_totalinc();
+  if (totalinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totalinc_ = new ::std::string;
+  }
+  totalinc_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.TotalInc)
+}
+inline void UniversalCorrectionDocumentMetadata::set_totalinc(const char* value) {
+  set_has_totalinc();
+  if (totalinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totalinc_ = new ::std::string;
+  }
+  totalinc_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.TotalInc)
+}
+inline void UniversalCorrectionDocumentMetadata::set_totalinc(const char* value, size_t size) {
+  set_has_totalinc();
+  if (totalinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totalinc_ = new ::std::string;
+  }
+  totalinc_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.TotalInc)
+}
+inline ::std::string* UniversalCorrectionDocumentMetadata::mutable_totalinc() {
+  set_has_totalinc();
+  if (totalinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totalinc_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.TotalInc)
+  return totalinc_;
+}
+inline ::std::string* UniversalCorrectionDocumentMetadata::release_totalinc() {
+  clear_has_totalinc();
+  if (totalinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = totalinc_;
+    totalinc_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentMetadata::set_allocated_totalinc(::std::string* totalinc) {
+  if (totalinc_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete totalinc_;
+  }
+  if (totalinc) {
+    set_has_totalinc();
+    totalinc_ = totalinc;
+  } else {
+    clear_has_totalinc();
+    totalinc_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.TotalInc)
+}
+
+// required string TotalDec = 3;
+inline bool UniversalCorrectionDocumentMetadata::has_totaldec() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void UniversalCorrectionDocumentMetadata::set_has_totaldec() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_has_totaldec() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_totaldec() {
+  if (totaldec_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totaldec_->clear();
+  }
+  clear_has_totaldec();
+}
+inline const ::std::string& UniversalCorrectionDocumentMetadata::totaldec() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.TotalDec)
+  return *totaldec_;
+}
+inline void UniversalCorrectionDocumentMetadata::set_totaldec(const ::std::string& value) {
+  set_has_totaldec();
+  if (totaldec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totaldec_ = new ::std::string;
+  }
+  totaldec_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.TotalDec)
+}
+inline void UniversalCorrectionDocumentMetadata::set_totaldec(const char* value) {
+  set_has_totaldec();
+  if (totaldec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totaldec_ = new ::std::string;
+  }
+  totaldec_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.TotalDec)
+}
+inline void UniversalCorrectionDocumentMetadata::set_totaldec(const char* value, size_t size) {
+  set_has_totaldec();
+  if (totaldec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totaldec_ = new ::std::string;
+  }
+  totaldec_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.TotalDec)
+}
+inline ::std::string* UniversalCorrectionDocumentMetadata::mutable_totaldec() {
+  set_has_totaldec();
+  if (totaldec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totaldec_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.TotalDec)
+  return totaldec_;
+}
+inline ::std::string* UniversalCorrectionDocumentMetadata::release_totaldec() {
+  clear_has_totaldec();
+  if (totaldec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = totaldec_;
+    totaldec_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentMetadata::set_allocated_totaldec(::std::string* totaldec) {
+  if (totaldec_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete totaldec_;
+  }
+  if (totaldec) {
+    set_has_totaldec();
+    totaldec_ = totaldec;
+  } else {
+    clear_has_totaldec();
+    totaldec_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.TotalDec)
+}
+
+// required string VatInc = 4;
+inline bool UniversalCorrectionDocumentMetadata::has_vatinc() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void UniversalCorrectionDocumentMetadata::set_has_vatinc() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_has_vatinc() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_vatinc() {
+  if (vatinc_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatinc_->clear();
+  }
+  clear_has_vatinc();
+}
+inline const ::std::string& UniversalCorrectionDocumentMetadata::vatinc() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.VatInc)
+  return *vatinc_;
+}
+inline void UniversalCorrectionDocumentMetadata::set_vatinc(const ::std::string& value) {
+  set_has_vatinc();
+  if (vatinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatinc_ = new ::std::string;
+  }
+  vatinc_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.VatInc)
+}
+inline void UniversalCorrectionDocumentMetadata::set_vatinc(const char* value) {
+  set_has_vatinc();
+  if (vatinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatinc_ = new ::std::string;
+  }
+  vatinc_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.VatInc)
+}
+inline void UniversalCorrectionDocumentMetadata::set_vatinc(const char* value, size_t size) {
+  set_has_vatinc();
+  if (vatinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatinc_ = new ::std::string;
+  }
+  vatinc_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.VatInc)
+}
+inline ::std::string* UniversalCorrectionDocumentMetadata::mutable_vatinc() {
+  set_has_vatinc();
+  if (vatinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatinc_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.VatInc)
+  return vatinc_;
+}
+inline ::std::string* UniversalCorrectionDocumentMetadata::release_vatinc() {
+  clear_has_vatinc();
+  if (vatinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = vatinc_;
+    vatinc_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentMetadata::set_allocated_vatinc(::std::string* vatinc) {
+  if (vatinc_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete vatinc_;
+  }
+  if (vatinc) {
+    set_has_vatinc();
+    vatinc_ = vatinc;
+  } else {
+    clear_has_vatinc();
+    vatinc_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.VatInc)
+}
+
+// required string VatDec = 5;
+inline bool UniversalCorrectionDocumentMetadata::has_vatdec() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void UniversalCorrectionDocumentMetadata::set_has_vatdec() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_has_vatdec() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_vatdec() {
+  if (vatdec_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatdec_->clear();
+  }
+  clear_has_vatdec();
+}
+inline const ::std::string& UniversalCorrectionDocumentMetadata::vatdec() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.VatDec)
+  return *vatdec_;
+}
+inline void UniversalCorrectionDocumentMetadata::set_vatdec(const ::std::string& value) {
+  set_has_vatdec();
+  if (vatdec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatdec_ = new ::std::string;
+  }
+  vatdec_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.VatDec)
+}
+inline void UniversalCorrectionDocumentMetadata::set_vatdec(const char* value) {
+  set_has_vatdec();
+  if (vatdec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatdec_ = new ::std::string;
+  }
+  vatdec_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.VatDec)
+}
+inline void UniversalCorrectionDocumentMetadata::set_vatdec(const char* value, size_t size) {
+  set_has_vatdec();
+  if (vatdec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatdec_ = new ::std::string;
+  }
+  vatdec_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.VatDec)
+}
+inline ::std::string* UniversalCorrectionDocumentMetadata::mutable_vatdec() {
+  set_has_vatdec();
+  if (vatdec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatdec_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.VatDec)
+  return vatdec_;
+}
+inline ::std::string* UniversalCorrectionDocumentMetadata::release_vatdec() {
+  clear_has_vatdec();
+  if (vatdec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = vatdec_;
+    vatdec_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentMetadata::set_allocated_vatdec(::std::string* vatdec) {
+  if (vatdec_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete vatdec_;
+  }
+  if (vatdec) {
+    set_has_vatdec();
+    vatdec_ = vatdec;
+  } else {
+    clear_has_vatdec();
+    vatdec_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.VatDec)
+}
+
+// optional string Grounds = 6;
+inline bool UniversalCorrectionDocumentMetadata::has_grounds() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void UniversalCorrectionDocumentMetadata::set_has_grounds() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_has_grounds() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_grounds() {
+  if (grounds_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_->clear();
+  }
+  clear_has_grounds();
+}
+inline const ::std::string& UniversalCorrectionDocumentMetadata::grounds() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.Grounds)
+  return *grounds_;
+}
+inline void UniversalCorrectionDocumentMetadata::set_grounds(const ::std::string& value) {
+  set_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_ = new ::std::string;
+  }
+  grounds_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.Grounds)
+}
+inline void UniversalCorrectionDocumentMetadata::set_grounds(const char* value) {
+  set_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_ = new ::std::string;
+  }
+  grounds_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.Grounds)
+}
+inline void UniversalCorrectionDocumentMetadata::set_grounds(const char* value, size_t size) {
+  set_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_ = new ::std::string;
+  }
+  grounds_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.Grounds)
+}
+inline ::std::string* UniversalCorrectionDocumentMetadata::mutable_grounds() {
+  set_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.Grounds)
+  return grounds_;
+}
+inline ::std::string* UniversalCorrectionDocumentMetadata::release_grounds() {
+  clear_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = grounds_;
+    grounds_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentMetadata::set_allocated_grounds(::std::string* grounds) {
+  if (grounds_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete grounds_;
+  }
+  if (grounds) {
+    set_has_grounds();
+    grounds_ = grounds;
+  } else {
+    clear_has_grounds();
+    grounds_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.Grounds)
+}
+
+// required string DocumentFunction = 7;
+inline bool UniversalCorrectionDocumentMetadata::has_documentfunction() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void UniversalCorrectionDocumentMetadata::set_has_documentfunction() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_has_documentfunction() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_documentfunction() {
+  if (documentfunction_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentfunction_->clear();
+  }
+  clear_has_documentfunction();
+}
+inline const ::std::string& UniversalCorrectionDocumentMetadata::documentfunction() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.DocumentFunction)
+  return *documentfunction_;
+}
+inline void UniversalCorrectionDocumentMetadata::set_documentfunction(const ::std::string& value) {
+  set_has_documentfunction();
+  if (documentfunction_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentfunction_ = new ::std::string;
+  }
+  documentfunction_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.DocumentFunction)
+}
+inline void UniversalCorrectionDocumentMetadata::set_documentfunction(const char* value) {
+  set_has_documentfunction();
+  if (documentfunction_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentfunction_ = new ::std::string;
+  }
+  documentfunction_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.DocumentFunction)
+}
+inline void UniversalCorrectionDocumentMetadata::set_documentfunction(const char* value, size_t size) {
+  set_has_documentfunction();
+  if (documentfunction_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentfunction_ = new ::std::string;
+  }
+  documentfunction_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.DocumentFunction)
+}
+inline ::std::string* UniversalCorrectionDocumentMetadata::mutable_documentfunction() {
+  set_has_documentfunction();
+  if (documentfunction_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentfunction_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.DocumentFunction)
+  return documentfunction_;
+}
+inline ::std::string* UniversalCorrectionDocumentMetadata::release_documentfunction() {
+  clear_has_documentfunction();
+  if (documentfunction_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = documentfunction_;
+    documentfunction_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentMetadata::set_allocated_documentfunction(::std::string* documentfunction) {
+  if (documentfunction_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete documentfunction_;
+  }
+  if (documentfunction) {
+    set_has_documentfunction();
+    documentfunction_ = documentfunction;
+  } else {
+    clear_has_documentfunction();
+    documentfunction_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.DocumentFunction)
+}
+
+// required int32 Currency = 8;
+inline bool UniversalCorrectionDocumentMetadata::has_currency() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void UniversalCorrectionDocumentMetadata::set_has_currency() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_has_currency() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_currency() {
+  currency_ = 0;
+  clear_has_currency();
+}
+inline ::google::protobuf::int32 UniversalCorrectionDocumentMetadata::currency() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.Currency)
+  return currency_;
+}
+inline void UniversalCorrectionDocumentMetadata::set_currency(::google::protobuf::int32 value) {
+  set_has_currency();
+  currency_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.Currency)
+}
+
+// required sfixed64 ConfirmationDateTimeTicks = 9;
+inline bool UniversalCorrectionDocumentMetadata::has_confirmationdatetimeticks() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void UniversalCorrectionDocumentMetadata::set_has_confirmationdatetimeticks() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_has_confirmationdatetimeticks() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_confirmationdatetimeticks() {
+  confirmationdatetimeticks_ = GOOGLE_LONGLONG(0);
+  clear_has_confirmationdatetimeticks();
+}
+inline ::google::protobuf::int64 UniversalCorrectionDocumentMetadata::confirmationdatetimeticks() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.ConfirmationDateTimeTicks)
+  return confirmationdatetimeticks_;
+}
+inline void UniversalCorrectionDocumentMetadata::set_confirmationdatetimeticks(::google::protobuf::int64 value) {
+  set_has_confirmationdatetimeticks();
+  confirmationdatetimeticks_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.ConfirmationDateTimeTicks)
+}
+
+// required int32 InvoiceAmendmentFlags = 10;
+inline bool UniversalCorrectionDocumentMetadata::has_invoiceamendmentflags() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+inline void UniversalCorrectionDocumentMetadata::set_has_invoiceamendmentflags() {
+  _has_bits_[0] |= 0x00000200u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_has_invoiceamendmentflags() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_invoiceamendmentflags() {
+  invoiceamendmentflags_ = 0;
+  clear_has_invoiceamendmentflags();
+}
+inline ::google::protobuf::int32 UniversalCorrectionDocumentMetadata::invoiceamendmentflags() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.InvoiceAmendmentFlags)
+  return invoiceamendmentflags_;
+}
+inline void UniversalCorrectionDocumentMetadata::set_invoiceamendmentflags(::google::protobuf::int32 value) {
+  set_has_invoiceamendmentflags();
+  invoiceamendmentflags_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.InvoiceAmendmentFlags)
+}
+
+// required string OriginalInvoiceNumber = 11;
+inline bool UniversalCorrectionDocumentMetadata::has_originalinvoicenumber() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+inline void UniversalCorrectionDocumentMetadata::set_has_originalinvoicenumber() {
+  _has_bits_[0] |= 0x00000400u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_has_originalinvoicenumber() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_originalinvoicenumber() {
+  if (originalinvoicenumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicenumber_->clear();
+  }
+  clear_has_originalinvoicenumber();
+}
+inline const ::std::string& UniversalCorrectionDocumentMetadata::originalinvoicenumber() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceNumber)
+  return *originalinvoicenumber_;
+}
+inline void UniversalCorrectionDocumentMetadata::set_originalinvoicenumber(const ::std::string& value) {
+  set_has_originalinvoicenumber();
+  if (originalinvoicenumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicenumber_ = new ::std::string;
+  }
+  originalinvoicenumber_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceNumber)
+}
+inline void UniversalCorrectionDocumentMetadata::set_originalinvoicenumber(const char* value) {
+  set_has_originalinvoicenumber();
+  if (originalinvoicenumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicenumber_ = new ::std::string;
+  }
+  originalinvoicenumber_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceNumber)
+}
+inline void UniversalCorrectionDocumentMetadata::set_originalinvoicenumber(const char* value, size_t size) {
+  set_has_originalinvoicenumber();
+  if (originalinvoicenumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicenumber_ = new ::std::string;
+  }
+  originalinvoicenumber_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceNumber)
+}
+inline ::std::string* UniversalCorrectionDocumentMetadata::mutable_originalinvoicenumber() {
+  set_has_originalinvoicenumber();
+  if (originalinvoicenumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicenumber_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceNumber)
+  return originalinvoicenumber_;
+}
+inline ::std::string* UniversalCorrectionDocumentMetadata::release_originalinvoicenumber() {
+  clear_has_originalinvoicenumber();
+  if (originalinvoicenumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = originalinvoicenumber_;
+    originalinvoicenumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentMetadata::set_allocated_originalinvoicenumber(::std::string* originalinvoicenumber) {
+  if (originalinvoicenumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete originalinvoicenumber_;
+  }
+  if (originalinvoicenumber) {
+    set_has_originalinvoicenumber();
+    originalinvoicenumber_ = originalinvoicenumber;
+  } else {
+    clear_has_originalinvoicenumber();
+    originalinvoicenumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceNumber)
+}
+
+// required string OriginalInvoiceDate = 12;
+inline bool UniversalCorrectionDocumentMetadata::has_originalinvoicedate() const {
+  return (_has_bits_[0] & 0x00000800u) != 0;
+}
+inline void UniversalCorrectionDocumentMetadata::set_has_originalinvoicedate() {
+  _has_bits_[0] |= 0x00000800u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_has_originalinvoicedate() {
+  _has_bits_[0] &= ~0x00000800u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_originalinvoicedate() {
+  if (originalinvoicedate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicedate_->clear();
+  }
+  clear_has_originalinvoicedate();
+}
+inline const ::std::string& UniversalCorrectionDocumentMetadata::originalinvoicedate() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceDate)
+  return *originalinvoicedate_;
+}
+inline void UniversalCorrectionDocumentMetadata::set_originalinvoicedate(const ::std::string& value) {
+  set_has_originalinvoicedate();
+  if (originalinvoicedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicedate_ = new ::std::string;
+  }
+  originalinvoicedate_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceDate)
+}
+inline void UniversalCorrectionDocumentMetadata::set_originalinvoicedate(const char* value) {
+  set_has_originalinvoicedate();
+  if (originalinvoicedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicedate_ = new ::std::string;
+  }
+  originalinvoicedate_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceDate)
+}
+inline void UniversalCorrectionDocumentMetadata::set_originalinvoicedate(const char* value, size_t size) {
+  set_has_originalinvoicedate();
+  if (originalinvoicedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicedate_ = new ::std::string;
+  }
+  originalinvoicedate_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceDate)
+}
+inline ::std::string* UniversalCorrectionDocumentMetadata::mutable_originalinvoicedate() {
+  set_has_originalinvoicedate();
+  if (originalinvoicedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicedate_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceDate)
+  return originalinvoicedate_;
+}
+inline ::std::string* UniversalCorrectionDocumentMetadata::release_originalinvoicedate() {
+  clear_has_originalinvoicedate();
+  if (originalinvoicedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = originalinvoicedate_;
+    originalinvoicedate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentMetadata::set_allocated_originalinvoicedate(::std::string* originalinvoicedate) {
+  if (originalinvoicedate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete originalinvoicedate_;
+  }
+  if (originalinvoicedate) {
+    set_has_originalinvoicedate();
+    originalinvoicedate_ = originalinvoicedate;
+  } else {
+    clear_has_originalinvoicedate();
+    originalinvoicedate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceDate)
+}
+
+// optional string OriginalInvoiceRevisionNumber = 13;
+inline bool UniversalCorrectionDocumentMetadata::has_originalinvoicerevisionnumber() const {
+  return (_has_bits_[0] & 0x00001000u) != 0;
+}
+inline void UniversalCorrectionDocumentMetadata::set_has_originalinvoicerevisionnumber() {
+  _has_bits_[0] |= 0x00001000u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_has_originalinvoicerevisionnumber() {
+  _has_bits_[0] &= ~0x00001000u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_originalinvoicerevisionnumber() {
+  if (originalinvoicerevisionnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicerevisionnumber_->clear();
+  }
+  clear_has_originalinvoicerevisionnumber();
+}
+inline const ::std::string& UniversalCorrectionDocumentMetadata::originalinvoicerevisionnumber() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceRevisionNumber)
+  return *originalinvoicerevisionnumber_;
+}
+inline void UniversalCorrectionDocumentMetadata::set_originalinvoicerevisionnumber(const ::std::string& value) {
+  set_has_originalinvoicerevisionnumber();
+  if (originalinvoicerevisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicerevisionnumber_ = new ::std::string;
+  }
+  originalinvoicerevisionnumber_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceRevisionNumber)
+}
+inline void UniversalCorrectionDocumentMetadata::set_originalinvoicerevisionnumber(const char* value) {
+  set_has_originalinvoicerevisionnumber();
+  if (originalinvoicerevisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicerevisionnumber_ = new ::std::string;
+  }
+  originalinvoicerevisionnumber_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceRevisionNumber)
+}
+inline void UniversalCorrectionDocumentMetadata::set_originalinvoicerevisionnumber(const char* value, size_t size) {
+  set_has_originalinvoicerevisionnumber();
+  if (originalinvoicerevisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicerevisionnumber_ = new ::std::string;
+  }
+  originalinvoicerevisionnumber_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceRevisionNumber)
+}
+inline ::std::string* UniversalCorrectionDocumentMetadata::mutable_originalinvoicerevisionnumber() {
+  set_has_originalinvoicerevisionnumber();
+  if (originalinvoicerevisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicerevisionnumber_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceRevisionNumber)
+  return originalinvoicerevisionnumber_;
+}
+inline ::std::string* UniversalCorrectionDocumentMetadata::release_originalinvoicerevisionnumber() {
+  clear_has_originalinvoicerevisionnumber();
+  if (originalinvoicerevisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = originalinvoicerevisionnumber_;
+    originalinvoicerevisionnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentMetadata::set_allocated_originalinvoicerevisionnumber(::std::string* originalinvoicerevisionnumber) {
+  if (originalinvoicerevisionnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete originalinvoicerevisionnumber_;
+  }
+  if (originalinvoicerevisionnumber) {
+    set_has_originalinvoicerevisionnumber();
+    originalinvoicerevisionnumber_ = originalinvoicerevisionnumber;
+  } else {
+    clear_has_originalinvoicerevisionnumber();
+    originalinvoicerevisionnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceRevisionNumber)
+}
+
+// optional string OriginalInvoiceRevisionDate = 14;
+inline bool UniversalCorrectionDocumentMetadata::has_originalinvoicerevisiondate() const {
+  return (_has_bits_[0] & 0x00002000u) != 0;
+}
+inline void UniversalCorrectionDocumentMetadata::set_has_originalinvoicerevisiondate() {
+  _has_bits_[0] |= 0x00002000u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_has_originalinvoicerevisiondate() {
+  _has_bits_[0] &= ~0x00002000u;
+}
+inline void UniversalCorrectionDocumentMetadata::clear_originalinvoicerevisiondate() {
+  if (originalinvoicerevisiondate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicerevisiondate_->clear();
+  }
+  clear_has_originalinvoicerevisiondate();
+}
+inline const ::std::string& UniversalCorrectionDocumentMetadata::originalinvoicerevisiondate() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceRevisionDate)
+  return *originalinvoicerevisiondate_;
+}
+inline void UniversalCorrectionDocumentMetadata::set_originalinvoicerevisiondate(const ::std::string& value) {
+  set_has_originalinvoicerevisiondate();
+  if (originalinvoicerevisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicerevisiondate_ = new ::std::string;
+  }
+  originalinvoicerevisiondate_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceRevisionDate)
+}
+inline void UniversalCorrectionDocumentMetadata::set_originalinvoicerevisiondate(const char* value) {
+  set_has_originalinvoicerevisiondate();
+  if (originalinvoicerevisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicerevisiondate_ = new ::std::string;
+  }
+  originalinvoicerevisiondate_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceRevisionDate)
+}
+inline void UniversalCorrectionDocumentMetadata::set_originalinvoicerevisiondate(const char* value, size_t size) {
+  set_has_originalinvoicerevisiondate();
+  if (originalinvoicerevisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicerevisiondate_ = new ::std::string;
+  }
+  originalinvoicerevisiondate_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceRevisionDate)
+}
+inline ::std::string* UniversalCorrectionDocumentMetadata::mutable_originalinvoicerevisiondate() {
+  set_has_originalinvoicerevisiondate();
+  if (originalinvoicerevisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicerevisiondate_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceRevisionDate)
+  return originalinvoicerevisiondate_;
+}
+inline ::std::string* UniversalCorrectionDocumentMetadata::release_originalinvoicerevisiondate() {
+  clear_has_originalinvoicerevisiondate();
+  if (originalinvoicerevisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = originalinvoicerevisiondate_;
+    originalinvoicerevisiondate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentMetadata::set_allocated_originalinvoicerevisiondate(::std::string* originalinvoicerevisiondate) {
+  if (originalinvoicerevisiondate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete originalinvoicerevisiondate_;
+  }
+  if (originalinvoicerevisiondate) {
+    set_has_originalinvoicerevisiondate();
+    originalinvoicerevisiondate_ = originalinvoicerevisiondate;
+  } else {
+    clear_has_originalinvoicerevisiondate();
+    originalinvoicerevisiondate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentMetadata.OriginalInvoiceRevisionDate)
+}
+
+// -------------------------------------------------------------------
+
+// UniversalCorrectionDocumentRevisionMetadata
+
+// required .Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalTransferDocumentStatus DocumentStatus = 1;
+inline bool UniversalCorrectionDocumentRevisionMetadata::has_documentstatus() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_has_documentstatus() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_has_documentstatus() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_documentstatus() {
+  documentstatus_ = 0;
+  clear_has_documentstatus();
+}
+inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentStatus UniversalCorrectionDocumentRevisionMetadata::documentstatus() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.DocumentStatus)
+  return static_cast< ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentStatus >(documentstatus_);
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_documentstatus(::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentStatus value) {
+  assert(::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentStatus_IsValid(value));
+  set_has_documentstatus();
+  documentstatus_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.DocumentStatus)
+}
+
+// required string TotalInc = 2;
+inline bool UniversalCorrectionDocumentRevisionMetadata::has_totalinc() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_has_totalinc() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_has_totalinc() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_totalinc() {
+  if (totalinc_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totalinc_->clear();
+  }
+  clear_has_totalinc();
+}
+inline const ::std::string& UniversalCorrectionDocumentRevisionMetadata::totalinc() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.TotalInc)
+  return *totalinc_;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_totalinc(const ::std::string& value) {
+  set_has_totalinc();
+  if (totalinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totalinc_ = new ::std::string;
+  }
+  totalinc_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.TotalInc)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_totalinc(const char* value) {
+  set_has_totalinc();
+  if (totalinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totalinc_ = new ::std::string;
+  }
+  totalinc_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.TotalInc)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_totalinc(const char* value, size_t size) {
+  set_has_totalinc();
+  if (totalinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totalinc_ = new ::std::string;
+  }
+  totalinc_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.TotalInc)
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::mutable_totalinc() {
+  set_has_totalinc();
+  if (totalinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totalinc_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.TotalInc)
+  return totalinc_;
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::release_totalinc() {
+  clear_has_totalinc();
+  if (totalinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = totalinc_;
+    totalinc_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_allocated_totalinc(::std::string* totalinc) {
+  if (totalinc_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete totalinc_;
+  }
+  if (totalinc) {
+    set_has_totalinc();
+    totalinc_ = totalinc;
+  } else {
+    clear_has_totalinc();
+    totalinc_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.TotalInc)
+}
+
+// required string TotalDec = 3;
+inline bool UniversalCorrectionDocumentRevisionMetadata::has_totaldec() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_has_totaldec() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_has_totaldec() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_totaldec() {
+  if (totaldec_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totaldec_->clear();
+  }
+  clear_has_totaldec();
+}
+inline const ::std::string& UniversalCorrectionDocumentRevisionMetadata::totaldec() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.TotalDec)
+  return *totaldec_;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_totaldec(const ::std::string& value) {
+  set_has_totaldec();
+  if (totaldec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totaldec_ = new ::std::string;
+  }
+  totaldec_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.TotalDec)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_totaldec(const char* value) {
+  set_has_totaldec();
+  if (totaldec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totaldec_ = new ::std::string;
+  }
+  totaldec_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.TotalDec)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_totaldec(const char* value, size_t size) {
+  set_has_totaldec();
+  if (totaldec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totaldec_ = new ::std::string;
+  }
+  totaldec_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.TotalDec)
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::mutable_totaldec() {
+  set_has_totaldec();
+  if (totaldec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    totaldec_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.TotalDec)
+  return totaldec_;
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::release_totaldec() {
+  clear_has_totaldec();
+  if (totaldec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = totaldec_;
+    totaldec_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_allocated_totaldec(::std::string* totaldec) {
+  if (totaldec_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete totaldec_;
+  }
+  if (totaldec) {
+    set_has_totaldec();
+    totaldec_ = totaldec;
+  } else {
+    clear_has_totaldec();
+    totaldec_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.TotalDec)
+}
+
+// required string VatInc = 4;
+inline bool UniversalCorrectionDocumentRevisionMetadata::has_vatinc() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_has_vatinc() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_has_vatinc() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_vatinc() {
+  if (vatinc_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatinc_->clear();
+  }
+  clear_has_vatinc();
+}
+inline const ::std::string& UniversalCorrectionDocumentRevisionMetadata::vatinc() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.VatInc)
+  return *vatinc_;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_vatinc(const ::std::string& value) {
+  set_has_vatinc();
+  if (vatinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatinc_ = new ::std::string;
+  }
+  vatinc_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.VatInc)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_vatinc(const char* value) {
+  set_has_vatinc();
+  if (vatinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatinc_ = new ::std::string;
+  }
+  vatinc_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.VatInc)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_vatinc(const char* value, size_t size) {
+  set_has_vatinc();
+  if (vatinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatinc_ = new ::std::string;
+  }
+  vatinc_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.VatInc)
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::mutable_vatinc() {
+  set_has_vatinc();
+  if (vatinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatinc_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.VatInc)
+  return vatinc_;
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::release_vatinc() {
+  clear_has_vatinc();
+  if (vatinc_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = vatinc_;
+    vatinc_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_allocated_vatinc(::std::string* vatinc) {
+  if (vatinc_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete vatinc_;
+  }
+  if (vatinc) {
+    set_has_vatinc();
+    vatinc_ = vatinc;
+  } else {
+    clear_has_vatinc();
+    vatinc_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.VatInc)
+}
+
+// required string VatDec = 5;
+inline bool UniversalCorrectionDocumentRevisionMetadata::has_vatdec() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_has_vatdec() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_has_vatdec() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_vatdec() {
+  if (vatdec_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatdec_->clear();
+  }
+  clear_has_vatdec();
+}
+inline const ::std::string& UniversalCorrectionDocumentRevisionMetadata::vatdec() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.VatDec)
+  return *vatdec_;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_vatdec(const ::std::string& value) {
+  set_has_vatdec();
+  if (vatdec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatdec_ = new ::std::string;
+  }
+  vatdec_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.VatDec)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_vatdec(const char* value) {
+  set_has_vatdec();
+  if (vatdec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatdec_ = new ::std::string;
+  }
+  vatdec_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.VatDec)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_vatdec(const char* value, size_t size) {
+  set_has_vatdec();
+  if (vatdec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatdec_ = new ::std::string;
+  }
+  vatdec_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.VatDec)
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::mutable_vatdec() {
+  set_has_vatdec();
+  if (vatdec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    vatdec_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.VatDec)
+  return vatdec_;
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::release_vatdec() {
+  clear_has_vatdec();
+  if (vatdec_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = vatdec_;
+    vatdec_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_allocated_vatdec(::std::string* vatdec) {
+  if (vatdec_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete vatdec_;
+  }
+  if (vatdec) {
+    set_has_vatdec();
+    vatdec_ = vatdec;
+  } else {
+    clear_has_vatdec();
+    vatdec_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.VatDec)
+}
+
+// optional string Grounds = 6;
+inline bool UniversalCorrectionDocumentRevisionMetadata::has_grounds() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_has_grounds() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_has_grounds() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_grounds() {
+  if (grounds_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_->clear();
+  }
+  clear_has_grounds();
+}
+inline const ::std::string& UniversalCorrectionDocumentRevisionMetadata::grounds() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.Grounds)
+  return *grounds_;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_grounds(const ::std::string& value) {
+  set_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_ = new ::std::string;
+  }
+  grounds_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.Grounds)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_grounds(const char* value) {
+  set_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_ = new ::std::string;
+  }
+  grounds_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.Grounds)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_grounds(const char* value, size_t size) {
+  set_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_ = new ::std::string;
+  }
+  grounds_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.Grounds)
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::mutable_grounds() {
+  set_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    grounds_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.Grounds)
+  return grounds_;
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::release_grounds() {
+  clear_has_grounds();
+  if (grounds_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = grounds_;
+    grounds_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_allocated_grounds(::std::string* grounds) {
+  if (grounds_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete grounds_;
+  }
+  if (grounds) {
+    set_has_grounds();
+    grounds_ = grounds;
+  } else {
+    clear_has_grounds();
+    grounds_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.Grounds)
+}
+
+// required string DocumentFunction = 7;
+inline bool UniversalCorrectionDocumentRevisionMetadata::has_documentfunction() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_has_documentfunction() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_has_documentfunction() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_documentfunction() {
+  if (documentfunction_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentfunction_->clear();
+  }
+  clear_has_documentfunction();
+}
+inline const ::std::string& UniversalCorrectionDocumentRevisionMetadata::documentfunction() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.DocumentFunction)
+  return *documentfunction_;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_documentfunction(const ::std::string& value) {
+  set_has_documentfunction();
+  if (documentfunction_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentfunction_ = new ::std::string;
+  }
+  documentfunction_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.DocumentFunction)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_documentfunction(const char* value) {
+  set_has_documentfunction();
+  if (documentfunction_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentfunction_ = new ::std::string;
+  }
+  documentfunction_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.DocumentFunction)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_documentfunction(const char* value, size_t size) {
+  set_has_documentfunction();
+  if (documentfunction_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentfunction_ = new ::std::string;
+  }
+  documentfunction_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.DocumentFunction)
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::mutable_documentfunction() {
+  set_has_documentfunction();
+  if (documentfunction_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentfunction_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.DocumentFunction)
+  return documentfunction_;
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::release_documentfunction() {
+  clear_has_documentfunction();
+  if (documentfunction_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = documentfunction_;
+    documentfunction_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_allocated_documentfunction(::std::string* documentfunction) {
+  if (documentfunction_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete documentfunction_;
+  }
+  if (documentfunction) {
+    set_has_documentfunction();
+    documentfunction_ = documentfunction;
+  } else {
+    clear_has_documentfunction();
+    documentfunction_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.DocumentFunction)
+}
+
+// required int32 Currency = 8;
+inline bool UniversalCorrectionDocumentRevisionMetadata::has_currency() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_has_currency() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_has_currency() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_currency() {
+  currency_ = 0;
+  clear_has_currency();
+}
+inline ::google::protobuf::int32 UniversalCorrectionDocumentRevisionMetadata::currency() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.Currency)
+  return currency_;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_currency(::google::protobuf::int32 value) {
+  set_has_currency();
+  currency_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.Currency)
+}
+
+// required sfixed64 ConfirmationDateTimeTicks = 9;
+inline bool UniversalCorrectionDocumentRevisionMetadata::has_confirmationdatetimeticks() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_has_confirmationdatetimeticks() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_has_confirmationdatetimeticks() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_confirmationdatetimeticks() {
+  confirmationdatetimeticks_ = GOOGLE_LONGLONG(0);
+  clear_has_confirmationdatetimeticks();
+}
+inline ::google::protobuf::int64 UniversalCorrectionDocumentRevisionMetadata::confirmationdatetimeticks() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.ConfirmationDateTimeTicks)
+  return confirmationdatetimeticks_;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_confirmationdatetimeticks(::google::protobuf::int64 value) {
+  set_has_confirmationdatetimeticks();
+  confirmationdatetimeticks_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.ConfirmationDateTimeTicks)
+}
+
+// required int32 InvoiceAmendmentFlags = 10;
+inline bool UniversalCorrectionDocumentRevisionMetadata::has_invoiceamendmentflags() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_has_invoiceamendmentflags() {
+  _has_bits_[0] |= 0x00000200u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_has_invoiceamendmentflags() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_invoiceamendmentflags() {
+  invoiceamendmentflags_ = 0;
+  clear_has_invoiceamendmentflags();
+}
+inline ::google::protobuf::int32 UniversalCorrectionDocumentRevisionMetadata::invoiceamendmentflags() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.InvoiceAmendmentFlags)
+  return invoiceamendmentflags_;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_invoiceamendmentflags(::google::protobuf::int32 value) {
+  set_has_invoiceamendmentflags();
+  invoiceamendmentflags_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.InvoiceAmendmentFlags)
+}
+
+// required string OriginalInvoiceNumber = 11;
+inline bool UniversalCorrectionDocumentRevisionMetadata::has_originalinvoicenumber() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_has_originalinvoicenumber() {
+  _has_bits_[0] |= 0x00000400u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_has_originalinvoicenumber() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_originalinvoicenumber() {
+  if (originalinvoicenumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicenumber_->clear();
+  }
+  clear_has_originalinvoicenumber();
+}
+inline const ::std::string& UniversalCorrectionDocumentRevisionMetadata::originalinvoicenumber() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceNumber)
+  return *originalinvoicenumber_;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_originalinvoicenumber(const ::std::string& value) {
+  set_has_originalinvoicenumber();
+  if (originalinvoicenumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicenumber_ = new ::std::string;
+  }
+  originalinvoicenumber_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceNumber)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_originalinvoicenumber(const char* value) {
+  set_has_originalinvoicenumber();
+  if (originalinvoicenumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicenumber_ = new ::std::string;
+  }
+  originalinvoicenumber_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceNumber)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_originalinvoicenumber(const char* value, size_t size) {
+  set_has_originalinvoicenumber();
+  if (originalinvoicenumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicenumber_ = new ::std::string;
+  }
+  originalinvoicenumber_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceNumber)
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::mutable_originalinvoicenumber() {
+  set_has_originalinvoicenumber();
+  if (originalinvoicenumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicenumber_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceNumber)
+  return originalinvoicenumber_;
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::release_originalinvoicenumber() {
+  clear_has_originalinvoicenumber();
+  if (originalinvoicenumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = originalinvoicenumber_;
+    originalinvoicenumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_allocated_originalinvoicenumber(::std::string* originalinvoicenumber) {
+  if (originalinvoicenumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete originalinvoicenumber_;
+  }
+  if (originalinvoicenumber) {
+    set_has_originalinvoicenumber();
+    originalinvoicenumber_ = originalinvoicenumber;
+  } else {
+    clear_has_originalinvoicenumber();
+    originalinvoicenumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceNumber)
+}
+
+// required string OriginalInvoiceDate = 12;
+inline bool UniversalCorrectionDocumentRevisionMetadata::has_originalinvoicedate() const {
+  return (_has_bits_[0] & 0x00000800u) != 0;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_has_originalinvoicedate() {
+  _has_bits_[0] |= 0x00000800u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_has_originalinvoicedate() {
+  _has_bits_[0] &= ~0x00000800u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_originalinvoicedate() {
+  if (originalinvoicedate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicedate_->clear();
+  }
+  clear_has_originalinvoicedate();
+}
+inline const ::std::string& UniversalCorrectionDocumentRevisionMetadata::originalinvoicedate() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceDate)
+  return *originalinvoicedate_;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_originalinvoicedate(const ::std::string& value) {
+  set_has_originalinvoicedate();
+  if (originalinvoicedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicedate_ = new ::std::string;
+  }
+  originalinvoicedate_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceDate)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_originalinvoicedate(const char* value) {
+  set_has_originalinvoicedate();
+  if (originalinvoicedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicedate_ = new ::std::string;
+  }
+  originalinvoicedate_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceDate)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_originalinvoicedate(const char* value, size_t size) {
+  set_has_originalinvoicedate();
+  if (originalinvoicedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicedate_ = new ::std::string;
+  }
+  originalinvoicedate_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceDate)
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::mutable_originalinvoicedate() {
+  set_has_originalinvoicedate();
+  if (originalinvoicedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicedate_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceDate)
+  return originalinvoicedate_;
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::release_originalinvoicedate() {
+  clear_has_originalinvoicedate();
+  if (originalinvoicedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = originalinvoicedate_;
+    originalinvoicedate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_allocated_originalinvoicedate(::std::string* originalinvoicedate) {
+  if (originalinvoicedate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete originalinvoicedate_;
+  }
+  if (originalinvoicedate) {
+    set_has_originalinvoicedate();
+    originalinvoicedate_ = originalinvoicedate;
+  } else {
+    clear_has_originalinvoicedate();
+    originalinvoicedate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceDate)
+}
+
+// optional string OriginalInvoiceRevisionNumber = 13;
+inline bool UniversalCorrectionDocumentRevisionMetadata::has_originalinvoicerevisionnumber() const {
+  return (_has_bits_[0] & 0x00001000u) != 0;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_has_originalinvoicerevisionnumber() {
+  _has_bits_[0] |= 0x00001000u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_has_originalinvoicerevisionnumber() {
+  _has_bits_[0] &= ~0x00001000u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_originalinvoicerevisionnumber() {
+  if (originalinvoicerevisionnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicerevisionnumber_->clear();
+  }
+  clear_has_originalinvoicerevisionnumber();
+}
+inline const ::std::string& UniversalCorrectionDocumentRevisionMetadata::originalinvoicerevisionnumber() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceRevisionNumber)
+  return *originalinvoicerevisionnumber_;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_originalinvoicerevisionnumber(const ::std::string& value) {
+  set_has_originalinvoicerevisionnumber();
+  if (originalinvoicerevisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicerevisionnumber_ = new ::std::string;
+  }
+  originalinvoicerevisionnumber_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceRevisionNumber)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_originalinvoicerevisionnumber(const char* value) {
+  set_has_originalinvoicerevisionnumber();
+  if (originalinvoicerevisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicerevisionnumber_ = new ::std::string;
+  }
+  originalinvoicerevisionnumber_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceRevisionNumber)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_originalinvoicerevisionnumber(const char* value, size_t size) {
+  set_has_originalinvoicerevisionnumber();
+  if (originalinvoicerevisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicerevisionnumber_ = new ::std::string;
+  }
+  originalinvoicerevisionnumber_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceRevisionNumber)
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::mutable_originalinvoicerevisionnumber() {
+  set_has_originalinvoicerevisionnumber();
+  if (originalinvoicerevisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicerevisionnumber_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceRevisionNumber)
+  return originalinvoicerevisionnumber_;
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::release_originalinvoicerevisionnumber() {
+  clear_has_originalinvoicerevisionnumber();
+  if (originalinvoicerevisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = originalinvoicerevisionnumber_;
+    originalinvoicerevisionnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_allocated_originalinvoicerevisionnumber(::std::string* originalinvoicerevisionnumber) {
+  if (originalinvoicerevisionnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete originalinvoicerevisionnumber_;
+  }
+  if (originalinvoicerevisionnumber) {
+    set_has_originalinvoicerevisionnumber();
+    originalinvoicerevisionnumber_ = originalinvoicerevisionnumber;
+  } else {
+    clear_has_originalinvoicerevisionnumber();
+    originalinvoicerevisionnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceRevisionNumber)
+}
+
+// optional string OriginalInvoiceRevisionDate = 14;
+inline bool UniversalCorrectionDocumentRevisionMetadata::has_originalinvoicerevisiondate() const {
+  return (_has_bits_[0] & 0x00002000u) != 0;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_has_originalinvoicerevisiondate() {
+  _has_bits_[0] |= 0x00002000u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_has_originalinvoicerevisiondate() {
+  _has_bits_[0] &= ~0x00002000u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_originalinvoicerevisiondate() {
+  if (originalinvoicerevisiondate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicerevisiondate_->clear();
+  }
+  clear_has_originalinvoicerevisiondate();
+}
+inline const ::std::string& UniversalCorrectionDocumentRevisionMetadata::originalinvoicerevisiondate() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceRevisionDate)
+  return *originalinvoicerevisiondate_;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_originalinvoicerevisiondate(const ::std::string& value) {
+  set_has_originalinvoicerevisiondate();
+  if (originalinvoicerevisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicerevisiondate_ = new ::std::string;
+  }
+  originalinvoicerevisiondate_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceRevisionDate)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_originalinvoicerevisiondate(const char* value) {
+  set_has_originalinvoicerevisiondate();
+  if (originalinvoicerevisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicerevisiondate_ = new ::std::string;
+  }
+  originalinvoicerevisiondate_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceRevisionDate)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_originalinvoicerevisiondate(const char* value, size_t size) {
+  set_has_originalinvoicerevisiondate();
+  if (originalinvoicerevisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicerevisiondate_ = new ::std::string;
+  }
+  originalinvoicerevisiondate_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceRevisionDate)
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::mutable_originalinvoicerevisiondate() {
+  set_has_originalinvoicerevisiondate();
+  if (originalinvoicerevisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicerevisiondate_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceRevisionDate)
+  return originalinvoicerevisiondate_;
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::release_originalinvoicerevisiondate() {
+  clear_has_originalinvoicerevisiondate();
+  if (originalinvoicerevisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = originalinvoicerevisiondate_;
+    originalinvoicerevisiondate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_allocated_originalinvoicerevisiondate(::std::string* originalinvoicerevisiondate) {
+  if (originalinvoicerevisiondate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete originalinvoicerevisiondate_;
+  }
+  if (originalinvoicerevisiondate) {
+    set_has_originalinvoicerevisiondate();
+    originalinvoicerevisiondate_ = originalinvoicerevisiondate;
+  } else {
+    clear_has_originalinvoicerevisiondate();
+    originalinvoicerevisiondate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceRevisionDate)
+}
+
+// required string OriginalInvoiceCorrectionNumber = 15;
+inline bool UniversalCorrectionDocumentRevisionMetadata::has_originalinvoicecorrectionnumber() const {
+  return (_has_bits_[0] & 0x00004000u) != 0;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_has_originalinvoicecorrectionnumber() {
+  _has_bits_[0] |= 0x00004000u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_has_originalinvoicecorrectionnumber() {
+  _has_bits_[0] &= ~0x00004000u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_originalinvoicecorrectionnumber() {
+  if (originalinvoicecorrectionnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicecorrectionnumber_->clear();
+  }
+  clear_has_originalinvoicecorrectionnumber();
+}
+inline const ::std::string& UniversalCorrectionDocumentRevisionMetadata::originalinvoicecorrectionnumber() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceCorrectionNumber)
+  return *originalinvoicecorrectionnumber_;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_originalinvoicecorrectionnumber(const ::std::string& value) {
+  set_has_originalinvoicecorrectionnumber();
+  if (originalinvoicecorrectionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicecorrectionnumber_ = new ::std::string;
+  }
+  originalinvoicecorrectionnumber_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceCorrectionNumber)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_originalinvoicecorrectionnumber(const char* value) {
+  set_has_originalinvoicecorrectionnumber();
+  if (originalinvoicecorrectionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicecorrectionnumber_ = new ::std::string;
+  }
+  originalinvoicecorrectionnumber_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceCorrectionNumber)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_originalinvoicecorrectionnumber(const char* value, size_t size) {
+  set_has_originalinvoicecorrectionnumber();
+  if (originalinvoicecorrectionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicecorrectionnumber_ = new ::std::string;
+  }
+  originalinvoicecorrectionnumber_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceCorrectionNumber)
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::mutable_originalinvoicecorrectionnumber() {
+  set_has_originalinvoicecorrectionnumber();
+  if (originalinvoicecorrectionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicecorrectionnumber_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceCorrectionNumber)
+  return originalinvoicecorrectionnumber_;
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::release_originalinvoicecorrectionnumber() {
+  clear_has_originalinvoicecorrectionnumber();
+  if (originalinvoicecorrectionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = originalinvoicecorrectionnumber_;
+    originalinvoicecorrectionnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_allocated_originalinvoicecorrectionnumber(::std::string* originalinvoicecorrectionnumber) {
+  if (originalinvoicecorrectionnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete originalinvoicecorrectionnumber_;
+  }
+  if (originalinvoicecorrectionnumber) {
+    set_has_originalinvoicecorrectionnumber();
+    originalinvoicecorrectionnumber_ = originalinvoicecorrectionnumber;
+  } else {
+    clear_has_originalinvoicecorrectionnumber();
+    originalinvoicecorrectionnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceCorrectionNumber)
+}
+
+// required string OriginalInvoiceCorrectionDate = 16;
+inline bool UniversalCorrectionDocumentRevisionMetadata::has_originalinvoicecorrectiondate() const {
+  return (_has_bits_[0] & 0x00008000u) != 0;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_has_originalinvoicecorrectiondate() {
+  _has_bits_[0] |= 0x00008000u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_has_originalinvoicecorrectiondate() {
+  _has_bits_[0] &= ~0x00008000u;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::clear_originalinvoicecorrectiondate() {
+  if (originalinvoicecorrectiondate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicecorrectiondate_->clear();
+  }
+  clear_has_originalinvoicecorrectiondate();
+}
+inline const ::std::string& UniversalCorrectionDocumentRevisionMetadata::originalinvoicecorrectiondate() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceCorrectionDate)
+  return *originalinvoicecorrectiondate_;
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_originalinvoicecorrectiondate(const ::std::string& value) {
+  set_has_originalinvoicecorrectiondate();
+  if (originalinvoicecorrectiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicecorrectiondate_ = new ::std::string;
+  }
+  originalinvoicecorrectiondate_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceCorrectionDate)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_originalinvoicecorrectiondate(const char* value) {
+  set_has_originalinvoicecorrectiondate();
+  if (originalinvoicecorrectiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicecorrectiondate_ = new ::std::string;
+  }
+  originalinvoicecorrectiondate_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceCorrectionDate)
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_originalinvoicecorrectiondate(const char* value, size_t size) {
+  set_has_originalinvoicecorrectiondate();
+  if (originalinvoicecorrectiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicecorrectiondate_ = new ::std::string;
+  }
+  originalinvoicecorrectiondate_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceCorrectionDate)
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::mutable_originalinvoicecorrectiondate() {
+  set_has_originalinvoicecorrectiondate();
+  if (originalinvoicecorrectiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    originalinvoicecorrectiondate_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceCorrectionDate)
+  return originalinvoicecorrectiondate_;
+}
+inline ::std::string* UniversalCorrectionDocumentRevisionMetadata::release_originalinvoicecorrectiondate() {
+  clear_has_originalinvoicecorrectiondate();
+  if (originalinvoicecorrectiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = originalinvoicecorrectiondate_;
+    originalinvoicecorrectiondate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UniversalCorrectionDocumentRevisionMetadata::set_allocated_originalinvoicecorrectiondate(::std::string* originalinvoicecorrectiondate) {
+  if (originalinvoicecorrectiondate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete originalinvoicecorrectiondate_;
+  }
+  if (originalinvoicecorrectiondate) {
+    set_has_originalinvoicecorrectiondate();
+    originalinvoicecorrectiondate_ = originalinvoicecorrectiondate;
+  } else {
+    clear_has_originalinvoicecorrectiondate();
+    originalinvoicecorrectiondate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.UniversalTransferDocument.UniversalCorrectionDocumentRevisionMetadata.OriginalInvoiceCorrectionDate)
 }
 
 
