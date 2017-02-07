@@ -57,9 +57,10 @@ void protobuf_AssignDesc_GetOrganizationsByInnList_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(GetOrganizationsByInnListRequest));
   OrganizationWithCounteragentStatus_descriptor_ = file->message_type(1);
-  static const int OrganizationWithCounteragentStatus_offsets_[2] = {
+  static const int OrganizationWithCounteragentStatus_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OrganizationWithCounteragentStatus, organization_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OrganizationWithCounteragentStatus, counteragentstatus_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OrganizationWithCounteragentStatus, lasteventtimestampticks_),
   };
   OrganizationWithCounteragentStatus_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -130,15 +131,15 @@ void protobuf_AddDesc_GetOrganizationsByInnList_2eproto() {
     "\n\037GetOrganizationsByInnList.proto\022\020Diado"
     "c.Api.Proto\032\022Organization.proto\032\022Counter"
     "agent.proto\"3\n GetOrganizationsByInnList"
-    "Request\022\017\n\007InnList\030\001 \003(\t\"\267\001\n\"Organizatio"
+    "Request\022\017\n\007InnList\030\001 \003(\t\"\330\001\n\"Organizatio"
     "nWithCounteragentStatus\0224\n\014Organization\030"
     "\001 \002(\0132\036.Diadoc.Api.Proto.Organization\022[\n"
     "\022CounteragentStatus\030\002 \001(\0162$.Diadoc.Api.P"
     "roto.CounteragentStatus:\031UnknownCountera"
-    "gentStatus\"p\n!GetOrganizationsByInnListR"
-    "esponse\022K\n\rOrganizations\030\001 \003(\01324.Diadoc."
-    "Api.Proto.OrganizationWithCounteragentSt"
-    "atus", 444);
+    "gentStatus\022\037\n\027LastEventTimestampTicks\030\003 "
+    "\001(\020\"p\n!GetOrganizationsByInnListResponse"
+    "\022K\n\rOrganizations\030\001 \003(\01324.Diadoc.Api.Pro"
+    "to.OrganizationWithCounteragentStatus", 477);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "GetOrganizationsByInnList.proto", &protobuf_RegisterTypes);
   GetOrganizationsByInnListRequest::default_instance_ = new GetOrganizationsByInnListRequest();
@@ -393,6 +394,7 @@ void GetOrganizationsByInnListRequest::Swap(GetOrganizationsByInnListRequest* ot
 #ifndef _MSC_VER
 const int OrganizationWithCounteragentStatus::kOrganizationFieldNumber;
 const int OrganizationWithCounteragentStatus::kCounteragentStatusFieldNumber;
+const int OrganizationWithCounteragentStatus::kLastEventTimestampTicksFieldNumber;
 #endif  // !_MSC_VER
 
 OrganizationWithCounteragentStatus::OrganizationWithCounteragentStatus()
@@ -416,6 +418,7 @@ void OrganizationWithCounteragentStatus::SharedCtor() {
   _cached_size_ = 0;
   organization_ = NULL;
   counteragentstatus_ = 0;
+  lasteventtimestampticks_ = GOOGLE_LONGLONG(0);
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -452,12 +455,26 @@ OrganizationWithCounteragentStatus* OrganizationWithCounteragentStatus::New() co
 }
 
 void OrganizationWithCounteragentStatus::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<OrganizationWithCounteragentStatus*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  if (_has_bits_[0 / 32] & 7) {
+    ZR_(lasteventtimestampticks_, counteragentstatus_);
     if (has_organization()) {
       if (organization_ != NULL) organization_->::Diadoc::Api::Proto::Organization::Clear();
     }
-    counteragentstatus_ = 0;
   }
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -497,6 +514,21 @@ bool OrganizationWithCounteragentStatus::MergePartialFromCodedStream(
           } else {
             mutable_unknown_fields()->AddVarint(2, value);
           }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(25)) goto parse_LastEventTimestampTicks;
+        break;
+      }
+
+      // optional sfixed64 LastEventTimestampTicks = 3;
+      case 3: {
+        if (tag == 25) {
+         parse_LastEventTimestampTicks:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_SFIXED64>(
+                 input, &lasteventtimestampticks_)));
+          set_has_lasteventtimestampticks();
         } else {
           goto handle_unusual;
         }
@@ -541,6 +573,11 @@ void OrganizationWithCounteragentStatus::SerializeWithCachedSizes(
       2, this->counteragentstatus(), output);
   }
 
+  // optional sfixed64 LastEventTimestampTicks = 3;
+  if (has_lasteventtimestampticks()) {
+    ::google::protobuf::internal::WireFormatLite::WriteSFixed64(3, this->lasteventtimestampticks(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -562,6 +599,11 @@ void OrganizationWithCounteragentStatus::SerializeWithCachedSizes(
   if (has_counteragentstatus()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       2, this->counteragentstatus(), target);
+  }
+
+  // optional sfixed64 LastEventTimestampTicks = 3;
+  if (has_lasteventtimestampticks()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteSFixed64ToArray(3, this->lasteventtimestampticks(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -587,6 +629,11 @@ int OrganizationWithCounteragentStatus::ByteSize() const {
     if (has_counteragentstatus()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->counteragentstatus());
+    }
+
+    // optional sfixed64 LastEventTimestampTicks = 3;
+    if (has_lasteventtimestampticks()) {
+      total_size += 1 + 8;
     }
 
   }
@@ -622,6 +669,9 @@ void OrganizationWithCounteragentStatus::MergeFrom(const OrganizationWithCounter
     if (from.has_counteragentstatus()) {
       set_counteragentstatus(from.counteragentstatus());
     }
+    if (from.has_lasteventtimestampticks()) {
+      set_lasteventtimestampticks(from.lasteventtimestampticks());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -651,6 +701,7 @@ void OrganizationWithCounteragentStatus::Swap(OrganizationWithCounteragentStatus
   if (other != this) {
     std::swap(organization_, other->organization_);
     std::swap(counteragentstatus_, other->counteragentstatus_);
+    std::swap(lasteventtimestampticks_, other->lasteventtimestampticks_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
