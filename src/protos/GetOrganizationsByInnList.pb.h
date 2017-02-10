@@ -198,18 +198,28 @@ class OrganizationWithCounteragentStatus : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::CounteragentStatus counteragentstatus() const;
   inline void set_counteragentstatus(::Diadoc::Api::Proto::CounteragentStatus value);
 
+  // optional sfixed64 LastEventTimestampTicks = 3;
+  inline bool has_lasteventtimestampticks() const;
+  inline void clear_lasteventtimestampticks();
+  static const int kLastEventTimestampTicksFieldNumber = 3;
+  inline ::google::protobuf::int64 lasteventtimestampticks() const;
+  inline void set_lasteventtimestampticks(::google::protobuf::int64 value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.OrganizationWithCounteragentStatus)
  private:
   inline void set_has_organization();
   inline void clear_has_organization();
   inline void set_has_counteragentstatus();
   inline void clear_has_counteragentstatus();
+  inline void set_has_lasteventtimestampticks();
+  inline void clear_has_lasteventtimestampticks();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::Diadoc::Api::Proto::Organization* organization_;
+  ::google::protobuf::int64 lasteventtimestampticks_;
   int counteragentstatus_;
   friend void  protobuf_AddDesc_GetOrganizationsByInnList_2eproto();
   friend void protobuf_AssignDesc_GetOrganizationsByInnList_2eproto();
@@ -429,6 +439,30 @@ inline void OrganizationWithCounteragentStatus::set_counteragentstatus(::Diadoc:
   set_has_counteragentstatus();
   counteragentstatus_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.OrganizationWithCounteragentStatus.CounteragentStatus)
+}
+
+// optional sfixed64 LastEventTimestampTicks = 3;
+inline bool OrganizationWithCounteragentStatus::has_lasteventtimestampticks() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void OrganizationWithCounteragentStatus::set_has_lasteventtimestampticks() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void OrganizationWithCounteragentStatus::clear_has_lasteventtimestampticks() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void OrganizationWithCounteragentStatus::clear_lasteventtimestampticks() {
+  lasteventtimestampticks_ = GOOGLE_LONGLONG(0);
+  clear_has_lasteventtimestampticks();
+}
+inline ::google::protobuf::int64 OrganizationWithCounteragentStatus::lasteventtimestampticks() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.OrganizationWithCounteragentStatus.LastEventTimestampTicks)
+  return lasteventtimestampticks_;
+}
+inline void OrganizationWithCounteragentStatus::set_lasteventtimestampticks(::google::protobuf::int64 value) {
+  set_has_lasteventtimestampticks();
+  lasteventtimestampticks_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.OrganizationWithCounteragentStatus.LastEventTimestampTicks)
 }
 
 // -------------------------------------------------------------------
