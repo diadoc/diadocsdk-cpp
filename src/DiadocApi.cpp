@@ -446,7 +446,7 @@ BoxEventList DiadocApi::GetNewEvents(const std::wstring& boxId, const std::wstri
 {
 	WppTraceDebugOut(L"GetNewEvents...");
 	std::wstringstream queryString;
-	queryString << L"/V4/GetNewEvents?boxId=" << StringHelper::CanonicalizeUrl(boxId);
+	queryString << L"/V5/GetNewEvents?boxId=" << StringHelper::CanonicalizeUrl(boxId);
 	if (!afterEventId.empty())
 		queryString << L"&afterEventId=" << StringHelper::CanonicalizeUrl(afterEventId);
 	queryString << L"&includeDrafts";
