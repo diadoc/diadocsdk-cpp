@@ -946,6 +946,18 @@ Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo DiadocApi
 	return FromProtoBytes<UniversalTransferDocumentBuyerTitleInfo>(PerformHttpRequest(L"/ParseUniversalTransferDocumentBuyerTitleXml", utdXmlContent, L"POST"));
 }
 
+Diadoc::Api::Proto::Invoicing::UniversalCorrectionDocumentSellerTitleInfo DiadocApi::ParseUniversalCorrectionDocumentSellerTitleXml(const Bytes_t& utdXmlContent)
+{
+	WppTraceDebugOut("ParseUniversalCorrectionDocumentSellerTitleXml...");
+	return FromProtoBytes<UniversalCorrectionDocumentSellerTitleInfo>(PerformHttpRequest(L"/ParseUniversalCorrectionDocumentSellerTitleXml", utdXmlContent, L"POST"));
+}
+
+Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo DiadocApi::ParseUniversalCorrectionDocumentBuyerTitleXml(const Bytes_t& utdXmlContent)
+{
+	WppTraceDebugOut("ParseUniversalCorrectionDocumentBuyerTitleXml...");
+	return FromProtoBytes<UniversalTransferDocumentBuyerTitleInfo>(PerformHttpRequest(L"/ParseUniversalCorrectionDocumentBuyerTitleXml", utdXmlContent, L"POST"));
+}
+
 RevocationRequestInfo DiadocApi::ParseRevocationRequestXml(const Bytes_t& xmlContent)
 {
 	WppTraceDebugOut("ParseRevocationRequestXml...");

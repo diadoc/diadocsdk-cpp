@@ -157,6 +157,8 @@ public:
 	Diadoc::Api::Proto::Invoicing::AcceptanceCertificateSellerTitleInfo ParseAcceptanceCertificateSellerTitleXml(const Bytes_t& sellerTitleXmlContent);
 	Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentSellerTitleInfo ParseUniversalTransferDocumentSellerTitleXml(const Bytes_t& utdXmlContent);
 	Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo ParseUniversalTransferDocumentBuyerTitleXml(const Bytes_t& utdXmlContent);
+	Diadoc::Api::Proto::Invoicing::UniversalCorrectionDocumentSellerTitleInfo ParseUniversalCorrectionDocumentSellerTitleXml(const Bytes_t& utdXmlContent);
+	Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo ParseUniversalCorrectionDocumentBuyerTitleXml(const Bytes_t& utdXmlContent);
 
 	Diadoc::Api::Proto::Invoicing::RevocationRequestInfo ParseRevocationRequestXml(const Bytes_t& xmlContent);
 	Diadoc::Api::Proto::Invoicing::SignatureRejectionInfo ParseSignatureRejectionXml(const Bytes_t& xmlContent);
