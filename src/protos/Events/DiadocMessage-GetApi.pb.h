@@ -31,6 +31,7 @@
 #include "Events/ResolutionInfo.pb.h"
 #include "Events/ResolutionRequestInfo.pb.h"
 #include "Events/ResolutionRequestDenialInfo.pb.h"
+#include "Events/ResolutionRouteInfo.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace Diadoc {
@@ -118,11 +119,12 @@ enum AttachmentType {
   UniversalCorrectionDocumentBuyerTitle = 51,
   CustomData = 64,
   MoveDocument = 65,
-  ResolutionChainAssignmentAttachment = 66
+  ResolutionRouteAssignmentAttachment = 66,
+  ResolutionRouteRemovalAttachment = 67
 };
 bool AttachmentType_IsValid(int value);
 const AttachmentType AttachmentType_MIN = UnknownAttachmentType;
-const AttachmentType AttachmentType_MAX = ResolutionChainAssignmentAttachment;
+const AttachmentType AttachmentType_MAX = ResolutionRouteRemovalAttachment;
 const int AttachmentType_ARRAYSIZE = AttachmentType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* AttachmentType_descriptor();
@@ -1126,6 +1128,24 @@ class Entity : public ::google::protobuf::Message {
   inline ::std::string* release_attachmentformat();
   inline void set_allocated_attachmentformat(::std::string* attachmentformat);
 
+  // optional .Diadoc.Api.Proto.Events.ResolutionRouteAssignmentInfo ResolutionRouteAssignmentInfo = 22;
+  inline bool has_resolutionrouteassignmentinfo() const;
+  inline void clear_resolutionrouteassignmentinfo();
+  static const int kResolutionRouteAssignmentInfoFieldNumber = 22;
+  inline const ::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo& resolutionrouteassignmentinfo() const;
+  inline ::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo* mutable_resolutionrouteassignmentinfo();
+  inline ::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo* release_resolutionrouteassignmentinfo();
+  inline void set_allocated_resolutionrouteassignmentinfo(::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo* resolutionrouteassignmentinfo);
+
+  // optional .Diadoc.Api.Proto.Events.ResolutionRouteRemovalInfo ResolutionRouteRemovalInfo = 23;
+  inline bool has_resolutionrouteremovalinfo() const;
+  inline void clear_resolutionrouteremovalinfo();
+  static const int kResolutionRouteRemovalInfoFieldNumber = 23;
+  inline const ::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo& resolutionrouteremovalinfo() const;
+  inline ::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo* mutable_resolutionrouteremovalinfo();
+  inline ::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo* release_resolutionrouteremovalinfo();
+  inline void set_allocated_resolutionrouteremovalinfo(::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo* resolutionrouteremovalinfo);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.Entity)
  private:
   inline void set_has_entitytype();
@@ -1168,6 +1188,10 @@ class Entity : public ::google::protobuf::Message {
   inline void clear_has_isencryptedcontent();
   inline void set_has_attachmentformat();
   inline void clear_has_attachmentformat();
+  inline void set_has_resolutionrouteassignmentinfo();
+  inline void clear_has_resolutionrouteassignmentinfo();
+  inline void set_has_resolutionrouteremovalinfo();
+  inline void clear_has_resolutionrouteremovalinfo();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1189,6 +1213,8 @@ class Entity : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Events::ResolutionRequestDenialInfo* resolutionrequestdenialinfo_;
   ::std::string* packetid_;
   ::std::string* attachmentformat_;
+  ::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo* resolutionrouteassignmentinfo_;
+  ::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo* resolutionrouteremovalinfo_;
   bool needrecipientsignature_;
   bool needreceipt_;
   bool isapprovementsignature_;
@@ -4002,6 +4028,88 @@ inline void Entity::set_allocated_attachmentformat(::std::string* attachmentform
     attachmentformat_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Entity.AttachmentFormat)
+}
+
+// optional .Diadoc.Api.Proto.Events.ResolutionRouteAssignmentInfo ResolutionRouteAssignmentInfo = 22;
+inline bool Entity::has_resolutionrouteassignmentinfo() const {
+  return (_has_bits_[0] & 0x00100000u) != 0;
+}
+inline void Entity::set_has_resolutionrouteassignmentinfo() {
+  _has_bits_[0] |= 0x00100000u;
+}
+inline void Entity::clear_has_resolutionrouteassignmentinfo() {
+  _has_bits_[0] &= ~0x00100000u;
+}
+inline void Entity::clear_resolutionrouteassignmentinfo() {
+  if (resolutionrouteassignmentinfo_ != NULL) resolutionrouteassignmentinfo_->::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo::Clear();
+  clear_has_resolutionrouteassignmentinfo();
+}
+inline const ::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo& Entity::resolutionrouteassignmentinfo() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Entity.ResolutionRouteAssignmentInfo)
+  return resolutionrouteassignmentinfo_ != NULL ? *resolutionrouteassignmentinfo_ : *default_instance_->resolutionrouteassignmentinfo_;
+}
+inline ::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo* Entity::mutable_resolutionrouteassignmentinfo() {
+  set_has_resolutionrouteassignmentinfo();
+  if (resolutionrouteassignmentinfo_ == NULL) resolutionrouteassignmentinfo_ = new ::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Entity.ResolutionRouteAssignmentInfo)
+  return resolutionrouteassignmentinfo_;
+}
+inline ::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo* Entity::release_resolutionrouteassignmentinfo() {
+  clear_has_resolutionrouteassignmentinfo();
+  ::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo* temp = resolutionrouteassignmentinfo_;
+  resolutionrouteassignmentinfo_ = NULL;
+  return temp;
+}
+inline void Entity::set_allocated_resolutionrouteassignmentinfo(::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo* resolutionrouteassignmentinfo) {
+  delete resolutionrouteassignmentinfo_;
+  resolutionrouteassignmentinfo_ = resolutionrouteassignmentinfo;
+  if (resolutionrouteassignmentinfo) {
+    set_has_resolutionrouteassignmentinfo();
+  } else {
+    clear_has_resolutionrouteassignmentinfo();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Entity.ResolutionRouteAssignmentInfo)
+}
+
+// optional .Diadoc.Api.Proto.Events.ResolutionRouteRemovalInfo ResolutionRouteRemovalInfo = 23;
+inline bool Entity::has_resolutionrouteremovalinfo() const {
+  return (_has_bits_[0] & 0x00200000u) != 0;
+}
+inline void Entity::set_has_resolutionrouteremovalinfo() {
+  _has_bits_[0] |= 0x00200000u;
+}
+inline void Entity::clear_has_resolutionrouteremovalinfo() {
+  _has_bits_[0] &= ~0x00200000u;
+}
+inline void Entity::clear_resolutionrouteremovalinfo() {
+  if (resolutionrouteremovalinfo_ != NULL) resolutionrouteremovalinfo_->::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo::Clear();
+  clear_has_resolutionrouteremovalinfo();
+}
+inline const ::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo& Entity::resolutionrouteremovalinfo() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Entity.ResolutionRouteRemovalInfo)
+  return resolutionrouteremovalinfo_ != NULL ? *resolutionrouteremovalinfo_ : *default_instance_->resolutionrouteremovalinfo_;
+}
+inline ::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo* Entity::mutable_resolutionrouteremovalinfo() {
+  set_has_resolutionrouteremovalinfo();
+  if (resolutionrouteremovalinfo_ == NULL) resolutionrouteremovalinfo_ = new ::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Entity.ResolutionRouteRemovalInfo)
+  return resolutionrouteremovalinfo_;
+}
+inline ::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo* Entity::release_resolutionrouteremovalinfo() {
+  clear_has_resolutionrouteremovalinfo();
+  ::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo* temp = resolutionrouteremovalinfo_;
+  resolutionrouteremovalinfo_ = NULL;
+  return temp;
+}
+inline void Entity::set_allocated_resolutionrouteremovalinfo(::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo* resolutionrouteremovalinfo) {
+  delete resolutionrouteremovalinfo_;
+  resolutionrouteremovalinfo_ = resolutionrouteremovalinfo;
+  if (resolutionrouteremovalinfo) {
+    set_has_resolutionrouteremovalinfo();
+  } else {
+    clear_has_resolutionrouteremovalinfo();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Entity.ResolutionRouteRemovalInfo)
 }
 
 // -------------------------------------------------------------------

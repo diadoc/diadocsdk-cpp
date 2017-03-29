@@ -732,6 +732,18 @@ class Document : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata* release_universalcorrectiondocumentrevisionmetadata();
   inline void set_allocated_universalcorrectiondocumentrevisionmetadata(::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata* universalcorrectiondocumentrevisionmetadata);
 
+  // optional string ResolutionRouteId = 60 [default = ""];
+  inline bool has_resolutionrouteid() const;
+  inline void clear_resolutionrouteid();
+  static const int kResolutionRouteIdFieldNumber = 60;
+  inline const ::std::string& resolutionrouteid() const;
+  inline void set_resolutionrouteid(const ::std::string& value);
+  inline void set_resolutionrouteid(const char* value);
+  inline void set_resolutionrouteid(const char* value, size_t size);
+  inline ::std::string* mutable_resolutionrouteid();
+  inline ::std::string* release_resolutionrouteid();
+  inline void set_allocated_resolutionrouteid(::std::string* resolutionrouteid);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.Document)
  private:
   inline void set_has_indexkey();
@@ -840,6 +852,8 @@ class Document : public ::google::protobuf::Message {
   inline void clear_has_universalcorrectiondocumentmetadata();
   inline void set_has_universalcorrectiondocumentrevisionmetadata();
   inline void clear_has_universalcorrectiondocumentrevisionmetadata();
+  inline void set_has_resolutionrouteid();
+  inline void clear_has_resolutionrouteid();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -899,6 +913,7 @@ class Document : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentRevisionMetadata* universaltransferdocumentrevisionmetadata_;
   ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata* universalcorrectiondocumentmetadata_;
   ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata* universalcorrectiondocumentrevisionmetadata_;
+  ::std::string* resolutionrouteid_;
   bool isread_;
   bool packetislocked_;
   mutable int _cached_size_;
@@ -3533,6 +3548,82 @@ inline void Document::set_allocated_universalcorrectiondocumentrevisionmetadata(
     clear_has_universalcorrectiondocumentrevisionmetadata();
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.UniversalCorrectionDocumentRevisionMetadata)
+}
+
+// optional string ResolutionRouteId = 60 [default = ""];
+inline bool Document::has_resolutionrouteid() const {
+  return (_has_bits_[1] & 0x02000000u) != 0;
+}
+inline void Document::set_has_resolutionrouteid() {
+  _has_bits_[1] |= 0x02000000u;
+}
+inline void Document::clear_has_resolutionrouteid() {
+  _has_bits_[1] &= ~0x02000000u;
+}
+inline void Document::clear_resolutionrouteid() {
+  if (resolutionrouteid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    resolutionrouteid_->clear();
+  }
+  clear_has_resolutionrouteid();
+}
+inline const ::std::string& Document::resolutionrouteid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Document.ResolutionRouteId)
+  return *resolutionrouteid_;
+}
+inline void Document::set_resolutionrouteid(const ::std::string& value) {
+  set_has_resolutionrouteid();
+  if (resolutionrouteid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    resolutionrouteid_ = new ::std::string;
+  }
+  resolutionrouteid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Document.ResolutionRouteId)
+}
+inline void Document::set_resolutionrouteid(const char* value) {
+  set_has_resolutionrouteid();
+  if (resolutionrouteid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    resolutionrouteid_ = new ::std::string;
+  }
+  resolutionrouteid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.Document.ResolutionRouteId)
+}
+inline void Document::set_resolutionrouteid(const char* value, size_t size) {
+  set_has_resolutionrouteid();
+  if (resolutionrouteid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    resolutionrouteid_ = new ::std::string;
+  }
+  resolutionrouteid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.Document.ResolutionRouteId)
+}
+inline ::std::string* Document::mutable_resolutionrouteid() {
+  set_has_resolutionrouteid();
+  if (resolutionrouteid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    resolutionrouteid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.Document.ResolutionRouteId)
+  return resolutionrouteid_;
+}
+inline ::std::string* Document::release_resolutionrouteid() {
+  clear_has_resolutionrouteid();
+  if (resolutionrouteid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = resolutionrouteid_;
+    resolutionrouteid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void Document::set_allocated_resolutionrouteid(::std::string* resolutionrouteid) {
+  if (resolutionrouteid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete resolutionrouteid_;
+  }
+  if (resolutionrouteid) {
+    set_has_resolutionrouteid();
+    resolutionrouteid_ = resolutionrouteid;
+  } else {
+    clear_has_resolutionrouteid();
+    resolutionrouteid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.ResolutionRouteId)
 }
 
 // -------------------------------------------------------------------

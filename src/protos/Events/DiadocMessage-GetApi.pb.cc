@@ -148,7 +148,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(MessagePatch));
   Entity_descriptor_ = file->message_type(4);
-  static const int Entity_offsets_[20] = {
+  static const int Entity_offsets_[22] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, entitytype_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, entityid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, parententityid_),
@@ -169,6 +169,8 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, isapprovementsignature_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, isencryptedcontent_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, attachmentformat_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, resolutionrouteassignmentinfo_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, resolutionrouteremovalinfo_),
   };
   Entity_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -258,103 +260,110 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
   ::Diadoc::Api::Proto::Events::protobuf_AddDesc_Events_2fResolutionInfo_2eproto();
   ::Diadoc::Api::Proto::Events::protobuf_AddDesc_Events_2fResolutionRequestInfo_2eproto();
   ::Diadoc::Api::Proto::Events::protobuf_AddDesc_Events_2fResolutionRequestDenialInfo_2eproto();
+  ::Diadoc::Api::Proto::Events::protobuf_AddDesc_Events_2fResolutionRouteInfo_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n!Events/DiadocMessage-GetApi.proto\022\027Dia"
     "doc.Api.Proto.Events\032\rContent.proto\032\020Doc"
     "umentId.proto\032\030Documents/Document.proto\032"
     "\033Events/ResolutionInfo.proto\032\"Events/Res"
     "olutionRequestInfo.proto\032(Events/Resolut"
-    "ionRequestDenialInfo.proto\"U\n\014BoxEventLi"
-    "st\0221\n\006Events\030\001 \003(\0132!.Diadoc.Api.Proto.Ev"
-    "ents.BoxEvent\022\022\n\nTotalCount\030\002 \001(\005\"\204\001\n\010Bo"
-    "xEvent\022\017\n\007EventId\030\001 \002(\t\0221\n\007Message\030\002 \001(\013"
-    "2 .Diadoc.Api.Proto.Events.Message\0224\n\005Pa"
-    "tch\030\003 \001(\0132%.Diadoc.Api.Proto.Events.Mess"
-    "agePatch\"\234\004\n\007Message\022\021\n\tMessageId\030\001 \002(\t\022"
-    "\026\n\016TimestampTicks\030\002 \002(\020\022\037\n\027LastPatchTime"
-    "stampTicks\030\003 \002(\020\022\021\n\tFromBoxId\030\004 \002(\t\022\021\n\tF"
-    "romTitle\030\005 \002(\t\022\017\n\007ToBoxId\030\006 \001(\t\022\017\n\007ToTit"
-    "le\030\007 \001(\t\0221\n\010Entities\030\010 \003(\0132\037.Diadoc.Api."
-    "Proto.Events.Entity\022\026\n\007IsDraft\030\t \001(\010:\005fa"
-    "lse\022\034\n\rDraftIsLocked\030\n \001(\010:\005false\022\036\n\017Dra"
-    "ftIsRecycled\030\013 \001(\010:\005false\022\032\n\022CreatedFrom"
-    "DraftId\030\014 \001(\t\022)\n!DraftIsTransformedToMes"
-    "sageIdList\030\r \003(\t\022\030\n\tIsDeleted\030\016 \001(\010:\005fal"
-    "se\022\025\n\006IsTest\030\017 \001(\010:\005false\022\031\n\nIsInternal\030"
-    "\020 \001(\010:\005false\022\032\n\013IsProxified\030\021 \001(\010:\005false"
-    "\022\022\n\nProxyBoxId\030\022 \001(\t\022\022\n\nProxyTitle\030\023 \001(\t"
-    "\022\035\n\016PacketIsLocked\030\024 \001(\010:\005false\"\274\003\n\014Mess"
-    "agePatch\022\021\n\tMessageId\030\001 \002(\t\022\026\n\016Timestamp"
-    "Ticks\030\002 \002(\020\0221\n\010Entities\030\003 \003(\0132\037.Diadoc.A"
-    "pi.Proto.Events.Entity\022\027\n\010ForDraft\030\004 \001(\010"
-    ":\005false\022\036\n\017DraftIsRecycled\030\005 \001(\010:\005false\022"
-    ")\n!DraftIsTransformedToMessageIdList\030\006 \003"
-    "(\t\022\034\n\rDraftIsLocked\030\007 \001(\010:\005false\022\037\n\020Mess"
-    "ageIsDeleted\030\010 \001(\010:\005false\022;\n\rEntityPatch"
-    "es\030\t \003(\0132$.Diadoc.Api.Proto.Events.Entit"
-    "yPatch\022 \n\021MessageIsRestored\030\n \001(\010:\005false"
-    "\022!\n\022MessageIsDelivered\030\013 \001(\010:\005false\022\030\n\020D"
-    "eliveredPatchId\030\014 \001(\t\022\017\n\007PatchId\030\r \002(\t\"\336"
-    "\006\n\006Entity\022J\n\nEntityType\030\001 \001(\0162#.Diadoc.A"
-    "pi.Proto.Events.EntityType:\021UnknownEntit"
-    "yType\022\020\n\010EntityId\030\002 \002(\t\022\026\n\016ParentEntityI"
-    "d\030\003 \001(\t\022*\n\007Content\030\004 \001(\0132\031.Diadoc.Api.Pr"
-    "oto.Content\022V\n\016AttachmentType\030\005 \001(\0162\'.Di"
-    "adoc.Api.Proto.Events.AttachmentType:\025Un"
-    "knownAttachmentType\022\020\n\010FileName\030\006 \001(\t\022%\n"
-    "\026NeedRecipientSignature\030\007 \001(\010:\005false\022\023\n\013"
-    "SignerBoxId\030\010 \001(\t\022\033\n\023NotDeliveredEventId"
-    "\030\n \001(\t\022:\n\014DocumentInfo\030\013 \001(\0132$.Diadoc.Ap"
-    "i.Proto.Documents.Document\022\032\n\017RawCreatio"
-    "nDate\030\014 \001(\020:\0010\022\?\n\016ResolutionInfo\030\r \001(\0132\'"
-    ".Diadoc.Api.Proto.Events.ResolutionInfo\022"
-    "\032\n\022SignerDepartmentId\030\016 \001(\t\022M\n\025Resolutio"
-    "nRequestInfo\030\017 \001(\0132..Diadoc.Api.Proto.Ev"
-    "ents.ResolutionRequestInfo\022Y\n\033Resolution"
-    "RequestDenialInfo\030\020 \001(\01324.Diadoc.Api.Pro"
-    "to.Events.ResolutionRequestDenialInfo\022\032\n"
-    "\013NeedReceipt\030\021 \001(\010:\005false\022\020\n\010PacketId\030\022 "
-    "\001(\t\022%\n\026IsApprovementSignature\030\023 \001(\010:\005fal"
-    "se\022!\n\022IsEncryptedContent\030\024 \001(\010:\005false\022\030\n"
-    "\020AttachmentFormat\030\025 \001(\t\"\272\001\n\013EntityPatch\022"
-    "\020\n\010EntityId\030\001 \002(\t\022 \n\021DocumentIsDeleted\030\002"
-    " \001(\010:\005false\022\031\n\021MovedToDepartment\030\003 \001(\t\022!"
-    "\n\022DocumentIsRestored\030\004 \001(\010:\005false\022\037\n\020Con"
-    "tentIsPatched\030\005 \001(\010:\005false\022\030\n\020ForwardedT"
-    "oBoxId\030\006 \001(\t*B\n\nEntityType\022\025\n\021UnknownEnt"
-    "ityType\020\000\022\016\n\nAttachment\020\001\022\r\n\tSignature\020\002"
-    "*\344\t\n\016AttachmentType\022\"\n\025UnknownAttachment"
-    "Type\020\377\377\377\377\377\377\377\377\377\001\022\021\n\rNonformalized\020\000\022\013\n\007In"
-    "voice\020\001\022\022\n\016InvoiceReceipt\020\002\022\027\n\023InvoiceCo"
-    "nfirmation\020\003\022\034\n\030InvoiceCorrectionRequest"
-    "\020\004\022\025\n\021AttachmentComment\020\005\022\037\n\033DeliveryFai"
-    "lureNotification\020\006\022\020\n\014EancomInvoic\020\007\022\035\n\031"
-    "SignatureRequestRejection\020\010\022(\n$EcrCatCon"
-    "formanceCertificateMetadata\020\t\022\037\n\033Signatu"
-    "reVerificationReport\020\n\022\032\n\026TrustConnectio"
-    "nRequest\020\013\022\n\n\006Torg12\020\014\022\023\n\017InvoiceRevisio"
-    "n\020\r\022\025\n\021InvoiceCorrection\020\016\022\035\n\031InvoiceCor"
-    "rectionRevision\020\017\022\031\n\025AcceptanceCertifica"
-    "te\020\020\022\022\n\016StructuredData\020\021\022\023\n\017ProformaInvo"
-    "ice\020\022\022\r\n\tXmlTorg12\020\023\022\034\n\030XmlAcceptanceCer"
-    "tificate\020\024\022\027\n\023XmlTorg12BuyerTitle\020\025\022&\n\"X"
-    "mlAcceptanceCertificateBuyerTitle\020\026\022\016\n\nR"
-    "esolution\020\027\022\025\n\021ResolutionRequest\020\030\022\033\n\027Re"
-    "solutionRequestDenial\020\031\022\r\n\tPriceList\020\032\022\013"
-    "\n\007Receipt\020\033\022\031\n\025XmlSignatureRejection\020\034\022\025"
-    "\n\021RevocationRequest\020\035\022\026\n\022PriceListAgreem"
-    "ent\020\036\022\027\n\023CertificateRegistry\020\"\022\025\n\021Reconc"
-    "iliationAct\020#\022\014\n\010Contract\020$\022\n\n\006Torg13\020%\022"
-    "\022\n\016ServiceDetails\020&\022\027\n\023RoamingNotificati"
-    "on\020\'\022\032\n\026SupplementaryAgreement\020(\022\035\n\031Univ"
-    "ersalTransferDocument\020)\022\'\n#UniversalTran"
-    "sferDocumentBuyerTitle\020*\022%\n!UniversalTra"
-    "nsferDocumentRevision\020-\022\037\n\033UniversalCorr"
-    "ectionDocument\0201\022\'\n#UniversalCorrectionD"
-    "ocumentRevision\0202\022)\n%UniversalCorrection"
-    "DocumentBuyerTitle\0203\022\016\n\nCustomData\020@\022\020\n\014"
-    "MoveDocument\020A\022\'\n#ResolutionChainAssignm"
-    "entAttachment\020B", 3815);
+    "ionRequestDenialInfo.proto\032 Events/Resol"
+    "utionRouteInfo.proto\"U\n\014BoxEventList\0221\n\006"
+    "Events\030\001 \003(\0132!.Diadoc.Api.Proto.Events.B"
+    "oxEvent\022\022\n\nTotalCount\030\002 \001(\005\"\204\001\n\010BoxEvent"
+    "\022\017\n\007EventId\030\001 \002(\t\0221\n\007Message\030\002 \001(\0132 .Dia"
+    "doc.Api.Proto.Events.Message\0224\n\005Patch\030\003 "
+    "\001(\0132%.Diadoc.Api.Proto.Events.MessagePat"
+    "ch\"\234\004\n\007Message\022\021\n\tMessageId\030\001 \002(\t\022\026\n\016Tim"
+    "estampTicks\030\002 \002(\020\022\037\n\027LastPatchTimestampT"
+    "icks\030\003 \002(\020\022\021\n\tFromBoxId\030\004 \002(\t\022\021\n\tFromTit"
+    "le\030\005 \002(\t\022\017\n\007ToBoxId\030\006 \001(\t\022\017\n\007ToTitle\030\007 \001"
+    "(\t\0221\n\010Entities\030\010 \003(\0132\037.Diadoc.Api.Proto."
+    "Events.Entity\022\026\n\007IsDraft\030\t \001(\010:\005false\022\034\n"
+    "\rDraftIsLocked\030\n \001(\010:\005false\022\036\n\017DraftIsRe"
+    "cycled\030\013 \001(\010:\005false\022\032\n\022CreatedFromDraftI"
+    "d\030\014 \001(\t\022)\n!DraftIsTransformedToMessageId"
+    "List\030\r \003(\t\022\030\n\tIsDeleted\030\016 \001(\010:\005false\022\025\n\006"
+    "IsTest\030\017 \001(\010:\005false\022\031\n\nIsInternal\030\020 \001(\010:"
+    "\005false\022\032\n\013IsProxified\030\021 \001(\010:\005false\022\022\n\nPr"
+    "oxyBoxId\030\022 \001(\t\022\022\n\nProxyTitle\030\023 \001(\t\022\035\n\016Pa"
+    "cketIsLocked\030\024 \001(\010:\005false\"\274\003\n\014MessagePat"
+    "ch\022\021\n\tMessageId\030\001 \002(\t\022\026\n\016TimestampTicks\030"
+    "\002 \002(\020\0221\n\010Entities\030\003 \003(\0132\037.Diadoc.Api.Pro"
+    "to.Events.Entity\022\027\n\010ForDraft\030\004 \001(\010:\005fals"
+    "e\022\036\n\017DraftIsRecycled\030\005 \001(\010:\005false\022)\n!Dra"
+    "ftIsTransformedToMessageIdList\030\006 \003(\t\022\034\n\r"
+    "DraftIsLocked\030\007 \001(\010:\005false\022\037\n\020MessageIsD"
+    "eleted\030\010 \001(\010:\005false\022;\n\rEntityPatches\030\t \003"
+    "(\0132$.Diadoc.Api.Proto.Events.EntityPatch"
+    "\022 \n\021MessageIsRestored\030\n \001(\010:\005false\022!\n\022Me"
+    "ssageIsDelivered\030\013 \001(\010:\005false\022\030\n\020Deliver"
+    "edPatchId\030\014 \001(\t\022\017\n\007PatchId\030\r \002(\t\"\226\010\n\006Ent"
+    "ity\022J\n\nEntityType\030\001 \001(\0162#.Diadoc.Api.Pro"
+    "to.Events.EntityType:\021UnknownEntityType\022"
+    "\020\n\010EntityId\030\002 \002(\t\022\026\n\016ParentEntityId\030\003 \001("
+    "\t\022*\n\007Content\030\004 \001(\0132\031.Diadoc.Api.Proto.Co"
+    "ntent\022V\n\016AttachmentType\030\005 \001(\0162\'.Diadoc.A"
+    "pi.Proto.Events.AttachmentType:\025UnknownA"
+    "ttachmentType\022\020\n\010FileName\030\006 \001(\t\022%\n\026NeedR"
+    "ecipientSignature\030\007 \001(\010:\005false\022\023\n\013Signer"
+    "BoxId\030\010 \001(\t\022\033\n\023NotDeliveredEventId\030\n \001(\t"
+    "\022:\n\014DocumentInfo\030\013 \001(\0132$.Diadoc.Api.Prot"
+    "o.Documents.Document\022\032\n\017RawCreationDate\030"
+    "\014 \001(\020:\0010\022\?\n\016ResolutionInfo\030\r \001(\0132\'.Diado"
+    "c.Api.Proto.Events.ResolutionInfo\022\032\n\022Sig"
+    "nerDepartmentId\030\016 \001(\t\022M\n\025ResolutionReque"
+    "stInfo\030\017 \001(\0132..Diadoc.Api.Proto.Events.R"
+    "esolutionRequestInfo\022Y\n\033ResolutionReques"
+    "tDenialInfo\030\020 \001(\01324.Diadoc.Api.Proto.Eve"
+    "nts.ResolutionRequestDenialInfo\022\032\n\013NeedR"
+    "eceipt\030\021 \001(\010:\005false\022\020\n\010PacketId\030\022 \001(\t\022%\n"
+    "\026IsApprovementSignature\030\023 \001(\010:\005false\022!\n\022"
+    "IsEncryptedContent\030\024 \001(\010:\005false\022\030\n\020Attac"
+    "hmentFormat\030\025 \001(\t\022]\n\035ResolutionRouteAssi"
+    "gnmentInfo\030\026 \001(\01326.Diadoc.Api.Proto.Even"
+    "ts.ResolutionRouteAssignmentInfo\022W\n\032Reso"
+    "lutionRouteRemovalInfo\030\027 \001(\01323.Diadoc.Ap"
+    "i.Proto.Events.ResolutionRouteRemovalInf"
+    "o\"\272\001\n\013EntityPatch\022\020\n\010EntityId\030\001 \002(\t\022 \n\021D"
+    "ocumentIsDeleted\030\002 \001(\010:\005false\022\031\n\021MovedTo"
+    "Department\030\003 \001(\t\022!\n\022DocumentIsRestored\030\004"
+    " \001(\010:\005false\022\037\n\020ContentIsPatched\030\005 \001(\010:\005f"
+    "alse\022\030\n\020ForwardedToBoxId\030\006 \001(\t*B\n\nEntity"
+    "Type\022\025\n\021UnknownEntityType\020\000\022\016\n\nAttachmen"
+    "t\020\001\022\r\n\tSignature\020\002*\212\n\n\016AttachmentType\022\"\n"
+    "\025UnknownAttachmentType\020\377\377\377\377\377\377\377\377\377\001\022\021\n\rNon"
+    "formalized\020\000\022\013\n\007Invoice\020\001\022\022\n\016InvoiceRece"
+    "ipt\020\002\022\027\n\023InvoiceConfirmation\020\003\022\034\n\030Invoic"
+    "eCorrectionRequest\020\004\022\025\n\021AttachmentCommen"
+    "t\020\005\022\037\n\033DeliveryFailureNotification\020\006\022\020\n\014"
+    "EancomInvoic\020\007\022\035\n\031SignatureRequestReject"
+    "ion\020\010\022(\n$EcrCatConformanceCertificateMet"
+    "adata\020\t\022\037\n\033SignatureVerificationReport\020\n"
+    "\022\032\n\026TrustConnectionRequest\020\013\022\n\n\006Torg12\020\014"
+    "\022\023\n\017InvoiceRevision\020\r\022\025\n\021InvoiceCorrecti"
+    "on\020\016\022\035\n\031InvoiceCorrectionRevision\020\017\022\031\n\025A"
+    "cceptanceCertificate\020\020\022\022\n\016StructuredData"
+    "\020\021\022\023\n\017ProformaInvoice\020\022\022\r\n\tXmlTorg12\020\023\022\034"
+    "\n\030XmlAcceptanceCertificate\020\024\022\027\n\023XmlTorg1"
+    "2BuyerTitle\020\025\022&\n\"XmlAcceptanceCertificat"
+    "eBuyerTitle\020\026\022\016\n\nResolution\020\027\022\025\n\021Resolut"
+    "ionRequest\020\030\022\033\n\027ResolutionRequestDenial\020"
+    "\031\022\r\n\tPriceList\020\032\022\013\n\007Receipt\020\033\022\031\n\025XmlSign"
+    "atureRejection\020\034\022\025\n\021RevocationRequest\020\035\022"
+    "\026\n\022PriceListAgreement\020\036\022\027\n\023CertificateRe"
+    "gistry\020\"\022\025\n\021ReconciliationAct\020#\022\014\n\010Contr"
+    "act\020$\022\n\n\006Torg13\020%\022\022\n\016ServiceDetails\020&\022\027\n"
+    "\023RoamingNotification\020\'\022\032\n\026SupplementaryA"
+    "greement\020(\022\035\n\031UniversalTransferDocument\020"
+    ")\022\'\n#UniversalTransferDocumentBuyerTitle"
+    "\020*\022%\n!UniversalTransferDocumentRevision\020"
+    "-\022\037\n\033UniversalCorrectionDocument\0201\022\'\n#Un"
+    "iversalCorrectionDocumentRevision\0202\022)\n%U"
+    "niversalCorrectionDocumentBuyerTitle\0203\022\016"
+    "\n\nCustomData\020@\022\020\n\014MoveDocument\020A\022\'\n#Reso"
+    "lutionRouteAssignmentAttachment\020B\022$\n Res"
+    "olutionRouteRemovalAttachment\020C", 4071);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Events/DiadocMessage-GetApi.proto", &protobuf_RegisterTypes);
   BoxEventList::default_instance_ = new BoxEventList();
@@ -447,6 +456,7 @@ bool AttachmentType_IsValid(int value) {
     case 64:
     case 65:
     case 66:
+    case 67:
       return true;
     default:
       return false;
@@ -2987,6 +2997,8 @@ const int Entity::kPacketIdFieldNumber;
 const int Entity::kIsApprovementSignatureFieldNumber;
 const int Entity::kIsEncryptedContentFieldNumber;
 const int Entity::kAttachmentFormatFieldNumber;
+const int Entity::kResolutionRouteAssignmentInfoFieldNumber;
+const int Entity::kResolutionRouteRemovalInfoFieldNumber;
 #endif  // !_MSC_VER
 
 Entity::Entity()
@@ -3001,6 +3013,8 @@ void Entity::InitAsDefaultInstance() {
   resolutioninfo_ = const_cast< ::Diadoc::Api::Proto::Events::ResolutionInfo*>(&::Diadoc::Api::Proto::Events::ResolutionInfo::default_instance());
   resolutionrequestinfo_ = const_cast< ::Diadoc::Api::Proto::Events::ResolutionRequestInfo*>(&::Diadoc::Api::Proto::Events::ResolutionRequestInfo::default_instance());
   resolutionrequestdenialinfo_ = const_cast< ::Diadoc::Api::Proto::Events::ResolutionRequestDenialInfo*>(&::Diadoc::Api::Proto::Events::ResolutionRequestDenialInfo::default_instance());
+  resolutionrouteassignmentinfo_ = const_cast< ::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo*>(&::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo::default_instance());
+  resolutionrouteremovalinfo_ = const_cast< ::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo*>(&::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo::default_instance());
 }
 
 Entity::Entity(const Entity& from)
@@ -3033,6 +3047,8 @@ void Entity::SharedCtor() {
   isapprovementsignature_ = false;
   isencryptedcontent_ = false;
   attachmentformat_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  resolutionrouteassignmentinfo_ = NULL;
+  resolutionrouteremovalinfo_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -3072,6 +3088,8 @@ void Entity::SharedDtor() {
     delete resolutioninfo_;
     delete resolutionrequestinfo_;
     delete resolutionrequestdenialinfo_;
+    delete resolutionrouteassignmentinfo_;
+    delete resolutionrouteremovalinfo_;
   }
 }
 
@@ -3161,7 +3179,7 @@ void Entity::Clear() {
     }
     needreceipt_ = false;
   }
-  if (_has_bits_[16 / 32] & 983040) {
+  if (_has_bits_[16 / 32] & 4128768) {
     ZR_(isapprovementsignature_, isencryptedcontent_);
     if (has_packetid()) {
       if (packetid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
@@ -3172,6 +3190,12 @@ void Entity::Clear() {
       if (attachmentformat_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         attachmentformat_->clear();
       }
+    }
+    if (has_resolutionrouteassignmentinfo()) {
+      if (resolutionrouteassignmentinfo_ != NULL) resolutionrouteassignmentinfo_->::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo::Clear();
+    }
+    if (has_resolutionrouteremovalinfo()) {
+      if (resolutionrouteremovalinfo_ != NULL) resolutionrouteremovalinfo_->::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo::Clear();
     }
   }
 
@@ -3503,6 +3527,32 @@ bool Entity::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(178)) goto parse_ResolutionRouteAssignmentInfo;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Events.ResolutionRouteAssignmentInfo ResolutionRouteAssignmentInfo = 22;
+      case 22: {
+        if (tag == 178) {
+         parse_ResolutionRouteAssignmentInfo:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_resolutionrouteassignmentinfo()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(186)) goto parse_ResolutionRouteRemovalInfo;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Events.ResolutionRouteRemovalInfo ResolutionRouteRemovalInfo = 23;
+      case 23: {
+        if (tag == 186) {
+         parse_ResolutionRouteRemovalInfo:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_resolutionrouteremovalinfo()));
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -3679,6 +3729,18 @@ void Entity::SerializeWithCachedSizes(
       21, this->attachmentformat(), output);
   }
 
+  // optional .Diadoc.Api.Proto.Events.ResolutionRouteAssignmentInfo ResolutionRouteAssignmentInfo = 22;
+  if (has_resolutionrouteassignmentinfo()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      22, this->resolutionrouteassignmentinfo(), output);
+  }
+
+  // optional .Diadoc.Api.Proto.Events.ResolutionRouteRemovalInfo ResolutionRouteRemovalInfo = 23;
+  if (has_resolutionrouteremovalinfo()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      23, this->resolutionrouteremovalinfo(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -3849,6 +3911,20 @@ void Entity::SerializeWithCachedSizes(
         21, this->attachmentformat(), target);
   }
 
+  // optional .Diadoc.Api.Proto.Events.ResolutionRouteAssignmentInfo ResolutionRouteAssignmentInfo = 22;
+  if (has_resolutionrouteassignmentinfo()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        22, this->resolutionrouteassignmentinfo(), target);
+  }
+
+  // optional .Diadoc.Api.Proto.Events.ResolutionRouteRemovalInfo ResolutionRouteRemovalInfo = 23;
+  if (has_resolutionrouteremovalinfo()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        23, this->resolutionrouteremovalinfo(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -3993,6 +4069,20 @@ int Entity::ByteSize() const {
           this->attachmentformat());
     }
 
+    // optional .Diadoc.Api.Proto.Events.ResolutionRouteAssignmentInfo ResolutionRouteAssignmentInfo = 22;
+    if (has_resolutionrouteassignmentinfo()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->resolutionrouteassignmentinfo());
+    }
+
+    // optional .Diadoc.Api.Proto.Events.ResolutionRouteRemovalInfo ResolutionRouteRemovalInfo = 23;
+    if (has_resolutionrouteremovalinfo()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->resolutionrouteremovalinfo());
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -4084,6 +4174,12 @@ void Entity::MergeFrom(const Entity& from) {
     if (from.has_attachmentformat()) {
       set_attachmentformat(from.attachmentformat());
     }
+    if (from.has_resolutionrouteassignmentinfo()) {
+      mutable_resolutionrouteassignmentinfo()->::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo::MergeFrom(from.resolutionrouteassignmentinfo());
+    }
+    if (from.has_resolutionrouteremovalinfo()) {
+      mutable_resolutionrouteremovalinfo()->::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo::MergeFrom(from.resolutionrouteremovalinfo());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -4118,6 +4214,12 @@ bool Entity::IsInitialized() const {
   if (has_resolutionrequestdenialinfo()) {
     if (!this->resolutionrequestdenialinfo().IsInitialized()) return false;
   }
+  if (has_resolutionrouteassignmentinfo()) {
+    if (!this->resolutionrouteassignmentinfo().IsInitialized()) return false;
+  }
+  if (has_resolutionrouteremovalinfo()) {
+    if (!this->resolutionrouteremovalinfo().IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -4143,6 +4245,8 @@ void Entity::Swap(Entity* other) {
     std::swap(isapprovementsignature_, other->isapprovementsignature_);
     std::swap(isencryptedcontent_, other->isencryptedcontent_);
     std::swap(attachmentformat_, other->attachmentformat_);
+    std::swap(resolutionrouteassignmentinfo_, other->resolutionrouteassignmentinfo_);
+    std::swap(resolutionrouteremovalinfo_, other->resolutionrouteremovalinfo_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

@@ -68,7 +68,7 @@ class CustomDocumentAttachment;
 class MessagePatchToPost;
 class SignatureVerification;
 class ResolutionRequestAttachment;
-class ResolutionChainAssignment;
+class ResolutionRouteAssignment;
 class ResolutionRequestCancellationAttachment;
 class ResolutionRequestDenialCancellationAttachment;
 class ResolutionRequestDenialAttachment;
@@ -91,6 +91,7 @@ class XmlSignatureRejectionAttachment;
 class RoamingNotificationToPost;
 class CustomDataPatch;
 class EditDocumentPacketCommand;
+class ResolutionRouteRemoval;
 
 enum CustomDataPatchOperation {
   Set = 0,
@@ -2358,7 +2359,7 @@ class AcceptanceCertificateAttachment : public ::google::protobuf::Message {
   inline ::std::string* release_documentdate();
   inline void set_allocated_documentdate(::std::string* documentdate);
 
-  // required string DocumentNumber = 7;
+  // optional string DocumentNumber = 7 [default = ""];
   inline bool has_documentnumber() const;
   inline void clear_documentnumber();
   static const int kDocumentNumberFieldNumber = 7;
@@ -3121,7 +3122,7 @@ class ReconciliationActAttachment : public ::google::protobuf::Message {
   inline ::std::string* release_documentdate();
   inline void set_allocated_documentdate(::std::string* documentdate);
 
-  // required string DocumentNumber = 8;
+  // optional string DocumentNumber = 8 [default = ""];
   inline bool has_documentnumber() const;
   inline void clear_documentnumber();
   static const int kDocumentNumberFieldNumber = 8;
@@ -4334,17 +4335,17 @@ class MessagePatchToPost : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::CustomDataPatch >*
       mutable_customdatapatches();
 
-  // repeated .Diadoc.Api.Proto.Events.ResolutionChainAssignment ResolutionChainAssignments = 17;
-  inline int resolutionchainassignments_size() const;
-  inline void clear_resolutionchainassignments();
-  static const int kResolutionChainAssignmentsFieldNumber = 17;
-  inline const ::Diadoc::Api::Proto::Events::ResolutionChainAssignment& resolutionchainassignments(int index) const;
-  inline ::Diadoc::Api::Proto::Events::ResolutionChainAssignment* mutable_resolutionchainassignments(int index);
-  inline ::Diadoc::Api::Proto::Events::ResolutionChainAssignment* add_resolutionchainassignments();
-  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionChainAssignment >&
-      resolutionchainassignments() const;
-  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionChainAssignment >*
-      mutable_resolutionchainassignments();
+  // repeated .Diadoc.Api.Proto.Events.ResolutionRouteAssignment ResolutionRouteAssignments = 17;
+  inline int resolutionrouteassignments_size() const;
+  inline void clear_resolutionrouteassignments();
+  static const int kResolutionRouteAssignmentsFieldNumber = 17;
+  inline const ::Diadoc::Api::Proto::Events::ResolutionRouteAssignment& resolutionrouteassignments(int index) const;
+  inline ::Diadoc::Api::Proto::Events::ResolutionRouteAssignment* mutable_resolutionrouteassignments(int index);
+  inline ::Diadoc::Api::Proto::Events::ResolutionRouteAssignment* add_resolutionrouteassignments();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionRouteAssignment >&
+      resolutionrouteassignments() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionRouteAssignment >*
+      mutable_resolutionrouteassignments();
 
   // repeated .Diadoc.Api.Proto.Events.SignatureVerification SignatureVerifications = 18;
   inline int signatureverifications_size() const;
@@ -4382,6 +4383,18 @@ class MessagePatchToPost : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >*
       mutable_universaltransferdocumentbuyertitles();
 
+  // repeated .Diadoc.Api.Proto.Events.ResolutionRouteRemoval ResolutionRouteRemovals = 21;
+  inline int resolutionrouteremovals_size() const;
+  inline void clear_resolutionrouteremovals();
+  static const int kResolutionRouteRemovalsFieldNumber = 21;
+  inline const ::Diadoc::Api::Proto::Events::ResolutionRouteRemoval& resolutionrouteremovals(int index) const;
+  inline ::Diadoc::Api::Proto::Events::ResolutionRouteRemoval* mutable_resolutionrouteremovals(int index);
+  inline ::Diadoc::Api::Proto::Events::ResolutionRouteRemoval* add_resolutionrouteremovals();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionRouteRemoval >&
+      resolutionrouteremovals() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionRouteRemoval >*
+      mutable_resolutionrouteremovals();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.MessagePatchToPost)
  private:
   inline void set_has_boxid();
@@ -4409,10 +4422,11 @@ class MessagePatchToPost : public ::google::protobuf::Message {
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RevocationRequestAttachment > revocationrequests_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::XmlSignatureRejectionAttachment > xmlsignaturerejections_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::CustomDataPatch > customdatapatches_;
-  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionChainAssignment > resolutionchainassignments_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionRouteAssignment > resolutionrouteassignments_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::SignatureVerification > signatureverifications_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::EditDocumentPacketCommand > editdocumentpacketcommands_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment > universaltransferdocumentbuyertitles_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionRouteRemoval > resolutionrouteremovals_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -4670,14 +4684,14 @@ class ResolutionRequestAttachment : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class ResolutionChainAssignment : public ::google::protobuf::Message {
+class ResolutionRouteAssignment : public ::google::protobuf::Message {
  public:
-  ResolutionChainAssignment();
-  virtual ~ResolutionChainAssignment();
+  ResolutionRouteAssignment();
+  virtual ~ResolutionRouteAssignment();
 
-  ResolutionChainAssignment(const ResolutionChainAssignment& from);
+  ResolutionRouteAssignment(const ResolutionRouteAssignment& from);
 
-  inline ResolutionChainAssignment& operator=(const ResolutionChainAssignment& from) {
+  inline ResolutionRouteAssignment& operator=(const ResolutionRouteAssignment& from) {
     CopyFrom(from);
     return *this;
   }
@@ -4691,17 +4705,17 @@ class ResolutionChainAssignment : public ::google::protobuf::Message {
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const ResolutionChainAssignment& default_instance();
+  static const ResolutionRouteAssignment& default_instance();
 
-  void Swap(ResolutionChainAssignment* other);
+  void Swap(ResolutionRouteAssignment* other);
 
   // implements Message ----------------------------------------------
 
-  ResolutionChainAssignment* New() const;
+  ResolutionRouteAssignment* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const ResolutionChainAssignment& from);
-  void MergeFrom(const ResolutionChainAssignment& from);
+  void CopyFrom(const ResolutionRouteAssignment& from);
+  void MergeFrom(const ResolutionRouteAssignment& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -4735,17 +4749,17 @@ class ResolutionChainAssignment : public ::google::protobuf::Message {
   inline ::std::string* release_initialdocumentid();
   inline void set_allocated_initialdocumentid(::std::string* initialdocumentid);
 
-  // required string ChainId = 2;
-  inline bool has_chainid() const;
-  inline void clear_chainid();
-  static const int kChainIdFieldNumber = 2;
-  inline const ::std::string& chainid() const;
-  inline void set_chainid(const ::std::string& value);
-  inline void set_chainid(const char* value);
-  inline void set_chainid(const char* value, size_t size);
-  inline ::std::string* mutable_chainid();
-  inline ::std::string* release_chainid();
-  inline void set_allocated_chainid(::std::string* chainid);
+  // required string RouteId = 2;
+  inline bool has_routeid() const;
+  inline void clear_routeid();
+  static const int kRouteIdFieldNumber = 2;
+  inline const ::std::string& routeid() const;
+  inline void set_routeid(const ::std::string& value);
+  inline void set_routeid(const char* value);
+  inline void set_routeid(const char* value, size_t size);
+  inline ::std::string* mutable_routeid();
+  inline ::std::string* release_routeid();
+  inline void set_allocated_routeid(::std::string* routeid);
 
   // optional string Comment = 3;
   inline bool has_comment() const;
@@ -4759,12 +4773,12 @@ class ResolutionChainAssignment : public ::google::protobuf::Message {
   inline ::std::string* release_comment();
   inline void set_allocated_comment(::std::string* comment);
 
-  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.ResolutionChainAssignment)
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.ResolutionRouteAssignment)
  private:
   inline void set_has_initialdocumentid();
   inline void clear_has_initialdocumentid();
-  inline void set_has_chainid();
-  inline void clear_has_chainid();
+  inline void set_has_routeid();
+  inline void clear_has_routeid();
   inline void set_has_comment();
   inline void clear_has_comment();
 
@@ -4773,14 +4787,14 @@ class ResolutionChainAssignment : public ::google::protobuf::Message {
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::std::string* initialdocumentid_;
-  ::std::string* chainid_;
+  ::std::string* routeid_;
   ::std::string* comment_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
 
   void InitAsDefaultInstance();
-  static ResolutionChainAssignment* default_instance_;
+  static ResolutionRouteAssignment* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -7221,6 +7235,120 @@ class EditDocumentPacketCommand : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static EditDocumentPacketCommand* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class ResolutionRouteRemoval : public ::google::protobuf::Message {
+ public:
+  ResolutionRouteRemoval();
+  virtual ~ResolutionRouteRemoval();
+
+  ResolutionRouteRemoval(const ResolutionRouteRemoval& from);
+
+  inline ResolutionRouteRemoval& operator=(const ResolutionRouteRemoval& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ResolutionRouteRemoval& default_instance();
+
+  void Swap(ResolutionRouteRemoval* other);
+
+  // implements Message ----------------------------------------------
+
+  ResolutionRouteRemoval* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const ResolutionRouteRemoval& from);
+  void MergeFrom(const ResolutionRouteRemoval& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string ParentEntityId = 1;
+  inline bool has_parententityid() const;
+  inline void clear_parententityid();
+  static const int kParentEntityIdFieldNumber = 1;
+  inline const ::std::string& parententityid() const;
+  inline void set_parententityid(const ::std::string& value);
+  inline void set_parententityid(const char* value);
+  inline void set_parententityid(const char* value, size_t size);
+  inline ::std::string* mutable_parententityid();
+  inline ::std::string* release_parententityid();
+  inline void set_allocated_parententityid(::std::string* parententityid);
+
+  // required string RouteId = 2;
+  inline bool has_routeid() const;
+  inline void clear_routeid();
+  static const int kRouteIdFieldNumber = 2;
+  inline const ::std::string& routeid() const;
+  inline void set_routeid(const ::std::string& value);
+  inline void set_routeid(const char* value);
+  inline void set_routeid(const char* value, size_t size);
+  inline ::std::string* mutable_routeid();
+  inline ::std::string* release_routeid();
+  inline void set_allocated_routeid(::std::string* routeid);
+
+  // optional string Comment = 3 [default = ""];
+  inline bool has_comment() const;
+  inline void clear_comment();
+  static const int kCommentFieldNumber = 3;
+  inline const ::std::string& comment() const;
+  inline void set_comment(const ::std::string& value);
+  inline void set_comment(const char* value);
+  inline void set_comment(const char* value, size_t size);
+  inline ::std::string* mutable_comment();
+  inline ::std::string* release_comment();
+  inline void set_allocated_comment(::std::string* comment);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.ResolutionRouteRemoval)
+ private:
+  inline void set_has_parententityid();
+  inline void clear_has_parententityid();
+  inline void set_has_routeid();
+  inline void clear_has_routeid();
+  inline void set_has_comment();
+  inline void clear_has_comment();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* parententityid_;
+  ::std::string* routeid_;
+  ::std::string* comment_;
+  friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
+
+  void InitAsDefaultInstance();
+  static ResolutionRouteRemoval* default_instance_;
 };
 // ===================================================================
 
@@ -12504,7 +12632,7 @@ inline void AcceptanceCertificateAttachment::set_allocated_documentdate(::std::s
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.AcceptanceCertificateAttachment.DocumentDate)
 }
 
-// required string DocumentNumber = 7;
+// optional string DocumentNumber = 7 [default = ""];
 inline bool AcceptanceCertificateAttachment::has_documentnumber() const {
   return (_has_bits_[0] & 0x00000040u) != 0;
 }
@@ -14597,7 +14725,7 @@ inline void ReconciliationActAttachment::set_allocated_documentdate(::std::strin
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ReconciliationActAttachment.DocumentDate)
 }
 
-// required string DocumentNumber = 8;
+// optional string DocumentNumber = 8 [default = ""];
 inline bool ReconciliationActAttachment::has_documentnumber() const {
   return (_has_bits_[0] & 0x00000040u) != 0;
 }
@@ -17891,34 +18019,34 @@ MessagePatchToPost::mutable_customdatapatches() {
   return &customdatapatches_;
 }
 
-// repeated .Diadoc.Api.Proto.Events.ResolutionChainAssignment ResolutionChainAssignments = 17;
-inline int MessagePatchToPost::resolutionchainassignments_size() const {
-  return resolutionchainassignments_.size();
+// repeated .Diadoc.Api.Proto.Events.ResolutionRouteAssignment ResolutionRouteAssignments = 17;
+inline int MessagePatchToPost::resolutionrouteassignments_size() const {
+  return resolutionrouteassignments_.size();
 }
-inline void MessagePatchToPost::clear_resolutionchainassignments() {
-  resolutionchainassignments_.Clear();
+inline void MessagePatchToPost::clear_resolutionrouteassignments() {
+  resolutionrouteassignments_.Clear();
 }
-inline const ::Diadoc::Api::Proto::Events::ResolutionChainAssignment& MessagePatchToPost::resolutionchainassignments(int index) const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.MessagePatchToPost.ResolutionChainAssignments)
-  return resolutionchainassignments_.Get(index);
+inline const ::Diadoc::Api::Proto::Events::ResolutionRouteAssignment& MessagePatchToPost::resolutionrouteassignments(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.MessagePatchToPost.ResolutionRouteAssignments)
+  return resolutionrouteassignments_.Get(index);
 }
-inline ::Diadoc::Api::Proto::Events::ResolutionChainAssignment* MessagePatchToPost::mutable_resolutionchainassignments(int index) {
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.MessagePatchToPost.ResolutionChainAssignments)
-  return resolutionchainassignments_.Mutable(index);
+inline ::Diadoc::Api::Proto::Events::ResolutionRouteAssignment* MessagePatchToPost::mutable_resolutionrouteassignments(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.MessagePatchToPost.ResolutionRouteAssignments)
+  return resolutionrouteassignments_.Mutable(index);
 }
-inline ::Diadoc::Api::Proto::Events::ResolutionChainAssignment* MessagePatchToPost::add_resolutionchainassignments() {
-  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.MessagePatchToPost.ResolutionChainAssignments)
-  return resolutionchainassignments_.Add();
+inline ::Diadoc::Api::Proto::Events::ResolutionRouteAssignment* MessagePatchToPost::add_resolutionrouteassignments() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.MessagePatchToPost.ResolutionRouteAssignments)
+  return resolutionrouteassignments_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionChainAssignment >&
-MessagePatchToPost::resolutionchainassignments() const {
-  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.MessagePatchToPost.ResolutionChainAssignments)
-  return resolutionchainassignments_;
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionRouteAssignment >&
+MessagePatchToPost::resolutionrouteassignments() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.MessagePatchToPost.ResolutionRouteAssignments)
+  return resolutionrouteassignments_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionChainAssignment >*
-MessagePatchToPost::mutable_resolutionchainassignments() {
-  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.MessagePatchToPost.ResolutionChainAssignments)
-  return &resolutionchainassignments_;
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionRouteAssignment >*
+MessagePatchToPost::mutable_resolutionrouteassignments() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.MessagePatchToPost.ResolutionRouteAssignments)
+  return &resolutionrouteassignments_;
 }
 
 // repeated .Diadoc.Api.Proto.Events.SignatureVerification SignatureVerifications = 18;
@@ -18009,6 +18137,36 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::Recei
 MessagePatchToPost::mutable_universaltransferdocumentbuyertitles() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.MessagePatchToPost.UniversalTransferDocumentBuyerTitles)
   return &universaltransferdocumentbuyertitles_;
+}
+
+// repeated .Diadoc.Api.Proto.Events.ResolutionRouteRemoval ResolutionRouteRemovals = 21;
+inline int MessagePatchToPost::resolutionrouteremovals_size() const {
+  return resolutionrouteremovals_.size();
+}
+inline void MessagePatchToPost::clear_resolutionrouteremovals() {
+  resolutionrouteremovals_.Clear();
+}
+inline const ::Diadoc::Api::Proto::Events::ResolutionRouteRemoval& MessagePatchToPost::resolutionrouteremovals(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.MessagePatchToPost.ResolutionRouteRemovals)
+  return resolutionrouteremovals_.Get(index);
+}
+inline ::Diadoc::Api::Proto::Events::ResolutionRouteRemoval* MessagePatchToPost::mutable_resolutionrouteremovals(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.MessagePatchToPost.ResolutionRouteRemovals)
+  return resolutionrouteremovals_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::Events::ResolutionRouteRemoval* MessagePatchToPost::add_resolutionrouteremovals() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.MessagePatchToPost.ResolutionRouteRemovals)
+  return resolutionrouteremovals_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionRouteRemoval >&
+MessagePatchToPost::resolutionrouteremovals() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.MessagePatchToPost.ResolutionRouteRemovals)
+  return resolutionrouteremovals_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionRouteRemoval >*
+MessagePatchToPost::mutable_resolutionrouteremovals() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.MessagePatchToPost.ResolutionRouteRemovals)
+  return &resolutionrouteremovals_;
 }
 
 // -------------------------------------------------------------------
@@ -18526,61 +18684,61 @@ inline void ResolutionRequestAttachment::set_allocated_comment(::std::string* co
 
 // -------------------------------------------------------------------
 
-// ResolutionChainAssignment
+// ResolutionRouteAssignment
 
 // required string InitialDocumentId = 1;
-inline bool ResolutionChainAssignment::has_initialdocumentid() const {
+inline bool ResolutionRouteAssignment::has_initialdocumentid() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void ResolutionChainAssignment::set_has_initialdocumentid() {
+inline void ResolutionRouteAssignment::set_has_initialdocumentid() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void ResolutionChainAssignment::clear_has_initialdocumentid() {
+inline void ResolutionRouteAssignment::clear_has_initialdocumentid() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void ResolutionChainAssignment::clear_initialdocumentid() {
+inline void ResolutionRouteAssignment::clear_initialdocumentid() {
   if (initialdocumentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     initialdocumentid_->clear();
   }
   clear_has_initialdocumentid();
 }
-inline const ::std::string& ResolutionChainAssignment::initialdocumentid() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionChainAssignment.InitialDocumentId)
+inline const ::std::string& ResolutionRouteAssignment::initialdocumentid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.InitialDocumentId)
   return *initialdocumentid_;
 }
-inline void ResolutionChainAssignment::set_initialdocumentid(const ::std::string& value) {
+inline void ResolutionRouteAssignment::set_initialdocumentid(const ::std::string& value) {
   set_has_initialdocumentid();
   if (initialdocumentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     initialdocumentid_ = new ::std::string;
   }
   initialdocumentid_->assign(value);
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionChainAssignment.InitialDocumentId)
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.InitialDocumentId)
 }
-inline void ResolutionChainAssignment::set_initialdocumentid(const char* value) {
+inline void ResolutionRouteAssignment::set_initialdocumentid(const char* value) {
   set_has_initialdocumentid();
   if (initialdocumentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     initialdocumentid_ = new ::std::string;
   }
   initialdocumentid_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ResolutionChainAssignment.InitialDocumentId)
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.InitialDocumentId)
 }
-inline void ResolutionChainAssignment::set_initialdocumentid(const char* value, size_t size) {
+inline void ResolutionRouteAssignment::set_initialdocumentid(const char* value, size_t size) {
   set_has_initialdocumentid();
   if (initialdocumentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     initialdocumentid_ = new ::std::string;
   }
   initialdocumentid_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ResolutionChainAssignment.InitialDocumentId)
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.InitialDocumentId)
 }
-inline ::std::string* ResolutionChainAssignment::mutable_initialdocumentid() {
+inline ::std::string* ResolutionRouteAssignment::mutable_initialdocumentid() {
   set_has_initialdocumentid();
   if (initialdocumentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     initialdocumentid_ = new ::std::string;
   }
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ResolutionChainAssignment.InitialDocumentId)
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.InitialDocumentId)
   return initialdocumentid_;
 }
-inline ::std::string* ResolutionChainAssignment::release_initialdocumentid() {
+inline ::std::string* ResolutionRouteAssignment::release_initialdocumentid() {
   clear_has_initialdocumentid();
   if (initialdocumentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     return NULL;
@@ -18590,7 +18748,7 @@ inline ::std::string* ResolutionChainAssignment::release_initialdocumentid() {
     return temp;
   }
 }
-inline void ResolutionChainAssignment::set_allocated_initialdocumentid(::std::string* initialdocumentid) {
+inline void ResolutionRouteAssignment::set_allocated_initialdocumentid(::std::string* initialdocumentid) {
   if (initialdocumentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete initialdocumentid_;
   }
@@ -18601,138 +18759,138 @@ inline void ResolutionChainAssignment::set_allocated_initialdocumentid(::std::st
     clear_has_initialdocumentid();
     initialdocumentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ResolutionChainAssignment.InitialDocumentId)
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.InitialDocumentId)
 }
 
-// required string ChainId = 2;
-inline bool ResolutionChainAssignment::has_chainid() const {
+// required string RouteId = 2;
+inline bool ResolutionRouteAssignment::has_routeid() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void ResolutionChainAssignment::set_has_chainid() {
+inline void ResolutionRouteAssignment::set_has_routeid() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void ResolutionChainAssignment::clear_has_chainid() {
+inline void ResolutionRouteAssignment::clear_has_routeid() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void ResolutionChainAssignment::clear_chainid() {
-  if (chainid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    chainid_->clear();
+inline void ResolutionRouteAssignment::clear_routeid() {
+  if (routeid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    routeid_->clear();
   }
-  clear_has_chainid();
+  clear_has_routeid();
 }
-inline const ::std::string& ResolutionChainAssignment::chainid() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionChainAssignment.ChainId)
-  return *chainid_;
+inline const ::std::string& ResolutionRouteAssignment::routeid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.RouteId)
+  return *routeid_;
 }
-inline void ResolutionChainAssignment::set_chainid(const ::std::string& value) {
-  set_has_chainid();
-  if (chainid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    chainid_ = new ::std::string;
+inline void ResolutionRouteAssignment::set_routeid(const ::std::string& value) {
+  set_has_routeid();
+  if (routeid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    routeid_ = new ::std::string;
   }
-  chainid_->assign(value);
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionChainAssignment.ChainId)
+  routeid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.RouteId)
 }
-inline void ResolutionChainAssignment::set_chainid(const char* value) {
-  set_has_chainid();
-  if (chainid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    chainid_ = new ::std::string;
+inline void ResolutionRouteAssignment::set_routeid(const char* value) {
+  set_has_routeid();
+  if (routeid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    routeid_ = new ::std::string;
   }
-  chainid_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ResolutionChainAssignment.ChainId)
+  routeid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.RouteId)
 }
-inline void ResolutionChainAssignment::set_chainid(const char* value, size_t size) {
-  set_has_chainid();
-  if (chainid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    chainid_ = new ::std::string;
+inline void ResolutionRouteAssignment::set_routeid(const char* value, size_t size) {
+  set_has_routeid();
+  if (routeid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    routeid_ = new ::std::string;
   }
-  chainid_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ResolutionChainAssignment.ChainId)
+  routeid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.RouteId)
 }
-inline ::std::string* ResolutionChainAssignment::mutable_chainid() {
-  set_has_chainid();
-  if (chainid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    chainid_ = new ::std::string;
+inline ::std::string* ResolutionRouteAssignment::mutable_routeid() {
+  set_has_routeid();
+  if (routeid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    routeid_ = new ::std::string;
   }
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ResolutionChainAssignment.ChainId)
-  return chainid_;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.RouteId)
+  return routeid_;
 }
-inline ::std::string* ResolutionChainAssignment::release_chainid() {
-  clear_has_chainid();
-  if (chainid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+inline ::std::string* ResolutionRouteAssignment::release_routeid() {
+  clear_has_routeid();
+  if (routeid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     return NULL;
   } else {
-    ::std::string* temp = chainid_;
-    chainid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    ::std::string* temp = routeid_;
+    routeid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     return temp;
   }
 }
-inline void ResolutionChainAssignment::set_allocated_chainid(::std::string* chainid) {
-  if (chainid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete chainid_;
+inline void ResolutionRouteAssignment::set_allocated_routeid(::std::string* routeid) {
+  if (routeid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete routeid_;
   }
-  if (chainid) {
-    set_has_chainid();
-    chainid_ = chainid;
+  if (routeid) {
+    set_has_routeid();
+    routeid_ = routeid;
   } else {
-    clear_has_chainid();
-    chainid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_routeid();
+    routeid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ResolutionChainAssignment.ChainId)
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.RouteId)
 }
 
 // optional string Comment = 3;
-inline bool ResolutionChainAssignment::has_comment() const {
+inline bool ResolutionRouteAssignment::has_comment() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
-inline void ResolutionChainAssignment::set_has_comment() {
+inline void ResolutionRouteAssignment::set_has_comment() {
   _has_bits_[0] |= 0x00000004u;
 }
-inline void ResolutionChainAssignment::clear_has_comment() {
+inline void ResolutionRouteAssignment::clear_has_comment() {
   _has_bits_[0] &= ~0x00000004u;
 }
-inline void ResolutionChainAssignment::clear_comment() {
+inline void ResolutionRouteAssignment::clear_comment() {
   if (comment_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     comment_->clear();
   }
   clear_has_comment();
 }
-inline const ::std::string& ResolutionChainAssignment::comment() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionChainAssignment.Comment)
+inline const ::std::string& ResolutionRouteAssignment::comment() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.Comment)
   return *comment_;
 }
-inline void ResolutionChainAssignment::set_comment(const ::std::string& value) {
+inline void ResolutionRouteAssignment::set_comment(const ::std::string& value) {
   set_has_comment();
   if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     comment_ = new ::std::string;
   }
   comment_->assign(value);
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionChainAssignment.Comment)
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.Comment)
 }
-inline void ResolutionChainAssignment::set_comment(const char* value) {
+inline void ResolutionRouteAssignment::set_comment(const char* value) {
   set_has_comment();
   if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     comment_ = new ::std::string;
   }
   comment_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ResolutionChainAssignment.Comment)
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.Comment)
 }
-inline void ResolutionChainAssignment::set_comment(const char* value, size_t size) {
+inline void ResolutionRouteAssignment::set_comment(const char* value, size_t size) {
   set_has_comment();
   if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     comment_ = new ::std::string;
   }
   comment_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ResolutionChainAssignment.Comment)
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.Comment)
 }
-inline ::std::string* ResolutionChainAssignment::mutable_comment() {
+inline ::std::string* ResolutionRouteAssignment::mutable_comment() {
   set_has_comment();
   if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     comment_ = new ::std::string;
   }
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ResolutionChainAssignment.Comment)
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.Comment)
   return comment_;
 }
-inline ::std::string* ResolutionChainAssignment::release_comment() {
+inline ::std::string* ResolutionRouteAssignment::release_comment() {
   clear_has_comment();
   if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     return NULL;
@@ -18742,7 +18900,7 @@ inline ::std::string* ResolutionChainAssignment::release_comment() {
     return temp;
   }
 }
-inline void ResolutionChainAssignment::set_allocated_comment(::std::string* comment) {
+inline void ResolutionRouteAssignment::set_allocated_comment(::std::string* comment) {
   if (comment_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete comment_;
   }
@@ -18753,7 +18911,7 @@ inline void ResolutionChainAssignment::set_allocated_comment(::std::string* comm
     clear_has_comment();
     comment_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ResolutionChainAssignment.Comment)
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.Comment)
 }
 
 // -------------------------------------------------------------------
@@ -22808,6 +22966,238 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::DocumentId >*
 EditDocumentPacketCommand::mutable_removedocumentsfrompacket() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.EditDocumentPacketCommand.RemoveDocumentsFromPacket)
   return &removedocumentsfrompacket_;
+}
+
+// -------------------------------------------------------------------
+
+// ResolutionRouteRemoval
+
+// required string ParentEntityId = 1;
+inline bool ResolutionRouteRemoval::has_parententityid() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void ResolutionRouteRemoval::set_has_parententityid() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void ResolutionRouteRemoval::clear_has_parententityid() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void ResolutionRouteRemoval::clear_parententityid() {
+  if (parententityid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_->clear();
+  }
+  clear_has_parententityid();
+}
+inline const ::std::string& ResolutionRouteRemoval::parententityid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.ParentEntityId)
+  return *parententityid_;
+}
+inline void ResolutionRouteRemoval::set_parententityid(const ::std::string& value) {
+  set_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_ = new ::std::string;
+  }
+  parententityid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.ParentEntityId)
+}
+inline void ResolutionRouteRemoval::set_parententityid(const char* value) {
+  set_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_ = new ::std::string;
+  }
+  parententityid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.ParentEntityId)
+}
+inline void ResolutionRouteRemoval::set_parententityid(const char* value, size_t size) {
+  set_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_ = new ::std::string;
+  }
+  parententityid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.ParentEntityId)
+}
+inline ::std::string* ResolutionRouteRemoval::mutable_parententityid() {
+  set_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.ParentEntityId)
+  return parententityid_;
+}
+inline ::std::string* ResolutionRouteRemoval::release_parententityid() {
+  clear_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = parententityid_;
+    parententityid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void ResolutionRouteRemoval::set_allocated_parententityid(::std::string* parententityid) {
+  if (parententityid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete parententityid_;
+  }
+  if (parententityid) {
+    set_has_parententityid();
+    parententityid_ = parententityid;
+  } else {
+    clear_has_parententityid();
+    parententityid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.ParentEntityId)
+}
+
+// required string RouteId = 2;
+inline bool ResolutionRouteRemoval::has_routeid() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void ResolutionRouteRemoval::set_has_routeid() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void ResolutionRouteRemoval::clear_has_routeid() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void ResolutionRouteRemoval::clear_routeid() {
+  if (routeid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    routeid_->clear();
+  }
+  clear_has_routeid();
+}
+inline const ::std::string& ResolutionRouteRemoval::routeid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.RouteId)
+  return *routeid_;
+}
+inline void ResolutionRouteRemoval::set_routeid(const ::std::string& value) {
+  set_has_routeid();
+  if (routeid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    routeid_ = new ::std::string;
+  }
+  routeid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.RouteId)
+}
+inline void ResolutionRouteRemoval::set_routeid(const char* value) {
+  set_has_routeid();
+  if (routeid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    routeid_ = new ::std::string;
+  }
+  routeid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.RouteId)
+}
+inline void ResolutionRouteRemoval::set_routeid(const char* value, size_t size) {
+  set_has_routeid();
+  if (routeid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    routeid_ = new ::std::string;
+  }
+  routeid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.RouteId)
+}
+inline ::std::string* ResolutionRouteRemoval::mutable_routeid() {
+  set_has_routeid();
+  if (routeid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    routeid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.RouteId)
+  return routeid_;
+}
+inline ::std::string* ResolutionRouteRemoval::release_routeid() {
+  clear_has_routeid();
+  if (routeid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = routeid_;
+    routeid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void ResolutionRouteRemoval::set_allocated_routeid(::std::string* routeid) {
+  if (routeid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete routeid_;
+  }
+  if (routeid) {
+    set_has_routeid();
+    routeid_ = routeid;
+  } else {
+    clear_has_routeid();
+    routeid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.RouteId)
+}
+
+// optional string Comment = 3 [default = ""];
+inline bool ResolutionRouteRemoval::has_comment() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void ResolutionRouteRemoval::set_has_comment() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void ResolutionRouteRemoval::clear_has_comment() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void ResolutionRouteRemoval::clear_comment() {
+  if (comment_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_->clear();
+  }
+  clear_has_comment();
+}
+inline const ::std::string& ResolutionRouteRemoval::comment() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.Comment)
+  return *comment_;
+}
+inline void ResolutionRouteRemoval::set_comment(const ::std::string& value) {
+  set_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_ = new ::std::string;
+  }
+  comment_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.Comment)
+}
+inline void ResolutionRouteRemoval::set_comment(const char* value) {
+  set_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_ = new ::std::string;
+  }
+  comment_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.Comment)
+}
+inline void ResolutionRouteRemoval::set_comment(const char* value, size_t size) {
+  set_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_ = new ::std::string;
+  }
+  comment_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.Comment)
+}
+inline ::std::string* ResolutionRouteRemoval::mutable_comment() {
+  set_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.Comment)
+  return comment_;
+}
+inline ::std::string* ResolutionRouteRemoval::release_comment() {
+  clear_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = comment_;
+    comment_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void ResolutionRouteRemoval::set_allocated_comment(::std::string* comment) {
+  if (comment_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete comment_;
+  }
+  if (comment) {
+    set_has_comment();
+    comment_ = comment;
+  } else {
+    clear_has_comment();
+    comment_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.Comment)
 }
 
 
