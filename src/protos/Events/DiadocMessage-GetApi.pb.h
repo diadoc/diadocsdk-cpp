@@ -1116,17 +1116,17 @@ class Entity : public ::google::protobuf::Message {
   inline bool isencryptedcontent() const;
   inline void set_isencryptedcontent(bool value);
 
-  // optional string AttachmentFormat = 21;
-  inline bool has_attachmentformat() const;
-  inline void clear_attachmentformat();
-  static const int kAttachmentFormatFieldNumber = 21;
-  inline const ::std::string& attachmentformat() const;
-  inline void set_attachmentformat(const ::std::string& value);
-  inline void set_attachmentformat(const char* value);
-  inline void set_attachmentformat(const char* value, size_t size);
-  inline ::std::string* mutable_attachmentformat();
-  inline ::std::string* release_attachmentformat();
-  inline void set_allocated_attachmentformat(::std::string* attachmentformat);
+  // optional string AttachmentVersion = 21;
+  inline bool has_attachmentversion() const;
+  inline void clear_attachmentversion();
+  static const int kAttachmentVersionFieldNumber = 21;
+  inline const ::std::string& attachmentversion() const;
+  inline void set_attachmentversion(const ::std::string& value);
+  inline void set_attachmentversion(const char* value);
+  inline void set_attachmentversion(const char* value, size_t size);
+  inline ::std::string* mutable_attachmentversion();
+  inline ::std::string* release_attachmentversion();
+  inline void set_allocated_attachmentversion(::std::string* attachmentversion);
 
   // optional .Diadoc.Api.Proto.Events.ResolutionRouteAssignmentInfo ResolutionRouteAssignmentInfo = 22;
   inline bool has_resolutionrouteassignmentinfo() const;
@@ -1186,8 +1186,8 @@ class Entity : public ::google::protobuf::Message {
   inline void clear_has_isapprovementsignature();
   inline void set_has_isencryptedcontent();
   inline void clear_has_isencryptedcontent();
-  inline void set_has_attachmentformat();
-  inline void clear_has_attachmentformat();
+  inline void set_has_attachmentversion();
+  inline void clear_has_attachmentversion();
   inline void set_has_resolutionrouteassignmentinfo();
   inline void clear_has_resolutionrouteassignmentinfo();
   inline void set_has_resolutionrouteremovalinfo();
@@ -1212,7 +1212,7 @@ class Entity : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Events::ResolutionRequestInfo* resolutionrequestinfo_;
   ::Diadoc::Api::Proto::Events::ResolutionRequestDenialInfo* resolutionrequestdenialinfo_;
   ::std::string* packetid_;
-  ::std::string* attachmentformat_;
+  ::std::string* attachmentversion_;
   ::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo* resolutionrouteassignmentinfo_;
   ::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo* resolutionrouteremovalinfo_;
   bool needrecipientsignature_;
@@ -3954,80 +3954,80 @@ inline void Entity::set_isencryptedcontent(bool value) {
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Entity.IsEncryptedContent)
 }
 
-// optional string AttachmentFormat = 21;
-inline bool Entity::has_attachmentformat() const {
+// optional string AttachmentVersion = 21;
+inline bool Entity::has_attachmentversion() const {
   return (_has_bits_[0] & 0x00080000u) != 0;
 }
-inline void Entity::set_has_attachmentformat() {
+inline void Entity::set_has_attachmentversion() {
   _has_bits_[0] |= 0x00080000u;
 }
-inline void Entity::clear_has_attachmentformat() {
+inline void Entity::clear_has_attachmentversion() {
   _has_bits_[0] &= ~0x00080000u;
 }
-inline void Entity::clear_attachmentformat() {
-  if (attachmentformat_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    attachmentformat_->clear();
+inline void Entity::clear_attachmentversion() {
+  if (attachmentversion_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attachmentversion_->clear();
   }
-  clear_has_attachmentformat();
+  clear_has_attachmentversion();
 }
-inline const ::std::string& Entity::attachmentformat() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Entity.AttachmentFormat)
-  return *attachmentformat_;
+inline const ::std::string& Entity::attachmentversion() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Entity.AttachmentVersion)
+  return *attachmentversion_;
 }
-inline void Entity::set_attachmentformat(const ::std::string& value) {
-  set_has_attachmentformat();
-  if (attachmentformat_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    attachmentformat_ = new ::std::string;
+inline void Entity::set_attachmentversion(const ::std::string& value) {
+  set_has_attachmentversion();
+  if (attachmentversion_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attachmentversion_ = new ::std::string;
   }
-  attachmentformat_->assign(value);
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Entity.AttachmentFormat)
+  attachmentversion_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Entity.AttachmentVersion)
 }
-inline void Entity::set_attachmentformat(const char* value) {
-  set_has_attachmentformat();
-  if (attachmentformat_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    attachmentformat_ = new ::std::string;
+inline void Entity::set_attachmentversion(const char* value) {
+  set_has_attachmentversion();
+  if (attachmentversion_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attachmentversion_ = new ::std::string;
   }
-  attachmentformat_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.Entity.AttachmentFormat)
+  attachmentversion_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.Entity.AttachmentVersion)
 }
-inline void Entity::set_attachmentformat(const char* value, size_t size) {
-  set_has_attachmentformat();
-  if (attachmentformat_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    attachmentformat_ = new ::std::string;
+inline void Entity::set_attachmentversion(const char* value, size_t size) {
+  set_has_attachmentversion();
+  if (attachmentversion_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attachmentversion_ = new ::std::string;
   }
-  attachmentformat_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.Entity.AttachmentFormat)
+  attachmentversion_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.Entity.AttachmentVersion)
 }
-inline ::std::string* Entity::mutable_attachmentformat() {
-  set_has_attachmentformat();
-  if (attachmentformat_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    attachmentformat_ = new ::std::string;
+inline ::std::string* Entity::mutable_attachmentversion() {
+  set_has_attachmentversion();
+  if (attachmentversion_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attachmentversion_ = new ::std::string;
   }
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Entity.AttachmentFormat)
-  return attachmentformat_;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Entity.AttachmentVersion)
+  return attachmentversion_;
 }
-inline ::std::string* Entity::release_attachmentformat() {
-  clear_has_attachmentformat();
-  if (attachmentformat_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+inline ::std::string* Entity::release_attachmentversion() {
+  clear_has_attachmentversion();
+  if (attachmentversion_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     return NULL;
   } else {
-    ::std::string* temp = attachmentformat_;
-    attachmentformat_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    ::std::string* temp = attachmentversion_;
+    attachmentversion_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     return temp;
   }
 }
-inline void Entity::set_allocated_attachmentformat(::std::string* attachmentformat) {
-  if (attachmentformat_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete attachmentformat_;
+inline void Entity::set_allocated_attachmentversion(::std::string* attachmentversion) {
+  if (attachmentversion_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete attachmentversion_;
   }
-  if (attachmentformat) {
-    set_has_attachmentformat();
-    attachmentformat_ = attachmentformat;
+  if (attachmentversion) {
+    set_has_attachmentversion();
+    attachmentversion_ = attachmentversion;
   } else {
-    clear_has_attachmentformat();
-    attachmentformat_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_attachmentversion();
+    attachmentversion_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Entity.AttachmentFormat)
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Entity.AttachmentVersion)
 }
 
 // optional .Diadoc.Api.Proto.Events.ResolutionRouteAssignmentInfo ResolutionRouteAssignmentInfo = 22;

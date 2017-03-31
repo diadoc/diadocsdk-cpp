@@ -639,6 +639,9 @@ bool DocumentWithDocflow::IsInitialized() const {
   if (has_lasteventtimestamp()) {
     if (!this->lasteventtimestamp().IsInitialized()) return false;
   }
+  if (has_documentinfo()) {
+    if (!this->documentinfo().IsInitialized()) return false;
+  }
   if (has_docflow()) {
     if (!this->docflow().IsInitialized()) return false;
   }

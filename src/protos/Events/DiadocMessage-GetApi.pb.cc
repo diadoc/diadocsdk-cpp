@@ -168,7 +168,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, packetid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, isapprovementsignature_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, isencryptedcontent_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, attachmentformat_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, attachmentversion_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, resolutionrouteassignmentinfo_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, resolutionrouteremovalinfo_),
   };
@@ -298,7 +298,7 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
     "(\0132$.Diadoc.Api.Proto.Events.EntityPatch"
     "\022 \n\021MessageIsRestored\030\n \001(\010:\005false\022!\n\022Me"
     "ssageIsDelivered\030\013 \001(\010:\005false\022\030\n\020Deliver"
-    "edPatchId\030\014 \001(\t\022\017\n\007PatchId\030\r \002(\t\"\226\010\n\006Ent"
+    "edPatchId\030\014 \001(\t\022\017\n\007PatchId\030\r \002(\t\"\227\010\n\006Ent"
     "ity\022J\n\nEntityType\030\001 \001(\0162#.Diadoc.Api.Pro"
     "to.Events.EntityType:\021UnknownEntityType\022"
     "\020\n\010EntityId\030\002 \002(\t\022\026\n\016ParentEntityId\030\003 \001("
@@ -319,51 +319,51 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
     "nts.ResolutionRequestDenialInfo\022\032\n\013NeedR"
     "eceipt\030\021 \001(\010:\005false\022\020\n\010PacketId\030\022 \001(\t\022%\n"
     "\026IsApprovementSignature\030\023 \001(\010:\005false\022!\n\022"
-    "IsEncryptedContent\030\024 \001(\010:\005false\022\030\n\020Attac"
-    "hmentFormat\030\025 \001(\t\022]\n\035ResolutionRouteAssi"
-    "gnmentInfo\030\026 \001(\01326.Diadoc.Api.Proto.Even"
-    "ts.ResolutionRouteAssignmentInfo\022W\n\032Reso"
-    "lutionRouteRemovalInfo\030\027 \001(\01323.Diadoc.Ap"
-    "i.Proto.Events.ResolutionRouteRemovalInf"
-    "o\"\272\001\n\013EntityPatch\022\020\n\010EntityId\030\001 \002(\t\022 \n\021D"
-    "ocumentIsDeleted\030\002 \001(\010:\005false\022\031\n\021MovedTo"
-    "Department\030\003 \001(\t\022!\n\022DocumentIsRestored\030\004"
-    " \001(\010:\005false\022\037\n\020ContentIsPatched\030\005 \001(\010:\005f"
-    "alse\022\030\n\020ForwardedToBoxId\030\006 \001(\t*B\n\nEntity"
-    "Type\022\025\n\021UnknownEntityType\020\000\022\016\n\nAttachmen"
-    "t\020\001\022\r\n\tSignature\020\002*\212\n\n\016AttachmentType\022\"\n"
-    "\025UnknownAttachmentType\020\377\377\377\377\377\377\377\377\377\001\022\021\n\rNon"
-    "formalized\020\000\022\013\n\007Invoice\020\001\022\022\n\016InvoiceRece"
-    "ipt\020\002\022\027\n\023InvoiceConfirmation\020\003\022\034\n\030Invoic"
-    "eCorrectionRequest\020\004\022\025\n\021AttachmentCommen"
-    "t\020\005\022\037\n\033DeliveryFailureNotification\020\006\022\020\n\014"
-    "EancomInvoic\020\007\022\035\n\031SignatureRequestReject"
-    "ion\020\010\022(\n$EcrCatConformanceCertificateMet"
-    "adata\020\t\022\037\n\033SignatureVerificationReport\020\n"
-    "\022\032\n\026TrustConnectionRequest\020\013\022\n\n\006Torg12\020\014"
-    "\022\023\n\017InvoiceRevision\020\r\022\025\n\021InvoiceCorrecti"
-    "on\020\016\022\035\n\031InvoiceCorrectionRevision\020\017\022\031\n\025A"
-    "cceptanceCertificate\020\020\022\022\n\016StructuredData"
-    "\020\021\022\023\n\017ProformaInvoice\020\022\022\r\n\tXmlTorg12\020\023\022\034"
-    "\n\030XmlAcceptanceCertificate\020\024\022\027\n\023XmlTorg1"
-    "2BuyerTitle\020\025\022&\n\"XmlAcceptanceCertificat"
-    "eBuyerTitle\020\026\022\016\n\nResolution\020\027\022\025\n\021Resolut"
-    "ionRequest\020\030\022\033\n\027ResolutionRequestDenial\020"
-    "\031\022\r\n\tPriceList\020\032\022\013\n\007Receipt\020\033\022\031\n\025XmlSign"
-    "atureRejection\020\034\022\025\n\021RevocationRequest\020\035\022"
-    "\026\n\022PriceListAgreement\020\036\022\027\n\023CertificateRe"
-    "gistry\020\"\022\025\n\021ReconciliationAct\020#\022\014\n\010Contr"
-    "act\020$\022\n\n\006Torg13\020%\022\022\n\016ServiceDetails\020&\022\027\n"
-    "\023RoamingNotification\020\'\022\032\n\026SupplementaryA"
-    "greement\020(\022\035\n\031UniversalTransferDocument\020"
-    ")\022\'\n#UniversalTransferDocumentBuyerTitle"
-    "\020*\022%\n!UniversalTransferDocumentRevision\020"
-    "-\022\037\n\033UniversalCorrectionDocument\0201\022\'\n#Un"
-    "iversalCorrectionDocumentRevision\0202\022)\n%U"
-    "niversalCorrectionDocumentBuyerTitle\0203\022\016"
-    "\n\nCustomData\020@\022\020\n\014MoveDocument\020A\022\'\n#Reso"
-    "lutionRouteAssignmentAttachment\020B\022$\n Res"
-    "olutionRouteRemovalAttachment\020C", 4071);
+    "IsEncryptedContent\030\024 \001(\010:\005false\022\031\n\021Attac"
+    "hmentVersion\030\025 \001(\t\022]\n\035ResolutionRouteAss"
+    "ignmentInfo\030\026 \001(\01326.Diadoc.Api.Proto.Eve"
+    "nts.ResolutionRouteAssignmentInfo\022W\n\032Res"
+    "olutionRouteRemovalInfo\030\027 \001(\01323.Diadoc.A"
+    "pi.Proto.Events.ResolutionRouteRemovalIn"
+    "fo\"\272\001\n\013EntityPatch\022\020\n\010EntityId\030\001 \002(\t\022 \n\021"
+    "DocumentIsDeleted\030\002 \001(\010:\005false\022\031\n\021MovedT"
+    "oDepartment\030\003 \001(\t\022!\n\022DocumentIsRestored\030"
+    "\004 \001(\010:\005false\022\037\n\020ContentIsPatched\030\005 \001(\010:\005"
+    "false\022\030\n\020ForwardedToBoxId\030\006 \001(\t*B\n\nEntit"
+    "yType\022\025\n\021UnknownEntityType\020\000\022\016\n\nAttachme"
+    "nt\020\001\022\r\n\tSignature\020\002*\212\n\n\016AttachmentType\022\""
+    "\n\025UnknownAttachmentType\020\377\377\377\377\377\377\377\377\377\001\022\021\n\rNo"
+    "nformalized\020\000\022\013\n\007Invoice\020\001\022\022\n\016InvoiceRec"
+    "eipt\020\002\022\027\n\023InvoiceConfirmation\020\003\022\034\n\030Invoi"
+    "ceCorrectionRequest\020\004\022\025\n\021AttachmentComme"
+    "nt\020\005\022\037\n\033DeliveryFailureNotification\020\006\022\020\n"
+    "\014EancomInvoic\020\007\022\035\n\031SignatureRequestRejec"
+    "tion\020\010\022(\n$EcrCatConformanceCertificateMe"
+    "tadata\020\t\022\037\n\033SignatureVerificationReport\020"
+    "\n\022\032\n\026TrustConnectionRequest\020\013\022\n\n\006Torg12\020"
+    "\014\022\023\n\017InvoiceRevision\020\r\022\025\n\021InvoiceCorrect"
+    "ion\020\016\022\035\n\031InvoiceCorrectionRevision\020\017\022\031\n\025"
+    "AcceptanceCertificate\020\020\022\022\n\016StructuredDat"
+    "a\020\021\022\023\n\017ProformaInvoice\020\022\022\r\n\tXmlTorg12\020\023\022"
+    "\034\n\030XmlAcceptanceCertificate\020\024\022\027\n\023XmlTorg"
+    "12BuyerTitle\020\025\022&\n\"XmlAcceptanceCertifica"
+    "teBuyerTitle\020\026\022\016\n\nResolution\020\027\022\025\n\021Resolu"
+    "tionRequest\020\030\022\033\n\027ResolutionRequestDenial"
+    "\020\031\022\r\n\tPriceList\020\032\022\013\n\007Receipt\020\033\022\031\n\025XmlSig"
+    "natureRejection\020\034\022\025\n\021RevocationRequest\020\035"
+    "\022\026\n\022PriceListAgreement\020\036\022\027\n\023CertificateR"
+    "egistry\020\"\022\025\n\021ReconciliationAct\020#\022\014\n\010Cont"
+    "ract\020$\022\n\n\006Torg13\020%\022\022\n\016ServiceDetails\020&\022\027"
+    "\n\023RoamingNotification\020\'\022\032\n\026Supplementary"
+    "Agreement\020(\022\035\n\031UniversalTransferDocument"
+    "\020)\022\'\n#UniversalTransferDocumentBuyerTitl"
+    "e\020*\022%\n!UniversalTransferDocumentRevision"
+    "\020-\022\037\n\033UniversalCorrectionDocument\0201\022\'\n#U"
+    "niversalCorrectionDocumentRevision\0202\022)\n%"
+    "UniversalCorrectionDocumentBuyerTitle\0203\022"
+    "\016\n\nCustomData\020@\022\020\n\014MoveDocument\020A\022\'\n#Res"
+    "olutionRouteAssignmentAttachment\020B\022$\n Re"
+    "solutionRouteRemovalAttachment\020C", 4072);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Events/DiadocMessage-GetApi.proto", &protobuf_RegisterTypes);
   BoxEventList::default_instance_ = new BoxEventList();
@@ -2996,7 +2996,7 @@ const int Entity::kNeedReceiptFieldNumber;
 const int Entity::kPacketIdFieldNumber;
 const int Entity::kIsApprovementSignatureFieldNumber;
 const int Entity::kIsEncryptedContentFieldNumber;
-const int Entity::kAttachmentFormatFieldNumber;
+const int Entity::kAttachmentVersionFieldNumber;
 const int Entity::kResolutionRouteAssignmentInfoFieldNumber;
 const int Entity::kResolutionRouteRemovalInfoFieldNumber;
 #endif  // !_MSC_VER
@@ -3046,7 +3046,7 @@ void Entity::SharedCtor() {
   packetid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   isapprovementsignature_ = false;
   isencryptedcontent_ = false;
-  attachmentformat_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  attachmentversion_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   resolutionrouteassignmentinfo_ = NULL;
   resolutionrouteremovalinfo_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -3079,8 +3079,8 @@ void Entity::SharedDtor() {
   if (packetid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete packetid_;
   }
-  if (attachmentformat_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete attachmentformat_;
+  if (attachmentversion_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete attachmentversion_;
   }
   if (this != default_instance_) {
     delete content_;
@@ -3186,9 +3186,9 @@ void Entity::Clear() {
         packetid_->clear();
       }
     }
-    if (has_attachmentformat()) {
-      if (attachmentformat_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        attachmentformat_->clear();
+    if (has_attachmentversion()) {
+      if (attachmentversion_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        attachmentversion_->clear();
       }
     }
     if (has_resolutionrouteassignmentinfo()) {
@@ -3510,20 +3510,20 @@ bool Entity::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(170)) goto parse_AttachmentFormat;
+        if (input->ExpectTag(170)) goto parse_AttachmentVersion;
         break;
       }
 
-      // optional string AttachmentFormat = 21;
+      // optional string AttachmentVersion = 21;
       case 21: {
         if (tag == 170) {
-         parse_AttachmentFormat:
+         parse_AttachmentVersion:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_attachmentformat()));
+                input, this->mutable_attachmentversion()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->attachmentformat().data(), this->attachmentformat().length(),
+            this->attachmentversion().data(), this->attachmentversion().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "attachmentformat");
+            "attachmentversion");
         } else {
           goto handle_unusual;
         }
@@ -3719,14 +3719,14 @@ void Entity::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(20, this->isencryptedcontent(), output);
   }
 
-  // optional string AttachmentFormat = 21;
-  if (has_attachmentformat()) {
+  // optional string AttachmentVersion = 21;
+  if (has_attachmentversion()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->attachmentformat().data(), this->attachmentformat().length(),
+      this->attachmentversion().data(), this->attachmentversion().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "attachmentformat");
+      "attachmentversion");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      21, this->attachmentformat(), output);
+      21, this->attachmentversion(), output);
   }
 
   // optional .Diadoc.Api.Proto.Events.ResolutionRouteAssignmentInfo ResolutionRouteAssignmentInfo = 22;
@@ -3900,15 +3900,15 @@ void Entity::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(20, this->isencryptedcontent(), target);
   }
 
-  // optional string AttachmentFormat = 21;
-  if (has_attachmentformat()) {
+  // optional string AttachmentVersion = 21;
+  if (has_attachmentversion()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->attachmentformat().data(), this->attachmentformat().length(),
+      this->attachmentversion().data(), this->attachmentversion().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "attachmentformat");
+      "attachmentversion");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        21, this->attachmentformat(), target);
+        21, this->attachmentversion(), target);
   }
 
   // optional .Diadoc.Api.Proto.Events.ResolutionRouteAssignmentInfo ResolutionRouteAssignmentInfo = 22;
@@ -4062,11 +4062,11 @@ int Entity::ByteSize() const {
       total_size += 2 + 1;
     }
 
-    // optional string AttachmentFormat = 21;
-    if (has_attachmentformat()) {
+    // optional string AttachmentVersion = 21;
+    if (has_attachmentversion()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->attachmentformat());
+          this->attachmentversion());
     }
 
     // optional .Diadoc.Api.Proto.Events.ResolutionRouteAssignmentInfo ResolutionRouteAssignmentInfo = 22;
@@ -4171,8 +4171,8 @@ void Entity::MergeFrom(const Entity& from) {
     if (from.has_isencryptedcontent()) {
       set_isencryptedcontent(from.isencryptedcontent());
     }
-    if (from.has_attachmentformat()) {
-      set_attachmentformat(from.attachmentformat());
+    if (from.has_attachmentversion()) {
+      set_attachmentversion(from.attachmentversion());
     }
     if (from.has_resolutionrouteassignmentinfo()) {
       mutable_resolutionrouteassignmentinfo()->::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo::MergeFrom(from.resolutionrouteassignmentinfo());
@@ -4244,7 +4244,7 @@ void Entity::Swap(Entity* other) {
     std::swap(packetid_, other->packetid_);
     std::swap(isapprovementsignature_, other->isapprovementsignature_);
     std::swap(isencryptedcontent_, other->isencryptedcontent_);
-    std::swap(attachmentformat_, other->attachmentformat_);
+    std::swap(attachmentversion_, other->attachmentversion_);
     std::swap(resolutionrouteassignmentinfo_, other->resolutionrouteassignmentinfo_);
     std::swap(resolutionrouteremovalinfo_, other->resolutionrouteremovalinfo_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
