@@ -146,26 +146,7 @@ public void CompileProtoFiles(IEnumerable<FilePath> files, DirectoryPath sourceP
 			.Append("-I=" + sourceProtoDir.FullPath)
 			.Append("--cpp_out=" + destinationProtoDir.FullPath));
 
-	var dirtyFiles = files.Where(file => {
-		var relativeFile = sourceProtoDir.GetRelativePath(file);
-		var destinationFileHeader = destinationProtoDir.CombineWithFilePath(relativeFile.ChangeExtension("pb.h"));
-		var destinationFileSource = destinationProtoDir.CombineWithFilePath(relativeFile.ChangeExtension("pb.cc"));
-		if (!NeedUpdateFile(file, destinationFileHeader) &&
-			!NeedUpdateFile(file, destinationFileSource))
-		{
-			Debug("Skip protoc for file: {0}", file.FullPath);
-			return false;
-		}
-		return true;
-	}).ToArray();
-	
-	if (dirtyFiles.Length == 0)
-	{
-		Information("All files are up to date");
-		return;
-	}
-	
-	foreach (var file in dirtyFiles)
+	foreach (var file in files)
 	{
 		protocArguments.WithArguments(args => args.Append(file.FullPath));
 	}
@@ -175,12 +156,6 @@ public void CompileProtoFiles(IEnumerable<FilePath> files, DirectoryPath sourceP
 	{
 		throw new Exception(string.Format("Error processing proto files, protoc exit code: {0} ({1})", exitCode, protocArguments));
 	}
-}
-
-public bool NeedUpdateFile(FilePath file, FilePath destinationFile)
-{
-	return !(FileExists(destinationFile)
-		&& System.IO.File.GetLastWriteTime(file.FullPath) < System.IO.File.GetLastWriteTime(destinationFile.FullPath));
 }
 
 public void CopyFilesRelative(IEnumerable<FilePath> files, DirectoryPath sourceDir, DirectoryPath destinationDir)

@@ -744,6 +744,18 @@ class Document : public ::google::protobuf::Message {
   inline ::std::string* release_resolutionrouteid();
   inline void set_allocated_resolutionrouteid(::std::string* resolutionrouteid);
 
+  // optional string AttachmentVersion = 61;
+  inline bool has_attachmentversion() const;
+  inline void clear_attachmentversion();
+  static const int kAttachmentVersionFieldNumber = 61;
+  inline const ::std::string& attachmentversion() const;
+  inline void set_attachmentversion(const ::std::string& value);
+  inline void set_attachmentversion(const char* value);
+  inline void set_attachmentversion(const char* value, size_t size);
+  inline ::std::string* mutable_attachmentversion();
+  inline ::std::string* release_attachmentversion();
+  inline void set_allocated_attachmentversion(::std::string* attachmentversion);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.Document)
  private:
   inline void set_has_indexkey();
@@ -854,6 +866,8 @@ class Document : public ::google::protobuf::Message {
   inline void clear_has_universalcorrectiondocumentrevisionmetadata();
   inline void set_has_resolutionrouteid();
   inline void clear_has_resolutionrouteid();
+  inline void set_has_attachmentversion();
+  inline void clear_has_attachmentversion();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -914,6 +928,7 @@ class Document : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata* universalcorrectiondocumentmetadata_;
   ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata* universalcorrectiondocumentrevisionmetadata_;
   ::std::string* resolutionrouteid_;
+  ::std::string* attachmentversion_;
   bool isread_;
   bool packetislocked_;
   mutable int _cached_size_;
@@ -3624,6 +3639,82 @@ inline void Document::set_allocated_resolutionrouteid(::std::string* resolutionr
     resolutionrouteid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.ResolutionRouteId)
+}
+
+// optional string AttachmentVersion = 61;
+inline bool Document::has_attachmentversion() const {
+  return (_has_bits_[1] & 0x04000000u) != 0;
+}
+inline void Document::set_has_attachmentversion() {
+  _has_bits_[1] |= 0x04000000u;
+}
+inline void Document::clear_has_attachmentversion() {
+  _has_bits_[1] &= ~0x04000000u;
+}
+inline void Document::clear_attachmentversion() {
+  if (attachmentversion_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attachmentversion_->clear();
+  }
+  clear_has_attachmentversion();
+}
+inline const ::std::string& Document::attachmentversion() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Document.AttachmentVersion)
+  return *attachmentversion_;
+}
+inline void Document::set_attachmentversion(const ::std::string& value) {
+  set_has_attachmentversion();
+  if (attachmentversion_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attachmentversion_ = new ::std::string;
+  }
+  attachmentversion_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Document.AttachmentVersion)
+}
+inline void Document::set_attachmentversion(const char* value) {
+  set_has_attachmentversion();
+  if (attachmentversion_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attachmentversion_ = new ::std::string;
+  }
+  attachmentversion_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.Document.AttachmentVersion)
+}
+inline void Document::set_attachmentversion(const char* value, size_t size) {
+  set_has_attachmentversion();
+  if (attachmentversion_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attachmentversion_ = new ::std::string;
+  }
+  attachmentversion_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.Document.AttachmentVersion)
+}
+inline ::std::string* Document::mutable_attachmentversion() {
+  set_has_attachmentversion();
+  if (attachmentversion_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attachmentversion_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.Document.AttachmentVersion)
+  return attachmentversion_;
+}
+inline ::std::string* Document::release_attachmentversion() {
+  clear_has_attachmentversion();
+  if (attachmentversion_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = attachmentversion_;
+    attachmentversion_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void Document::set_allocated_attachmentversion(::std::string* attachmentversion) {
+  if (attachmentversion_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete attachmentversion_;
+  }
+  if (attachmentversion) {
+    set_has_attachmentversion();
+    attachmentversion_ = attachmentversion;
+  } else {
+    clear_has_attachmentversion();
+    attachmentversion_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.AttachmentVersion)
 }
 
 // -------------------------------------------------------------------
