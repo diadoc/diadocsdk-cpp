@@ -143,6 +143,29 @@ inline bool SenderSignatureStatus_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<SenderSignatureStatus>(
     SenderSignatureStatus_descriptor(), name, value);
 }
+enum ProxySignatureStatus {
+  UnknownProxySignatureStatus = 0,
+  ProxySignatureStatusNone = 1,
+  WaitingForProxySignature = 2,
+  WithProxySignature = 3,
+  ProxySignatureRejected = 4,
+  InvalidProxySignature = 5
+};
+bool ProxySignatureStatus_IsValid(int value);
+const ProxySignatureStatus ProxySignatureStatus_MIN = UnknownProxySignatureStatus;
+const ProxySignatureStatus ProxySignatureStatus_MAX = InvalidProxySignature;
+const int ProxySignatureStatus_ARRAYSIZE = ProxySignatureStatus_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* ProxySignatureStatus_descriptor();
+inline const ::std::string& ProxySignatureStatus_Name(ProxySignatureStatus value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    ProxySignatureStatus_descriptor(), value);
+}
+inline bool ProxySignatureStatus_Parse(
+    const ::std::string& name, ProxySignatureStatus* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<ProxySignatureStatus>(
+    ProxySignatureStatus_descriptor(), name, value);
+}
 // ===================================================================
 
 class Document : public ::google::protobuf::Message {
@@ -756,6 +779,13 @@ class Document : public ::google::protobuf::Message {
   inline ::std::string* release_attachmentversion();
   inline void set_allocated_attachmentversion(::std::string* attachmentversion);
 
+  // optional .Diadoc.Api.Proto.Documents.ProxySignatureStatus ProxySignatureStatus = 62;
+  inline bool has_proxysignaturestatus() const;
+  inline void clear_proxysignaturestatus();
+  static const int kProxySignatureStatusFieldNumber = 62;
+  inline ::Diadoc::Api::Proto::Documents::ProxySignatureStatus proxysignaturestatus() const;
+  inline void set_proxysignaturestatus(::Diadoc::Api::Proto::Documents::ProxySignatureStatus value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.Document)
  private:
   inline void set_has_indexkey();
@@ -868,6 +898,8 @@ class Document : public ::google::protobuf::Message {
   inline void clear_has_resolutionrouteid();
   inline void set_has_attachmentversion();
   inline void clear_has_attachmentversion();
+  inline void set_has_proxysignaturestatus();
+  inline void clear_has_proxysignaturestatus();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -923,14 +955,15 @@ class Document : public ::google::protobuf::Message {
   ::std::string* roamingnotificationstatusdescription_;
   ::Diadoc::Api::Proto::Documents::NonformalizedDocument::NonformalizedDocumentMetadata* pricelistagreementmetadata_;
   ::Diadoc::Api::Proto::Documents::NonformalizedDocument::NonformalizedDocumentMetadata* certificateregistrymetadata_;
+  bool isread_;
+  bool packetislocked_;
+  int proxysignaturestatus_;
   ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentMetadata* universaltransferdocumentmetadata_;
   ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentRevisionMetadata* universaltransferdocumentrevisionmetadata_;
   ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata* universalcorrectiondocumentmetadata_;
   ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata* universalcorrectiondocumentrevisionmetadata_;
   ::std::string* resolutionrouteid_;
   ::std::string* attachmentversion_;
-  bool isread_;
-  bool packetislocked_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_Documents_2fDocument_2eproto();
   friend void protobuf_AssignDesc_Documents_2fDocument_2eproto();
@@ -3717,6 +3750,31 @@ inline void Document::set_allocated_attachmentversion(::std::string* attachmentv
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.AttachmentVersion)
 }
 
+// optional .Diadoc.Api.Proto.Documents.ProxySignatureStatus ProxySignatureStatus = 62;
+inline bool Document::has_proxysignaturestatus() const {
+  return (_has_bits_[1] & 0x08000000u) != 0;
+}
+inline void Document::set_has_proxysignaturestatus() {
+  _has_bits_[1] |= 0x08000000u;
+}
+inline void Document::clear_has_proxysignaturestatus() {
+  _has_bits_[1] &= ~0x08000000u;
+}
+inline void Document::clear_proxysignaturestatus() {
+  proxysignaturestatus_ = 0;
+  clear_has_proxysignaturestatus();
+}
+inline ::Diadoc::Api::Proto::Documents::ProxySignatureStatus Document::proxysignaturestatus() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Document.ProxySignatureStatus)
+  return static_cast< ::Diadoc::Api::Proto::Documents::ProxySignatureStatus >(proxysignaturestatus_);
+}
+inline void Document::set_proxysignaturestatus(::Diadoc::Api::Proto::Documents::ProxySignatureStatus value) {
+  assert(::Diadoc::Api::Proto::Documents::ProxySignatureStatus_IsValid(value));
+  set_has_proxysignaturestatus();
+  proxysignaturestatus_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Document.ProxySignatureStatus)
+}
+
 // -------------------------------------------------------------------
 
 // ResolutionStatus
@@ -3970,6 +4028,11 @@ template <> struct is_proto_enum< ::Diadoc::Api::Proto::Documents::SenderSignatu
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::Diadoc::Api::Proto::Documents::SenderSignatureStatus>() {
   return ::Diadoc::Api::Proto::Documents::SenderSignatureStatus_descriptor();
+}
+template <> struct is_proto_enum< ::Diadoc::Api::Proto::Documents::ProxySignatureStatus> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::Diadoc::Api::Proto::Documents::ProxySignatureStatus>() {
+  return ::Diadoc::Api::Proto::Documents::ProxySignatureStatus_descriptor();
 }
 
 }  // namespace google

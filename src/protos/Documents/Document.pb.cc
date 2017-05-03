@@ -33,6 +33,7 @@ const ::google::protobuf::EnumDescriptor* ResolutionStatusType_descriptor_ = NUL
 const ::google::protobuf::EnumDescriptor* RevocationStatus_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* RoamingNotificationStatus_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* SenderSignatureStatus_descriptor_ = NULL;
+const ::google::protobuf::EnumDescriptor* ProxySignatureStatus_descriptor_ = NULL;
 
 }  // namespace
 
@@ -44,7 +45,7 @@ void protobuf_AssignDesc_Documents_2fDocument_2eproto() {
       "Documents/Document.proto");
   GOOGLE_CHECK(file != NULL);
   Document_descriptor_ = file->message_type(0);
-  static const int Document_offsets_[59] = {
+  static const int Document_offsets_[60] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, indexkey_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, messageid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, entityid_),
@@ -104,6 +105,7 @@ void protobuf_AssignDesc_Documents_2fDocument_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, universalcorrectiondocumentrevisionmetadata_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, resolutionrouteid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, attachmentversion_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, proxysignaturestatus_),
   };
   Document_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -138,6 +140,7 @@ void protobuf_AssignDesc_Documents_2fDocument_2eproto() {
   RevocationStatus_descriptor_ = file->enum_type(1);
   RoamingNotificationStatus_descriptor_ = file->enum_type(2);
   SenderSignatureStatus_descriptor_ = file->enum_type(3);
+  ProxySignatureStatus_descriptor_ = file->enum_type(4);
 }
 
 namespace {
@@ -196,7 +199,7 @@ void protobuf_AddDesc_Documents_2fDocument_2eproto() {
     "UnilateralDocument.proto\032)Documents/Univ"
     "ersalTransferDocument.proto\032\026ResolutionT"
     "arget.proto\032\032ForwardDocumentEvent.proto\""
-    "\241 \n\010Document\022\020\n\010IndexKey\030\001 \001(\t\022\021\n\tMessag"
+    "\361 \n\010Document\022\020\n\010IndexKey\030\001 \001(\t\022\021\n\tMessag"
     "eId\030\002 \002(\t\022\020\n\010EntityId\030\003 \002(\t\022\036\n\026CreationT"
     "imestampTicks\030\004 \002(\020\022\031\n\021CounteragentBoxId"
     "\030\005 \001(\t\022I\n\014DocumentType\030\006 \001(\0162\036.Diadoc.Ap"
@@ -299,7 +302,9 @@ void protobuf_AddDesc_Documents_2fDocument_2eproto() {
     "ments.UniversalTransferDocument.Universa"
     "lCorrectionDocumentRevisionMetadata\022\033\n\021R"
     "esolutionRouteId\030< \001(\t:\000\022\031\n\021AttachmentVe"
-    "rsion\030= \001(\t\"\310\001\n\020ResolutionStatus\022W\n\004Type"
+    "rsion\030= \001(\t\022N\n\024ProxySignatureStatus\030> \001("
+    "\01620.Diadoc.Api.Proto.Documents.ProxySign"
+    "atureStatus\"\310\001\n\020ResolutionStatus\022W\n\004Type"
     "\030\001 \001(\01620.Diadoc.Api.Proto.Documents.Reso"
     "lutionStatusType:\027UnknownResolutionStatu"
     "s\0222\n\006Target\030\002 \001(\0132\".Diadoc.Api.Proto.Res"
@@ -322,7 +327,12 @@ void protobuf_AddDesc_Documents_2fDocument_2eproto() {
     "tatus\020\000\022\035\n\031WaitingForSenderSignature\020\001\022\034"
     "\n\030SenderSignatureUnchecked\020\002\022\"\n\036SenderSi"
     "gnatureCheckedAndValid\020\003\022$\n SenderSignat"
-    "ureCheckedAndInvalid\020\004", 5502);
+    "ureCheckedAndInvalid\020\004*\302\001\n\024ProxySignatur"
+    "eStatus\022\037\n\033UnknownProxySignatureStatus\020\000"
+    "\022\034\n\030ProxySignatureStatusNone\020\001\022\034\n\030Waitin"
+    "gForProxySignature\020\002\022\026\n\022WithProxySignatu"
+    "re\020\003\022\032\n\026ProxySignatureRejected\020\004\022\031\n\025Inva"
+    "lidProxySignature\020\005", 5779);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Documents/Document.proto", &protobuf_RegisterTypes);
   Document::default_instance_ = new Document();
@@ -408,6 +418,24 @@ bool SenderSignatureStatus_IsValid(int value) {
   }
 }
 
+const ::google::protobuf::EnumDescriptor* ProxySignatureStatus_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return ProxySignatureStatus_descriptor_;
+}
+bool ProxySignatureStatus_IsValid(int value) {
+  switch(value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+      return true;
+    default:
+      return false;
+  }
+}
+
 
 // ===================================================================
 
@@ -471,6 +499,7 @@ const int Document::kUniversalCorrectionDocumentMetadataFieldNumber;
 const int Document::kUniversalCorrectionDocumentRevisionMetadataFieldNumber;
 const int Document::kResolutionRouteIdFieldNumber;
 const int Document::kAttachmentVersionFieldNumber;
+const int Document::kProxySignatureStatusFieldNumber;
 #endif  // !_MSC_VER
 
 Document::Document()
@@ -572,6 +601,7 @@ void Document::SharedCtor() {
   universalcorrectiondocumentrevisionmetadata_ = NULL;
   resolutionrouteid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   attachmentversion_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  proxysignaturestatus_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -848,7 +878,7 @@ void Document::Clear() {
       if (universalcorrectiondocumentmetadata_ != NULL) universalcorrectiondocumentmetadata_->::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata::Clear();
     }
   }
-  if (_has_bits_[56 / 32] & 117440512) {
+  if (_has_bits_[56 / 32] & 251658240) {
     if (has_universalcorrectiondocumentrevisionmetadata()) {
       if (universalcorrectiondocumentrevisionmetadata_ != NULL) universalcorrectiondocumentrevisionmetadata_->::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata::Clear();
     }
@@ -862,6 +892,7 @@ void Document::Clear() {
         attachmentversion_->clear();
       }
     }
+    proxysignaturestatus_ = 0;
   }
 
 #undef OFFSET_OF_FIELD_
@@ -1766,6 +1797,26 @@ bool Document::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(496)) goto parse_ProxySignatureStatus;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Documents.ProxySignatureStatus ProxySignatureStatus = 62;
+      case 62: {
+        if (tag == 496) {
+         parse_ProxySignatureStatus:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Diadoc::Api::Proto::Documents::ProxySignatureStatus_IsValid(value)) {
+            set_proxysignaturestatus(static_cast< ::Diadoc::Api::Proto::Documents::ProxySignatureStatus >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(62, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -2197,6 +2248,12 @@ void Document::SerializeWithCachedSizes(
       "attachmentversion");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       61, this->attachmentversion(), output);
+  }
+
+  // optional .Diadoc.Api.Proto.Documents.ProxySignatureStatus ProxySignatureStatus = 62;
+  if (has_proxysignaturestatus()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      62, this->proxysignaturestatus(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -2657,6 +2714,12 @@ void Document::SerializeWithCachedSizes(
         61, this->attachmentversion(), target);
   }
 
+  // optional .Diadoc.Api.Proto.Documents.ProxySignatureStatus ProxySignatureStatus = 62;
+  if (has_proxysignaturestatus()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      62, this->proxysignaturestatus(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -3043,6 +3106,12 @@ int Document::ByteSize() const {
           this->attachmentversion());
     }
 
+    // optional .Diadoc.Api.Proto.Documents.ProxySignatureStatus ProxySignatureStatus = 62;
+    if (has_proxysignaturestatus()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->proxysignaturestatus());
+    }
+
   }
   // repeated .Diadoc.Api.Proto.DocumentId InitialDocumentIds = 7;
   total_size += 1 * this->initialdocumentids_size();
@@ -3285,6 +3354,9 @@ void Document::MergeFrom(const Document& from) {
     if (from.has_attachmentversion()) {
       set_attachmentversion(from.attachmentversion());
     }
+    if (from.has_proxysignaturestatus()) {
+      set_proxysignaturestatus(from.proxysignaturestatus());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -3426,6 +3498,7 @@ void Document::Swap(Document* other) {
     std::swap(universalcorrectiondocumentrevisionmetadata_, other->universalcorrectiondocumentrevisionmetadata_);
     std::swap(resolutionrouteid_, other->resolutionrouteid_);
     std::swap(attachmentversion_, other->attachmentversion_);
+    std::swap(proxysignaturestatus_, other->proxysignaturestatus_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     std::swap(_has_bits_[1], other->_has_bits_[1]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
