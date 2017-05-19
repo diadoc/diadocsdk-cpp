@@ -421,6 +421,18 @@ class Organization : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Sociability sociability() const;
   inline void set_sociability(::Diadoc::Api::Proto::Sociability value);
 
+  // optional string LiquidationDate = 23;
+  inline bool has_liquidationdate() const;
+  inline void clear_liquidationdate();
+  static const int kLiquidationDateFieldNumber = 23;
+  inline const ::std::string& liquidationdate() const;
+  inline void set_liquidationdate(const ::std::string& value);
+  inline void set_liquidationdate(const char* value);
+  inline void set_liquidationdate(const char* value, size_t size);
+  inline ::std::string* mutable_liquidationdate();
+  inline ::std::string* release_liquidationdate();
+  inline void set_allocated_liquidationdate(::std::string* liquidationdate);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Organization)
  private:
   inline void set_has_orgid();
@@ -461,6 +473,8 @@ class Organization : public ::google::protobuf::Message {
   inline void clear_has_searchcount();
   inline void set_has_sociability();
   inline void clear_has_sociability();
+  inline void set_has_liquidationdate();
+  inline void clear_has_liquidationdate();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -486,6 +500,7 @@ class Organization : public ::google::protobuf::Message {
   bool isemployee_;
   ::google::protobuf::int32 invitationcount_;
   ::google::protobuf::int32 searchcount_;
+  ::std::string* liquidationdate_;
   int sociability_;
   friend void  protobuf_AddDesc_Organization_2eproto();
   friend void protobuf_AssignDesc_Organization_2eproto();
@@ -1822,6 +1837,82 @@ inline void Organization::set_sociability(::Diadoc::Api::Proto::Sociability valu
   set_has_sociability();
   sociability_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Organization.Sociability)
+}
+
+// optional string LiquidationDate = 23;
+inline bool Organization::has_liquidationdate() const {
+  return (_has_bits_[0] & 0x00200000u) != 0;
+}
+inline void Organization::set_has_liquidationdate() {
+  _has_bits_[0] |= 0x00200000u;
+}
+inline void Organization::clear_has_liquidationdate() {
+  _has_bits_[0] &= ~0x00200000u;
+}
+inline void Organization::clear_liquidationdate() {
+  if (liquidationdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    liquidationdate_->clear();
+  }
+  clear_has_liquidationdate();
+}
+inline const ::std::string& Organization::liquidationdate() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Organization.LiquidationDate)
+  return *liquidationdate_;
+}
+inline void Organization::set_liquidationdate(const ::std::string& value) {
+  set_has_liquidationdate();
+  if (liquidationdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    liquidationdate_ = new ::std::string;
+  }
+  liquidationdate_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Organization.LiquidationDate)
+}
+inline void Organization::set_liquidationdate(const char* value) {
+  set_has_liquidationdate();
+  if (liquidationdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    liquidationdate_ = new ::std::string;
+  }
+  liquidationdate_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Organization.LiquidationDate)
+}
+inline void Organization::set_liquidationdate(const char* value, size_t size) {
+  set_has_liquidationdate();
+  if (liquidationdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    liquidationdate_ = new ::std::string;
+  }
+  liquidationdate_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Organization.LiquidationDate)
+}
+inline ::std::string* Organization::mutable_liquidationdate() {
+  set_has_liquidationdate();
+  if (liquidationdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    liquidationdate_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Organization.LiquidationDate)
+  return liquidationdate_;
+}
+inline ::std::string* Organization::release_liquidationdate() {
+  clear_has_liquidationdate();
+  if (liquidationdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = liquidationdate_;
+    liquidationdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void Organization::set_allocated_liquidationdate(::std::string* liquidationdate) {
+  if (liquidationdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete liquidationdate_;
+  }
+  if (liquidationdate) {
+    set_has_liquidationdate();
+    liquidationdate_ = liquidationdate;
+  } else {
+    clear_has_liquidationdate();
+    liquidationdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Organization.LiquidationDate)
 }
 
 // -------------------------------------------------------------------

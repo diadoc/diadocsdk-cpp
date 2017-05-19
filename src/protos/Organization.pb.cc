@@ -62,7 +62,7 @@ void protobuf_AssignDesc_Organization_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(OrganizationList));
   Organization_descriptor_ = file->message_type(1);
-  static const int Organization_offsets_[21] = {
+  static const int Organization_offsets_[22] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, orgid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, inn_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, kpp_),
@@ -84,6 +84,7 @@ void protobuf_AssignDesc_Organization_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, invitationcount_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, searchcount_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, sociability_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, liquidationdate_),
   };
   Organization_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -183,7 +184,7 @@ void protobuf_AddDesc_Organization_2eproto() {
     "\n\022Organization.proto\022\020Diadoc.Api.Proto\032\r"
     "Address.proto\"I\n\020OrganizationList\0225\n\rOrg"
     "anizations\030\001 \003(\0132\036.Diadoc.Api.Proto.Orga"
-    "nization\"\206\004\n\014Organization\022\r\n\005OrgId\030\001 \002(\t"
+    "nization\"\237\004\n\014Organization\022\r\n\005OrgId\030\001 \002(\t"
     "\022\013\n\003Inn\030\002 \002(\t\022\013\n\003Kpp\030\003 \001(\t\022\020\n\010FullName\030\004"
     " \002(\t\022\021\n\tShortName\030\005 \001(\t\022$\n\005Boxes\030\007 \003(\0132\025"
     ".Diadoc.Api.Proto.Box\022\014\n\004Ogrn\030\010 \001(\t\022\030\n\020F"
@@ -196,19 +197,19 @@ void protobuf_AddDesc_Organization_2eproto() {
     "aming\030\022 \001(\010\022\022\n\nIsEmployee\030\023 \001(\010\022\027\n\017Invit"
     "ationCount\030\024 \001(\005\022\023\n\013SearchCount\030\025 \001(\005\0222\n"
     "\013Sociability\030\026 \002(\0162\035.Diadoc.Api.Proto.So"
-    "ciability\"\266\001\n\nDepartment\022\024\n\014DepartmentId"
-    "\030\001 \002(\t\022\032\n\022ParentDepartmentId\030\002 \002(\t\022\014\n\004Na"
-    "me\030\003 \002(\t\022\024\n\014Abbreviation\030\004 \001(\t\022\013\n\003Kpp\030\005 "
-    "\001(\t\022*\n\007Address\030\006 \001(\0132\031.Diadoc.Api.Proto."
-    "Address\022\031\n\nIsDisabled\030\007 \001(\010:\005false\"\262\001\n\003B"
-    "ox\022\r\n\005BoxId\030\001 \002(\t\022\r\n\005Title\030\002 \002(\t\0224\n\014Orga"
-    "nization\030\003 \001(\0132\036.Diadoc.Api.Proto.Organi"
-    "zation\022W\n\024InvoiceFormatVersion\030\004 \001(\01622.D"
-    "iadoc.Api.Proto.OrganizationInvoiceForma"
-    "tVersion:\005v5_02*8\n OrganizationInvoiceFo"
-    "rmatVersion\022\t\n\005v5_01\020\001\022\t\n\005v5_02\020\002*:\n\013Soc"
-    "iability\022\024\n\020AllOrganizations\020\000\022\025\n\021Counte"
-    "ragentsOnly\020\001", 1133);
+    "ciability\022\027\n\017LiquidationDate\030\027 \001(\t\"\266\001\n\nD"
+    "epartment\022\024\n\014DepartmentId\030\001 \002(\t\022\032\n\022Paren"
+    "tDepartmentId\030\002 \002(\t\022\014\n\004Name\030\003 \002(\t\022\024\n\014Abb"
+    "reviation\030\004 \001(\t\022\013\n\003Kpp\030\005 \001(\t\022*\n\007Address\030"
+    "\006 \001(\0132\031.Diadoc.Api.Proto.Address\022\031\n\nIsDi"
+    "sabled\030\007 \001(\010:\005false\"\262\001\n\003Box\022\r\n\005BoxId\030\001 \002"
+    "(\t\022\r\n\005Title\030\002 \002(\t\0224\n\014Organization\030\003 \001(\0132"
+    "\036.Diadoc.Api.Proto.Organization\022W\n\024Invoi"
+    "ceFormatVersion\030\004 \001(\01622.Diadoc.Api.Proto"
+    ".OrganizationInvoiceFormatVersion:\005v5_02"
+    "*8\n OrganizationInvoiceFormatVersion\022\t\n\005"
+    "v5_01\020\001\022\t\n\005v5_02\020\002*:\n\013Sociability\022\024\n\020All"
+    "Organizations\020\000\022\025\n\021CounteragentsOnly\020\001", 1158);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Organization.proto", &protobuf_RegisterTypes);
   OrganizationList::default_instance_ = new OrganizationList();
@@ -501,6 +502,7 @@ const int Organization::kIsEmployeeFieldNumber;
 const int Organization::kInvitationCountFieldNumber;
 const int Organization::kSearchCountFieldNumber;
 const int Organization::kSociabilityFieldNumber;
+const int Organization::kLiquidationDateFieldNumber;
 #endif  // !_MSC_VER
 
 Organization::Organization()
@@ -542,6 +544,7 @@ void Organization::SharedCtor() {
   invitationcount_ = 0;
   searchcount_ = 0;
   sociability_ = 0;
+  liquidationdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -577,6 +580,9 @@ void Organization::SharedDtor() {
   }
   if (ifnscode_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete ifnscode_;
+  }
+  if (liquidationdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete liquidationdate_;
   }
   if (this != default_instance_) {
     delete address_;
@@ -668,8 +674,14 @@ void Organization::Clear() {
       }
     }
   }
-  if (_has_bits_[16 / 32] & 2031616) {
-    ZR_(isroaming_, sociability_);
+  if (_has_bits_[16 / 32] & 4128768) {
+    ZR_(isroaming_, searchcount_);
+    sociability_ = 0;
+    if (has_liquidationdate()) {
+      if (liquidationdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        liquidationdate_->clear();
+      }
+    }
   }
 
 #undef OFFSET_OF_FIELD_
@@ -1020,6 +1032,23 @@ bool Organization::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(186)) goto parse_LiquidationDate;
+        break;
+      }
+
+      // optional string LiquidationDate = 23;
+      case 23: {
+        if (tag == 186) {
+         parse_LiquidationDate:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_liquidationdate()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->liquidationdate().data(), this->liquidationdate().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "liquidationdate");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -1203,6 +1232,16 @@ void Organization::SerializeWithCachedSizes(
       22, this->sociability(), output);
   }
 
+  // optional string LiquidationDate = 23;
+  if (has_liquidationdate()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->liquidationdate().data(), this->liquidationdate().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "liquidationdate");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      23, this->liquidationdate(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -1379,6 +1418,17 @@ void Organization::SerializeWithCachedSizes(
       22, this->sociability(), target);
   }
 
+  // optional string LiquidationDate = 23;
+  if (has_liquidationdate()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->liquidationdate().data(), this->liquidationdate().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "liquidationdate");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        23, this->liquidationdate(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -1515,6 +1565,13 @@ int Organization::ByteSize() const {
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->sociability());
     }
 
+    // optional string LiquidationDate = 23;
+    if (has_liquidationdate()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->liquidationdate());
+    }
+
   }
   // repeated .Diadoc.Api.Proto.Box Boxes = 7;
   total_size += 1 * this->boxes_size();
@@ -1621,6 +1678,9 @@ void Organization::MergeFrom(const Organization& from) {
     if (from.has_sociability()) {
       set_sociability(from.sociability());
     }
+    if (from.has_liquidationdate()) {
+      set_liquidationdate(from.liquidationdate());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -1671,6 +1731,7 @@ void Organization::Swap(Organization* other) {
     std::swap(invitationcount_, other->invitationcount_);
     std::swap(searchcount_, other->searchcount_);
     std::swap(sociability_, other->sociability_);
+    std::swap(liquidationdate_, other->liquidationdate_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
