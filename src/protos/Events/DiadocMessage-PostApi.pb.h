@@ -32,7 +32,6 @@
 #include "Events/ResolutionInfo.pb.h"
 #include "Events/ResolutionRequestInfo.pb.h"
 #include "Invoicing/OrganizationInfo.pb.h"
-#include "Invoicing/UniversalTransferDocumentInfo.pb.h"
 #include "Docflow/DocumentInfo.pb.h"
 // @@protoc_insertion_point(includes)
 
@@ -1170,17 +1169,10 @@ class EncryptedXmlBasicDocumentMetadata : public ::google::protobuf::Message {
   inline ::std::string* release_formationtime();
   inline void set_allocated_formationtime(::std::string* formationtime);
 
-  // optional .Diadoc.Api.Proto.Invoicing.FunctionType Function = 3 [default = Basic];
-  inline bool has_function() const;
-  inline void clear_function();
-  static const int kFunctionFieldNumber = 3;
-  inline ::Diadoc::Api::Proto::Invoicing::FunctionType function() const;
-  inline void set_function(::Diadoc::Api::Proto::Invoicing::FunctionType value);
-
-  // optional string DocumentName = 4;
+  // optional string DocumentName = 3;
   inline bool has_documentname() const;
   inline void clear_documentname();
-  static const int kDocumentNameFieldNumber = 4;
+  static const int kDocumentNameFieldNumber = 3;
   inline const ::std::string& documentname() const;
   inline void set_documentname(const ::std::string& value);
   inline void set_documentname(const char* value);
@@ -1195,8 +1187,6 @@ class EncryptedXmlBasicDocumentMetadata : public ::google::protobuf::Message {
   inline void clear_has_formationdate();
   inline void set_has_formationtime();
   inline void clear_has_formationtime();
-  inline void set_has_function();
-  inline void clear_has_function();
   inline void set_has_documentname();
   inline void clear_has_documentname();
 
@@ -1207,7 +1197,6 @@ class EncryptedXmlBasicDocumentMetadata : public ::google::protobuf::Message {
   ::std::string* formationdate_;
   ::std::string* formationtime_;
   ::std::string* documentname_;
-  int function_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -9821,40 +9810,15 @@ inline void EncryptedXmlBasicDocumentMetadata::set_allocated_formationtime(::std
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.EncryptedXmlBasicDocumentMetadata.FormationTime)
 }
 
-// optional .Diadoc.Api.Proto.Invoicing.FunctionType Function = 3 [default = Basic];
-inline bool EncryptedXmlBasicDocumentMetadata::has_function() const {
+// optional string DocumentName = 3;
+inline bool EncryptedXmlBasicDocumentMetadata::has_documentname() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
-inline void EncryptedXmlBasicDocumentMetadata::set_has_function() {
+inline void EncryptedXmlBasicDocumentMetadata::set_has_documentname() {
   _has_bits_[0] |= 0x00000004u;
 }
-inline void EncryptedXmlBasicDocumentMetadata::clear_has_function() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void EncryptedXmlBasicDocumentMetadata::clear_function() {
-  function_ = 1;
-  clear_has_function();
-}
-inline ::Diadoc::Api::Proto::Invoicing::FunctionType EncryptedXmlBasicDocumentMetadata::function() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.EncryptedXmlBasicDocumentMetadata.Function)
-  return static_cast< ::Diadoc::Api::Proto::Invoicing::FunctionType >(function_);
-}
-inline void EncryptedXmlBasicDocumentMetadata::set_function(::Diadoc::Api::Proto::Invoicing::FunctionType value) {
-  assert(::Diadoc::Api::Proto::Invoicing::FunctionType_IsValid(value));
-  set_has_function();
-  function_ = value;
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.EncryptedXmlBasicDocumentMetadata.Function)
-}
-
-// optional string DocumentName = 4;
-inline bool EncryptedXmlBasicDocumentMetadata::has_documentname() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-inline void EncryptedXmlBasicDocumentMetadata::set_has_documentname() {
-  _has_bits_[0] |= 0x00000008u;
-}
 inline void EncryptedXmlBasicDocumentMetadata::clear_has_documentname() {
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline void EncryptedXmlBasicDocumentMetadata::clear_documentname() {
   if (documentname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
