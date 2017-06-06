@@ -1169,12 +1169,26 @@ class EncryptedXmlBasicDocumentMetadata : public ::google::protobuf::Message {
   inline ::std::string* release_formationtime();
   inline void set_allocated_formationtime(::std::string* formationtime);
 
+  // optional string DocumentName = 3;
+  inline bool has_documentname() const;
+  inline void clear_documentname();
+  static const int kDocumentNameFieldNumber = 3;
+  inline const ::std::string& documentname() const;
+  inline void set_documentname(const ::std::string& value);
+  inline void set_documentname(const char* value);
+  inline void set_documentname(const char* value, size_t size);
+  inline ::std::string* mutable_documentname();
+  inline ::std::string* release_documentname();
+  inline void set_allocated_documentname(::std::string* documentname);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.EncryptedXmlBasicDocumentMetadata)
  private:
   inline void set_has_formationdate();
   inline void clear_has_formationdate();
   inline void set_has_formationtime();
   inline void clear_has_formationtime();
+  inline void set_has_documentname();
+  inline void clear_has_documentname();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1182,6 +1196,7 @@ class EncryptedXmlBasicDocumentMetadata : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::std::string* formationdate_;
   ::std::string* formationtime_;
+  ::std::string* documentname_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -9793,6 +9808,82 @@ inline void EncryptedXmlBasicDocumentMetadata::set_allocated_formationtime(::std
     formationtime_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.EncryptedXmlBasicDocumentMetadata.FormationTime)
+}
+
+// optional string DocumentName = 3;
+inline bool EncryptedXmlBasicDocumentMetadata::has_documentname() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void EncryptedXmlBasicDocumentMetadata::set_has_documentname() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void EncryptedXmlBasicDocumentMetadata::clear_has_documentname() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void EncryptedXmlBasicDocumentMetadata::clear_documentname() {
+  if (documentname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentname_->clear();
+  }
+  clear_has_documentname();
+}
+inline const ::std::string& EncryptedXmlBasicDocumentMetadata::documentname() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.EncryptedXmlBasicDocumentMetadata.DocumentName)
+  return *documentname_;
+}
+inline void EncryptedXmlBasicDocumentMetadata::set_documentname(const ::std::string& value) {
+  set_has_documentname();
+  if (documentname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentname_ = new ::std::string;
+  }
+  documentname_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.EncryptedXmlBasicDocumentMetadata.DocumentName)
+}
+inline void EncryptedXmlBasicDocumentMetadata::set_documentname(const char* value) {
+  set_has_documentname();
+  if (documentname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentname_ = new ::std::string;
+  }
+  documentname_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.EncryptedXmlBasicDocumentMetadata.DocumentName)
+}
+inline void EncryptedXmlBasicDocumentMetadata::set_documentname(const char* value, size_t size) {
+  set_has_documentname();
+  if (documentname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentname_ = new ::std::string;
+  }
+  documentname_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.EncryptedXmlBasicDocumentMetadata.DocumentName)
+}
+inline ::std::string* EncryptedXmlBasicDocumentMetadata::mutable_documentname() {
+  set_has_documentname();
+  if (documentname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    documentname_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.EncryptedXmlBasicDocumentMetadata.DocumentName)
+  return documentname_;
+}
+inline ::std::string* EncryptedXmlBasicDocumentMetadata::release_documentname() {
+  clear_has_documentname();
+  if (documentname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = documentname_;
+    documentname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void EncryptedXmlBasicDocumentMetadata::set_allocated_documentname(::std::string* documentname) {
+  if (documentname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete documentname_;
+  }
+  if (documentname) {
+    set_has_documentname();
+    documentname_ = documentname;
+  } else {
+    clear_has_documentname();
+    documentname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.EncryptedXmlBasicDocumentMetadata.DocumentName)
 }
 
 // -------------------------------------------------------------------
