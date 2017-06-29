@@ -770,6 +770,13 @@ class Box : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::OrganizationInvoiceFormatVersion invoiceformatversion() const;
   inline void set_invoiceformatversion(::Diadoc::Api::Proto::OrganizationInvoiceFormatVersion value);
 
+  // optional bool EncryptedDocumentsAllowed = 5;
+  inline bool has_encrypteddocumentsallowed() const;
+  inline void clear_encrypteddocumentsallowed();
+  static const int kEncryptedDocumentsAllowedFieldNumber = 5;
+  inline bool encrypteddocumentsallowed() const;
+  inline void set_encrypteddocumentsallowed(bool value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Box)
  private:
   inline void set_has_boxid();
@@ -780,6 +787,8 @@ class Box : public ::google::protobuf::Message {
   inline void clear_has_organization();
   inline void set_has_invoiceformatversion();
   inline void clear_has_invoiceformatversion();
+  inline void set_has_encrypteddocumentsallowed();
+  inline void clear_has_encrypteddocumentsallowed();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -789,6 +798,7 @@ class Box : public ::google::protobuf::Message {
   ::std::string* title_;
   ::Diadoc::Api::Proto::Organization* organization_;
   int invoiceformatversion_;
+  bool encrypteddocumentsallowed_;
   friend void  protobuf_AddDesc_Organization_2eproto();
   friend void protobuf_AssignDesc_Organization_2eproto();
   friend void protobuf_ShutdownFile_Organization_2eproto();
@@ -2584,6 +2594,30 @@ inline void Box::set_invoiceformatversion(::Diadoc::Api::Proto::OrganizationInvo
   set_has_invoiceformatversion();
   invoiceformatversion_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Box.InvoiceFormatVersion)
+}
+
+// optional bool EncryptedDocumentsAllowed = 5;
+inline bool Box::has_encrypteddocumentsallowed() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void Box::set_has_encrypteddocumentsallowed() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void Box::clear_has_encrypteddocumentsallowed() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void Box::clear_encrypteddocumentsallowed() {
+  encrypteddocumentsallowed_ = false;
+  clear_has_encrypteddocumentsallowed();
+}
+inline bool Box::encrypteddocumentsallowed() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Box.EncryptedDocumentsAllowed)
+  return encrypteddocumentsallowed_;
+}
+inline void Box::set_encrypteddocumentsallowed(bool value) {
+  set_has_encrypteddocumentsallowed();
+  encrypteddocumentsallowed_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Box.EncryptedDocumentsAllowed)
 }
 
 

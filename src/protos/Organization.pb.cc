@@ -119,11 +119,12 @@ void protobuf_AssignDesc_Organization_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(Department));
   Box_descriptor_ = file->message_type(3);
-  static const int Box_offsets_[4] = {
+  static const int Box_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Box, boxid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Box, title_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Box, organization_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Box, invoiceformatversion_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Box, encrypteddocumentsallowed_),
   };
   Box_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -202,14 +203,15 @@ void protobuf_AddDesc_Organization_2eproto() {
     "tDepartmentId\030\002 \002(\t\022\014\n\004Name\030\003 \002(\t\022\024\n\014Abb"
     "reviation\030\004 \001(\t\022\013\n\003Kpp\030\005 \001(\t\022*\n\007Address\030"
     "\006 \001(\0132\031.Diadoc.Api.Proto.Address\022\031\n\nIsDi"
-    "sabled\030\007 \001(\010:\005false\"\262\001\n\003Box\022\r\n\005BoxId\030\001 \002"
+    "sabled\030\007 \001(\010:\005false\"\325\001\n\003Box\022\r\n\005BoxId\030\001 \002"
     "(\t\022\r\n\005Title\030\002 \002(\t\0224\n\014Organization\030\003 \001(\0132"
     "\036.Diadoc.Api.Proto.Organization\022W\n\024Invoi"
     "ceFormatVersion\030\004 \001(\01622.Diadoc.Api.Proto"
     ".OrganizationInvoiceFormatVersion:\005v5_02"
-    "*8\n OrganizationInvoiceFormatVersion\022\t\n\005"
-    "v5_01\020\001\022\t\n\005v5_02\020\002*:\n\013Sociability\022\024\n\020All"
-    "Organizations\020\000\022\025\n\021CounteragentsOnly\020\001", 1158);
+    "\022!\n\031EncryptedDocumentsAllowed\030\005 \001(\010*8\n O"
+    "rganizationInvoiceFormatVersion\022\t\n\005v5_01"
+    "\020\001\022\t\n\005v5_02\020\002*:\n\013Sociability\022\024\n\020AllOrgan"
+    "izations\020\000\022\025\n\021CounteragentsOnly\020\001", 1193);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Organization.proto", &protobuf_RegisterTypes);
   OrganizationList::default_instance_ = new OrganizationList();
@@ -2320,6 +2322,7 @@ const int Box::kBoxIdFieldNumber;
 const int Box::kTitleFieldNumber;
 const int Box::kOrganizationFieldNumber;
 const int Box::kInvoiceFormatVersionFieldNumber;
+const int Box::kEncryptedDocumentsAllowedFieldNumber;
 #endif  // !_MSC_VER
 
 Box::Box()
@@ -2346,6 +2349,7 @@ void Box::SharedCtor() {
   title_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   organization_ = NULL;
   invoiceformatversion_ = 2;
+  encrypteddocumentsallowed_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -2388,7 +2392,7 @@ Box* Box::New() const {
 }
 
 void Box::Clear() {
-  if (_has_bits_[0 / 32] & 15) {
+  if (_has_bits_[0 / 32] & 31) {
     if (has_boxid()) {
       if (boxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         boxid_->clear();
@@ -2403,6 +2407,7 @@ void Box::Clear() {
       if (organization_ != NULL) organization_->::Diadoc::Api::Proto::Organization::Clear();
     }
     invoiceformatversion_ = 2;
+    encrypteddocumentsallowed_ = false;
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -2480,6 +2485,21 @@ bool Box::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(40)) goto parse_EncryptedDocumentsAllowed;
+        break;
+      }
+
+      // optional bool EncryptedDocumentsAllowed = 5;
+      case 5: {
+        if (tag == 40) {
+         parse_EncryptedDocumentsAllowed:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &encrypteddocumentsallowed_)));
+          set_has_encrypteddocumentsallowed();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -2541,6 +2561,11 @@ void Box::SerializeWithCachedSizes(
       4, this->invoiceformatversion(), output);
   }
 
+  // optional bool EncryptedDocumentsAllowed = 5;
+  if (has_encrypteddocumentsallowed()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(5, this->encrypteddocumentsallowed(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -2586,6 +2611,11 @@ void Box::SerializeWithCachedSizes(
       4, this->invoiceformatversion(), target);
   }
 
+  // optional bool EncryptedDocumentsAllowed = 5;
+  if (has_encrypteddocumentsallowed()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(5, this->encrypteddocumentsallowed(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -2623,6 +2653,11 @@ int Box::ByteSize() const {
     if (has_invoiceformatversion()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->invoiceformatversion());
+    }
+
+    // optional bool EncryptedDocumentsAllowed = 5;
+    if (has_encrypteddocumentsallowed()) {
+      total_size += 1 + 1;
     }
 
   }
@@ -2664,6 +2699,9 @@ void Box::MergeFrom(const Box& from) {
     if (from.has_invoiceformatversion()) {
       set_invoiceformatversion(from.invoiceformatversion());
     }
+    if (from.has_encrypteddocumentsallowed()) {
+      set_encrypteddocumentsallowed(from.encrypteddocumentsallowed());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -2695,6 +2733,7 @@ void Box::Swap(Box* other) {
     std::swap(title_, other->title_);
     std::swap(organization_, other->organization_);
     std::swap(invoiceformatversion_, other->invoiceformatversion_);
+    std::swap(encrypteddocumentsallowed_, other->encrypteddocumentsallowed_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
