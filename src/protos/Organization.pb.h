@@ -433,6 +433,18 @@ class Organization : public ::google::protobuf::Message {
   inline ::std::string* release_liquidationdate();
   inline void set_allocated_liquidationdate(::std::string* liquidationdate);
 
+  // optional string CertificateOfRegistryInfo = 24;
+  inline bool has_certificateofregistryinfo() const;
+  inline void clear_certificateofregistryinfo();
+  static const int kCertificateOfRegistryInfoFieldNumber = 24;
+  inline const ::std::string& certificateofregistryinfo() const;
+  inline void set_certificateofregistryinfo(const ::std::string& value);
+  inline void set_certificateofregistryinfo(const char* value);
+  inline void set_certificateofregistryinfo(const char* value, size_t size);
+  inline ::std::string* mutable_certificateofregistryinfo();
+  inline ::std::string* release_certificateofregistryinfo();
+  inline void set_allocated_certificateofregistryinfo(::std::string* certificateofregistryinfo);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Organization)
  private:
   inline void set_has_orgid();
@@ -475,6 +487,8 @@ class Organization : public ::google::protobuf::Message {
   inline void clear_has_sociability();
   inline void set_has_liquidationdate();
   inline void clear_has_liquidationdate();
+  inline void set_has_certificateofregistryinfo();
+  inline void clear_has_certificateofregistryinfo();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -501,6 +515,7 @@ class Organization : public ::google::protobuf::Message {
   ::google::protobuf::int32 invitationcount_;
   ::google::protobuf::int32 searchcount_;
   ::std::string* liquidationdate_;
+  ::std::string* certificateofregistryinfo_;
   int sociability_;
   friend void  protobuf_AddDesc_Organization_2eproto();
   friend void protobuf_AssignDesc_Organization_2eproto();
@@ -1923,6 +1938,82 @@ inline void Organization::set_allocated_liquidationdate(::std::string* liquidati
     liquidationdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Organization.LiquidationDate)
+}
+
+// optional string CertificateOfRegistryInfo = 24;
+inline bool Organization::has_certificateofregistryinfo() const {
+  return (_has_bits_[0] & 0x00400000u) != 0;
+}
+inline void Organization::set_has_certificateofregistryinfo() {
+  _has_bits_[0] |= 0x00400000u;
+}
+inline void Organization::clear_has_certificateofregistryinfo() {
+  _has_bits_[0] &= ~0x00400000u;
+}
+inline void Organization::clear_certificateofregistryinfo() {
+  if (certificateofregistryinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    certificateofregistryinfo_->clear();
+  }
+  clear_has_certificateofregistryinfo();
+}
+inline const ::std::string& Organization::certificateofregistryinfo() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Organization.CertificateOfRegistryInfo)
+  return *certificateofregistryinfo_;
+}
+inline void Organization::set_certificateofregistryinfo(const ::std::string& value) {
+  set_has_certificateofregistryinfo();
+  if (certificateofregistryinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    certificateofregistryinfo_ = new ::std::string;
+  }
+  certificateofregistryinfo_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Organization.CertificateOfRegistryInfo)
+}
+inline void Organization::set_certificateofregistryinfo(const char* value) {
+  set_has_certificateofregistryinfo();
+  if (certificateofregistryinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    certificateofregistryinfo_ = new ::std::string;
+  }
+  certificateofregistryinfo_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Organization.CertificateOfRegistryInfo)
+}
+inline void Organization::set_certificateofregistryinfo(const char* value, size_t size) {
+  set_has_certificateofregistryinfo();
+  if (certificateofregistryinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    certificateofregistryinfo_ = new ::std::string;
+  }
+  certificateofregistryinfo_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Organization.CertificateOfRegistryInfo)
+}
+inline ::std::string* Organization::mutable_certificateofregistryinfo() {
+  set_has_certificateofregistryinfo();
+  if (certificateofregistryinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    certificateofregistryinfo_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Organization.CertificateOfRegistryInfo)
+  return certificateofregistryinfo_;
+}
+inline ::std::string* Organization::release_certificateofregistryinfo() {
+  clear_has_certificateofregistryinfo();
+  if (certificateofregistryinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = certificateofregistryinfo_;
+    certificateofregistryinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void Organization::set_allocated_certificateofregistryinfo(::std::string* certificateofregistryinfo) {
+  if (certificateofregistryinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete certificateofregistryinfo_;
+  }
+  if (certificateofregistryinfo) {
+    set_has_certificateofregistryinfo();
+    certificateofregistryinfo_ = certificateofregistryinfo;
+  } else {
+    clear_has_certificateofregistryinfo();
+    certificateofregistryinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Organization.CertificateOfRegistryInfo)
 }
 
 // -------------------------------------------------------------------
