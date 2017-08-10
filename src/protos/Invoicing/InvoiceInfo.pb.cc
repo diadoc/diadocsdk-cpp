@@ -461,7 +461,7 @@ void protobuf_AddDesc_Invoicing_2fInvoiceInfo_2eproto() {
     "\022\020\n\010Subtotal\030\010 \002(\t\"h\n\026InvoiceItemAmounts"
     "Diff\022\016\n\006Excise\030\001 \001(\t\022\037\n\027SubtotalWithVatE"
     "xcluded\030\002 \001(\t\022\013\n\003Vat\030\003 \001(\t\022\020\n\010Subtotal\030\004"
-    " \002(\t*M\n\024InvoiceFormatVersion\022\037\n\033DefaultI"
+    " \001(\t*M\n\024InvoiceFormatVersion\022\037\n\033DefaultI"
     "nvoiceFormatVersion\020\000\022\t\n\005v5_01\020\001\022\t\n\005v5_0"
     "2\020\002*}\n\007TaxRate\022\t\n\005NoVat\020\000\022\r\n\tPercent_0\020\001"
     "\022\016\n\nPercent_10\020\002\022\016\n\nPercent_18\020\003\022\016\n\nPerc"
@@ -5806,12 +5806,6 @@ bool InvoiceCorrectionItem::IsInitialized() const {
   if (has_correctedvalues()) {
     if (!this->correctedvalues().IsInitialized()) return false;
   }
-  if (has_amountsinc()) {
-    if (!this->amountsinc().IsInitialized()) return false;
-  }
-  if (has_amountsdec()) {
-    if (!this->amountsdec().IsInitialized()) return false;
-  }
   if (!::google::protobuf::internal::AllAreInitialized(this->additionalinfos())) return false;
   return true;
 }
@@ -6650,7 +6644,7 @@ bool InvoiceItemAmountsDiff::MergePartialFromCodedStream(
         break;
       }
 
-      // required string Subtotal = 4;
+      // optional string Subtotal = 4;
       case 4: {
         if (tag == 34) {
          parse_Subtotal:
@@ -6722,7 +6716,7 @@ void InvoiceItemAmountsDiff::SerializeWithCachedSizes(
       3, this->vat(), output);
   }
 
-  // required string Subtotal = 4;
+  // optional string Subtotal = 4;
   if (has_subtotal()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->subtotal().data(), this->subtotal().length(),
@@ -6775,7 +6769,7 @@ void InvoiceItemAmountsDiff::SerializeWithCachedSizes(
         3, this->vat(), target);
   }
 
-  // required string Subtotal = 4;
+  // optional string Subtotal = 4;
   if (has_subtotal()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->subtotal().data(), this->subtotal().length(),
@@ -6819,7 +6813,7 @@ int InvoiceItemAmountsDiff::ByteSize() const {
           this->vat());
     }
 
-    // required string Subtotal = 4;
+    // optional string Subtotal = 4;
     if (has_subtotal()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -6882,7 +6876,6 @@ void InvoiceItemAmountsDiff::CopyFrom(const InvoiceItemAmountsDiff& from) {
 }
 
 bool InvoiceItemAmountsDiff::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000008) != 0x00000008) return false;
 
   return true;
 }

@@ -11228,12 +11228,6 @@ bool ExtendedInvoiceCorrectionItem::IsInitialized() const {
   if (has_correctedvalues()) {
     if (!this->correctedvalues().IsInitialized()) return false;
   }
-  if (has_amountsinc()) {
-    if (!this->amountsinc().IsInitialized()) return false;
-  }
-  if (has_amountsdec()) {
-    if (!this->amountsdec().IsInitialized()) return false;
-  }
   if (!::google::protobuf::internal::AllAreInitialized(this->additionalinfo())) return false;
   return true;
 }

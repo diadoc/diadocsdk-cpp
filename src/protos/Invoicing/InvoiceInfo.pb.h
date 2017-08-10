@@ -1934,7 +1934,7 @@ class InvoiceItemAmountsDiff : public ::google::protobuf::Message {
   inline ::std::string* release_vat();
   inline void set_allocated_vat(::std::string* vat);
 
-  // required string Subtotal = 4;
+  // optional string Subtotal = 4;
   inline bool has_subtotal() const;
   inline void clear_subtotal();
   static const int kSubtotalFieldNumber = 4;
@@ -6830,7 +6830,7 @@ inline void InvoiceItemAmountsDiff::set_allocated_vat(::std::string* vat) {
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.InvoiceItemAmountsDiff.Vat)
 }
 
-// required string Subtotal = 4;
+// optional string Subtotal = 4;
 inline bool InvoiceItemAmountsDiff::has_subtotal() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
