@@ -44,11 +44,12 @@ class ExtendedOrganizationInfo;
 enum OrgType {
   LegalEntity = 1,
   IndividualEntity = 2,
-  ForeignEntity = 3
+  ForeignEntity = 3,
+  PhysicalEntity = 4
 };
 bool OrgType_IsValid(int value);
 const OrgType OrgType_MIN = LegalEntity;
-const OrgType OrgType_MAX = ForeignEntity;
+const OrgType OrgType_MAX = PhysicalEntity;
 const int OrgType_ARRAYSIZE = OrgType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* OrgType_descriptor();
@@ -348,6 +349,18 @@ class ExtendedOrganizationInfo : public ::google::protobuf::Message {
   inline ::std::string* release_individualentityregistrationcertificate();
   inline void set_allocated_individualentityregistrationcertificate(::std::string* individualentityregistrationcertificate);
 
+  // optional string Country = 21;
+  inline bool has_country() const;
+  inline void clear_country();
+  static const int kCountryFieldNumber = 21;
+  inline const ::std::string& country() const;
+  inline void set_country(const ::std::string& value);
+  inline void set_country(const char* value);
+  inline void set_country(const char* value, size_t size);
+  inline ::std::string* mutable_country();
+  inline ::std::string* release_country();
+  inline void set_allocated_country(::std::string* country);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Invoicing.Organizations.ExtendedOrganizationInfo)
  private:
   inline void set_has_boxid();
@@ -390,6 +403,8 @@ class ExtendedOrganizationInfo : public ::google::protobuf::Message {
   inline void clear_has_organizationorpersoninfo();
   inline void set_has_individualentityregistrationcertificate();
   inline void clear_has_individualentityregistrationcertificate();
+  inline void set_has_country();
+  inline void clear_has_country();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -414,6 +429,7 @@ class ExtendedOrganizationInfo : public ::google::protobuf::Message {
   ::std::string* organizationadditionalinfo_;
   ::std::string* organizationorpersoninfo_;
   ::std::string* individualentityregistrationcertificate_;
+  ::std::string* country_;
   int orgtype_;
   friend void  protobuf_AddDesc_Invoicing_2fExtendedOrganizationInfo_2eproto();
   friend void protobuf_AssignDesc_Invoicing_2fExtendedOrganizationInfo_2eproto();
@@ -1861,6 +1877,82 @@ inline void ExtendedOrganizationInfo::set_allocated_individualentityregistration
     individualentityregistrationcertificate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.Organizations.ExtendedOrganizationInfo.IndividualEntityRegistrationCertificate)
+}
+
+// optional string Country = 21;
+inline bool ExtendedOrganizationInfo::has_country() const {
+  return (_has_bits_[0] & 0x00100000u) != 0;
+}
+inline void ExtendedOrganizationInfo::set_has_country() {
+  _has_bits_[0] |= 0x00100000u;
+}
+inline void ExtendedOrganizationInfo::clear_has_country() {
+  _has_bits_[0] &= ~0x00100000u;
+}
+inline void ExtendedOrganizationInfo::clear_country() {
+  if (country_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    country_->clear();
+  }
+  clear_has_country();
+}
+inline const ::std::string& ExtendedOrganizationInfo::country() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.Organizations.ExtendedOrganizationInfo.Country)
+  return *country_;
+}
+inline void ExtendedOrganizationInfo::set_country(const ::std::string& value) {
+  set_has_country();
+  if (country_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    country_ = new ::std::string;
+  }
+  country_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.Organizations.ExtendedOrganizationInfo.Country)
+}
+inline void ExtendedOrganizationInfo::set_country(const char* value) {
+  set_has_country();
+  if (country_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    country_ = new ::std::string;
+  }
+  country_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.Organizations.ExtendedOrganizationInfo.Country)
+}
+inline void ExtendedOrganizationInfo::set_country(const char* value, size_t size) {
+  set_has_country();
+  if (country_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    country_ = new ::std::string;
+  }
+  country_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.Organizations.ExtendedOrganizationInfo.Country)
+}
+inline ::std::string* ExtendedOrganizationInfo::mutable_country() {
+  set_has_country();
+  if (country_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    country_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.Organizations.ExtendedOrganizationInfo.Country)
+  return country_;
+}
+inline ::std::string* ExtendedOrganizationInfo::release_country() {
+  clear_has_country();
+  if (country_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = country_;
+    country_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void ExtendedOrganizationInfo::set_allocated_country(::std::string* country) {
+  if (country_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete country_;
+  }
+  if (country) {
+    set_has_country();
+    country_ = country;
+  } else {
+    clear_has_country();
+    country_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.Organizations.ExtendedOrganizationInfo.Country)
 }
 
 

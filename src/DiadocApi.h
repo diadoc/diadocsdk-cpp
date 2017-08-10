@@ -17,6 +17,7 @@
 #include "protos\Invoicing\SignatureRejectionInfo.pb.h"
 #include "protos\Invoicing\InvoiceInfo.pb.h"
 #include "protos\Invoicing\Torg12Info.pb.h"
+#include "protos\Invoicing\TovTorgInfo.pb.h"
 #include "protos\Invoicing\AcceptanceCertificateInfo.pb.h"
 #include "protos\Invoicing\UniversalTransferDocumentInfo.pb.h"
 #include "protos\KeyValueStorage\KeyValueStorage.pb.h"
@@ -141,6 +142,8 @@ public:
 
 	WebFile GenerateTorg12XmlForSeller(const Diadoc::Api::Proto::Invoicing::Torg12SellerTitleInfo& torg12SellerInfo, bool disableValidation = false);
 	WebFile GenerateTorg12XmlForBuyer(const Diadoc::Api::Proto::Invoicing::Torg12BuyerTitleInfo& torg12BuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId);
+	WebFile GenerateTovTorg551XmlForSeller(const Diadoc::Api::Proto::Invoicing::TovTorgSellerTitleInfo& tovTorgSellerInfo, bool disableValidation = false);
+	WebFile GenerateTovTorg551XmlForBuyer(const Diadoc::Api::Proto::Invoicing::TovTorgBuyerTitleInfo& tovTorgBuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId);
 
 	WebFile GenerateAcceptanceCertificateXmlForSeller(const Diadoc::Api::Proto::Invoicing::AcceptanceCertificateSellerTitleInfo& acceptanceCertificateSellerInfo, bool disableValidation = false);
 	WebFile GenerateAcceptanceCertificateXmlForBuyer(const Diadoc::Api::Proto::Invoicing::AcceptanceCertificateBuyerTitleInfo& acceptanceCertificateBuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId);
@@ -160,7 +163,10 @@ public:
 	Diadoc::Api::Proto::Invoicing::Signers::ExtendedSignerDetails PostExtendedSignerDetails(const std::wstring& token, const std::wstring& boxId, const std::wstring& thumbprint, const Diadoc::Api::Proto::Invoicing::Signers::DocumentTitleType &documentTitleType, const Diadoc::Api::Proto::Invoicing::Signers::ExtendedSignerDetailsToPost &signerDetails);
 
 	Diadoc::Api::Proto::Invoicing::InvoiceInfo ParseInvoiceXml(const Bytes_t& invoiceXmlContent);
-	Diadoc::Api::Proto::Invoicing::Torg12SellerTitleInfo ParseTorg12SellerTitleXml(const Bytes_t& sellerTitleXmlContent);
+	Diadoc::Api::Proto::Invoicing::Torg12SellerTitleInfo ParseTorg12SellerTitleXml(const Bytes_t& content);
+	Diadoc::Api::Proto::Invoicing::TovTorgSellerTitleInfo ParseTovTorg551SellerTitleXml(const Bytes_t& content);
+	Diadoc::Api::Proto::Invoicing::Torg12BuyerTitleInfo ParseTorg12BuyerTitleXml(const Bytes_t& content);
+	Diadoc::Api::Proto::Invoicing::TovTorgBuyerTitleInfo ParseTovTorg551BuyerTitleXml(const Bytes_t& content);
 	Diadoc::Api::Proto::Invoicing::AcceptanceCertificateSellerTitleInfo ParseAcceptanceCertificateSellerTitleXml(const Bytes_t& sellerTitleXmlContent);
 	Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentSellerTitleInfo ParseUniversalTransferDocumentSellerTitleXml(const Bytes_t& utdXmlContent);
 	Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo ParseUniversalTransferDocumentBuyerTitleXml(const Bytes_t& utdXmlContent);
