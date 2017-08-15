@@ -67,6 +67,13 @@ void DiadocApi::ParseServerUrl(const std::wstring& serverUrl, std::wstring* apiH
 	*apiHost = hostStr.substr(0, portOff);
 }
 
+Diadoc::Api::Proto::Invoicing::Signers::DocumentTitleType DiadocApi::CreateDocumentTitleType(bool forBuyer, bool forCorrection)
+{
+    return forBuyer
+        ? (forCorrection ? Signers::BuyerUCD : Signers::BuyerUTD)
+        : (forCorrection ? Signers::SellerUCD : Signers::SellerUTD);
+}
+
 DiadocApi::~DiadocApi() 
 {
 }
@@ -893,27 +900,46 @@ DiadocApi::WebFile DiadocApi::GenerateUniversalTransferDocumentXmlForBuyer(const
 	return WebFile(request);
 }
 
+// WARN: [[deprecated]]
+// WARN: Use overload with DocumentTitleType parameter
 Signers::ExtendedSignerDetails DiadocApi::GetExtendedSignerDetails(const std::wstring& token, const std::wstring& boxId, const std::wstring& thumbprint, bool forBuyer, bool forCorrection)
 {
+    Signers::DocumentTitleType documentTitleType = CreateDocumentTitleType(forBuyer, forCorrection);
+    return GetExtendedSignerDetails(token, boxId, thumbprint, documentTitleType);
+}
+
+Signers::ExtendedSignerDetails DiadocApi::GetExtendedSignerDetails(const std::wstring& token, const std::wstring& boxId, const std::wstring& thumbprint, const Signers::DocumentTitleType& documentTitleType)
+{
 	WppTraceDebugOut("GetExtendedSignerDetails...");
+
 	std::wstringstream queryString;
-	queryString << L"/ExtendedSignerDetails?boxId=" << StringHelper::CanonicalizeUrl(boxId)
+	queryString
+		<< L"/V2/ExtendedSignerDetails?boxId=" << StringHelper::CanonicalizeUrl(boxId)
 		<< L"&thumbprint=" << StringHelper::CanonicalizeUrl(thumbprint)
-		<< (forBuyer ? L"&buyer" : L"")
-		<< (forCorrection ? L"&correction" : L"");
+		<< L"&documentTitleType=" << StringHelper::NumberToString(static_cast<int>(documentTitleType));
+
 	return PerformHttpRequest<Signers::ExtendedSignerDetails>("GET", queryString.str());
 }
 
+// WARN: [[deprecated]]
+// WARN: Use overload with DocumentTitleType parameter
 Signers::ExtendedSignerDetails DiadocApi::PostExtendedSignerDetails(const std::wstring& token, const std::wstring& boxId, const std::wstring& thumbprint, bool forBuyer, bool forCorrection, const Signers::ExtendedSignerDetailsToPost& signerDetails)
 {
+	Signers::DocumentTitleType documentTitleType = CreateDocumentTitleType(forBuyer, forCorrection);
+	return PostExtendedSignerDetails(token, boxId, thumbprint, documentTitleType, signerDetails);
+}
+
+Signers::ExtendedSignerDetails DiadocApi::PostExtendedSignerDetails(const std::wstring& token, const std::wstring& boxId, const std::wstring& thumbprint, const Signers::DocumentTitleType& documentTitleType, const Signers::ExtendedSignerDetailsToPost& signerDetails)
+{
 	WppTraceDebugOut("PostExtendedSignerDetails...");
+
 	std::wstringstream queryString;
-	queryString << L"/ExtendedSignerDetails?boxId=" << StringHelper::CanonicalizeUrl(boxId)
+	queryString
+		<< L"/V2/ExtendedSignerDetails?boxId=" << StringHelper::CanonicalizeUrl(boxId)
 		<< L"&thumbprint=" << StringHelper::CanonicalizeUrl(thumbprint)
-		<< (forBuyer ? L"&buyer" : L"")
-		<< (forCorrection ? L"&correction" : L"");
-	return PerformHttpRequest<Signers::ExtendedSignerDetailsToPost, Signers::ExtendedSignerDetails>(
-		"POST", queryString.str(), signerDetails);
+		<< L"&documentTitleType=" << StringHelper::NumberToString(static_cast<int>(documentTitleType));
+
+	return PerformHttpRequest<Signers::ExtendedSignerDetailsToPost, Signers::ExtendedSignerDetails>("POST", queryString.str(), signerDetails);
 }
 
 InvoiceInfo DiadocApi::ParseInvoiceXml(const Bytes_t& invoiceXmlContent)

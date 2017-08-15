@@ -150,7 +150,9 @@ public:
 	WebFile GenerateUniversalTransferDocumentXmlForBuyer(const Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo& utdBuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId);
 
 	Diadoc::Api::Proto::Invoicing::Signers::ExtendedSignerDetails GetExtendedSignerDetails(const std::wstring& token, const std::wstring& boxId, const std::wstring& thumbprint, bool forBuyer, bool forCorrection);
+	Diadoc::Api::Proto::Invoicing::Signers::ExtendedSignerDetails GetExtendedSignerDetails(const std::wstring& token, const std::wstring& boxId, const std::wstring& thumbprint, const Diadoc::Api::Proto::Invoicing::Signers::DocumentTitleType &documentTitleType);
 	Diadoc::Api::Proto::Invoicing::Signers::ExtendedSignerDetails PostExtendedSignerDetails(const std::wstring& token, const std::wstring& boxId, const std::wstring& thumbprint, bool forBuyer, bool forCorrection, const Diadoc::Api::Proto::Invoicing::Signers::ExtendedSignerDetailsToPost &signerDetails);
+	Diadoc::Api::Proto::Invoicing::Signers::ExtendedSignerDetails PostExtendedSignerDetails(const std::wstring& token, const std::wstring& boxId, const std::wstring& thumbprint, const Diadoc::Api::Proto::Invoicing::Signers::DocumentTitleType &documentTitleType, const Diadoc::Api::Proto::Invoicing::Signers::ExtendedSignerDetailsToPost &signerDetails);
 
 	Diadoc::Api::Proto::Invoicing::InvoiceInfo ParseInvoiceXml(const Bytes_t& invoiceXmlContent);
 	Diadoc::Api::Proto::Invoicing::Torg12SellerTitleInfo ParseTorg12SellerTitleXml(const Bytes_t& sellerTitleXmlContent);
@@ -263,6 +265,7 @@ protected:
 
 private:
 	static void ParseServerUrl(const std::wstring& serverUrl, std::wstring* apiHost, INTERNET_PORT* port, DWORD* flags);
+	static Diadoc::Api::Proto::Invoicing::Signers::DocumentTitleType CreateDocumentTitleType(bool forBuyer, bool forCorrection);
 	static HttpSession InitSession(std::wstring proxyUrl, bool useDefaultProxySettings = true);
 	static std::wstring GetVersionString();
 	static std::wstring GetUserAgent();

@@ -107,6 +107,31 @@ inline bool SignerStatus_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<SignerStatus>(
     SignerStatus_descriptor(), name, value);
 }
+enum DocumentTitleType {
+  SellerUTD = 0,
+  BuyerUTD = 1,
+  SellerUCD = 2,
+  BuyerUCD = 3,
+  TovTorg551Seller = 4,
+  TovTorg551Buyer = 5,
+  AccCert552Seller = 6,
+  AccCert552Buyer = 7
+};
+bool DocumentTitleType_IsValid(int value);
+const DocumentTitleType DocumentTitleType_MIN = SellerUTD;
+const DocumentTitleType DocumentTitleType_MAX = AccCert552Buyer;
+const int DocumentTitleType_ARRAYSIZE = DocumentTitleType_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* DocumentTitleType_descriptor();
+inline const ::std::string& DocumentTitleType_Name(DocumentTitleType value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    DocumentTitleType_descriptor(), value);
+}
+inline bool DocumentTitleType_Parse(
+    const ::std::string& name, DocumentTitleType* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<DocumentTitleType>(
+    DocumentTitleType_descriptor(), name, value);
+}
 // ===================================================================
 
 class ExtendedSigner : public ::google::protobuf::Message {
@@ -2257,6 +2282,11 @@ template <> struct is_proto_enum< ::Diadoc::Api::Proto::Invoicing::Signers::Sign
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::Diadoc::Api::Proto::Invoicing::Signers::SignerStatus>() {
   return ::Diadoc::Api::Proto::Invoicing::Signers::SignerStatus_descriptor();
+}
+template <> struct is_proto_enum< ::Diadoc::Api::Proto::Invoicing::Signers::DocumentTitleType> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::Diadoc::Api::Proto::Invoicing::Signers::DocumentTitleType>() {
+  return ::Diadoc::Api::Proto::Invoicing::Signers::DocumentTitleType_descriptor();
 }
 
 }  // namespace google

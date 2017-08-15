@@ -74,3 +74,10 @@ std::wstring StringHelper::CanonicalizeUrl(const std::wstring& input)
 	}
 	return std::wstring(&buf[0]);
 }
+
+std::wstring StringHelper::NumberToString(const int i)
+{
+	std::wstringstream wss;
+	wss << i;
+	return wss.str();
+}
