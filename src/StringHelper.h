@@ -20,7 +20,6 @@ public:
 	template<class T>
 	static std::basic_string<T> Trim(const std::basic_string<T>& input, T trimChar);
 	static std::wstring CanonicalizeUrl(const std::wstring& input);
-	static std::wstring NumberToString(const int i);
 
 private:
 	static std::wstring EncodingToUtf16(const std::string& encStr, UINT codePage, DWORD flags);

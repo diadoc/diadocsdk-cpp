@@ -195,8 +195,8 @@ void protobuf_AddDesc_Invoicing_2fExtendedSigner_2eproto() {
     "\n\016SellerEmployee\020\001\022\036\n\032InformationCreator"
     "Employee\020\002\022\035\n\031OtherOrganizationEmployee\020"
     "\003\022\024\n\020AuthorizedPerson\020\004*\243\001\n\021DocumentTitl"
-    "eType\022\r\n\tSellerUTD\020\000\022\014\n\010BuyerUTD\020\001\022\r\n\tSe"
-    "llerUCD\020\002\022\014\n\010BuyerUCD\020\003\022\024\n\020TovTorg551Sel"
+    "eType\022\r\n\tUtdSeller\020\000\022\014\n\010UtdBuyer\020\001\022\r\n\tUc"
+    "dSeller\020\002\022\014\n\010UcdBuyer\020\003\022\024\n\020TovTorg551Sel"
     "ler\020\004\022\023\n\017TovTorg551Buyer\020\005\022\024\n\020AccCert552"
     "Seller\020\006\022\023\n\017AccCert552Buyer\020\007", 1709);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(

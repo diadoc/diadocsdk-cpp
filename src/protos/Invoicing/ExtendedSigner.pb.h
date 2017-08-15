@@ -108,17 +108,17 @@ inline bool SignerStatus_Parse(
     SignerStatus_descriptor(), name, value);
 }
 enum DocumentTitleType {
-  SellerUTD = 0,
-  BuyerUTD = 1,
-  SellerUCD = 2,
-  BuyerUCD = 3,
+  UtdSeller = 0,
+  UtdBuyer = 1,
+  UcdSeller = 2,
+  UcdBuyer = 3,
   TovTorg551Seller = 4,
   TovTorg551Buyer = 5,
   AccCert552Seller = 6,
   AccCert552Buyer = 7
 };
 bool DocumentTitleType_IsValid(int value);
-const DocumentTitleType DocumentTitleType_MIN = SellerUTD;
+const DocumentTitleType DocumentTitleType_MIN = UtdSeller;
 const DocumentTitleType DocumentTitleType_MAX = AccCert552Buyer;
 const int DocumentTitleType_ARRAYSIZE = DocumentTitleType_MAX + 1;
 

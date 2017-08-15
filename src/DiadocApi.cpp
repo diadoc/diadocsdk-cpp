@@ -70,8 +70,8 @@ void DiadocApi::ParseServerUrl(const std::wstring& serverUrl, std::wstring* apiH
 Diadoc::Api::Proto::Invoicing::Signers::DocumentTitleType DiadocApi::CreateDocumentTitleType(bool forBuyer, bool forCorrection)
 {
     return forBuyer
-        ? (forCorrection ? Signers::BuyerUCD : Signers::BuyerUTD)
-        : (forCorrection ? Signers::SellerUCD : Signers::SellerUTD);
+        ? (forCorrection ? Signers::UcdBuyer : Signers::UtdBuyer)
+        : (forCorrection ? Signers::UcdSeller : Signers::UtdSeller);
 }
 
 DiadocApi::~DiadocApi() 
@@ -916,7 +916,7 @@ Signers::ExtendedSignerDetails DiadocApi::GetExtendedSignerDetails(const std::ws
 	queryString
 		<< L"/V2/ExtendedSignerDetails?boxId=" << StringHelper::CanonicalizeUrl(boxId)
 		<< L"&thumbprint=" << StringHelper::CanonicalizeUrl(thumbprint)
-		<< L"&documentTitleType=" << StringHelper::NumberToString(static_cast<int>(documentTitleType));
+		<< L"&documentTitleType=" << std::to_wstring(static_cast<int>(documentTitleType));
 
 	return PerformHttpRequest<Signers::ExtendedSignerDetails>("GET", queryString.str());
 }
@@ -937,7 +937,7 @@ Signers::ExtendedSignerDetails DiadocApi::PostExtendedSignerDetails(const std::w
 	queryString
 		<< L"/V2/ExtendedSignerDetails?boxId=" << StringHelper::CanonicalizeUrl(boxId)
 		<< L"&thumbprint=" << StringHelper::CanonicalizeUrl(thumbprint)
-		<< L"&documentTitleType=" << StringHelper::NumberToString(static_cast<int>(documentTitleType));
+		<< L"&documentTitleType=" << std::to_wstring(static_cast<int>(documentTitleType));
 
 	return PerformHttpRequest<Signers::ExtendedSignerDetailsToPost, Signers::ExtendedSignerDetails>("POST", queryString.str(), signerDetails);
 }
