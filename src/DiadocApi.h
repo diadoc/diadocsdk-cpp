@@ -270,7 +270,7 @@ protected:
 
 private:
 	static void ParseServerUrl(const std::wstring& serverUrl, std::wstring* apiHost, INTERNET_PORT* port, DWORD* flags);
-	static Diadoc::Api::Proto::Invoicing::Signers::DocumentTitleType CreateDocumentTitleType(bool forBuyer, bool forCorrection);
+	static Diadoc::Api::Proto::Invoicing::Signers::DocumentTitleType CreateUtdDocumentTitleType(bool forBuyer, bool forCorrection);
 	static HttpSession InitSession(std::wstring proxyUrl, bool useDefaultProxySettings = true);
 	static std::wstring GetVersionString();
 	static std::wstring GetUserAgent();

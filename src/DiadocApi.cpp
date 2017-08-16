@@ -67,7 +67,7 @@ void DiadocApi::ParseServerUrl(const std::wstring& serverUrl, std::wstring* apiH
 	*apiHost = hostStr.substr(0, portOff);
 }
 
-Diadoc::Api::Proto::Invoicing::Signers::DocumentTitleType DiadocApi::CreateDocumentTitleType(bool forBuyer, bool forCorrection)
+Diadoc::Api::Proto::Invoicing::Signers::DocumentTitleType DiadocApi::CreateUtdDocumentTitleType(bool forBuyer, bool forCorrection)
 {
     return forBuyer
         ? (forCorrection ? Signers::UcdBuyer : Signers::UtdBuyer)
@@ -904,7 +904,7 @@ DiadocApi::WebFile DiadocApi::GenerateUniversalTransferDocumentXmlForBuyer(const
 // WARN: Use overload with DocumentTitleType parameter
 Signers::ExtendedSignerDetails DiadocApi::GetExtendedSignerDetails(const std::wstring& token, const std::wstring& boxId, const std::wstring& thumbprint, bool forBuyer, bool forCorrection)
 {
-    Signers::DocumentTitleType documentTitleType = CreateDocumentTitleType(forBuyer, forCorrection);
+    Signers::DocumentTitleType documentTitleType = CreateUtdDocumentTitleType(forBuyer, forCorrection);
     return GetExtendedSignerDetails(token, boxId, thumbprint, documentTitleType);
 }
 
@@ -925,7 +925,7 @@ Signers::ExtendedSignerDetails DiadocApi::GetExtendedSignerDetails(const std::ws
 // WARN: Use overload with DocumentTitleType parameter
 Signers::ExtendedSignerDetails DiadocApi::PostExtendedSignerDetails(const std::wstring& token, const std::wstring& boxId, const std::wstring& thumbprint, bool forBuyer, bool forCorrection, const Signers::ExtendedSignerDetailsToPost& signerDetails)
 {
-	Signers::DocumentTitleType documentTitleType = CreateDocumentTitleType(forBuyer, forCorrection);
+	Signers::DocumentTitleType documentTitleType = CreateUtdDocumentTitleType(forBuyer, forCorrection);
 	return PostExtendedSignerDetails(token, boxId, thumbprint, documentTitleType, signerDetails);
 }
 
