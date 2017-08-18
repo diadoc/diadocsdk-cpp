@@ -4878,16 +4878,31 @@ class ResolutionRequestCancellationAttachment : public ::google::protobuf::Messa
   inline ::std::string* release_initialresolutionrequestid();
   inline void set_allocated_initialresolutionrequestid(::std::string* initialresolutionrequestid);
 
+  // optional string Comment = 2;
+  inline bool has_comment() const;
+  inline void clear_comment();
+  static const int kCommentFieldNumber = 2;
+  inline const ::std::string& comment() const;
+  inline void set_comment(const ::std::string& value);
+  inline void set_comment(const char* value);
+  inline void set_comment(const char* value, size_t size);
+  inline ::std::string* mutable_comment();
+  inline ::std::string* release_comment();
+  inline void set_allocated_comment(::std::string* comment);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment)
  private:
   inline void set_has_initialresolutionrequestid();
   inline void clear_has_initialresolutionrequestid();
+  inline void set_has_comment();
+  inline void clear_has_comment();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::std::string* initialresolutionrequestid_;
+  ::std::string* comment_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -19083,6 +19098,82 @@ inline void ResolutionRequestCancellationAttachment::set_allocated_initialresolu
     initialresolutionrequestid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment.InitialResolutionRequestId)
+}
+
+// optional string Comment = 2;
+inline bool ResolutionRequestCancellationAttachment::has_comment() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void ResolutionRequestCancellationAttachment::set_has_comment() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void ResolutionRequestCancellationAttachment::clear_has_comment() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void ResolutionRequestCancellationAttachment::clear_comment() {
+  if (comment_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_->clear();
+  }
+  clear_has_comment();
+}
+inline const ::std::string& ResolutionRequestCancellationAttachment::comment() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment.Comment)
+  return *comment_;
+}
+inline void ResolutionRequestCancellationAttachment::set_comment(const ::std::string& value) {
+  set_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_ = new ::std::string;
+  }
+  comment_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment.Comment)
+}
+inline void ResolutionRequestCancellationAttachment::set_comment(const char* value) {
+  set_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_ = new ::std::string;
+  }
+  comment_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment.Comment)
+}
+inline void ResolutionRequestCancellationAttachment::set_comment(const char* value, size_t size) {
+  set_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_ = new ::std::string;
+  }
+  comment_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment.Comment)
+}
+inline ::std::string* ResolutionRequestCancellationAttachment::mutable_comment() {
+  set_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment.Comment)
+  return comment_;
+}
+inline ::std::string* ResolutionRequestCancellationAttachment::release_comment() {
+  clear_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = comment_;
+    comment_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void ResolutionRequestCancellationAttachment::set_allocated_comment(::std::string* comment) {
+  if (comment_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete comment_;
+  }
+  if (comment) {
+    set_has_comment();
+    comment_ = comment;
+  } else {
+    clear_has_comment();
+    comment_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment.Comment)
 }
 
 // -------------------------------------------------------------------

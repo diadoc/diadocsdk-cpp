@@ -28,6 +28,7 @@
 #include "Content.pb.h"
 #include "DocumentId.pb.h"
 #include "Documents/Document.pb.h"
+#include "Events/CancellationInfo.pb.h"
 #include "Events/ResolutionInfo.pb.h"
 #include "Events/ResolutionRequestInfo.pb.h"
 #include "Events/ResolutionRequestDenialInfo.pb.h"
@@ -120,11 +121,12 @@ enum AttachmentType {
   CustomData = 64,
   MoveDocument = 65,
   ResolutionRouteAssignmentAttachment = 66,
-  ResolutionRouteRemovalAttachment = 67
+  ResolutionRouteRemovalAttachment = 67,
+  Cancellation = 69
 };
 bool AttachmentType_IsValid(int value);
 const AttachmentType AttachmentType_MIN = UnknownAttachmentType;
-const AttachmentType AttachmentType_MAX = ResolutionRouteRemovalAttachment;
+const AttachmentType AttachmentType_MAX = Cancellation;
 const int AttachmentType_ARRAYSIZE = AttachmentType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* AttachmentType_descriptor();
@@ -1146,6 +1148,15 @@ class Entity : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo* release_resolutionrouteremovalinfo();
   inline void set_allocated_resolutionrouteremovalinfo(::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo* resolutionrouteremovalinfo);
 
+  // optional .Diadoc.Api.Proto.Events.CancellationInfo CancellationInfo = 24;
+  inline bool has_cancellationinfo() const;
+  inline void clear_cancellationinfo();
+  static const int kCancellationInfoFieldNumber = 24;
+  inline const ::Diadoc::Api::Proto::Events::CancellationInfo& cancellationinfo() const;
+  inline ::Diadoc::Api::Proto::Events::CancellationInfo* mutable_cancellationinfo();
+  inline ::Diadoc::Api::Proto::Events::CancellationInfo* release_cancellationinfo();
+  inline void set_allocated_cancellationinfo(::Diadoc::Api::Proto::Events::CancellationInfo* cancellationinfo);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.Entity)
  private:
   inline void set_has_entitytype();
@@ -1192,6 +1203,8 @@ class Entity : public ::google::protobuf::Message {
   inline void clear_has_resolutionrouteassignmentinfo();
   inline void set_has_resolutionrouteremovalinfo();
   inline void clear_has_resolutionrouteremovalinfo();
+  inline void set_has_cancellationinfo();
+  inline void clear_has_cancellationinfo();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1215,6 +1228,7 @@ class Entity : public ::google::protobuf::Message {
   ::std::string* attachmentversion_;
   ::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo* resolutionrouteassignmentinfo_;
   ::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo* resolutionrouteremovalinfo_;
+  ::Diadoc::Api::Proto::Events::CancellationInfo* cancellationinfo_;
   bool needrecipientsignature_;
   bool needreceipt_;
   bool isapprovementsignature_;
@@ -4110,6 +4124,47 @@ inline void Entity::set_allocated_resolutionrouteremovalinfo(::Diadoc::Api::Prot
     clear_has_resolutionrouteremovalinfo();
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Entity.ResolutionRouteRemovalInfo)
+}
+
+// optional .Diadoc.Api.Proto.Events.CancellationInfo CancellationInfo = 24;
+inline bool Entity::has_cancellationinfo() const {
+  return (_has_bits_[0] & 0x00400000u) != 0;
+}
+inline void Entity::set_has_cancellationinfo() {
+  _has_bits_[0] |= 0x00400000u;
+}
+inline void Entity::clear_has_cancellationinfo() {
+  _has_bits_[0] &= ~0x00400000u;
+}
+inline void Entity::clear_cancellationinfo() {
+  if (cancellationinfo_ != NULL) cancellationinfo_->::Diadoc::Api::Proto::Events::CancellationInfo::Clear();
+  clear_has_cancellationinfo();
+}
+inline const ::Diadoc::Api::Proto::Events::CancellationInfo& Entity::cancellationinfo() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Entity.CancellationInfo)
+  return cancellationinfo_ != NULL ? *cancellationinfo_ : *default_instance_->cancellationinfo_;
+}
+inline ::Diadoc::Api::Proto::Events::CancellationInfo* Entity::mutable_cancellationinfo() {
+  set_has_cancellationinfo();
+  if (cancellationinfo_ == NULL) cancellationinfo_ = new ::Diadoc::Api::Proto::Events::CancellationInfo;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Entity.CancellationInfo)
+  return cancellationinfo_;
+}
+inline ::Diadoc::Api::Proto::Events::CancellationInfo* Entity::release_cancellationinfo() {
+  clear_has_cancellationinfo();
+  ::Diadoc::Api::Proto::Events::CancellationInfo* temp = cancellationinfo_;
+  cancellationinfo_ = NULL;
+  return temp;
+}
+inline void Entity::set_allocated_cancellationinfo(::Diadoc::Api::Proto::Events::CancellationInfo* cancellationinfo) {
+  delete cancellationinfo_;
+  cancellationinfo_ = cancellationinfo;
+  if (cancellationinfo) {
+    set_has_cancellationinfo();
+  } else {
+    clear_has_cancellationinfo();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Entity.CancellationInfo)
 }
 
 // -------------------------------------------------------------------

@@ -737,8 +737,9 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ResolutionRouteAssignment));
   ResolutionRequestCancellationAttachment_descriptor_ = file->message_type(24);
-  static const int ResolutionRequestCancellationAttachment_offsets_[1] = {
+  static const int ResolutionRequestCancellationAttachment_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRequestCancellationAttachment, initialresolutionrequestid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRequestCancellationAttachment, comment_),
   };
   ResolutionRequestCancellationAttachment_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1629,86 +1630,86 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
     "artmentId\030\004 \001(\t\022\017\n\007Comment\030\005 \001(\t\"X\n\031Reso"
     "lutionRouteAssignment\022\031\n\021InitialDocument"
     "Id\030\001 \002(\t\022\017\n\007RouteId\030\002 \002(\t\022\017\n\007Comment\030\003 \001"
-    "(\t\"M\n\'ResolutionRequestCancellationAttac"
+    "(\t\"^\n\'ResolutionRequestCancellationAttac"
     "hment\022\"\n\032InitialResolutionRequestId\030\001 \002("
-    "\t\"Y\n-ResolutionRequestDenialCancellation"
-    "Attachment\022(\n InitialResolutionRequestDe"
-    "nialId\030\001 \002(\t\"X\n!ResolutionRequestDenialA"
-    "ttachment\022\"\n\032InitialResolutionRequestId\030"
-    "\001 \002(\t\022\017\n\007Comment\030\002 \001(\t\"\203\001\n\024ResolutionAtt"
-    "achment\022\031\n\021InitialDocumentId\030\001 \002(\t\022\?\n\016Re"
-    "solutionType\030\002 \002(\0162\'.Diadoc.Api.Proto.Ev"
-    "ents.ResolutionType\022\017\n\007Comment\030\003 \001(\t\"j\n\021"
-    "ReceiptAttachment\022\026\n\016ParentEntityId\030\001 \002("
-    "\t\022=\n\rSignedContent\030\002 \002(\0132&.Diadoc.Api.Pr"
-    "oto.Events.SignedContent\"t\n\033CorrectionRe"
-    "questAttachment\022\026\n\016ParentEntityId\030\001 \002(\t\022"
-    "=\n\rSignedContent\030\002 \002(\0132&.Diadoc.Api.Prot"
-    "o.Events.SignedContent\"\303\001\n\021DocumentSigna"
-    "ture\022\026\n\016ParentEntityId\030\001 \002(\t\022\021\n\tSignatur"
-    "e\030\002 \001(\014\022$\n\025SignWithTestSignature\030\004 \001(\010:\005"
-    "false\022%\n\026IsApprovementSignature\030\005 \001(\010:\005f"
-    "alse\022\034\n\024SignatureNameOnShelf\030\006 \001(\t\022\030\n\020Pa"
-    "tchedContentId\030\007 \001(\t\"\204\001\n\027DocumentSenderS"
-    "ignature\022\026\n\016ParentEntityId\030\001 \002(\t\022\021\n\tSign"
-    "ature\030\002 \001(\014\022$\n\025SignWithTestSignature\030\004 \001"
-    "(\010:\005false\022\030\n\020PatchedContentId\030\005 \001(\t\"t\n\033R"
-    "equestedSignatureRejection\022\026\n\016ParentEnti"
-    "tyId\030\001 \002(\t\022=\n\rSignedContent\030\002 \002(\0132&.Diad"
-    "oc.Api.Proto.Events.SignedContent\"\214\001\n\rSi"
-    "gnedContent\022\017\n\007Content\030\001 \001(\014\022\021\n\tSignatur"
-    "e\030\002 \001(\014\022\023\n\013NameOnShelf\030\004 \001(\t\022$\n\025SignWith"
-    "TestSignature\030\005 \001(\010:\005false\022\034\n\024SignatureN"
-    "ameOnShelf\030\006 \001(\t\"\323\001\n\013DraftToSend\022\r\n\005BoxI"
-    "d\030\001 \002(\t\022\017\n\007DraftId\030\002 \002(\t\022\017\n\007ToBoxId\030\003 \001("
-    "\t\022\026\n\016ToDepartmentId\030\004 \001(\t\022L\n\022DocumentSig"
-    "natures\030\005 \003(\01320.Diadoc.Api.Proto.Events."
-    "DocumentSenderSignature\022\022\n\nProxyBoxId\030\006 "
-    "\001(\t\022\031\n\021ProxyDepartmentId\030\007 \001(\t\"\262\001\n\035Prepa"
-    "reDocumentsToSignRequest\022\r\n\005BoxId\030\001 \002(\t\022"
-    "E\n\016DraftDocuments\030\002 \003(\0132-.Diadoc.Api.Pro"
-    "to.Events.DraftDocumentToPatch\022;\n\tDocume"
-    "nts\030\003 \003(\0132(.Diadoc.Api.Proto.Events.Docu"
-    "mentToPatch\"\331\001\n\024DraftDocumentToPatch\0220\n\n"
-    "DocumentId\030\001 \002(\0132\034.Diadoc.Api.Proto.Docu"
-    "mentId\022\017\n\007ToBoxId\030\002 \001(\t\0222\n\006Signer\030\003 \001(\0132"
-    "\".Diadoc.Api.Proto.Invoicing.Signer\022J\n\016E"
-    "xtendedSigner\030\004 \003(\01322.Diadoc.Api.Proto.I"
-    "nvoicing.Signers.ExtendedSigner\"\303\001\n\017Docu"
-    "mentToPatch\0220\n\nDocumentId\030\001 \002(\0132\034.Diadoc"
-    ".Api.Proto.DocumentId\0222\n\006Signer\030\002 \001(\0132\"."
-    "Diadoc.Api.Proto.Invoicing.Signer\022J\n\016Ext"
-    "endedSigner\030\003 \003(\01322.Diadoc.Api.Proto.Inv"
-    "oicing.Signers.ExtendedSigner\"u\n\026Documen"
-    "tPatchedContent\0220\n\nDocumentId\030\001 \002(\0132\034.Di"
-    "adoc.Api.Proto.DocumentId\022\030\n\020PatchedCont"
-    "entId\030\002 \002(\t\022\017\n\007Content\030\003 \001(\014\"r\n\036PrepareD"
-    "ocumentsToSignResponse\022P\n\027DocumentPatche"
-    "dContents\030\001 \003(\0132/.Diadoc.Api.Proto.Event"
-    "s.DocumentPatchedContent\"y\n\rMessageToSen"
-    "d\022\r\n\005BoxId\030\001 \002(\t\022\021\n\tMessageId\030\002 \002(\t\022F\n\022D"
-    "ocumentSignatures\030\003 \003(\0132*.Diadoc.Api.Pro"
-    "to.Events.DocumentSignature\"t\n\033Revocatio"
-    "nRequestAttachment\022\026\n\016ParentEntityId\030\001 \002"
-    "(\t\022=\n\rSignedContent\030\002 \002(\0132&.Diadoc.Api.P"
-    "roto.Events.SignedContent\"x\n\037XmlSignatur"
-    "eRejectionAttachment\022\026\n\016ParentEntityId\030\001"
-    " \002(\t\022=\n\rSignedContent\030\002 \002(\0132&.Diadoc.Api"
-    ".Proto.Events.SignedContent\"a\n\031RoamingNo"
-    "tificationToPost\022\r\n\005BoxId\030\001 \002(\t\022\017\n\007Event"
-    "Id\030\002 \002(\t\022\017\n\007Success\030\003 \002(\010\022\023\n\013Description"
-    "\030\004 \001(\t\"\213\001\n\017CustomDataPatch\022\026\n\016ParentEnti"
-    "tyId\030\001 \002(\t\022D\n\tOperation\030\002 \002(\01621.Diadoc.A"
-    "pi.Proto.Events.CustomDataPatchOperation"
-    "\022\013\n\003Key\030\003 \002(\t\022\r\n\005Value\030\004 \001(\t\"\254\001\n\031EditDoc"
-    "umentPacketCommand\022\022\n\nDocumentId\030\001 \002(\t\022:"
-    "\n\024AddDocumentsToPacket\030\002 \003(\0132\034.Diadoc.Ap"
-    "i.Proto.DocumentId\022\?\n\031RemoveDocumentsFro"
-    "mPacket\030\003 \003(\0132\034.Diadoc.Api.Proto.Documen"
-    "tId\"T\n\026ResolutionRouteRemoval\022\026\n\016ParentE"
-    "ntityId\030\001 \002(\t\022\017\n\007RouteId\030\002 \002(\t\022\021\n\007Commen"
-    "t\030\003 \001(\t:\000*/\n\030CustomDataPatchOperation\022\007\n"
-    "\003Set\020\000\022\n\n\006Remove\020\001", 14298);
+    "\t\022\017\n\007Comment\030\002 \001(\t\"Y\n-ResolutionRequestD"
+    "enialCancellationAttachment\022(\n InitialRe"
+    "solutionRequestDenialId\030\001 \002(\t\"X\n!Resolut"
+    "ionRequestDenialAttachment\022\"\n\032InitialRes"
+    "olutionRequestId\030\001 \002(\t\022\017\n\007Comment\030\002 \001(\t\""
+    "\203\001\n\024ResolutionAttachment\022\031\n\021InitialDocum"
+    "entId\030\001 \002(\t\022\?\n\016ResolutionType\030\002 \002(\0162\'.Di"
+    "adoc.Api.Proto.Events.ResolutionType\022\017\n\007"
+    "Comment\030\003 \001(\t\"j\n\021ReceiptAttachment\022\026\n\016Pa"
+    "rentEntityId\030\001 \002(\t\022=\n\rSignedContent\030\002 \002("
+    "\0132&.Diadoc.Api.Proto.Events.SignedConten"
+    "t\"t\n\033CorrectionRequestAttachment\022\026\n\016Pare"
+    "ntEntityId\030\001 \002(\t\022=\n\rSignedContent\030\002 \002(\0132"
+    "&.Diadoc.Api.Proto.Events.SignedContent\""
+    "\303\001\n\021DocumentSignature\022\026\n\016ParentEntityId\030"
+    "\001 \002(\t\022\021\n\tSignature\030\002 \001(\014\022$\n\025SignWithTest"
+    "Signature\030\004 \001(\010:\005false\022%\n\026IsApprovementS"
+    "ignature\030\005 \001(\010:\005false\022\034\n\024SignatureNameOn"
+    "Shelf\030\006 \001(\t\022\030\n\020PatchedContentId\030\007 \001(\t\"\204\001"
+    "\n\027DocumentSenderSignature\022\026\n\016ParentEntit"
+    "yId\030\001 \002(\t\022\021\n\tSignature\030\002 \001(\014\022$\n\025SignWith"
+    "TestSignature\030\004 \001(\010:\005false\022\030\n\020PatchedCon"
+    "tentId\030\005 \001(\t\"t\n\033RequestedSignatureReject"
+    "ion\022\026\n\016ParentEntityId\030\001 \002(\t\022=\n\rSignedCon"
+    "tent\030\002 \002(\0132&.Diadoc.Api.Proto.Events.Sig"
+    "nedContent\"\214\001\n\rSignedContent\022\017\n\007Content\030"
+    "\001 \001(\014\022\021\n\tSignature\030\002 \001(\014\022\023\n\013NameOnShelf\030"
+    "\004 \001(\t\022$\n\025SignWithTestSignature\030\005 \001(\010:\005fa"
+    "lse\022\034\n\024SignatureNameOnShelf\030\006 \001(\t\"\323\001\n\013Dr"
+    "aftToSend\022\r\n\005BoxId\030\001 \002(\t\022\017\n\007DraftId\030\002 \002("
+    "\t\022\017\n\007ToBoxId\030\003 \001(\t\022\026\n\016ToDepartmentId\030\004 \001"
+    "(\t\022L\n\022DocumentSignatures\030\005 \003(\01320.Diadoc."
+    "Api.Proto.Events.DocumentSenderSignature"
+    "\022\022\n\nProxyBoxId\030\006 \001(\t\022\031\n\021ProxyDepartmentI"
+    "d\030\007 \001(\t\"\262\001\n\035PrepareDocumentsToSignReques"
+    "t\022\r\n\005BoxId\030\001 \002(\t\022E\n\016DraftDocuments\030\002 \003(\013"
+    "2-.Diadoc.Api.Proto.Events.DraftDocument"
+    "ToPatch\022;\n\tDocuments\030\003 \003(\0132(.Diadoc.Api."
+    "Proto.Events.DocumentToPatch\"\331\001\n\024DraftDo"
+    "cumentToPatch\0220\n\nDocumentId\030\001 \002(\0132\034.Diad"
+    "oc.Api.Proto.DocumentId\022\017\n\007ToBoxId\030\002 \001(\t"
+    "\0222\n\006Signer\030\003 \001(\0132\".Diadoc.Api.Proto.Invo"
+    "icing.Signer\022J\n\016ExtendedSigner\030\004 \003(\01322.D"
+    "iadoc.Api.Proto.Invoicing.Signers.Extend"
+    "edSigner\"\303\001\n\017DocumentToPatch\0220\n\nDocument"
+    "Id\030\001 \002(\0132\034.Diadoc.Api.Proto.DocumentId\0222"
+    "\n\006Signer\030\002 \001(\0132\".Diadoc.Api.Proto.Invoic"
+    "ing.Signer\022J\n\016ExtendedSigner\030\003 \003(\01322.Dia"
+    "doc.Api.Proto.Invoicing.Signers.Extended"
+    "Signer\"u\n\026DocumentPatchedContent\0220\n\nDocu"
+    "mentId\030\001 \002(\0132\034.Diadoc.Api.Proto.Document"
+    "Id\022\030\n\020PatchedContentId\030\002 \002(\t\022\017\n\007Content\030"
+    "\003 \001(\014\"r\n\036PrepareDocumentsToSignResponse\022"
+    "P\n\027DocumentPatchedContents\030\001 \003(\0132/.Diado"
+    "c.Api.Proto.Events.DocumentPatchedConten"
+    "t\"y\n\rMessageToSend\022\r\n\005BoxId\030\001 \002(\t\022\021\n\tMes"
+    "sageId\030\002 \002(\t\022F\n\022DocumentSignatures\030\003 \003(\013"
+    "2*.Diadoc.Api.Proto.Events.DocumentSigna"
+    "ture\"t\n\033RevocationRequestAttachment\022\026\n\016P"
+    "arentEntityId\030\001 \002(\t\022=\n\rSignedContent\030\002 \002"
+    "(\0132&.Diadoc.Api.Proto.Events.SignedConte"
+    "nt\"x\n\037XmlSignatureRejectionAttachment\022\026\n"
+    "\016ParentEntityId\030\001 \002(\t\022=\n\rSignedContent\030\002"
+    " \002(\0132&.Diadoc.Api.Proto.Events.SignedCon"
+    "tent\"a\n\031RoamingNotificationToPost\022\r\n\005Box"
+    "Id\030\001 \002(\t\022\017\n\007EventId\030\002 \002(\t\022\017\n\007Success\030\003 \002"
+    "(\010\022\023\n\013Description\030\004 \001(\t\"\213\001\n\017CustomDataPa"
+    "tch\022\026\n\016ParentEntityId\030\001 \002(\t\022D\n\tOperation"
+    "\030\002 \002(\01621.Diadoc.Api.Proto.Events.CustomD"
+    "ataPatchOperation\022\013\n\003Key\030\003 \002(\t\022\r\n\005Value\030"
+    "\004 \001(\t\"\254\001\n\031EditDocumentPacketCommand\022\022\n\nD"
+    "ocumentId\030\001 \002(\t\022:\n\024AddDocumentsToPacket\030"
+    "\002 \003(\0132\034.Diadoc.Api.Proto.DocumentId\022\?\n\031R"
+    "emoveDocumentsFromPacket\030\003 \003(\0132\034.Diadoc."
+    "Api.Proto.DocumentId\"T\n\026ResolutionRouteR"
+    "emoval\022\026\n\016ParentEntityId\030\001 \002(\t\022\017\n\007RouteI"
+    "d\030\002 \002(\t\022\021\n\007Comment\030\003 \001(\t:\000*/\n\030CustomData"
+    "PatchOperation\022\007\n\003Set\020\000\022\n\n\006Remove\020\001", 14315);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Events/DiadocMessage-PostApi.proto", &protobuf_RegisterTypes);
   MessageToPost::default_instance_ = new MessageToPost();
@@ -17363,6 +17364,7 @@ void ResolutionRouteAssignment::Swap(ResolutionRouteAssignment* other) {
 
 #ifndef _MSC_VER
 const int ResolutionRequestCancellationAttachment::kInitialResolutionRequestIdFieldNumber;
+const int ResolutionRequestCancellationAttachment::kCommentFieldNumber;
 #endif  // !_MSC_VER
 
 ResolutionRequestCancellationAttachment::ResolutionRequestCancellationAttachment()
@@ -17385,6 +17387,7 @@ void ResolutionRequestCancellationAttachment::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   initialresolutionrequestid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  comment_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -17396,6 +17399,9 @@ ResolutionRequestCancellationAttachment::~ResolutionRequestCancellationAttachmen
 void ResolutionRequestCancellationAttachment::SharedDtor() {
   if (initialresolutionrequestid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete initialresolutionrequestid_;
+  }
+  if (comment_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete comment_;
   }
   if (this != default_instance_) {
   }
@@ -17423,9 +17429,16 @@ ResolutionRequestCancellationAttachment* ResolutionRequestCancellationAttachment
 }
 
 void ResolutionRequestCancellationAttachment::Clear() {
-  if (has_initialresolutionrequestid()) {
-    if (initialresolutionrequestid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-      initialresolutionrequestid_->clear();
+  if (_has_bits_[0 / 32] & 3) {
+    if (has_initialresolutionrequestid()) {
+      if (initialresolutionrequestid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        initialresolutionrequestid_->clear();
+      }
+    }
+    if (has_comment()) {
+      if (comment_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        comment_->clear();
+      }
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -17451,6 +17464,23 @@ bool ResolutionRequestCancellationAttachment::MergePartialFromCodedStream(
             this->initialresolutionrequestid().data(), this->initialresolutionrequestid().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
             "initialresolutionrequestid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_Comment;
+        break;
+      }
+
+      // optional string Comment = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_Comment:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_comment()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->comment().data(), this->comment().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "comment");
         } else {
           goto handle_unusual;
         }
@@ -17493,6 +17523,16 @@ void ResolutionRequestCancellationAttachment::SerializeWithCachedSizes(
       1, this->initialresolutionrequestid(), output);
   }
 
+  // optional string Comment = 2;
+  if (has_comment()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->comment().data(), this->comment().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "comment");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->comment(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -17514,6 +17554,17 @@ void ResolutionRequestCancellationAttachment::SerializeWithCachedSizes(
         1, this->initialresolutionrequestid(), target);
   }
 
+  // optional string Comment = 2;
+  if (has_comment()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->comment().data(), this->comment().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "comment");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->comment(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -17531,6 +17582,13 @@ int ResolutionRequestCancellationAttachment::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->initialresolutionrequestid());
+    }
+
+    // optional string Comment = 2;
+    if (has_comment()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->comment());
     }
 
   }
@@ -17563,6 +17621,9 @@ void ResolutionRequestCancellationAttachment::MergeFrom(const ResolutionRequestC
     if (from.has_initialresolutionrequestid()) {
       set_initialresolutionrequestid(from.initialresolutionrequestid());
     }
+    if (from.has_comment()) {
+      set_comment(from.comment());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -17588,6 +17649,7 @@ bool ResolutionRequestCancellationAttachment::IsInitialized() const {
 void ResolutionRequestCancellationAttachment::Swap(ResolutionRequestCancellationAttachment* other) {
   if (other != this) {
     std::swap(initialresolutionrequestid_, other->initialresolutionrequestid_);
+    std::swap(comment_, other->comment_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
