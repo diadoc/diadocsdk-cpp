@@ -19,6 +19,7 @@
 #include "protos\Invoicing\Torg12Info.pb.h"
 #include "protos\Invoicing\TovTorgInfo.pb.h"
 #include "protos\Invoicing\AcceptanceCertificateInfo.pb.h"
+#include "protos\Invoicing\AcceptanceCertificate552Info.pb.h"
 #include "protos\Invoicing\UniversalTransferDocumentInfo.pb.h"
 #include "protos\KeyValueStorage\KeyValueStorage.pb.h"
 #include "protos\Counteragent.pb.h"
@@ -148,6 +149,8 @@ public:
 
 	WebFile GenerateAcceptanceCertificateXmlForSeller(const Diadoc::Api::Proto::Invoicing::AcceptanceCertificateSellerTitleInfo& acceptanceCertificateSellerInfo, bool disableValidation = false);
 	WebFile GenerateAcceptanceCertificateXmlForBuyer(const Diadoc::Api::Proto::Invoicing::AcceptanceCertificateBuyerTitleInfo& acceptanceCertificateBuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId);
+	WebFile GenerateAcceptanceCertificate552XmlForSeller(const Diadoc::Api::Proto::Invoicing::AcceptanceCertificate552SellerTitleInfo& acceptanceCertificateSellerInfo, bool disableValidation = false);
+	WebFile GenerateAcceptanceCertificate552XmlForBuyer(const Diadoc::Api::Proto::Invoicing::AcceptanceCertificate552BuyerTitleInfo& acceptanceCertificateBuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId);
 
 	WebFile GenerateUniversalTransferDocumentXmlForSeller(const Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentSellerTitleInfo& utdSellerInfo, bool disableValidation = false);
 	WebFile GenerateUniversalCorrectionDocumentXmlForSeller(const Diadoc::Api::Proto::Invoicing::UniversalCorrectionDocumentSellerTitleInfo& utdSellerInfo, bool disableValidation = false);
@@ -169,6 +172,9 @@ public:
 	Diadoc::Api::Proto::Invoicing::Torg12BuyerTitleInfo ParseTorg12BuyerTitleXml(const Bytes_t& content);
 	Diadoc::Api::Proto::Invoicing::TovTorgBuyerTitleInfo ParseTovTorg551BuyerTitleXml(const Bytes_t& content);
 	Diadoc::Api::Proto::Invoicing::AcceptanceCertificateSellerTitleInfo ParseAcceptanceCertificateSellerTitleXml(const Bytes_t& sellerTitleXmlContent);
+	Diadoc::Api::Proto::Invoicing::AcceptanceCertificateBuyerTitleInfo ParseAcceptanceCertificateBuyerTitleXml(const Bytes_t& buyerTitleXmlContent);
+	Diadoc::Api::Proto::Invoicing::AcceptanceCertificate552SellerTitleInfo ParseAcceptanceCertificate552SellerTitleXml(const Bytes_t& sellerTitleXmlContent);
+	Diadoc::Api::Proto::Invoicing::AcceptanceCertificate552BuyerTitleInfo ParseAcceptanceCertificate552BuyerTitleXml(const Bytes_t& buyerTitleXmlContent);
 	Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentSellerTitleInfo ParseUniversalTransferDocumentSellerTitleXml(const Bytes_t& utdXmlContent);
 	Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo ParseUniversalTransferDocumentBuyerTitleXml(const Bytes_t& utdXmlContent);
 	Diadoc::Api::Proto::Invoicing::UniversalCorrectionDocumentSellerTitleInfo ParseUniversalCorrectionDocumentSellerTitleXml(const Bytes_t& utdXmlContent);

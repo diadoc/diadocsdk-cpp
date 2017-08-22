@@ -45,6 +45,7 @@ class TovTorgBuyerTitleInfo;
 class TovTorgTable;
 class TovTorgItem;
 class TovTorgTransferInfo;
+class GroundInfo;
 
 // ===================================================================
 
@@ -158,17 +159,17 @@ class TovTorgSellerTitleInfo : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner >*
       mutable_signers();
 
-  // repeated .Diadoc.Api.Proto.Invoicing.TransferBase Bases = 7;
-  inline int bases_size() const;
-  inline void clear_bases();
-  static const int kBasesFieldNumber = 7;
-  inline const ::Diadoc::Api::Proto::Invoicing::TransferBase& bases(int index) const;
-  inline ::Diadoc::Api::Proto::Invoicing::TransferBase* mutable_bases(int index);
-  inline ::Diadoc::Api::Proto::Invoicing::TransferBase* add_bases();
-  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::TransferBase >&
-      bases() const;
-  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::TransferBase >*
-      mutable_bases();
+  // repeated .Diadoc.Api.Proto.Invoicing.GroundInfo Grounds = 7;
+  inline int grounds_size() const;
+  inline void clear_grounds();
+  static const int kGroundsFieldNumber = 7;
+  inline const ::Diadoc::Api::Proto::Invoicing::GroundInfo& grounds(int index) const;
+  inline ::Diadoc::Api::Proto::Invoicing::GroundInfo* mutable_grounds(int index);
+  inline ::Diadoc::Api::Proto::Invoicing::GroundInfo* add_grounds();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::GroundInfo >&
+      grounds() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::GroundInfo >*
+      mutable_grounds();
 
   // required string Currency = 8;
   inline bool has_currency() const;
@@ -380,7 +381,7 @@ class TovTorgSellerTitleInfo : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo* consignee_;
   ::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo* carrier_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner > signers_;
-  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::TransferBase > bases_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::GroundInfo > grounds_;
   ::std::string* currency_;
   ::std::string* currencyrate_;
   ::std::string* documentdate_;
@@ -1308,6 +1309,135 @@ class TovTorgTransferInfo : public ::google::protobuf::Message {
   void InitAsDefaultInstance();
   static TovTorgTransferInfo* default_instance_;
 };
+// -------------------------------------------------------------------
+
+class GroundInfo : public ::google::protobuf::Message {
+ public:
+  GroundInfo();
+  virtual ~GroundInfo();
+
+  GroundInfo(const GroundInfo& from);
+
+  inline GroundInfo& operator=(const GroundInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const GroundInfo& default_instance();
+
+  void Swap(GroundInfo* other);
+
+  // implements Message ----------------------------------------------
+
+  GroundInfo* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const GroundInfo& from);
+  void MergeFrom(const GroundInfo& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string Name = 1;
+  inline bool has_name() const;
+  inline void clear_name();
+  static const int kNameFieldNumber = 1;
+  inline const ::std::string& name() const;
+  inline void set_name(const ::std::string& value);
+  inline void set_name(const char* value);
+  inline void set_name(const char* value, size_t size);
+  inline ::std::string* mutable_name();
+  inline ::std::string* release_name();
+  inline void set_allocated_name(::std::string* name);
+
+  // optional string Number = 2;
+  inline bool has_number() const;
+  inline void clear_number();
+  static const int kNumberFieldNumber = 2;
+  inline const ::std::string& number() const;
+  inline void set_number(const ::std::string& value);
+  inline void set_number(const char* value);
+  inline void set_number(const char* value, size_t size);
+  inline ::std::string* mutable_number();
+  inline ::std::string* release_number();
+  inline void set_allocated_number(::std::string* number);
+
+  // optional string Date = 3;
+  inline bool has_date() const;
+  inline void clear_date();
+  static const int kDateFieldNumber = 3;
+  inline const ::std::string& date() const;
+  inline void set_date(const ::std::string& value);
+  inline void set_date(const char* value);
+  inline void set_date(const char* value, size_t size);
+  inline ::std::string* mutable_date();
+  inline ::std::string* release_date();
+  inline void set_allocated_date(::std::string* date);
+
+  // optional string Info = 4;
+  inline bool has_info() const;
+  inline void clear_info();
+  static const int kInfoFieldNumber = 4;
+  inline const ::std::string& info() const;
+  inline void set_info(const ::std::string& value);
+  inline void set_info(const char* value);
+  inline void set_info(const char* value, size_t size);
+  inline ::std::string* mutable_info();
+  inline ::std::string* release_info();
+  inline void set_allocated_info(::std::string* info);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Invoicing.GroundInfo)
+ private:
+  inline void set_has_name();
+  inline void clear_has_name();
+  inline void set_has_number();
+  inline void clear_has_number();
+  inline void set_has_date();
+  inline void clear_has_date();
+  inline void set_has_info();
+  inline void clear_has_info();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* name_;
+  ::std::string* number_;
+  ::std::string* date_;
+  ::std::string* info_;
+  friend void  protobuf_AddDesc_Invoicing_2fTovTorgInfo_2eproto();
+  friend void protobuf_AssignDesc_Invoicing_2fTovTorgInfo_2eproto();
+  friend void protobuf_ShutdownFile_Invoicing_2fTovTorgInfo_2eproto();
+
+  void InitAsDefaultInstance();
+  static GroundInfo* default_instance_;
+};
 // ===================================================================
 
 
@@ -1550,34 +1680,34 @@ TovTorgSellerTitleInfo::mutable_signers() {
   return &signers_;
 }
 
-// repeated .Diadoc.Api.Proto.Invoicing.TransferBase Bases = 7;
-inline int TovTorgSellerTitleInfo::bases_size() const {
-  return bases_.size();
+// repeated .Diadoc.Api.Proto.Invoicing.GroundInfo Grounds = 7;
+inline int TovTorgSellerTitleInfo::grounds_size() const {
+  return grounds_.size();
 }
-inline void TovTorgSellerTitleInfo::clear_bases() {
-  bases_.Clear();
+inline void TovTorgSellerTitleInfo::clear_grounds() {
+  grounds_.Clear();
 }
-inline const ::Diadoc::Api::Proto::Invoicing::TransferBase& TovTorgSellerTitleInfo::bases(int index) const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.TovTorgSellerTitleInfo.Bases)
-  return bases_.Get(index);
+inline const ::Diadoc::Api::Proto::Invoicing::GroundInfo& TovTorgSellerTitleInfo::grounds(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.TovTorgSellerTitleInfo.Grounds)
+  return grounds_.Get(index);
 }
-inline ::Diadoc::Api::Proto::Invoicing::TransferBase* TovTorgSellerTitleInfo::mutable_bases(int index) {
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.TovTorgSellerTitleInfo.Bases)
-  return bases_.Mutable(index);
+inline ::Diadoc::Api::Proto::Invoicing::GroundInfo* TovTorgSellerTitleInfo::mutable_grounds(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.TovTorgSellerTitleInfo.Grounds)
+  return grounds_.Mutable(index);
 }
-inline ::Diadoc::Api::Proto::Invoicing::TransferBase* TovTorgSellerTitleInfo::add_bases() {
-  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Invoicing.TovTorgSellerTitleInfo.Bases)
-  return bases_.Add();
+inline ::Diadoc::Api::Proto::Invoicing::GroundInfo* TovTorgSellerTitleInfo::add_grounds() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Invoicing.TovTorgSellerTitleInfo.Grounds)
+  return grounds_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::TransferBase >&
-TovTorgSellerTitleInfo::bases() const {
-  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Invoicing.TovTorgSellerTitleInfo.Bases)
-  return bases_;
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::GroundInfo >&
+TovTorgSellerTitleInfo::grounds() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Invoicing.TovTorgSellerTitleInfo.Grounds)
+  return grounds_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::TransferBase >*
-TovTorgSellerTitleInfo::mutable_bases() {
-  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Invoicing.TovTorgSellerTitleInfo.Bases)
-  return &bases_;
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::GroundInfo >*
+TovTorgSellerTitleInfo::mutable_grounds() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Invoicing.TovTorgSellerTitleInfo.Grounds)
+  return &grounds_;
 }
 
 // required string Currency = 8;
@@ -5441,6 +5571,314 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::Ad
 TovTorgTransferInfo::mutable_additionalinfos() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Invoicing.TovTorgTransferInfo.AdditionalInfos)
   return &additionalinfos_;
+}
+
+// -------------------------------------------------------------------
+
+// GroundInfo
+
+// required string Name = 1;
+inline bool GroundInfo::has_name() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void GroundInfo::set_has_name() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void GroundInfo::clear_has_name() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void GroundInfo::clear_name() {
+  if (name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    name_->clear();
+  }
+  clear_has_name();
+}
+inline const ::std::string& GroundInfo::name() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.GroundInfo.Name)
+  return *name_;
+}
+inline void GroundInfo::set_name(const ::std::string& value) {
+  set_has_name();
+  if (name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    name_ = new ::std::string;
+  }
+  name_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.GroundInfo.Name)
+}
+inline void GroundInfo::set_name(const char* value) {
+  set_has_name();
+  if (name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    name_ = new ::std::string;
+  }
+  name_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.GroundInfo.Name)
+}
+inline void GroundInfo::set_name(const char* value, size_t size) {
+  set_has_name();
+  if (name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    name_ = new ::std::string;
+  }
+  name_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.GroundInfo.Name)
+}
+inline ::std::string* GroundInfo::mutable_name() {
+  set_has_name();
+  if (name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    name_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.GroundInfo.Name)
+  return name_;
+}
+inline ::std::string* GroundInfo::release_name() {
+  clear_has_name();
+  if (name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = name_;
+    name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void GroundInfo::set_allocated_name(::std::string* name) {
+  if (name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete name_;
+  }
+  if (name) {
+    set_has_name();
+    name_ = name;
+  } else {
+    clear_has_name();
+    name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.GroundInfo.Name)
+}
+
+// optional string Number = 2;
+inline bool GroundInfo::has_number() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void GroundInfo::set_has_number() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void GroundInfo::clear_has_number() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void GroundInfo::clear_number() {
+  if (number_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    number_->clear();
+  }
+  clear_has_number();
+}
+inline const ::std::string& GroundInfo::number() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.GroundInfo.Number)
+  return *number_;
+}
+inline void GroundInfo::set_number(const ::std::string& value) {
+  set_has_number();
+  if (number_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    number_ = new ::std::string;
+  }
+  number_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.GroundInfo.Number)
+}
+inline void GroundInfo::set_number(const char* value) {
+  set_has_number();
+  if (number_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    number_ = new ::std::string;
+  }
+  number_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.GroundInfo.Number)
+}
+inline void GroundInfo::set_number(const char* value, size_t size) {
+  set_has_number();
+  if (number_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    number_ = new ::std::string;
+  }
+  number_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.GroundInfo.Number)
+}
+inline ::std::string* GroundInfo::mutable_number() {
+  set_has_number();
+  if (number_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    number_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.GroundInfo.Number)
+  return number_;
+}
+inline ::std::string* GroundInfo::release_number() {
+  clear_has_number();
+  if (number_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = number_;
+    number_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void GroundInfo::set_allocated_number(::std::string* number) {
+  if (number_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete number_;
+  }
+  if (number) {
+    set_has_number();
+    number_ = number;
+  } else {
+    clear_has_number();
+    number_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.GroundInfo.Number)
+}
+
+// optional string Date = 3;
+inline bool GroundInfo::has_date() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void GroundInfo::set_has_date() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void GroundInfo::clear_has_date() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void GroundInfo::clear_date() {
+  if (date_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    date_->clear();
+  }
+  clear_has_date();
+}
+inline const ::std::string& GroundInfo::date() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.GroundInfo.Date)
+  return *date_;
+}
+inline void GroundInfo::set_date(const ::std::string& value) {
+  set_has_date();
+  if (date_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    date_ = new ::std::string;
+  }
+  date_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.GroundInfo.Date)
+}
+inline void GroundInfo::set_date(const char* value) {
+  set_has_date();
+  if (date_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    date_ = new ::std::string;
+  }
+  date_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.GroundInfo.Date)
+}
+inline void GroundInfo::set_date(const char* value, size_t size) {
+  set_has_date();
+  if (date_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    date_ = new ::std::string;
+  }
+  date_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.GroundInfo.Date)
+}
+inline ::std::string* GroundInfo::mutable_date() {
+  set_has_date();
+  if (date_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    date_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.GroundInfo.Date)
+  return date_;
+}
+inline ::std::string* GroundInfo::release_date() {
+  clear_has_date();
+  if (date_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = date_;
+    date_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void GroundInfo::set_allocated_date(::std::string* date) {
+  if (date_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete date_;
+  }
+  if (date) {
+    set_has_date();
+    date_ = date;
+  } else {
+    clear_has_date();
+    date_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.GroundInfo.Date)
+}
+
+// optional string Info = 4;
+inline bool GroundInfo::has_info() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void GroundInfo::set_has_info() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void GroundInfo::clear_has_info() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void GroundInfo::clear_info() {
+  if (info_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    info_->clear();
+  }
+  clear_has_info();
+}
+inline const ::std::string& GroundInfo::info() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.GroundInfo.Info)
+  return *info_;
+}
+inline void GroundInfo::set_info(const ::std::string& value) {
+  set_has_info();
+  if (info_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    info_ = new ::std::string;
+  }
+  info_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.GroundInfo.Info)
+}
+inline void GroundInfo::set_info(const char* value) {
+  set_has_info();
+  if (info_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    info_ = new ::std::string;
+  }
+  info_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.GroundInfo.Info)
+}
+inline void GroundInfo::set_info(const char* value, size_t size) {
+  set_has_info();
+  if (info_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    info_ = new ::std::string;
+  }
+  info_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.GroundInfo.Info)
+}
+inline ::std::string* GroundInfo::mutable_info() {
+  set_has_info();
+  if (info_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    info_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.GroundInfo.Info)
+  return info_;
+}
+inline ::std::string* GroundInfo::release_info() {
+  clear_has_info();
+  if (info_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = info_;
+    info_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void GroundInfo::set_allocated_info(::std::string* info) {
+  if (info_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete info_;
+  }
+  if (info) {
+    set_has_info();
+    info_ = info;
+  } else {
+    clear_has_info();
+    info_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.GroundInfo.Info)
 }
 
 
