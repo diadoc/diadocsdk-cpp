@@ -26,6 +26,7 @@
 #include "protos\BoxList.pb.h"
 #include "protos\OrganizationUserPermissions.pb.h"
 #include "protos\OrganizationUser.pb.h"
+#include "protos\SignatureInfo.pb.h"
 #include "protos\GetOrganizationsByInnList.pb.h"
 #include "protos\AsyncMethodResult.pb.h"
 #include "protos\CloudSign.pb.h"
@@ -230,7 +231,8 @@ public:
 
 	Diadoc::Api::Proto::Docflow::GetDocflowBatchResponse GetDocflows(const std::wstring& boxId, const Diadoc::Api::Proto::Docflow::GetDocflowBatchRequest& request);
 	Diadoc::Api::Proto::Docflow::GetDocflowEventsResponse GetDocflowEvents(const std::wstring& boxId, const Diadoc::Api::Proto::Docflow::GetDocflowEventsRequest& request);
-
+	Diadoc::Api::Proto::SignatureInfo GetSignatureInfo(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& entityId);
+	
 	void ForwardDocument(const std::wstring& boxId, const Diadoc::Api::Proto::Forwarding::ForwardDocumentRequest& request);
 	Diadoc::Api::Proto::Forwarding::GetForwardedDocumentsResponse GetForwardedDocuments(const std::wstring& boxId, const Diadoc::Api::Proto::Forwarding::GetForwardedDocumentsRequest& request);
 	Diadoc::Api::Proto::Forwarding::GetForwardedDocumentEventsResponse GetForwardedDocumentEvents(const std::wstring& boxId, const Diadoc::Api::Proto::Forwarding::GetForwardedDocumentEventsRequest& request);
