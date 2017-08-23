@@ -39,7 +39,7 @@ void protobuf_AssignDesc_Invoicing_2fExtendedOrganizationInfo_2eproto() {
       "Invoicing/ExtendedOrganizationInfo.proto");
   GOOGLE_CHECK(file != NULL);
   ExtendedOrganizationInfo_descriptor_ = file->message_type(0);
-  static const int ExtendedOrganizationInfo_offsets_[20] = {
+  static const int ExtendedOrganizationInfo_offsets_[21] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ExtendedOrganizationInfo, boxid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ExtendedOrganizationInfo, orgname_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ExtendedOrganizationInfo, inn_),
@@ -60,6 +60,7 @@ void protobuf_AssignDesc_Invoicing_2fExtendedOrganizationInfo_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ExtendedOrganizationInfo, organizationadditionalinfo_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ExtendedOrganizationInfo, organizationorpersoninfo_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ExtendedOrganizationInfo, individualentityregistrationcertificate_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ExtendedOrganizationInfo, country_),
   };
   ExtendedOrganizationInfo_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -106,7 +107,7 @@ void protobuf_AddDesc_Invoicing_2fExtendedOrganizationInfo_2eproto() {
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n(Invoicing/ExtendedOrganizationInfo.pro"
     "to\022(Diadoc.Api.Proto.Invoicing.Organizat"
-    "ions\032\rAddress.proto\"\215\004\n\030ExtendedOrganiza"
+    "ions\032\rAddress.proto\"\236\004\n\030ExtendedOrganiza"
     "tionInfo\022\r\n\005BoxId\030\001 \001(\t\022\017\n\007OrgName\030\002 \001(\t"
     "\022\013\n\003Inn\030\003 \001(\t\022\013\n\003Kpp\030\004 \001(\t\022*\n\007Address\030\005 "
     "\001(\0132\031.Diadoc.Api.Proto.Address\022\030\n\020FnsPar"
@@ -119,9 +120,10 @@ void protobuf_AddDesc_Invoicing_2fExtendedOrganizationInfo_2eproto() {
     "Id\030\020 \001(\t\022\022\n\nDepartment\030\021 \001(\t\022\"\n\032Organiza"
     "tionAdditionalInfo\030\022 \001(\t\022 \n\030Organization"
     "OrPersonInfo\030\023 \001(\t\022/\n\'IndividualEntityRe"
-    "gistrationCertificate\030\024 \001(\t*C\n\007OrgType\022\017"
-    "\n\013LegalEntity\020\001\022\024\n\020IndividualEntity\020\002\022\021\n"
-    "\rForeignEntity\020\003", 696);
+    "gistrationCertificate\030\024 \001(\t\022\017\n\007Country\030\025"
+    " \001(\t*W\n\007OrgType\022\017\n\013LegalEntity\020\001\022\024\n\020Indi"
+    "vidualEntity\020\002\022\021\n\rForeignEntity\020\003\022\022\n\016Phy"
+    "sicalEntity\020\004", 733);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Invoicing/ExtendedOrganizationInfo.proto", &protobuf_RegisterTypes);
   ExtendedOrganizationInfo::default_instance_ = new ExtendedOrganizationInfo();
@@ -144,6 +146,7 @@ bool OrgType_IsValid(int value) {
     case 1:
     case 2:
     case 3:
+    case 4:
       return true;
     default:
       return false;
@@ -174,6 +177,7 @@ const int ExtendedOrganizationInfo::kDepartmentFieldNumber;
 const int ExtendedOrganizationInfo::kOrganizationAdditionalInfoFieldNumber;
 const int ExtendedOrganizationInfo::kOrganizationOrPersonInfoFieldNumber;
 const int ExtendedOrganizationInfo::kIndividualEntityRegistrationCertificateFieldNumber;
+const int ExtendedOrganizationInfo::kCountryFieldNumber;
 #endif  // !_MSC_VER
 
 ExtendedOrganizationInfo::ExtendedOrganizationInfo()
@@ -216,6 +220,7 @@ void ExtendedOrganizationInfo::SharedCtor() {
   organizationadditionalinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   organizationorpersoninfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   individualentityregistrationcertificate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  country_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -278,6 +283,9 @@ void ExtendedOrganizationInfo::SharedDtor() {
   }
   if (individualentityregistrationcertificate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete individualentityregistrationcertificate_;
+  }
+  if (country_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete country_;
   }
   if (this != default_instance_) {
     delete address_;
@@ -384,7 +392,7 @@ void ExtendedOrganizationInfo::Clear() {
       }
     }
   }
-  if (_has_bits_[16 / 32] & 983040) {
+  if (_has_bits_[16 / 32] & 2031616) {
     if (has_department()) {
       if (department_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         department_->clear();
@@ -403,6 +411,11 @@ void ExtendedOrganizationInfo::Clear() {
     if (has_individualentityregistrationcertificate()) {
       if (individualentityregistrationcertificate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         individualentityregistrationcertificate_->clear();
+      }
+    }
+    if (has_country()) {
+      if (country_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        country_->clear();
       }
     }
   }
@@ -754,6 +767,23 @@ bool ExtendedOrganizationInfo::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(170)) goto parse_Country;
+        break;
+      }
+
+      // optional string Country = 21;
+      case 21: {
+        if (tag == 170) {
+         parse_Country:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_country()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->country().data(), this->country().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "country");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -973,6 +1003,16 @@ void ExtendedOrganizationInfo::SerializeWithCachedSizes(
       "individualentityregistrationcertificate");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       20, this->individualentityregistrationcertificate(), output);
+  }
+
+  // optional string Country = 21;
+  if (has_country()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->country().data(), this->country().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "country");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      21, this->country(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -1196,6 +1236,17 @@ void ExtendedOrganizationInfo::SerializeWithCachedSizes(
         20, this->individualentityregistrationcertificate(), target);
   }
 
+  // optional string Country = 21;
+  if (has_country()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->country().data(), this->country().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "country");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        21, this->country(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -1351,6 +1402,13 @@ int ExtendedOrganizationInfo::ByteSize() const {
           this->individualentityregistrationcertificate());
     }
 
+    // optional string Country = 21;
+    if (has_country()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->country());
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -1442,6 +1500,9 @@ void ExtendedOrganizationInfo::MergeFrom(const ExtendedOrganizationInfo& from) {
     if (from.has_individualentityregistrationcertificate()) {
       set_individualentityregistrationcertificate(from.individualentityregistrationcertificate());
     }
+    if (from.has_country()) {
+      set_country(from.country());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -1489,6 +1550,7 @@ void ExtendedOrganizationInfo::Swap(ExtendedOrganizationInfo* other) {
     std::swap(organizationadditionalinfo_, other->organizationadditionalinfo_);
     std::swap(organizationorpersoninfo_, other->organizationorpersoninfo_);
     std::swap(individualentityregistrationcertificate_, other->individualentityregistrationcertificate_);
+    std::swap(country_, other->country_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

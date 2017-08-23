@@ -833,6 +833,33 @@ DiadocApi::WebFile DiadocApi::GenerateTorg12XmlForBuyer(const Torg12BuyerTitleIn
 	return WebFile(request);
 }
 
+DiadocApi::WebFile DiadocApi::GenerateTovTorg551XmlForSeller(const TovTorgSellerTitleInfo& tovTorgSellerInfo, bool disableValidation)
+{
+	WppTraceDebugOut("GenerateTovTorg551XmlForSeller...");
+	auto requestBody = ToProtoBytes(tovTorgSellerInfo);
+	auto connect = session_.Connect(api_url_.c_str(), api_port_);
+	std::wstringstream queryString;
+	queryString << L"/GenerateTorg12XmlForSeller?documentVersion=tovtorg_05_01_02" << (disableValidation ? L"&disableValidation" : L"");
+	auto request = connect.OpenRequest(POST.c_str(), queryString.str().c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
+	SendRequest(request, requestBody);
+	return WebFile(request);
+}
+
+DiadocApi::WebFile DiadocApi::GenerateTovTorg551XmlForBuyer(const TovTorgBuyerTitleInfo& tovTorgBuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId)
+{
+	WppTraceDebugOut("GenerateTovTorg551XmlForBuyer...");
+	std::wstringstream queryString;
+	queryString << L"/GenerateTorg12XmlForBuyer?boxId=" << StringHelper::CanonicalizeUrl(boxId)
+		<< L"&sellerTitleMessageId=" << StringHelper::CanonicalizeUrl(sellerTitleMessageId)
+		<< L"&sellerTitleAttachmentId=" << StringHelper::CanonicalizeUrl(sellerTitleAttachmentId)
+		<< L"&documentVersion=tovtorg_05_01_02";
+	auto requestBody = ToProtoBytes(tovTorgBuyerInfo);
+	auto connect = session_.Connect(api_url_.c_str(), api_port_);
+	auto request = connect.OpenRequest(POST.c_str(), queryString.str().c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
+	SendRequest(request, requestBody);
+	return WebFile(request);
+}
+
 DiadocApi::WebFile DiadocApi::GenerateAcceptanceCertificateXmlForSeller(const Diadoc::Api::Proto::Invoicing::AcceptanceCertificateSellerTitleInfo& acceptanceCertificateSellerInfo, bool disableValidation)
 {
 	WppTraceDebugOut("GenerateAcceptanceCertificateXmlForSeller...");
@@ -948,10 +975,28 @@ InvoiceInfo DiadocApi::ParseInvoiceXml(const Bytes_t& invoiceXmlContent)
 	return FromProtoBytes<InvoiceInfo>(PerformHttpRequest(L"/ParseInvoiceXml", invoiceXmlContent, L"POST"));
 }
 
-Torg12SellerTitleInfo DiadocApi::ParseTorg12SellerTitleXml(const Bytes_t& sellerTitleXmlContent)
+Torg12SellerTitleInfo DiadocApi::ParseTorg12SellerTitleXml(const Bytes_t& content)
 {
 	WppTraceDebugOut("ParseTorg12SellerTitleXml...");
-	return FromProtoBytes<Torg12SellerTitleInfo>(PerformHttpRequest(L"/ParseTorg12SellerTitleXml", sellerTitleXmlContent, L"POST"));
+	return FromProtoBytes<Torg12SellerTitleInfo>(PerformHttpRequest(L"/ParseTorg12SellerTitleXml", content, L"POST"));
+}
+
+TovTorgSellerTitleInfo DiadocApi::ParseTovTorg551SellerTitleXml(const Bytes_t& content)
+{
+	WppTraceDebugOut("ParseTovTorg551SellerTitleXml...");
+	return FromProtoBytes<TovTorgSellerTitleInfo>(PerformHttpRequest(L"/ParseTorg12SellerTitleXml?documentVersion=tovtorg_05_01_02", content, L"POST"));
+}
+
+Torg12BuyerTitleInfo DiadocApi::ParseTorg12BuyerTitleXml(const Bytes_t& content)
+{
+	WppTraceDebugOut("ParseTorg12BuyerTitleXml...");
+	return FromProtoBytes<Torg12BuyerTitleInfo>(PerformHttpRequest(L"/ParseTorg12BuyerTitleXml", content, L"POST"));
+}
+
+TovTorgBuyerTitleInfo DiadocApi::ParseTovTorg551BuyerTitleXml(const Bytes_t& content)
+{
+	WppTraceDebugOut("ParseTovTorg551BuyerTitleXml...");
+	return FromProtoBytes<TovTorgBuyerTitleInfo>(PerformHttpRequest(L"/ParseTorg12BuyerTitleXml?documentVersion=tovtorg_05_01_02", content, L"POST"));
 }
 
 AcceptanceCertificateSellerTitleInfo DiadocApi::ParseAcceptanceCertificateSellerTitleXml(const Bytes_t& sellerTitleXmlContent)
