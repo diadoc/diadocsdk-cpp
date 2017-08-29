@@ -1263,6 +1263,14 @@ GetDocflowEventsResponse DiadocApi::GetDocflowEvents(const std::wstring& boxId, 
 	return PerformHttpRequestWithBoxId<GetDocflowEventsRequest, GetDocflowEventsResponse>("GetDocflowEvents", boxId, request);
 }
 
+SignatureInfo DiadocApi::GetSignatureInfo(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& entityId)
+{
+	WppTraceDebugOut(L"GetSignatureInfo...");
+	std::wstringstream buf;
+	buf << L"/GetSignatureInfo?boxId=" << StringHelper::CanonicalizeUrl(boxId) << L"&messageId=" << StringHelper::CanonicalizeUrl(messageId) << L"&entityId=" << StringHelper::CanonicalizeUrl(entityId);
+	return FromProtoBytes<SignatureInfo>(PerformHttpRequest(buf.str(), GET));
+}
+
 void DiadocApi::ForwardDocument(const std::wstring& boxId, const ForwardDocumentRequest& request)
 {
 	WppTraceDebugOut("ForwardDocument...");
