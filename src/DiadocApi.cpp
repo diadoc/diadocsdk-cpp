@@ -886,6 +886,33 @@ DiadocApi::WebFile DiadocApi::GenerateAcceptanceCertificateXmlForBuyer(const Dia
 	return WebFile(request);
 }
 
+DiadocApi::WebFile DiadocApi::GenerateAcceptanceCertificate552XmlForSeller(const Diadoc::Api::Proto::Invoicing::AcceptanceCertificate552SellerTitleInfo& acceptanceCertificateSellerInfo, bool disableValidation)
+{
+    WppTraceDebugOut("GenerateAcceptanceCertificate552XmlForSeller...");
+    auto requestBody = ToProtoBytes(acceptanceCertificateSellerInfo);
+    auto connect = session_.Connect(api_url_.c_str(), api_port_);
+    std::wstringstream queryString;
+    queryString << L"/GenerateAcceptanceCertificate552XmlForSeller?documentVersion=rezru_05_01_01" << (disableValidation ? L"&disableValidation" : L"");
+    auto request = connect.OpenRequest(POST.c_str(), queryString.str().c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
+    SendRequest(request, requestBody);
+    return WebFile(request);
+}
+
+DiadocApi::WebFile DiadocApi::GenerateAcceptanceCertificate552XmlForBuyer(const Diadoc::Api::Proto::Invoicing::AcceptanceCertificate552BuyerTitleInfo& acceptanceCertificateBuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId)
+{
+    WppTraceDebugOut("GenerateAcceptanceCertificate552XmlForBuyer...");
+    std::wstringstream queryString;
+    queryString << L"/GenerateAcceptanceCertificate552XmlForBuyer?boxId=" << StringHelper::CanonicalizeUrl(boxId)
+                << L"&sellerTitleMessageId=" << StringHelper::CanonicalizeUrl(sellerTitleMessageId)
+                << L"&sellerTitleAttachmentId=" << StringHelper::CanonicalizeUrl(sellerTitleAttachmentId)
+                << L"&documentVersion=rezru_05_01_01";
+    auto requestBody = ToProtoBytes(acceptanceCertificateBuyerInfo);
+    auto connect = session_.Connect(api_url_.c_str(), api_port_);
+    auto request = connect.OpenRequest(POST.c_str(), queryString.str().c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
+    SendRequest(request, requestBody);
+    return WebFile(request);
+}
+
 DiadocApi::WebFile DiadocApi::GenerateUniversalTransferDocumentXmlForSeller(const UniversalTransferDocumentSellerTitleInfo& utdSellerInfo, bool disableValidation)
 {
 	WppTraceDebugOut("GenerateUniversalTransferDocumentXmlForSeller...");
@@ -1003,6 +1030,24 @@ AcceptanceCertificateSellerTitleInfo DiadocApi::ParseAcceptanceCertificateSeller
 {
 	WppTraceDebugOut("ParseAcceptanceCertificateSellerTitleXml...");
 	return FromProtoBytes<AcceptanceCertificateSellerTitleInfo>(PerformHttpRequest(L"/ParseAcceptanceCertificateSellerTitleXml", sellerTitleXmlContent, L"POST"));
+}
+
+AcceptanceCertificateBuyerTitleInfo DiadocApi::ParseAcceptanceCertificateBuyerTitleXml(const Bytes_t& buyerTitleXmlContent)
+{
+    WppTraceDebugOut("ParseAcceptanceCertificateBuyerTitleXml...");
+    return FromProtoBytes<AcceptanceCertificateBuyerTitleInfo>(PerformHttpRequest(L"/ParseAcceptanceCertificateBuyerTitleXml", buyerTitleXmlContent, L"POST"));
+}
+
+AcceptanceCertificate552SellerTitleInfo DiadocApi::ParseAcceptanceCertificate552SellerTitleXml(const Bytes_t& sellerTitleXmlContent)
+{
+    WppTraceDebugOut("ParseAcceptanceCertificate552SellerTitleXml...");
+    return FromProtoBytes<AcceptanceCertificate552SellerTitleInfo>(PerformHttpRequest(L"/ParseAcceptanceCertificate552SellerTitleXml?documentVersion=rezru_05_01_01", sellerTitleXmlContent, L"POST"));
+}
+
+AcceptanceCertificate552BuyerTitleInfo DiadocApi::ParseAcceptanceCertificate552BuyerTitleXml(const Bytes_t& buyerTitleXmlContent)
+{
+    WppTraceDebugOut("ParseAcceptanceCertificate552BuyerTitleXml...");
+    return FromProtoBytes<AcceptanceCertificate552BuyerTitleInfo>(PerformHttpRequest(L"/ParseAcceptanceCertificate552BuyerTitleXml?documentVersion=rezru_05_01_01", buyerTitleXmlContent, L"POST"));
 }
 
 Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentSellerTitleInfo DiadocApi::ParseUniversalTransferDocumentSellerTitleXml(const Bytes_t& utdXmlContent)

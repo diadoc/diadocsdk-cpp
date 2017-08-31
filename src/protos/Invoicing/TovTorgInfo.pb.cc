@@ -38,6 +38,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* TovTorgTransferInfo_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   TovTorgTransferInfo_reflection_ = NULL;
+const ::google::protobuf::Descriptor* GroundInfo_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  GroundInfo_reflection_ = NULL;
 
 }  // namespace
 
@@ -56,7 +59,7 @@ void protobuf_AssignDesc_Invoicing_2fTovTorgInfo_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TovTorgSellerTitleInfo, consignee_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TovTorgSellerTitleInfo, carrier_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TovTorgSellerTitleInfo, signers_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TovTorgSellerTitleInfo, bases_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TovTorgSellerTitleInfo, grounds_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TovTorgSellerTitleInfo, currency_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TovTorgSellerTitleInfo, currencyrate_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TovTorgSellerTitleInfo, documentdate_),
@@ -183,6 +186,24 @@ void protobuf_AssignDesc_Invoicing_2fTovTorgInfo_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(TovTorgTransferInfo));
+  GroundInfo_descriptor_ = file->message_type(5);
+  static const int GroundInfo_offsets_[4] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GroundInfo, name_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GroundInfo, number_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GroundInfo, date_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GroundInfo, info_),
+  };
+  GroundInfo_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      GroundInfo_descriptor_,
+      GroundInfo::default_instance_,
+      GroundInfo_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GroundInfo, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GroundInfo, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(GroundInfo));
 }
 
 namespace {
@@ -205,6 +226,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
     TovTorgItem_descriptor_, &TovTorgItem::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     TovTorgTransferInfo_descriptor_, &TovTorgTransferInfo::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    GroundInfo_descriptor_, &GroundInfo::default_instance());
 }
 
 }  // namespace
@@ -220,6 +243,8 @@ void protobuf_ShutdownFile_Invoicing_2fTovTorgInfo_2eproto() {
   delete TovTorgItem_reflection_;
   delete TovTorgTransferInfo::default_instance_;
   delete TovTorgTransferInfo_reflection_;
+  delete GroundInfo::default_instance_;
+  delete GroundInfo_reflection_;
 }
 
 void protobuf_AddDesc_Invoicing_2fTovTorgInfo_2eproto() {
@@ -251,8 +276,8 @@ void protobuf_AddDesc_Invoicing_2fTovTorgInfo_2eproto() {
     "Api.Proto.Invoicing.Organizations.Extend"
     "edOrganizationInfo\022C\n\007Signers\030\006 \003(\01322.Di"
     "adoc.Api.Proto.Invoicing.Signers.Extende"
-    "dSigner\0227\n\005Bases\030\007 \003(\0132(.Diadoc.Api.Prot"
-    "o.Invoicing.TransferBase\022\020\n\010Currency\030\010 \002"
+    "dSigner\0227\n\007Grounds\030\007 \003(\0132&.Diadoc.Api.Pr"
+    "oto.Invoicing.GroundInfo\022\020\n\010Currency\030\010 \002"
     "(\t\022\024\n\014CurrencyRate\030\t \001(\t\022\024\n\014DocumentDate"
     "\030\n \002(\t\022\026\n\016DocumentNumber\030\013 \001(\t\022\024\n\014Revisi"
     "onDate\030\014 \001(\t\022\026\n\016RevisionNumber\030\r \001(\t\022E\n\014"
@@ -300,7 +325,9 @@ void protobuf_AddDesc_Invoicing_2fTovTorgInfo_2eproto() {
     "icing.Employee\022<\n\013OtherIssuer\030\006 \001(\0132\'.Di"
     "adoc.Api.Proto.Invoicing.OtherIssuer\022C\n\017"
     "AdditionalInfos\030\007 \003(\0132*.Diadoc.Api.Proto"
-    ".Invoicing.AdditionalInfo", 2705);
+    ".Invoicing.AdditionalInfo\"F\n\nGroundInfo\022"
+    "\014\n\004Name\030\001 \002(\t\022\016\n\006Number\030\002 \001(\t\022\014\n\004Date\030\003 "
+    "\001(\t\022\014\n\004Info\030\004 \001(\t", 2777);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Invoicing/TovTorgInfo.proto", &protobuf_RegisterTypes);
   TovTorgSellerTitleInfo::default_instance_ = new TovTorgSellerTitleInfo();
@@ -308,11 +335,13 @@ void protobuf_AddDesc_Invoicing_2fTovTorgInfo_2eproto() {
   TovTorgTable::default_instance_ = new TovTorgTable();
   TovTorgItem::default_instance_ = new TovTorgItem();
   TovTorgTransferInfo::default_instance_ = new TovTorgTransferInfo();
+  GroundInfo::default_instance_ = new GroundInfo();
   TovTorgSellerTitleInfo::default_instance_->InitAsDefaultInstance();
   TovTorgBuyerTitleInfo::default_instance_->InitAsDefaultInstance();
   TovTorgTable::default_instance_->InitAsDefaultInstance();
   TovTorgItem::default_instance_->InitAsDefaultInstance();
   TovTorgTransferInfo::default_instance_->InitAsDefaultInstance();
+  GroundInfo::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_Invoicing_2fTovTorgInfo_2eproto);
 }
 
@@ -332,7 +361,7 @@ const int TovTorgSellerTitleInfo::kShipperFieldNumber;
 const int TovTorgSellerTitleInfo::kConsigneeFieldNumber;
 const int TovTorgSellerTitleInfo::kCarrierFieldNumber;
 const int TovTorgSellerTitleInfo::kSignersFieldNumber;
-const int TovTorgSellerTitleInfo::kBasesFieldNumber;
+const int TovTorgSellerTitleInfo::kGroundsFieldNumber;
 const int TovTorgSellerTitleInfo::kCurrencyFieldNumber;
 const int TovTorgSellerTitleInfo::kCurrencyRateFieldNumber;
 const int TovTorgSellerTitleInfo::kDocumentDateFieldNumber;
@@ -557,7 +586,7 @@ void TovTorgSellerTitleInfo::Clear() {
     }
   }
   signers_.Clear();
-  bases_.Clear();
+  grounds_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -646,20 +675,20 @@ bool TovTorgSellerTitleInfo::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(50)) goto parse_Signers;
-        if (input->ExpectTag(58)) goto parse_Bases;
+        if (input->ExpectTag(58)) goto parse_Grounds;
         break;
       }
 
-      // repeated .Diadoc.Api.Proto.Invoicing.TransferBase Bases = 7;
+      // repeated .Diadoc.Api.Proto.Invoicing.GroundInfo Grounds = 7;
       case 7: {
         if (tag == 58) {
-         parse_Bases:
+         parse_Grounds:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-                input, add_bases()));
+                input, add_grounds()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(58)) goto parse_Bases;
+        if (input->ExpectTag(58)) goto parse_Grounds;
         if (input->ExpectTag(66)) goto parse_Currency;
         break;
       }
@@ -951,10 +980,10 @@ void TovTorgSellerTitleInfo::SerializeWithCachedSizes(
       6, this->signers(i), output);
   }
 
-  // repeated .Diadoc.Api.Proto.Invoicing.TransferBase Bases = 7;
-  for (int i = 0; i < this->bases_size(); i++) {
+  // repeated .Diadoc.Api.Proto.Invoicing.GroundInfo Grounds = 7;
+  for (int i = 0; i < this->grounds_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      7, this->bases(i), output);
+      7, this->grounds(i), output);
   }
 
   // required string Currency = 8;
@@ -1137,11 +1166,11 @@ void TovTorgSellerTitleInfo::SerializeWithCachedSizes(
         6, this->signers(i), target);
   }
 
-  // repeated .Diadoc.Api.Proto.Invoicing.TransferBase Bases = 7;
-  for (int i = 0; i < this->bases_size(); i++) {
+  // repeated .Diadoc.Api.Proto.Invoicing.GroundInfo Grounds = 7;
+  for (int i = 0; i < this->grounds_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        7, this->bases(i), target);
+        7, this->grounds(i), target);
   }
 
   // required string Currency = 8;
@@ -1444,12 +1473,12 @@ int TovTorgSellerTitleInfo::ByteSize() const {
         this->signers(i));
   }
 
-  // repeated .Diadoc.Api.Proto.Invoicing.TransferBase Bases = 7;
-  total_size += 1 * this->bases_size();
-  for (int i = 0; i < this->bases_size(); i++) {
+  // repeated .Diadoc.Api.Proto.Invoicing.GroundInfo Grounds = 7;
+  total_size += 1 * this->grounds_size();
+  for (int i = 0; i < this->grounds_size(); i++) {
     total_size +=
       ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        this->bases(i));
+        this->grounds(i));
   }
 
   if (!unknown_fields().empty()) {
@@ -1478,7 +1507,7 @@ void TovTorgSellerTitleInfo::MergeFrom(const ::google::protobuf::Message& from) 
 void TovTorgSellerTitleInfo::MergeFrom(const TovTorgSellerTitleInfo& from) {
   GOOGLE_CHECK_NE(&from, this);
   signers_.MergeFrom(from.signers_);
-  bases_.MergeFrom(from.bases_);
+  grounds_.MergeFrom(from.grounds_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_seller()) {
       mutable_seller()->::Diadoc::Api::Proto::Invoicing::Organizations::ExtendedOrganizationInfo::MergeFrom(from.seller());
@@ -1576,7 +1605,7 @@ bool TovTorgSellerTitleInfo::IsInitialized() const {
     if (!this->carrier().IsInitialized()) return false;
   }
   if (!::google::protobuf::internal::AllAreInitialized(this->signers())) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->bases())) return false;
+  if (!::google::protobuf::internal::AllAreInitialized(this->grounds())) return false;
   if (has_transferinfo()) {
     if (!this->transferinfo().IsInitialized()) return false;
   }
@@ -1597,7 +1626,7 @@ void TovTorgSellerTitleInfo::Swap(TovTorgSellerTitleInfo* other) {
     std::swap(consignee_, other->consignee_);
     std::swap(carrier_, other->carrier_);
     signers_.Swap(&other->signers_);
-    bases_.Swap(&other->bases_);
+    grounds_.Swap(&other->grounds_);
     std::swap(currency_, other->currency_);
     std::swap(currencyrate_, other->currencyrate_);
     std::swap(documentdate_, other->documentdate_);
@@ -4810,6 +4839,429 @@ void TovTorgTransferInfo::Swap(TovTorgTransferInfo* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = TovTorgTransferInfo_descriptor_;
   metadata.reflection = TovTorgTransferInfo_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int GroundInfo::kNameFieldNumber;
+const int GroundInfo::kNumberFieldNumber;
+const int GroundInfo::kDateFieldNumber;
+const int GroundInfo::kInfoFieldNumber;
+#endif  // !_MSC_VER
+
+GroundInfo::GroundInfo()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Invoicing.GroundInfo)
+}
+
+void GroundInfo::InitAsDefaultInstance() {
+}
+
+GroundInfo::GroundInfo(const GroundInfo& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Invoicing.GroundInfo)
+}
+
+void GroundInfo::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  number_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  date_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  info_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+GroundInfo::~GroundInfo() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Invoicing.GroundInfo)
+  SharedDtor();
+}
+
+void GroundInfo::SharedDtor() {
+  if (name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete name_;
+  }
+  if (number_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete number_;
+  }
+  if (date_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete date_;
+  }
+  if (info_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete info_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void GroundInfo::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* GroundInfo::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return GroundInfo_descriptor_;
+}
+
+const GroundInfo& GroundInfo::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Invoicing_2fTovTorgInfo_2eproto();
+  return *default_instance_;
+}
+
+GroundInfo* GroundInfo::default_instance_ = NULL;
+
+GroundInfo* GroundInfo::New() const {
+  return new GroundInfo;
+}
+
+void GroundInfo::Clear() {
+  if (_has_bits_[0 / 32] & 15) {
+    if (has_name()) {
+      if (name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        name_->clear();
+      }
+    }
+    if (has_number()) {
+      if (number_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        number_->clear();
+      }
+    }
+    if (has_date()) {
+      if (date_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        date_->clear();
+      }
+    }
+    if (has_info()) {
+      if (info_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        info_->clear();
+      }
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool GroundInfo::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Invoicing.GroundInfo)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required string Name = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_name()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->name().data(), this->name().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "name");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_Number;
+        break;
+      }
+
+      // optional string Number = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_Number:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_number()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->number().data(), this->number().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "number");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_Date;
+        break;
+      }
+
+      // optional string Date = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_Date:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_date()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->date().data(), this->date().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "date");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_Info;
+        break;
+      }
+
+      // optional string Info = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_Info:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_info()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->info().data(), this->info().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "info");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Invoicing.GroundInfo)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Invoicing.GroundInfo)
+  return false;
+#undef DO_
+}
+
+void GroundInfo::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Invoicing.GroundInfo)
+  // required string Name = 1;
+  if (has_name()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->name().data(), this->name().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "name");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->name(), output);
+  }
+
+  // optional string Number = 2;
+  if (has_number()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->number().data(), this->number().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "number");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->number(), output);
+  }
+
+  // optional string Date = 3;
+  if (has_date()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->date().data(), this->date().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "date");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->date(), output);
+  }
+
+  // optional string Info = 4;
+  if (has_info()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->info().data(), this->info().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "info");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->info(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Invoicing.GroundInfo)
+}
+
+::google::protobuf::uint8* GroundInfo::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Invoicing.GroundInfo)
+  // required string Name = 1;
+  if (has_name()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->name().data(), this->name().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->name(), target);
+  }
+
+  // optional string Number = 2;
+  if (has_number()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->number().data(), this->number().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "number");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->number(), target);
+  }
+
+  // optional string Date = 3;
+  if (has_date()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->date().data(), this->date().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "date");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->date(), target);
+  }
+
+  // optional string Info = 4;
+  if (has_info()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->info().data(), this->info().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "info");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->info(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Invoicing.GroundInfo)
+  return target;
+}
+
+int GroundInfo::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required string Name = 1;
+    if (has_name()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->name());
+    }
+
+    // optional string Number = 2;
+    if (has_number()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->number());
+    }
+
+    // optional string Date = 3;
+    if (has_date()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->date());
+    }
+
+    // optional string Info = 4;
+    if (has_info()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->info());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void GroundInfo::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const GroundInfo* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const GroundInfo*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void GroundInfo::MergeFrom(const GroundInfo& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_name()) {
+      set_name(from.name());
+    }
+    if (from.has_number()) {
+      set_number(from.number());
+    }
+    if (from.has_date()) {
+      set_date(from.date());
+    }
+    if (from.has_info()) {
+      set_info(from.info());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void GroundInfo::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GroundInfo::CopyFrom(const GroundInfo& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GroundInfo::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+
+  return true;
+}
+
+void GroundInfo::Swap(GroundInfo* other) {
+  if (other != this) {
+    std::swap(name_, other->name_);
+    std::swap(number_, other->number_);
+    std::swap(date_, other->date_);
+    std::swap(info_, other->info_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata GroundInfo::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = GroundInfo_descriptor_;
+  metadata.reflection = GroundInfo_reflection_;
   return metadata;
 }
 
