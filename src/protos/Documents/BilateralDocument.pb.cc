@@ -69,12 +69,14 @@ void protobuf_AssignDesc_Documents_2fBilateralDocument_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(TrustConnectionRequestMetadata));
   BasicDocumentMetadata_descriptor_ = file->message_type(1);
-  static const int BasicDocumentMetadata_offsets_[5] = {
+  static const int BasicDocumentMetadata_offsets_[7] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BasicDocumentMetadata, documentstatus_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BasicDocumentMetadata, total_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BasicDocumentMetadata, vat_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BasicDocumentMetadata, grounds_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BasicDocumentMetadata, receiptstatus_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BasicDocumentMetadata, revisiondate_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BasicDocumentMetadata, revisionnumber_),
   };
   BasicDocumentMetadata_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -219,60 +221,61 @@ void protobuf_AddDesc_Documents_2fBilateralDocument_2eproto() {
     "nectionRequestStatus\030\001 \001(\0162E.Diadoc.Api."
     "Proto.Documents.BilateralDocument.Bilate"
     "ralDocumentStatus:\036UnknownBilateralDocum"
-    "entStatus\"\233\002\n\025BasicDocumentMetadata\022}\n\016D"
+    "entStatus\"\311\002\n\025BasicDocumentMetadata\022}\n\016D"
     "ocumentStatus\030\001 \001(\0162E.Diadoc.Api.Proto.D"
     "ocuments.BilateralDocument.BilateralDocu"
     "mentStatus:\036UnknownBilateralDocumentStat"
     "us\022\r\n\005Total\030\002 \002(\t\022\013\n\003Vat\030\003 \001(\t\022\017\n\007Ground"
     "s\030\004 \001(\t\022V\n\rReceiptStatus\030\005 \001(\0162).Diadoc."
     "Api.Proto.Documents.ReceiptStatus:\024Unkno"
-    "wnReceiptStatus\"\310\002\n\021PriceListMetadata\022}\n"
-    "\016DocumentStatus\030\001 \001(\0162E.Diadoc.Api.Proto"
-    ".Documents.BilateralDocument.BilateralDo"
-    "cumentStatus:\036UnknownBilateralDocumentSt"
-    "atus\022\036\n\026PriceListEffectiveDate\030\002 \001(\t\022\034\n\024"
-    "ContractDocumentDate\030\003 \001(\t\022\036\n\026ContractDo"
-    "cumentNumber\030\004 \001(\t\022V\n\rReceiptStatus\030\005 \001("
-    "\0162).Diadoc.Api.Proto.Documents.ReceiptSt"
-    "atus:\024UnknownReceiptStatus\"\226\002\n\020ContractM"
-    "etadata\022}\n\016DocumentStatus\030\001 \001(\0162E.Diadoc"
-    ".Api.Proto.Documents.BilateralDocument.B"
-    "ilateralDocumentStatus:\036UnknownBilateral"
-    "DocumentStatus\022\025\n\rContractPrice\030\002 \001(\t\022\024\n"
-    "\014ContractType\030\003 \001(\t\022V\n\rReceiptStatus\030\004 \001"
-    "(\0162).Diadoc.Api.Proto.Documents.ReceiptS"
-    "tatus:\024UnknownReceiptStatus\"\312\002\n\036Suppleme"
-    "ntaryAgreementMetadata\022}\n\016DocumentStatus"
-    "\030\001 \001(\0162E.Diadoc.Api.Proto.Documents.Bila"
-    "teralDocument.BilateralDocumentStatus:\036U"
-    "nknownBilateralDocumentStatus\022\r\n\005Total\030\002"
-    " \001(\t\022\024\n\014ContractType\030\003 \001(\t\022\026\n\016ContractNu"
-    "mber\030\004 \002(\t\022\024\n\014ContractDate\030\005 \002(\t\022V\n\rRece"
-    "iptStatus\030\006 \001(\0162).Diadoc.Api.Proto.Docum"
-    "ents.ReceiptStatus:\024UnknownReceiptStatus"
-    "\"\362\001\n\031BilateralDocumentMetadata\022}\n\016Docume"
-    "ntStatus\030\001 \001(\0162E.Diadoc.Api.Proto.Docume"
-    "nts.BilateralDocument.BilateralDocumentS"
-    "tatus:\036UnknownBilateralDocumentStatus\022V\n"
-    "\rReceiptStatus\030\002 \001(\0162).Diadoc.Api.Proto."
-    "Documents.ReceiptStatus:\024UnknownReceiptS"
-    "tatus*\224\005\n\027BilateralDocumentStatus\022\"\n\036Unk"
-    "nownBilateralDocumentStatus\020\000\022(\n$Outboun"
-    "dWaitingForRecipientSignature\020\001\022\"\n\036Outbo"
-    "undWithRecipientSignature\020\002\022-\n)OutboundR"
-    "ecipientSignatureRequestRejected\020\003\022%\n!Ou"
-    "tboundWaitingForSenderSignature\020\n\022\"\n\036Out"
-    "boundInvalidSenderSignature\020\013\022\'\n#Inbound"
-    "WaitingForRecipientSignature\020\004\022!\n\035Inboun"
-    "dWithRecipientSignature\020\005\022,\n(InboundReci"
-    "pientSignatureRequestRejected\020\006\022$\n Inbou"
-    "ndInvalidRecipientSignature\020\014\022(\n$Interna"
-    "lWaitingForRecipientSignature\020\007\022\"\n\036Inter"
-    "nalWithRecipientSignature\020\010\022-\n)InternalR"
-    "ecipientSignatureRequestRejected\020\t\022%\n!In"
-    "ternalWaitingForSenderSignature\020\r\022\"\n\036Int"
-    "ernalInvalidSenderSignature\020\016\022%\n!Interna"
-    "lInvalidRecipientSignature\020\017", 2428);
+    "wnReceiptStatus\022\024\n\014RevisionDate\030\006 \001(\t\022\026\n"
+    "\016RevisionNumber\030\007 \001(\t\"\310\002\n\021PriceListMetad"
+    "ata\022}\n\016DocumentStatus\030\001 \001(\0162E.Diadoc.Api"
+    ".Proto.Documents.BilateralDocument.Bilat"
+    "eralDocumentStatus:\036UnknownBilateralDocu"
+    "mentStatus\022\036\n\026PriceListEffectiveDate\030\002 \001"
+    "(\t\022\034\n\024ContractDocumentDate\030\003 \001(\t\022\036\n\026Cont"
+    "ractDocumentNumber\030\004 \001(\t\022V\n\rReceiptStatu"
+    "s\030\005 \001(\0162).Diadoc.Api.Proto.Documents.Rec"
+    "eiptStatus:\024UnknownReceiptStatus\"\226\002\n\020Con"
+    "tractMetadata\022}\n\016DocumentStatus\030\001 \001(\0162E."
+    "Diadoc.Api.Proto.Documents.BilateralDocu"
+    "ment.BilateralDocumentStatus:\036UnknownBil"
+    "ateralDocumentStatus\022\025\n\rContractPrice\030\002 "
+    "\001(\t\022\024\n\014ContractType\030\003 \001(\t\022V\n\rReceiptStat"
+    "us\030\004 \001(\0162).Diadoc.Api.Proto.Documents.Re"
+    "ceiptStatus:\024UnknownReceiptStatus\"\312\002\n\036Su"
+    "pplementaryAgreementMetadata\022}\n\016Document"
+    "Status\030\001 \001(\0162E.Diadoc.Api.Proto.Document"
+    "s.BilateralDocument.BilateralDocumentSta"
+    "tus:\036UnknownBilateralDocumentStatus\022\r\n\005T"
+    "otal\030\002 \001(\t\022\024\n\014ContractType\030\003 \001(\t\022\026\n\016Cont"
+    "ractNumber\030\004 \002(\t\022\024\n\014ContractDate\030\005 \002(\t\022V"
+    "\n\rReceiptStatus\030\006 \001(\0162).Diadoc.Api.Proto"
+    ".Documents.ReceiptStatus:\024UnknownReceipt"
+    "Status\"\362\001\n\031BilateralDocumentMetadata\022}\n\016"
+    "DocumentStatus\030\001 \001(\0162E.Diadoc.Api.Proto."
+    "Documents.BilateralDocument.BilateralDoc"
+    "umentStatus:\036UnknownBilateralDocumentSta"
+    "tus\022V\n\rReceiptStatus\030\002 \001(\0162).Diadoc.Api."
+    "Proto.Documents.ReceiptStatus:\024UnknownRe"
+    "ceiptStatus*\224\005\n\027BilateralDocumentStatus\022"
+    "\"\n\036UnknownBilateralDocumentStatus\020\000\022(\n$O"
+    "utboundWaitingForRecipientSignature\020\001\022\"\n"
+    "\036OutboundWithRecipientSignature\020\002\022-\n)Out"
+    "boundRecipientSignatureRequestRejected\020\003"
+    "\022%\n!OutboundWaitingForSenderSignature\020\n\022"
+    "\"\n\036OutboundInvalidSenderSignature\020\013\022\'\n#I"
+    "nboundWaitingForRecipientSignature\020\004\022!\n\035"
+    "InboundWithRecipientSignature\020\005\022,\n(Inbou"
+    "ndRecipientSignatureRequestRejected\020\006\022$\n"
+    " InboundInvalidRecipientSignature\020\014\022(\n$I"
+    "nternalWaitingForRecipientSignature\020\007\022\"\n"
+    "\036InternalWithRecipientSignature\020\010\022-\n)Int"
+    "ernalRecipientSignatureRequestRejected\020\t"
+    "\022%\n!InternalWaitingForSenderSignature\020\r\022"
+    "\"\n\036InternalInvalidSenderSignature\020\016\022%\n!I"
+    "nternalInvalidRecipientSignature\020\017", 2474);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Documents/BilateralDocument.proto", &protobuf_RegisterTypes);
   TrustConnectionRequestMetadata::default_instance_ = new TrustConnectionRequestMetadata();
@@ -561,6 +564,8 @@ const int BasicDocumentMetadata::kTotalFieldNumber;
 const int BasicDocumentMetadata::kVatFieldNumber;
 const int BasicDocumentMetadata::kGroundsFieldNumber;
 const int BasicDocumentMetadata::kReceiptStatusFieldNumber;
+const int BasicDocumentMetadata::kRevisionDateFieldNumber;
+const int BasicDocumentMetadata::kRevisionNumberFieldNumber;
 #endif  // !_MSC_VER
 
 BasicDocumentMetadata::BasicDocumentMetadata()
@@ -587,6 +592,8 @@ void BasicDocumentMetadata::SharedCtor() {
   vat_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   grounds_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   receiptstatus_ = 0;
+  revisiondate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  revisionnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -604,6 +611,12 @@ void BasicDocumentMetadata::SharedDtor() {
   }
   if (grounds_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete grounds_;
+  }
+  if (revisiondate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete revisiondate_;
+  }
+  if (revisionnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete revisionnumber_;
   }
   if (this != default_instance_) {
   }
@@ -641,7 +654,7 @@ void BasicDocumentMetadata::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 31) {
+  if (_has_bits_[0 / 32] & 127) {
     ZR_(documentstatus_, receiptstatus_);
     if (has_total()) {
       if (total_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
@@ -656,6 +669,16 @@ void BasicDocumentMetadata::Clear() {
     if (has_grounds()) {
       if (grounds_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         grounds_->clear();
+      }
+    }
+    if (has_revisiondate()) {
+      if (revisiondate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        revisiondate_->clear();
+      }
+    }
+    if (has_revisionnumber()) {
+      if (revisionnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        revisionnumber_->clear();
       }
     }
   }
@@ -763,6 +786,40 @@ bool BasicDocumentMetadata::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(50)) goto parse_RevisionDate;
+        break;
+      }
+
+      // optional string RevisionDate = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_RevisionDate:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_revisiondate()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->revisiondate().data(), this->revisiondate().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "revisiondate");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(58)) goto parse_RevisionNumber;
+        break;
+      }
+
+      // optional string RevisionNumber = 7;
+      case 7: {
+        if (tag == 58) {
+         parse_RevisionNumber:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_revisionnumber()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->revisionnumber().data(), this->revisionnumber().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "revisionnumber");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -834,6 +891,26 @@ void BasicDocumentMetadata::SerializeWithCachedSizes(
       5, this->receiptstatus(), output);
   }
 
+  // optional string RevisionDate = 6;
+  if (has_revisiondate()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->revisiondate().data(), this->revisiondate().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "revisiondate");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      6, this->revisiondate(), output);
+  }
+
+  // optional string RevisionNumber = 7;
+  if (has_revisionnumber()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->revisionnumber().data(), this->revisionnumber().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "revisionnumber");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      7, this->revisionnumber(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -889,6 +966,28 @@ void BasicDocumentMetadata::SerializeWithCachedSizes(
       5, this->receiptstatus(), target);
   }
 
+  // optional string RevisionDate = 6;
+  if (has_revisiondate()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->revisiondate().data(), this->revisiondate().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "revisiondate");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        6, this->revisiondate(), target);
+  }
+
+  // optional string RevisionNumber = 7;
+  if (has_revisionnumber()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->revisionnumber().data(), this->revisionnumber().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "revisionnumber");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        7, this->revisionnumber(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -934,6 +1033,20 @@ int BasicDocumentMetadata::ByteSize() const {
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->receiptstatus());
     }
 
+    // optional string RevisionDate = 6;
+    if (has_revisiondate()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->revisiondate());
+    }
+
+    // optional string RevisionNumber = 7;
+    if (has_revisionnumber()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->revisionnumber());
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -976,6 +1089,12 @@ void BasicDocumentMetadata::MergeFrom(const BasicDocumentMetadata& from) {
     if (from.has_receiptstatus()) {
       set_receiptstatus(from.receiptstatus());
     }
+    if (from.has_revisiondate()) {
+      set_revisiondate(from.revisiondate());
+    }
+    if (from.has_revisionnumber()) {
+      set_revisionnumber(from.revisionnumber());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -1005,6 +1124,8 @@ void BasicDocumentMetadata::Swap(BasicDocumentMetadata* other) {
     std::swap(vat_, other->vat_);
     std::swap(grounds_, other->grounds_);
     std::swap(receiptstatus_, other->receiptstatus_);
+    std::swap(revisiondate_, other->revisiondate_);
+    std::swap(revisionnumber_, other->revisionnumber_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

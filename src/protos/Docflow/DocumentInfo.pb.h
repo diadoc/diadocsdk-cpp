@@ -529,6 +529,15 @@ class BasicDocumentInfo : public ::google::protobuf::Message {
   inline ::std::string* release_grounds();
   inline void set_allocated_grounds(::std::string* grounds);
 
+  // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber RevisionDateAndNumber = 5;
+  inline bool has_revisiondateandnumber() const;
+  inline void clear_revisiondateandnumber();
+  static const int kRevisionDateAndNumberFieldNumber = 5;
+  inline const ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber& revisiondateandnumber() const;
+  inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* mutable_revisiondateandnumber();
+  inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* release_revisiondateandnumber();
+  inline void set_allocated_revisiondateandnumber(::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* revisiondateandnumber);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Docflow.BasicDocumentInfo)
  private:
   inline void set_has_total();
@@ -539,6 +548,8 @@ class BasicDocumentInfo : public ::google::protobuf::Message {
   inline void clear_has_vat();
   inline void set_has_grounds();
   inline void clear_has_grounds();
+  inline void set_has_revisiondateandnumber();
+  inline void clear_has_revisiondateandnumber();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -547,6 +558,7 @@ class BasicDocumentInfo : public ::google::protobuf::Message {
   ::std::string* total_;
   ::std::string* vat_;
   ::std::string* grounds_;
+  ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* revisiondateandnumber_;
   bool novat_;
   friend void  protobuf_AddDesc_Docflow_2fDocumentInfo_2eproto();
   friend void protobuf_AssignDesc_Docflow_2fDocumentInfo_2eproto();
@@ -2761,6 +2773,47 @@ inline void BasicDocumentInfo::set_allocated_grounds(::std::string* grounds) {
     grounds_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.BasicDocumentInfo.Grounds)
+}
+
+// optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber RevisionDateAndNumber = 5;
+inline bool BasicDocumentInfo::has_revisiondateandnumber() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void BasicDocumentInfo::set_has_revisiondateandnumber() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void BasicDocumentInfo::clear_has_revisiondateandnumber() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void BasicDocumentInfo::clear_revisiondateandnumber() {
+  if (revisiondateandnumber_ != NULL) revisiondateandnumber_->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::Clear();
+  clear_has_revisiondateandnumber();
+}
+inline const ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber& BasicDocumentInfo::revisiondateandnumber() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.BasicDocumentInfo.RevisionDateAndNumber)
+  return revisiondateandnumber_ != NULL ? *revisiondateandnumber_ : *default_instance_->revisiondateandnumber_;
+}
+inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* BasicDocumentInfo::mutable_revisiondateandnumber() {
+  set_has_revisiondateandnumber();
+  if (revisiondateandnumber_ == NULL) revisiondateandnumber_ = new ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.BasicDocumentInfo.RevisionDateAndNumber)
+  return revisiondateandnumber_;
+}
+inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* BasicDocumentInfo::release_revisiondateandnumber() {
+  clear_has_revisiondateandnumber();
+  ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* temp = revisiondateandnumber_;
+  revisiondateandnumber_ = NULL;
+  return temp;
+}
+inline void BasicDocumentInfo::set_allocated_revisiondateandnumber(::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* revisiondateandnumber) {
+  delete revisiondateandnumber_;
+  revisiondateandnumber_ = revisiondateandnumber;
+  if (revisiondateandnumber) {
+    set_has_revisiondateandnumber();
+  } else {
+    clear_has_revisiondateandnumber();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.BasicDocumentInfo.RevisionDateAndNumber)
 }
 
 // -------------------------------------------------------------------

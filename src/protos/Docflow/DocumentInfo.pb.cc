@@ -111,11 +111,12 @@ void protobuf_AssignDesc_Docflow_2fDocumentInfo_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(DocumentDateAndNumber));
   BasicDocumentInfo_descriptor_ = file->message_type(2);
-  static const int BasicDocumentInfo_offsets_[4] = {
+  static const int BasicDocumentInfo_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BasicDocumentInfo, total_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BasicDocumentInfo, novat_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BasicDocumentInfo, vat_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BasicDocumentInfo, grounds_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BasicDocumentInfo, revisiondateandnumber_),
   };
   BasicDocumentInfo_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -363,50 +364,52 @@ void protobuf_AddDesc_Docflow_2fDocumentInfo_2eproto() {
     "UniversalCorrectionDocumentInfo\022\031\n\021Attac"
     "hmentVersion\030\021 \001(\t\"E\n\025DocumentDateAndNum"
     "ber\022\024\n\014DocumentDate\030\001 \001(\t\022\026\n\016DocumentNum"
-    "ber\030\002 \001(\t\"O\n\021BasicDocumentInfo\022\r\n\005Total\030"
-    "\001 \001(\t\022\r\n\005NoVat\030\002 \001(\010\022\013\n\003Vat\030\003 \001(\t\022\017\n\007Gro"
-    "unds\030\004 \001(\t\"\236\001\n\023InvoiceDocumentInfo\022\r\n\005To"
-    "tal\030\001 \001(\t\022\013\n\003Vat\030\002 \001(\t\022\024\n\014CurrencyCode\030\003"
-    " \001(\005\022U\n\034OriginalInvoiceDateAndNumber\030\004 \001"
+    "ber\030\002 \001(\t\"\237\001\n\021BasicDocumentInfo\022\r\n\005Total"
+    "\030\001 \001(\t\022\r\n\005NoVat\030\002 \001(\010\022\013\n\003Vat\030\003 \001(\t\022\017\n\007Gr"
+    "ounds\030\004 \001(\t\022N\n\025RevisionDateAndNumber\030\005 \001"
     "(\0132/.Diadoc.Api.Proto.Docflow.DocumentDa"
-    "teAndNumber\"\220\003\n\035InvoiceCorrectionDocumen"
-    "tInfo\022\020\n\010TotalInc\030\001 \001(\t\022\020\n\010TotalDec\030\002 \001("
-    "\t\022\016\n\006VatInc\030\003 \001(\t\022\016\n\006VatDec\030\004 \001(\t\022\024\n\014Cur"
-    "rencyCode\030\005 \001(\005\022U\n\034OriginalInvoiceDateAn"
-    "dNumber\030\006 \001(\0132/.Diadoc.Api.Proto.Docflow"
-    ".DocumentDateAndNumber\022]\n$OriginalInvoic"
-    "eRevisionDateAndNumber\030\007 \001(\0132/.Diadoc.Ap"
-    "i.Proto.Docflow.DocumentDateAndNumber\022_\n"
-    "&OriginalInvoiceCorrectionDateAndNumber\030"
-    "\010 \001(\0132/.Diadoc.Api.Proto.Docflow.Documen"
-    "tDateAndNumber\"\217\001\n\025PriceListDocumentInfo"
-    "\022\036\n\026PriceListEffectiveDate\030\001 \001(\t\022V\n\035Cont"
-    "ractDocumentDateAndNumber\030\002 \001(\0132/.Diadoc"
+    "teAndNumber\"\236\001\n\023InvoiceDocumentInfo\022\r\n\005T"
+    "otal\030\001 \001(\t\022\013\n\003Vat\030\002 \001(\t\022\024\n\014CurrencyCode\030"
+    "\003 \001(\005\022U\n\034OriginalInvoiceDateAndNumber\030\004 "
+    "\001(\0132/.Diadoc.Api.Proto.Docflow.DocumentD"
+    "ateAndNumber\"\220\003\n\035InvoiceCorrectionDocume"
+    "ntInfo\022\020\n\010TotalInc\030\001 \001(\t\022\020\n\010TotalDec\030\002 \001"
+    "(\t\022\016\n\006VatInc\030\003 \001(\t\022\016\n\006VatDec\030\004 \001(\t\022\024\n\014Cu"
+    "rrencyCode\030\005 \001(\005\022U\n\034OriginalInvoiceDateA"
+    "ndNumber\030\006 \001(\0132/.Diadoc.Api.Proto.Docflo"
+    "w.DocumentDateAndNumber\022]\n$OriginalInvoi"
+    "ceRevisionDateAndNumber\030\007 \001(\0132/.Diadoc.A"
+    "pi.Proto.Docflow.DocumentDateAndNumber\022_"
+    "\n&OriginalInvoiceCorrectionDateAndNumber"
+    "\030\010 \001(\0132/.Diadoc.Api.Proto.Docflow.Docume"
+    "ntDateAndNumber\"\217\001\n\025PriceListDocumentInf"
+    "o\022\036\n\026PriceListEffectiveDate\030\001 \001(\t\022V\n\035Con"
+    "tractDocumentDateAndNumber\030\002 \001(\0132/.Diado"
+    "c.Api.Proto.Docflow.DocumentDateAndNumbe"
+    "r\"C\n\024ContractDocumentInfo\022\025\n\rContractPri"
+    "ce\030\001 \001(\t\022\024\n\014ContractType\030\002 \001(\t\"w\n\"Supple"
+    "mentaryAgreementDocumentInfo\022\r\n\005Total\030\001 "
+    "\001(\t\022\024\n\014ContractType\030\002 \001(\t\022\026\n\016ContractNum"
+    "ber\030\003 \001(\t\022\024\n\014ContractDate\030\004 \001(\t\"\366\001\n\035Univ"
+    "ersalTransferDocumentInfo\022\r\n\005Total\030\001 \001(\t"
+    "\022\013\n\003Vat\030\002 \001(\t\022\024\n\014CurrencyCode\030\003 \001(\005\022\017\n\007G"
+    "rounds\030\004 \001(\t\022:\n\010Function\030\005 \002(\0162(.Diadoc."
+    "Api.Proto.Invoicing.FunctionType\022V\n\035Orig"
+    "inalDocumentDateAndNumber\030\006 \001(\0132/.Diadoc"
     ".Api.Proto.Docflow.DocumentDateAndNumber"
-    "\"C\n\024ContractDocumentInfo\022\025\n\rContractPric"
-    "e\030\001 \001(\t\022\024\n\014ContractType\030\002 \001(\t\"w\n\"Supplem"
-    "entaryAgreementDocumentInfo\022\r\n\005Total\030\001 \001"
-    "(\t\022\024\n\014ContractType\030\002 \001(\t\022\026\n\016ContractNumb"
-    "er\030\003 \001(\t\022\024\n\014ContractDate\030\004 \001(\t\"\366\001\n\035Unive"
-    "rsalTransferDocumentInfo\022\r\n\005Total\030\001 \001(\t\022"
-    "\013\n\003Vat\030\002 \001(\t\022\024\n\014CurrencyCode\030\003 \001(\005\022\017\n\007Gr"
-    "ounds\030\004 \001(\t\022:\n\010Function\030\005 \002(\0162(.Diadoc.A"
-    "pi.Proto.Invoicing.FunctionType\022V\n\035Origi"
-    "nalDocumentDateAndNumber\030\006 \001(\0132/.Diadoc."
-    "Api.Proto.Docflow.DocumentDateAndNumber\""
-    "\342\003\n\037UniversalCorrectionDocumentInfo\022\020\n\010T"
-    "otalInc\030\001 \001(\t\022\020\n\010TotalDec\030\002 \001(\t\022\016\n\006VatIn"
-    "c\030\003 \001(\t\022\016\n\006VatDec\030\004 \001(\t\022\024\n\014CurrencyCode\030"
-    "\005 \001(\005\022\017\n\007Grounds\030\006 \001(\t\022:\n\010Function\030\007 \002(\016"
-    "2(.Diadoc.Api.Proto.Invoicing.FunctionTy"
-    "pe\022V\n\035OriginalDocumentDateAndNumber\030\010 \001("
-    "\0132/.Diadoc.Api.Proto.Docflow.DocumentDat"
-    "eAndNumber\022^\n%OriginalDocumentRevisionDa"
-    "teAndNumber\030\t \001(\0132/.Diadoc.Api.Proto.Doc"
-    "flow.DocumentDateAndNumber\022`\n\'OriginalDo"
-    "cumentCorrectionDateAndNumber\030\n \001(\0132/.Di"
-    "adoc.Api.Proto.Docflow.DocumentDateAndNu"
-    "mber", 3004);
+    "\"\342\003\n\037UniversalCorrectionDocumentInfo\022\020\n\010"
+    "TotalInc\030\001 \001(\t\022\020\n\010TotalDec\030\002 \001(\t\022\016\n\006VatI"
+    "nc\030\003 \001(\t\022\016\n\006VatDec\030\004 \001(\t\022\024\n\014CurrencyCode"
+    "\030\005 \001(\005\022\017\n\007Grounds\030\006 \001(\t\022:\n\010Function\030\007 \002("
+    "\0162(.Diadoc.Api.Proto.Invoicing.FunctionT"
+    "ype\022V\n\035OriginalDocumentDateAndNumber\030\010 \001"
+    "(\0132/.Diadoc.Api.Proto.Docflow.DocumentDa"
+    "teAndNumber\022^\n%OriginalDocumentRevisionD"
+    "ateAndNumber\030\t \001(\0132/.Diadoc.Api.Proto.Do"
+    "cflow.DocumentDateAndNumber\022`\n\'OriginalD"
+    "ocumentCorrectionDateAndNumber\030\n \001(\0132/.D"
+    "iadoc.Api.Proto.Docflow.DocumentDateAndN"
+    "umber", 3085);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Docflow/DocumentInfo.proto", &protobuf_RegisterTypes);
   DocumentInfo::default_instance_ = new DocumentInfo();
@@ -1770,6 +1773,7 @@ const int BasicDocumentInfo::kTotalFieldNumber;
 const int BasicDocumentInfo::kNoVatFieldNumber;
 const int BasicDocumentInfo::kVatFieldNumber;
 const int BasicDocumentInfo::kGroundsFieldNumber;
+const int BasicDocumentInfo::kRevisionDateAndNumberFieldNumber;
 #endif  // !_MSC_VER
 
 BasicDocumentInfo::BasicDocumentInfo()
@@ -1779,6 +1783,7 @@ BasicDocumentInfo::BasicDocumentInfo()
 }
 
 void BasicDocumentInfo::InitAsDefaultInstance() {
+  revisiondateandnumber_ = const_cast< ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber*>(&::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::default_instance());
 }
 
 BasicDocumentInfo::BasicDocumentInfo(const BasicDocumentInfo& from)
@@ -1795,6 +1800,7 @@ void BasicDocumentInfo::SharedCtor() {
   novat_ = false;
   vat_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   grounds_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  revisiondateandnumber_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -1814,6 +1820,7 @@ void BasicDocumentInfo::SharedDtor() {
     delete grounds_;
   }
   if (this != default_instance_) {
+    delete revisiondateandnumber_;
   }
 }
 
@@ -1839,7 +1846,7 @@ BasicDocumentInfo* BasicDocumentInfo::New() const {
 }
 
 void BasicDocumentInfo::Clear() {
-  if (_has_bits_[0 / 32] & 15) {
+  if (_has_bits_[0 / 32] & 31) {
     if (has_total()) {
       if (total_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         total_->clear();
@@ -1855,6 +1862,9 @@ void BasicDocumentInfo::Clear() {
       if (grounds_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         grounds_->clear();
       }
+    }
+    if (has_revisiondateandnumber()) {
+      if (revisiondateandnumber_ != NULL) revisiondateandnumber_->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -1932,6 +1942,19 @@ bool BasicDocumentInfo::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(42)) goto parse_RevisionDateAndNumber;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber RevisionDateAndNumber = 5;
+      case 5: {
+        if (tag == 42) {
+         parse_RevisionDateAndNumber:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_revisiondateandnumber()));
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -1996,6 +2019,12 @@ void BasicDocumentInfo::SerializeWithCachedSizes(
       4, this->grounds(), output);
   }
 
+  // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber RevisionDateAndNumber = 5;
+  if (has_revisiondateandnumber()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      5, this->revisiondateandnumber(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -2044,6 +2073,13 @@ void BasicDocumentInfo::SerializeWithCachedSizes(
         4, this->grounds(), target);
   }
 
+  // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber RevisionDateAndNumber = 5;
+  if (has_revisiondateandnumber()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        5, this->revisiondateandnumber(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -2080,6 +2116,13 @@ int BasicDocumentInfo::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->grounds());
+    }
+
+    // optional .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber RevisionDateAndNumber = 5;
+    if (has_revisiondateandnumber()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->revisiondateandnumber());
     }
 
   }
@@ -2121,6 +2164,9 @@ void BasicDocumentInfo::MergeFrom(const BasicDocumentInfo& from) {
     if (from.has_grounds()) {
       set_grounds(from.grounds());
     }
+    if (from.has_revisiondateandnumber()) {
+      mutable_revisiondateandnumber()->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::MergeFrom(from.revisiondateandnumber());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -2148,6 +2194,7 @@ void BasicDocumentInfo::Swap(BasicDocumentInfo* other) {
     std::swap(novat_, other->novat_);
     std::swap(vat_, other->vat_);
     std::swap(grounds_, other->grounds_);
+    std::swap(revisiondateandnumber_, other->revisiondateandnumber_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

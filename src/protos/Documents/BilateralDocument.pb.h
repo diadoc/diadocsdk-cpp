@@ -263,6 +263,30 @@ class BasicDocumentMetadata : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Documents::ReceiptStatus receiptstatus() const;
   inline void set_receiptstatus(::Diadoc::Api::Proto::Documents::ReceiptStatus value);
 
+  // optional string RevisionDate = 6;
+  inline bool has_revisiondate() const;
+  inline void clear_revisiondate();
+  static const int kRevisionDateFieldNumber = 6;
+  inline const ::std::string& revisiondate() const;
+  inline void set_revisiondate(const ::std::string& value);
+  inline void set_revisiondate(const char* value);
+  inline void set_revisiondate(const char* value, size_t size);
+  inline ::std::string* mutable_revisiondate();
+  inline ::std::string* release_revisiondate();
+  inline void set_allocated_revisiondate(::std::string* revisiondate);
+
+  // optional string RevisionNumber = 7;
+  inline bool has_revisionnumber() const;
+  inline void clear_revisionnumber();
+  static const int kRevisionNumberFieldNumber = 7;
+  inline const ::std::string& revisionnumber() const;
+  inline void set_revisionnumber(const ::std::string& value);
+  inline void set_revisionnumber(const char* value);
+  inline void set_revisionnumber(const char* value, size_t size);
+  inline ::std::string* mutable_revisionnumber();
+  inline ::std::string* release_revisionnumber();
+  inline void set_allocated_revisionnumber(::std::string* revisionnumber);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.BilateralDocument.BasicDocumentMetadata)
  private:
   inline void set_has_documentstatus();
@@ -275,6 +299,10 @@ class BasicDocumentMetadata : public ::google::protobuf::Message {
   inline void clear_has_grounds();
   inline void set_has_receiptstatus();
   inline void clear_has_receiptstatus();
+  inline void set_has_revisiondate();
+  inline void clear_has_revisiondate();
+  inline void set_has_revisionnumber();
+  inline void clear_has_revisionnumber();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -285,6 +313,8 @@ class BasicDocumentMetadata : public ::google::protobuf::Message {
   int documentstatus_;
   int receiptstatus_;
   ::std::string* grounds_;
+  ::std::string* revisiondate_;
+  ::std::string* revisionnumber_;
   friend void  protobuf_AddDesc_Documents_2fBilateralDocument_2eproto();
   friend void protobuf_AssignDesc_Documents_2fBilateralDocument_2eproto();
   friend void protobuf_ShutdownFile_Documents_2fBilateralDocument_2eproto();
@@ -1095,6 +1125,158 @@ inline void BasicDocumentMetadata::set_receiptstatus(::Diadoc::Api::Proto::Docum
   set_has_receiptstatus();
   receiptstatus_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.BilateralDocument.BasicDocumentMetadata.ReceiptStatus)
+}
+
+// optional string RevisionDate = 6;
+inline bool BasicDocumentMetadata::has_revisiondate() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void BasicDocumentMetadata::set_has_revisiondate() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void BasicDocumentMetadata::clear_has_revisiondate() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void BasicDocumentMetadata::clear_revisiondate() {
+  if (revisiondate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    revisiondate_->clear();
+  }
+  clear_has_revisiondate();
+}
+inline const ::std::string& BasicDocumentMetadata::revisiondate() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.BilateralDocument.BasicDocumentMetadata.RevisionDate)
+  return *revisiondate_;
+}
+inline void BasicDocumentMetadata::set_revisiondate(const ::std::string& value) {
+  set_has_revisiondate();
+  if (revisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    revisiondate_ = new ::std::string;
+  }
+  revisiondate_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.BilateralDocument.BasicDocumentMetadata.RevisionDate)
+}
+inline void BasicDocumentMetadata::set_revisiondate(const char* value) {
+  set_has_revisiondate();
+  if (revisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    revisiondate_ = new ::std::string;
+  }
+  revisiondate_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.BilateralDocument.BasicDocumentMetadata.RevisionDate)
+}
+inline void BasicDocumentMetadata::set_revisiondate(const char* value, size_t size) {
+  set_has_revisiondate();
+  if (revisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    revisiondate_ = new ::std::string;
+  }
+  revisiondate_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.BilateralDocument.BasicDocumentMetadata.RevisionDate)
+}
+inline ::std::string* BasicDocumentMetadata::mutable_revisiondate() {
+  set_has_revisiondate();
+  if (revisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    revisiondate_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.BilateralDocument.BasicDocumentMetadata.RevisionDate)
+  return revisiondate_;
+}
+inline ::std::string* BasicDocumentMetadata::release_revisiondate() {
+  clear_has_revisiondate();
+  if (revisiondate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = revisiondate_;
+    revisiondate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void BasicDocumentMetadata::set_allocated_revisiondate(::std::string* revisiondate) {
+  if (revisiondate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete revisiondate_;
+  }
+  if (revisiondate) {
+    set_has_revisiondate();
+    revisiondate_ = revisiondate;
+  } else {
+    clear_has_revisiondate();
+    revisiondate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.BilateralDocument.BasicDocumentMetadata.RevisionDate)
+}
+
+// optional string RevisionNumber = 7;
+inline bool BasicDocumentMetadata::has_revisionnumber() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void BasicDocumentMetadata::set_has_revisionnumber() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void BasicDocumentMetadata::clear_has_revisionnumber() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void BasicDocumentMetadata::clear_revisionnumber() {
+  if (revisionnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    revisionnumber_->clear();
+  }
+  clear_has_revisionnumber();
+}
+inline const ::std::string& BasicDocumentMetadata::revisionnumber() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.BilateralDocument.BasicDocumentMetadata.RevisionNumber)
+  return *revisionnumber_;
+}
+inline void BasicDocumentMetadata::set_revisionnumber(const ::std::string& value) {
+  set_has_revisionnumber();
+  if (revisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    revisionnumber_ = new ::std::string;
+  }
+  revisionnumber_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.BilateralDocument.BasicDocumentMetadata.RevisionNumber)
+}
+inline void BasicDocumentMetadata::set_revisionnumber(const char* value) {
+  set_has_revisionnumber();
+  if (revisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    revisionnumber_ = new ::std::string;
+  }
+  revisionnumber_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.BilateralDocument.BasicDocumentMetadata.RevisionNumber)
+}
+inline void BasicDocumentMetadata::set_revisionnumber(const char* value, size_t size) {
+  set_has_revisionnumber();
+  if (revisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    revisionnumber_ = new ::std::string;
+  }
+  revisionnumber_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.BilateralDocument.BasicDocumentMetadata.RevisionNumber)
+}
+inline ::std::string* BasicDocumentMetadata::mutable_revisionnumber() {
+  set_has_revisionnumber();
+  if (revisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    revisionnumber_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.BilateralDocument.BasicDocumentMetadata.RevisionNumber)
+  return revisionnumber_;
+}
+inline ::std::string* BasicDocumentMetadata::release_revisionnumber() {
+  clear_has_revisionnumber();
+  if (revisionnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = revisionnumber_;
+    revisionnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void BasicDocumentMetadata::set_allocated_revisionnumber(::std::string* revisionnumber) {
+  if (revisionnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete revisionnumber_;
+  }
+  if (revisionnumber) {
+    set_has_revisionnumber();
+    revisionnumber_ = revisionnumber;
+  } else {
+    clear_has_revisionnumber();
+    revisionnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.BilateralDocument.BasicDocumentMetadata.RevisionNumber)
 }
 
 // -------------------------------------------------------------------
