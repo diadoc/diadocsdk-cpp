@@ -513,19 +513,32 @@ DiadocApi::Bytes_t DiadocApi::GetEntityContent(const std::wstring& boxId, const 
 	return PerformHttpRequest(buf.str(), GET);
 }
 
-Message DiadocApi::GetDiadocMessage(const std::wstring& boxId, const std::wstring& messageId)
+Message DiadocApi::GetDiadocMessage(const std::wstring& boxId, const std::wstring& messageId, bool withOriginalSignature, bool injectEntityContent)
 {
 	WppTraceDebugOut(L"GetDiadocMessage...");
 	std::wstringstream buf;
-	buf << L"/V3/GetMessage?boxId=" << StringHelper::CanonicalizeUrl(boxId) << L"&messageId=" << StringHelper::CanonicalizeUrl(messageId);
+	buf << L"/V4/GetMessage?"
+		<< L"boxId=" << StringHelper::CanonicalizeUrl(boxId)
+		<< L"&messageId=" << StringHelper::CanonicalizeUrl(messageId);
+
+	if (withOriginalSignature) buf << L"&originalSignature";
+	buf << L"&injectEntityContent=" << (injectEntityContent ? L"True" : L"False");
+
 	return FromProtoBytes<Message>(PerformHttpRequest(buf.str(), GET));
 }
 
-Message DiadocApi::GetDiadocMessage(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& entityId)
+Message DiadocApi::GetDiadocMessage(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& entityId, bool withOriginalSignature, bool injectEntityContent)
 {
 	WppTraceDebugOut(L"GetDiadocMessage...");
 	std::wstringstream buf;
-	buf << L"/V3/GetMessage?boxId=" << StringHelper::CanonicalizeUrl(boxId) << L"&messageId=" << StringHelper::CanonicalizeUrl(messageId) << L"&entityId=" << StringHelper::CanonicalizeUrl(entityId);
+	buf << L"/V4/GetMessage?"
+		<< L"boxId=" << StringHelper::CanonicalizeUrl(boxId)
+		<< L"&messageId=" << StringHelper::CanonicalizeUrl(messageId)
+		<< L"&entityId=" << StringHelper::CanonicalizeUrl(entityId);
+
+	if (withOriginalSignature) buf << L"&originalSignature";
+	buf << L"&injectEntityContent=" << (injectEntityContent ? L"True" : L"False");
+	
 	return FromProtoBytes<Message>(PerformHttpRequest(buf.str(), GET));
 }
 
