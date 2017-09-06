@@ -70,8 +70,8 @@ public:
 	void Delete(const std::wstring &boxId, const std::wstring &messageId, const std::wstring &documentId = std::wstring());
 
 	Bytes_t GetEntityContent(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& entityId);
-	Diadoc::Api::Proto::Events::Message GetDiadocMessage(const std::wstring& boxId, const std::wstring& messageId);
-	Diadoc::Api::Proto::Events::Message GetDiadocMessage(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& entityId);
+	Diadoc::Api::Proto::Events::Message GetDiadocMessage(const std::wstring& boxId, const std::wstring& messageId, bool withOriginalSignature = false, bool injectEntityContent = false);
+	Diadoc::Api::Proto::Events::Message GetDiadocMessage(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& entityId, bool withOriginalSignature = false, bool injectEntityContent = false);
 
 	Diadoc::Api::Proto::Invoicing::InvoiceCorrectionRequestInfo GetInvoiceCorrectionRequestInfo(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& entityId);
 	Diadoc::Api::Proto::Documents::DocumentList GetDocuments(const std::wstring& boxId, const std::wstring& filterCategory, const std::wstring& counteragentBoxId, __int64* timestampFrom,
