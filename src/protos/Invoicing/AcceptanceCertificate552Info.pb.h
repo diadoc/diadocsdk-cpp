@@ -857,7 +857,7 @@ class AcceptanceCertificate552WorkItem : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::AdditionalInfo >*
       mutable_additionalinfos();
 
-  // optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 11 [default = TaxRateNotSpecified];
+  // optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 11 [default = Percent_18];
   inline bool has_taxrate() const;
   inline void clear_taxrate();
   static const int kTaxRateFieldNumber = 11;
@@ -3796,7 +3796,7 @@ AcceptanceCertificate552WorkItem::mutable_additionalinfos() {
   return &additionalinfos_;
 }
 
-// optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 11 [default = TaxRateNotSpecified];
+// optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 11 [default = Percent_18];
 inline bool AcceptanceCertificate552WorkItem::has_taxrate() const {
   return (_has_bits_[0] & 0x00000400u) != 0;
 }
@@ -3807,7 +3807,7 @@ inline void AcceptanceCertificate552WorkItem::clear_has_taxrate() {
   _has_bits_[0] &= ~0x00000400u;
 }
 inline void AcceptanceCertificate552WorkItem::clear_taxrate() {
-  taxrate_ = 7;
+  taxrate_ = 3;
   clear_has_taxrate();
 }
 inline ::Diadoc::Api::Proto::Invoicing::TaxRate AcceptanceCertificate552WorkItem::taxrate() const {

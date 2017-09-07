@@ -463,10 +463,10 @@ void protobuf_AddDesc_Invoicing_2fInvoiceInfo_2eproto() {
     "xcluded\030\002 \001(\t\022\013\n\003Vat\030\003 \001(\t\022\020\n\010Subtotal\030\004"
     " \001(\t*M\n\024InvoiceFormatVersion\022\037\n\033DefaultI"
     "nvoiceFormatVersion\020\000\022\t\n\005v5_01\020\001\022\t\n\005v5_0"
-    "2\020\002*\226\001\n\007TaxRate\022\t\n\005NoVat\020\000\022\r\n\tPercent_0\020"
-    "\001\022\016\n\nPercent_10\020\002\022\016\n\nPercent_18\020\003\022\016\n\nPer"
-    "cent_20\020\004\022\023\n\017Fraction_10_110\020\005\022\023\n\017Fracti"
-    "on_18_118\020\006\022\027\n\023TaxRateNotSpecified\020\007", 3636);
+    "2\020\002*}\n\007TaxRate\022\t\n\005NoVat\020\000\022\r\n\tPercent_0\020\001"
+    "\022\016\n\nPercent_10\020\002\022\016\n\nPercent_18\020\003\022\016\n\nPerc"
+    "ent_20\020\004\022\023\n\017Fraction_10_110\020\005\022\023\n\017Fractio"
+    "n_18_118\020\006", 3610);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Invoicing/InvoiceInfo.proto", &protobuf_RegisterTypes);
   InvoiceInfo::default_instance_ = new InvoiceInfo();
@@ -528,7 +528,6 @@ bool TaxRate_IsValid(int value) {
     case 4:
     case 5:
     case 6:
-    case 7:
       return true;
     default:
       return false;
