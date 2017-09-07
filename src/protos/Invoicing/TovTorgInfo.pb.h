@@ -1003,7 +1003,7 @@ class TovTorgItem : public ::google::protobuf::Message {
   inline ::std::string* release_subtotalwithvatexcluded();
   inline void set_allocated_subtotalwithvatexcluded(::std::string* subtotalwithvatexcluded);
 
-  // optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 16 [default = Percent_18];
+  // optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 16 [default = TaxRateNotSpecified];
   inline bool has_taxrate() const;
   inline void clear_taxrate();
   static const int kTaxRateFieldNumber = 16;
@@ -4840,7 +4840,7 @@ inline void TovTorgItem::set_allocated_subtotalwithvatexcluded(::std::string* su
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.TovTorgItem.SubtotalWithVatExcluded)
 }
 
-// optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 16 [default = Percent_18];
+// optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 16 [default = TaxRateNotSpecified];
 inline bool TovTorgItem::has_taxrate() const {
   return (_has_bits_[0] & 0x00008000u) != 0;
 }
@@ -4851,7 +4851,7 @@ inline void TovTorgItem::clear_has_taxrate() {
   _has_bits_[0] &= ~0x00008000u;
 }
 inline void TovTorgItem::clear_taxrate() {
-  taxrate_ = 3;
+  taxrate_ = 7;
   clear_has_taxrate();
 }
 inline ::Diadoc::Api::Proto::Invoicing::TaxRate TovTorgItem::taxrate() const {

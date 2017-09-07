@@ -261,26 +261,26 @@ void protobuf_AddDesc_Invoicing_2fAcceptanceCertificate552Info_2eproto() {
     "atExcluded\030\003 \001(\t\022\020\n\010TotalVat\030\004 \001(\t\022\r\n\005To"
     "tal\030\005 \002(\t\022K\n\005Items\030\006 \003(\0132<.Diadoc.Api.Pr"
     "oto.Invoicing.AcceptanceCertificate552Wo"
-    "rkItem\"\206\003\n AcceptanceCertificate552WorkI"
+    "rkItem\"\217\003\n AcceptanceCertificate552WorkI"
     "tem\022\014\n\004Name\030\001 \001(\t\022\023\n\013Description\030\002 \001(\t\022\020"
     "\n\010UnitCode\030\003 \001(\t\022\020\n\010UnitName\030\004 \001(\t\022\r\n\005Pr"
     "ice\030\005 \001(\t\022\020\n\010Quantity\030\006 \001(\t\022\037\n\027SubtotalW"
     "ithVatExcluded\030\007 \001(\t\022\013\n\003Vat\030\010 \001(\t\022\020\n\010Sub"
     "total\030\t \001(\t\022C\n\017AdditionalInfos\030\n \003(\0132*.D"
     "iadoc.Api.Proto.Invoicing.AdditionalInfo"
-    "\022@\n\007TaxRate\030\013 \001(\0162#.Diadoc.Api.Proto.Inv"
-    "oicing.TaxRate:\nPercent_18\022\030\n\020ItemAccoun"
-    "tDebit\030\014 \001(\t\022\031\n\021ItemAccountCredit\030\r \001(\t\""
-    "\375\002\n&AcceptanceCertificate552BuyerTitleIn"
-    "fo\022C\n\007Signers\030\001 \003(\01322.Diadoc.Api.Proto.I"
-    "nvoicing.Signers.ExtendedSigner\022\027\n\017Docum"
-    "entCreator\030\002 \002(\t\022\033\n\023DocumentCreatorBase\030"
-    "\003 \001(\t\022\025\n\rOperationType\030\004 \001(\t\022\024\n\014Document"
-    "Name\030\005 \002(\t\022\025\n\rOperationInfo\030\006 \002(\t\022\022\n\nAcc"
-    "eptDate\030\007 \001(\t\022\036\n\026CreatedThingAcceptDate\030"
-    "\010 \001(\t\022\030\n\020CreatedThingInfo\030\t \001(\t\022F\n\020Addit"
-    "ionalInfoId\030\n \001(\0132,.Diadoc.Api.Proto.Inv"
-    "oicing.AdditionalInfoId", 2343);
+    "\022I\n\007TaxRate\030\013 \001(\0162#.Diadoc.Api.Proto.Inv"
+    "oicing.TaxRate:\023TaxRateNotSpecified\022\030\n\020I"
+    "temAccountDebit\030\014 \001(\t\022\031\n\021ItemAccountCred"
+    "it\030\r \001(\t\"\375\002\n&AcceptanceCertificate552Buy"
+    "erTitleInfo\022C\n\007Signers\030\001 \003(\01322.Diadoc.Ap"
+    "i.Proto.Invoicing.Signers.ExtendedSigner"
+    "\022\027\n\017DocumentCreator\030\002 \002(\t\022\033\n\023DocumentCre"
+    "atorBase\030\003 \001(\t\022\025\n\rOperationType\030\004 \001(\t\022\024\n"
+    "\014DocumentName\030\005 \002(\t\022\025\n\rOperationInfo\030\006 \002"
+    "(\t\022\022\n\nAcceptDate\030\007 \001(\t\022\036\n\026CreatedThingAc"
+    "ceptDate\030\010 \001(\t\022\030\n\020CreatedThingInfo\030\t \001(\t"
+    "\022F\n\020AdditionalInfoId\030\n \001(\0132,.Diadoc.Api."
+    "Proto.Invoicing.AdditionalInfoId", 2352);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Invoicing/AcceptanceCertificate552Info.proto", &protobuf_RegisterTypes);
   AcceptanceCertificate552SellerTitleInfo::default_instance_ = new AcceptanceCertificate552SellerTitleInfo();
@@ -2549,7 +2549,7 @@ void AcceptanceCertificate552WorkItem::SharedCtor() {
   subtotalwithvatexcluded_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   vat_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   subtotal_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  taxrate_ = 3;
+  taxrate_ = 7;
   itemaccountdebit_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   itemaccountcredit_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -2668,7 +2668,7 @@ void AcceptanceCertificate552WorkItem::Clear() {
         subtotal_->clear();
       }
     }
-    taxrate_ = 3;
+    taxrate_ = 7;
     if (has_itemaccountdebit()) {
       if (itemaccountdebit_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         itemaccountdebit_->clear();
@@ -2861,7 +2861,7 @@ bool AcceptanceCertificate552WorkItem::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 11 [default = Percent_18];
+      // optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 11 [default = TaxRateNotSpecified];
       case 11: {
         if (tag == 88) {
          parse_TaxRate:
@@ -3036,7 +3036,7 @@ void AcceptanceCertificate552WorkItem::SerializeWithCachedSizes(
       10, this->additionalinfos(i), output);
   }
 
-  // optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 11 [default = Percent_18];
+  // optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 11 [default = TaxRateNotSpecified];
   if (has_taxrate()) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       11, this->taxrate(), output);
@@ -3178,7 +3178,7 @@ void AcceptanceCertificate552WorkItem::SerializeWithCachedSizes(
         10, this->additionalinfos(i), target);
   }
 
-  // optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 11 [default = Percent_18];
+  // optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 11 [default = TaxRateNotSpecified];
   if (has_taxrate()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       11, this->taxrate(), target);
@@ -3283,7 +3283,7 @@ int AcceptanceCertificate552WorkItem::ByteSize() const {
           this->subtotal());
     }
 
-    // optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 11 [default = Percent_18];
+    // optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 11 [default = TaxRateNotSpecified];
     if (has_taxrate()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->taxrate());

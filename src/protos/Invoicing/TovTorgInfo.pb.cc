@@ -304,30 +304,30 @@ void protobuf_AddDesc_Invoicing_2fTovTorgInfo_2eproto() {
     ".TovTorgItem\022\025\n\rTotalQuantity\030\002 \001(\t\022\022\n\nT"
     "otalGross\030\003 \001(\t\022\020\n\010TotalNet\030\004 \001(\t\022\034\n\024Tot"
     "alWithVatExcluded\030\005 \001(\t\022\020\n\010TotalVat\030\006 \001("
-    "\t\022\r\n\005Total\030\007 \001(\t\"\203\004\n\013TovTorgItem\022\017\n\007Prod"
+    "\t\022\r\n\005Total\030\007 \001(\t\"\214\004\n\013TovTorgItem\022\017\n\007Prod"
     "uct\030\001 \001(\t\022\017\n\007Feature\030\002 \001(\t\022\014\n\004Sort\030\003 \001(\t"
     "\022\022\n\nVendorCode\030\004 \001(\t\022\023\n\013ProductCode\030\005 \001("
     "\t\022\020\n\010UnitName\030\006 \001(\t\022\014\n\004Unit\030\007 \002(\t\022\023\n\013Pac"
     "kageType\030\010 \001(\t\022\026\n\016QuantityInPack\030\t \001(\t\022\020"
     "\n\010Quantity\030\n \001(\t\022\r\n\005Gross\030\013 \001(\t\022\013\n\003Net\030\014"
     " \002(\t\022\025\n\rItemToRelease\030\r \001(\t\022\r\n\005Price\030\016 \001"
-    "(\t\022\037\n\027SubtotalWithVatExcluded\030\017 \001(\t\022@\n\007T"
+    "(\t\022\037\n\027SubtotalWithVatExcluded\030\017 \001(\t\022I\n\007T"
     "axRate\030\020 \001(\0162#.Diadoc.Api.Proto.Invoicin"
-    "g.TaxRate:\nPercent_18\022\013\n\003Vat\030\021 \001(\t\022\020\n\010Su"
-    "btotal\030\022 \002(\t\022\030\n\020ItemAccountDebit\030\023 \001(\t\022\031"
-    "\n\021ItemAccountCredit\030\024 \001(\t\022C\n\017AdditionalI"
-    "nfos\030\025 \003(\0132*.Diadoc.Api.Proto.Invoicing."
-    "AdditionalInfo\"\310\002\n\023TovTorgTransferInfo\022\025"
-    "\n\rOperationInfo\030\001 \002(\t\022\024\n\014TransferDate\030\002 "
-    "\001(\t\022\022\n\nAttachment\030\003 \001(\t\0225\n\010Waybills\030\004 \003("
-    "\0132#.Diadoc.Api.Proto.Invoicing.Waybill\0226"
-    "\n\010Employee\030\005 \001(\0132$.Diadoc.Api.Proto.Invo"
-    "icing.Employee\022<\n\013OtherIssuer\030\006 \001(\0132\'.Di"
-    "adoc.Api.Proto.Invoicing.OtherIssuer\022C\n\017"
-    "AdditionalInfos\030\007 \003(\0132*.Diadoc.Api.Proto"
-    ".Invoicing.AdditionalInfo\"F\n\nGroundInfo\022"
-    "\014\n\004Name\030\001 \002(\t\022\016\n\006Number\030\002 \001(\t\022\014\n\004Date\030\003 "
-    "\001(\t\022\014\n\004Info\030\004 \001(\t", 2777);
+    "g.TaxRate:\023TaxRateNotSpecified\022\013\n\003Vat\030\021 "
+    "\001(\t\022\020\n\010Subtotal\030\022 \002(\t\022\030\n\020ItemAccountDebi"
+    "t\030\023 \001(\t\022\031\n\021ItemAccountCredit\030\024 \001(\t\022C\n\017Ad"
+    "ditionalInfos\030\025 \003(\0132*.Diadoc.Api.Proto.I"
+    "nvoicing.AdditionalInfo\"\310\002\n\023TovTorgTrans"
+    "ferInfo\022\025\n\rOperationInfo\030\001 \002(\t\022\024\n\014Transf"
+    "erDate\030\002 \001(\t\022\022\n\nAttachment\030\003 \001(\t\0225\n\010Wayb"
+    "ills\030\004 \003(\0132#.Diadoc.Api.Proto.Invoicing."
+    "Waybill\0226\n\010Employee\030\005 \001(\0132$.Diadoc.Api.P"
+    "roto.Invoicing.Employee\022<\n\013OtherIssuer\030\006"
+    " \001(\0132\'.Diadoc.Api.Proto.Invoicing.OtherI"
+    "ssuer\022C\n\017AdditionalInfos\030\007 \003(\0132*.Diadoc."
+    "Api.Proto.Invoicing.AdditionalInfo\"F\n\nGr"
+    "oundInfo\022\014\n\004Name\030\001 \002(\t\022\016\n\006Number\030\002 \001(\t\022\014"
+    "\n\004Date\030\003 \001(\t\022\014\n\004Info\030\004 \001(\t", 2786);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Invoicing/TovTorgInfo.proto", &protobuf_RegisterTypes);
   TovTorgSellerTitleInfo::default_instance_ = new TovTorgSellerTitleInfo();
@@ -2960,7 +2960,7 @@ void TovTorgItem::SharedCtor() {
   itemtorelease_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   price_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   subtotalwithvatexcluded_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  taxrate_ = 3;
+  taxrate_ = 7;
   vat_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   subtotal_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   itemaccountdebit_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -3135,7 +3135,7 @@ void TovTorgItem::Clear() {
         subtotalwithvatexcluded_->clear();
       }
     }
-    taxrate_ = 3;
+    taxrate_ = 7;
   }
   if (_has_bits_[16 / 32] & 983040) {
     if (has_vat()) {
@@ -3428,7 +3428,7 @@ bool TovTorgItem::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 16 [default = Percent_18];
+      // optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 16 [default = TaxRateNotSpecified];
       case 16: {
         if (tag == 128) {
          parse_TaxRate:
@@ -3705,7 +3705,7 @@ void TovTorgItem::SerializeWithCachedSizes(
       15, this->subtotalwithvatexcluded(), output);
   }
 
-  // optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 16 [default = Percent_18];
+  // optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 16 [default = TaxRateNotSpecified];
   if (has_taxrate()) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       16, this->taxrate(), output);
@@ -3932,7 +3932,7 @@ void TovTorgItem::SerializeWithCachedSizes(
         15, this->subtotalwithvatexcluded(), target);
   }
 
-  // optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 16 [default = Percent_18];
+  // optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 16 [default = TaxRateNotSpecified];
   if (has_taxrate()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       16, this->taxrate(), target);
@@ -4108,7 +4108,7 @@ int TovTorgItem::ByteSize() const {
           this->subtotalwithvatexcluded());
     }
 
-    // optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 16 [default = Percent_18];
+    // optional .Diadoc.Api.Proto.Invoicing.TaxRate TaxRate = 16 [default = TaxRateNotSpecified];
     if (has_taxrate()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->taxrate());
