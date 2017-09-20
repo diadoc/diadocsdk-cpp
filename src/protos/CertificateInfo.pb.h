@@ -118,6 +118,30 @@ class CertificateInfo : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 validto() const;
   inline void set_validto(::google::protobuf::int64 value);
 
+  // optional string OrganizationName = 4;
+  inline bool has_organizationname() const;
+  inline void clear_organizationname();
+  static const int kOrganizationNameFieldNumber = 4;
+  inline const ::std::string& organizationname() const;
+  inline void set_organizationname(const ::std::string& value);
+  inline void set_organizationname(const char* value);
+  inline void set_organizationname(const char* value, size_t size);
+  inline ::std::string* mutable_organizationname();
+  inline ::std::string* release_organizationname();
+  inline void set_allocated_organizationname(::std::string* organizationname);
+
+  // optional string Inn = 5;
+  inline bool has_inn() const;
+  inline void clear_inn();
+  static const int kInnFieldNumber = 5;
+  inline const ::std::string& inn() const;
+  inline void set_inn(const ::std::string& value);
+  inline void set_inn(const char* value);
+  inline void set_inn(const char* value, size_t size);
+  inline ::std::string* mutable_inn();
+  inline ::std::string* release_inn();
+  inline void set_allocated_inn(::std::string* inn);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.CertificateInfo)
  private:
   inline void set_has_thumbprint();
@@ -126,6 +150,10 @@ class CertificateInfo : public ::google::protobuf::Message {
   inline void clear_has_validfrom();
   inline void set_has_validto();
   inline void clear_has_validto();
+  inline void set_has_organizationname();
+  inline void clear_has_organizationname();
+  inline void set_has_inn();
+  inline void clear_has_inn();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -134,6 +162,8 @@ class CertificateInfo : public ::google::protobuf::Message {
   ::std::string* thumbprint_;
   ::google::protobuf::int64 validfrom_;
   ::google::protobuf::int64 validto_;
+  ::std::string* organizationname_;
+  ::std::string* inn_;
   friend void  protobuf_AddDesc_CertificateInfo_2eproto();
   friend void protobuf_AssignDesc_CertificateInfo_2eproto();
   friend void protobuf_ShutdownFile_CertificateInfo_2eproto();
@@ -270,6 +300,158 @@ inline void CertificateInfo::set_validto(::google::protobuf::int64 value) {
   set_has_validto();
   validto_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.CertificateInfo.ValidTo)
+}
+
+// optional string OrganizationName = 4;
+inline bool CertificateInfo::has_organizationname() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CertificateInfo::set_has_organizationname() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CertificateInfo::clear_has_organizationname() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CertificateInfo::clear_organizationname() {
+  if (organizationname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    organizationname_->clear();
+  }
+  clear_has_organizationname();
+}
+inline const ::std::string& CertificateInfo::organizationname() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.CertificateInfo.OrganizationName)
+  return *organizationname_;
+}
+inline void CertificateInfo::set_organizationname(const ::std::string& value) {
+  set_has_organizationname();
+  if (organizationname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    organizationname_ = new ::std::string;
+  }
+  organizationname_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.CertificateInfo.OrganizationName)
+}
+inline void CertificateInfo::set_organizationname(const char* value) {
+  set_has_organizationname();
+  if (organizationname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    organizationname_ = new ::std::string;
+  }
+  organizationname_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.CertificateInfo.OrganizationName)
+}
+inline void CertificateInfo::set_organizationname(const char* value, size_t size) {
+  set_has_organizationname();
+  if (organizationname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    organizationname_ = new ::std::string;
+  }
+  organizationname_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.CertificateInfo.OrganizationName)
+}
+inline ::std::string* CertificateInfo::mutable_organizationname() {
+  set_has_organizationname();
+  if (organizationname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    organizationname_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.CertificateInfo.OrganizationName)
+  return organizationname_;
+}
+inline ::std::string* CertificateInfo::release_organizationname() {
+  clear_has_organizationname();
+  if (organizationname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = organizationname_;
+    organizationname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CertificateInfo::set_allocated_organizationname(::std::string* organizationname) {
+  if (organizationname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete organizationname_;
+  }
+  if (organizationname) {
+    set_has_organizationname();
+    organizationname_ = organizationname;
+  } else {
+    clear_has_organizationname();
+    organizationname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.CertificateInfo.OrganizationName)
+}
+
+// optional string Inn = 5;
+inline bool CertificateInfo::has_inn() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void CertificateInfo::set_has_inn() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void CertificateInfo::clear_has_inn() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void CertificateInfo::clear_inn() {
+  if (inn_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    inn_->clear();
+  }
+  clear_has_inn();
+}
+inline const ::std::string& CertificateInfo::inn() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.CertificateInfo.Inn)
+  return *inn_;
+}
+inline void CertificateInfo::set_inn(const ::std::string& value) {
+  set_has_inn();
+  if (inn_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    inn_ = new ::std::string;
+  }
+  inn_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.CertificateInfo.Inn)
+}
+inline void CertificateInfo::set_inn(const char* value) {
+  set_has_inn();
+  if (inn_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    inn_ = new ::std::string;
+  }
+  inn_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.CertificateInfo.Inn)
+}
+inline void CertificateInfo::set_inn(const char* value, size_t size) {
+  set_has_inn();
+  if (inn_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    inn_ = new ::std::string;
+  }
+  inn_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.CertificateInfo.Inn)
+}
+inline ::std::string* CertificateInfo::mutable_inn() {
+  set_has_inn();
+  if (inn_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    inn_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.CertificateInfo.Inn)
+  return inn_;
+}
+inline ::std::string* CertificateInfo::release_inn() {
+  clear_has_inn();
+  if (inn_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = inn_;
+    inn_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CertificateInfo::set_allocated_inn(::std::string* inn) {
+  if (inn_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete inn_;
+  }
+  if (inn) {
+    set_has_inn();
+    inn_ = inn;
+  } else {
+    clear_has_inn();
+    inn_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.CertificateInfo.Inn)
 }
 
 

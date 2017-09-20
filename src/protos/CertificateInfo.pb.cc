@@ -36,10 +36,12 @@ void protobuf_AssignDesc_CertificateInfo_2eproto() {
       "CertificateInfo.proto");
   GOOGLE_CHECK(file != NULL);
   CertificateInfo_descriptor_ = file->message_type(0);
-  static const int CertificateInfo_offsets_[3] = {
+  static const int CertificateInfo_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CertificateInfo, thumbprint_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CertificateInfo, validfrom_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CertificateInfo, validto_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CertificateInfo, organizationname_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CertificateInfo, inn_),
   };
   CertificateInfo_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -83,8 +85,9 @@ void protobuf_AddDesc_CertificateInfo_2eproto() {
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\025CertificateInfo.proto\022\020Diadoc.Api.Prot"
-    "o\"I\n\017CertificateInfo\022\022\n\nThumbprint\030\001 \001(\t"
-    "\022\021\n\tValidFrom\030\002 \001(\020\022\017\n\007ValidTo\030\003 \001(\020", 116);
+    "o\"p\n\017CertificateInfo\022\022\n\nThumbprint\030\001 \001(\t"
+    "\022\021\n\tValidFrom\030\002 \001(\020\022\017\n\007ValidTo\030\003 \001(\020\022\030\n\020"
+    "OrganizationName\030\004 \001(\t\022\013\n\003Inn\030\005 \001(\t", 155);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "CertificateInfo.proto", &protobuf_RegisterTypes);
   CertificateInfo::default_instance_ = new CertificateInfo();
@@ -105,6 +108,8 @@ struct StaticDescriptorInitializer_CertificateInfo_2eproto {
 const int CertificateInfo::kThumbprintFieldNumber;
 const int CertificateInfo::kValidFromFieldNumber;
 const int CertificateInfo::kValidToFieldNumber;
+const int CertificateInfo::kOrganizationNameFieldNumber;
+const int CertificateInfo::kInnFieldNumber;
 #endif  // !_MSC_VER
 
 CertificateInfo::CertificateInfo()
@@ -129,6 +134,8 @@ void CertificateInfo::SharedCtor() {
   thumbprint_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   validfrom_ = GOOGLE_LONGLONG(0);
   validto_ = GOOGLE_LONGLONG(0);
+  organizationname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  inn_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -140,6 +147,12 @@ CertificateInfo::~CertificateInfo() {
 void CertificateInfo::SharedDtor() {
   if (thumbprint_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete thumbprint_;
+  }
+  if (organizationname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete organizationname_;
+  }
+  if (inn_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete inn_;
   }
   if (this != default_instance_) {
   }
@@ -177,11 +190,21 @@ void CertificateInfo::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 31) {
     ZR_(validfrom_, validto_);
     if (has_thumbprint()) {
       if (thumbprint_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         thumbprint_->clear();
+      }
+    }
+    if (has_organizationname()) {
+      if (organizationname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        organizationname_->clear();
+      }
+    }
+    if (has_inn()) {
+      if (inn_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        inn_->clear();
       }
     }
   }
@@ -245,6 +268,40 @@ bool CertificateInfo::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(34)) goto parse_OrganizationName;
+        break;
+      }
+
+      // optional string OrganizationName = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_OrganizationName:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_organizationname()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->organizationname().data(), this->organizationname().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "organizationname");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_Inn;
+        break;
+      }
+
+      // optional string Inn = 5;
+      case 5: {
+        if (tag == 42) {
+         parse_Inn:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_inn()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->inn().data(), this->inn().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "inn");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -294,6 +351,26 @@ void CertificateInfo::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteSFixed64(3, this->validto(), output);
   }
 
+  // optional string OrganizationName = 4;
+  if (has_organizationname()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->organizationname().data(), this->organizationname().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "organizationname");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->organizationname(), output);
+  }
+
+  // optional string Inn = 5;
+  if (has_inn()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->inn().data(), this->inn().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "inn");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->inn(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -325,6 +402,28 @@ void CertificateInfo::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteSFixed64ToArray(3, this->validto(), target);
   }
 
+  // optional string OrganizationName = 4;
+  if (has_organizationname()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->organizationname().data(), this->organizationname().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "organizationname");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->organizationname(), target);
+  }
+
+  // optional string Inn = 5;
+  if (has_inn()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->inn().data(), this->inn().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "inn");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->inn(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -352,6 +451,20 @@ int CertificateInfo::ByteSize() const {
     // optional sfixed64 ValidTo = 3;
     if (has_validto()) {
       total_size += 1 + 8;
+    }
+
+    // optional string OrganizationName = 4;
+    if (has_organizationname()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->organizationname());
+    }
+
+    // optional string Inn = 5;
+    if (has_inn()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->inn());
     }
 
   }
@@ -390,6 +503,12 @@ void CertificateInfo::MergeFrom(const CertificateInfo& from) {
     if (from.has_validto()) {
       set_validto(from.validto());
     }
+    if (from.has_organizationname()) {
+      set_organizationname(from.organizationname());
+    }
+    if (from.has_inn()) {
+      set_inn(from.inn());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -416,6 +535,8 @@ void CertificateInfo::Swap(CertificateInfo* other) {
     std::swap(thumbprint_, other->thumbprint_);
     std::swap(validfrom_, other->validfrom_);
     std::swap(validto_, other->validto_);
+    std::swap(organizationname_, other->organizationname_);
+    std::swap(inn_, other->inn_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
