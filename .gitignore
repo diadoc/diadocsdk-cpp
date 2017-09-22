@@ -2,6 +2,7 @@
 
 third-party/
 tools/
+!tools/packages.config
 tmp*/
 
 ## Ignore Visual Studio temporary files, build results, and
