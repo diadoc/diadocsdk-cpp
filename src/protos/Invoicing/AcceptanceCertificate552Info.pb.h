@@ -1042,41 +1042,29 @@ class AcceptanceCertificate552BuyerTitleInfo : public ::google::protobuf::Messag
   inline ::std::string* release_operationtype();
   inline void set_allocated_operationtype(::std::string* operationtype);
 
-  // required string DocumentName = 5;
-  inline bool has_documentname() const;
-  inline void clear_documentname();
-  static const int kDocumentNameFieldNumber = 5;
-  inline const ::std::string& documentname() const;
-  inline void set_documentname(const ::std::string& value);
-  inline void set_documentname(const char* value);
-  inline void set_documentname(const char* value, size_t size);
-  inline ::std::string* mutable_documentname();
-  inline ::std::string* release_documentname();
-  inline void set_allocated_documentname(::std::string* documentname);
+  // required string OperationContent = 6;
+  inline bool has_operationcontent() const;
+  inline void clear_operationcontent();
+  static const int kOperationContentFieldNumber = 6;
+  inline const ::std::string& operationcontent() const;
+  inline void set_operationcontent(const ::std::string& value);
+  inline void set_operationcontent(const char* value);
+  inline void set_operationcontent(const char* value, size_t size);
+  inline ::std::string* mutable_operationcontent();
+  inline ::std::string* release_operationcontent();
+  inline void set_allocated_operationcontent(::std::string* operationcontent);
 
-  // required string OperationInfo = 6;
-  inline bool has_operationinfo() const;
-  inline void clear_operationinfo();
-  static const int kOperationInfoFieldNumber = 6;
-  inline const ::std::string& operationinfo() const;
-  inline void set_operationinfo(const ::std::string& value);
-  inline void set_operationinfo(const char* value);
-  inline void set_operationinfo(const char* value, size_t size);
-  inline ::std::string* mutable_operationinfo();
-  inline ::std::string* release_operationinfo();
-  inline void set_allocated_operationinfo(::std::string* operationinfo);
-
-  // optional string AcceptDate = 7;
-  inline bool has_acceptdate() const;
-  inline void clear_acceptdate();
-  static const int kAcceptDateFieldNumber = 7;
-  inline const ::std::string& acceptdate() const;
-  inline void set_acceptdate(const ::std::string& value);
-  inline void set_acceptdate(const char* value);
-  inline void set_acceptdate(const char* value, size_t size);
-  inline ::std::string* mutable_acceptdate();
-  inline ::std::string* release_acceptdate();
-  inline void set_allocated_acceptdate(::std::string* acceptdate);
+  // optional string AcceptanceDate = 7;
+  inline bool has_acceptancedate() const;
+  inline void clear_acceptancedate();
+  static const int kAcceptanceDateFieldNumber = 7;
+  inline const ::std::string& acceptancedate() const;
+  inline void set_acceptancedate(const ::std::string& value);
+  inline void set_acceptancedate(const char* value);
+  inline void set_acceptancedate(const char* value, size_t size);
+  inline ::std::string* mutable_acceptancedate();
+  inline ::std::string* release_acceptancedate();
+  inline void set_allocated_acceptancedate(::std::string* acceptancedate);
 
   // optional string CreatedThingAcceptDate = 8;
   inline bool has_createdthingacceptdate() const;
@@ -1119,12 +1107,10 @@ class AcceptanceCertificate552BuyerTitleInfo : public ::google::protobuf::Messag
   inline void clear_has_documentcreatorbase();
   inline void set_has_operationtype();
   inline void clear_has_operationtype();
-  inline void set_has_documentname();
-  inline void clear_has_documentname();
-  inline void set_has_operationinfo();
-  inline void clear_has_operationinfo();
-  inline void set_has_acceptdate();
-  inline void clear_has_acceptdate();
+  inline void set_has_operationcontent();
+  inline void clear_has_operationcontent();
+  inline void set_has_acceptancedate();
+  inline void clear_has_acceptancedate();
   inline void set_has_createdthingacceptdate();
   inline void clear_has_createdthingacceptdate();
   inline void set_has_createdthinginfo();
@@ -1140,9 +1126,8 @@ class AcceptanceCertificate552BuyerTitleInfo : public ::google::protobuf::Messag
   ::std::string* documentcreator_;
   ::std::string* documentcreatorbase_;
   ::std::string* operationtype_;
-  ::std::string* documentname_;
-  ::std::string* operationinfo_;
-  ::std::string* acceptdate_;
+  ::std::string* operationcontent_;
+  ::std::string* acceptancedate_;
   ::std::string* createdthingacceptdate_;
   ::std::string* createdthinginfo_;
   ::Diadoc::Api::Proto::Invoicing::AdditionalInfoId* additionalinfoid_;
@@ -4235,243 +4220,167 @@ inline void AcceptanceCertificate552BuyerTitleInfo::set_allocated_operationtype(
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.OperationType)
 }
 
-// required string DocumentName = 5;
-inline bool AcceptanceCertificate552BuyerTitleInfo::has_documentname() const {
+// required string OperationContent = 6;
+inline bool AcceptanceCertificate552BuyerTitleInfo::has_operationcontent() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
-inline void AcceptanceCertificate552BuyerTitleInfo::set_has_documentname() {
+inline void AcceptanceCertificate552BuyerTitleInfo::set_has_operationcontent() {
   _has_bits_[0] |= 0x00000010u;
 }
-inline void AcceptanceCertificate552BuyerTitleInfo::clear_has_documentname() {
+inline void AcceptanceCertificate552BuyerTitleInfo::clear_has_operationcontent() {
   _has_bits_[0] &= ~0x00000010u;
 }
-inline void AcceptanceCertificate552BuyerTitleInfo::clear_documentname() {
-  if (documentname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    documentname_->clear();
+inline void AcceptanceCertificate552BuyerTitleInfo::clear_operationcontent() {
+  if (operationcontent_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    operationcontent_->clear();
   }
-  clear_has_documentname();
+  clear_has_operationcontent();
 }
-inline const ::std::string& AcceptanceCertificate552BuyerTitleInfo::documentname() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.DocumentName)
-  return *documentname_;
+inline const ::std::string& AcceptanceCertificate552BuyerTitleInfo::operationcontent() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.OperationContent)
+  return *operationcontent_;
 }
-inline void AcceptanceCertificate552BuyerTitleInfo::set_documentname(const ::std::string& value) {
-  set_has_documentname();
-  if (documentname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    documentname_ = new ::std::string;
+inline void AcceptanceCertificate552BuyerTitleInfo::set_operationcontent(const ::std::string& value) {
+  set_has_operationcontent();
+  if (operationcontent_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    operationcontent_ = new ::std::string;
   }
-  documentname_->assign(value);
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.DocumentName)
+  operationcontent_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.OperationContent)
 }
-inline void AcceptanceCertificate552BuyerTitleInfo::set_documentname(const char* value) {
-  set_has_documentname();
-  if (documentname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    documentname_ = new ::std::string;
+inline void AcceptanceCertificate552BuyerTitleInfo::set_operationcontent(const char* value) {
+  set_has_operationcontent();
+  if (operationcontent_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    operationcontent_ = new ::std::string;
   }
-  documentname_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.DocumentName)
+  operationcontent_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.OperationContent)
 }
-inline void AcceptanceCertificate552BuyerTitleInfo::set_documentname(const char* value, size_t size) {
-  set_has_documentname();
-  if (documentname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    documentname_ = new ::std::string;
+inline void AcceptanceCertificate552BuyerTitleInfo::set_operationcontent(const char* value, size_t size) {
+  set_has_operationcontent();
+  if (operationcontent_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    operationcontent_ = new ::std::string;
   }
-  documentname_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.DocumentName)
+  operationcontent_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.OperationContent)
 }
-inline ::std::string* AcceptanceCertificate552BuyerTitleInfo::mutable_documentname() {
-  set_has_documentname();
-  if (documentname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    documentname_ = new ::std::string;
+inline ::std::string* AcceptanceCertificate552BuyerTitleInfo::mutable_operationcontent() {
+  set_has_operationcontent();
+  if (operationcontent_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    operationcontent_ = new ::std::string;
   }
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.DocumentName)
-  return documentname_;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.OperationContent)
+  return operationcontent_;
 }
-inline ::std::string* AcceptanceCertificate552BuyerTitleInfo::release_documentname() {
-  clear_has_documentname();
-  if (documentname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+inline ::std::string* AcceptanceCertificate552BuyerTitleInfo::release_operationcontent() {
+  clear_has_operationcontent();
+  if (operationcontent_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     return NULL;
   } else {
-    ::std::string* temp = documentname_;
-    documentname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    ::std::string* temp = operationcontent_;
+    operationcontent_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     return temp;
   }
 }
-inline void AcceptanceCertificate552BuyerTitleInfo::set_allocated_documentname(::std::string* documentname) {
-  if (documentname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete documentname_;
+inline void AcceptanceCertificate552BuyerTitleInfo::set_allocated_operationcontent(::std::string* operationcontent) {
+  if (operationcontent_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete operationcontent_;
   }
-  if (documentname) {
-    set_has_documentname();
-    documentname_ = documentname;
+  if (operationcontent) {
+    set_has_operationcontent();
+    operationcontent_ = operationcontent;
   } else {
-    clear_has_documentname();
-    documentname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_operationcontent();
+    operationcontent_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.DocumentName)
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.OperationContent)
 }
 
-// required string OperationInfo = 6;
-inline bool AcceptanceCertificate552BuyerTitleInfo::has_operationinfo() const {
+// optional string AcceptanceDate = 7;
+inline bool AcceptanceCertificate552BuyerTitleInfo::has_acceptancedate() const {
   return (_has_bits_[0] & 0x00000020u) != 0;
 }
-inline void AcceptanceCertificate552BuyerTitleInfo::set_has_operationinfo() {
+inline void AcceptanceCertificate552BuyerTitleInfo::set_has_acceptancedate() {
   _has_bits_[0] |= 0x00000020u;
 }
-inline void AcceptanceCertificate552BuyerTitleInfo::clear_has_operationinfo() {
+inline void AcceptanceCertificate552BuyerTitleInfo::clear_has_acceptancedate() {
   _has_bits_[0] &= ~0x00000020u;
 }
-inline void AcceptanceCertificate552BuyerTitleInfo::clear_operationinfo() {
-  if (operationinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    operationinfo_->clear();
+inline void AcceptanceCertificate552BuyerTitleInfo::clear_acceptancedate() {
+  if (acceptancedate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    acceptancedate_->clear();
   }
-  clear_has_operationinfo();
+  clear_has_acceptancedate();
 }
-inline const ::std::string& AcceptanceCertificate552BuyerTitleInfo::operationinfo() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.OperationInfo)
-  return *operationinfo_;
+inline const ::std::string& AcceptanceCertificate552BuyerTitleInfo::acceptancedate() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.AcceptanceDate)
+  return *acceptancedate_;
 }
-inline void AcceptanceCertificate552BuyerTitleInfo::set_operationinfo(const ::std::string& value) {
-  set_has_operationinfo();
-  if (operationinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    operationinfo_ = new ::std::string;
+inline void AcceptanceCertificate552BuyerTitleInfo::set_acceptancedate(const ::std::string& value) {
+  set_has_acceptancedate();
+  if (acceptancedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    acceptancedate_ = new ::std::string;
   }
-  operationinfo_->assign(value);
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.OperationInfo)
+  acceptancedate_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.AcceptanceDate)
 }
-inline void AcceptanceCertificate552BuyerTitleInfo::set_operationinfo(const char* value) {
-  set_has_operationinfo();
-  if (operationinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    operationinfo_ = new ::std::string;
+inline void AcceptanceCertificate552BuyerTitleInfo::set_acceptancedate(const char* value) {
+  set_has_acceptancedate();
+  if (acceptancedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    acceptancedate_ = new ::std::string;
   }
-  operationinfo_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.OperationInfo)
+  acceptancedate_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.AcceptanceDate)
 }
-inline void AcceptanceCertificate552BuyerTitleInfo::set_operationinfo(const char* value, size_t size) {
-  set_has_operationinfo();
-  if (operationinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    operationinfo_ = new ::std::string;
+inline void AcceptanceCertificate552BuyerTitleInfo::set_acceptancedate(const char* value, size_t size) {
+  set_has_acceptancedate();
+  if (acceptancedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    acceptancedate_ = new ::std::string;
   }
-  operationinfo_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.OperationInfo)
+  acceptancedate_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.AcceptanceDate)
 }
-inline ::std::string* AcceptanceCertificate552BuyerTitleInfo::mutable_operationinfo() {
-  set_has_operationinfo();
-  if (operationinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    operationinfo_ = new ::std::string;
+inline ::std::string* AcceptanceCertificate552BuyerTitleInfo::mutable_acceptancedate() {
+  set_has_acceptancedate();
+  if (acceptancedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    acceptancedate_ = new ::std::string;
   }
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.OperationInfo)
-  return operationinfo_;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.AcceptanceDate)
+  return acceptancedate_;
 }
-inline ::std::string* AcceptanceCertificate552BuyerTitleInfo::release_operationinfo() {
-  clear_has_operationinfo();
-  if (operationinfo_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+inline ::std::string* AcceptanceCertificate552BuyerTitleInfo::release_acceptancedate() {
+  clear_has_acceptancedate();
+  if (acceptancedate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     return NULL;
   } else {
-    ::std::string* temp = operationinfo_;
-    operationinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    ::std::string* temp = acceptancedate_;
+    acceptancedate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     return temp;
   }
 }
-inline void AcceptanceCertificate552BuyerTitleInfo::set_allocated_operationinfo(::std::string* operationinfo) {
-  if (operationinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete operationinfo_;
+inline void AcceptanceCertificate552BuyerTitleInfo::set_allocated_acceptancedate(::std::string* acceptancedate) {
+  if (acceptancedate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete acceptancedate_;
   }
-  if (operationinfo) {
-    set_has_operationinfo();
-    operationinfo_ = operationinfo;
+  if (acceptancedate) {
+    set_has_acceptancedate();
+    acceptancedate_ = acceptancedate;
   } else {
-    clear_has_operationinfo();
-    operationinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_acceptancedate();
+    acceptancedate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.OperationInfo)
-}
-
-// optional string AcceptDate = 7;
-inline bool AcceptanceCertificate552BuyerTitleInfo::has_acceptdate() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-inline void AcceptanceCertificate552BuyerTitleInfo::set_has_acceptdate() {
-  _has_bits_[0] |= 0x00000040u;
-}
-inline void AcceptanceCertificate552BuyerTitleInfo::clear_has_acceptdate() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-inline void AcceptanceCertificate552BuyerTitleInfo::clear_acceptdate() {
-  if (acceptdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    acceptdate_->clear();
-  }
-  clear_has_acceptdate();
-}
-inline const ::std::string& AcceptanceCertificate552BuyerTitleInfo::acceptdate() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.AcceptDate)
-  return *acceptdate_;
-}
-inline void AcceptanceCertificate552BuyerTitleInfo::set_acceptdate(const ::std::string& value) {
-  set_has_acceptdate();
-  if (acceptdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    acceptdate_ = new ::std::string;
-  }
-  acceptdate_->assign(value);
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.AcceptDate)
-}
-inline void AcceptanceCertificate552BuyerTitleInfo::set_acceptdate(const char* value) {
-  set_has_acceptdate();
-  if (acceptdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    acceptdate_ = new ::std::string;
-  }
-  acceptdate_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.AcceptDate)
-}
-inline void AcceptanceCertificate552BuyerTitleInfo::set_acceptdate(const char* value, size_t size) {
-  set_has_acceptdate();
-  if (acceptdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    acceptdate_ = new ::std::string;
-  }
-  acceptdate_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.AcceptDate)
-}
-inline ::std::string* AcceptanceCertificate552BuyerTitleInfo::mutable_acceptdate() {
-  set_has_acceptdate();
-  if (acceptdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    acceptdate_ = new ::std::string;
-  }
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.AcceptDate)
-  return acceptdate_;
-}
-inline ::std::string* AcceptanceCertificate552BuyerTitleInfo::release_acceptdate() {
-  clear_has_acceptdate();
-  if (acceptdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    return NULL;
-  } else {
-    ::std::string* temp = acceptdate_;
-    acceptdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    return temp;
-  }
-}
-inline void AcceptanceCertificate552BuyerTitleInfo::set_allocated_acceptdate(::std::string* acceptdate) {
-  if (acceptdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete acceptdate_;
-  }
-  if (acceptdate) {
-    set_has_acceptdate();
-    acceptdate_ = acceptdate;
-  } else {
-    clear_has_acceptdate();
-    acceptdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.AcceptDate)
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.AcceptanceCertificate552BuyerTitleInfo.AcceptanceDate)
 }
 
 // optional string CreatedThingAcceptDate = 8;
 inline bool AcceptanceCertificate552BuyerTitleInfo::has_createdthingacceptdate() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
+  return (_has_bits_[0] & 0x00000040u) != 0;
 }
 inline void AcceptanceCertificate552BuyerTitleInfo::set_has_createdthingacceptdate() {
-  _has_bits_[0] |= 0x00000080u;
+  _has_bits_[0] |= 0x00000040u;
 }
 inline void AcceptanceCertificate552BuyerTitleInfo::clear_has_createdthingacceptdate() {
-  _has_bits_[0] &= ~0x00000080u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 inline void AcceptanceCertificate552BuyerTitleInfo::clear_createdthingacceptdate() {
   if (createdthingacceptdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
@@ -4541,13 +4450,13 @@ inline void AcceptanceCertificate552BuyerTitleInfo::set_allocated_createdthingac
 
 // optional string CreatedThingInfo = 9;
 inline bool AcceptanceCertificate552BuyerTitleInfo::has_createdthinginfo() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
+  return (_has_bits_[0] & 0x00000080u) != 0;
 }
 inline void AcceptanceCertificate552BuyerTitleInfo::set_has_createdthinginfo() {
-  _has_bits_[0] |= 0x00000100u;
+  _has_bits_[0] |= 0x00000080u;
 }
 inline void AcceptanceCertificate552BuyerTitleInfo::clear_has_createdthinginfo() {
-  _has_bits_[0] &= ~0x00000100u;
+  _has_bits_[0] &= ~0x00000080u;
 }
 inline void AcceptanceCertificate552BuyerTitleInfo::clear_createdthinginfo() {
   if (createdthinginfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
@@ -4617,13 +4526,13 @@ inline void AcceptanceCertificate552BuyerTitleInfo::set_allocated_createdthingin
 
 // optional .Diadoc.Api.Proto.Invoicing.AdditionalInfoId AdditionalInfoId = 10;
 inline bool AcceptanceCertificate552BuyerTitleInfo::has_additionalinfoid() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
+  return (_has_bits_[0] & 0x00000100u) != 0;
 }
 inline void AcceptanceCertificate552BuyerTitleInfo::set_has_additionalinfoid() {
-  _has_bits_[0] |= 0x00000200u;
+  _has_bits_[0] |= 0x00000100u;
 }
 inline void AcceptanceCertificate552BuyerTitleInfo::clear_has_additionalinfoid() {
-  _has_bits_[0] &= ~0x00000200u;
+  _has_bits_[0] &= ~0x00000100u;
 }
 inline void AcceptanceCertificate552BuyerTitleInfo::clear_additionalinfoid() {
   if (additionalinfoid_ != NULL) additionalinfoid_->::Diadoc::Api::Proto::Invoicing::AdditionalInfoId::Clear();
