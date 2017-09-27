@@ -148,14 +148,13 @@ void protobuf_AssignDesc_Invoicing_2fAcceptanceCertificate552Info_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(AcceptanceCertificate552WorkItem));
   AcceptanceCertificate552BuyerTitleInfo_descriptor_ = file->message_type(4);
-  static const int AcceptanceCertificate552BuyerTitleInfo_offsets_[10] = {
+  static const int AcceptanceCertificate552BuyerTitleInfo_offsets_[9] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AcceptanceCertificate552BuyerTitleInfo, signers_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AcceptanceCertificate552BuyerTitleInfo, documentcreator_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AcceptanceCertificate552BuyerTitleInfo, documentcreatorbase_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AcceptanceCertificate552BuyerTitleInfo, operationtype_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AcceptanceCertificate552BuyerTitleInfo, documentname_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AcceptanceCertificate552BuyerTitleInfo, operationinfo_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AcceptanceCertificate552BuyerTitleInfo, acceptdate_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AcceptanceCertificate552BuyerTitleInfo, operationcontent_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AcceptanceCertificate552BuyerTitleInfo, acceptancedate_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AcceptanceCertificate552BuyerTitleInfo, createdthingacceptdate_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AcceptanceCertificate552BuyerTitleInfo, createdthinginfo_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AcceptanceCertificate552BuyerTitleInfo, additionalinfoid_),
@@ -271,16 +270,16 @@ void protobuf_AddDesc_Invoicing_2fAcceptanceCertificate552Info_2eproto() {
     "\022@\n\007TaxRate\030\013 \001(\0162#.Diadoc.Api.Proto.Inv"
     "oicing.TaxRate:\nPercent_18\022\030\n\020ItemAccoun"
     "tDebit\030\014 \001(\t\022\031\n\021ItemAccountCredit\030\r \001(\t\""
-    "\375\002\n&AcceptanceCertificate552BuyerTitleIn"
+    "\356\002\n&AcceptanceCertificate552BuyerTitleIn"
     "fo\022C\n\007Signers\030\001 \003(\01322.Diadoc.Api.Proto.I"
     "nvoicing.Signers.ExtendedSigner\022\027\n\017Docum"
     "entCreator\030\002 \002(\t\022\033\n\023DocumentCreatorBase\030"
-    "\003 \001(\t\022\025\n\rOperationType\030\004 \001(\t\022\024\n\014Document"
-    "Name\030\005 \002(\t\022\025\n\rOperationInfo\030\006 \002(\t\022\022\n\nAcc"
-    "eptDate\030\007 \001(\t\022\036\n\026CreatedThingAcceptDate\030"
-    "\010 \001(\t\022\030\n\020CreatedThingInfo\030\t \001(\t\022F\n\020Addit"
-    "ionalInfoId\030\n \001(\0132,.Diadoc.Api.Proto.Inv"
-    "oicing.AdditionalInfoId", 2343);
+    "\003 \001(\t\022\025\n\rOperationType\030\004 \001(\t\022\030\n\020Operatio"
+    "nContent\030\006 \002(\t\022\026\n\016AcceptanceDate\030\007 \001(\t\022\036"
+    "\n\026CreatedThingAcceptDate\030\010 \001(\t\022\030\n\020Create"
+    "dThingInfo\030\t \001(\t\022F\n\020AdditionalInfoId\030\n \001"
+    "(\0132,.Diadoc.Api.Proto.Invoicing.Addition"
+    "alInfoId", 2328);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Invoicing/AcceptanceCertificate552Info.proto", &protobuf_RegisterTypes);
   AcceptanceCertificate552SellerTitleInfo::default_instance_ = new AcceptanceCertificate552SellerTitleInfo();
@@ -3436,9 +3435,8 @@ const int AcceptanceCertificate552BuyerTitleInfo::kSignersFieldNumber;
 const int AcceptanceCertificate552BuyerTitleInfo::kDocumentCreatorFieldNumber;
 const int AcceptanceCertificate552BuyerTitleInfo::kDocumentCreatorBaseFieldNumber;
 const int AcceptanceCertificate552BuyerTitleInfo::kOperationTypeFieldNumber;
-const int AcceptanceCertificate552BuyerTitleInfo::kDocumentNameFieldNumber;
-const int AcceptanceCertificate552BuyerTitleInfo::kOperationInfoFieldNumber;
-const int AcceptanceCertificate552BuyerTitleInfo::kAcceptDateFieldNumber;
+const int AcceptanceCertificate552BuyerTitleInfo::kOperationContentFieldNumber;
+const int AcceptanceCertificate552BuyerTitleInfo::kAcceptanceDateFieldNumber;
 const int AcceptanceCertificate552BuyerTitleInfo::kCreatedThingAcceptDateFieldNumber;
 const int AcceptanceCertificate552BuyerTitleInfo::kCreatedThingInfoFieldNumber;
 const int AcceptanceCertificate552BuyerTitleInfo::kAdditionalInfoIdFieldNumber;
@@ -3467,9 +3465,8 @@ void AcceptanceCertificate552BuyerTitleInfo::SharedCtor() {
   documentcreator_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   documentcreatorbase_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   operationtype_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  documentname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  operationinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  acceptdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  operationcontent_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  acceptancedate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   createdthingacceptdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   createdthinginfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   additionalinfoid_ = NULL;
@@ -3491,14 +3488,11 @@ void AcceptanceCertificate552BuyerTitleInfo::SharedDtor() {
   if (operationtype_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete operationtype_;
   }
-  if (documentname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete documentname_;
+  if (operationcontent_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete operationcontent_;
   }
-  if (operationinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete operationinfo_;
-  }
-  if (acceptdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete acceptdate_;
+  if (acceptancedate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete acceptancedate_;
   }
   if (createdthingacceptdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete createdthingacceptdate_;
@@ -3549,19 +3543,14 @@ void AcceptanceCertificate552BuyerTitleInfo::Clear() {
         operationtype_->clear();
       }
     }
-    if (has_documentname()) {
-      if (documentname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        documentname_->clear();
+    if (has_operationcontent()) {
+      if (operationcontent_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        operationcontent_->clear();
       }
     }
-    if (has_operationinfo()) {
-      if (operationinfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        operationinfo_->clear();
-      }
-    }
-    if (has_acceptdate()) {
-      if (acceptdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        acceptdate_->clear();
+    if (has_acceptancedate()) {
+      if (acceptancedate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        acceptancedate_->clear();
       }
     }
     if (has_createdthingacceptdate()) {
@@ -3569,16 +3558,14 @@ void AcceptanceCertificate552BuyerTitleInfo::Clear() {
         createdthingacceptdate_->clear();
       }
     }
-  }
-  if (_has_bits_[8 / 32] & 768) {
     if (has_createdthinginfo()) {
       if (createdthinginfo_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         createdthinginfo_->clear();
       }
     }
-    if (has_additionalinfoid()) {
-      if (additionalinfoid_ != NULL) additionalinfoid_->::Diadoc::Api::Proto::Invoicing::AdditionalInfoId::Clear();
-    }
+  }
+  if (has_additionalinfoid()) {
+    if (additionalinfoid_ != NULL) additionalinfoid_->::Diadoc::Api::Proto::Invoicing::AdditionalInfoId::Clear();
   }
   signers_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -3656,54 +3643,37 @@ bool AcceptanceCertificate552BuyerTitleInfo::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(42)) goto parse_DocumentName;
+        if (input->ExpectTag(50)) goto parse_OperationContent;
         break;
       }
 
-      // required string DocumentName = 5;
-      case 5: {
-        if (tag == 42) {
-         parse_DocumentName:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_documentname()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->documentname().data(), this->documentname().length(),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "documentname");
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(50)) goto parse_OperationInfo;
-        break;
-      }
-
-      // required string OperationInfo = 6;
+      // required string OperationContent = 6;
       case 6: {
         if (tag == 50) {
-         parse_OperationInfo:
+         parse_OperationContent:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_operationinfo()));
+                input, this->mutable_operationcontent()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->operationinfo().data(), this->operationinfo().length(),
+            this->operationcontent().data(), this->operationcontent().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "operationinfo");
+            "operationcontent");
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(58)) goto parse_AcceptDate;
+        if (input->ExpectTag(58)) goto parse_AcceptanceDate;
         break;
       }
 
-      // optional string AcceptDate = 7;
+      // optional string AcceptanceDate = 7;
       case 7: {
         if (tag == 58) {
-         parse_AcceptDate:
+         parse_AcceptanceDate:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_acceptdate()));
+                input, this->mutable_acceptancedate()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->acceptdate().data(), this->acceptdate().length(),
+            this->acceptancedate().data(), this->acceptancedate().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "acceptdate");
+            "acceptancedate");
         } else {
           goto handle_unusual;
         }
@@ -3819,34 +3789,24 @@ void AcceptanceCertificate552BuyerTitleInfo::SerializeWithCachedSizes(
       4, this->operationtype(), output);
   }
 
-  // required string DocumentName = 5;
-  if (has_documentname()) {
+  // required string OperationContent = 6;
+  if (has_operationcontent()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->documentname().data(), this->documentname().length(),
+      this->operationcontent().data(), this->operationcontent().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "documentname");
+      "operationcontent");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      5, this->documentname(), output);
+      6, this->operationcontent(), output);
   }
 
-  // required string OperationInfo = 6;
-  if (has_operationinfo()) {
+  // optional string AcceptanceDate = 7;
+  if (has_acceptancedate()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->operationinfo().data(), this->operationinfo().length(),
+      this->acceptancedate().data(), this->acceptancedate().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "operationinfo");
+      "acceptancedate");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      6, this->operationinfo(), output);
-  }
-
-  // optional string AcceptDate = 7;
-  if (has_acceptdate()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->acceptdate().data(), this->acceptdate().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "acceptdate");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      7, this->acceptdate(), output);
+      7, this->acceptancedate(), output);
   }
 
   // optional string CreatedThingAcceptDate = 8;
@@ -3925,37 +3885,26 @@ void AcceptanceCertificate552BuyerTitleInfo::SerializeWithCachedSizes(
         4, this->operationtype(), target);
   }
 
-  // required string DocumentName = 5;
-  if (has_documentname()) {
+  // required string OperationContent = 6;
+  if (has_operationcontent()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->documentname().data(), this->documentname().length(),
+      this->operationcontent().data(), this->operationcontent().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "documentname");
+      "operationcontent");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        5, this->documentname(), target);
+        6, this->operationcontent(), target);
   }
 
-  // required string OperationInfo = 6;
-  if (has_operationinfo()) {
+  // optional string AcceptanceDate = 7;
+  if (has_acceptancedate()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->operationinfo().data(), this->operationinfo().length(),
+      this->acceptancedate().data(), this->acceptancedate().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "operationinfo");
+      "acceptancedate");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        6, this->operationinfo(), target);
-  }
-
-  // optional string AcceptDate = 7;
-  if (has_acceptdate()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->acceptdate().data(), this->acceptdate().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "acceptdate");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        7, this->acceptdate(), target);
+        7, this->acceptancedate(), target);
   }
 
   // optional string CreatedThingAcceptDate = 8;
@@ -4020,25 +3969,18 @@ int AcceptanceCertificate552BuyerTitleInfo::ByteSize() const {
           this->operationtype());
     }
 
-    // required string DocumentName = 5;
-    if (has_documentname()) {
+    // required string OperationContent = 6;
+    if (has_operationcontent()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->documentname());
+          this->operationcontent());
     }
 
-    // required string OperationInfo = 6;
-    if (has_operationinfo()) {
+    // optional string AcceptanceDate = 7;
+    if (has_acceptancedate()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->operationinfo());
-    }
-
-    // optional string AcceptDate = 7;
-    if (has_acceptdate()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->acceptdate());
+          this->acceptancedate());
     }
 
     // optional string CreatedThingAcceptDate = 8;
@@ -4048,8 +3990,6 @@ int AcceptanceCertificate552BuyerTitleInfo::ByteSize() const {
           this->createdthingacceptdate());
     }
 
-  }
-  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     // optional string CreatedThingInfo = 9;
     if (has_createdthinginfo()) {
       total_size += 1 +
@@ -4057,6 +3997,8 @@ int AcceptanceCertificate552BuyerTitleInfo::ByteSize() const {
           this->createdthinginfo());
     }
 
+  }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     // optional .Diadoc.Api.Proto.Invoicing.AdditionalInfoId AdditionalInfoId = 10;
     if (has_additionalinfoid()) {
       total_size += 1 +
@@ -4109,23 +4051,20 @@ void AcceptanceCertificate552BuyerTitleInfo::MergeFrom(const AcceptanceCertifica
     if (from.has_operationtype()) {
       set_operationtype(from.operationtype());
     }
-    if (from.has_documentname()) {
-      set_documentname(from.documentname());
+    if (from.has_operationcontent()) {
+      set_operationcontent(from.operationcontent());
     }
-    if (from.has_operationinfo()) {
-      set_operationinfo(from.operationinfo());
-    }
-    if (from.has_acceptdate()) {
-      set_acceptdate(from.acceptdate());
+    if (from.has_acceptancedate()) {
+      set_acceptancedate(from.acceptancedate());
     }
     if (from.has_createdthingacceptdate()) {
       set_createdthingacceptdate(from.createdthingacceptdate());
     }
-  }
-  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     if (from.has_createdthinginfo()) {
       set_createdthinginfo(from.createdthinginfo());
     }
+  }
+  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     if (from.has_additionalinfoid()) {
       mutable_additionalinfoid()->::Diadoc::Api::Proto::Invoicing::AdditionalInfoId::MergeFrom(from.additionalinfoid());
     }
@@ -4146,7 +4085,7 @@ void AcceptanceCertificate552BuyerTitleInfo::CopyFrom(const AcceptanceCertificat
 }
 
 bool AcceptanceCertificate552BuyerTitleInfo::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000032) != 0x00000032) return false;
+  if ((_has_bits_[0] & 0x00000012) != 0x00000012) return false;
 
   if (!::google::protobuf::internal::AllAreInitialized(this->signers())) return false;
   if (has_additionalinfoid()) {
@@ -4161,9 +4100,8 @@ void AcceptanceCertificate552BuyerTitleInfo::Swap(AcceptanceCertificate552BuyerT
     std::swap(documentcreator_, other->documentcreator_);
     std::swap(documentcreatorbase_, other->documentcreatorbase_);
     std::swap(operationtype_, other->operationtype_);
-    std::swap(documentname_, other->documentname_);
-    std::swap(operationinfo_, other->operationinfo_);
-    std::swap(acceptdate_, other->acceptdate_);
+    std::swap(operationcontent_, other->operationcontent_);
+    std::swap(acceptancedate_, other->acceptancedate_);
     std::swap(createdthingacceptdate_, other->createdthingacceptdate_);
     std::swap(createdthinginfo_, other->createdthinginfo_);
     std::swap(additionalinfoid_, other->additionalinfoid_);
