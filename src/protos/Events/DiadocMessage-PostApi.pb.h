@@ -64,7 +64,8 @@ class ReconciliationActAttachment;
 class ContractAttachment;
 class SupplementaryAgreementAttachment;
 class ServiceDetailsAttachment;
-class CustomDocumentAttachment;
+class DocumentAttachment;
+class MetadataItem;
 class MessagePatchToPost;
 class SignatureVerification;
 class ResolutionRequestAttachment;
@@ -521,17 +522,17 @@ class MessageToPost : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::XmlDocumentAttachment >*
       mutable_universaltransferdocumentsellertitles();
 
-  // repeated .Diadoc.Api.Proto.Events.CustomDocumentAttachment CustomDocumentAttachments = 34;
-  inline int customdocumentattachments_size() const;
-  inline void clear_customdocumentattachments();
-  static const int kCustomDocumentAttachmentsFieldNumber = 34;
-  inline const ::Diadoc::Api::Proto::Events::CustomDocumentAttachment& customdocumentattachments(int index) const;
-  inline ::Diadoc::Api::Proto::Events::CustomDocumentAttachment* mutable_customdocumentattachments(int index);
-  inline ::Diadoc::Api::Proto::Events::CustomDocumentAttachment* add_customdocumentattachments();
-  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::CustomDocumentAttachment >&
-      customdocumentattachments() const;
-  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::CustomDocumentAttachment >*
-      mutable_customdocumentattachments();
+  // repeated .Diadoc.Api.Proto.Events.DocumentAttachment DocumentAttachments = 34;
+  inline int documentattachments_size() const;
+  inline void clear_documentattachments();
+  static const int kDocumentAttachmentsFieldNumber = 34;
+  inline const ::Diadoc::Api::Proto::Events::DocumentAttachment& documentattachments(int index) const;
+  inline ::Diadoc::Api::Proto::Events::DocumentAttachment* mutable_documentattachments(int index);
+  inline ::Diadoc::Api::Proto::Events::DocumentAttachment* add_documentattachments();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::DocumentAttachment >&
+      documentattachments() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::DocumentAttachment >*
+      mutable_documentattachments();
 
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.MessageToPost)
  private:
@@ -595,7 +596,7 @@ class MessageToPost : public ::google::protobuf::Message {
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::EncryptedXmlDocumentAttachment > encryptedxmlacceptancecertificatesellertitles_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::SupplementaryAgreementAttachment > supplementaryagreements_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::XmlDocumentAttachment > universaltransferdocumentsellertitles_;
-  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::CustomDocumentAttachment > customdocumentattachments_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::DocumentAttachment > documentattachments_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -3925,14 +3926,14 @@ class ServiceDetailsAttachment : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class CustomDocumentAttachment : public ::google::protobuf::Message {
+class DocumentAttachment : public ::google::protobuf::Message {
  public:
-  CustomDocumentAttachment();
-  virtual ~CustomDocumentAttachment();
+  DocumentAttachment();
+  virtual ~DocumentAttachment();
 
-  CustomDocumentAttachment(const CustomDocumentAttachment& from);
+  DocumentAttachment(const DocumentAttachment& from);
 
-  inline CustomDocumentAttachment& operator=(const CustomDocumentAttachment& from) {
+  inline DocumentAttachment& operator=(const DocumentAttachment& from) {
     CopyFrom(from);
     return *this;
   }
@@ -3946,17 +3947,17 @@ class CustomDocumentAttachment : public ::google::protobuf::Message {
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const CustomDocumentAttachment& default_instance();
+  static const DocumentAttachment& default_instance();
 
-  void Swap(CustomDocumentAttachment* other);
+  void Swap(DocumentAttachment* other);
 
   // implements Message ----------------------------------------------
 
-  CustomDocumentAttachment* New() const;
+  DocumentAttachment* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CustomDocumentAttachment& from);
-  void MergeFrom(const CustomDocumentAttachment& from);
+  void CopyFrom(const DocumentAttachment& from);
+  void MergeFrom(const DocumentAttachment& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -3987,18 +3988,6 @@ class CustomDocumentAttachment : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Events::SignedContent* release_signedcontent();
   inline void set_allocated_signedcontent(::Diadoc::Api::Proto::Events::SignedContent* signedcontent);
 
-  // required string FileName = 2;
-  inline bool has_filename() const;
-  inline void clear_filename();
-  static const int kFileNameFieldNumber = 2;
-  inline const ::std::string& filename() const;
-  inline void set_filename(const ::std::string& value);
-  inline void set_filename(const char* value);
-  inline void set_filename(const char* value, size_t size);
-  inline ::std::string* mutable_filename();
-  inline ::std::string* release_filename();
-  inline void set_allocated_filename(::std::string* filename);
-
   // optional string Comment = 3;
   inline bool has_comment() const;
   inline void clear_comment();
@@ -4010,6 +3999,13 @@ class CustomDocumentAttachment : public ::google::protobuf::Message {
   inline ::std::string* mutable_comment();
   inline ::std::string* release_comment();
   inline void set_allocated_comment(::std::string* comment);
+
+  // optional bool NeedRecipientSignature = 4 [default = false];
+  inline bool has_needrecipientsignature() const;
+  inline void clear_needrecipientsignature();
+  static const int kNeedRecipientSignatureFieldNumber = 4;
+  inline bool needrecipientsignature() const;
+  inline void set_needrecipientsignature(bool value);
 
   // repeated .Diadoc.Api.Proto.DocumentId InitialDocumentIds = 5;
   inline int initialdocumentids_size() const;
@@ -4047,6 +4043,13 @@ class CustomDocumentAttachment : public ::google::protobuf::Message {
   inline ::std::string* release_customdocumentid();
   inline void set_allocated_customdocumentid(::std::string* customdocumentid);
 
+  // optional bool NeedReceipt = 10 [default = false];
+  inline bool has_needreceipt() const;
+  inline void clear_needreceipt();
+  static const int kNeedReceiptFieldNumber = 10;
+  inline bool needreceipt() const;
+  inline void set_needreceipt(bool value);
+
   // repeated .Diadoc.Api.Proto.CustomDataItem CustomData = 11;
   inline int customdata_size() const;
   inline void clear_customdata();
@@ -4059,49 +4062,214 @@ class CustomDocumentAttachment : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::CustomDataItem >*
       mutable_customdata();
 
-  // required string Type = 12;
-  inline bool has_type() const;
-  inline void clear_type();
-  static const int kTypeFieldNumber = 12;
-  inline const ::std::string& type() const;
-  inline void set_type(const ::std::string& value);
-  inline void set_type(const char* value);
-  inline void set_type(const char* value, size_t size);
-  inline ::std::string* mutable_type();
-  inline ::std::string* release_type();
-  inline void set_allocated_type(::std::string* type);
+  // required string TypeNamedId = 12;
+  inline bool has_typenamedid() const;
+  inline void clear_typenamedid();
+  static const int kTypeNamedIdFieldNumber = 12;
+  inline const ::std::string& typenamedid() const;
+  inline void set_typenamedid(const ::std::string& value);
+  inline void set_typenamedid(const char* value);
+  inline void set_typenamedid(const char* value, size_t size);
+  inline ::std::string* mutable_typenamedid();
+  inline ::std::string* release_typenamedid();
+  inline void set_allocated_typenamedid(::std::string* typenamedid);
 
-  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.CustomDocumentAttachment)
+  // optional string Function = 13;
+  inline bool has_function() const;
+  inline void clear_function();
+  static const int kFunctionFieldNumber = 13;
+  inline const ::std::string& function() const;
+  inline void set_function(const ::std::string& value);
+  inline void set_function(const char* value);
+  inline void set_function(const char* value, size_t size);
+  inline ::std::string* mutable_function();
+  inline ::std::string* release_function();
+  inline void set_allocated_function(::std::string* function);
+
+  // optional string Version = 14;
+  inline bool has_version() const;
+  inline void clear_version();
+  static const int kVersionFieldNumber = 14;
+  inline const ::std::string& version() const;
+  inline void set_version(const ::std::string& value);
+  inline void set_version(const char* value);
+  inline void set_version(const char* value, size_t size);
+  inline ::std::string* mutable_version();
+  inline ::std::string* release_version();
+  inline void set_allocated_version(::std::string* version);
+
+  // repeated .Diadoc.Api.Proto.Events.MetadataItem Metadata = 15;
+  inline int metadata_size() const;
+  inline void clear_metadata();
+  static const int kMetadataFieldNumber = 15;
+  inline const ::Diadoc::Api::Proto::Events::MetadataItem& metadata(int index) const;
+  inline ::Diadoc::Api::Proto::Events::MetadataItem* mutable_metadata(int index);
+  inline ::Diadoc::Api::Proto::Events::MetadataItem* add_metadata();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::MetadataItem >&
+      metadata() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::MetadataItem >*
+      mutable_metadata();
+
+  // optional int32 WorkflowId = 16;
+  inline bool has_workflowid() const;
+  inline void clear_workflowid();
+  static const int kWorkflowIdFieldNumber = 16;
+  inline ::google::protobuf::int32 workflowid() const;
+  inline void set_workflowid(::google::protobuf::int32 value);
+
+  // optional bool IsEncrypted = 17 [default = false];
+  inline bool has_isencrypted() const;
+  inline void clear_isencrypted();
+  static const int kIsEncryptedFieldNumber = 17;
+  inline bool isencrypted() const;
+  inline void set_isencrypted(bool value);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.DocumentAttachment)
  private:
   inline void set_has_signedcontent();
   inline void clear_has_signedcontent();
-  inline void set_has_filename();
-  inline void clear_has_filename();
   inline void set_has_comment();
   inline void clear_has_comment();
+  inline void set_has_needrecipientsignature();
+  inline void clear_has_needrecipientsignature();
   inline void set_has_customdocumentid();
   inline void clear_has_customdocumentid();
-  inline void set_has_type();
-  inline void clear_has_type();
+  inline void set_has_needreceipt();
+  inline void clear_has_needreceipt();
+  inline void set_has_typenamedid();
+  inline void clear_has_typenamedid();
+  inline void set_has_function();
+  inline void clear_has_function();
+  inline void set_has_version();
+  inline void clear_has_version();
+  inline void set_has_workflowid();
+  inline void clear_has_workflowid();
+  inline void set_has_isencrypted();
+  inline void clear_has_isencrypted();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::Diadoc::Api::Proto::Events::SignedContent* signedcontent_;
-  ::std::string* filename_;
   ::std::string* comment_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::DocumentId > initialdocumentids_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::DocumentId > subordinatedocumentids_;
   ::std::string* customdocumentid_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::CustomDataItem > customdata_;
-  ::std::string* type_;
+  ::std::string* typenamedid_;
+  bool needrecipientsignature_;
+  bool needreceipt_;
+  bool isencrypted_;
+  ::google::protobuf::int32 workflowid_;
+  ::std::string* function_;
+  ::std::string* version_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::MetadataItem > metadata_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
 
   void InitAsDefaultInstance();
-  static CustomDocumentAttachment* default_instance_;
+  static DocumentAttachment* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class MetadataItem : public ::google::protobuf::Message {
+ public:
+  MetadataItem();
+  virtual ~MetadataItem();
+
+  MetadataItem(const MetadataItem& from);
+
+  inline MetadataItem& operator=(const MetadataItem& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const MetadataItem& default_instance();
+
+  void Swap(MetadataItem* other);
+
+  // implements Message ----------------------------------------------
+
+  MetadataItem* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const MetadataItem& from);
+  void MergeFrom(const MetadataItem& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string Key = 1;
+  inline bool has_key() const;
+  inline void clear_key();
+  static const int kKeyFieldNumber = 1;
+  inline const ::std::string& key() const;
+  inline void set_key(const ::std::string& value);
+  inline void set_key(const char* value);
+  inline void set_key(const char* value, size_t size);
+  inline ::std::string* mutable_key();
+  inline ::std::string* release_key();
+  inline void set_allocated_key(::std::string* key);
+
+  // required string Value = 2;
+  inline bool has_value() const;
+  inline void clear_value();
+  static const int kValueFieldNumber = 2;
+  inline const ::std::string& value() const;
+  inline void set_value(const ::std::string& value);
+  inline void set_value(const char* value);
+  inline void set_value(const char* value, size_t size);
+  inline ::std::string* mutable_value();
+  inline ::std::string* release_value();
+  inline void set_allocated_value(::std::string* value);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.MetadataItem)
+ private:
+  inline void set_has_key();
+  inline void clear_has_key();
+  inline void set_has_value();
+  inline void clear_has_value();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* key_;
+  ::std::string* value_;
+  friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
+
+  void InitAsDefaultInstance();
+  static MetadataItem* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -8587,34 +8755,34 @@ MessageToPost::mutable_universaltransferdocumentsellertitles() {
   return &universaltransferdocumentsellertitles_;
 }
 
-// repeated .Diadoc.Api.Proto.Events.CustomDocumentAttachment CustomDocumentAttachments = 34;
-inline int MessageToPost::customdocumentattachments_size() const {
-  return customdocumentattachments_.size();
+// repeated .Diadoc.Api.Proto.Events.DocumentAttachment DocumentAttachments = 34;
+inline int MessageToPost::documentattachments_size() const {
+  return documentattachments_.size();
 }
-inline void MessageToPost::clear_customdocumentattachments() {
-  customdocumentattachments_.Clear();
+inline void MessageToPost::clear_documentattachments() {
+  documentattachments_.Clear();
 }
-inline const ::Diadoc::Api::Proto::Events::CustomDocumentAttachment& MessageToPost::customdocumentattachments(int index) const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.MessageToPost.CustomDocumentAttachments)
-  return customdocumentattachments_.Get(index);
+inline const ::Diadoc::Api::Proto::Events::DocumentAttachment& MessageToPost::documentattachments(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.MessageToPost.DocumentAttachments)
+  return documentattachments_.Get(index);
 }
-inline ::Diadoc::Api::Proto::Events::CustomDocumentAttachment* MessageToPost::mutable_customdocumentattachments(int index) {
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.MessageToPost.CustomDocumentAttachments)
-  return customdocumentattachments_.Mutable(index);
+inline ::Diadoc::Api::Proto::Events::DocumentAttachment* MessageToPost::mutable_documentattachments(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.MessageToPost.DocumentAttachments)
+  return documentattachments_.Mutable(index);
 }
-inline ::Diadoc::Api::Proto::Events::CustomDocumentAttachment* MessageToPost::add_customdocumentattachments() {
-  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.MessageToPost.CustomDocumentAttachments)
-  return customdocumentattachments_.Add();
+inline ::Diadoc::Api::Proto::Events::DocumentAttachment* MessageToPost::add_documentattachments() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.MessageToPost.DocumentAttachments)
+  return documentattachments_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::CustomDocumentAttachment >&
-MessageToPost::customdocumentattachments() const {
-  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.MessageToPost.CustomDocumentAttachments)
-  return customdocumentattachments_;
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::DocumentAttachment >&
+MessageToPost::documentattachments() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.MessageToPost.DocumentAttachments)
+  return documentattachments_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::CustomDocumentAttachment >*
-MessageToPost::mutable_customdocumentattachments() {
-  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.MessageToPost.CustomDocumentAttachments)
-  return &customdocumentattachments_;
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::DocumentAttachment >*
+MessageToPost::mutable_documentattachments() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.MessageToPost.DocumentAttachments)
+  return &documentattachments_;
 }
 
 // -------------------------------------------------------------------
@@ -17112,39 +17280,39 @@ ServiceDetailsAttachment::mutable_customdata() {
 
 // -------------------------------------------------------------------
 
-// CustomDocumentAttachment
+// DocumentAttachment
 
 // required .Diadoc.Api.Proto.Events.SignedContent SignedContent = 1;
-inline bool CustomDocumentAttachment::has_signedcontent() const {
+inline bool DocumentAttachment::has_signedcontent() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void CustomDocumentAttachment::set_has_signedcontent() {
+inline void DocumentAttachment::set_has_signedcontent() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void CustomDocumentAttachment::clear_has_signedcontent() {
+inline void DocumentAttachment::clear_has_signedcontent() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void CustomDocumentAttachment::clear_signedcontent() {
+inline void DocumentAttachment::clear_signedcontent() {
   if (signedcontent_ != NULL) signedcontent_->::Diadoc::Api::Proto::Events::SignedContent::Clear();
   clear_has_signedcontent();
 }
-inline const ::Diadoc::Api::Proto::Events::SignedContent& CustomDocumentAttachment::signedcontent() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.CustomDocumentAttachment.SignedContent)
+inline const ::Diadoc::Api::Proto::Events::SignedContent& DocumentAttachment::signedcontent() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.DocumentAttachment.SignedContent)
   return signedcontent_ != NULL ? *signedcontent_ : *default_instance_->signedcontent_;
 }
-inline ::Diadoc::Api::Proto::Events::SignedContent* CustomDocumentAttachment::mutable_signedcontent() {
+inline ::Diadoc::Api::Proto::Events::SignedContent* DocumentAttachment::mutable_signedcontent() {
   set_has_signedcontent();
   if (signedcontent_ == NULL) signedcontent_ = new ::Diadoc::Api::Proto::Events::SignedContent;
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.CustomDocumentAttachment.SignedContent)
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.DocumentAttachment.SignedContent)
   return signedcontent_;
 }
-inline ::Diadoc::Api::Proto::Events::SignedContent* CustomDocumentAttachment::release_signedcontent() {
+inline ::Diadoc::Api::Proto::Events::SignedContent* DocumentAttachment::release_signedcontent() {
   clear_has_signedcontent();
   ::Diadoc::Api::Proto::Events::SignedContent* temp = signedcontent_;
   signedcontent_ = NULL;
   return temp;
 }
-inline void CustomDocumentAttachment::set_allocated_signedcontent(::Diadoc::Api::Proto::Events::SignedContent* signedcontent) {
+inline void DocumentAttachment::set_allocated_signedcontent(::Diadoc::Api::Proto::Events::SignedContent* signedcontent) {
   delete signedcontent_;
   signedcontent_ = signedcontent;
   if (signedcontent) {
@@ -17152,138 +17320,62 @@ inline void CustomDocumentAttachment::set_allocated_signedcontent(::Diadoc::Api:
   } else {
     clear_has_signedcontent();
   }
-  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.CustomDocumentAttachment.SignedContent)
-}
-
-// required string FileName = 2;
-inline bool CustomDocumentAttachment::has_filename() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CustomDocumentAttachment::set_has_filename() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CustomDocumentAttachment::clear_has_filename() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CustomDocumentAttachment::clear_filename() {
-  if (filename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    filename_->clear();
-  }
-  clear_has_filename();
-}
-inline const ::std::string& CustomDocumentAttachment::filename() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.CustomDocumentAttachment.FileName)
-  return *filename_;
-}
-inline void CustomDocumentAttachment::set_filename(const ::std::string& value) {
-  set_has_filename();
-  if (filename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    filename_ = new ::std::string;
-  }
-  filename_->assign(value);
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.CustomDocumentAttachment.FileName)
-}
-inline void CustomDocumentAttachment::set_filename(const char* value) {
-  set_has_filename();
-  if (filename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    filename_ = new ::std::string;
-  }
-  filename_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.CustomDocumentAttachment.FileName)
-}
-inline void CustomDocumentAttachment::set_filename(const char* value, size_t size) {
-  set_has_filename();
-  if (filename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    filename_ = new ::std::string;
-  }
-  filename_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.CustomDocumentAttachment.FileName)
-}
-inline ::std::string* CustomDocumentAttachment::mutable_filename() {
-  set_has_filename();
-  if (filename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    filename_ = new ::std::string;
-  }
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.CustomDocumentAttachment.FileName)
-  return filename_;
-}
-inline ::std::string* CustomDocumentAttachment::release_filename() {
-  clear_has_filename();
-  if (filename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    return NULL;
-  } else {
-    ::std::string* temp = filename_;
-    filename_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    return temp;
-  }
-}
-inline void CustomDocumentAttachment::set_allocated_filename(::std::string* filename) {
-  if (filename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete filename_;
-  }
-  if (filename) {
-    set_has_filename();
-    filename_ = filename;
-  } else {
-    clear_has_filename();
-    filename_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.CustomDocumentAttachment.FileName)
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.DocumentAttachment.SignedContent)
 }
 
 // optional string Comment = 3;
-inline bool CustomDocumentAttachment::has_comment() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+inline bool DocumentAttachment::has_comment() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void CustomDocumentAttachment::set_has_comment() {
-  _has_bits_[0] |= 0x00000004u;
+inline void DocumentAttachment::set_has_comment() {
+  _has_bits_[0] |= 0x00000002u;
 }
-inline void CustomDocumentAttachment::clear_has_comment() {
-  _has_bits_[0] &= ~0x00000004u;
+inline void DocumentAttachment::clear_has_comment() {
+  _has_bits_[0] &= ~0x00000002u;
 }
-inline void CustomDocumentAttachment::clear_comment() {
+inline void DocumentAttachment::clear_comment() {
   if (comment_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     comment_->clear();
   }
   clear_has_comment();
 }
-inline const ::std::string& CustomDocumentAttachment::comment() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.CustomDocumentAttachment.Comment)
+inline const ::std::string& DocumentAttachment::comment() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.DocumentAttachment.Comment)
   return *comment_;
 }
-inline void CustomDocumentAttachment::set_comment(const ::std::string& value) {
+inline void DocumentAttachment::set_comment(const ::std::string& value) {
   set_has_comment();
   if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     comment_ = new ::std::string;
   }
   comment_->assign(value);
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.CustomDocumentAttachment.Comment)
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.DocumentAttachment.Comment)
 }
-inline void CustomDocumentAttachment::set_comment(const char* value) {
+inline void DocumentAttachment::set_comment(const char* value) {
   set_has_comment();
   if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     comment_ = new ::std::string;
   }
   comment_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.CustomDocumentAttachment.Comment)
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.DocumentAttachment.Comment)
 }
-inline void CustomDocumentAttachment::set_comment(const char* value, size_t size) {
+inline void DocumentAttachment::set_comment(const char* value, size_t size) {
   set_has_comment();
   if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     comment_ = new ::std::string;
   }
   comment_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.CustomDocumentAttachment.Comment)
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.DocumentAttachment.Comment)
 }
-inline ::std::string* CustomDocumentAttachment::mutable_comment() {
+inline ::std::string* DocumentAttachment::mutable_comment() {
   set_has_comment();
   if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     comment_ = new ::std::string;
   }
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.CustomDocumentAttachment.Comment)
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.DocumentAttachment.Comment)
   return comment_;
 }
-inline ::std::string* CustomDocumentAttachment::release_comment() {
+inline ::std::string* DocumentAttachment::release_comment() {
   clear_has_comment();
   if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     return NULL;
@@ -17293,7 +17385,7 @@ inline ::std::string* CustomDocumentAttachment::release_comment() {
     return temp;
   }
 }
-inline void CustomDocumentAttachment::set_allocated_comment(::std::string* comment) {
+inline void DocumentAttachment::set_allocated_comment(::std::string* comment) {
   if (comment_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete comment_;
   }
@@ -17304,122 +17396,146 @@ inline void CustomDocumentAttachment::set_allocated_comment(::std::string* comme
     clear_has_comment();
     comment_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.CustomDocumentAttachment.Comment)
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.DocumentAttachment.Comment)
+}
+
+// optional bool NeedRecipientSignature = 4 [default = false];
+inline bool DocumentAttachment::has_needrecipientsignature() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void DocumentAttachment::set_has_needrecipientsignature() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void DocumentAttachment::clear_has_needrecipientsignature() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void DocumentAttachment::clear_needrecipientsignature() {
+  needrecipientsignature_ = false;
+  clear_has_needrecipientsignature();
+}
+inline bool DocumentAttachment::needrecipientsignature() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.DocumentAttachment.NeedRecipientSignature)
+  return needrecipientsignature_;
+}
+inline void DocumentAttachment::set_needrecipientsignature(bool value) {
+  set_has_needrecipientsignature();
+  needrecipientsignature_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.DocumentAttachment.NeedRecipientSignature)
 }
 
 // repeated .Diadoc.Api.Proto.DocumentId InitialDocumentIds = 5;
-inline int CustomDocumentAttachment::initialdocumentids_size() const {
+inline int DocumentAttachment::initialdocumentids_size() const {
   return initialdocumentids_.size();
 }
-inline void CustomDocumentAttachment::clear_initialdocumentids() {
+inline void DocumentAttachment::clear_initialdocumentids() {
   initialdocumentids_.Clear();
 }
-inline const ::Diadoc::Api::Proto::DocumentId& CustomDocumentAttachment::initialdocumentids(int index) const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.CustomDocumentAttachment.InitialDocumentIds)
+inline const ::Diadoc::Api::Proto::DocumentId& DocumentAttachment::initialdocumentids(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.DocumentAttachment.InitialDocumentIds)
   return initialdocumentids_.Get(index);
 }
-inline ::Diadoc::Api::Proto::DocumentId* CustomDocumentAttachment::mutable_initialdocumentids(int index) {
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.CustomDocumentAttachment.InitialDocumentIds)
+inline ::Diadoc::Api::Proto::DocumentId* DocumentAttachment::mutable_initialdocumentids(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.DocumentAttachment.InitialDocumentIds)
   return initialdocumentids_.Mutable(index);
 }
-inline ::Diadoc::Api::Proto::DocumentId* CustomDocumentAttachment::add_initialdocumentids() {
-  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.CustomDocumentAttachment.InitialDocumentIds)
+inline ::Diadoc::Api::Proto::DocumentId* DocumentAttachment::add_initialdocumentids() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.DocumentAttachment.InitialDocumentIds)
   return initialdocumentids_.Add();
 }
 inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::DocumentId >&
-CustomDocumentAttachment::initialdocumentids() const {
-  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.CustomDocumentAttachment.InitialDocumentIds)
+DocumentAttachment::initialdocumentids() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.DocumentAttachment.InitialDocumentIds)
   return initialdocumentids_;
 }
 inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::DocumentId >*
-CustomDocumentAttachment::mutable_initialdocumentids() {
-  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.CustomDocumentAttachment.InitialDocumentIds)
+DocumentAttachment::mutable_initialdocumentids() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.DocumentAttachment.InitialDocumentIds)
   return &initialdocumentids_;
 }
 
 // repeated .Diadoc.Api.Proto.DocumentId SubordinateDocumentIds = 6;
-inline int CustomDocumentAttachment::subordinatedocumentids_size() const {
+inline int DocumentAttachment::subordinatedocumentids_size() const {
   return subordinatedocumentids_.size();
 }
-inline void CustomDocumentAttachment::clear_subordinatedocumentids() {
+inline void DocumentAttachment::clear_subordinatedocumentids() {
   subordinatedocumentids_.Clear();
 }
-inline const ::Diadoc::Api::Proto::DocumentId& CustomDocumentAttachment::subordinatedocumentids(int index) const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.CustomDocumentAttachment.SubordinateDocumentIds)
+inline const ::Diadoc::Api::Proto::DocumentId& DocumentAttachment::subordinatedocumentids(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.DocumentAttachment.SubordinateDocumentIds)
   return subordinatedocumentids_.Get(index);
 }
-inline ::Diadoc::Api::Proto::DocumentId* CustomDocumentAttachment::mutable_subordinatedocumentids(int index) {
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.CustomDocumentAttachment.SubordinateDocumentIds)
+inline ::Diadoc::Api::Proto::DocumentId* DocumentAttachment::mutable_subordinatedocumentids(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.DocumentAttachment.SubordinateDocumentIds)
   return subordinatedocumentids_.Mutable(index);
 }
-inline ::Diadoc::Api::Proto::DocumentId* CustomDocumentAttachment::add_subordinatedocumentids() {
-  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.CustomDocumentAttachment.SubordinateDocumentIds)
+inline ::Diadoc::Api::Proto::DocumentId* DocumentAttachment::add_subordinatedocumentids() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.DocumentAttachment.SubordinateDocumentIds)
   return subordinatedocumentids_.Add();
 }
 inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::DocumentId >&
-CustomDocumentAttachment::subordinatedocumentids() const {
-  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.CustomDocumentAttachment.SubordinateDocumentIds)
+DocumentAttachment::subordinatedocumentids() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.DocumentAttachment.SubordinateDocumentIds)
   return subordinatedocumentids_;
 }
 inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::DocumentId >*
-CustomDocumentAttachment::mutable_subordinatedocumentids() {
-  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.CustomDocumentAttachment.SubordinateDocumentIds)
+DocumentAttachment::mutable_subordinatedocumentids() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.DocumentAttachment.SubordinateDocumentIds)
   return &subordinatedocumentids_;
 }
 
 // optional string CustomDocumentId = 9;
-inline bool CustomDocumentAttachment::has_customdocumentid() const {
+inline bool DocumentAttachment::has_customdocumentid() const {
   return (_has_bits_[0] & 0x00000020u) != 0;
 }
-inline void CustomDocumentAttachment::set_has_customdocumentid() {
+inline void DocumentAttachment::set_has_customdocumentid() {
   _has_bits_[0] |= 0x00000020u;
 }
-inline void CustomDocumentAttachment::clear_has_customdocumentid() {
+inline void DocumentAttachment::clear_has_customdocumentid() {
   _has_bits_[0] &= ~0x00000020u;
 }
-inline void CustomDocumentAttachment::clear_customdocumentid() {
+inline void DocumentAttachment::clear_customdocumentid() {
   if (customdocumentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     customdocumentid_->clear();
   }
   clear_has_customdocumentid();
 }
-inline const ::std::string& CustomDocumentAttachment::customdocumentid() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.CustomDocumentAttachment.CustomDocumentId)
+inline const ::std::string& DocumentAttachment::customdocumentid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.DocumentAttachment.CustomDocumentId)
   return *customdocumentid_;
 }
-inline void CustomDocumentAttachment::set_customdocumentid(const ::std::string& value) {
+inline void DocumentAttachment::set_customdocumentid(const ::std::string& value) {
   set_has_customdocumentid();
   if (customdocumentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     customdocumentid_ = new ::std::string;
   }
   customdocumentid_->assign(value);
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.CustomDocumentAttachment.CustomDocumentId)
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.DocumentAttachment.CustomDocumentId)
 }
-inline void CustomDocumentAttachment::set_customdocumentid(const char* value) {
+inline void DocumentAttachment::set_customdocumentid(const char* value) {
   set_has_customdocumentid();
   if (customdocumentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     customdocumentid_ = new ::std::string;
   }
   customdocumentid_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.CustomDocumentAttachment.CustomDocumentId)
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.DocumentAttachment.CustomDocumentId)
 }
-inline void CustomDocumentAttachment::set_customdocumentid(const char* value, size_t size) {
+inline void DocumentAttachment::set_customdocumentid(const char* value, size_t size) {
   set_has_customdocumentid();
   if (customdocumentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     customdocumentid_ = new ::std::string;
   }
   customdocumentid_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.CustomDocumentAttachment.CustomDocumentId)
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.DocumentAttachment.CustomDocumentId)
 }
-inline ::std::string* CustomDocumentAttachment::mutable_customdocumentid() {
+inline ::std::string* DocumentAttachment::mutable_customdocumentid() {
   set_has_customdocumentid();
   if (customdocumentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     customdocumentid_ = new ::std::string;
   }
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.CustomDocumentAttachment.CustomDocumentId)
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.DocumentAttachment.CustomDocumentId)
   return customdocumentid_;
 }
-inline ::std::string* CustomDocumentAttachment::release_customdocumentid() {
+inline ::std::string* DocumentAttachment::release_customdocumentid() {
   clear_has_customdocumentid();
   if (customdocumentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     return NULL;
@@ -17429,7 +17545,7 @@ inline ::std::string* CustomDocumentAttachment::release_customdocumentid() {
     return temp;
   }
 }
-inline void CustomDocumentAttachment::set_allocated_customdocumentid(::std::string* customdocumentid) {
+inline void DocumentAttachment::set_allocated_customdocumentid(::std::string* customdocumentid) {
   if (customdocumentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete customdocumentid_;
   }
@@ -17440,113 +17556,523 @@ inline void CustomDocumentAttachment::set_allocated_customdocumentid(::std::stri
     clear_has_customdocumentid();
     customdocumentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.CustomDocumentAttachment.CustomDocumentId)
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.DocumentAttachment.CustomDocumentId)
+}
+
+// optional bool NeedReceipt = 10 [default = false];
+inline bool DocumentAttachment::has_needreceipt() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void DocumentAttachment::set_has_needreceipt() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void DocumentAttachment::clear_has_needreceipt() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void DocumentAttachment::clear_needreceipt() {
+  needreceipt_ = false;
+  clear_has_needreceipt();
+}
+inline bool DocumentAttachment::needreceipt() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.DocumentAttachment.NeedReceipt)
+  return needreceipt_;
+}
+inline void DocumentAttachment::set_needreceipt(bool value) {
+  set_has_needreceipt();
+  needreceipt_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.DocumentAttachment.NeedReceipt)
 }
 
 // repeated .Diadoc.Api.Proto.CustomDataItem CustomData = 11;
-inline int CustomDocumentAttachment::customdata_size() const {
+inline int DocumentAttachment::customdata_size() const {
   return customdata_.size();
 }
-inline void CustomDocumentAttachment::clear_customdata() {
+inline void DocumentAttachment::clear_customdata() {
   customdata_.Clear();
 }
-inline const ::Diadoc::Api::Proto::CustomDataItem& CustomDocumentAttachment::customdata(int index) const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.CustomDocumentAttachment.CustomData)
+inline const ::Diadoc::Api::Proto::CustomDataItem& DocumentAttachment::customdata(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.DocumentAttachment.CustomData)
   return customdata_.Get(index);
 }
-inline ::Diadoc::Api::Proto::CustomDataItem* CustomDocumentAttachment::mutable_customdata(int index) {
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.CustomDocumentAttachment.CustomData)
+inline ::Diadoc::Api::Proto::CustomDataItem* DocumentAttachment::mutable_customdata(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.DocumentAttachment.CustomData)
   return customdata_.Mutable(index);
 }
-inline ::Diadoc::Api::Proto::CustomDataItem* CustomDocumentAttachment::add_customdata() {
-  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.CustomDocumentAttachment.CustomData)
+inline ::Diadoc::Api::Proto::CustomDataItem* DocumentAttachment::add_customdata() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.DocumentAttachment.CustomData)
   return customdata_.Add();
 }
 inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::CustomDataItem >&
-CustomDocumentAttachment::customdata() const {
-  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.CustomDocumentAttachment.CustomData)
+DocumentAttachment::customdata() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.DocumentAttachment.CustomData)
   return customdata_;
 }
 inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::CustomDataItem >*
-CustomDocumentAttachment::mutable_customdata() {
-  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.CustomDocumentAttachment.CustomData)
+DocumentAttachment::mutable_customdata() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.DocumentAttachment.CustomData)
   return &customdata_;
 }
 
-// required string Type = 12;
-inline bool CustomDocumentAttachment::has_type() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
+// required string TypeNamedId = 12;
+inline bool DocumentAttachment::has_typenamedid() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
 }
-inline void CustomDocumentAttachment::set_has_type() {
-  _has_bits_[0] |= 0x00000080u;
+inline void DocumentAttachment::set_has_typenamedid() {
+  _has_bits_[0] |= 0x00000100u;
 }
-inline void CustomDocumentAttachment::clear_has_type() {
-  _has_bits_[0] &= ~0x00000080u;
+inline void DocumentAttachment::clear_has_typenamedid() {
+  _has_bits_[0] &= ~0x00000100u;
 }
-inline void CustomDocumentAttachment::clear_type() {
-  if (type_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    type_->clear();
+inline void DocumentAttachment::clear_typenamedid() {
+  if (typenamedid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    typenamedid_->clear();
   }
-  clear_has_type();
+  clear_has_typenamedid();
 }
-inline const ::std::string& CustomDocumentAttachment::type() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.CustomDocumentAttachment.Type)
-  return *type_;
+inline const ::std::string& DocumentAttachment::typenamedid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.DocumentAttachment.TypeNamedId)
+  return *typenamedid_;
 }
-inline void CustomDocumentAttachment::set_type(const ::std::string& value) {
-  set_has_type();
-  if (type_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    type_ = new ::std::string;
+inline void DocumentAttachment::set_typenamedid(const ::std::string& value) {
+  set_has_typenamedid();
+  if (typenamedid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    typenamedid_ = new ::std::string;
   }
-  type_->assign(value);
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.CustomDocumentAttachment.Type)
+  typenamedid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.DocumentAttachment.TypeNamedId)
 }
-inline void CustomDocumentAttachment::set_type(const char* value) {
-  set_has_type();
-  if (type_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    type_ = new ::std::string;
+inline void DocumentAttachment::set_typenamedid(const char* value) {
+  set_has_typenamedid();
+  if (typenamedid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    typenamedid_ = new ::std::string;
   }
-  type_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.CustomDocumentAttachment.Type)
+  typenamedid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.DocumentAttachment.TypeNamedId)
 }
-inline void CustomDocumentAttachment::set_type(const char* value, size_t size) {
-  set_has_type();
-  if (type_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    type_ = new ::std::string;
+inline void DocumentAttachment::set_typenamedid(const char* value, size_t size) {
+  set_has_typenamedid();
+  if (typenamedid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    typenamedid_ = new ::std::string;
   }
-  type_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.CustomDocumentAttachment.Type)
+  typenamedid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.DocumentAttachment.TypeNamedId)
 }
-inline ::std::string* CustomDocumentAttachment::mutable_type() {
-  set_has_type();
-  if (type_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    type_ = new ::std::string;
+inline ::std::string* DocumentAttachment::mutable_typenamedid() {
+  set_has_typenamedid();
+  if (typenamedid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    typenamedid_ = new ::std::string;
   }
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.CustomDocumentAttachment.Type)
-  return type_;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.DocumentAttachment.TypeNamedId)
+  return typenamedid_;
 }
-inline ::std::string* CustomDocumentAttachment::release_type() {
-  clear_has_type();
-  if (type_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+inline ::std::string* DocumentAttachment::release_typenamedid() {
+  clear_has_typenamedid();
+  if (typenamedid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     return NULL;
   } else {
-    ::std::string* temp = type_;
-    type_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    ::std::string* temp = typenamedid_;
+    typenamedid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     return temp;
   }
 }
-inline void CustomDocumentAttachment::set_allocated_type(::std::string* type) {
-  if (type_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete type_;
+inline void DocumentAttachment::set_allocated_typenamedid(::std::string* typenamedid) {
+  if (typenamedid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete typenamedid_;
   }
-  if (type) {
-    set_has_type();
-    type_ = type;
+  if (typenamedid) {
+    set_has_typenamedid();
+    typenamedid_ = typenamedid;
   } else {
-    clear_has_type();
-    type_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_typenamedid();
+    typenamedid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.CustomDocumentAttachment.Type)
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.DocumentAttachment.TypeNamedId)
+}
+
+// optional string Function = 13;
+inline bool DocumentAttachment::has_function() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+inline void DocumentAttachment::set_has_function() {
+  _has_bits_[0] |= 0x00000200u;
+}
+inline void DocumentAttachment::clear_has_function() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+inline void DocumentAttachment::clear_function() {
+  if (function_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    function_->clear();
+  }
+  clear_has_function();
+}
+inline const ::std::string& DocumentAttachment::function() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.DocumentAttachment.Function)
+  return *function_;
+}
+inline void DocumentAttachment::set_function(const ::std::string& value) {
+  set_has_function();
+  if (function_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    function_ = new ::std::string;
+  }
+  function_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.DocumentAttachment.Function)
+}
+inline void DocumentAttachment::set_function(const char* value) {
+  set_has_function();
+  if (function_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    function_ = new ::std::string;
+  }
+  function_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.DocumentAttachment.Function)
+}
+inline void DocumentAttachment::set_function(const char* value, size_t size) {
+  set_has_function();
+  if (function_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    function_ = new ::std::string;
+  }
+  function_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.DocumentAttachment.Function)
+}
+inline ::std::string* DocumentAttachment::mutable_function() {
+  set_has_function();
+  if (function_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    function_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.DocumentAttachment.Function)
+  return function_;
+}
+inline ::std::string* DocumentAttachment::release_function() {
+  clear_has_function();
+  if (function_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = function_;
+    function_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void DocumentAttachment::set_allocated_function(::std::string* function) {
+  if (function_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete function_;
+  }
+  if (function) {
+    set_has_function();
+    function_ = function;
+  } else {
+    clear_has_function();
+    function_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.DocumentAttachment.Function)
+}
+
+// optional string Version = 14;
+inline bool DocumentAttachment::has_version() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+inline void DocumentAttachment::set_has_version() {
+  _has_bits_[0] |= 0x00000400u;
+}
+inline void DocumentAttachment::clear_has_version() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+inline void DocumentAttachment::clear_version() {
+  if (version_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    version_->clear();
+  }
+  clear_has_version();
+}
+inline const ::std::string& DocumentAttachment::version() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.DocumentAttachment.Version)
+  return *version_;
+}
+inline void DocumentAttachment::set_version(const ::std::string& value) {
+  set_has_version();
+  if (version_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    version_ = new ::std::string;
+  }
+  version_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.DocumentAttachment.Version)
+}
+inline void DocumentAttachment::set_version(const char* value) {
+  set_has_version();
+  if (version_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    version_ = new ::std::string;
+  }
+  version_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.DocumentAttachment.Version)
+}
+inline void DocumentAttachment::set_version(const char* value, size_t size) {
+  set_has_version();
+  if (version_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    version_ = new ::std::string;
+  }
+  version_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.DocumentAttachment.Version)
+}
+inline ::std::string* DocumentAttachment::mutable_version() {
+  set_has_version();
+  if (version_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    version_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.DocumentAttachment.Version)
+  return version_;
+}
+inline ::std::string* DocumentAttachment::release_version() {
+  clear_has_version();
+  if (version_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = version_;
+    version_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void DocumentAttachment::set_allocated_version(::std::string* version) {
+  if (version_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete version_;
+  }
+  if (version) {
+    set_has_version();
+    version_ = version;
+  } else {
+    clear_has_version();
+    version_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.DocumentAttachment.Version)
+}
+
+// repeated .Diadoc.Api.Proto.Events.MetadataItem Metadata = 15;
+inline int DocumentAttachment::metadata_size() const {
+  return metadata_.size();
+}
+inline void DocumentAttachment::clear_metadata() {
+  metadata_.Clear();
+}
+inline const ::Diadoc::Api::Proto::Events::MetadataItem& DocumentAttachment::metadata(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.DocumentAttachment.Metadata)
+  return metadata_.Get(index);
+}
+inline ::Diadoc::Api::Proto::Events::MetadataItem* DocumentAttachment::mutable_metadata(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.DocumentAttachment.Metadata)
+  return metadata_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::Events::MetadataItem* DocumentAttachment::add_metadata() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.DocumentAttachment.Metadata)
+  return metadata_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::MetadataItem >&
+DocumentAttachment::metadata() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.DocumentAttachment.Metadata)
+  return metadata_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::MetadataItem >*
+DocumentAttachment::mutable_metadata() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.DocumentAttachment.Metadata)
+  return &metadata_;
+}
+
+// optional int32 WorkflowId = 16;
+inline bool DocumentAttachment::has_workflowid() const {
+  return (_has_bits_[0] & 0x00001000u) != 0;
+}
+inline void DocumentAttachment::set_has_workflowid() {
+  _has_bits_[0] |= 0x00001000u;
+}
+inline void DocumentAttachment::clear_has_workflowid() {
+  _has_bits_[0] &= ~0x00001000u;
+}
+inline void DocumentAttachment::clear_workflowid() {
+  workflowid_ = 0;
+  clear_has_workflowid();
+}
+inline ::google::protobuf::int32 DocumentAttachment::workflowid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.DocumentAttachment.WorkflowId)
+  return workflowid_;
+}
+inline void DocumentAttachment::set_workflowid(::google::protobuf::int32 value) {
+  set_has_workflowid();
+  workflowid_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.DocumentAttachment.WorkflowId)
+}
+
+// optional bool IsEncrypted = 17 [default = false];
+inline bool DocumentAttachment::has_isencrypted() const {
+  return (_has_bits_[0] & 0x00002000u) != 0;
+}
+inline void DocumentAttachment::set_has_isencrypted() {
+  _has_bits_[0] |= 0x00002000u;
+}
+inline void DocumentAttachment::clear_has_isencrypted() {
+  _has_bits_[0] &= ~0x00002000u;
+}
+inline void DocumentAttachment::clear_isencrypted() {
+  isencrypted_ = false;
+  clear_has_isencrypted();
+}
+inline bool DocumentAttachment::isencrypted() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.DocumentAttachment.IsEncrypted)
+  return isencrypted_;
+}
+inline void DocumentAttachment::set_isencrypted(bool value) {
+  set_has_isencrypted();
+  isencrypted_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.DocumentAttachment.IsEncrypted)
+}
+
+// -------------------------------------------------------------------
+
+// MetadataItem
+
+// required string Key = 1;
+inline bool MetadataItem::has_key() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void MetadataItem::set_has_key() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void MetadataItem::clear_has_key() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void MetadataItem::clear_key() {
+  if (key_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    key_->clear();
+  }
+  clear_has_key();
+}
+inline const ::std::string& MetadataItem::key() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.MetadataItem.Key)
+  return *key_;
+}
+inline void MetadataItem::set_key(const ::std::string& value) {
+  set_has_key();
+  if (key_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    key_ = new ::std::string;
+  }
+  key_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.MetadataItem.Key)
+}
+inline void MetadataItem::set_key(const char* value) {
+  set_has_key();
+  if (key_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    key_ = new ::std::string;
+  }
+  key_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.MetadataItem.Key)
+}
+inline void MetadataItem::set_key(const char* value, size_t size) {
+  set_has_key();
+  if (key_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    key_ = new ::std::string;
+  }
+  key_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.MetadataItem.Key)
+}
+inline ::std::string* MetadataItem::mutable_key() {
+  set_has_key();
+  if (key_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    key_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.MetadataItem.Key)
+  return key_;
+}
+inline ::std::string* MetadataItem::release_key() {
+  clear_has_key();
+  if (key_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = key_;
+    key_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void MetadataItem::set_allocated_key(::std::string* key) {
+  if (key_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete key_;
+  }
+  if (key) {
+    set_has_key();
+    key_ = key;
+  } else {
+    clear_has_key();
+    key_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.MetadataItem.Key)
+}
+
+// required string Value = 2;
+inline bool MetadataItem::has_value() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void MetadataItem::set_has_value() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void MetadataItem::clear_has_value() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void MetadataItem::clear_value() {
+  if (value_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    value_->clear();
+  }
+  clear_has_value();
+}
+inline const ::std::string& MetadataItem::value() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.MetadataItem.Value)
+  return *value_;
+}
+inline void MetadataItem::set_value(const ::std::string& value) {
+  set_has_value();
+  if (value_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    value_ = new ::std::string;
+  }
+  value_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.MetadataItem.Value)
+}
+inline void MetadataItem::set_value(const char* value) {
+  set_has_value();
+  if (value_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    value_ = new ::std::string;
+  }
+  value_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.MetadataItem.Value)
+}
+inline void MetadataItem::set_value(const char* value, size_t size) {
+  set_has_value();
+  if (value_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    value_ = new ::std::string;
+  }
+  value_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.MetadataItem.Value)
+}
+inline ::std::string* MetadataItem::mutable_value() {
+  set_has_value();
+  if (value_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    value_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.MetadataItem.Value)
+  return value_;
+}
+inline ::std::string* MetadataItem::release_value() {
+  clear_has_value();
+  if (value_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = value_;
+    value_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void MetadataItem::set_allocated_value(::std::string* value) {
+  if (value_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete value_;
+  }
+  if (value) {
+    set_has_value();
+    value_ = value;
+  } else {
+    clear_has_value();
+    value_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.MetadataItem.Value)
 }
 
 // -------------------------------------------------------------------

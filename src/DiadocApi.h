@@ -10,6 +10,7 @@
 #include "protos\Documents\DocumentList.pb.h"
 #include "protos\Documents\DocumentsMoveOperation.pb.h"
 #include "protos\Documents\DocumentProtocol.pb.h"
+#include "protos\Documents\Types\DocumentTypeDescription.pb.h"
 #include "protos\Docflow\DocflowApi.pb.h"
 #include "protos\Forwarding\ForwardingApi.pb.h"
 #include "protos\Invoicing\InvoiceCorrectionRequestInfo.pb.h"
@@ -264,6 +265,8 @@ public:
 	Diadoc::Api::Proto::AsyncMethodResult AutoSignReceipts(const std::wstring& boxId, const std::wstring& certificateThumbprint, const std::wstring& batchKey);
 	TaskResult<Diadoc::Api::Proto::AutosignReceiptsResult> WaitAutosignReceiptsResult(const std::wstring& taskId);
 	Diadoc::Api::Proto::Documents::DocumentList GetDocumentsByMessageId(const std::wstring& boxId, const std::wstring& messageId);
+	Diadoc::Api::Proto::Documents::Types::GetDocumentTypesResponse GetDocumentTypes(const std::wstring& boxId);
+	WebFile GetContent(const std::wstring& typeNamedId, const std::wstring& function, const std::wstring& version, int titleIndex);
 
 protected:
 	Bytes_t PerformHttpRequest(const std::wstring& queryString, const Bytes_t& requestBody, const std::wstring& method);

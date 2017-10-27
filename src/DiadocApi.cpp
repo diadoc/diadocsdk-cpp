@@ -11,11 +11,11 @@
 using namespace Diadoc::Api::Proto;
 using namespace Diadoc::Api::Proto::Recognition;
 using namespace Diadoc::Api::Proto::Documents;
+using namespace Diadoc::Api::Proto::Documents::Types;
 using namespace Diadoc::Api::Proto::Docflow;
 using namespace Diadoc::Api::Proto::Forwarding;
 using namespace Diadoc::Api::Proto::Events;
 using namespace Diadoc::Api::Proto::Invoicing;
-using namespace Diadoc::Api::Proto::KeyValueStorage;
 using namespace Diadoc::Api::Proto::KeyValueStorage;
 
 const std::wstring DiadocApi::GET(L"GET");
@@ -1169,10 +1169,10 @@ OrganizationList DiadocApi::GetMyOrganizations(bool autoRegister)
 	return FromProtoBytes<OrganizationList>(PerformHttpRequest(buf.str(), GET));
 }
 
-User DiadocApi::GetMyUser()
+Diadoc::Api::Proto::User DiadocApi::GetMyUser()
 {
 	WppTraceDebugOut("GetMyUser...");
-	return FromProtoBytes<User>(PerformHttpRequest(L"/GetMyUser", GET));
+	return FromProtoBytes<Diadoc::Api::Proto::User>(PerformHttpRequest(L"/GetMyUser", GET));
 }
 
 OrganizationUserPermissions DiadocApi::GetMyPermissions(const std::wstring& orgId)
@@ -1454,4 +1454,27 @@ DocumentList DiadocApi::GetDocumentsByMessageId(const std::wstring& boxId, const
 		+ L"&messageId=" + StringHelper::CanonicalizeUrl(messageId);
 	auto bytes = PerformHttpRequest(queryString, GET);
 	return FromProtoBytes<DocumentList>(bytes);
+}
+
+GetDocumentTypesResponse DiadocApi::GetDocumentTypes(const std::wstring& boxId)
+{
+	WppTraceDebugOut("GetDocumentTypes...");
+	std::wstringstream buf;
+	buf << L"/GetDocumentTypes?boxId=" << StringHelper::CanonicalizeUrl(boxId);
+	return FromProtoBytes<GetDocumentTypesResponse>(PerformHttpRequest(buf.str(), GET));
+}
+
+DiadocApi::WebFile DiadocApi::GetContent(const std::wstring& typeNamedId, const std::wstring& function, const std::wstring& version, int titleIndex)
+{
+	WppTraceDebugOut("GetContent...");
+	std::wstringstream buf;
+	buf << L"/GetContent?typeNamedId=" << StringHelper::CanonicalizeUrl(typeNamedId);
+	buf << L"&function=" << StringHelper::CanonicalizeUrl(function);
+	buf << L"&version=" << StringHelper::CanonicalizeUrl(version);
+	buf << L"&titleIndex=" << titleIndex;
+	auto connect = session_.Connect(api_url_.c_str(), api_port_);
+	auto request = connect.OpenRequest(GET.c_str(), buf.str().c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
+	Bytes_t requestBody;
+	SendRequest(request, requestBody);
+	return WebFile(request);
 }
