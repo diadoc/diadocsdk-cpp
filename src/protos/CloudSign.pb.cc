@@ -110,8 +110,8 @@ void protobuf_AssignDesc_CloudSign_2eproto() {
       sizeof(CloudSignConfirmResult));
   AutosignReceiptsResult_descriptor_ = file->message_type(4);
   static const int AutosignReceiptsResult_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AutosignReceiptsResult, nextbatchkey_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AutosignReceiptsResult, signedreceiptscount_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AutosignReceiptsResult, nextbatchkey_),
   };
   AutosignReceiptsResult_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -179,8 +179,8 @@ void protobuf_AddDesc_CloudSign_2eproto() {
     "\001(\t\" \n\017CloudSignResult\022\r\n\005Token\030\001 \001(\t\"J\n"
     "\026CloudSignConfirmResult\0220\n\nSignatures\030\001 "
     "\003(\0132\034.Diadoc.Api.Proto.Content_v2\"K\n\026Aut"
-    "osignReceiptsResult\022\024\n\014NextBatchKey\030\001 \002("
-    "\t\022\033\n\023SignedReceiptsCount\030\002 \002(\005", 390);
+    "osignReceiptsResult\022\033\n\023SignedReceiptsCou"
+    "nt\030\001 \002(\003\022\024\n\014NextBatchKey\030\002 \002(\t", 390);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "CloudSign.proto", &protobuf_RegisterTypes);
   CloudSignRequest::default_instance_ = new CloudSignRequest();
@@ -1181,8 +1181,8 @@ void CloudSignConfirmResult::Swap(CloudSignConfirmResult* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
-const int AutosignReceiptsResult::kNextBatchKeyFieldNumber;
 const int AutosignReceiptsResult::kSignedReceiptsCountFieldNumber;
+const int AutosignReceiptsResult::kNextBatchKeyFieldNumber;
 #endif  // !_MSC_VER
 
 AutosignReceiptsResult::AutosignReceiptsResult()
@@ -1204,8 +1204,8 @@ AutosignReceiptsResult::AutosignReceiptsResult(const AutosignReceiptsResult& fro
 void AutosignReceiptsResult::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
+  signedreceiptscount_ = GOOGLE_LONGLONG(0);
   nextbatchkey_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  signedreceiptscount_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -1245,12 +1245,12 @@ AutosignReceiptsResult* AutosignReceiptsResult::New() const {
 
 void AutosignReceiptsResult::Clear() {
   if (_has_bits_[0 / 32] & 3) {
+    signedreceiptscount_ = GOOGLE_LONGLONG(0);
     if (has_nextbatchkey()) {
       if (nextbatchkey_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         nextbatchkey_->clear();
       }
     }
-    signedreceiptscount_ = 0;
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -1266,30 +1266,30 @@ bool AutosignReceiptsResult::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string NextBatchKey = 1;
+      // required int64 SignedReceiptsCount = 1;
       case 1: {
-        if (tag == 10) {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &signedreceiptscount_)));
+          set_has_signedreceiptscount();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_NextBatchKey;
+        break;
+      }
+
+      // required string NextBatchKey = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_NextBatchKey:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_nextbatchkey()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->nextbatchkey().data(), this->nextbatchkey().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
             "nextbatchkey");
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(16)) goto parse_SignedReceiptsCount;
-        break;
-      }
-
-      // required int32 SignedReceiptsCount = 2;
-      case 2: {
-        if (tag == 16) {
-         parse_SignedReceiptsCount:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &signedreceiptscount_)));
-          set_has_signedreceiptscount();
         } else {
           goto handle_unusual;
         }
@@ -1322,19 +1322,19 @@ failure:
 void AutosignReceiptsResult::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.AutosignReceiptsResult)
-  // required string NextBatchKey = 1;
+  // required int64 SignedReceiptsCount = 1;
+  if (has_signedreceiptscount()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->signedreceiptscount(), output);
+  }
+
+  // required string NextBatchKey = 2;
   if (has_nextbatchkey()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->nextbatchkey().data(), this->nextbatchkey().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
       "nextbatchkey");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->nextbatchkey(), output);
-  }
-
-  // required int32 SignedReceiptsCount = 2;
-  if (has_signedreceiptscount()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->signedreceiptscount(), output);
+      2, this->nextbatchkey(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -1347,7 +1347,12 @@ void AutosignReceiptsResult::SerializeWithCachedSizes(
 ::google::protobuf::uint8* AutosignReceiptsResult::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.AutosignReceiptsResult)
-  // required string NextBatchKey = 1;
+  // required int64 SignedReceiptsCount = 1;
+  if (has_signedreceiptscount()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->signedreceiptscount(), target);
+  }
+
+  // required string NextBatchKey = 2;
   if (has_nextbatchkey()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->nextbatchkey().data(), this->nextbatchkey().length(),
@@ -1355,12 +1360,7 @@ void AutosignReceiptsResult::SerializeWithCachedSizes(
       "nextbatchkey");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->nextbatchkey(), target);
-  }
-
-  // required int32 SignedReceiptsCount = 2;
-  if (has_signedreceiptscount()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->signedreceiptscount(), target);
+        2, this->nextbatchkey(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -1375,18 +1375,18 @@ int AutosignReceiptsResult::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required string NextBatchKey = 1;
+    // required int64 SignedReceiptsCount = 1;
+    if (has_signedreceiptscount()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int64Size(
+          this->signedreceiptscount());
+    }
+
+    // required string NextBatchKey = 2;
     if (has_nextbatchkey()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->nextbatchkey());
-    }
-
-    // required int32 SignedReceiptsCount = 2;
-    if (has_signedreceiptscount()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->signedreceiptscount());
     }
 
   }
@@ -1416,11 +1416,11 @@ void AutosignReceiptsResult::MergeFrom(const ::google::protobuf::Message& from) 
 void AutosignReceiptsResult::MergeFrom(const AutosignReceiptsResult& from) {
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_nextbatchkey()) {
-      set_nextbatchkey(from.nextbatchkey());
-    }
     if (from.has_signedreceiptscount()) {
       set_signedreceiptscount(from.signedreceiptscount());
+    }
+    if (from.has_nextbatchkey()) {
+      set_nextbatchkey(from.nextbatchkey());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -1446,8 +1446,8 @@ bool AutosignReceiptsResult::IsInitialized() const {
 
 void AutosignReceiptsResult::Swap(AutosignReceiptsResult* other) {
   if (other != this) {
-    std::swap(nextbatchkey_, other->nextbatchkey_);
     std::swap(signedreceiptscount_, other->signedreceiptscount_);
+    std::swap(nextbatchkey_, other->nextbatchkey_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
