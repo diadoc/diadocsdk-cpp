@@ -445,6 +445,13 @@ class Organization : public ::google::protobuf::Message {
   inline ::std::string* release_certificateofregistryinfo();
   inline void set_allocated_certificateofregistryinfo(::std::string* certificateofregistryinfo);
 
+  // optional bool IsForeign = 25;
+  inline bool has_isforeign() const;
+  inline void clear_isforeign();
+  static const int kIsForeignFieldNumber = 25;
+  inline bool isforeign() const;
+  inline void set_isforeign(bool value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Organization)
  private:
   inline void set_has_orgid();
@@ -489,6 +496,8 @@ class Organization : public ::google::protobuf::Message {
   inline void clear_has_liquidationdate();
   inline void set_has_certificateofregistryinfo();
   inline void clear_has_certificateofregistryinfo();
+  inline void set_has_isforeign();
+  inline void clear_has_isforeign();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -510,9 +519,10 @@ class Organization : public ::google::protobuf::Message {
   bool isactive_;
   bool istest_;
   bool isbranch_;
+  ::google::protobuf::int32 invitationcount_;
   bool isroaming_;
   bool isemployee_;
-  ::google::protobuf::int32 invitationcount_;
+  bool isforeign_;
   ::google::protobuf::int32 searchcount_;
   ::std::string* liquidationdate_;
   ::std::string* certificateofregistryinfo_;
@@ -2014,6 +2024,30 @@ inline void Organization::set_allocated_certificateofregistryinfo(::std::string*
     certificateofregistryinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Organization.CertificateOfRegistryInfo)
+}
+
+// optional bool IsForeign = 25;
+inline bool Organization::has_isforeign() const {
+  return (_has_bits_[0] & 0x00800000u) != 0;
+}
+inline void Organization::set_has_isforeign() {
+  _has_bits_[0] |= 0x00800000u;
+}
+inline void Organization::clear_has_isforeign() {
+  _has_bits_[0] &= ~0x00800000u;
+}
+inline void Organization::clear_isforeign() {
+  isforeign_ = false;
+  clear_has_isforeign();
+}
+inline bool Organization::isforeign() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Organization.IsForeign)
+  return isforeign_;
+}
+inline void Organization::set_isforeign(bool value) {
+  set_has_isforeign();
+  isforeign_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Organization.IsForeign)
 }
 
 // -------------------------------------------------------------------
