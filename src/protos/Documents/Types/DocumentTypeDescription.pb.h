@@ -402,18 +402,6 @@ class DocumentFunction : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentVersion >*
       mutable_versions();
 
-  // repeated .Diadoc.Api.Proto.Documents.Types.DocumentWorkflow Workflows = 3;
-  inline int workflows_size() const;
-  inline void clear_workflows();
-  static const int kWorkflowsFieldNumber = 3;
-  inline const ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow& workflows(int index) const;
-  inline ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow* mutable_workflows(int index);
-  inline ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow* add_workflows();
-  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow >&
-      workflows() const;
-  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow >*
-      mutable_workflows();
-
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.Types.DocumentFunction)
  private:
   inline void set_has_name();
@@ -425,7 +413,6 @@ class DocumentFunction : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::std::string* name_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentVersion > versions_;
-  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow > workflows_;
   friend void  protobuf_AddDesc_Documents_2fTypes_2fDocumentTypeDescription_2eproto();
   friend void protobuf_AssignDesc_Documents_2fTypes_2fDocumentTypeDescription_2eproto();
   friend void protobuf_ShutdownFile_Documents_2fTypes_2fDocumentTypeDescription_2eproto();
@@ -533,6 +520,18 @@ class DocumentVersion : public ::google::protobuf::Message {
   inline bool isactual() const;
   inline void set_isactual(bool value);
 
+  // repeated .Diadoc.Api.Proto.Documents.Types.DocumentWorkflow Workflows = 6;
+  inline int workflows_size() const;
+  inline void clear_workflows();
+  static const int kWorkflowsFieldNumber = 6;
+  inline const ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow& workflows(int index) const;
+  inline ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow* mutable_workflows(int index);
+  inline ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow* add_workflows();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow >&
+      workflows() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow >*
+      mutable_workflows();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.Types.DocumentVersion)
  private:
   inline void set_has_version();
@@ -550,6 +549,7 @@ class DocumentVersion : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::std::string* version_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentTitle > titles_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow > workflows_;
   bool supportscontentpatching_;
   bool supportsencrypting_;
   bool isactual_;
@@ -1468,36 +1468,6 @@ DocumentFunction::mutable_versions() {
   return &versions_;
 }
 
-// repeated .Diadoc.Api.Proto.Documents.Types.DocumentWorkflow Workflows = 3;
-inline int DocumentFunction::workflows_size() const {
-  return workflows_.size();
-}
-inline void DocumentFunction::clear_workflows() {
-  workflows_.Clear();
-}
-inline const ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow& DocumentFunction::workflows(int index) const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Types.DocumentFunction.Workflows)
-  return workflows_.Get(index);
-}
-inline ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow* DocumentFunction::mutable_workflows(int index) {
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.Types.DocumentFunction.Workflows)
-  return workflows_.Mutable(index);
-}
-inline ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow* DocumentFunction::add_workflows() {
-  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Documents.Types.DocumentFunction.Workflows)
-  return workflows_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow >&
-DocumentFunction::workflows() const {
-  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Documents.Types.DocumentFunction.Workflows)
-  return workflows_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow >*
-DocumentFunction::mutable_workflows() {
-  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Documents.Types.DocumentFunction.Workflows)
-  return &workflows_;
-}
-
 // -------------------------------------------------------------------
 
 // DocumentVersion
@@ -1678,6 +1648,36 @@ inline void DocumentVersion::set_isactual(bool value) {
   set_has_isactual();
   isactual_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Types.DocumentVersion.IsActual)
+}
+
+// repeated .Diadoc.Api.Proto.Documents.Types.DocumentWorkflow Workflows = 6;
+inline int DocumentVersion::workflows_size() const {
+  return workflows_.size();
+}
+inline void DocumentVersion::clear_workflows() {
+  workflows_.Clear();
+}
+inline const ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow& DocumentVersion::workflows(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Types.DocumentVersion.Workflows)
+  return workflows_.Get(index);
+}
+inline ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow* DocumentVersion::mutable_workflows(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.Types.DocumentVersion.Workflows)
+  return workflows_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow* DocumentVersion::add_workflows() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Documents.Types.DocumentVersion.Workflows)
+  return workflows_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow >&
+DocumentVersion::workflows() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Documents.Types.DocumentVersion.Workflows)
+  return workflows_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow >*
+DocumentVersion::mutable_workflows() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Documents.Types.DocumentVersion.Workflows)
+  return &workflows_;
 }
 
 // -------------------------------------------------------------------
