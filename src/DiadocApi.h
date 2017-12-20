@@ -266,6 +266,8 @@ public:
 	TaskResult<Diadoc::Api::Proto::AutosignReceiptsResult> WaitAutosignReceiptsResult(const std::wstring& taskId);
 	Diadoc::Api::Proto::Documents::DocumentList GetDocumentsByMessageId(const std::wstring& boxId, const std::wstring& messageId);
 	Diadoc::Api::Proto::Documents::Types::GetDocumentTypesResponse GetDocumentTypes(const std::wstring& boxId);
+	Diadoc::Api::Proto::Documents::Types::DetectDocumentTypesResponse DetectDocumentTypes(const std::wstring& boxId, const std::wstring& nameOnShelf);
+	Diadoc::Api::Proto::Documents::Types::DetectDocumentTypesResponse DetectDocumentTypes(const std::wstring& boxId, const Bytes_t& content);
 	WebFile GetContent(const std::wstring& typeNamedId, const std::wstring& function, const std::wstring& version, int titleIndex);
 
 protected:
