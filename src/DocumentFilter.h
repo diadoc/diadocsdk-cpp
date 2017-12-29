@@ -16,4 +16,5 @@ struct DocumentFilter
 	bool ExcludeSubdepartments;
 	std::wstring SortDirection;
 	std::string AfterIndexKey;
+	int* Count;
 };

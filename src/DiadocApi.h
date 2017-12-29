@@ -76,7 +76,7 @@ public:
 
 	Diadoc::Api::Proto::Invoicing::InvoiceCorrectionRequestInfo GetInvoiceCorrectionRequestInfo(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& entityId);
 	Diadoc::Api::Proto::Documents::DocumentList GetDocuments(const std::wstring& boxId, const std::wstring& filterCategory, const std::wstring& counteragentBoxId, __int64* timestampFrom,
-		__int64* timestampTo, const std::wstring& fromDocumentDate, const std::wstring& toDocumentDate, const std::wstring& departmentId, bool excludeSubdepartments, const std::string& afterIndexKey);
+		__int64* timestampTo, const std::wstring& fromDocumentDate, const std::wstring& toDocumentDate, const std::wstring& departmentId, bool excludeSubdepartments, const std::string& afterIndexKey, int* count = NULL);
 	Diadoc::Api::Proto::Documents::DocumentList GetDocuments(const DocumentFilter& documentFilter);
 	Diadoc::Api::Proto::Documents::Document GetDocument(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& entityId);
 	

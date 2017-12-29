@@ -633,7 +633,7 @@ TaskResult<DocumentProtocol> DiadocApi::GenerateDocumentProtocol(const std::wstr
 }
 
 DocumentList DiadocApi::GetDocuments(const std::wstring& boxId, const std::wstring& filterCategory, const std::wstring& counteragentBoxId, __int64* timestampFrom, __int64* timestampTo,
-	const std::wstring& fromDocumentDate, const std::wstring& toDocumentDate, const std::wstring& departmentId, bool excludeSubdepartments, const std::string& afterIndexKey)
+	const std::wstring& fromDocumentDate, const std::wstring& toDocumentDate, const std::wstring& departmentId, bool excludeSubdepartments, const std::string& afterIndexKey, int* count)
 {
 	DocumentFilter documentFilter(boxId, filterCategory);
 	if (!counteragentBoxId.empty())
@@ -649,6 +649,7 @@ DocumentList DiadocApi::GetDocuments(const std::wstring& boxId, const std::wstri
 	documentFilter.ExcludeSubdepartments = excludeSubdepartments;
 	if (!afterIndexKey.empty())
 		documentFilter.AfterIndexKey = afterIndexKey;
+	documentFilter.Count = count;
 	return GetDocuments(documentFilter);
 }
 
@@ -675,6 +676,8 @@ DocumentList DiadocApi::GetDocuments(const DocumentFilter& documentFilter)
 		buf << L"&sortDirection=" << StringHelper::CanonicalizeUrl(documentFilter.SortDirection);
 	if (!documentFilter.AfterIndexKey.empty())
 		buf << L"&afterIndexKey=" << StringHelper::CanonicalizeUrl(StringHelper::Utf8ToUtf16(documentFilter.AfterIndexKey));
+	if (documentFilter.Count != NULL)
+		buf << L"&count=" << *documentFilter.Count;
 	return FromProtoBytes<DocumentList>(PerformHttpRequest(buf.str(), GET));
 }
 
