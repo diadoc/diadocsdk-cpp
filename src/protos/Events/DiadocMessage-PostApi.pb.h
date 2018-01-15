@@ -83,6 +83,8 @@ class SignedContent;
 class DraftToSend;
 class PrepareDocumentsToSignRequest;
 class DraftDocumentToPatch;
+class ContentToPatch;
+class UnsignedContent;
 class DocumentToPatch;
 class DocumentPatchedContent;
 class PrepareDocumentsToSignResponse;
@@ -6346,6 +6348,18 @@ class PrepareDocumentsToSignRequest : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::DocumentToPatch >*
       mutable_documents();
 
+  // repeated .Diadoc.Api.Proto.Events.ContentToPatch Contents = 4;
+  inline int contents_size() const;
+  inline void clear_contents();
+  static const int kContentsFieldNumber = 4;
+  inline const ::Diadoc::Api::Proto::Events::ContentToPatch& contents(int index) const;
+  inline ::Diadoc::Api::Proto::Events::ContentToPatch* mutable_contents(int index);
+  inline ::Diadoc::Api::Proto::Events::ContentToPatch* add_contents();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ContentToPatch >&
+      contents() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ContentToPatch >*
+      mutable_contents();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.PrepareDocumentsToSignRequest)
  private:
   inline void set_has_boxid();
@@ -6358,6 +6372,7 @@ class PrepareDocumentsToSignRequest : public ::google::protobuf::Message {
   ::std::string* boxid_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::DraftDocumentToPatch > draftdocuments_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::DocumentToPatch > documents_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ContentToPatch > contents_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -6485,6 +6500,271 @@ class DraftDocumentToPatch : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static DraftDocumentToPatch* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class ContentToPatch : public ::google::protobuf::Message {
+ public:
+  ContentToPatch();
+  virtual ~ContentToPatch();
+
+  ContentToPatch(const ContentToPatch& from);
+
+  inline ContentToPatch& operator=(const ContentToPatch& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ContentToPatch& default_instance();
+
+  void Swap(ContentToPatch* other);
+
+  // implements Message ----------------------------------------------
+
+  ContentToPatch* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const ContentToPatch& from);
+  void MergeFrom(const ContentToPatch& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string TypeNamedId = 1;
+  inline bool has_typenamedid() const;
+  inline void clear_typenamedid();
+  static const int kTypeNamedIdFieldNumber = 1;
+  inline const ::std::string& typenamedid() const;
+  inline void set_typenamedid(const ::std::string& value);
+  inline void set_typenamedid(const char* value);
+  inline void set_typenamedid(const char* value, size_t size);
+  inline ::std::string* mutable_typenamedid();
+  inline ::std::string* release_typenamedid();
+  inline void set_allocated_typenamedid(::std::string* typenamedid);
+
+  // required string Function = 2;
+  inline bool has_function() const;
+  inline void clear_function();
+  static const int kFunctionFieldNumber = 2;
+  inline const ::std::string& function() const;
+  inline void set_function(const ::std::string& value);
+  inline void set_function(const char* value);
+  inline void set_function(const char* value, size_t size);
+  inline ::std::string* mutable_function();
+  inline ::std::string* release_function();
+  inline void set_allocated_function(::std::string* function);
+
+  // required string Version = 3;
+  inline bool has_version() const;
+  inline void clear_version();
+  static const int kVersionFieldNumber = 3;
+  inline const ::std::string& version() const;
+  inline void set_version(const ::std::string& value);
+  inline void set_version(const char* value);
+  inline void set_version(const char* value, size_t size);
+  inline ::std::string* mutable_version();
+  inline ::std::string* release_version();
+  inline void set_allocated_version(::std::string* version);
+
+  // required .Diadoc.Api.Proto.Events.UnsignedContent Content = 4;
+  inline bool has_content() const;
+  inline void clear_content();
+  static const int kContentFieldNumber = 4;
+  inline const ::Diadoc::Api::Proto::Events::UnsignedContent& content() const;
+  inline ::Diadoc::Api::Proto::Events::UnsignedContent* mutable_content();
+  inline ::Diadoc::Api::Proto::Events::UnsignedContent* release_content();
+  inline void set_allocated_content(::Diadoc::Api::Proto::Events::UnsignedContent* content);
+
+  // optional string ToBoxId = 5;
+  inline bool has_toboxid() const;
+  inline void clear_toboxid();
+  static const int kToBoxIdFieldNumber = 5;
+  inline const ::std::string& toboxid() const;
+  inline void set_toboxid(const ::std::string& value);
+  inline void set_toboxid(const char* value);
+  inline void set_toboxid(const char* value, size_t size);
+  inline ::std::string* mutable_toboxid();
+  inline ::std::string* release_toboxid();
+  inline void set_allocated_toboxid(::std::string* toboxid);
+
+  // optional .Diadoc.Api.Proto.Invoicing.Signer Signer = 6;
+  inline bool has_signer() const;
+  inline void clear_signer();
+  static const int kSignerFieldNumber = 6;
+  inline const ::Diadoc::Api::Proto::Invoicing::Signer& signer() const;
+  inline ::Diadoc::Api::Proto::Invoicing::Signer* mutable_signer();
+  inline ::Diadoc::Api::Proto::Invoicing::Signer* release_signer();
+  inline void set_allocated_signer(::Diadoc::Api::Proto::Invoicing::Signer* signer);
+
+  // repeated .Diadoc.Api.Proto.Invoicing.Signers.ExtendedSigner ExtendedSigner = 7;
+  inline int extendedsigner_size() const;
+  inline void clear_extendedsigner();
+  static const int kExtendedSignerFieldNumber = 7;
+  inline const ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner& extendedsigner(int index) const;
+  inline ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner* mutable_extendedsigner(int index);
+  inline ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner* add_extendedsigner();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner >&
+      extendedsigner() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner >*
+      mutable_extendedsigner();
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.ContentToPatch)
+ private:
+  inline void set_has_typenamedid();
+  inline void clear_has_typenamedid();
+  inline void set_has_function();
+  inline void clear_has_function();
+  inline void set_has_version();
+  inline void clear_has_version();
+  inline void set_has_content();
+  inline void clear_has_content();
+  inline void set_has_toboxid();
+  inline void clear_has_toboxid();
+  inline void set_has_signer();
+  inline void clear_has_signer();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* typenamedid_;
+  ::std::string* function_;
+  ::std::string* version_;
+  ::Diadoc::Api::Proto::Events::UnsignedContent* content_;
+  ::std::string* toboxid_;
+  ::Diadoc::Api::Proto::Invoicing::Signer* signer_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner > extendedsigner_;
+  friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
+
+  void InitAsDefaultInstance();
+  static ContentToPatch* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class UnsignedContent : public ::google::protobuf::Message {
+ public:
+  UnsignedContent();
+  virtual ~UnsignedContent();
+
+  UnsignedContent(const UnsignedContent& from);
+
+  inline UnsignedContent& operator=(const UnsignedContent& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const UnsignedContent& default_instance();
+
+  void Swap(UnsignedContent* other);
+
+  // implements Message ----------------------------------------------
+
+  UnsignedContent* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const UnsignedContent& from);
+  void MergeFrom(const UnsignedContent& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional bytes Content = 1;
+  inline bool has_content() const;
+  inline void clear_content();
+  static const int kContentFieldNumber = 1;
+  inline const ::std::string& content() const;
+  inline void set_content(const ::std::string& value);
+  inline void set_content(const char* value);
+  inline void set_content(const void* value, size_t size);
+  inline ::std::string* mutable_content();
+  inline ::std::string* release_content();
+  inline void set_allocated_content(::std::string* content);
+
+  // optional string NameOnShelf = 2;
+  inline bool has_nameonshelf() const;
+  inline void clear_nameonshelf();
+  static const int kNameOnShelfFieldNumber = 2;
+  inline const ::std::string& nameonshelf() const;
+  inline void set_nameonshelf(const ::std::string& value);
+  inline void set_nameonshelf(const char* value);
+  inline void set_nameonshelf(const char* value, size_t size);
+  inline ::std::string* mutable_nameonshelf();
+  inline ::std::string* release_nameonshelf();
+  inline void set_allocated_nameonshelf(::std::string* nameonshelf);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.UnsignedContent)
+ private:
+  inline void set_has_content();
+  inline void clear_has_content();
+  inline void set_has_nameonshelf();
+  inline void clear_has_nameonshelf();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* content_;
+  ::std::string* nameonshelf_;
+  friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
+
+  void InitAsDefaultInstance();
+  static UnsignedContent* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -22099,6 +22379,36 @@ PrepareDocumentsToSignRequest::mutable_documents() {
   return &documents_;
 }
 
+// repeated .Diadoc.Api.Proto.Events.ContentToPatch Contents = 4;
+inline int PrepareDocumentsToSignRequest::contents_size() const {
+  return contents_.size();
+}
+inline void PrepareDocumentsToSignRequest::clear_contents() {
+  contents_.Clear();
+}
+inline const ::Diadoc::Api::Proto::Events::ContentToPatch& PrepareDocumentsToSignRequest::contents(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.PrepareDocumentsToSignRequest.Contents)
+  return contents_.Get(index);
+}
+inline ::Diadoc::Api::Proto::Events::ContentToPatch* PrepareDocumentsToSignRequest::mutable_contents(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.PrepareDocumentsToSignRequest.Contents)
+  return contents_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::Events::ContentToPatch* PrepareDocumentsToSignRequest::add_contents() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.PrepareDocumentsToSignRequest.Contents)
+  return contents_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ContentToPatch >&
+PrepareDocumentsToSignRequest::contents() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.PrepareDocumentsToSignRequest.Contents)
+  return contents_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ContentToPatch >*
+PrepareDocumentsToSignRequest::mutable_contents() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.PrepareDocumentsToSignRequest.Contents)
+  return &contents_;
+}
+
 // -------------------------------------------------------------------
 
 // DraftDocumentToPatch
@@ -22289,6 +22599,582 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::Si
 DraftDocumentToPatch::mutable_extendedsigner() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.DraftDocumentToPatch.ExtendedSigner)
   return &extendedsigner_;
+}
+
+// -------------------------------------------------------------------
+
+// ContentToPatch
+
+// required string TypeNamedId = 1;
+inline bool ContentToPatch::has_typenamedid() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void ContentToPatch::set_has_typenamedid() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void ContentToPatch::clear_has_typenamedid() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void ContentToPatch::clear_typenamedid() {
+  if (typenamedid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    typenamedid_->clear();
+  }
+  clear_has_typenamedid();
+}
+inline const ::std::string& ContentToPatch::typenamedid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ContentToPatch.TypeNamedId)
+  return *typenamedid_;
+}
+inline void ContentToPatch::set_typenamedid(const ::std::string& value) {
+  set_has_typenamedid();
+  if (typenamedid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    typenamedid_ = new ::std::string;
+  }
+  typenamedid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ContentToPatch.TypeNamedId)
+}
+inline void ContentToPatch::set_typenamedid(const char* value) {
+  set_has_typenamedid();
+  if (typenamedid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    typenamedid_ = new ::std::string;
+  }
+  typenamedid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ContentToPatch.TypeNamedId)
+}
+inline void ContentToPatch::set_typenamedid(const char* value, size_t size) {
+  set_has_typenamedid();
+  if (typenamedid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    typenamedid_ = new ::std::string;
+  }
+  typenamedid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ContentToPatch.TypeNamedId)
+}
+inline ::std::string* ContentToPatch::mutable_typenamedid() {
+  set_has_typenamedid();
+  if (typenamedid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    typenamedid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ContentToPatch.TypeNamedId)
+  return typenamedid_;
+}
+inline ::std::string* ContentToPatch::release_typenamedid() {
+  clear_has_typenamedid();
+  if (typenamedid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = typenamedid_;
+    typenamedid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void ContentToPatch::set_allocated_typenamedid(::std::string* typenamedid) {
+  if (typenamedid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete typenamedid_;
+  }
+  if (typenamedid) {
+    set_has_typenamedid();
+    typenamedid_ = typenamedid;
+  } else {
+    clear_has_typenamedid();
+    typenamedid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ContentToPatch.TypeNamedId)
+}
+
+// required string Function = 2;
+inline bool ContentToPatch::has_function() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void ContentToPatch::set_has_function() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void ContentToPatch::clear_has_function() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void ContentToPatch::clear_function() {
+  if (function_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    function_->clear();
+  }
+  clear_has_function();
+}
+inline const ::std::string& ContentToPatch::function() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ContentToPatch.Function)
+  return *function_;
+}
+inline void ContentToPatch::set_function(const ::std::string& value) {
+  set_has_function();
+  if (function_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    function_ = new ::std::string;
+  }
+  function_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ContentToPatch.Function)
+}
+inline void ContentToPatch::set_function(const char* value) {
+  set_has_function();
+  if (function_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    function_ = new ::std::string;
+  }
+  function_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ContentToPatch.Function)
+}
+inline void ContentToPatch::set_function(const char* value, size_t size) {
+  set_has_function();
+  if (function_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    function_ = new ::std::string;
+  }
+  function_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ContentToPatch.Function)
+}
+inline ::std::string* ContentToPatch::mutable_function() {
+  set_has_function();
+  if (function_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    function_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ContentToPatch.Function)
+  return function_;
+}
+inline ::std::string* ContentToPatch::release_function() {
+  clear_has_function();
+  if (function_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = function_;
+    function_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void ContentToPatch::set_allocated_function(::std::string* function) {
+  if (function_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete function_;
+  }
+  if (function) {
+    set_has_function();
+    function_ = function;
+  } else {
+    clear_has_function();
+    function_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ContentToPatch.Function)
+}
+
+// required string Version = 3;
+inline bool ContentToPatch::has_version() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void ContentToPatch::set_has_version() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void ContentToPatch::clear_has_version() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void ContentToPatch::clear_version() {
+  if (version_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    version_->clear();
+  }
+  clear_has_version();
+}
+inline const ::std::string& ContentToPatch::version() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ContentToPatch.Version)
+  return *version_;
+}
+inline void ContentToPatch::set_version(const ::std::string& value) {
+  set_has_version();
+  if (version_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    version_ = new ::std::string;
+  }
+  version_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ContentToPatch.Version)
+}
+inline void ContentToPatch::set_version(const char* value) {
+  set_has_version();
+  if (version_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    version_ = new ::std::string;
+  }
+  version_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ContentToPatch.Version)
+}
+inline void ContentToPatch::set_version(const char* value, size_t size) {
+  set_has_version();
+  if (version_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    version_ = new ::std::string;
+  }
+  version_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ContentToPatch.Version)
+}
+inline ::std::string* ContentToPatch::mutable_version() {
+  set_has_version();
+  if (version_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    version_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ContentToPatch.Version)
+  return version_;
+}
+inline ::std::string* ContentToPatch::release_version() {
+  clear_has_version();
+  if (version_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = version_;
+    version_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void ContentToPatch::set_allocated_version(::std::string* version) {
+  if (version_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete version_;
+  }
+  if (version) {
+    set_has_version();
+    version_ = version;
+  } else {
+    clear_has_version();
+    version_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ContentToPatch.Version)
+}
+
+// required .Diadoc.Api.Proto.Events.UnsignedContent Content = 4;
+inline bool ContentToPatch::has_content() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void ContentToPatch::set_has_content() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void ContentToPatch::clear_has_content() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void ContentToPatch::clear_content() {
+  if (content_ != NULL) content_->::Diadoc::Api::Proto::Events::UnsignedContent::Clear();
+  clear_has_content();
+}
+inline const ::Diadoc::Api::Proto::Events::UnsignedContent& ContentToPatch::content() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ContentToPatch.Content)
+  return content_ != NULL ? *content_ : *default_instance_->content_;
+}
+inline ::Diadoc::Api::Proto::Events::UnsignedContent* ContentToPatch::mutable_content() {
+  set_has_content();
+  if (content_ == NULL) content_ = new ::Diadoc::Api::Proto::Events::UnsignedContent;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ContentToPatch.Content)
+  return content_;
+}
+inline ::Diadoc::Api::Proto::Events::UnsignedContent* ContentToPatch::release_content() {
+  clear_has_content();
+  ::Diadoc::Api::Proto::Events::UnsignedContent* temp = content_;
+  content_ = NULL;
+  return temp;
+}
+inline void ContentToPatch::set_allocated_content(::Diadoc::Api::Proto::Events::UnsignedContent* content) {
+  delete content_;
+  content_ = content;
+  if (content) {
+    set_has_content();
+  } else {
+    clear_has_content();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ContentToPatch.Content)
+}
+
+// optional string ToBoxId = 5;
+inline bool ContentToPatch::has_toboxid() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void ContentToPatch::set_has_toboxid() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void ContentToPatch::clear_has_toboxid() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void ContentToPatch::clear_toboxid() {
+  if (toboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    toboxid_->clear();
+  }
+  clear_has_toboxid();
+}
+inline const ::std::string& ContentToPatch::toboxid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ContentToPatch.ToBoxId)
+  return *toboxid_;
+}
+inline void ContentToPatch::set_toboxid(const ::std::string& value) {
+  set_has_toboxid();
+  if (toboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    toboxid_ = new ::std::string;
+  }
+  toboxid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ContentToPatch.ToBoxId)
+}
+inline void ContentToPatch::set_toboxid(const char* value) {
+  set_has_toboxid();
+  if (toboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    toboxid_ = new ::std::string;
+  }
+  toboxid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ContentToPatch.ToBoxId)
+}
+inline void ContentToPatch::set_toboxid(const char* value, size_t size) {
+  set_has_toboxid();
+  if (toboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    toboxid_ = new ::std::string;
+  }
+  toboxid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ContentToPatch.ToBoxId)
+}
+inline ::std::string* ContentToPatch::mutable_toboxid() {
+  set_has_toboxid();
+  if (toboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    toboxid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ContentToPatch.ToBoxId)
+  return toboxid_;
+}
+inline ::std::string* ContentToPatch::release_toboxid() {
+  clear_has_toboxid();
+  if (toboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = toboxid_;
+    toboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void ContentToPatch::set_allocated_toboxid(::std::string* toboxid) {
+  if (toboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete toboxid_;
+  }
+  if (toboxid) {
+    set_has_toboxid();
+    toboxid_ = toboxid;
+  } else {
+    clear_has_toboxid();
+    toboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ContentToPatch.ToBoxId)
+}
+
+// optional .Diadoc.Api.Proto.Invoicing.Signer Signer = 6;
+inline bool ContentToPatch::has_signer() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void ContentToPatch::set_has_signer() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void ContentToPatch::clear_has_signer() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void ContentToPatch::clear_signer() {
+  if (signer_ != NULL) signer_->::Diadoc::Api::Proto::Invoicing::Signer::Clear();
+  clear_has_signer();
+}
+inline const ::Diadoc::Api::Proto::Invoicing::Signer& ContentToPatch::signer() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ContentToPatch.Signer)
+  return signer_ != NULL ? *signer_ : *default_instance_->signer_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::Signer* ContentToPatch::mutable_signer() {
+  set_has_signer();
+  if (signer_ == NULL) signer_ = new ::Diadoc::Api::Proto::Invoicing::Signer;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ContentToPatch.Signer)
+  return signer_;
+}
+inline ::Diadoc::Api::Proto::Invoicing::Signer* ContentToPatch::release_signer() {
+  clear_has_signer();
+  ::Diadoc::Api::Proto::Invoicing::Signer* temp = signer_;
+  signer_ = NULL;
+  return temp;
+}
+inline void ContentToPatch::set_allocated_signer(::Diadoc::Api::Proto::Invoicing::Signer* signer) {
+  delete signer_;
+  signer_ = signer;
+  if (signer) {
+    set_has_signer();
+  } else {
+    clear_has_signer();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ContentToPatch.Signer)
+}
+
+// repeated .Diadoc.Api.Proto.Invoicing.Signers.ExtendedSigner ExtendedSigner = 7;
+inline int ContentToPatch::extendedsigner_size() const {
+  return extendedsigner_.size();
+}
+inline void ContentToPatch::clear_extendedsigner() {
+  extendedsigner_.Clear();
+}
+inline const ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner& ContentToPatch::extendedsigner(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ContentToPatch.ExtendedSigner)
+  return extendedsigner_.Get(index);
+}
+inline ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner* ContentToPatch::mutable_extendedsigner(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ContentToPatch.ExtendedSigner)
+  return extendedsigner_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner* ContentToPatch::add_extendedsigner() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.ContentToPatch.ExtendedSigner)
+  return extendedsigner_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner >&
+ContentToPatch::extendedsigner() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.ContentToPatch.ExtendedSigner)
+  return extendedsigner_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Invoicing::Signers::ExtendedSigner >*
+ContentToPatch::mutable_extendedsigner() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.ContentToPatch.ExtendedSigner)
+  return &extendedsigner_;
+}
+
+// -------------------------------------------------------------------
+
+// UnsignedContent
+
+// optional bytes Content = 1;
+inline bool UnsignedContent::has_content() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void UnsignedContent::set_has_content() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void UnsignedContent::clear_has_content() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void UnsignedContent::clear_content() {
+  if (content_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    content_->clear();
+  }
+  clear_has_content();
+}
+inline const ::std::string& UnsignedContent::content() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.UnsignedContent.Content)
+  return *content_;
+}
+inline void UnsignedContent::set_content(const ::std::string& value) {
+  set_has_content();
+  if (content_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    content_ = new ::std::string;
+  }
+  content_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.UnsignedContent.Content)
+}
+inline void UnsignedContent::set_content(const char* value) {
+  set_has_content();
+  if (content_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    content_ = new ::std::string;
+  }
+  content_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.UnsignedContent.Content)
+}
+inline void UnsignedContent::set_content(const void* value, size_t size) {
+  set_has_content();
+  if (content_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    content_ = new ::std::string;
+  }
+  content_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.UnsignedContent.Content)
+}
+inline ::std::string* UnsignedContent::mutable_content() {
+  set_has_content();
+  if (content_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    content_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.UnsignedContent.Content)
+  return content_;
+}
+inline ::std::string* UnsignedContent::release_content() {
+  clear_has_content();
+  if (content_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = content_;
+    content_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UnsignedContent::set_allocated_content(::std::string* content) {
+  if (content_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete content_;
+  }
+  if (content) {
+    set_has_content();
+    content_ = content;
+  } else {
+    clear_has_content();
+    content_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.UnsignedContent.Content)
+}
+
+// optional string NameOnShelf = 2;
+inline bool UnsignedContent::has_nameonshelf() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void UnsignedContent::set_has_nameonshelf() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void UnsignedContent::clear_has_nameonshelf() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void UnsignedContent::clear_nameonshelf() {
+  if (nameonshelf_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    nameonshelf_->clear();
+  }
+  clear_has_nameonshelf();
+}
+inline const ::std::string& UnsignedContent::nameonshelf() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.UnsignedContent.NameOnShelf)
+  return *nameonshelf_;
+}
+inline void UnsignedContent::set_nameonshelf(const ::std::string& value) {
+  set_has_nameonshelf();
+  if (nameonshelf_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    nameonshelf_ = new ::std::string;
+  }
+  nameonshelf_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.UnsignedContent.NameOnShelf)
+}
+inline void UnsignedContent::set_nameonshelf(const char* value) {
+  set_has_nameonshelf();
+  if (nameonshelf_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    nameonshelf_ = new ::std::string;
+  }
+  nameonshelf_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.UnsignedContent.NameOnShelf)
+}
+inline void UnsignedContent::set_nameonshelf(const char* value, size_t size) {
+  set_has_nameonshelf();
+  if (nameonshelf_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    nameonshelf_ = new ::std::string;
+  }
+  nameonshelf_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.UnsignedContent.NameOnShelf)
+}
+inline ::std::string* UnsignedContent::mutable_nameonshelf() {
+  set_has_nameonshelf();
+  if (nameonshelf_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    nameonshelf_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.UnsignedContent.NameOnShelf)
+  return nameonshelf_;
+}
+inline ::std::string* UnsignedContent::release_nameonshelf() {
+  clear_has_nameonshelf();
+  if (nameonshelf_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = nameonshelf_;
+    nameonshelf_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UnsignedContent::set_allocated_nameonshelf(::std::string* nameonshelf) {
+  if (nameonshelf_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete nameonshelf_;
+  }
+  if (nameonshelf) {
+    set_has_nameonshelf();
+    nameonshelf_ = nameonshelf;
+  } else {
+    clear_has_nameonshelf();
+    nameonshelf_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.UnsignedContent.NameOnShelf)
 }
 
 // -------------------------------------------------------------------
