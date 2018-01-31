@@ -4578,6 +4578,18 @@ class MessagePatchToPost : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionRouteRemoval >*
       mutable_resolutionrouteremovals();
 
+  // repeated .Diadoc.Api.Proto.Events.ReceiptAttachment RecipientTitles = 22;
+  inline int recipienttitles_size() const;
+  inline void clear_recipienttitles();
+  static const int kRecipientTitlesFieldNumber = 22;
+  inline const ::Diadoc::Api::Proto::Events::ReceiptAttachment& recipienttitles(int index) const;
+  inline ::Diadoc::Api::Proto::Events::ReceiptAttachment* mutable_recipienttitles(int index);
+  inline ::Diadoc::Api::Proto::Events::ReceiptAttachment* add_recipienttitles();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >&
+      recipienttitles() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >*
+      mutable_recipienttitles();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.MessagePatchToPost)
  private:
   inline void set_has_boxid();
@@ -4610,6 +4622,7 @@ class MessagePatchToPost : public ::google::protobuf::Message {
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::EditDocumentPacketCommand > editdocumentpacketcommands_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment > universaltransferdocumentbuyertitles_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionRouteRemoval > resolutionrouteremovals_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment > recipienttitles_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -18799,6 +18812,36 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::Resol
 MessagePatchToPost::mutable_resolutionrouteremovals() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.MessagePatchToPost.ResolutionRouteRemovals)
   return &resolutionrouteremovals_;
+}
+
+// repeated .Diadoc.Api.Proto.Events.ReceiptAttachment RecipientTitles = 22;
+inline int MessagePatchToPost::recipienttitles_size() const {
+  return recipienttitles_.size();
+}
+inline void MessagePatchToPost::clear_recipienttitles() {
+  recipienttitles_.Clear();
+}
+inline const ::Diadoc::Api::Proto::Events::ReceiptAttachment& MessagePatchToPost::recipienttitles(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.MessagePatchToPost.RecipientTitles)
+  return recipienttitles_.Get(index);
+}
+inline ::Diadoc::Api::Proto::Events::ReceiptAttachment* MessagePatchToPost::mutable_recipienttitles(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.MessagePatchToPost.RecipientTitles)
+  return recipienttitles_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::Events::ReceiptAttachment* MessagePatchToPost::add_recipienttitles() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.MessagePatchToPost.RecipientTitles)
+  return recipienttitles_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >&
+MessagePatchToPost::recipienttitles() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.MessagePatchToPost.RecipientTitles)
+  return recipienttitles_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >*
+MessagePatchToPost::mutable_recipienttitles() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.MessagePatchToPost.RecipientTitles)
+  return &recipienttitles_;
 }
 
 // -------------------------------------------------------------------
