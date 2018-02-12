@@ -74,7 +74,7 @@ Diadoc::Api::Proto::Invoicing::Signers::DocumentTitleType DiadocApi::CreateUtdDo
         : (forCorrection ? Signers::UcdSeller : Signers::UtdSeller);
 }
 
-DiadocApi::~DiadocApi() 
+DiadocApi::~DiadocApi()
 {
 }
 
@@ -225,14 +225,14 @@ std::string DiadocApi::PerformHttpRequestString(const std::wstring& queryString,
 
 DWORD ChooseAuthScheme(DWORD dwSupportedSchemes)
 {
-	//  It is the server's responsibility only to accept 
+	//  It is the server's responsibility only to accept
 	//  authentication schemes that provide a sufficient
 	//  level of security to protect the servers resources.
 	//
 	//  The client is also obligated only to use an authentication
 	//  scheme that adequately protects its username and password.
 	//
-	//  Thus, this sample code does not use Basic authentication  
+	//  Thus, this sample code does not use Basic authentication
 	//  because Basic authentication exposes the client's username
 	//  and password to anyone monitoring the connection.
 
@@ -282,9 +282,9 @@ void DiadocApi::SendRequest(HttpRequest& request, const Bytes_t& requestBody)
 	while (true)
 	{
 		//  If a proxy authentication challenge was responded to, reset
-		//  those credentials before each SendRequest, because the proxy  
-		//  may require re-authentication after responding to a 401 or  
-		//  to a redirect. If you don't, you can get into a 
+		//  those credentials before each SendRequest, because the proxy
+		//  may require re-authentication after responding to a 401 or
+		//  to a redirect. If you don't, you can get into a
 		//  407-401-407-401- loop.
 		if(dwProxyAuthScheme != 0)
 		{
@@ -488,6 +488,36 @@ MessagePatch DiadocApi::PostMessagePatch(const MessagePatchToPost& patch, const 
 	return FromProtoBytes<MessagePatch>(PerformHttpRequest(buf.str(), ToProtoBytes(patch), POST));
 }
 
+Template DiadocApi::PostTemplate(const TemplateToPost& templateToPost, const std::wstring& operationId)
+{
+	WppTraceDebugOut(L"PostTemplate...");
+	std::wstringstream buf;
+	buf << L"/PostTemplate";
+	if (!operationId.empty())
+		buf << L"?operationId=" << StringHelper::CanonicalizeUrl(operationId);
+	return FromProtoBytes<Template>(PerformHttpRequest(buf.str(), ToProtoBytes(templateToPost), POST));
+}
+
+Message DiadocApi::TransformTemplateToMessage(const TemplateTransformationToPost& templateTransformationToPost, const std::wstring& operationId)
+{
+	WppTraceDebugOut(L"TransformTemplateToMessage...");
+	std::wstringstream buf;
+	buf << L"/TransformTemplateToMessage";
+	if (!operationId.empty())
+		buf << L"?operationId=" << StringHelper::CanonicalizeUrl(operationId);
+	return FromProtoBytes<Message>(PerformHttpRequest(buf.str(), ToProtoBytes(templateTransformationToPost), POST));
+}
+
+Template DiadocApi::GetTemplate(const std::wstring& boxId, const std::wstring& templateId, const std::wstring& entityId)
+{
+	WppTraceDebugOut(L"GetTemplate...");
+	std::wstringstream buf;
+	buf	<<	L"/GetTemplate?boxId="	<<	StringHelper::CanonicalizeUrl(boxId) <<	L"&templateId="	<<	StringHelper::CanonicalizeUrl(templateId);
+	if	(!entityId.empty())
+		buf	<<	L"?entityId="	<<	StringHelper::CanonicalizeUrl(entityId);
+	return FromProtoBytes<Template>(PerformHttpRequest(buf.str(), GET));
+}
+
 PrepareDocumentsToSignResponse DiadocApi::PrepareDocumentsToSign(const PrepareDocumentsToSignRequest& request)
 {
 	WppTraceDebugOut("PrepareDocumentsToSign...");
@@ -538,7 +568,7 @@ Message DiadocApi::GetDiadocMessage(const std::wstring& boxId, const std::wstrin
 
 	if (withOriginalSignature) buf << L"&originalSignature";
 	buf << L"&injectEntityContent=" << (injectEntityContent ? L"True" : L"False");
-	
+
 	return FromProtoBytes<Message>(PerformHttpRequest(buf.str(), GET));
 }
 
@@ -1265,7 +1295,7 @@ bool DiadocApi::CanSendInvoice(const std::wstring& boxId, const Bytes_t& certByt
 {
 	WppTraceDebugOut("CanSendInvoice...");
 	std::wstringstream buf;
-	buf << L"/CanSendInvoice?boxId=" << StringHelper::CanonicalizeUrl(boxId);	
+	buf << L"/CanSendInvoice?boxId=" << StringHelper::CanonicalizeUrl(boxId);
 	try
 	{
 		PerformHttpRequest(buf.str(), certBytes, POST);
