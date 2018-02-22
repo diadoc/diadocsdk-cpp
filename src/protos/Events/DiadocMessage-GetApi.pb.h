@@ -48,6 +48,7 @@ void protobuf_ShutdownFile_Events_2fDiadocMessage_2dGetApi_2eproto();
 class BoxEventList;
 class BoxEvent;
 class Message;
+class Template;
 class MessagePatch;
 class Entity;
 class EntityPatch;
@@ -122,6 +123,7 @@ enum AttachmentType {
   MoveDocument = 65,
   ResolutionRouteAssignmentAttachment = 66,
   ResolutionRouteRemovalAttachment = 67,
+  Title = 68,
   Cancellation = 69
 };
 bool AttachmentType_IsValid(int value);
@@ -657,6 +659,198 @@ class Message : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static Message* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class Template : public ::google::protobuf::Message {
+ public:
+  Template();
+  virtual ~Template();
+
+  Template(const Template& from);
+
+  inline Template& operator=(const Template& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Template& default_instance();
+
+  void Swap(Template* other);
+
+  // implements Message ----------------------------------------------
+
+  Template* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const Template& from);
+  void MergeFrom(const Template& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string MessageId = 1;
+  inline bool has_messageid() const;
+  inline void clear_messageid();
+  static const int kMessageIdFieldNumber = 1;
+  inline const ::std::string& messageid() const;
+  inline void set_messageid(const ::std::string& value);
+  inline void set_messageid(const char* value);
+  inline void set_messageid(const char* value, size_t size);
+  inline ::std::string* mutable_messageid();
+  inline ::std::string* release_messageid();
+  inline void set_allocated_messageid(::std::string* messageid);
+
+  // required sfixed64 TimestampTicks = 2;
+  inline bool has_timestampticks() const;
+  inline void clear_timestampticks();
+  static const int kTimestampTicksFieldNumber = 2;
+  inline ::google::protobuf::int64 timestampticks() const;
+  inline void set_timestampticks(::google::protobuf::int64 value);
+
+  // required string FromBoxId = 3;
+  inline bool has_fromboxid() const;
+  inline void clear_fromboxid();
+  static const int kFromBoxIdFieldNumber = 3;
+  inline const ::std::string& fromboxid() const;
+  inline void set_fromboxid(const ::std::string& value);
+  inline void set_fromboxid(const char* value);
+  inline void set_fromboxid(const char* value, size_t size);
+  inline ::std::string* mutable_fromboxid();
+  inline ::std::string* release_fromboxid();
+  inline void set_allocated_fromboxid(::std::string* fromboxid);
+
+  // required string ToBoxId = 4;
+  inline bool has_toboxid() const;
+  inline void clear_toboxid();
+  static const int kToBoxIdFieldNumber = 4;
+  inline const ::std::string& toboxid() const;
+  inline void set_toboxid(const ::std::string& value);
+  inline void set_toboxid(const char* value);
+  inline void set_toboxid(const char* value, size_t size);
+  inline ::std::string* mutable_toboxid();
+  inline ::std::string* release_toboxid();
+  inline void set_allocated_toboxid(::std::string* toboxid);
+
+  // required string MessageFromBoxId = 5;
+  inline bool has_messagefromboxid() const;
+  inline void clear_messagefromboxid();
+  static const int kMessageFromBoxIdFieldNumber = 5;
+  inline const ::std::string& messagefromboxid() const;
+  inline void set_messagefromboxid(const ::std::string& value);
+  inline void set_messagefromboxid(const char* value);
+  inline void set_messagefromboxid(const char* value, size_t size);
+  inline ::std::string* mutable_messagefromboxid();
+  inline ::std::string* release_messagefromboxid();
+  inline void set_allocated_messagefromboxid(::std::string* messagefromboxid);
+
+  // required string MessageToBoxId = 6;
+  inline bool has_messagetoboxid() const;
+  inline void clear_messagetoboxid();
+  static const int kMessageToBoxIdFieldNumber = 6;
+  inline const ::std::string& messagetoboxid() const;
+  inline void set_messagetoboxid(const ::std::string& value);
+  inline void set_messagetoboxid(const char* value);
+  inline void set_messagetoboxid(const char* value, size_t size);
+  inline ::std::string* mutable_messagetoboxid();
+  inline ::std::string* release_messagetoboxid();
+  inline void set_allocated_messagetoboxid(::std::string* messagetoboxid);
+
+  // repeated .Diadoc.Api.Proto.Events.Entity Entities = 7;
+  inline int entities_size() const;
+  inline void clear_entities();
+  static const int kEntitiesFieldNumber = 7;
+  inline const ::Diadoc::Api::Proto::Events::Entity& entities(int index) const;
+  inline ::Diadoc::Api::Proto::Events::Entity* mutable_entities(int index);
+  inline ::Diadoc::Api::Proto::Events::Entity* add_entities();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::Entity >&
+      entities() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::Entity >*
+      mutable_entities();
+
+  // optional bool IsDeleted = 8 [default = false];
+  inline bool has_isdeleted() const;
+  inline void clear_isdeleted();
+  static const int kIsDeletedFieldNumber = 8;
+  inline bool isdeleted() const;
+  inline void set_isdeleted(bool value);
+
+  // optional string MessageToDepartmentId = 9;
+  inline bool has_messagetodepartmentid() const;
+  inline void clear_messagetodepartmentid();
+  static const int kMessageToDepartmentIdFieldNumber = 9;
+  inline const ::std::string& messagetodepartmentid() const;
+  inline void set_messagetodepartmentid(const ::std::string& value);
+  inline void set_messagetodepartmentid(const char* value);
+  inline void set_messagetodepartmentid(const char* value, size_t size);
+  inline ::std::string* mutable_messagetodepartmentid();
+  inline ::std::string* release_messagetodepartmentid();
+  inline void set_allocated_messagetodepartmentid(::std::string* messagetodepartmentid);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.Template)
+ private:
+  inline void set_has_messageid();
+  inline void clear_has_messageid();
+  inline void set_has_timestampticks();
+  inline void clear_has_timestampticks();
+  inline void set_has_fromboxid();
+  inline void clear_has_fromboxid();
+  inline void set_has_toboxid();
+  inline void clear_has_toboxid();
+  inline void set_has_messagefromboxid();
+  inline void clear_has_messagefromboxid();
+  inline void set_has_messagetoboxid();
+  inline void clear_has_messagetoboxid();
+  inline void set_has_isdeleted();
+  inline void clear_has_isdeleted();
+  inline void set_has_messagetodepartmentid();
+  inline void clear_has_messagetodepartmentid();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* messageid_;
+  ::google::protobuf::int64 timestampticks_;
+  ::std::string* fromboxid_;
+  ::std::string* toboxid_;
+  ::std::string* messagefromboxid_;
+  ::std::string* messagetoboxid_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::Entity > entities_;
+  ::std::string* messagetodepartmentid_;
+  bool isdeleted_;
+  friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto();
+  friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dGetApi_2eproto();
+  friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dGetApi_2eproto();
+
+  void InitAsDefaultInstance();
+  static Template* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -2541,6 +2735,544 @@ inline void Message::set_packetislocked(bool value) {
   set_has_packetislocked();
   packetislocked_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Message.PacketIsLocked)
+}
+
+// -------------------------------------------------------------------
+
+// Template
+
+// required string MessageId = 1;
+inline bool Template::has_messageid() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Template::set_has_messageid() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Template::clear_has_messageid() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void Template::clear_messageid() {
+  if (messageid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageid_->clear();
+  }
+  clear_has_messageid();
+}
+inline const ::std::string& Template::messageid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Template.MessageId)
+  return *messageid_;
+}
+inline void Template::set_messageid(const ::std::string& value) {
+  set_has_messageid();
+  if (messageid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageid_ = new ::std::string;
+  }
+  messageid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Template.MessageId)
+}
+inline void Template::set_messageid(const char* value) {
+  set_has_messageid();
+  if (messageid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageid_ = new ::std::string;
+  }
+  messageid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.Template.MessageId)
+}
+inline void Template::set_messageid(const char* value, size_t size) {
+  set_has_messageid();
+  if (messageid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageid_ = new ::std::string;
+  }
+  messageid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.Template.MessageId)
+}
+inline ::std::string* Template::mutable_messageid() {
+  set_has_messageid();
+  if (messageid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Template.MessageId)
+  return messageid_;
+}
+inline ::std::string* Template::release_messageid() {
+  clear_has_messageid();
+  if (messageid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = messageid_;
+    messageid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void Template::set_allocated_messageid(::std::string* messageid) {
+  if (messageid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete messageid_;
+  }
+  if (messageid) {
+    set_has_messageid();
+    messageid_ = messageid;
+  } else {
+    clear_has_messageid();
+    messageid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Template.MessageId)
+}
+
+// required sfixed64 TimestampTicks = 2;
+inline bool Template::has_timestampticks() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Template::set_has_timestampticks() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Template::clear_has_timestampticks() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void Template::clear_timestampticks() {
+  timestampticks_ = GOOGLE_LONGLONG(0);
+  clear_has_timestampticks();
+}
+inline ::google::protobuf::int64 Template::timestampticks() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Template.TimestampTicks)
+  return timestampticks_;
+}
+inline void Template::set_timestampticks(::google::protobuf::int64 value) {
+  set_has_timestampticks();
+  timestampticks_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Template.TimestampTicks)
+}
+
+// required string FromBoxId = 3;
+inline bool Template::has_fromboxid() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void Template::set_has_fromboxid() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void Template::clear_has_fromboxid() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void Template::clear_fromboxid() {
+  if (fromboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    fromboxid_->clear();
+  }
+  clear_has_fromboxid();
+}
+inline const ::std::string& Template::fromboxid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Template.FromBoxId)
+  return *fromboxid_;
+}
+inline void Template::set_fromboxid(const ::std::string& value) {
+  set_has_fromboxid();
+  if (fromboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    fromboxid_ = new ::std::string;
+  }
+  fromboxid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Template.FromBoxId)
+}
+inline void Template::set_fromboxid(const char* value) {
+  set_has_fromboxid();
+  if (fromboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    fromboxid_ = new ::std::string;
+  }
+  fromboxid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.Template.FromBoxId)
+}
+inline void Template::set_fromboxid(const char* value, size_t size) {
+  set_has_fromboxid();
+  if (fromboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    fromboxid_ = new ::std::string;
+  }
+  fromboxid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.Template.FromBoxId)
+}
+inline ::std::string* Template::mutable_fromboxid() {
+  set_has_fromboxid();
+  if (fromboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    fromboxid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Template.FromBoxId)
+  return fromboxid_;
+}
+inline ::std::string* Template::release_fromboxid() {
+  clear_has_fromboxid();
+  if (fromboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = fromboxid_;
+    fromboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void Template::set_allocated_fromboxid(::std::string* fromboxid) {
+  if (fromboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete fromboxid_;
+  }
+  if (fromboxid) {
+    set_has_fromboxid();
+    fromboxid_ = fromboxid;
+  } else {
+    clear_has_fromboxid();
+    fromboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Template.FromBoxId)
+}
+
+// required string ToBoxId = 4;
+inline bool Template::has_toboxid() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void Template::set_has_toboxid() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void Template::clear_has_toboxid() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void Template::clear_toboxid() {
+  if (toboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    toboxid_->clear();
+  }
+  clear_has_toboxid();
+}
+inline const ::std::string& Template::toboxid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Template.ToBoxId)
+  return *toboxid_;
+}
+inline void Template::set_toboxid(const ::std::string& value) {
+  set_has_toboxid();
+  if (toboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    toboxid_ = new ::std::string;
+  }
+  toboxid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Template.ToBoxId)
+}
+inline void Template::set_toboxid(const char* value) {
+  set_has_toboxid();
+  if (toboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    toboxid_ = new ::std::string;
+  }
+  toboxid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.Template.ToBoxId)
+}
+inline void Template::set_toboxid(const char* value, size_t size) {
+  set_has_toboxid();
+  if (toboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    toboxid_ = new ::std::string;
+  }
+  toboxid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.Template.ToBoxId)
+}
+inline ::std::string* Template::mutable_toboxid() {
+  set_has_toboxid();
+  if (toboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    toboxid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Template.ToBoxId)
+  return toboxid_;
+}
+inline ::std::string* Template::release_toboxid() {
+  clear_has_toboxid();
+  if (toboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = toboxid_;
+    toboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void Template::set_allocated_toboxid(::std::string* toboxid) {
+  if (toboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete toboxid_;
+  }
+  if (toboxid) {
+    set_has_toboxid();
+    toboxid_ = toboxid;
+  } else {
+    clear_has_toboxid();
+    toboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Template.ToBoxId)
+}
+
+// required string MessageFromBoxId = 5;
+inline bool Template::has_messagefromboxid() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void Template::set_has_messagefromboxid() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void Template::clear_has_messagefromboxid() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void Template::clear_messagefromboxid() {
+  if (messagefromboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagefromboxid_->clear();
+  }
+  clear_has_messagefromboxid();
+}
+inline const ::std::string& Template::messagefromboxid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Template.MessageFromBoxId)
+  return *messagefromboxid_;
+}
+inline void Template::set_messagefromboxid(const ::std::string& value) {
+  set_has_messagefromboxid();
+  if (messagefromboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagefromboxid_ = new ::std::string;
+  }
+  messagefromboxid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Template.MessageFromBoxId)
+}
+inline void Template::set_messagefromboxid(const char* value) {
+  set_has_messagefromboxid();
+  if (messagefromboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagefromboxid_ = new ::std::string;
+  }
+  messagefromboxid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.Template.MessageFromBoxId)
+}
+inline void Template::set_messagefromboxid(const char* value, size_t size) {
+  set_has_messagefromboxid();
+  if (messagefromboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagefromboxid_ = new ::std::string;
+  }
+  messagefromboxid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.Template.MessageFromBoxId)
+}
+inline ::std::string* Template::mutable_messagefromboxid() {
+  set_has_messagefromboxid();
+  if (messagefromboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagefromboxid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Template.MessageFromBoxId)
+  return messagefromboxid_;
+}
+inline ::std::string* Template::release_messagefromboxid() {
+  clear_has_messagefromboxid();
+  if (messagefromboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = messagefromboxid_;
+    messagefromboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void Template::set_allocated_messagefromboxid(::std::string* messagefromboxid) {
+  if (messagefromboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete messagefromboxid_;
+  }
+  if (messagefromboxid) {
+    set_has_messagefromboxid();
+    messagefromboxid_ = messagefromboxid;
+  } else {
+    clear_has_messagefromboxid();
+    messagefromboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Template.MessageFromBoxId)
+}
+
+// required string MessageToBoxId = 6;
+inline bool Template::has_messagetoboxid() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void Template::set_has_messagetoboxid() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void Template::clear_has_messagetoboxid() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void Template::clear_messagetoboxid() {
+  if (messagetoboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagetoboxid_->clear();
+  }
+  clear_has_messagetoboxid();
+}
+inline const ::std::string& Template::messagetoboxid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Template.MessageToBoxId)
+  return *messagetoboxid_;
+}
+inline void Template::set_messagetoboxid(const ::std::string& value) {
+  set_has_messagetoboxid();
+  if (messagetoboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagetoboxid_ = new ::std::string;
+  }
+  messagetoboxid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Template.MessageToBoxId)
+}
+inline void Template::set_messagetoboxid(const char* value) {
+  set_has_messagetoboxid();
+  if (messagetoboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagetoboxid_ = new ::std::string;
+  }
+  messagetoboxid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.Template.MessageToBoxId)
+}
+inline void Template::set_messagetoboxid(const char* value, size_t size) {
+  set_has_messagetoboxid();
+  if (messagetoboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagetoboxid_ = new ::std::string;
+  }
+  messagetoboxid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.Template.MessageToBoxId)
+}
+inline ::std::string* Template::mutable_messagetoboxid() {
+  set_has_messagetoboxid();
+  if (messagetoboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagetoboxid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Template.MessageToBoxId)
+  return messagetoboxid_;
+}
+inline ::std::string* Template::release_messagetoboxid() {
+  clear_has_messagetoboxid();
+  if (messagetoboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = messagetoboxid_;
+    messagetoboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void Template::set_allocated_messagetoboxid(::std::string* messagetoboxid) {
+  if (messagetoboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete messagetoboxid_;
+  }
+  if (messagetoboxid) {
+    set_has_messagetoboxid();
+    messagetoboxid_ = messagetoboxid;
+  } else {
+    clear_has_messagetoboxid();
+    messagetoboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Template.MessageToBoxId)
+}
+
+// repeated .Diadoc.Api.Proto.Events.Entity Entities = 7;
+inline int Template::entities_size() const {
+  return entities_.size();
+}
+inline void Template::clear_entities() {
+  entities_.Clear();
+}
+inline const ::Diadoc::Api::Proto::Events::Entity& Template::entities(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Template.Entities)
+  return entities_.Get(index);
+}
+inline ::Diadoc::Api::Proto::Events::Entity* Template::mutable_entities(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Template.Entities)
+  return entities_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::Events::Entity* Template::add_entities() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.Template.Entities)
+  return entities_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::Entity >&
+Template::entities() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.Template.Entities)
+  return entities_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::Entity >*
+Template::mutable_entities() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.Template.Entities)
+  return &entities_;
+}
+
+// optional bool IsDeleted = 8 [default = false];
+inline bool Template::has_isdeleted() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void Template::set_has_isdeleted() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void Template::clear_has_isdeleted() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void Template::clear_isdeleted() {
+  isdeleted_ = false;
+  clear_has_isdeleted();
+}
+inline bool Template::isdeleted() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Template.IsDeleted)
+  return isdeleted_;
+}
+inline void Template::set_isdeleted(bool value) {
+  set_has_isdeleted();
+  isdeleted_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Template.IsDeleted)
+}
+
+// optional string MessageToDepartmentId = 9;
+inline bool Template::has_messagetodepartmentid() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void Template::set_has_messagetodepartmentid() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void Template::clear_has_messagetodepartmentid() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void Template::clear_messagetodepartmentid() {
+  if (messagetodepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagetodepartmentid_->clear();
+  }
+  clear_has_messagetodepartmentid();
+}
+inline const ::std::string& Template::messagetodepartmentid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Template.MessageToDepartmentId)
+  return *messagetodepartmentid_;
+}
+inline void Template::set_messagetodepartmentid(const ::std::string& value) {
+  set_has_messagetodepartmentid();
+  if (messagetodepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagetodepartmentid_ = new ::std::string;
+  }
+  messagetodepartmentid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Template.MessageToDepartmentId)
+}
+inline void Template::set_messagetodepartmentid(const char* value) {
+  set_has_messagetodepartmentid();
+  if (messagetodepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagetodepartmentid_ = new ::std::string;
+  }
+  messagetodepartmentid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.Template.MessageToDepartmentId)
+}
+inline void Template::set_messagetodepartmentid(const char* value, size_t size) {
+  set_has_messagetodepartmentid();
+  if (messagetodepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagetodepartmentid_ = new ::std::string;
+  }
+  messagetodepartmentid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.Template.MessageToDepartmentId)
+}
+inline ::std::string* Template::mutable_messagetodepartmentid() {
+  set_has_messagetodepartmentid();
+  if (messagetodepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagetodepartmentid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Template.MessageToDepartmentId)
+  return messagetodepartmentid_;
+}
+inline ::std::string* Template::release_messagetodepartmentid() {
+  clear_has_messagetodepartmentid();
+  if (messagetodepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = messagetodepartmentid_;
+    messagetodepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void Template::set_allocated_messagetodepartmentid(::std::string* messagetodepartmentid) {
+  if (messagetodepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete messagetodepartmentid_;
+  }
+  if (messagetodepartmentid) {
+    set_has_messagetodepartmentid();
+    messagetodepartmentid_ = messagetodepartmentid;
+  } else {
+    clear_has_messagetodepartmentid();
+    messagetodepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Template.MessageToDepartmentId)
 }
 
 // -------------------------------------------------------------------

@@ -29,11 +29,22 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* ResolutionStatus_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   ResolutionStatus_reflection_ = NULL;
+const ::google::protobuf::Descriptor* RecipientReceiptMetadata_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  RecipientReceiptMetadata_reflection_ = NULL;
+const ::google::protobuf::Descriptor* ConfirmationMetadata_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  ConfirmationMetadata_reflection_ = NULL;
+const ::google::protobuf::Descriptor* AmendmentRequestMetadata_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  AmendmentRequestMetadata_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* ResolutionStatusType_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* RevocationStatus_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* RoamingNotificationStatus_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* SenderSignatureStatus_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* ProxySignatureStatus_descriptor_ = NULL;
+const ::google::protobuf::EnumDescriptor* GeneralReceiptStatus_descriptor_ = NULL;
+const ::google::protobuf::EnumDescriptor* RecipientResponseStatus_descriptor_ = NULL;
 
 }  // namespace
 
@@ -45,7 +56,7 @@ void protobuf_AssignDesc_Documents_2fDocument_2eproto() {
       "Documents/Document.proto");
   GOOGLE_CHECK(file != NULL);
   Document_descriptor_ = file->message_type(0);
-  static const int Document_offsets_[60] = {
+  static const int Document_offsets_[69] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, indexkey_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, messageid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, entityid_),
@@ -106,6 +117,15 @@ void protobuf_AssignDesc_Documents_2fDocument_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, resolutionrouteid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, attachmentversion_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, proxysignaturestatus_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, typenamedid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, function_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, workflowid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, title_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, metadata_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, recipientreceiptmetadata_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, confirmationmetadata_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, recipientresponsestatus_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, amendmentrequestmetadata_),
   };
   Document_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -136,11 +156,61 @@ void protobuf_AssignDesc_Documents_2fDocument_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ResolutionStatus));
+  RecipientReceiptMetadata_descriptor_ = file->message_type(2);
+  static const int RecipientReceiptMetadata_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RecipientReceiptMetadata, receiptstatus_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RecipientReceiptMetadata, confirmationmetadata_),
+  };
+  RecipientReceiptMetadata_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      RecipientReceiptMetadata_descriptor_,
+      RecipientReceiptMetadata::default_instance_,
+      RecipientReceiptMetadata_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RecipientReceiptMetadata, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RecipientReceiptMetadata, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(RecipientReceiptMetadata));
+  ConfirmationMetadata_descriptor_ = file->message_type(3);
+  static const int ConfirmationMetadata_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ConfirmationMetadata, receiptstatus_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ConfirmationMetadata, datetimeticks_),
+  };
+  ConfirmationMetadata_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      ConfirmationMetadata_descriptor_,
+      ConfirmationMetadata::default_instance_,
+      ConfirmationMetadata_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ConfirmationMetadata, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ConfirmationMetadata, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(ConfirmationMetadata));
+  AmendmentRequestMetadata_descriptor_ = file->message_type(4);
+  static const int AmendmentRequestMetadata_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AmendmentRequestMetadata, amendmentflags_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AmendmentRequestMetadata, receiptstatus_),
+  };
+  AmendmentRequestMetadata_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      AmendmentRequestMetadata_descriptor_,
+      AmendmentRequestMetadata::default_instance_,
+      AmendmentRequestMetadata_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AmendmentRequestMetadata, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AmendmentRequestMetadata, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(AmendmentRequestMetadata));
   ResolutionStatusType_descriptor_ = file->enum_type(0);
   RevocationStatus_descriptor_ = file->enum_type(1);
   RoamingNotificationStatus_descriptor_ = file->enum_type(2);
   SenderSignatureStatus_descriptor_ = file->enum_type(3);
   ProxySignatureStatus_descriptor_ = file->enum_type(4);
+  GeneralReceiptStatus_descriptor_ = file->enum_type(5);
+  RecipientResponseStatus_descriptor_ = file->enum_type(6);
 }
 
 namespace {
@@ -157,6 +227,12 @@ void protobuf_RegisterTypes(const ::std::string&) {
     Document_descriptor_, &Document::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     ResolutionStatus_descriptor_, &ResolutionStatus::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    RecipientReceiptMetadata_descriptor_, &RecipientReceiptMetadata::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    ConfirmationMetadata_descriptor_, &ConfirmationMetadata::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    AmendmentRequestMetadata_descriptor_, &AmendmentRequestMetadata::default_instance());
 }
 
 }  // namespace
@@ -166,6 +242,12 @@ void protobuf_ShutdownFile_Documents_2fDocument_2eproto() {
   delete Document_reflection_;
   delete ResolutionStatus::default_instance_;
   delete ResolutionStatus_reflection_;
+  delete RecipientReceiptMetadata::default_instance_;
+  delete RecipientReceiptMetadata_reflection_;
+  delete ConfirmationMetadata::default_instance_;
+  delete ConfirmationMetadata_reflection_;
+  delete AmendmentRequestMetadata::default_instance_;
+  delete AmendmentRequestMetadata_reflection_;
 }
 
 void protobuf_AddDesc_Documents_2fDocument_2eproto() {
@@ -187,6 +269,7 @@ void protobuf_AddDesc_Documents_2fDocument_2eproto() {
   ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::protobuf_AddDesc_Documents_2fUniversalTransferDocument_2eproto();
   ::Diadoc::Api::Proto::protobuf_AddDesc_ResolutionTarget_2eproto();
   ::Diadoc::Api::Proto::protobuf_AddDesc_ForwardDocumentEvent_2eproto();
+  ::Diadoc::Api::Proto::Events::protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\030Documents/Document.proto\022\032Diadoc.Api.P"
     "roto.Documents\032\rContent.proto\032\020DocumentI"
@@ -198,147 +281,190 @@ void protobuf_AddDesc_Documents_2fDocument_2eproto() {
     "/NonformalizedDocument.proto\032\"Documents/"
     "UnilateralDocument.proto\032)Documents/Univ"
     "ersalTransferDocument.proto\032\026ResolutionT"
-    "arget.proto\032\032ForwardDocumentEvent.proto\""
-    "\361 \n\010Document\022\020\n\010IndexKey\030\001 \001(\t\022\021\n\tMessag"
-    "eId\030\002 \002(\t\022\020\n\010EntityId\030\003 \002(\t\022\036\n\026CreationT"
-    "imestampTicks\030\004 \002(\020\022\031\n\021CounteragentBoxId"
-    "\030\005 \001(\t\022I\n\014DocumentType\030\006 \001(\0162\036.Diadoc.Ap"
-    "i.Proto.DocumentType:\023UnknownDocumentTyp"
-    "e\0228\n\022InitialDocumentIds\030\007 \003(\0132\034.Diadoc.A"
-    "pi.Proto.DocumentId\022<\n\026SubordinateDocume"
-    "ntIds\030\010 \003(\0132\034.Diadoc.Api.Proto.DocumentI"
-    "d\022*\n\007Content\030\t \001(\0132\031.Diadoc.Api.Proto.Co"
-    "ntent\022\020\n\010FileName\030\n \001(\t\022\024\n\014DocumentDate\030"
-    "\013 \001(\t\022\026\n\016DocumentNumber\030\014 \001(\t\022v\n\035Nonform"
-    "alizedDocumentMetadata\030\r \001(\0132O.Diadoc.Ap"
-    "i.Proto.Documents.NonformalizedDocument."
-    "NonformalizedDocumentMetadata\022T\n\017Invoice"
-    "Metadata\030\016 \001(\0132;.Diadoc.Api.Proto.Docume"
-    "nts.InvoiceDocument.InvoiceMetadata\022t\n\036T"
-    "rustConnectionRequestMetadata\030\017 \001(\0132L.Di"
-    "adoc.Api.Proto.Documents.BilateralDocume"
-    "nt.TrustConnectionRequestMetadata\022[\n\016Tor"
-    "g12Metadata\030\020 \001(\0132C.Diadoc.Api.Proto.Doc"
-    "uments.BilateralDocument.BasicDocumentMe"
-    "tadata\022d\n\027InvoiceRevisionMetadata\030\021 \001(\0132"
-    "C.Diadoc.Api.Proto.Documents.InvoiceDocu"
-    "ment.InvoiceRevisionMetadata\022h\n\031InvoiceC"
-    "orrectionMetadata\030\022 \001(\0132E.Diadoc.Api.Pro"
-    "to.Documents.InvoiceDocument.InvoiceCorr"
-    "ectionMetadata\022x\n!InvoiceCorrectionRevis"
-    "ionMetadata\030\023 \001(\0132M.Diadoc.Api.Proto.Doc"
-    "uments.InvoiceDocument.InvoiceCorrection"
-    "RevisionMetadata\022~\n\035AcceptanceCertificat"
-    "eMetadata\030\024 \001(\0132W.Diadoc.Api.Proto.Docum"
-    "ents.AcceptanceCertificateDocument.Accep"
-    "tanceCertificateMetadata\022g\n\027ProformaInvo"
-    "iceMetadata\030\025 \001(\0132F.Diadoc.Api.Proto.Doc"
-    "uments.UnilateralDocument.ProformaInvoic"
-    "eMetadata\022^\n\021XmlTorg12Metadata\030\026 \001(\0132C.D"
-    "iadoc.Api.Proto.Documents.BilateralDocum"
-    "ent.BasicDocumentMetadata\022m\n XmlAcceptan"
-    "ceCertificateMetadata\030\027 \001(\0132C.Diadoc.Api"
-    ".Proto.Documents.BilateralDocument.Basic"
-    "DocumentMetadata\022\030\n\tIsDeleted\030\030 \001(\010:\005fal"
-    "se\022\024\n\014DepartmentId\030\031 \001(\t\022\025\n\006IsTest\030\032 \001(\010"
-    ":\005false\022\030\n\020FromDepartmentId\030\033 \001(\t\022\026\n\016ToD"
-    "epartmentId\030\034 \001(\t\022Z\n\021PriceListMetadata\030\035"
-    " \001(\0132\?.Diadoc.Api.Proto.Documents.Bilate"
-    "ralDocument.PriceListMetadata\022\030\n\020CustomD"
-    "ocumentId\030\036 \001(\t\022F\n\020ResolutionStatus\030\037 \001("
-    "\0132,.Diadoc.Api.Proto.Documents.Resolutio"
-    "nStatus\022_\n\020RevocationStatus\030  \001(\0162,.Diad"
-    "oc.Api.Proto.Documents.RevocationStatus:"
-    "\027UnknownRevocationStatus\022\032\n\022SendTimestam"
-    "pTicks\030! \001(\020\022\036\n\026DeliveryTimestampTicks\030\""
-    " \001(\020\022E\n\025ForwardDocumentEvents\030# \003(\0132&.Di"
-    "adoc.Api.Proto.ForwardDocumentEvent\022j\n\031R"
-    "econciliationActMetadata\030& \001(\0132G.Diadoc."
-    "Api.Proto.Documents.BilateralDocument.Bi"
-    "lateralDocumentMetadata\022X\n\020ContractMetad"
-    "ata\030\' \001(\0132>.Diadoc.Api.Proto.Documents.B"
-    "ilateralDocument.ContractMetadata\022[\n\016Tor"
-    "g13Metadata\030( \001(\0132C.Diadoc.Api.Proto.Doc"
-    "uments.BilateralDocument.BasicDocumentMe"
-    "tadata\022e\n\026ServiceDetailsMetadata\030) \001(\0132E"
-    ".Diadoc.Api.Proto.Documents.UnilateralDo"
-    "cument.ServiceDetailsMetadata\022z\n\031Roaming"
-    "NotificationStatus\030* \001(\01625.Diadoc.Api.Pr"
-    "oto.Documents.RoamingNotificationStatus:"
-    " UnknownRoamingNotificationStatus\022!\n\022Has"
-    "CustomPrintForm\030+ \001(\010:\005false\0224\n\nCustomDa"
-    "ta\030, \003(\0132 .Diadoc.Api.Proto.CustomDataIt"
-    "em\022\020\n\010PacketId\030- \001(\t\022X\n\021DocumentDirectio"
-    "n\030. \001(\0162#.Diadoc.Api.Proto.DocumentDirec"
-    "tion:\030UnknownDocumentDirection\022&\n\036LastMo"
-    "dificationTimestampTicks\030/ \001(\020\022\032\n\022IsEncr"
-    "yptedContent\0300 \001(\010\022n\n\025SenderSignatureSta"
-    "tus\0301 \001(\01621.Diadoc.Api.Proto.Documents.S"
-    "enderSignatureStatus:\034UnknownSenderSigna"
-    "tureStatus\022t\n\036SupplementaryAgreementMeta"
-    "data\0302 \001(\0132L.Diadoc.Api.Proto.Documents."
-    "BilateralDocument.SupplementaryAgreement"
-    "Metadata\022\025\n\006IsRead\0303 \001(\010:\005false\022,\n$Roami"
-    "ngNotificationStatusDescription\0304 \001(\t\022\035\n"
-    "\016PacketIsLocked\0305 \001(\010:\005false\022s\n\032PriceLis"
-    "tAgreementMetadata\0306 \001(\0132O.Diadoc.Api.Pr"
+    "arget.proto\032\032ForwardDocumentEvent.proto\032"
+    "\"Events/DiadocMessage-PostApi.proto\"\207%\n\010"
+    "Document\022\020\n\010IndexKey\030\001 \001(\t\022\021\n\tMessageId\030"
+    "\002 \002(\t\022\020\n\010EntityId\030\003 \002(\t\022\036\n\026CreationTimes"
+    "tampTicks\030\004 \002(\020\022\031\n\021CounteragentBoxId\030\005 \001"
+    "(\t\022I\n\014DocumentType\030\006 \001(\0162\036.Diadoc.Api.Pr"
+    "oto.DocumentType:\023UnknownDocumentType\0228\n"
+    "\022InitialDocumentIds\030\007 \003(\0132\034.Diadoc.Api.P"
+    "roto.DocumentId\022<\n\026SubordinateDocumentId"
+    "s\030\010 \003(\0132\034.Diadoc.Api.Proto.DocumentId\022*\n"
+    "\007Content\030\t \001(\0132\031.Diadoc.Api.Proto.Conten"
+    "t\022\020\n\010FileName\030\n \001(\t\022\024\n\014DocumentDate\030\013 \001("
+    "\t\022\026\n\016DocumentNumber\030\014 \001(\t\022v\n\035Nonformaliz"
+    "edDocumentMetadata\030\r \001(\0132O.Diadoc.Api.Pr"
     "oto.Documents.NonformalizedDocument.Nonf"
-    "ormalizedDocumentMetadata\022t\n\033Certificate"
-    "RegistryMetadata\0307 \001(\0132O.Diadoc.Api.Prot"
-    "o.Documents.NonformalizedDocument.Nonfor"
-    "malizedDocumentMetadata\022\202\001\n!UniversalTra"
-    "nsferDocumentMetadata\0308 \001(\0132W.Diadoc.Api"
+    "ormalizedDocumentMetadata\022T\n\017InvoiceMeta"
+    "data\030\016 \001(\0132;.Diadoc.Api.Proto.Documents."
+    "InvoiceDocument.InvoiceMetadata\022t\n\036Trust"
+    "ConnectionRequestMetadata\030\017 \001(\0132L.Diadoc"
+    ".Api.Proto.Documents.BilateralDocument.T"
+    "rustConnectionRequestMetadata\022[\n\016Torg12M"
+    "etadata\030\020 \001(\0132C.Diadoc.Api.Proto.Documen"
+    "ts.BilateralDocument.BasicDocumentMetada"
+    "ta\022d\n\027InvoiceRevisionMetadata\030\021 \001(\0132C.Di"
+    "adoc.Api.Proto.Documents.InvoiceDocument"
+    ".InvoiceRevisionMetadata\022h\n\031InvoiceCorre"
+    "ctionMetadata\030\022 \001(\0132E.Diadoc.Api.Proto.D"
+    "ocuments.InvoiceDocument.InvoiceCorrecti"
+    "onMetadata\022x\n!InvoiceCorrectionRevisionM"
+    "etadata\030\023 \001(\0132M.Diadoc.Api.Proto.Documen"
+    "ts.InvoiceDocument.InvoiceCorrectionRevi"
+    "sionMetadata\022~\n\035AcceptanceCertificateMet"
+    "adata\030\024 \001(\0132W.Diadoc.Api.Proto.Documents"
+    ".AcceptanceCertificateDocument.Acceptanc"
+    "eCertificateMetadata\022g\n\027ProformaInvoiceM"
+    "etadata\030\025 \001(\0132F.Diadoc.Api.Proto.Documen"
+    "ts.UnilateralDocument.ProformaInvoiceMet"
+    "adata\022^\n\021XmlTorg12Metadata\030\026 \001(\0132C.Diado"
+    "c.Api.Proto.Documents.BilateralDocument."
+    "BasicDocumentMetadata\022m\n XmlAcceptanceCe"
+    "rtificateMetadata\030\027 \001(\0132C.Diadoc.Api.Pro"
+    "to.Documents.BilateralDocument.BasicDocu"
+    "mentMetadata\022\030\n\tIsDeleted\030\030 \001(\010:\005false\022\024"
+    "\n\014DepartmentId\030\031 \001(\t\022\025\n\006IsTest\030\032 \001(\010:\005fa"
+    "lse\022\030\n\020FromDepartmentId\030\033 \001(\t\022\026\n\016ToDepar"
+    "tmentId\030\034 \001(\t\022Z\n\021PriceListMetadata\030\035 \001(\013"
+    "2\?.Diadoc.Api.Proto.Documents.BilateralD"
+    "ocument.PriceListMetadata\022\030\n\020CustomDocum"
+    "entId\030\036 \001(\t\022F\n\020ResolutionStatus\030\037 \001(\0132,."
+    "Diadoc.Api.Proto.Documents.ResolutionSta"
+    "tus\022_\n\020RevocationStatus\030  \001(\0162,.Diadoc.A"
+    "pi.Proto.Documents.RevocationStatus:\027Unk"
+    "nownRevocationStatus\022\032\n\022SendTimestampTic"
+    "ks\030! \001(\020\022\036\n\026DeliveryTimestampTicks\030\" \001(\020"
+    "\022E\n\025ForwardDocumentEvents\030# \003(\0132&.Diadoc"
+    ".Api.Proto.ForwardDocumentEvent\022j\n\031Recon"
+    "ciliationActMetadata\030& \001(\0132G.Diadoc.Api."
+    "Proto.Documents.BilateralDocument.Bilate"
+    "ralDocumentMetadata\022X\n\020ContractMetadata\030"
+    "\' \001(\0132>.Diadoc.Api.Proto.Documents.Bilat"
+    "eralDocument.ContractMetadata\022[\n\016Torg13M"
+    "etadata\030( \001(\0132C.Diadoc.Api.Proto.Documen"
+    "ts.BilateralDocument.BasicDocumentMetada"
+    "ta\022e\n\026ServiceDetailsMetadata\030) \001(\0132E.Dia"
+    "doc.Api.Proto.Documents.UnilateralDocume"
+    "nt.ServiceDetailsMetadata\022z\n\031RoamingNoti"
+    "ficationStatus\030* \001(\01625.Diadoc.Api.Proto."
+    "Documents.RoamingNotificationStatus: Unk"
+    "nownRoamingNotificationStatus\022!\n\022HasCust"
+    "omPrintForm\030+ \001(\010:\005false\0224\n\nCustomData\030,"
+    " \003(\0132 .Diadoc.Api.Proto.CustomDataItem\022\020"
+    "\n\010PacketId\030- \001(\t\022X\n\021DocumentDirection\030. "
+    "\001(\0162#.Diadoc.Api.Proto.DocumentDirection"
+    ":\030UnknownDocumentDirection\022&\n\036LastModifi"
+    "cationTimestampTicks\030/ \001(\020\022\032\n\022IsEncrypte"
+    "dContent\0300 \001(\010\022n\n\025SenderSignatureStatus\030"
+    "1 \001(\01621.Diadoc.Api.Proto.Documents.Sende"
+    "rSignatureStatus:\034UnknownSenderSignature"
+    "Status\022t\n\036SupplementaryAgreementMetadata"
+    "\0302 \001(\0132L.Diadoc.Api.Proto.Documents.Bila"
+    "teralDocument.SupplementaryAgreementMeta"
+    "data\022\025\n\006IsRead\0303 \001(\010:\005false\022,\n$RoamingNo"
+    "tificationStatusDescription\0304 \001(\t\022\035\n\016Pac"
+    "ketIsLocked\0305 \001(\010:\005false\022s\n\032PriceListAgr"
+    "eementMetadata\0306 \001(\0132O.Diadoc.Api.Proto."
+    "Documents.NonformalizedDocument.Nonforma"
+    "lizedDocumentMetadata\022t\n\033CertificateRegi"
+    "stryMetadata\0307 \001(\0132O.Diadoc.Api.Proto.Do"
+    "cuments.NonformalizedDocument.Nonformali"
+    "zedDocumentMetadata\022\202\001\n!UniversalTransfe"
+    "rDocumentMetadata\0308 \001(\0132W.Diadoc.Api.Pro"
+    "to.Documents.UniversalTransferDocument.U"
+    "niversalTransferDocumentMetadata\022\222\001\n)Uni"
+    "versalTransferDocumentRevisionMetadata\0309"
+    " \001(\0132_.Diadoc.Api.Proto.Documents.Univer"
+    "salTransferDocument.UniversalTransferDoc"
+    "umentRevisionMetadata\022\206\001\n#UniversalCorre"
+    "ctionDocumentMetadata\030: \001(\0132Y.Diadoc.Api"
     ".Proto.Documents.UniversalTransferDocume"
-    "nt.UniversalTransferDocumentMetadata\022\222\001\n"
-    ")UniversalTransferDocumentRevisionMetada"
-    "ta\0309 \001(\0132_.Diadoc.Api.Proto.Documents.Un"
-    "iversalTransferDocument.UniversalTransfe"
-    "rDocumentRevisionMetadata\022\206\001\n#UniversalC"
-    "orrectionDocumentMetadata\030: \001(\0132Y.Diadoc"
-    ".Api.Proto.Documents.UniversalTransferDo"
-    "cument.UniversalCorrectionDocumentMetada"
-    "ta\022\226\001\n+UniversalCorrectionDocumentRevisi"
-    "onMetadata\030; \001(\0132a.Diadoc.Api.Proto.Docu"
-    "ments.UniversalTransferDocument.Universa"
-    "lCorrectionDocumentRevisionMetadata\022\033\n\021R"
-    "esolutionRouteId\030< \001(\t:\000\022\031\n\021AttachmentVe"
-    "rsion\030= \001(\t\022N\n\024ProxySignatureStatus\030> \001("
-    "\01620.Diadoc.Api.Proto.Documents.ProxySign"
-    "atureStatus\"\310\001\n\020ResolutionStatus\022W\n\004Type"
-    "\030\001 \001(\01620.Diadoc.Api.Proto.Documents.Reso"
-    "lutionStatusType:\027UnknownResolutionStatu"
-    "s\0222\n\006Target\030\002 \001(\0132\".Diadoc.Api.Proto.Res"
-    "olutionTarget\022\024\n\014AuthorUserId\030\003 \002(\t\022\021\n\tA"
-    "uthorFIO\030\004 \002(\t*\254\001\n\024ResolutionStatusType\022"
-    "$\n\027UnknownResolutionStatus\020\377\377\377\377\377\377\377\377\377\001\022\010\n"
-    "\004None\020\000\022\014\n\010Approved\020\001\022\017\n\013Disapproved\020\002\022\030"
-    "\n\024ApprovementRequested\020\003\022\026\n\022SignatureReq"
-    "uested\020\004\022\023\n\017SignatureDenied\020\005*\262\001\n\020Revoca"
-    "tionStatus\022\033\n\027UnknownRevocationStatus\020\000\022"
-    "\030\n\024RevocationStatusNone\020\001\022\035\n\031RevocationI"
-    "sRequestedByMe\020\002\022\030\n\024RequestsMyRevocation"
-    "\020\003\022\026\n\022RevocationAccepted\020\004\022\026\n\022Revocation"
-    "Rejected\020\005*\256\001\n\031RoamingNotificationStatus"
-    "\022$\n UnknownRoamingNotificationStatus\020\000\022!"
-    "\n\035RoamingNotificationStatusNone\020\001\022$\n Roa"
-    "mingNotificationStatusSuccess\020\002\022\"\n\036Roami"
-    "ngNotificationStatusError\020\003*\300\001\n\025SenderSi"
-    "gnatureStatus\022 \n\034UnknownSenderSignatureS"
-    "tatus\020\000\022\035\n\031WaitingForSenderSignature\020\001\022\034"
-    "\n\030SenderSignatureUnchecked\020\002\022\"\n\036SenderSi"
-    "gnatureCheckedAndValid\020\003\022$\n SenderSignat"
-    "ureCheckedAndInvalid\020\004*\302\001\n\024ProxySignatur"
-    "eStatus\022\037\n\033UnknownProxySignatureStatus\020\000"
-    "\022\034\n\030ProxySignatureStatusNone\020\001\022\034\n\030Waitin"
-    "gForProxySignature\020\002\022\026\n\022WithProxySignatu"
-    "re\020\003\022\032\n\026ProxySignatureRejected\020\004\022\031\n\025Inva"
-    "lidProxySignature\020\005", 5779);
+    "nt.UniversalCorrectionDocumentMetadata\022\226"
+    "\001\n+UniversalCorrectionDocumentRevisionMe"
+    "tadata\030; \001(\0132a.Diadoc.Api.Proto.Document"
+    "s.UniversalTransferDocument.UniversalCor"
+    "rectionDocumentRevisionMetadata\022\033\n\021Resol"
+    "utionRouteId\030< \001(\t:\000\022\031\n\021AttachmentVersio"
+    "n\030= \001(\t\022k\n\024ProxySignatureStatus\030> \001(\01620."
+    "Diadoc.Api.Proto.Documents.ProxySignatur"
+    "eStatus:\033UnknownProxySignatureStatus\022\023\n\013"
+    "TypeNamedId\030\? \002(\t\022\020\n\010Function\030@ \002(\t\022\022\n\nW"
+    "orkflowId\030A \002(\005\022\r\n\005Title\030B \002(\t\0227\n\010Metada"
+    "ta\030C \003(\0132%.Diadoc.Api.Proto.Events.Metad"
+    "ataItem\022V\n\030RecipientReceiptMetadata\030D \002("
+    "\01324.Diadoc.Api.Proto.Documents.Recipient"
+    "ReceiptMetadata\022N\n\024ConfirmationMetadata\030"
+    "E \002(\01320.Diadoc.Api.Proto.Documents.Confi"
+    "rmationMetadata\022t\n\027RecipientResponseStat"
+    "us\030F \002(\01623.Diadoc.Api.Proto.Documents.Re"
+    "cipientResponseStatus:\036RecipientResponse"
+    "StatusUnknown\022V\n\030AmendmentRequestMetadat"
+    "a\030G \002(\01324.Diadoc.Api.Proto.Documents.Ame"
+    "ndmentRequestMetadata\"\310\001\n\020ResolutionStat"
+    "us\022W\n\004Type\030\001 \001(\01620.Diadoc.Api.Proto.Docu"
+    "ments.ResolutionStatusType:\027UnknownResol"
+    "utionStatus\0222\n\006Target\030\002 \001(\0132\".Diadoc.Api"
+    ".Proto.ResolutionTarget\022\024\n\014AuthorUserId\030"
+    "\003 \002(\t\022\021\n\tAuthorFIO\030\004 \002(\t\"\320\001\n\030RecipientRe"
+    "ceiptMetadata\022d\n\rReceiptStatus\030\001 \002(\01620.D"
+    "iadoc.Api.Proto.Documents.GeneralReceipt"
+    "Status:\033GeneralReceiptStatusUnknown\022N\n\024C"
+    "onfirmationMetadata\030\002 \001(\01320.Diadoc.Api.P"
+    "roto.Documents.ConfirmationMetadata\"\223\001\n\024"
+    "ConfirmationMetadata\022d\n\rReceiptStatus\030\001 "
+    "\002(\01620.Diadoc.Api.Proto.Documents.General"
+    "ReceiptStatus:\033GeneralReceiptStatusUnkno"
+    "wn\022\025\n\rDateTimeTicks\030\002 \002(\020\"\230\001\n\030AmendmentR"
+    "equestMetadata\022\026\n\016AmendmentFlags\030\001 \002(\005\022d"
+    "\n\rReceiptStatus\030\002 \002(\01620.Diadoc.Api.Proto"
+    ".Documents.GeneralReceiptStatus:\033General"
+    "ReceiptStatusUnknown*\254\001\n\024ResolutionStatu"
+    "sType\022$\n\027UnknownResolutionStatus\020\377\377\377\377\377\377\377"
+    "\377\377\001\022\010\n\004None\020\000\022\014\n\010Approved\020\001\022\017\n\013Disapprov"
+    "ed\020\002\022\030\n\024ApprovementRequested\020\003\022\026\n\022Signat"
+    "ureRequested\020\004\022\023\n\017SignatureDenied\020\005*\262\001\n\020"
+    "RevocationStatus\022\033\n\027UnknownRevocationSta"
+    "tus\020\000\022\030\n\024RevocationStatusNone\020\001\022\035\n\031Revoc"
+    "ationIsRequestedByMe\020\002\022\030\n\024RequestsMyRevo"
+    "cation\020\003\022\026\n\022RevocationAccepted\020\004\022\026\n\022Revo"
+    "cationRejected\020\005*\256\001\n\031RoamingNotification"
+    "Status\022$\n UnknownRoamingNotificationStat"
+    "us\020\000\022!\n\035RoamingNotificationStatusNone\020\001\022"
+    "$\n RoamingNotificationStatusSuccess\020\002\022\"\n"
+    "\036RoamingNotificationStatusError\020\003*\300\001\n\025Se"
+    "nderSignatureStatus\022 \n\034UnknownSenderSign"
+    "atureStatus\020\000\022\035\n\031WaitingForSenderSignatu"
+    "re\020\001\022\034\n\030SenderSignatureUnchecked\020\002\022\"\n\036Se"
+    "nderSignatureCheckedAndValid\020\003\022$\n Sender"
+    "SignatureCheckedAndInvalid\020\004*\302\001\n\024ProxySi"
+    "gnatureStatus\022\037\n\033UnknownProxySignatureSt"
+    "atus\020\000\022\034\n\030ProxySignatureStatusNone\020\001\022\034\n\030"
+    "WaitingForProxySignature\020\002\022\026\n\022WithProxyS"
+    "ignature\020\003\022\032\n\026ProxySignatureRejected\020\004\022\031"
+    "\n\025InvalidProxySignature\020\005*\234\001\n\024GeneralRec"
+    "eiptStatus\022\037\n\033GeneralReceiptStatusUnknow"
+    "n\020\000\022%\n!GeneralReceiptStatusNotAcceptable"
+    "\020\001\022\027\n\023HaveToCreateReceipt\020\002\022\025\n\021WaitingFo"
+    "rReceipt\020\003\022\014\n\010Finished\020\004*\353\001\n\027RecipientRe"
+    "sponseStatus\022\"\n\036RecipientResponseStatusU"
+    "nknown\020\000\022(\n$RecipientResponseStatusNotAc"
+    "ceptable\020\001\022 \n\034WaitingForRecipientSignatu"
+    "re\020\002\022\032\n\026WithRecipientSignature\020\003\022%\n!Reci"
+    "pientSignatureRequestRejected\020\004\022\035\n\031Inval"
+    "idRecipientSignature\020\005", 7262);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Documents/Document.proto", &protobuf_RegisterTypes);
   Document::default_instance_ = new Document();
   ResolutionStatus::default_instance_ = new ResolutionStatus();
+  RecipientReceiptMetadata::default_instance_ = new RecipientReceiptMetadata();
+  ConfirmationMetadata::default_instance_ = new ConfirmationMetadata();
+  AmendmentRequestMetadata::default_instance_ = new AmendmentRequestMetadata();
   Document::default_instance_->InitAsDefaultInstance();
   ResolutionStatus::default_instance_->InitAsDefaultInstance();
+  RecipientReceiptMetadata::default_instance_->InitAsDefaultInstance();
+  ConfirmationMetadata::default_instance_->InitAsDefaultInstance();
+  AmendmentRequestMetadata::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_Documents_2fDocument_2eproto);
 }
 
@@ -436,6 +562,41 @@ bool ProxySignatureStatus_IsValid(int value) {
   }
 }
 
+const ::google::protobuf::EnumDescriptor* GeneralReceiptStatus_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return GeneralReceiptStatus_descriptor_;
+}
+bool GeneralReceiptStatus_IsValid(int value) {
+  switch(value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::google::protobuf::EnumDescriptor* RecipientResponseStatus_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return RecipientResponseStatus_descriptor_;
+}
+bool RecipientResponseStatus_IsValid(int value) {
+  switch(value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+      return true;
+    default:
+      return false;
+  }
+}
+
 
 // ===================================================================
 
@@ -500,6 +661,15 @@ const int Document::kUniversalCorrectionDocumentRevisionMetadataFieldNumber;
 const int Document::kResolutionRouteIdFieldNumber;
 const int Document::kAttachmentVersionFieldNumber;
 const int Document::kProxySignatureStatusFieldNumber;
+const int Document::kTypeNamedIdFieldNumber;
+const int Document::kFunctionFieldNumber;
+const int Document::kWorkflowIdFieldNumber;
+const int Document::kTitleFieldNumber;
+const int Document::kMetadataFieldNumber;
+const int Document::kRecipientReceiptMetadataFieldNumber;
+const int Document::kConfirmationMetadataFieldNumber;
+const int Document::kRecipientResponseStatusFieldNumber;
+const int Document::kAmendmentRequestMetadataFieldNumber;
 #endif  // !_MSC_VER
 
 Document::Document()
@@ -534,6 +704,9 @@ void Document::InitAsDefaultInstance() {
   universaltransferdocumentrevisionmetadata_ = const_cast< ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentRevisionMetadata*>(&::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalTransferDocumentRevisionMetadata::default_instance());
   universalcorrectiondocumentmetadata_ = const_cast< ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata*>(&::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata::default_instance());
   universalcorrectiondocumentrevisionmetadata_ = const_cast< ::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata*>(&::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata::default_instance());
+  recipientreceiptmetadata_ = const_cast< ::Diadoc::Api::Proto::Documents::RecipientReceiptMetadata*>(&::Diadoc::Api::Proto::Documents::RecipientReceiptMetadata::default_instance());
+  confirmationmetadata_ = const_cast< ::Diadoc::Api::Proto::Documents::ConfirmationMetadata*>(&::Diadoc::Api::Proto::Documents::ConfirmationMetadata::default_instance());
+  amendmentrequestmetadata_ = const_cast< ::Diadoc::Api::Proto::Documents::AmendmentRequestMetadata*>(&::Diadoc::Api::Proto::Documents::AmendmentRequestMetadata::default_instance());
 }
 
 Document::Document(const Document& from)
@@ -602,6 +775,14 @@ void Document::SharedCtor() {
   resolutionrouteid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   attachmentversion_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   proxysignaturestatus_ = 0;
+  typenamedid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  function_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  workflowid_ = 0;
+  title_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  recipientreceiptmetadata_ = NULL;
+  confirmationmetadata_ = NULL;
+  recipientresponsestatus_ = 0;
+  amendmentrequestmetadata_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -656,6 +837,15 @@ void Document::SharedDtor() {
   if (attachmentversion_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete attachmentversion_;
   }
+  if (typenamedid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete typenamedid_;
+  }
+  if (function_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete function_;
+  }
+  if (title_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete title_;
+  }
   if (this != default_instance_) {
     delete content_;
     delete nonformalizeddocumentmetadata_;
@@ -682,6 +872,9 @@ void Document::SharedDtor() {
     delete universaltransferdocumentrevisionmetadata_;
     delete universalcorrectiondocumentmetadata_;
     delete universalcorrectiondocumentrevisionmetadata_;
+    delete recipientreceiptmetadata_;
+    delete confirmationmetadata_;
+    delete amendmentrequestmetadata_;
   }
 }
 
@@ -878,7 +1071,7 @@ void Document::Clear() {
       if (universalcorrectiondocumentmetadata_ != NULL) universalcorrectiondocumentmetadata_->::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentMetadata::Clear();
     }
   }
-  if (_has_bits_[56 / 32] & 251658240) {
+  if (_has_bits_[56 / 32] & 4278190080) {
     if (has_universalcorrectiondocumentrevisionmetadata()) {
       if (universalcorrectiondocumentrevisionmetadata_ != NULL) universalcorrectiondocumentrevisionmetadata_->::Diadoc::Api::Proto::Documents::UniversalTransferDocument::UniversalCorrectionDocumentRevisionMetadata::Clear();
     }
@@ -893,6 +1086,34 @@ void Document::Clear() {
       }
     }
     proxysignaturestatus_ = 0;
+    if (has_typenamedid()) {
+      if (typenamedid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        typenamedid_->clear();
+      }
+    }
+    if (has_function()) {
+      if (function_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        function_->clear();
+      }
+    }
+    workflowid_ = 0;
+    if (has_title()) {
+      if (title_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        title_->clear();
+      }
+    }
+  }
+  if (_has_bits_[64 / 32] & 30) {
+    if (has_recipientreceiptmetadata()) {
+      if (recipientreceiptmetadata_ != NULL) recipientreceiptmetadata_->::Diadoc::Api::Proto::Documents::RecipientReceiptMetadata::Clear();
+    }
+    if (has_confirmationmetadata()) {
+      if (confirmationmetadata_ != NULL) confirmationmetadata_->::Diadoc::Api::Proto::Documents::ConfirmationMetadata::Clear();
+    }
+    recipientresponsestatus_ = 0;
+    if (has_amendmentrequestmetadata()) {
+      if (amendmentrequestmetadata_ != NULL) amendmentrequestmetadata_->::Diadoc::Api::Proto::Documents::AmendmentRequestMetadata::Clear();
+    }
   }
 
 #undef OFFSET_OF_FIELD_
@@ -902,6 +1123,7 @@ void Document::Clear() {
   subordinatedocumentids_.Clear();
   forwarddocumentevents_.Clear();
   customdata_.Clear();
+  metadata_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -1801,7 +2023,7 @@ bool Document::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .Diadoc.Api.Proto.Documents.ProxySignatureStatus ProxySignatureStatus = 62;
+      // optional .Diadoc.Api.Proto.Documents.ProxySignatureStatus ProxySignatureStatus = 62 [default = UnknownProxySignatureStatus];
       case 62: {
         if (tag == 496) {
          parse_ProxySignatureStatus:
@@ -1814,6 +2036,145 @@ bool Document::MergePartialFromCodedStream(
           } else {
             mutable_unknown_fields()->AddVarint(62, value);
           }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(506)) goto parse_TypeNamedId;
+        break;
+      }
+
+      // required string TypeNamedId = 63;
+      case 63: {
+        if (tag == 506) {
+         parse_TypeNamedId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_typenamedid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->typenamedid().data(), this->typenamedid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "typenamedid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(514)) goto parse_Function;
+        break;
+      }
+
+      // required string Function = 64;
+      case 64: {
+        if (tag == 514) {
+         parse_Function:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_function()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->function().data(), this->function().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "function");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(520)) goto parse_WorkflowId;
+        break;
+      }
+
+      // required int32 WorkflowId = 65;
+      case 65: {
+        if (tag == 520) {
+         parse_WorkflowId:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &workflowid_)));
+          set_has_workflowid();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(530)) goto parse_Title;
+        break;
+      }
+
+      // required string Title = 66;
+      case 66: {
+        if (tag == 530) {
+         parse_Title:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_title()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->title().data(), this->title().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "title");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(538)) goto parse_Metadata;
+        break;
+      }
+
+      // repeated .Diadoc.Api.Proto.Events.MetadataItem Metadata = 67;
+      case 67: {
+        if (tag == 538) {
+         parse_Metadata:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_metadata()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(538)) goto parse_Metadata;
+        if (input->ExpectTag(546)) goto parse_RecipientReceiptMetadata;
+        break;
+      }
+
+      // required .Diadoc.Api.Proto.Documents.RecipientReceiptMetadata RecipientReceiptMetadata = 68;
+      case 68: {
+        if (tag == 546) {
+         parse_RecipientReceiptMetadata:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_recipientreceiptmetadata()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(554)) goto parse_ConfirmationMetadata;
+        break;
+      }
+
+      // required .Diadoc.Api.Proto.Documents.ConfirmationMetadata ConfirmationMetadata = 69;
+      case 69: {
+        if (tag == 554) {
+         parse_ConfirmationMetadata:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_confirmationmetadata()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(560)) goto parse_RecipientResponseStatus;
+        break;
+      }
+
+      // required .Diadoc.Api.Proto.Documents.RecipientResponseStatus RecipientResponseStatus = 70 [default = RecipientResponseStatusUnknown];
+      case 70: {
+        if (tag == 560) {
+         parse_RecipientResponseStatus:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Diadoc::Api::Proto::Documents::RecipientResponseStatus_IsValid(value)) {
+            set_recipientresponsestatus(static_cast< ::Diadoc::Api::Proto::Documents::RecipientResponseStatus >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(70, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(570)) goto parse_AmendmentRequestMetadata;
+        break;
+      }
+
+      // required .Diadoc.Api.Proto.Documents.AmendmentRequestMetadata AmendmentRequestMetadata = 71;
+      case 71: {
+        if (tag == 570) {
+         parse_AmendmentRequestMetadata:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_amendmentrequestmetadata()));
         } else {
           goto handle_unusual;
         }
@@ -2250,10 +2611,75 @@ void Document::SerializeWithCachedSizes(
       61, this->attachmentversion(), output);
   }
 
-  // optional .Diadoc.Api.Proto.Documents.ProxySignatureStatus ProxySignatureStatus = 62;
+  // optional .Diadoc.Api.Proto.Documents.ProxySignatureStatus ProxySignatureStatus = 62 [default = UnknownProxySignatureStatus];
   if (has_proxysignaturestatus()) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       62, this->proxysignaturestatus(), output);
+  }
+
+  // required string TypeNamedId = 63;
+  if (has_typenamedid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->typenamedid().data(), this->typenamedid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "typenamedid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      63, this->typenamedid(), output);
+  }
+
+  // required string Function = 64;
+  if (has_function()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->function().data(), this->function().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "function");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      64, this->function(), output);
+  }
+
+  // required int32 WorkflowId = 65;
+  if (has_workflowid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(65, this->workflowid(), output);
+  }
+
+  // required string Title = 66;
+  if (has_title()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->title().data(), this->title().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "title");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      66, this->title(), output);
+  }
+
+  // repeated .Diadoc.Api.Proto.Events.MetadataItem Metadata = 67;
+  for (int i = 0; i < this->metadata_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      67, this->metadata(i), output);
+  }
+
+  // required .Diadoc.Api.Proto.Documents.RecipientReceiptMetadata RecipientReceiptMetadata = 68;
+  if (has_recipientreceiptmetadata()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      68, this->recipientreceiptmetadata(), output);
+  }
+
+  // required .Diadoc.Api.Proto.Documents.ConfirmationMetadata ConfirmationMetadata = 69;
+  if (has_confirmationmetadata()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      69, this->confirmationmetadata(), output);
+  }
+
+  // required .Diadoc.Api.Proto.Documents.RecipientResponseStatus RecipientResponseStatus = 70 [default = RecipientResponseStatusUnknown];
+  if (has_recipientresponsestatus()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      70, this->recipientresponsestatus(), output);
+  }
+
+  // required .Diadoc.Api.Proto.Documents.AmendmentRequestMetadata AmendmentRequestMetadata = 71;
+  if (has_amendmentrequestmetadata()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      71, this->amendmentrequestmetadata(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -2714,10 +3140,82 @@ void Document::SerializeWithCachedSizes(
         61, this->attachmentversion(), target);
   }
 
-  // optional .Diadoc.Api.Proto.Documents.ProxySignatureStatus ProxySignatureStatus = 62;
+  // optional .Diadoc.Api.Proto.Documents.ProxySignatureStatus ProxySignatureStatus = 62 [default = UnknownProxySignatureStatus];
   if (has_proxysignaturestatus()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       62, this->proxysignaturestatus(), target);
+  }
+
+  // required string TypeNamedId = 63;
+  if (has_typenamedid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->typenamedid().data(), this->typenamedid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "typenamedid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        63, this->typenamedid(), target);
+  }
+
+  // required string Function = 64;
+  if (has_function()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->function().data(), this->function().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "function");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        64, this->function(), target);
+  }
+
+  // required int32 WorkflowId = 65;
+  if (has_workflowid()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(65, this->workflowid(), target);
+  }
+
+  // required string Title = 66;
+  if (has_title()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->title().data(), this->title().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "title");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        66, this->title(), target);
+  }
+
+  // repeated .Diadoc.Api.Proto.Events.MetadataItem Metadata = 67;
+  for (int i = 0; i < this->metadata_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        67, this->metadata(i), target);
+  }
+
+  // required .Diadoc.Api.Proto.Documents.RecipientReceiptMetadata RecipientReceiptMetadata = 68;
+  if (has_recipientreceiptmetadata()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        68, this->recipientreceiptmetadata(), target);
+  }
+
+  // required .Diadoc.Api.Proto.Documents.ConfirmationMetadata ConfirmationMetadata = 69;
+  if (has_confirmationmetadata()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        69, this->confirmationmetadata(), target);
+  }
+
+  // required .Diadoc.Api.Proto.Documents.RecipientResponseStatus RecipientResponseStatus = 70 [default = RecipientResponseStatusUnknown];
+  if (has_recipientresponsestatus()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      70, this->recipientresponsestatus(), target);
+  }
+
+  // required .Diadoc.Api.Proto.Documents.AmendmentRequestMetadata AmendmentRequestMetadata = 71;
+  if (has_amendmentrequestmetadata()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        71, this->amendmentrequestmetadata(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -3106,10 +3604,67 @@ int Document::ByteSize() const {
           this->attachmentversion());
     }
 
-    // optional .Diadoc.Api.Proto.Documents.ProxySignatureStatus ProxySignatureStatus = 62;
+    // optional .Diadoc.Api.Proto.Documents.ProxySignatureStatus ProxySignatureStatus = 62 [default = UnknownProxySignatureStatus];
     if (has_proxysignaturestatus()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->proxysignaturestatus());
+    }
+
+    // required string TypeNamedId = 63;
+    if (has_typenamedid()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->typenamedid());
+    }
+
+    // required string Function = 64;
+    if (has_function()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->function());
+    }
+
+    // required int32 WorkflowId = 65;
+    if (has_workflowid()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->workflowid());
+    }
+
+    // required string Title = 66;
+    if (has_title()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->title());
+    }
+
+  }
+  if (_has_bits_[65 / 32] & (0xffu << (65 % 32))) {
+    // required .Diadoc.Api.Proto.Documents.RecipientReceiptMetadata RecipientReceiptMetadata = 68;
+    if (has_recipientreceiptmetadata()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->recipientreceiptmetadata());
+    }
+
+    // required .Diadoc.Api.Proto.Documents.ConfirmationMetadata ConfirmationMetadata = 69;
+    if (has_confirmationmetadata()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->confirmationmetadata());
+    }
+
+    // required .Diadoc.Api.Proto.Documents.RecipientResponseStatus RecipientResponseStatus = 70 [default = RecipientResponseStatusUnknown];
+    if (has_recipientresponsestatus()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->recipientresponsestatus());
+    }
+
+    // required .Diadoc.Api.Proto.Documents.AmendmentRequestMetadata AmendmentRequestMetadata = 71;
+    if (has_amendmentrequestmetadata()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->amendmentrequestmetadata());
     }
 
   }
@@ -3145,6 +3700,14 @@ int Document::ByteSize() const {
         this->customdata(i));
   }
 
+  // repeated .Diadoc.Api.Proto.Events.MetadataItem Metadata = 67;
+  total_size += 2 * this->metadata_size();
+  for (int i = 0; i < this->metadata_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->metadata(i));
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -3174,6 +3737,7 @@ void Document::MergeFrom(const Document& from) {
   subordinatedocumentids_.MergeFrom(from.subordinatedocumentids_);
   forwarddocumentevents_.MergeFrom(from.forwarddocumentevents_);
   customdata_.MergeFrom(from.customdata_);
+  metadata_.MergeFrom(from.metadata_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_indexkey()) {
       set_indexkey(from.indexkey());
@@ -3357,6 +3921,32 @@ void Document::MergeFrom(const Document& from) {
     if (from.has_proxysignaturestatus()) {
       set_proxysignaturestatus(from.proxysignaturestatus());
     }
+    if (from.has_typenamedid()) {
+      set_typenamedid(from.typenamedid());
+    }
+    if (from.has_function()) {
+      set_function(from.function());
+    }
+    if (from.has_workflowid()) {
+      set_workflowid(from.workflowid());
+    }
+    if (from.has_title()) {
+      set_title(from.title());
+    }
+  }
+  if (from._has_bits_[65 / 32] & (0xffu << (65 % 32))) {
+    if (from.has_recipientreceiptmetadata()) {
+      mutable_recipientreceiptmetadata()->::Diadoc::Api::Proto::Documents::RecipientReceiptMetadata::MergeFrom(from.recipientreceiptmetadata());
+    }
+    if (from.has_confirmationmetadata()) {
+      mutable_confirmationmetadata()->::Diadoc::Api::Proto::Documents::ConfirmationMetadata::MergeFrom(from.confirmationmetadata());
+    }
+    if (from.has_recipientresponsestatus()) {
+      set_recipientresponsestatus(from.recipientresponsestatus());
+    }
+    if (from.has_amendmentrequestmetadata()) {
+      mutable_amendmentrequestmetadata()->::Diadoc::Api::Proto::Documents::AmendmentRequestMetadata::MergeFrom(from.amendmentrequestmetadata());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -3375,6 +3965,8 @@ void Document::CopyFrom(const Document& from) {
 
 bool Document::IsInitialized() const {
   if ((_has_bits_[0] & 0x0000000e) != 0x0000000e) return false;
+  if ((_has_bits_[1] & 0xf0000000) != 0xf0000000) return false;
+  if ((_has_bits_[2] & 0x0000001e) != 0x0000001e) return false;
 
   if (!::google::protobuf::internal::AllAreInitialized(this->initialdocumentids())) return false;
   if (!::google::protobuf::internal::AllAreInitialized(this->subordinatedocumentids())) return false;
@@ -3433,6 +4025,16 @@ bool Document::IsInitialized() const {
   }
   if (has_universalcorrectiondocumentrevisionmetadata()) {
     if (!this->universalcorrectiondocumentrevisionmetadata().IsInitialized()) return false;
+  }
+  if (!::google::protobuf::internal::AllAreInitialized(this->metadata())) return false;
+  if (has_recipientreceiptmetadata()) {
+    if (!this->recipientreceiptmetadata().IsInitialized()) return false;
+  }
+  if (has_confirmationmetadata()) {
+    if (!this->confirmationmetadata().IsInitialized()) return false;
+  }
+  if (has_amendmentrequestmetadata()) {
+    if (!this->amendmentrequestmetadata().IsInitialized()) return false;
   }
   return true;
 }
@@ -3499,8 +4101,18 @@ void Document::Swap(Document* other) {
     std::swap(resolutionrouteid_, other->resolutionrouteid_);
     std::swap(attachmentversion_, other->attachmentversion_);
     std::swap(proxysignaturestatus_, other->proxysignaturestatus_);
+    std::swap(typenamedid_, other->typenamedid_);
+    std::swap(function_, other->function_);
+    std::swap(workflowid_, other->workflowid_);
+    std::swap(title_, other->title_);
+    metadata_.Swap(&other->metadata_);
+    std::swap(recipientreceiptmetadata_, other->recipientreceiptmetadata_);
+    std::swap(confirmationmetadata_, other->confirmationmetadata_);
+    std::swap(recipientresponsestatus_, other->recipientresponsestatus_);
+    std::swap(amendmentrequestmetadata_, other->amendmentrequestmetadata_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     std::swap(_has_bits_[1], other->_has_bits_[1]);
+    std::swap(_has_bits_[2], other->_has_bits_[2]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
   }
@@ -3905,6 +4517,844 @@ void ResolutionStatus::Swap(ResolutionStatus* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = ResolutionStatus_descriptor_;
   metadata.reflection = ResolutionStatus_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int RecipientReceiptMetadata::kReceiptStatusFieldNumber;
+const int RecipientReceiptMetadata::kConfirmationMetadataFieldNumber;
+#endif  // !_MSC_VER
+
+RecipientReceiptMetadata::RecipientReceiptMetadata()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Documents.RecipientReceiptMetadata)
+}
+
+void RecipientReceiptMetadata::InitAsDefaultInstance() {
+  confirmationmetadata_ = const_cast< ::Diadoc::Api::Proto::Documents::ConfirmationMetadata*>(&::Diadoc::Api::Proto::Documents::ConfirmationMetadata::default_instance());
+}
+
+RecipientReceiptMetadata::RecipientReceiptMetadata(const RecipientReceiptMetadata& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Documents.RecipientReceiptMetadata)
+}
+
+void RecipientReceiptMetadata::SharedCtor() {
+  _cached_size_ = 0;
+  receiptstatus_ = 0;
+  confirmationmetadata_ = NULL;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+RecipientReceiptMetadata::~RecipientReceiptMetadata() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Documents.RecipientReceiptMetadata)
+  SharedDtor();
+}
+
+void RecipientReceiptMetadata::SharedDtor() {
+  if (this != default_instance_) {
+    delete confirmationmetadata_;
+  }
+}
+
+void RecipientReceiptMetadata::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* RecipientReceiptMetadata::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return RecipientReceiptMetadata_descriptor_;
+}
+
+const RecipientReceiptMetadata& RecipientReceiptMetadata::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Documents_2fDocument_2eproto();
+  return *default_instance_;
+}
+
+RecipientReceiptMetadata* RecipientReceiptMetadata::default_instance_ = NULL;
+
+RecipientReceiptMetadata* RecipientReceiptMetadata::New() const {
+  return new RecipientReceiptMetadata;
+}
+
+void RecipientReceiptMetadata::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    receiptstatus_ = 0;
+    if (has_confirmationmetadata()) {
+      if (confirmationmetadata_ != NULL) confirmationmetadata_->::Diadoc::Api::Proto::Documents::ConfirmationMetadata::Clear();
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool RecipientReceiptMetadata::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Documents.RecipientReceiptMetadata)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1 [default = GeneralReceiptStatusUnknown];
+      case 1: {
+        if (tag == 8) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Diadoc::Api::Proto::Documents::GeneralReceiptStatus_IsValid(value)) {
+            set_receiptstatus(static_cast< ::Diadoc::Api::Proto::Documents::GeneralReceiptStatus >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(1, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_ConfirmationMetadata;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Documents.ConfirmationMetadata ConfirmationMetadata = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_ConfirmationMetadata:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_confirmationmetadata()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Documents.RecipientReceiptMetadata)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Documents.RecipientReceiptMetadata)
+  return false;
+#undef DO_
+}
+
+void RecipientReceiptMetadata::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Documents.RecipientReceiptMetadata)
+  // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1 [default = GeneralReceiptStatusUnknown];
+  if (has_receiptstatus()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->receiptstatus(), output);
+  }
+
+  // optional .Diadoc.Api.Proto.Documents.ConfirmationMetadata ConfirmationMetadata = 2;
+  if (has_confirmationmetadata()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->confirmationmetadata(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Documents.RecipientReceiptMetadata)
+}
+
+::google::protobuf::uint8* RecipientReceiptMetadata::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Documents.RecipientReceiptMetadata)
+  // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1 [default = GeneralReceiptStatusUnknown];
+  if (has_receiptstatus()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->receiptstatus(), target);
+  }
+
+  // optional .Diadoc.Api.Proto.Documents.ConfirmationMetadata ConfirmationMetadata = 2;
+  if (has_confirmationmetadata()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        2, this->confirmationmetadata(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Documents.RecipientReceiptMetadata)
+  return target;
+}
+
+int RecipientReceiptMetadata::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1 [default = GeneralReceiptStatusUnknown];
+    if (has_receiptstatus()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->receiptstatus());
+    }
+
+    // optional .Diadoc.Api.Proto.Documents.ConfirmationMetadata ConfirmationMetadata = 2;
+    if (has_confirmationmetadata()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->confirmationmetadata());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void RecipientReceiptMetadata::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const RecipientReceiptMetadata* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const RecipientReceiptMetadata*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void RecipientReceiptMetadata::MergeFrom(const RecipientReceiptMetadata& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_receiptstatus()) {
+      set_receiptstatus(from.receiptstatus());
+    }
+    if (from.has_confirmationmetadata()) {
+      mutable_confirmationmetadata()->::Diadoc::Api::Proto::Documents::ConfirmationMetadata::MergeFrom(from.confirmationmetadata());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void RecipientReceiptMetadata::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RecipientReceiptMetadata::CopyFrom(const RecipientReceiptMetadata& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RecipientReceiptMetadata::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+
+  if (has_confirmationmetadata()) {
+    if (!this->confirmationmetadata().IsInitialized()) return false;
+  }
+  return true;
+}
+
+void RecipientReceiptMetadata::Swap(RecipientReceiptMetadata* other) {
+  if (other != this) {
+    std::swap(receiptstatus_, other->receiptstatus_);
+    std::swap(confirmationmetadata_, other->confirmationmetadata_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata RecipientReceiptMetadata::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = RecipientReceiptMetadata_descriptor_;
+  metadata.reflection = RecipientReceiptMetadata_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int ConfirmationMetadata::kReceiptStatusFieldNumber;
+const int ConfirmationMetadata::kDateTimeTicksFieldNumber;
+#endif  // !_MSC_VER
+
+ConfirmationMetadata::ConfirmationMetadata()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Documents.ConfirmationMetadata)
+}
+
+void ConfirmationMetadata::InitAsDefaultInstance() {
+}
+
+ConfirmationMetadata::ConfirmationMetadata(const ConfirmationMetadata& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Documents.ConfirmationMetadata)
+}
+
+void ConfirmationMetadata::SharedCtor() {
+  _cached_size_ = 0;
+  receiptstatus_ = 0;
+  datetimeticks_ = GOOGLE_LONGLONG(0);
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+ConfirmationMetadata::~ConfirmationMetadata() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Documents.ConfirmationMetadata)
+  SharedDtor();
+}
+
+void ConfirmationMetadata::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void ConfirmationMetadata::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* ConfirmationMetadata::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return ConfirmationMetadata_descriptor_;
+}
+
+const ConfirmationMetadata& ConfirmationMetadata::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Documents_2fDocument_2eproto();
+  return *default_instance_;
+}
+
+ConfirmationMetadata* ConfirmationMetadata::default_instance_ = NULL;
+
+ConfirmationMetadata* ConfirmationMetadata::New() const {
+  return new ConfirmationMetadata;
+}
+
+void ConfirmationMetadata::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<ConfirmationMetadata*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  ZR_(datetimeticks_, receiptstatus_);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool ConfirmationMetadata::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Documents.ConfirmationMetadata)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1 [default = GeneralReceiptStatusUnknown];
+      case 1: {
+        if (tag == 8) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Diadoc::Api::Proto::Documents::GeneralReceiptStatus_IsValid(value)) {
+            set_receiptstatus(static_cast< ::Diadoc::Api::Proto::Documents::GeneralReceiptStatus >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(1, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(17)) goto parse_DateTimeTicks;
+        break;
+      }
+
+      // required sfixed64 DateTimeTicks = 2;
+      case 2: {
+        if (tag == 17) {
+         parse_DateTimeTicks:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_SFIXED64>(
+                 input, &datetimeticks_)));
+          set_has_datetimeticks();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Documents.ConfirmationMetadata)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Documents.ConfirmationMetadata)
+  return false;
+#undef DO_
+}
+
+void ConfirmationMetadata::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Documents.ConfirmationMetadata)
+  // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1 [default = GeneralReceiptStatusUnknown];
+  if (has_receiptstatus()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->receiptstatus(), output);
+  }
+
+  // required sfixed64 DateTimeTicks = 2;
+  if (has_datetimeticks()) {
+    ::google::protobuf::internal::WireFormatLite::WriteSFixed64(2, this->datetimeticks(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Documents.ConfirmationMetadata)
+}
+
+::google::protobuf::uint8* ConfirmationMetadata::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Documents.ConfirmationMetadata)
+  // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1 [default = GeneralReceiptStatusUnknown];
+  if (has_receiptstatus()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->receiptstatus(), target);
+  }
+
+  // required sfixed64 DateTimeTicks = 2;
+  if (has_datetimeticks()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteSFixed64ToArray(2, this->datetimeticks(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Documents.ConfirmationMetadata)
+  return target;
+}
+
+int ConfirmationMetadata::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1 [default = GeneralReceiptStatusUnknown];
+    if (has_receiptstatus()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->receiptstatus());
+    }
+
+    // required sfixed64 DateTimeTicks = 2;
+    if (has_datetimeticks()) {
+      total_size += 1 + 8;
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void ConfirmationMetadata::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const ConfirmationMetadata* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const ConfirmationMetadata*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void ConfirmationMetadata::MergeFrom(const ConfirmationMetadata& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_receiptstatus()) {
+      set_receiptstatus(from.receiptstatus());
+    }
+    if (from.has_datetimeticks()) {
+      set_datetimeticks(from.datetimeticks());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void ConfirmationMetadata::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ConfirmationMetadata::CopyFrom(const ConfirmationMetadata& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ConfirmationMetadata::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+
+  return true;
+}
+
+void ConfirmationMetadata::Swap(ConfirmationMetadata* other) {
+  if (other != this) {
+    std::swap(receiptstatus_, other->receiptstatus_);
+    std::swap(datetimeticks_, other->datetimeticks_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata ConfirmationMetadata::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = ConfirmationMetadata_descriptor_;
+  metadata.reflection = ConfirmationMetadata_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int AmendmentRequestMetadata::kAmendmentFlagsFieldNumber;
+const int AmendmentRequestMetadata::kReceiptStatusFieldNumber;
+#endif  // !_MSC_VER
+
+AmendmentRequestMetadata::AmendmentRequestMetadata()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Documents.AmendmentRequestMetadata)
+}
+
+void AmendmentRequestMetadata::InitAsDefaultInstance() {
+}
+
+AmendmentRequestMetadata::AmendmentRequestMetadata(const AmendmentRequestMetadata& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Documents.AmendmentRequestMetadata)
+}
+
+void AmendmentRequestMetadata::SharedCtor() {
+  _cached_size_ = 0;
+  amendmentflags_ = 0;
+  receiptstatus_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+AmendmentRequestMetadata::~AmendmentRequestMetadata() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Documents.AmendmentRequestMetadata)
+  SharedDtor();
+}
+
+void AmendmentRequestMetadata::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void AmendmentRequestMetadata::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* AmendmentRequestMetadata::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return AmendmentRequestMetadata_descriptor_;
+}
+
+const AmendmentRequestMetadata& AmendmentRequestMetadata::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Documents_2fDocument_2eproto();
+  return *default_instance_;
+}
+
+AmendmentRequestMetadata* AmendmentRequestMetadata::default_instance_ = NULL;
+
+AmendmentRequestMetadata* AmendmentRequestMetadata::New() const {
+  return new AmendmentRequestMetadata;
+}
+
+void AmendmentRequestMetadata::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<AmendmentRequestMetadata*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  ZR_(amendmentflags_, receiptstatus_);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool AmendmentRequestMetadata::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Documents.AmendmentRequestMetadata)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required int32 AmendmentFlags = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &amendmentflags_)));
+          set_has_amendmentflags();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_ReceiptStatus;
+        break;
+      }
+
+      // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 2 [default = GeneralReceiptStatusUnknown];
+      case 2: {
+        if (tag == 16) {
+         parse_ReceiptStatus:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Diadoc::Api::Proto::Documents::GeneralReceiptStatus_IsValid(value)) {
+            set_receiptstatus(static_cast< ::Diadoc::Api::Proto::Documents::GeneralReceiptStatus >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(2, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Documents.AmendmentRequestMetadata)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Documents.AmendmentRequestMetadata)
+  return false;
+#undef DO_
+}
+
+void AmendmentRequestMetadata::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Documents.AmendmentRequestMetadata)
+  // required int32 AmendmentFlags = 1;
+  if (has_amendmentflags()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->amendmentflags(), output);
+  }
+
+  // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 2 [default = GeneralReceiptStatusUnknown];
+  if (has_receiptstatus()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->receiptstatus(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Documents.AmendmentRequestMetadata)
+}
+
+::google::protobuf::uint8* AmendmentRequestMetadata::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Documents.AmendmentRequestMetadata)
+  // required int32 AmendmentFlags = 1;
+  if (has_amendmentflags()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->amendmentflags(), target);
+  }
+
+  // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 2 [default = GeneralReceiptStatusUnknown];
+  if (has_receiptstatus()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->receiptstatus(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Documents.AmendmentRequestMetadata)
+  return target;
+}
+
+int AmendmentRequestMetadata::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required int32 AmendmentFlags = 1;
+    if (has_amendmentflags()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->amendmentflags());
+    }
+
+    // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 2 [default = GeneralReceiptStatusUnknown];
+    if (has_receiptstatus()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->receiptstatus());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void AmendmentRequestMetadata::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const AmendmentRequestMetadata* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const AmendmentRequestMetadata*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void AmendmentRequestMetadata::MergeFrom(const AmendmentRequestMetadata& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_amendmentflags()) {
+      set_amendmentflags(from.amendmentflags());
+    }
+    if (from.has_receiptstatus()) {
+      set_receiptstatus(from.receiptstatus());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void AmendmentRequestMetadata::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AmendmentRequestMetadata::CopyFrom(const AmendmentRequestMetadata& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AmendmentRequestMetadata::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+
+  return true;
+}
+
+void AmendmentRequestMetadata::Swap(AmendmentRequestMetadata* other) {
+  if (other != this) {
+    std::swap(amendmentflags_, other->amendmentflags_);
+    std::swap(receiptstatus_, other->receiptstatus_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata AmendmentRequestMetadata::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = AmendmentRequestMetadata_descriptor_;
+  metadata.reflection = AmendmentRequestMetadata_reflection_;
   return metadata;
 }
 
