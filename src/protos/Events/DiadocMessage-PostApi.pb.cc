@@ -173,6 +173,18 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* ResolutionRouteRemoval_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   ResolutionRouteRemoval_reflection_ = NULL;
+const ::google::protobuf::Descriptor* TemplateToPost_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  TemplateToPost_reflection_ = NULL;
+const ::google::protobuf::Descriptor* TemplateDocumentAttachment_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  TemplateDocumentAttachment_reflection_ = NULL;
+const ::google::protobuf::Descriptor* TemplateTransformationToPost_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  TemplateTransformationToPost_reflection_ = NULL;
+const ::google::protobuf::Descriptor* DocumentTransformation_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  DocumentTransformation_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* CustomDataPatchOperation_descriptor_ = NULL;
 
 }  // namespace
@@ -1199,6 +1211,81 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ResolutionRouteRemoval));
+  TemplateToPost_descriptor_ = file->message_type(50);
+  static const int TemplateToPost_offsets_[6] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, fromboxid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, toboxid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, messagefromboxid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, messagetoboxid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, messagetodepartmentid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, documentattachments_),
+  };
+  TemplateToPost_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      TemplateToPost_descriptor_,
+      TemplateToPost::default_instance_,
+      TemplateToPost_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(TemplateToPost));
+  TemplateDocumentAttachment_descriptor_ = file->message_type(51);
+  static const int TemplateDocumentAttachment_offsets_[8] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, unsignedcontent_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, comment_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, typenamedid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, function_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, version_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, metadata_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, workflowid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, customdocumentid_),
+  };
+  TemplateDocumentAttachment_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      TemplateDocumentAttachment_descriptor_,
+      TemplateDocumentAttachment::default_instance_,
+      TemplateDocumentAttachment_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(TemplateDocumentAttachment));
+  TemplateTransformationToPost_descriptor_ = file->message_type(52);
+  static const int TemplateTransformationToPost_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateTransformationToPost, boxid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateTransformationToPost, templateid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateTransformationToPost, documenttransformations_),
+  };
+  TemplateTransformationToPost_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      TemplateTransformationToPost_descriptor_,
+      TemplateTransformationToPost::default_instance_,
+      TemplateTransformationToPost_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateTransformationToPost, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateTransformationToPost, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(TemplateTransformationToPost));
+  DocumentTransformation_descriptor_ = file->message_type(53);
+  static const int DocumentTransformation_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentTransformation, documentid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentTransformation, customdocumentid_),
+  };
+  DocumentTransformation_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      DocumentTransformation_descriptor_,
+      DocumentTransformation::default_instance_,
+      DocumentTransformation_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentTransformation, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentTransformation, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(DocumentTransformation));
   CustomDataPatchOperation_descriptor_ = file->enum_type(0);
 }
 
@@ -1312,6 +1399,14 @@ void protobuf_RegisterTypes(const ::std::string&) {
     EditDocumentPacketCommand_descriptor_, &EditDocumentPacketCommand::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     ResolutionRouteRemoval_descriptor_, &ResolutionRouteRemoval::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    TemplateToPost_descriptor_, &TemplateToPost::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    TemplateDocumentAttachment_descriptor_, &TemplateDocumentAttachment::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    TemplateTransformationToPost_descriptor_, &TemplateTransformationToPost::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    DocumentTransformation_descriptor_, &DocumentTransformation::default_instance());
 }
 
 }  // namespace
@@ -1417,6 +1512,14 @@ void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto() {
   delete EditDocumentPacketCommand_reflection_;
   delete ResolutionRouteRemoval::default_instance_;
   delete ResolutionRouteRemoval_reflection_;
+  delete TemplateToPost::default_instance_;
+  delete TemplateToPost_reflection_;
+  delete TemplateDocumentAttachment::default_instance_;
+  delete TemplateDocumentAttachment_reflection_;
+  delete TemplateTransformationToPost::default_instance_;
+  delete TemplateTransformationToPost_reflection_;
+  delete DocumentTransformation::default_instance_;
+  delete DocumentTransformation_reflection_;
 }
 
 void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
@@ -1807,9 +1910,26 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
     "d\022\?\n\031RemoveDocumentsFromPacket\030\003 \003(\0132\034.D"
     "iadoc.Api.Proto.DocumentId\"T\n\026Resolution"
     "RouteRemoval\022\026\n\016ParentEntityId\030\001 \002(\t\022\017\n\007"
-    "RouteId\030\002 \002(\t\022\021\n\007Comment\030\003 \001(\t:\000*/\n\030Cust"
-    "omDataPatchOperation\022\007\n\003Set\020\000\022\n\n\006Remove\020"
-    "\001", 15001);
+    "RouteId\030\002 \002(\t\022\021\n\007Comment\030\003 \001(\t:\000\"\327\001\n\016Tem"
+    "plateToPost\022\021\n\tFromBoxId\030\001 \002(\t\022\017\n\007ToBoxI"
+    "d\030\002 \002(\t\022\030\n\020MessageFromBoxId\030\003 \002(\t\022\026\n\016Mes"
+    "sageToBoxId\030\004 \002(\t\022\035\n\025MessageToDepartment"
+    "Id\030\005 \001(\t\022P\n\023DocumentAttachments\030\006 \003(\01323."
+    "Diadoc.Api.Proto.Events.TemplateDocument"
+    "Attachment\"\217\002\n\032TemplateDocumentAttachmen"
+    "t\022A\n\017UnsignedContent\030\001 \002(\0132(.Diadoc.Api."
+    "Proto.Events.UnsignedContent\022\017\n\007Comment\030"
+    "\002 \001(\t\022\023\n\013TypeNamedId\030\003 \002(\t\022\020\n\010Function\030\004"
+    " \001(\t\022\017\n\007Version\030\005 \001(\t\0227\n\010Metadata\030\006 \003(\0132"
+    "%.Diadoc.Api.Proto.Events.MetadataItem\022\022"
+    "\n\nWorkflowId\030\007 \001(\005\022\030\n\020CustomDocumentId\030\010"
+    " \001(\t\"\223\001\n\034TemplateTransformationToPost\022\r\n"
+    "\005BoxId\030\001 \002(\t\022\022\n\nTemplateId\030\002 \002(\t\022P\n\027Docu"
+    "mentTransformations\030\003 \003(\0132/.Diadoc.Api.P"
+    "roto.Events.DocumentTransformation\"F\n\026Do"
+    "cumentTransformation\022\022\n\nDocumentId\030\001 \002(\t"
+    "\022\030\n\020CustomDocumentId\030\002 \001(\t*/\n\030CustomData"
+    "PatchOperation\022\007\n\003Set\020\000\022\n\n\006Remove\020\001", 15715);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Events/DiadocMessage-PostApi.proto", &protobuf_RegisterTypes);
   MessageToPost::default_instance_ = new MessageToPost();
@@ -1862,6 +1982,10 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
   CustomDataPatch::default_instance_ = new CustomDataPatch();
   EditDocumentPacketCommand::default_instance_ = new EditDocumentPacketCommand();
   ResolutionRouteRemoval::default_instance_ = new ResolutionRouteRemoval();
+  TemplateToPost::default_instance_ = new TemplateToPost();
+  TemplateDocumentAttachment::default_instance_ = new TemplateDocumentAttachment();
+  TemplateTransformationToPost::default_instance_ = new TemplateTransformationToPost();
+  DocumentTransformation::default_instance_ = new DocumentTransformation();
   MessageToPost::default_instance_->InitAsDefaultInstance();
   EncryptedXmlDocumentAttachment::default_instance_->InitAsDefaultInstance();
   EncryptedInvoiceAttachment::default_instance_->InitAsDefaultInstance();
@@ -1912,6 +2036,10 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
   CustomDataPatch::default_instance_->InitAsDefaultInstance();
   EditDocumentPacketCommand::default_instance_->InitAsDefaultInstance();
   ResolutionRouteRemoval::default_instance_->InitAsDefaultInstance();
+  TemplateToPost::default_instance_->InitAsDefaultInstance();
+  TemplateDocumentAttachment::default_instance_->InitAsDefaultInstance();
+  TemplateTransformationToPost::default_instance_->InitAsDefaultInstance();
+  DocumentTransformation::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto);
 }
 
@@ -26944,6 +27072,1783 @@ void ResolutionRouteRemoval::Swap(ResolutionRouteRemoval* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = ResolutionRouteRemoval_descriptor_;
   metadata.reflection = ResolutionRouteRemoval_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int TemplateToPost::kFromBoxIdFieldNumber;
+const int TemplateToPost::kToBoxIdFieldNumber;
+const int TemplateToPost::kMessageFromBoxIdFieldNumber;
+const int TemplateToPost::kMessageToBoxIdFieldNumber;
+const int TemplateToPost::kMessageToDepartmentIdFieldNumber;
+const int TemplateToPost::kDocumentAttachmentsFieldNumber;
+#endif  // !_MSC_VER
+
+TemplateToPost::TemplateToPost()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Events.TemplateToPost)
+}
+
+void TemplateToPost::InitAsDefaultInstance() {
+}
+
+TemplateToPost::TemplateToPost(const TemplateToPost& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Events.TemplateToPost)
+}
+
+void TemplateToPost::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  fromboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  toboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  messagefromboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  messagetoboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  messagetodepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+TemplateToPost::~TemplateToPost() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Events.TemplateToPost)
+  SharedDtor();
+}
+
+void TemplateToPost::SharedDtor() {
+  if (fromboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete fromboxid_;
+  }
+  if (toboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete toboxid_;
+  }
+  if (messagefromboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete messagefromboxid_;
+  }
+  if (messagetoboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete messagetoboxid_;
+  }
+  if (messagetodepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete messagetodepartmentid_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void TemplateToPost::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* TemplateToPost::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return TemplateToPost_descriptor_;
+}
+
+const TemplateToPost& TemplateToPost::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  return *default_instance_;
+}
+
+TemplateToPost* TemplateToPost::default_instance_ = NULL;
+
+TemplateToPost* TemplateToPost::New() const {
+  return new TemplateToPost;
+}
+
+void TemplateToPost::Clear() {
+  if (_has_bits_[0 / 32] & 31) {
+    if (has_fromboxid()) {
+      if (fromboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        fromboxid_->clear();
+      }
+    }
+    if (has_toboxid()) {
+      if (toboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        toboxid_->clear();
+      }
+    }
+    if (has_messagefromboxid()) {
+      if (messagefromboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        messagefromboxid_->clear();
+      }
+    }
+    if (has_messagetoboxid()) {
+      if (messagetoboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        messagetoboxid_->clear();
+      }
+    }
+    if (has_messagetodepartmentid()) {
+      if (messagetodepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        messagetodepartmentid_->clear();
+      }
+    }
+  }
+  documentattachments_.Clear();
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool TemplateToPost::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Events.TemplateToPost)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required string FromBoxId = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_fromboxid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->fromboxid().data(), this->fromboxid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "fromboxid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_ToBoxId;
+        break;
+      }
+
+      // required string ToBoxId = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_ToBoxId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_toboxid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->toboxid().data(), this->toboxid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "toboxid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_MessageFromBoxId;
+        break;
+      }
+
+      // required string MessageFromBoxId = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_MessageFromBoxId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_messagefromboxid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->messagefromboxid().data(), this->messagefromboxid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "messagefromboxid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_MessageToBoxId;
+        break;
+      }
+
+      // required string MessageToBoxId = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_MessageToBoxId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_messagetoboxid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->messagetoboxid().data(), this->messagetoboxid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "messagetoboxid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_MessageToDepartmentId;
+        break;
+      }
+
+      // optional string MessageToDepartmentId = 5;
+      case 5: {
+        if (tag == 42) {
+         parse_MessageToDepartmentId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_messagetodepartmentid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->messagetodepartmentid().data(), this->messagetodepartmentid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "messagetodepartmentid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(50)) goto parse_DocumentAttachments;
+        break;
+      }
+
+      // repeated .Diadoc.Api.Proto.Events.TemplateDocumentAttachment DocumentAttachments = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_DocumentAttachments:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_documentattachments()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(50)) goto parse_DocumentAttachments;
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Events.TemplateToPost)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Events.TemplateToPost)
+  return false;
+#undef DO_
+}
+
+void TemplateToPost::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Events.TemplateToPost)
+  // required string FromBoxId = 1;
+  if (has_fromboxid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->fromboxid().data(), this->fromboxid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "fromboxid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->fromboxid(), output);
+  }
+
+  // required string ToBoxId = 2;
+  if (has_toboxid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->toboxid().data(), this->toboxid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "toboxid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->toboxid(), output);
+  }
+
+  // required string MessageFromBoxId = 3;
+  if (has_messagefromboxid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->messagefromboxid().data(), this->messagefromboxid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "messagefromboxid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->messagefromboxid(), output);
+  }
+
+  // required string MessageToBoxId = 4;
+  if (has_messagetoboxid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->messagetoboxid().data(), this->messagetoboxid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "messagetoboxid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->messagetoboxid(), output);
+  }
+
+  // optional string MessageToDepartmentId = 5;
+  if (has_messagetodepartmentid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->messagetodepartmentid().data(), this->messagetodepartmentid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "messagetodepartmentid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->messagetodepartmentid(), output);
+  }
+
+  // repeated .Diadoc.Api.Proto.Events.TemplateDocumentAttachment DocumentAttachments = 6;
+  for (int i = 0; i < this->documentattachments_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6, this->documentattachments(i), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Events.TemplateToPost)
+}
+
+::google::protobuf::uint8* TemplateToPost::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Events.TemplateToPost)
+  // required string FromBoxId = 1;
+  if (has_fromboxid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->fromboxid().data(), this->fromboxid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "fromboxid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->fromboxid(), target);
+  }
+
+  // required string ToBoxId = 2;
+  if (has_toboxid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->toboxid().data(), this->toboxid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "toboxid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->toboxid(), target);
+  }
+
+  // required string MessageFromBoxId = 3;
+  if (has_messagefromboxid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->messagefromboxid().data(), this->messagefromboxid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "messagefromboxid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->messagefromboxid(), target);
+  }
+
+  // required string MessageToBoxId = 4;
+  if (has_messagetoboxid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->messagetoboxid().data(), this->messagetoboxid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "messagetoboxid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->messagetoboxid(), target);
+  }
+
+  // optional string MessageToDepartmentId = 5;
+  if (has_messagetodepartmentid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->messagetodepartmentid().data(), this->messagetodepartmentid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "messagetodepartmentid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->messagetodepartmentid(), target);
+  }
+
+  // repeated .Diadoc.Api.Proto.Events.TemplateDocumentAttachment DocumentAttachments = 6;
+  for (int i = 0; i < this->documentattachments_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        6, this->documentattachments(i), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Events.TemplateToPost)
+  return target;
+}
+
+int TemplateToPost::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required string FromBoxId = 1;
+    if (has_fromboxid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->fromboxid());
+    }
+
+    // required string ToBoxId = 2;
+    if (has_toboxid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->toboxid());
+    }
+
+    // required string MessageFromBoxId = 3;
+    if (has_messagefromboxid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->messagefromboxid());
+    }
+
+    // required string MessageToBoxId = 4;
+    if (has_messagetoboxid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->messagetoboxid());
+    }
+
+    // optional string MessageToDepartmentId = 5;
+    if (has_messagetodepartmentid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->messagetodepartmentid());
+    }
+
+  }
+  // repeated .Diadoc.Api.Proto.Events.TemplateDocumentAttachment DocumentAttachments = 6;
+  total_size += 1 * this->documentattachments_size();
+  for (int i = 0; i < this->documentattachments_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->documentattachments(i));
+  }
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void TemplateToPost::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const TemplateToPost* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const TemplateToPost*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void TemplateToPost::MergeFrom(const TemplateToPost& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  documentattachments_.MergeFrom(from.documentattachments_);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_fromboxid()) {
+      set_fromboxid(from.fromboxid());
+    }
+    if (from.has_toboxid()) {
+      set_toboxid(from.toboxid());
+    }
+    if (from.has_messagefromboxid()) {
+      set_messagefromboxid(from.messagefromboxid());
+    }
+    if (from.has_messagetoboxid()) {
+      set_messagetoboxid(from.messagetoboxid());
+    }
+    if (from.has_messagetodepartmentid()) {
+      set_messagetodepartmentid(from.messagetodepartmentid());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void TemplateToPost::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void TemplateToPost::CopyFrom(const TemplateToPost& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TemplateToPost::IsInitialized() const {
+  if ((_has_bits_[0] & 0x0000000f) != 0x0000000f) return false;
+
+  if (!::google::protobuf::internal::AllAreInitialized(this->documentattachments())) return false;
+  return true;
+}
+
+void TemplateToPost::Swap(TemplateToPost* other) {
+  if (other != this) {
+    std::swap(fromboxid_, other->fromboxid_);
+    std::swap(toboxid_, other->toboxid_);
+    std::swap(messagefromboxid_, other->messagefromboxid_);
+    std::swap(messagetoboxid_, other->messagetoboxid_);
+    std::swap(messagetodepartmentid_, other->messagetodepartmentid_);
+    documentattachments_.Swap(&other->documentattachments_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata TemplateToPost::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = TemplateToPost_descriptor_;
+  metadata.reflection = TemplateToPost_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int TemplateDocumentAttachment::kUnsignedContentFieldNumber;
+const int TemplateDocumentAttachment::kCommentFieldNumber;
+const int TemplateDocumentAttachment::kTypeNamedIdFieldNumber;
+const int TemplateDocumentAttachment::kFunctionFieldNumber;
+const int TemplateDocumentAttachment::kVersionFieldNumber;
+const int TemplateDocumentAttachment::kMetadataFieldNumber;
+const int TemplateDocumentAttachment::kWorkflowIdFieldNumber;
+const int TemplateDocumentAttachment::kCustomDocumentIdFieldNumber;
+#endif  // !_MSC_VER
+
+TemplateDocumentAttachment::TemplateDocumentAttachment()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Events.TemplateDocumentAttachment)
+}
+
+void TemplateDocumentAttachment::InitAsDefaultInstance() {
+  unsignedcontent_ = const_cast< ::Diadoc::Api::Proto::Events::UnsignedContent*>(&::Diadoc::Api::Proto::Events::UnsignedContent::default_instance());
+}
+
+TemplateDocumentAttachment::TemplateDocumentAttachment(const TemplateDocumentAttachment& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Events.TemplateDocumentAttachment)
+}
+
+void TemplateDocumentAttachment::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  unsignedcontent_ = NULL;
+  comment_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  typenamedid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  function_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  version_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  workflowid_ = 0;
+  customdocumentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+TemplateDocumentAttachment::~TemplateDocumentAttachment() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Events.TemplateDocumentAttachment)
+  SharedDtor();
+}
+
+void TemplateDocumentAttachment::SharedDtor() {
+  if (comment_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete comment_;
+  }
+  if (typenamedid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete typenamedid_;
+  }
+  if (function_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete function_;
+  }
+  if (version_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete version_;
+  }
+  if (customdocumentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete customdocumentid_;
+  }
+  if (this != default_instance_) {
+    delete unsignedcontent_;
+  }
+}
+
+void TemplateDocumentAttachment::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* TemplateDocumentAttachment::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return TemplateDocumentAttachment_descriptor_;
+}
+
+const TemplateDocumentAttachment& TemplateDocumentAttachment::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  return *default_instance_;
+}
+
+TemplateDocumentAttachment* TemplateDocumentAttachment::default_instance_ = NULL;
+
+TemplateDocumentAttachment* TemplateDocumentAttachment::New() const {
+  return new TemplateDocumentAttachment;
+}
+
+void TemplateDocumentAttachment::Clear() {
+  if (_has_bits_[0 / 32] & 223) {
+    if (has_unsignedcontent()) {
+      if (unsignedcontent_ != NULL) unsignedcontent_->::Diadoc::Api::Proto::Events::UnsignedContent::Clear();
+    }
+    if (has_comment()) {
+      if (comment_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        comment_->clear();
+      }
+    }
+    if (has_typenamedid()) {
+      if (typenamedid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        typenamedid_->clear();
+      }
+    }
+    if (has_function()) {
+      if (function_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        function_->clear();
+      }
+    }
+    if (has_version()) {
+      if (version_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        version_->clear();
+      }
+    }
+    workflowid_ = 0;
+    if (has_customdocumentid()) {
+      if (customdocumentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        customdocumentid_->clear();
+      }
+    }
+  }
+  metadata_.Clear();
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool TemplateDocumentAttachment::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Events.TemplateDocumentAttachment)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required .Diadoc.Api.Proto.Events.UnsignedContent UnsignedContent = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_unsignedcontent()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_Comment;
+        break;
+      }
+
+      // optional string Comment = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_Comment:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_comment()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->comment().data(), this->comment().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "comment");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_TypeNamedId;
+        break;
+      }
+
+      // required string TypeNamedId = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_TypeNamedId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_typenamedid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->typenamedid().data(), this->typenamedid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "typenamedid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_Function;
+        break;
+      }
+
+      // optional string Function = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_Function:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_function()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->function().data(), this->function().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "function");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_Version;
+        break;
+      }
+
+      // optional string Version = 5;
+      case 5: {
+        if (tag == 42) {
+         parse_Version:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_version()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->version().data(), this->version().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "version");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(50)) goto parse_Metadata;
+        break;
+      }
+
+      // repeated .Diadoc.Api.Proto.Events.MetadataItem Metadata = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_Metadata:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_metadata()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(50)) goto parse_Metadata;
+        if (input->ExpectTag(56)) goto parse_WorkflowId;
+        break;
+      }
+
+      // optional int32 WorkflowId = 7;
+      case 7: {
+        if (tag == 56) {
+         parse_WorkflowId:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &workflowid_)));
+          set_has_workflowid();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(66)) goto parse_CustomDocumentId;
+        break;
+      }
+
+      // optional string CustomDocumentId = 8;
+      case 8: {
+        if (tag == 66) {
+         parse_CustomDocumentId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_customdocumentid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->customdocumentid().data(), this->customdocumentid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "customdocumentid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Events.TemplateDocumentAttachment)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Events.TemplateDocumentAttachment)
+  return false;
+#undef DO_
+}
+
+void TemplateDocumentAttachment::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Events.TemplateDocumentAttachment)
+  // required .Diadoc.Api.Proto.Events.UnsignedContent UnsignedContent = 1;
+  if (has_unsignedcontent()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->unsignedcontent(), output);
+  }
+
+  // optional string Comment = 2;
+  if (has_comment()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->comment().data(), this->comment().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "comment");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->comment(), output);
+  }
+
+  // required string TypeNamedId = 3;
+  if (has_typenamedid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->typenamedid().data(), this->typenamedid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "typenamedid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->typenamedid(), output);
+  }
+
+  // optional string Function = 4;
+  if (has_function()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->function().data(), this->function().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "function");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->function(), output);
+  }
+
+  // optional string Version = 5;
+  if (has_version()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->version().data(), this->version().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "version");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->version(), output);
+  }
+
+  // repeated .Diadoc.Api.Proto.Events.MetadataItem Metadata = 6;
+  for (int i = 0; i < this->metadata_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6, this->metadata(i), output);
+  }
+
+  // optional int32 WorkflowId = 7;
+  if (has_workflowid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->workflowid(), output);
+  }
+
+  // optional string CustomDocumentId = 8;
+  if (has_customdocumentid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->customdocumentid().data(), this->customdocumentid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "customdocumentid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      8, this->customdocumentid(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Events.TemplateDocumentAttachment)
+}
+
+::google::protobuf::uint8* TemplateDocumentAttachment::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Events.TemplateDocumentAttachment)
+  // required .Diadoc.Api.Proto.Events.UnsignedContent UnsignedContent = 1;
+  if (has_unsignedcontent()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, this->unsignedcontent(), target);
+  }
+
+  // optional string Comment = 2;
+  if (has_comment()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->comment().data(), this->comment().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "comment");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->comment(), target);
+  }
+
+  // required string TypeNamedId = 3;
+  if (has_typenamedid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->typenamedid().data(), this->typenamedid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "typenamedid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->typenamedid(), target);
+  }
+
+  // optional string Function = 4;
+  if (has_function()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->function().data(), this->function().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "function");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->function(), target);
+  }
+
+  // optional string Version = 5;
+  if (has_version()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->version().data(), this->version().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "version");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->version(), target);
+  }
+
+  // repeated .Diadoc.Api.Proto.Events.MetadataItem Metadata = 6;
+  for (int i = 0; i < this->metadata_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        6, this->metadata(i), target);
+  }
+
+  // optional int32 WorkflowId = 7;
+  if (has_workflowid()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(7, this->workflowid(), target);
+  }
+
+  // optional string CustomDocumentId = 8;
+  if (has_customdocumentid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->customdocumentid().data(), this->customdocumentid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "customdocumentid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        8, this->customdocumentid(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Events.TemplateDocumentAttachment)
+  return target;
+}
+
+int TemplateDocumentAttachment::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required .Diadoc.Api.Proto.Events.UnsignedContent UnsignedContent = 1;
+    if (has_unsignedcontent()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->unsignedcontent());
+    }
+
+    // optional string Comment = 2;
+    if (has_comment()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->comment());
+    }
+
+    // required string TypeNamedId = 3;
+    if (has_typenamedid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->typenamedid());
+    }
+
+    // optional string Function = 4;
+    if (has_function()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->function());
+    }
+
+    // optional string Version = 5;
+    if (has_version()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->version());
+    }
+
+    // optional int32 WorkflowId = 7;
+    if (has_workflowid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->workflowid());
+    }
+
+    // optional string CustomDocumentId = 8;
+    if (has_customdocumentid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->customdocumentid());
+    }
+
+  }
+  // repeated .Diadoc.Api.Proto.Events.MetadataItem Metadata = 6;
+  total_size += 1 * this->metadata_size();
+  for (int i = 0; i < this->metadata_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->metadata(i));
+  }
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void TemplateDocumentAttachment::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const TemplateDocumentAttachment* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const TemplateDocumentAttachment*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void TemplateDocumentAttachment::MergeFrom(const TemplateDocumentAttachment& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  metadata_.MergeFrom(from.metadata_);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_unsignedcontent()) {
+      mutable_unsignedcontent()->::Diadoc::Api::Proto::Events::UnsignedContent::MergeFrom(from.unsignedcontent());
+    }
+    if (from.has_comment()) {
+      set_comment(from.comment());
+    }
+    if (from.has_typenamedid()) {
+      set_typenamedid(from.typenamedid());
+    }
+    if (from.has_function()) {
+      set_function(from.function());
+    }
+    if (from.has_version()) {
+      set_version(from.version());
+    }
+    if (from.has_workflowid()) {
+      set_workflowid(from.workflowid());
+    }
+    if (from.has_customdocumentid()) {
+      set_customdocumentid(from.customdocumentid());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void TemplateDocumentAttachment::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void TemplateDocumentAttachment::CopyFrom(const TemplateDocumentAttachment& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TemplateDocumentAttachment::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000005) != 0x00000005) return false;
+
+  if (!::google::protobuf::internal::AllAreInitialized(this->metadata())) return false;
+  return true;
+}
+
+void TemplateDocumentAttachment::Swap(TemplateDocumentAttachment* other) {
+  if (other != this) {
+    std::swap(unsignedcontent_, other->unsignedcontent_);
+    std::swap(comment_, other->comment_);
+    std::swap(typenamedid_, other->typenamedid_);
+    std::swap(function_, other->function_);
+    std::swap(version_, other->version_);
+    metadata_.Swap(&other->metadata_);
+    std::swap(workflowid_, other->workflowid_);
+    std::swap(customdocumentid_, other->customdocumentid_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata TemplateDocumentAttachment::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = TemplateDocumentAttachment_descriptor_;
+  metadata.reflection = TemplateDocumentAttachment_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int TemplateTransformationToPost::kBoxIdFieldNumber;
+const int TemplateTransformationToPost::kTemplateIdFieldNumber;
+const int TemplateTransformationToPost::kDocumentTransformationsFieldNumber;
+#endif  // !_MSC_VER
+
+TemplateTransformationToPost::TemplateTransformationToPost()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Events.TemplateTransformationToPost)
+}
+
+void TemplateTransformationToPost::InitAsDefaultInstance() {
+}
+
+TemplateTransformationToPost::TemplateTransformationToPost(const TemplateTransformationToPost& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Events.TemplateTransformationToPost)
+}
+
+void TemplateTransformationToPost::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  boxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  templateid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+TemplateTransformationToPost::~TemplateTransformationToPost() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Events.TemplateTransformationToPost)
+  SharedDtor();
+}
+
+void TemplateTransformationToPost::SharedDtor() {
+  if (boxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete boxid_;
+  }
+  if (templateid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete templateid_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void TemplateTransformationToPost::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* TemplateTransformationToPost::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return TemplateTransformationToPost_descriptor_;
+}
+
+const TemplateTransformationToPost& TemplateTransformationToPost::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  return *default_instance_;
+}
+
+TemplateTransformationToPost* TemplateTransformationToPost::default_instance_ = NULL;
+
+TemplateTransformationToPost* TemplateTransformationToPost::New() const {
+  return new TemplateTransformationToPost;
+}
+
+void TemplateTransformationToPost::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    if (has_boxid()) {
+      if (boxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        boxid_->clear();
+      }
+    }
+    if (has_templateid()) {
+      if (templateid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        templateid_->clear();
+      }
+    }
+  }
+  documenttransformations_.Clear();
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool TemplateTransformationToPost::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Events.TemplateTransformationToPost)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required string BoxId = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_boxid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->boxid().data(), this->boxid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "boxid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_TemplateId;
+        break;
+      }
+
+      // required string TemplateId = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_TemplateId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_templateid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->templateid().data(), this->templateid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "templateid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_DocumentTransformations;
+        break;
+      }
+
+      // repeated .Diadoc.Api.Proto.Events.DocumentTransformation DocumentTransformations = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_DocumentTransformations:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_documenttransformations()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_DocumentTransformations;
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Events.TemplateTransformationToPost)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Events.TemplateTransformationToPost)
+  return false;
+#undef DO_
+}
+
+void TemplateTransformationToPost::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Events.TemplateTransformationToPost)
+  // required string BoxId = 1;
+  if (has_boxid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->boxid().data(), this->boxid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "boxid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->boxid(), output);
+  }
+
+  // required string TemplateId = 2;
+  if (has_templateid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->templateid().data(), this->templateid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "templateid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->templateid(), output);
+  }
+
+  // repeated .Diadoc.Api.Proto.Events.DocumentTransformation DocumentTransformations = 3;
+  for (int i = 0; i < this->documenttransformations_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, this->documenttransformations(i), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Events.TemplateTransformationToPost)
+}
+
+::google::protobuf::uint8* TemplateTransformationToPost::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Events.TemplateTransformationToPost)
+  // required string BoxId = 1;
+  if (has_boxid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->boxid().data(), this->boxid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "boxid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->boxid(), target);
+  }
+
+  // required string TemplateId = 2;
+  if (has_templateid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->templateid().data(), this->templateid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "templateid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->templateid(), target);
+  }
+
+  // repeated .Diadoc.Api.Proto.Events.DocumentTransformation DocumentTransformations = 3;
+  for (int i = 0; i < this->documenttransformations_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        3, this->documenttransformations(i), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Events.TemplateTransformationToPost)
+  return target;
+}
+
+int TemplateTransformationToPost::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required string BoxId = 1;
+    if (has_boxid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->boxid());
+    }
+
+    // required string TemplateId = 2;
+    if (has_templateid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->templateid());
+    }
+
+  }
+  // repeated .Diadoc.Api.Proto.Events.DocumentTransformation DocumentTransformations = 3;
+  total_size += 1 * this->documenttransformations_size();
+  for (int i = 0; i < this->documenttransformations_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->documenttransformations(i));
+  }
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void TemplateTransformationToPost::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const TemplateTransformationToPost* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const TemplateTransformationToPost*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void TemplateTransformationToPost::MergeFrom(const TemplateTransformationToPost& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  documenttransformations_.MergeFrom(from.documenttransformations_);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_boxid()) {
+      set_boxid(from.boxid());
+    }
+    if (from.has_templateid()) {
+      set_templateid(from.templateid());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void TemplateTransformationToPost::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void TemplateTransformationToPost::CopyFrom(const TemplateTransformationToPost& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TemplateTransformationToPost::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+
+  if (!::google::protobuf::internal::AllAreInitialized(this->documenttransformations())) return false;
+  return true;
+}
+
+void TemplateTransformationToPost::Swap(TemplateTransformationToPost* other) {
+  if (other != this) {
+    std::swap(boxid_, other->boxid_);
+    std::swap(templateid_, other->templateid_);
+    documenttransformations_.Swap(&other->documenttransformations_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata TemplateTransformationToPost::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = TemplateTransformationToPost_descriptor_;
+  metadata.reflection = TemplateTransformationToPost_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int DocumentTransformation::kDocumentIdFieldNumber;
+const int DocumentTransformation::kCustomDocumentIdFieldNumber;
+#endif  // !_MSC_VER
+
+DocumentTransformation::DocumentTransformation()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Events.DocumentTransformation)
+}
+
+void DocumentTransformation::InitAsDefaultInstance() {
+}
+
+DocumentTransformation::DocumentTransformation(const DocumentTransformation& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Events.DocumentTransformation)
+}
+
+void DocumentTransformation::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  documentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  customdocumentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+DocumentTransformation::~DocumentTransformation() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Events.DocumentTransformation)
+  SharedDtor();
+}
+
+void DocumentTransformation::SharedDtor() {
+  if (documentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete documentid_;
+  }
+  if (customdocumentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete customdocumentid_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void DocumentTransformation::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* DocumentTransformation::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return DocumentTransformation_descriptor_;
+}
+
+const DocumentTransformation& DocumentTransformation::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  return *default_instance_;
+}
+
+DocumentTransformation* DocumentTransformation::default_instance_ = NULL;
+
+DocumentTransformation* DocumentTransformation::New() const {
+  return new DocumentTransformation;
+}
+
+void DocumentTransformation::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    if (has_documentid()) {
+      if (documentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        documentid_->clear();
+      }
+    }
+    if (has_customdocumentid()) {
+      if (customdocumentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        customdocumentid_->clear();
+      }
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool DocumentTransformation::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Events.DocumentTransformation)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required string DocumentId = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_documentid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->documentid().data(), this->documentid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "documentid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_CustomDocumentId;
+        break;
+      }
+
+      // optional string CustomDocumentId = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_CustomDocumentId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_customdocumentid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->customdocumentid().data(), this->customdocumentid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "customdocumentid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Events.DocumentTransformation)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Events.DocumentTransformation)
+  return false;
+#undef DO_
+}
+
+void DocumentTransformation::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Events.DocumentTransformation)
+  // required string DocumentId = 1;
+  if (has_documentid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->documentid().data(), this->documentid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "documentid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->documentid(), output);
+  }
+
+  // optional string CustomDocumentId = 2;
+  if (has_customdocumentid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->customdocumentid().data(), this->customdocumentid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "customdocumentid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->customdocumentid(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Events.DocumentTransformation)
+}
+
+::google::protobuf::uint8* DocumentTransformation::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Events.DocumentTransformation)
+  // required string DocumentId = 1;
+  if (has_documentid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->documentid().data(), this->documentid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "documentid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->documentid(), target);
+  }
+
+  // optional string CustomDocumentId = 2;
+  if (has_customdocumentid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->customdocumentid().data(), this->customdocumentid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "customdocumentid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->customdocumentid(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Events.DocumentTransformation)
+  return target;
+}
+
+int DocumentTransformation::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required string DocumentId = 1;
+    if (has_documentid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->documentid());
+    }
+
+    // optional string CustomDocumentId = 2;
+    if (has_customdocumentid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->customdocumentid());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void DocumentTransformation::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const DocumentTransformation* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const DocumentTransformation*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void DocumentTransformation::MergeFrom(const DocumentTransformation& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_documentid()) {
+      set_documentid(from.documentid());
+    }
+    if (from.has_customdocumentid()) {
+      set_customdocumentid(from.customdocumentid());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void DocumentTransformation::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DocumentTransformation::CopyFrom(const DocumentTransformation& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DocumentTransformation::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+
+  return true;
+}
+
+void DocumentTransformation::Swap(DocumentTransformation* other) {
+  if (other != this) {
+    std::swap(documentid_, other->documentid_);
+    std::swap(customdocumentid_, other->customdocumentid_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata DocumentTransformation::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = DocumentTransformation_descriptor_;
+  metadata.reflection = DocumentTransformation_reflection_;
   return metadata;
 }
 
