@@ -140,9 +140,6 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* ContentToPatch_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   ContentToPatch_reflection_ = NULL;
-const ::google::protobuf::Descriptor* UnsignedContent_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  UnsignedContent_reflection_ = NULL;
 const ::google::protobuf::Descriptor* DocumentToPatch_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   DocumentToPatch_reflection_ = NULL;
@@ -179,6 +176,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* TemplateDocumentAttachment_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   TemplateDocumentAttachment_reflection_ = NULL;
+const ::google::protobuf::Descriptor* UnsignedContent_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  UnsignedContent_reflection_ = NULL;
 const ::google::protobuf::Descriptor* TemplateTransformationToPost_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   TemplateTransformationToPost_reflection_ = NULL;
@@ -728,10 +728,11 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(MessagePatchToPost));
   SignatureVerification_descriptor_ = file->message_type(22);
-  static const int SignatureVerification_offsets_[3] = {
+  static const int SignatureVerification_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SignatureVerification, initialdocumentid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SignatureVerification, isvalid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SignatureVerification, errormessage_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SignatureVerification, labels_),
   };
   SignatureVerification_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -745,12 +746,13 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(SignatureVerification));
   ResolutionRequestAttachment_descriptor_ = file->message_type(23);
-  static const int ResolutionRequestAttachment_offsets_[5] = {
+  static const int ResolutionRequestAttachment_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRequestAttachment, initialdocumentid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRequestAttachment, type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRequestAttachment, targetuserid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRequestAttachment, targetdepartmentid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRequestAttachment, comment_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRequestAttachment, labels_),
   };
   ResolutionRequestAttachment_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -764,10 +766,11 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ResolutionRequestAttachment));
   ResolutionRouteAssignment_descriptor_ = file->message_type(24);
-  static const int ResolutionRouteAssignment_offsets_[3] = {
+  static const int ResolutionRouteAssignment_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRouteAssignment, initialdocumentid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRouteAssignment, routeid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRouteAssignment, comment_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRouteAssignment, labels_),
   };
   ResolutionRouteAssignment_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -781,9 +784,10 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ResolutionRouteAssignment));
   ResolutionRequestCancellationAttachment_descriptor_ = file->message_type(25);
-  static const int ResolutionRequestCancellationAttachment_offsets_[2] = {
+  static const int ResolutionRequestCancellationAttachment_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRequestCancellationAttachment, initialresolutionrequestid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRequestCancellationAttachment, comment_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRequestCancellationAttachment, labels_),
   };
   ResolutionRequestCancellationAttachment_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -812,9 +816,10 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ResolutionRequestDenialCancellationAttachment));
   ResolutionRequestDenialAttachment_descriptor_ = file->message_type(27);
-  static const int ResolutionRequestDenialAttachment_offsets_[2] = {
+  static const int ResolutionRequestDenialAttachment_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRequestDenialAttachment, initialresolutionrequestid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRequestDenialAttachment, comment_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRequestDenialAttachment, labels_),
   };
   ResolutionRequestDenialAttachment_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -828,10 +833,11 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ResolutionRequestDenialAttachment));
   ResolutionAttachment_descriptor_ = file->message_type(28);
-  static const int ResolutionAttachment_offsets_[3] = {
+  static const int ResolutionAttachment_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionAttachment, initialdocumentid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionAttachment, resolutiontype_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionAttachment, comment_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionAttachment, labels_),
   };
   ResolutionAttachment_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -845,9 +851,10 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ResolutionAttachment));
   ReceiptAttachment_descriptor_ = file->message_type(29);
-  static const int ReceiptAttachment_offsets_[2] = {
+  static const int ReceiptAttachment_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ReceiptAttachment, parententityid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ReceiptAttachment, signedcontent_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ReceiptAttachment, labels_),
   };
   ReceiptAttachment_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -861,9 +868,10 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ReceiptAttachment));
   CorrectionRequestAttachment_descriptor_ = file->message_type(30);
-  static const int CorrectionRequestAttachment_offsets_[2] = {
+  static const int CorrectionRequestAttachment_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CorrectionRequestAttachment, parententityid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CorrectionRequestAttachment, signedcontent_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CorrectionRequestAttachment, labels_),
   };
   CorrectionRequestAttachment_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -877,13 +885,14 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CorrectionRequestAttachment));
   DocumentSignature_descriptor_ = file->message_type(31);
-  static const int DocumentSignature_offsets_[6] = {
+  static const int DocumentSignature_offsets_[7] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentSignature, parententityid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentSignature, signature_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentSignature, signwithtestsignature_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentSignature, isapprovementsignature_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentSignature, signaturenameonshelf_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentSignature, patchedcontentid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentSignature, labels_),
   };
   DocumentSignature_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -915,9 +924,10 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(DocumentSenderSignature));
   RequestedSignatureRejection_descriptor_ = file->message_type(33);
-  static const int RequestedSignatureRejection_offsets_[2] = {
+  static const int RequestedSignatureRejection_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RequestedSignatureRejection, parententityid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RequestedSignatureRejection, signedcontent_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RequestedSignatureRejection, labels_),
   };
   RequestedSignatureRejection_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1027,23 +1037,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ContentToPatch));
-  UnsignedContent_descriptor_ = file->message_type(39);
-  static const int UnsignedContent_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnsignedContent, content_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnsignedContent, nameonshelf_),
-  };
-  UnsignedContent_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      UnsignedContent_descriptor_,
-      UnsignedContent::default_instance_,
-      UnsignedContent_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnsignedContent, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnsignedContent, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(UnsignedContent));
-  DocumentToPatch_descriptor_ = file->message_type(40);
+  DocumentToPatch_descriptor_ = file->message_type(39);
   static const int DocumentToPatch_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentToPatch, documentid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentToPatch, signer_),
@@ -1060,7 +1054,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(DocumentToPatch));
-  DocumentPatchedContent_descriptor_ = file->message_type(41);
+  DocumentPatchedContent_descriptor_ = file->message_type(40);
   static const int DocumentPatchedContent_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentPatchedContent, documentid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentPatchedContent, patchedcontentid_),
@@ -1077,7 +1071,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(DocumentPatchedContent));
-  PrepareDocumentsToSignResponse_descriptor_ = file->message_type(42);
+  PrepareDocumentsToSignResponse_descriptor_ = file->message_type(41);
   static const int PrepareDocumentsToSignResponse_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PrepareDocumentsToSignResponse, documentpatchedcontents_),
   };
@@ -1092,7 +1086,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(PrepareDocumentsToSignResponse));
-  MessageToSend_descriptor_ = file->message_type(43);
+  MessageToSend_descriptor_ = file->message_type(42);
   static const int MessageToSend_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageToSend, boxid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageToSend, messageid_),
@@ -1109,10 +1103,11 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(MessageToSend));
-  RevocationRequestAttachment_descriptor_ = file->message_type(44);
-  static const int RevocationRequestAttachment_offsets_[2] = {
+  RevocationRequestAttachment_descriptor_ = file->message_type(43);
+  static const int RevocationRequestAttachment_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RevocationRequestAttachment, parententityid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RevocationRequestAttachment, signedcontent_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RevocationRequestAttachment, labels_),
   };
   RevocationRequestAttachment_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1125,10 +1120,11 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(RevocationRequestAttachment));
-  XmlSignatureRejectionAttachment_descriptor_ = file->message_type(45);
-  static const int XmlSignatureRejectionAttachment_offsets_[2] = {
+  XmlSignatureRejectionAttachment_descriptor_ = file->message_type(44);
+  static const int XmlSignatureRejectionAttachment_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(XmlSignatureRejectionAttachment, parententityid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(XmlSignatureRejectionAttachment, signedcontent_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(XmlSignatureRejectionAttachment, labels_),
   };
   XmlSignatureRejectionAttachment_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1141,7 +1137,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(XmlSignatureRejectionAttachment));
-  RoamingNotificationToPost_descriptor_ = file->message_type(46);
+  RoamingNotificationToPost_descriptor_ = file->message_type(45);
   static const int RoamingNotificationToPost_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RoamingNotificationToPost, boxid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RoamingNotificationToPost, eventid_),
@@ -1159,7 +1155,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(RoamingNotificationToPost));
-  CustomDataPatch_descriptor_ = file->message_type(47);
+  CustomDataPatch_descriptor_ = file->message_type(46);
   static const int CustomDataPatch_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CustomDataPatch, parententityid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CustomDataPatch, operation_),
@@ -1177,7 +1173,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CustomDataPatch));
-  EditDocumentPacketCommand_descriptor_ = file->message_type(48);
+  EditDocumentPacketCommand_descriptor_ = file->message_type(47);
   static const int EditDocumentPacketCommand_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EditDocumentPacketCommand, documentid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EditDocumentPacketCommand, adddocumentstopacket_),
@@ -1194,11 +1190,12 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(EditDocumentPacketCommand));
-  ResolutionRouteRemoval_descriptor_ = file->message_type(49);
-  static const int ResolutionRouteRemoval_offsets_[3] = {
+  ResolutionRouteRemoval_descriptor_ = file->message_type(48);
+  static const int ResolutionRouteRemoval_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRouteRemoval, parententityid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRouteRemoval, routeid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRouteRemoval, comment_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRouteRemoval, labels_),
   };
   ResolutionRouteRemoval_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1211,7 +1208,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ResolutionRouteRemoval));
-  TemplateToPost_descriptor_ = file->message_type(50);
+  TemplateToPost_descriptor_ = file->message_type(49);
   static const int TemplateToPost_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, fromboxid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, toboxid_),
@@ -1231,8 +1228,8 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(TemplateToPost));
-  TemplateDocumentAttachment_descriptor_ = file->message_type(51);
-  static const int TemplateDocumentAttachment_offsets_[8] = {
+  TemplateDocumentAttachment_descriptor_ = file->message_type(50);
+  static const int TemplateDocumentAttachment_offsets_[9] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, unsignedcontent_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, comment_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, typenamedid_),
@@ -1241,6 +1238,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, metadata_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, workflowid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, customdocumentid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, editingsettingid_),
   };
   TemplateDocumentAttachment_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1253,6 +1251,22 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(TemplateDocumentAttachment));
+  UnsignedContent_descriptor_ = file->message_type(51);
+  static const int UnsignedContent_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnsignedContent, content_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnsignedContent, nameonshelf_),
+  };
+  UnsignedContent_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      UnsignedContent_descriptor_,
+      UnsignedContent::default_instance_,
+      UnsignedContent_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnsignedContent, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnsignedContent, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(UnsignedContent));
   TemplateTransformationToPost_descriptor_ = file->message_type(52);
   static const int TemplateTransformationToPost_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateTransformationToPost, boxid_),
@@ -1378,8 +1392,6 @@ void protobuf_RegisterTypes(const ::std::string&) {
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     ContentToPatch_descriptor_, &ContentToPatch::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    UnsignedContent_descriptor_, &UnsignedContent::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     DocumentToPatch_descriptor_, &DocumentToPatch::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     DocumentPatchedContent_descriptor_, &DocumentPatchedContent::default_instance());
@@ -1403,6 +1415,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
     TemplateToPost_descriptor_, &TemplateToPost::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     TemplateDocumentAttachment_descriptor_, &TemplateDocumentAttachment::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    UnsignedContent_descriptor_, &UnsignedContent::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     TemplateTransformationToPost_descriptor_, &TemplateTransformationToPost::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
@@ -1490,8 +1504,6 @@ void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto() {
   delete DraftDocumentToPatch_reflection_;
   delete ContentToPatch::default_instance_;
   delete ContentToPatch_reflection_;
-  delete UnsignedContent::default_instance_;
-  delete UnsignedContent_reflection_;
   delete DocumentToPatch::default_instance_;
   delete DocumentToPatch_reflection_;
   delete DocumentPatchedContent::default_instance_;
@@ -1516,6 +1528,8 @@ void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto() {
   delete TemplateToPost_reflection_;
   delete TemplateDocumentAttachment::default_instance_;
   delete TemplateDocumentAttachment_reflection_;
+  delete UnsignedContent::default_instance_;
+  delete UnsignedContent_reflection_;
   delete TemplateTransformationToPost::default_instance_;
   delete TemplateTransformationToPost_reflection_;
   delete DocumentTransformation::default_instance_;
@@ -1813,123 +1827,129 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
     "\030\025 \003(\0132/.Diadoc.Api.Proto.Events.Resolut"
     "ionRouteRemoval\022C\n\017RecipientTitles\030\026 \003(\013"
     "2*.Diadoc.Api.Proto.Events.ReceiptAttach"
-    "ment\"Y\n\025SignatureVerification\022\031\n\021Initial"
+    "ment\"i\n\025SignatureVerification\022\031\n\021Initial"
     "DocumentId\030\001 \002(\t\022\017\n\007IsValid\030\002 \002(\010\022\024\n\014Err"
-    "orMessage\030\003 \001(\t\"\271\001\n\033ResolutionRequestAtt"
-    "achment\022\031\n\021InitialDocumentId\030\001 \002(\t\022<\n\004Ty"
-    "pe\030\002 \002(\0162..Diadoc.Api.Proto.Events.Resol"
-    "utionRequestType\022\024\n\014TargetUserId\030\003 \001(\t\022\032"
-    "\n\022TargetDepartmentId\030\004 \001(\t\022\017\n\007Comment\030\005 "
-    "\001(\t\"X\n\031ResolutionRouteAssignment\022\031\n\021Init"
-    "ialDocumentId\030\001 \002(\t\022\017\n\007RouteId\030\002 \002(\t\022\017\n\007"
-    "Comment\030\003 \001(\t\"^\n\'ResolutionRequestCancel"
-    "lationAttachment\022\"\n\032InitialResolutionReq"
-    "uestId\030\001 \002(\t\022\017\n\007Comment\030\002 \001(\t\"Y\n-Resolut"
-    "ionRequestDenialCancellationAttachment\022("
-    "\n InitialResolutionRequestDenialId\030\001 \002(\t"
-    "\"X\n!ResolutionRequestDenialAttachment\022\"\n"
-    "\032InitialResolutionRequestId\030\001 \002(\t\022\017\n\007Com"
-    "ment\030\002 \001(\t\"\203\001\n\024ResolutionAttachment\022\031\n\021I"
+    "orMessage\030\003 \001(\t\022\016\n\006Labels\030\004 \003(\t\"\311\001\n\033Reso"
+    "lutionRequestAttachment\022\031\n\021InitialDocume"
+    "ntId\030\001 \002(\t\022<\n\004Type\030\002 \002(\0162..Diadoc.Api.Pr"
+    "oto.Events.ResolutionRequestType\022\024\n\014Targ"
+    "etUserId\030\003 \001(\t\022\032\n\022TargetDepartmentId\030\004 \001"
+    "(\t\022\017\n\007Comment\030\005 \001(\t\022\016\n\006Labels\030\006 \003(\t\"h\n\031R"
+    "esolutionRouteAssignment\022\031\n\021InitialDocum"
+    "entId\030\001 \002(\t\022\017\n\007RouteId\030\002 \002(\t\022\017\n\007Comment\030"
+    "\003 \001(\t\022\016\n\006Labels\030\004 \003(\t\"n\n\'ResolutionReque"
+    "stCancellationAttachment\022\"\n\032InitialResol"
+    "utionRequestId\030\001 \002(\t\022\017\n\007Comment\030\002 \001(\t\022\016\n"
+    "\006Labels\030\003 \003(\t\"Y\n-ResolutionRequestDenial"
+    "CancellationAttachment\022(\n InitialResolut"
+    "ionRequestDenialId\030\001 \002(\t\"h\n!ResolutionRe"
+    "questDenialAttachment\022\"\n\032InitialResoluti"
+    "onRequestId\030\001 \002(\t\022\017\n\007Comment\030\002 \001(\t\022\016\n\006La"
+    "bels\030\003 \003(\t\"\223\001\n\024ResolutionAttachment\022\031\n\021I"
     "nitialDocumentId\030\001 \002(\t\022\?\n\016ResolutionType"
     "\030\002 \002(\0162\'.Diadoc.Api.Proto.Events.Resolut"
-    "ionType\022\017\n\007Comment\030\003 \001(\t\"j\n\021ReceiptAttac"
-    "hment\022\026\n\016ParentEntityId\030\001 \002(\t\022=\n\rSignedC"
-    "ontent\030\002 \002(\0132&.Diadoc.Api.Proto.Events.S"
-    "ignedContent\"t\n\033CorrectionRequestAttachm"
-    "ent\022\026\n\016ParentEntityId\030\001 \002(\t\022=\n\rSignedCon"
-    "tent\030\002 \002(\0132&.Diadoc.Api.Proto.Events.Sig"
-    "nedContent\"\303\001\n\021DocumentSignature\022\026\n\016Pare"
-    "ntEntityId\030\001 \002(\t\022\021\n\tSignature\030\002 \001(\014\022$\n\025S"
-    "ignWithTestSignature\030\004 \001(\010:\005false\022%\n\026IsA"
-    "pprovementSignature\030\005 \001(\010:\005false\022\034\n\024Sign"
-    "atureNameOnShelf\030\006 \001(\t\022\030\n\020PatchedContent"
-    "Id\030\007 \001(\t\"\204\001\n\027DocumentSenderSignature\022\026\n\016"
-    "ParentEntityId\030\001 \002(\t\022\021\n\tSignature\030\002 \001(\014\022"
-    "$\n\025SignWithTestSignature\030\004 \001(\010:\005false\022\030\n"
-    "\020PatchedContentId\030\005 \001(\t\"t\n\033RequestedSign"
-    "atureRejection\022\026\n\016ParentEntityId\030\001 \002(\t\022="
-    "\n\rSignedContent\030\002 \002(\0132&.Diadoc.Api.Proto"
-    ".Events.SignedContent\"\214\001\n\rSignedContent\022"
-    "\017\n\007Content\030\001 \001(\014\022\021\n\tSignature\030\002 \001(\014\022\023\n\013N"
-    "ameOnShelf\030\004 \001(\t\022$\n\025SignWithTestSignatur"
-    "e\030\005 \001(\010:\005false\022\034\n\024SignatureNameOnShelf\030\006"
-    " \001(\t\"\323\001\n\013DraftToSend\022\r\n\005BoxId\030\001 \002(\t\022\017\n\007D"
-    "raftId\030\002 \002(\t\022\017\n\007ToBoxId\030\003 \001(\t\022\026\n\016ToDepar"
-    "tmentId\030\004 \001(\t\022L\n\022DocumentSignatures\030\005 \003("
-    "\01320.Diadoc.Api.Proto.Events.DocumentSend"
-    "erSignature\022\022\n\nProxyBoxId\030\006 \001(\t\022\031\n\021Proxy"
-    "DepartmentId\030\007 \001(\t\"\355\001\n\035PrepareDocumentsT"
-    "oSignRequest\022\r\n\005BoxId\030\001 \002(\t\022E\n\016DraftDocu"
-    "ments\030\002 \003(\0132-.Diadoc.Api.Proto.Events.Dr"
-    "aftDocumentToPatch\022;\n\tDocuments\030\003 \003(\0132(."
-    "Diadoc.Api.Proto.Events.DocumentToPatch\022"
-    "9\n\010Contents\030\004 \003(\0132\'.Diadoc.Api.Proto.Eve"
-    "nts.ContentToPatch\"\331\001\n\024DraftDocumentToPa"
-    "tch\0220\n\nDocumentId\030\001 \002(\0132\034.Diadoc.Api.Pro"
-    "to.DocumentId\022\017\n\007ToBoxId\030\002 \001(\t\0222\n\006Signer"
-    "\030\003 \001(\0132\".Diadoc.Api.Proto.Invoicing.Sign"
-    "er\022J\n\016ExtendedSigner\030\004 \003(\01322.Diadoc.Api."
-    "Proto.Invoicing.Signers.ExtendedSigner\"\224"
-    "\002\n\016ContentToPatch\022\023\n\013TypeNamedId\030\001 \002(\t\022\020"
-    "\n\010Function\030\002 \002(\t\022\017\n\007Version\030\003 \002(\t\0229\n\007Con"
-    "tent\030\004 \002(\0132(.Diadoc.Api.Proto.Events.Uns"
-    "ignedContent\022\017\n\007ToBoxId\030\005 \001(\t\0222\n\006Signer\030"
-    "\006 \001(\0132\".Diadoc.Api.Proto.Invoicing.Signe"
-    "r\022J\n\016ExtendedSigner\030\007 \003(\01322.Diadoc.Api.P"
-    "roto.Invoicing.Signers.ExtendedSigner\"7\n"
-    "\017UnsignedContent\022\017\n\007Content\030\001 \001(\014\022\023\n\013Nam"
-    "eOnShelf\030\002 \001(\t\"\303\001\n\017DocumentToPatch\0220\n\nDo"
-    "cumentId\030\001 \002(\0132\034.Diadoc.Api.Proto.Docume"
-    "ntId\0222\n\006Signer\030\002 \001(\0132\".Diadoc.Api.Proto."
-    "Invoicing.Signer\022J\n\016ExtendedSigner\030\003 \003(\013"
-    "22.Diadoc.Api.Proto.Invoicing.Signers.Ex"
-    "tendedSigner\"u\n\026DocumentPatchedContent\0220"
-    "\n\nDocumentId\030\001 \002(\0132\034.Diadoc.Api.Proto.Do"
-    "cumentId\022\030\n\020PatchedContentId\030\002 \002(\t\022\017\n\007Co"
-    "ntent\030\003 \001(\014\"r\n\036PrepareDocumentsToSignRes"
-    "ponse\022P\n\027DocumentPatchedContents\030\001 \003(\0132/"
-    ".Diadoc.Api.Proto.Events.DocumentPatched"
-    "Content\"y\n\rMessageToSend\022\r\n\005BoxId\030\001 \002(\t\022"
-    "\021\n\tMessageId\030\002 \002(\t\022F\n\022DocumentSignatures"
-    "\030\003 \003(\0132*.Diadoc.Api.Proto.Events.Documen"
-    "tSignature\"t\n\033RevocationRequestAttachmen"
-    "t\022\026\n\016ParentEntityId\030\001 \002(\t\022=\n\rSignedConte"
-    "nt\030\002 \002(\0132&.Diadoc.Api.Proto.Events.Signe"
-    "dContent\"x\n\037XmlSignatureRejectionAttachm"
-    "ent\022\026\n\016ParentEntityId\030\001 \002(\t\022=\n\rSignedCon"
-    "tent\030\002 \002(\0132&.Diadoc.Api.Proto.Events.Sig"
-    "nedContent\"a\n\031RoamingNotificationToPost\022"
-    "\r\n\005BoxId\030\001 \002(\t\022\017\n\007EventId\030\002 \002(\t\022\017\n\007Succe"
-    "ss\030\003 \002(\010\022\023\n\013Description\030\004 \001(\t\"\213\001\n\017Custom"
-    "DataPatch\022\026\n\016ParentEntityId\030\001 \002(\t\022D\n\tOpe"
-    "ration\030\002 \002(\01621.Diadoc.Api.Proto.Events.C"
-    "ustomDataPatchOperation\022\013\n\003Key\030\003 \002(\t\022\r\n\005"
-    "Value\030\004 \001(\t\"\254\001\n\031EditDocumentPacketComman"
-    "d\022\022\n\nDocumentId\030\001 \002(\t\022:\n\024AddDocumentsToP"
-    "acket\030\002 \003(\0132\034.Diadoc.Api.Proto.DocumentI"
-    "d\022\?\n\031RemoveDocumentsFromPacket\030\003 \003(\0132\034.D"
-    "iadoc.Api.Proto.DocumentId\"T\n\026Resolution"
-    "RouteRemoval\022\026\n\016ParentEntityId\030\001 \002(\t\022\017\n\007"
-    "RouteId\030\002 \002(\t\022\021\n\007Comment\030\003 \001(\t:\000\"\327\001\n\016Tem"
-    "plateToPost\022\021\n\tFromBoxId\030\001 \002(\t\022\017\n\007ToBoxI"
-    "d\030\002 \002(\t\022\030\n\020MessageFromBoxId\030\003 \002(\t\022\026\n\016Mes"
-    "sageToBoxId\030\004 \002(\t\022\035\n\025MessageToDepartment"
-    "Id\030\005 \001(\t\022P\n\023DocumentAttachments\030\006 \003(\01323."
-    "Diadoc.Api.Proto.Events.TemplateDocument"
-    "Attachment\"\217\002\n\032TemplateDocumentAttachmen"
-    "t\022A\n\017UnsignedContent\030\001 \002(\0132(.Diadoc.Api."
-    "Proto.Events.UnsignedContent\022\017\n\007Comment\030"
-    "\002 \001(\t\022\023\n\013TypeNamedId\030\003 \002(\t\022\020\n\010Function\030\004"
-    " \001(\t\022\017\n\007Version\030\005 \001(\t\0227\n\010Metadata\030\006 \003(\0132"
-    "%.Diadoc.Api.Proto.Events.MetadataItem\022\022"
-    "\n\nWorkflowId\030\007 \001(\005\022\030\n\020CustomDocumentId\030\010"
-    " \001(\t\"\223\001\n\034TemplateTransformationToPost\022\r\n"
-    "\005BoxId\030\001 \002(\t\022\022\n\nTemplateId\030\002 \002(\t\022P\n\027Docu"
-    "mentTransformations\030\003 \003(\0132/.Diadoc.Api.P"
-    "roto.Events.DocumentTransformation\"F\n\026Do"
-    "cumentTransformation\022\022\n\nDocumentId\030\001 \002(\t"
-    "\022\030\n\020CustomDocumentId\030\002 \001(\t*/\n\030CustomData"
-    "PatchOperation\022\007\n\003Set\020\000\022\n\n\006Remove\020\001", 15715);
+    "ionType\022\017\n\007Comment\030\003 \001(\t\022\016\n\006Labels\030\004 \003(\t"
+    "\"z\n\021ReceiptAttachment\022\026\n\016ParentEntityId\030"
+    "\001 \002(\t\022=\n\rSignedContent\030\002 \002(\0132&.Diadoc.Ap"
+    "i.Proto.Events.SignedContent\022\016\n\006Labels\030\004"
+    " \003(\t\"\204\001\n\033CorrectionRequestAttachment\022\026\n\016"
+    "ParentEntityId\030\001 \002(\t\022=\n\rSignedContent\030\002 "
+    "\002(\0132&.Diadoc.Api.Proto.Events.SignedCont"
+    "ent\022\016\n\006Labels\030\004 \003(\t\"\323\001\n\021DocumentSignatur"
+    "e\022\026\n\016ParentEntityId\030\001 \002(\t\022\021\n\tSignature\030\002"
+    " \001(\014\022$\n\025SignWithTestSignature\030\004 \001(\010:\005fal"
+    "se\022%\n\026IsApprovementSignature\030\005 \001(\010:\005fals"
+    "e\022\034\n\024SignatureNameOnShelf\030\006 \001(\t\022\030\n\020Patch"
+    "edContentId\030\007 \001(\t\022\016\n\006Labels\030\010 \003(\t\"\204\001\n\027Do"
+    "cumentSenderSignature\022\026\n\016ParentEntityId\030"
+    "\001 \002(\t\022\021\n\tSignature\030\002 \001(\014\022$\n\025SignWithTest"
+    "Signature\030\004 \001(\010:\005false\022\030\n\020PatchedContent"
+    "Id\030\005 \001(\t\"\204\001\n\033RequestedSignatureRejection"
+    "\022\026\n\016ParentEntityId\030\001 \002(\t\022=\n\rSignedConten"
+    "t\030\002 \002(\0132&.Diadoc.Api.Proto.Events.Signed"
+    "Content\022\016\n\006Labels\030\003 \003(\t\"\214\001\n\rSignedConten"
+    "t\022\017\n\007Content\030\001 \001(\014\022\021\n\tSignature\030\002 \001(\014\022\023\n"
+    "\013NameOnShelf\030\004 \001(\t\022$\n\025SignWithTestSignat"
+    "ure\030\005 \001(\010:\005false\022\034\n\024SignatureNameOnShelf"
+    "\030\006 \001(\t\"\323\001\n\013DraftToSend\022\r\n\005BoxId\030\001 \002(\t\022\017\n"
+    "\007DraftId\030\002 \002(\t\022\017\n\007ToBoxId\030\003 \001(\t\022\026\n\016ToDep"
+    "artmentId\030\004 \001(\t\022L\n\022DocumentSignatures\030\005 "
+    "\003(\01320.Diadoc.Api.Proto.Events.DocumentSe"
+    "nderSignature\022\022\n\nProxyBoxId\030\006 \001(\t\022\031\n\021Pro"
+    "xyDepartmentId\030\007 \001(\t\"\355\001\n\035PrepareDocument"
+    "sToSignRequest\022\r\n\005BoxId\030\001 \002(\t\022E\n\016DraftDo"
+    "cuments\030\002 \003(\0132-.Diadoc.Api.Proto.Events."
+    "DraftDocumentToPatch\022;\n\tDocuments\030\003 \003(\0132"
+    "(.Diadoc.Api.Proto.Events.DocumentToPatc"
+    "h\0229\n\010Contents\030\004 \003(\0132\'.Diadoc.Api.Proto.E"
+    "vents.ContentToPatch\"\331\001\n\024DraftDocumentTo"
+    "Patch\0220\n\nDocumentId\030\001 \002(\0132\034.Diadoc.Api.P"
+    "roto.DocumentId\022\017\n\007ToBoxId\030\002 \001(\t\0222\n\006Sign"
+    "er\030\003 \001(\0132\".Diadoc.Api.Proto.Invoicing.Si"
+    "gner\022J\n\016ExtendedSigner\030\004 \003(\01322.Diadoc.Ap"
+    "i.Proto.Invoicing.Signers.ExtendedSigner"
+    "\"\224\002\n\016ContentToPatch\022\023\n\013TypeNamedId\030\001 \002(\t"
+    "\022\020\n\010Function\030\002 \002(\t\022\017\n\007Version\030\003 \002(\t\0229\n\007C"
+    "ontent\030\004 \002(\0132(.Diadoc.Api.Proto.Events.U"
+    "nsignedContent\022\017\n\007ToBoxId\030\005 \001(\t\0222\n\006Signe"
+    "r\030\006 \001(\0132\".Diadoc.Api.Proto.Invoicing.Sig"
+    "ner\022J\n\016ExtendedSigner\030\007 \003(\01322.Diadoc.Api"
+    ".Proto.Invoicing.Signers.ExtendedSigner\""
+    "\303\001\n\017DocumentToPatch\0220\n\nDocumentId\030\001 \002(\0132"
+    "\034.Diadoc.Api.Proto.DocumentId\0222\n\006Signer\030"
+    "\002 \001(\0132\".Diadoc.Api.Proto.Invoicing.Signe"
+    "r\022J\n\016ExtendedSigner\030\003 \003(\01322.Diadoc.Api.P"
+    "roto.Invoicing.Signers.ExtendedSigner\"u\n"
+    "\026DocumentPatchedContent\0220\n\nDocumentId\030\001 "
+    "\002(\0132\034.Diadoc.Api.Proto.DocumentId\022\030\n\020Pat"
+    "chedContentId\030\002 \002(\t\022\017\n\007Content\030\003 \001(\014\"r\n\036"
+    "PrepareDocumentsToSignResponse\022P\n\027Docume"
+    "ntPatchedContents\030\001 \003(\0132/.Diadoc.Api.Pro"
+    "to.Events.DocumentPatchedContent\"y\n\rMess"
+    "ageToSend\022\r\n\005BoxId\030\001 \002(\t\022\021\n\tMessageId\030\002 "
+    "\002(\t\022F\n\022DocumentSignatures\030\003 \003(\0132*.Diadoc"
+    ".Api.Proto.Events.DocumentSignature\"\204\001\n\033"
+    "RevocationRequestAttachment\022\026\n\016ParentEnt"
+    "ityId\030\001 \002(\t\022=\n\rSignedContent\030\002 \002(\0132&.Dia"
+    "doc.Api.Proto.Events.SignedContent\022\016\n\006La"
+    "bels\030\003 \003(\t\"\210\001\n\037XmlSignatureRejectionAtta"
+    "chment\022\026\n\016ParentEntityId\030\001 \002(\t\022=\n\rSigned"
+    "Content\030\002 \002(\0132&.Diadoc.Api.Proto.Events."
+    "SignedContent\022\016\n\006Labels\030\003 \003(\t\"a\n\031Roaming"
+    "NotificationToPost\022\r\n\005BoxId\030\001 \002(\t\022\017\n\007Eve"
+    "ntId\030\002 \002(\t\022\017\n\007Success\030\003 \002(\010\022\023\n\013Descripti"
+    "on\030\004 \001(\t\"\213\001\n\017CustomDataPatch\022\026\n\016ParentEn"
+    "tityId\030\001 \002(\t\022D\n\tOperation\030\002 \002(\01621.Diadoc"
+    ".Api.Proto.Events.CustomDataPatchOperati"
+    "on\022\013\n\003Key\030\003 \002(\t\022\r\n\005Value\030\004 \001(\t\"\254\001\n\031EditD"
+    "ocumentPacketCommand\022\022\n\nDocumentId\030\001 \002(\t"
+    "\022:\n\024AddDocumentsToPacket\030\002 \003(\0132\034.Diadoc."
+    "Api.Proto.DocumentId\022\?\n\031RemoveDocumentsF"
+    "romPacket\030\003 \003(\0132\034.Diadoc.Api.Proto.Docum"
+    "entId\"d\n\026ResolutionRouteRemoval\022\026\n\016Paren"
+    "tEntityId\030\001 \002(\t\022\017\n\007RouteId\030\002 \002(\t\022\021\n\007Comm"
+    "ent\030\003 \001(\t:\000\022\016\n\006Labels\030\004 \003(\t\"\327\001\n\016Template"
+    "ToPost\022\021\n\tFromBoxId\030\001 \002(\t\022\017\n\007ToBoxId\030\002 \002"
+    "(\t\022\030\n\020MessageFromBoxId\030\003 \002(\t\022\026\n\016MessageT"
+    "oBoxId\030\004 \002(\t\022\035\n\025MessageToDepartmentId\030\005 "
+    "\001(\t\022P\n\023DocumentAttachments\030\006 \003(\01323.Diado"
+    "c.Api.Proto.Events.TemplateDocumentAttac"
+    "hment\"\251\002\n\032TemplateDocumentAttachment\022A\n\017"
+    "UnsignedContent\030\001 \002(\0132(.Diadoc.Api.Proto"
+    ".Events.UnsignedContent\022\017\n\007Comment\030\002 \001(\t"
+    "\022\023\n\013TypeNamedId\030\003 \002(\t\022\020\n\010Function\030\004 \001(\t\022"
+    "\017\n\007Version\030\005 \001(\t\0227\n\010Metadata\030\006 \003(\0132%.Dia"
+    "doc.Api.Proto.Events.MetadataItem\022\022\n\nWor"
+    "kflowId\030\007 \001(\005\022\030\n\020CustomDocumentId\030\010 \001(\t\022"
+    "\030\n\020EditingSettingId\030\t \001(\t\"7\n\017UnsignedCon"
+    "tent\022\017\n\007Content\030\001 \001(\014\022\023\n\013NameOnShelf\030\002 \001"
+    "(\t\"\223\001\n\034TemplateTransformationToPost\022\r\n\005B"
+    "oxId\030\001 \002(\t\022\022\n\nTemplateId\030\002 \002(\t\022P\n\027Docume"
+    "ntTransformations\030\003 \003(\0132/.Diadoc.Api.Pro"
+    "to.Events.DocumentTransformation\"F\n\026Docu"
+    "mentTransformation\022\022\n\nDocumentId\030\001 \002(\t\022\030"
+    "\n\020CustomDocumentId\030\002 \001(\t*/\n\030CustomDataPa"
+    "tchOperation\022\007\n\003Set\020\000\022\n\n\006Remove\020\001", 15953);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Events/DiadocMessage-PostApi.proto", &protobuf_RegisterTypes);
   MessageToPost::default_instance_ = new MessageToPost();
@@ -1971,7 +1991,6 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
   PrepareDocumentsToSignRequest::default_instance_ = new PrepareDocumentsToSignRequest();
   DraftDocumentToPatch::default_instance_ = new DraftDocumentToPatch();
   ContentToPatch::default_instance_ = new ContentToPatch();
-  UnsignedContent::default_instance_ = new UnsignedContent();
   DocumentToPatch::default_instance_ = new DocumentToPatch();
   DocumentPatchedContent::default_instance_ = new DocumentPatchedContent();
   PrepareDocumentsToSignResponse::default_instance_ = new PrepareDocumentsToSignResponse();
@@ -1984,6 +2003,7 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
   ResolutionRouteRemoval::default_instance_ = new ResolutionRouteRemoval();
   TemplateToPost::default_instance_ = new TemplateToPost();
   TemplateDocumentAttachment::default_instance_ = new TemplateDocumentAttachment();
+  UnsignedContent::default_instance_ = new UnsignedContent();
   TemplateTransformationToPost::default_instance_ = new TemplateTransformationToPost();
   DocumentTransformation::default_instance_ = new DocumentTransformation();
   MessageToPost::default_instance_->InitAsDefaultInstance();
@@ -2025,7 +2045,6 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
   PrepareDocumentsToSignRequest::default_instance_->InitAsDefaultInstance();
   DraftDocumentToPatch::default_instance_->InitAsDefaultInstance();
   ContentToPatch::default_instance_->InitAsDefaultInstance();
-  UnsignedContent::default_instance_->InitAsDefaultInstance();
   DocumentToPatch::default_instance_->InitAsDefaultInstance();
   DocumentPatchedContent::default_instance_->InitAsDefaultInstance();
   PrepareDocumentsToSignResponse::default_instance_->InitAsDefaultInstance();
@@ -2038,6 +2057,7 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
   ResolutionRouteRemoval::default_instance_->InitAsDefaultInstance();
   TemplateToPost::default_instance_->InitAsDefaultInstance();
   TemplateDocumentAttachment::default_instance_->InitAsDefaultInstance();
+  UnsignedContent::default_instance_->InitAsDefaultInstance();
   TemplateTransformationToPost::default_instance_->InitAsDefaultInstance();
   DocumentTransformation::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto);
@@ -17038,6 +17058,7 @@ void MessagePatchToPost::Swap(MessagePatchToPost* other) {
 const int SignatureVerification::kInitialDocumentIdFieldNumber;
 const int SignatureVerification::kIsValidFieldNumber;
 const int SignatureVerification::kErrorMessageFieldNumber;
+const int SignatureVerification::kLabelsFieldNumber;
 #endif  // !_MSC_VER
 
 SignatureVerification::SignatureVerification()
@@ -17116,6 +17137,7 @@ void SignatureVerification::Clear() {
       }
     }
   }
+  labels_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -17174,6 +17196,25 @@ bool SignatureVerification::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(34)) goto parse_Labels;
+        break;
+      }
+
+      // repeated string Labels = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_Labels:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_labels()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->labels(this->labels_size() - 1).data(),
+            this->labels(this->labels_size() - 1).length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "labels");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_Labels;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -17228,6 +17269,16 @@ void SignatureVerification::SerializeWithCachedSizes(
       3, this->errormessage(), output);
   }
 
+  // repeated string Labels = 4;
+  for (int i = 0; i < this->labels_size(); i++) {
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->labels(i).data(), this->labels(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "labels");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      4, this->labels(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -17265,6 +17316,16 @@ void SignatureVerification::SerializeWithCachedSizes(
         3, this->errormessage(), target);
   }
 
+  // repeated string Labels = 4;
+  for (int i = 0; i < this->labels_size(); i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->labels(i).data(), this->labels(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "labels");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(4, this->labels(i), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -17297,6 +17358,13 @@ int SignatureVerification::ByteSize() const {
     }
 
   }
+  // repeated string Labels = 4;
+  total_size += 1 * this->labels_size();
+  for (int i = 0; i < this->labels_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->labels(i));
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -17322,6 +17390,7 @@ void SignatureVerification::MergeFrom(const ::google::protobuf::Message& from) {
 
 void SignatureVerification::MergeFrom(const SignatureVerification& from) {
   GOOGLE_CHECK_NE(&from, this);
+  labels_.MergeFrom(from.labels_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_initialdocumentid()) {
       set_initialdocumentid(from.initialdocumentid());
@@ -17359,6 +17428,7 @@ void SignatureVerification::Swap(SignatureVerification* other) {
     std::swap(initialdocumentid_, other->initialdocumentid_);
     std::swap(isvalid_, other->isvalid_);
     std::swap(errormessage_, other->errormessage_);
+    labels_.Swap(&other->labels_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -17382,6 +17452,7 @@ const int ResolutionRequestAttachment::kTypeFieldNumber;
 const int ResolutionRequestAttachment::kTargetUserIdFieldNumber;
 const int ResolutionRequestAttachment::kTargetDepartmentIdFieldNumber;
 const int ResolutionRequestAttachment::kCommentFieldNumber;
+const int ResolutionRequestAttachment::kLabelsFieldNumber;
 #endif  // !_MSC_VER
 
 ResolutionRequestAttachment::ResolutionRequestAttachment()
@@ -17478,6 +17549,7 @@ void ResolutionRequestAttachment::Clear() {
       }
     }
   }
+  labels_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -17575,6 +17647,25 @@ bool ResolutionRequestAttachment::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(50)) goto parse_Labels;
+        break;
+      }
+
+      // repeated string Labels = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_Labels:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_labels()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->labels(this->labels_size() - 1).data(),
+            this->labels(this->labels_size() - 1).length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "labels");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(50)) goto parse_Labels;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -17650,6 +17741,16 @@ void ResolutionRequestAttachment::SerializeWithCachedSizes(
       5, this->comment(), output);
   }
 
+  // repeated string Labels = 6;
+  for (int i = 0; i < this->labels_size(); i++) {
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->labels(i).data(), this->labels(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "labels");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      6, this->labels(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -17710,6 +17811,16 @@ void ResolutionRequestAttachment::SerializeWithCachedSizes(
         5, this->comment(), target);
   }
 
+  // repeated string Labels = 6;
+  for (int i = 0; i < this->labels_size(); i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->labels(i).data(), this->labels(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "labels");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(6, this->labels(i), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -17757,6 +17868,13 @@ int ResolutionRequestAttachment::ByteSize() const {
     }
 
   }
+  // repeated string Labels = 6;
+  total_size += 1 * this->labels_size();
+  for (int i = 0; i < this->labels_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->labels(i));
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -17782,6 +17900,7 @@ void ResolutionRequestAttachment::MergeFrom(const ::google::protobuf::Message& f
 
 void ResolutionRequestAttachment::MergeFrom(const ResolutionRequestAttachment& from) {
   GOOGLE_CHECK_NE(&from, this);
+  labels_.MergeFrom(from.labels_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_initialdocumentid()) {
       set_initialdocumentid(from.initialdocumentid());
@@ -17827,6 +17946,7 @@ void ResolutionRequestAttachment::Swap(ResolutionRequestAttachment* other) {
     std::swap(targetuserid_, other->targetuserid_);
     std::swap(targetdepartmentid_, other->targetdepartmentid_);
     std::swap(comment_, other->comment_);
+    labels_.Swap(&other->labels_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -17848,6 +17968,7 @@ void ResolutionRequestAttachment::Swap(ResolutionRequestAttachment* other) {
 const int ResolutionRouteAssignment::kInitialDocumentIdFieldNumber;
 const int ResolutionRouteAssignment::kRouteIdFieldNumber;
 const int ResolutionRouteAssignment::kCommentFieldNumber;
+const int ResolutionRouteAssignment::kLabelsFieldNumber;
 #endif  // !_MSC_VER
 
 ResolutionRouteAssignment::ResolutionRouteAssignment()
@@ -17933,6 +18054,7 @@ void ResolutionRouteAssignment::Clear() {
       }
     }
   }
+  labels_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -17993,6 +18115,25 @@ bool ResolutionRouteAssignment::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(34)) goto parse_Labels;
+        break;
+      }
+
+      // repeated string Labels = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_Labels:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_labels()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->labels(this->labels_size() - 1).data(),
+            this->labels(this->labels_size() - 1).length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "labels");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_Labels;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -18052,6 +18193,16 @@ void ResolutionRouteAssignment::SerializeWithCachedSizes(
       3, this->comment(), output);
   }
 
+  // repeated string Labels = 4;
+  for (int i = 0; i < this->labels_size(); i++) {
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->labels(i).data(), this->labels(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "labels");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      4, this->labels(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -18095,6 +18246,16 @@ void ResolutionRouteAssignment::SerializeWithCachedSizes(
         3, this->comment(), target);
   }
 
+  // repeated string Labels = 4;
+  for (int i = 0; i < this->labels_size(); i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->labels(i).data(), this->labels(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "labels");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(4, this->labels(i), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -18129,6 +18290,13 @@ int ResolutionRouteAssignment::ByteSize() const {
     }
 
   }
+  // repeated string Labels = 4;
+  total_size += 1 * this->labels_size();
+  for (int i = 0; i < this->labels_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->labels(i));
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -18154,6 +18322,7 @@ void ResolutionRouteAssignment::MergeFrom(const ::google::protobuf::Message& fro
 
 void ResolutionRouteAssignment::MergeFrom(const ResolutionRouteAssignment& from) {
   GOOGLE_CHECK_NE(&from, this);
+  labels_.MergeFrom(from.labels_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_initialdocumentid()) {
       set_initialdocumentid(from.initialdocumentid());
@@ -18191,6 +18360,7 @@ void ResolutionRouteAssignment::Swap(ResolutionRouteAssignment* other) {
     std::swap(initialdocumentid_, other->initialdocumentid_);
     std::swap(routeid_, other->routeid_);
     std::swap(comment_, other->comment_);
+    labels_.Swap(&other->labels_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -18211,6 +18381,7 @@ void ResolutionRouteAssignment::Swap(ResolutionRouteAssignment* other) {
 #ifndef _MSC_VER
 const int ResolutionRequestCancellationAttachment::kInitialResolutionRequestIdFieldNumber;
 const int ResolutionRequestCancellationAttachment::kCommentFieldNumber;
+const int ResolutionRequestCancellationAttachment::kLabelsFieldNumber;
 #endif  // !_MSC_VER
 
 ResolutionRequestCancellationAttachment::ResolutionRequestCancellationAttachment()
@@ -18287,6 +18458,7 @@ void ResolutionRequestCancellationAttachment::Clear() {
       }
     }
   }
+  labels_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -18330,6 +18502,25 @@ bool ResolutionRequestCancellationAttachment::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(26)) goto parse_Labels;
+        break;
+      }
+
+      // repeated string Labels = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_Labels:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_labels()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->labels(this->labels_size() - 1).data(),
+            this->labels(this->labels_size() - 1).length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "labels");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_Labels;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -18379,6 +18570,16 @@ void ResolutionRequestCancellationAttachment::SerializeWithCachedSizes(
       2, this->comment(), output);
   }
 
+  // repeated string Labels = 3;
+  for (int i = 0; i < this->labels_size(); i++) {
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->labels(i).data(), this->labels(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "labels");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      3, this->labels(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -18411,6 +18612,16 @@ void ResolutionRequestCancellationAttachment::SerializeWithCachedSizes(
         2, this->comment(), target);
   }
 
+  // repeated string Labels = 3;
+  for (int i = 0; i < this->labels_size(); i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->labels(i).data(), this->labels(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "labels");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(3, this->labels(i), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -18438,6 +18649,13 @@ int ResolutionRequestCancellationAttachment::ByteSize() const {
     }
 
   }
+  // repeated string Labels = 3;
+  total_size += 1 * this->labels_size();
+  for (int i = 0; i < this->labels_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->labels(i));
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -18463,6 +18681,7 @@ void ResolutionRequestCancellationAttachment::MergeFrom(const ::google::protobuf
 
 void ResolutionRequestCancellationAttachment::MergeFrom(const ResolutionRequestCancellationAttachment& from) {
   GOOGLE_CHECK_NE(&from, this);
+  labels_.MergeFrom(from.labels_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_initialresolutionrequestid()) {
       set_initialresolutionrequestid(from.initialresolutionrequestid());
@@ -18496,6 +18715,7 @@ void ResolutionRequestCancellationAttachment::Swap(ResolutionRequestCancellation
   if (other != this) {
     std::swap(initialresolutionrequestid_, other->initialresolutionrequestid_);
     std::swap(comment_, other->comment_);
+    labels_.Swap(&other->labels_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -18760,6 +18980,7 @@ void ResolutionRequestDenialCancellationAttachment::Swap(ResolutionRequestDenial
 #ifndef _MSC_VER
 const int ResolutionRequestDenialAttachment::kInitialResolutionRequestIdFieldNumber;
 const int ResolutionRequestDenialAttachment::kCommentFieldNumber;
+const int ResolutionRequestDenialAttachment::kLabelsFieldNumber;
 #endif  // !_MSC_VER
 
 ResolutionRequestDenialAttachment::ResolutionRequestDenialAttachment()
@@ -18836,6 +19057,7 @@ void ResolutionRequestDenialAttachment::Clear() {
       }
     }
   }
+  labels_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -18879,6 +19101,25 @@ bool ResolutionRequestDenialAttachment::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(26)) goto parse_Labels;
+        break;
+      }
+
+      // repeated string Labels = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_Labels:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_labels()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->labels(this->labels_size() - 1).data(),
+            this->labels(this->labels_size() - 1).length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "labels");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_Labels;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -18928,6 +19169,16 @@ void ResolutionRequestDenialAttachment::SerializeWithCachedSizes(
       2, this->comment(), output);
   }
 
+  // repeated string Labels = 3;
+  for (int i = 0; i < this->labels_size(); i++) {
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->labels(i).data(), this->labels(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "labels");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      3, this->labels(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -18960,6 +19211,16 @@ void ResolutionRequestDenialAttachment::SerializeWithCachedSizes(
         2, this->comment(), target);
   }
 
+  // repeated string Labels = 3;
+  for (int i = 0; i < this->labels_size(); i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->labels(i).data(), this->labels(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "labels");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(3, this->labels(i), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -18987,6 +19248,13 @@ int ResolutionRequestDenialAttachment::ByteSize() const {
     }
 
   }
+  // repeated string Labels = 3;
+  total_size += 1 * this->labels_size();
+  for (int i = 0; i < this->labels_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->labels(i));
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -19012,6 +19280,7 @@ void ResolutionRequestDenialAttachment::MergeFrom(const ::google::protobuf::Mess
 
 void ResolutionRequestDenialAttachment::MergeFrom(const ResolutionRequestDenialAttachment& from) {
   GOOGLE_CHECK_NE(&from, this);
+  labels_.MergeFrom(from.labels_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_initialresolutionrequestid()) {
       set_initialresolutionrequestid(from.initialresolutionrequestid());
@@ -19045,6 +19314,7 @@ void ResolutionRequestDenialAttachment::Swap(ResolutionRequestDenialAttachment* 
   if (other != this) {
     std::swap(initialresolutionrequestid_, other->initialresolutionrequestid_);
     std::swap(comment_, other->comment_);
+    labels_.Swap(&other->labels_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -19066,6 +19336,7 @@ void ResolutionRequestDenialAttachment::Swap(ResolutionRequestDenialAttachment* 
 const int ResolutionAttachment::kInitialDocumentIdFieldNumber;
 const int ResolutionAttachment::kResolutionTypeFieldNumber;
 const int ResolutionAttachment::kCommentFieldNumber;
+const int ResolutionAttachment::kLabelsFieldNumber;
 #endif  // !_MSC_VER
 
 ResolutionAttachment::ResolutionAttachment()
@@ -19144,6 +19415,7 @@ void ResolutionAttachment::Clear() {
       }
     }
   }
+  labels_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -19207,6 +19479,25 @@ bool ResolutionAttachment::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(34)) goto parse_Labels;
+        break;
+      }
+
+      // repeated string Labels = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_Labels:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_labels()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->labels(this->labels_size() - 1).data(),
+            this->labels(this->labels_size() - 1).length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "labels");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_Labels;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -19262,6 +19553,16 @@ void ResolutionAttachment::SerializeWithCachedSizes(
       3, this->comment(), output);
   }
 
+  // repeated string Labels = 4;
+  for (int i = 0; i < this->labels_size(); i++) {
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->labels(i).data(), this->labels(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "labels");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      4, this->labels(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -19300,6 +19601,16 @@ void ResolutionAttachment::SerializeWithCachedSizes(
         3, this->comment(), target);
   }
 
+  // repeated string Labels = 4;
+  for (int i = 0; i < this->labels_size(); i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->labels(i).data(), this->labels(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "labels");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(4, this->labels(i), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -19333,6 +19644,13 @@ int ResolutionAttachment::ByteSize() const {
     }
 
   }
+  // repeated string Labels = 4;
+  total_size += 1 * this->labels_size();
+  for (int i = 0; i < this->labels_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->labels(i));
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -19358,6 +19676,7 @@ void ResolutionAttachment::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ResolutionAttachment::MergeFrom(const ResolutionAttachment& from) {
   GOOGLE_CHECK_NE(&from, this);
+  labels_.MergeFrom(from.labels_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_initialdocumentid()) {
       set_initialdocumentid(from.initialdocumentid());
@@ -19395,6 +19714,7 @@ void ResolutionAttachment::Swap(ResolutionAttachment* other) {
     std::swap(initialdocumentid_, other->initialdocumentid_);
     std::swap(resolutiontype_, other->resolutiontype_);
     std::swap(comment_, other->comment_);
+    labels_.Swap(&other->labels_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -19415,6 +19735,7 @@ void ResolutionAttachment::Swap(ResolutionAttachment* other) {
 #ifndef _MSC_VER
 const int ReceiptAttachment::kParentEntityIdFieldNumber;
 const int ReceiptAttachment::kSignedContentFieldNumber;
+const int ReceiptAttachment::kLabelsFieldNumber;
 #endif  // !_MSC_VER
 
 ReceiptAttachment::ReceiptAttachment()
@@ -19488,6 +19809,7 @@ void ReceiptAttachment::Clear() {
       if (signedcontent_ != NULL) signedcontent_->::Diadoc::Api::Proto::Events::SignedContent::Clear();
     }
   }
+  labels_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -19527,6 +19849,25 @@ bool ReceiptAttachment::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(34)) goto parse_Labels;
+        break;
+      }
+
+      // repeated string Labels = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_Labels:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_labels()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->labels(this->labels_size() - 1).data(),
+            this->labels(this->labels_size() - 1).length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "labels");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_Labels;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -19572,6 +19913,16 @@ void ReceiptAttachment::SerializeWithCachedSizes(
       2, this->signedcontent(), output);
   }
 
+  // repeated string Labels = 4;
+  for (int i = 0; i < this->labels_size(); i++) {
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->labels(i).data(), this->labels(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "labels");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      4, this->labels(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -19598,6 +19949,16 @@ void ReceiptAttachment::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         2, this->signedcontent(), target);
+  }
+
+  // repeated string Labels = 4;
+  for (int i = 0; i < this->labels_size(); i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->labels(i).data(), this->labels(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "labels");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(4, this->labels(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -19627,6 +19988,13 @@ int ReceiptAttachment::ByteSize() const {
     }
 
   }
+  // repeated string Labels = 4;
+  total_size += 1 * this->labels_size();
+  for (int i = 0; i < this->labels_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->labels(i));
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -19652,6 +20020,7 @@ void ReceiptAttachment::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ReceiptAttachment::MergeFrom(const ReceiptAttachment& from) {
   GOOGLE_CHECK_NE(&from, this);
+  labels_.MergeFrom(from.labels_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_parententityid()) {
       set_parententityid(from.parententityid());
@@ -19685,6 +20054,7 @@ void ReceiptAttachment::Swap(ReceiptAttachment* other) {
   if (other != this) {
     std::swap(parententityid_, other->parententityid_);
     std::swap(signedcontent_, other->signedcontent_);
+    labels_.Swap(&other->labels_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -19705,6 +20075,7 @@ void ReceiptAttachment::Swap(ReceiptAttachment* other) {
 #ifndef _MSC_VER
 const int CorrectionRequestAttachment::kParentEntityIdFieldNumber;
 const int CorrectionRequestAttachment::kSignedContentFieldNumber;
+const int CorrectionRequestAttachment::kLabelsFieldNumber;
 #endif  // !_MSC_VER
 
 CorrectionRequestAttachment::CorrectionRequestAttachment()
@@ -19778,6 +20149,7 @@ void CorrectionRequestAttachment::Clear() {
       if (signedcontent_ != NULL) signedcontent_->::Diadoc::Api::Proto::Events::SignedContent::Clear();
     }
   }
+  labels_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -19817,6 +20189,25 @@ bool CorrectionRequestAttachment::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(34)) goto parse_Labels;
+        break;
+      }
+
+      // repeated string Labels = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_Labels:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_labels()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->labels(this->labels_size() - 1).data(),
+            this->labels(this->labels_size() - 1).length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "labels");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_Labels;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -19862,6 +20253,16 @@ void CorrectionRequestAttachment::SerializeWithCachedSizes(
       2, this->signedcontent(), output);
   }
 
+  // repeated string Labels = 4;
+  for (int i = 0; i < this->labels_size(); i++) {
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->labels(i).data(), this->labels(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "labels");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      4, this->labels(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -19888,6 +20289,16 @@ void CorrectionRequestAttachment::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         2, this->signedcontent(), target);
+  }
+
+  // repeated string Labels = 4;
+  for (int i = 0; i < this->labels_size(); i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->labels(i).data(), this->labels(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "labels");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(4, this->labels(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -19917,6 +20328,13 @@ int CorrectionRequestAttachment::ByteSize() const {
     }
 
   }
+  // repeated string Labels = 4;
+  total_size += 1 * this->labels_size();
+  for (int i = 0; i < this->labels_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->labels(i));
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -19942,6 +20360,7 @@ void CorrectionRequestAttachment::MergeFrom(const ::google::protobuf::Message& f
 
 void CorrectionRequestAttachment::MergeFrom(const CorrectionRequestAttachment& from) {
   GOOGLE_CHECK_NE(&from, this);
+  labels_.MergeFrom(from.labels_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_parententityid()) {
       set_parententityid(from.parententityid());
@@ -19975,6 +20394,7 @@ void CorrectionRequestAttachment::Swap(CorrectionRequestAttachment* other) {
   if (other != this) {
     std::swap(parententityid_, other->parententityid_);
     std::swap(signedcontent_, other->signedcontent_);
+    labels_.Swap(&other->labels_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -19999,6 +20419,7 @@ const int DocumentSignature::kSignWithTestSignatureFieldNumber;
 const int DocumentSignature::kIsApprovementSignatureFieldNumber;
 const int DocumentSignature::kSignatureNameOnShelfFieldNumber;
 const int DocumentSignature::kPatchedContentIdFieldNumber;
+const int DocumentSignature::kLabelsFieldNumber;
 #endif  // !_MSC_VER
 
 DocumentSignature::DocumentSignature()
@@ -20110,6 +20531,7 @@ void DocumentSignature::Clear() {
 #undef OFFSET_OF_FIELD_
 #undef ZR_
 
+  labels_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -20213,6 +20635,25 @@ bool DocumentSignature::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(66)) goto parse_Labels;
+        break;
+      }
+
+      // repeated string Labels = 8;
+      case 8: {
+        if (tag == 66) {
+         parse_Labels:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_labels()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->labels(this->labels_size() - 1).data(),
+            this->labels(this->labels_size() - 1).length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "labels");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(66)) goto parse_Labels;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -20288,6 +20729,16 @@ void DocumentSignature::SerializeWithCachedSizes(
       7, this->patchedcontentid(), output);
   }
 
+  // repeated string Labels = 8;
+  for (int i = 0; i < this->labels_size(); i++) {
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->labels(i).data(), this->labels(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "labels");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      8, this->labels(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -20348,6 +20799,16 @@ void DocumentSignature::SerializeWithCachedSizes(
         7, this->patchedcontentid(), target);
   }
 
+  // repeated string Labels = 8;
+  for (int i = 0; i < this->labels_size(); i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->labels(i).data(), this->labels(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "labels");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(8, this->labels(i), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -20399,6 +20860,13 @@ int DocumentSignature::ByteSize() const {
     }
 
   }
+  // repeated string Labels = 8;
+  total_size += 1 * this->labels_size();
+  for (int i = 0; i < this->labels_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->labels(i));
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -20424,6 +20892,7 @@ void DocumentSignature::MergeFrom(const ::google::protobuf::Message& from) {
 
 void DocumentSignature::MergeFrom(const DocumentSignature& from) {
   GOOGLE_CHECK_NE(&from, this);
+  labels_.MergeFrom(from.labels_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_parententityid()) {
       set_parententityid(from.parententityid());
@@ -20473,6 +20942,7 @@ void DocumentSignature::Swap(DocumentSignature* other) {
     std::swap(isapprovementsignature_, other->isapprovementsignature_);
     std::swap(signaturenameonshelf_, other->signaturenameonshelf_);
     std::swap(patchedcontentid_, other->patchedcontentid_);
+    labels_.Swap(&other->labels_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -20882,6 +21352,7 @@ void DocumentSenderSignature::Swap(DocumentSenderSignature* other) {
 #ifndef _MSC_VER
 const int RequestedSignatureRejection::kParentEntityIdFieldNumber;
 const int RequestedSignatureRejection::kSignedContentFieldNumber;
+const int RequestedSignatureRejection::kLabelsFieldNumber;
 #endif  // !_MSC_VER
 
 RequestedSignatureRejection::RequestedSignatureRejection()
@@ -20955,6 +21426,7 @@ void RequestedSignatureRejection::Clear() {
       if (signedcontent_ != NULL) signedcontent_->::Diadoc::Api::Proto::Events::SignedContent::Clear();
     }
   }
+  labels_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -20994,6 +21466,25 @@ bool RequestedSignatureRejection::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(26)) goto parse_Labels;
+        break;
+      }
+
+      // repeated string Labels = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_Labels:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_labels()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->labels(this->labels_size() - 1).data(),
+            this->labels(this->labels_size() - 1).length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "labels");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_Labels;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -21039,6 +21530,16 @@ void RequestedSignatureRejection::SerializeWithCachedSizes(
       2, this->signedcontent(), output);
   }
 
+  // repeated string Labels = 3;
+  for (int i = 0; i < this->labels_size(); i++) {
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->labels(i).data(), this->labels(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "labels");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      3, this->labels(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -21065,6 +21566,16 @@ void RequestedSignatureRejection::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         2, this->signedcontent(), target);
+  }
+
+  // repeated string Labels = 3;
+  for (int i = 0; i < this->labels_size(); i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->labels(i).data(), this->labels(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "labels");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(3, this->labels(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -21094,6 +21605,13 @@ int RequestedSignatureRejection::ByteSize() const {
     }
 
   }
+  // repeated string Labels = 3;
+  total_size += 1 * this->labels_size();
+  for (int i = 0; i < this->labels_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->labels(i));
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -21119,6 +21637,7 @@ void RequestedSignatureRejection::MergeFrom(const ::google::protobuf::Message& f
 
 void RequestedSignatureRejection::MergeFrom(const RequestedSignatureRejection& from) {
   GOOGLE_CHECK_NE(&from, this);
+  labels_.MergeFrom(from.labels_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_parententityid()) {
       set_parententityid(from.parententityid());
@@ -21152,6 +21671,7 @@ void RequestedSignatureRejection::Swap(RequestedSignatureRejection* other) {
   if (other != this) {
     std::swap(parententityid_, other->parententityid_);
     std::swap(signedcontent_, other->signedcontent_);
+    labels_.Swap(&other->labels_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -23484,298 +24004,6 @@ void ContentToPatch::Swap(ContentToPatch* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
-const int UnsignedContent::kContentFieldNumber;
-const int UnsignedContent::kNameOnShelfFieldNumber;
-#endif  // !_MSC_VER
-
-UnsignedContent::UnsignedContent()
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Events.UnsignedContent)
-}
-
-void UnsignedContent::InitAsDefaultInstance() {
-}
-
-UnsignedContent::UnsignedContent(const UnsignedContent& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Events.UnsignedContent)
-}
-
-void UnsignedContent::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
-  _cached_size_ = 0;
-  content_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  nameonshelf_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-}
-
-UnsignedContent::~UnsignedContent() {
-  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Events.UnsignedContent)
-  SharedDtor();
-}
-
-void UnsignedContent::SharedDtor() {
-  if (content_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete content_;
-  }
-  if (nameonshelf_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete nameonshelf_;
-  }
-  if (this != default_instance_) {
-  }
-}
-
-void UnsignedContent::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* UnsignedContent::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return UnsignedContent_descriptor_;
-}
-
-const UnsignedContent& UnsignedContent::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
-  return *default_instance_;
-}
-
-UnsignedContent* UnsignedContent::default_instance_ = NULL;
-
-UnsignedContent* UnsignedContent::New() const {
-  return new UnsignedContent;
-}
-
-void UnsignedContent::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
-    if (has_content()) {
-      if (content_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        content_->clear();
-      }
-    }
-    if (has_nameonshelf()) {
-      if (nameonshelf_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        nameonshelf_->clear();
-      }
-    }
-  }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
-}
-
-bool UnsignedContent::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Events.UnsignedContent)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional bytes Content = 1;
-      case 1: {
-        if (tag == 10) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
-                input, this->mutable_content()));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(18)) goto parse_NameOnShelf;
-        break;
-      }
-
-      // optional string NameOnShelf = 2;
-      case 2: {
-        if (tag == 18) {
-         parse_NameOnShelf:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_nameonshelf()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->nameonshelf().data(), this->nameonshelf().length(),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "nameonshelf");
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectAtEnd()) goto success;
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Events.UnsignedContent)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Events.UnsignedContent)
-  return false;
-#undef DO_
-}
-
-void UnsignedContent::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Events.UnsignedContent)
-  // optional bytes Content = 1;
-  if (has_content()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
-      1, this->content(), output);
-  }
-
-  // optional string NameOnShelf = 2;
-  if (has_nameonshelf()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->nameonshelf().data(), this->nameonshelf().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "nameonshelf");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->nameonshelf(), output);
-  }
-
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Events.UnsignedContent)
-}
-
-::google::protobuf::uint8* UnsignedContent::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Events.UnsignedContent)
-  // optional bytes Content = 1;
-  if (has_content()) {
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
-        1, this->content(), target);
-  }
-
-  // optional string NameOnShelf = 2;
-  if (has_nameonshelf()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->nameonshelf().data(), this->nameonshelf().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "nameonshelf");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->nameonshelf(), target);
-  }
-
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Events.UnsignedContent)
-  return target;
-}
-
-int UnsignedContent::ByteSize() const {
-  int total_size = 0;
-
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional bytes Content = 1;
-    if (has_content()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::BytesSize(
-          this->content());
-    }
-
-    // optional string NameOnShelf = 2;
-    if (has_nameonshelf()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->nameonshelf());
-    }
-
-  }
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void UnsignedContent::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const UnsignedContent* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const UnsignedContent*>(
-      &from);
-  if (source == NULL) {
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-    MergeFrom(*source);
-  }
-}
-
-void UnsignedContent::MergeFrom(const UnsignedContent& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_content()) {
-      set_content(from.content());
-    }
-    if (from.has_nameonshelf()) {
-      set_nameonshelf(from.nameonshelf());
-    }
-  }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-}
-
-void UnsignedContent::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void UnsignedContent::CopyFrom(const UnsignedContent& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool UnsignedContent::IsInitialized() const {
-
-  return true;
-}
-
-void UnsignedContent::Swap(UnsignedContent* other) {
-  if (other != this) {
-    std::swap(content_, other->content_);
-    std::swap(nameonshelf_, other->nameonshelf_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
-}
-
-::google::protobuf::Metadata UnsignedContent::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = UnsignedContent_descriptor_;
-  metadata.reflection = UnsignedContent_reflection_;
-  return metadata;
-}
-
-
-// ===================================================================
-
-#ifndef _MSC_VER
 const int DocumentToPatch::kDocumentIdFieldNumber;
 const int DocumentToPatch::kSignerFieldNumber;
 const int DocumentToPatch::kExtendedSignerFieldNumber;
@@ -25003,6 +25231,7 @@ void MessageToSend::Swap(MessageToSend* other) {
 #ifndef _MSC_VER
 const int RevocationRequestAttachment::kParentEntityIdFieldNumber;
 const int RevocationRequestAttachment::kSignedContentFieldNumber;
+const int RevocationRequestAttachment::kLabelsFieldNumber;
 #endif  // !_MSC_VER
 
 RevocationRequestAttachment::RevocationRequestAttachment()
@@ -25076,6 +25305,7 @@ void RevocationRequestAttachment::Clear() {
       if (signedcontent_ != NULL) signedcontent_->::Diadoc::Api::Proto::Events::SignedContent::Clear();
     }
   }
+  labels_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -25115,6 +25345,25 @@ bool RevocationRequestAttachment::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(26)) goto parse_Labels;
+        break;
+      }
+
+      // repeated string Labels = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_Labels:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_labels()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->labels(this->labels_size() - 1).data(),
+            this->labels(this->labels_size() - 1).length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "labels");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_Labels;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -25160,6 +25409,16 @@ void RevocationRequestAttachment::SerializeWithCachedSizes(
       2, this->signedcontent(), output);
   }
 
+  // repeated string Labels = 3;
+  for (int i = 0; i < this->labels_size(); i++) {
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->labels(i).data(), this->labels(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "labels");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      3, this->labels(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -25186,6 +25445,16 @@ void RevocationRequestAttachment::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         2, this->signedcontent(), target);
+  }
+
+  // repeated string Labels = 3;
+  for (int i = 0; i < this->labels_size(); i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->labels(i).data(), this->labels(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "labels");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(3, this->labels(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -25215,6 +25484,13 @@ int RevocationRequestAttachment::ByteSize() const {
     }
 
   }
+  // repeated string Labels = 3;
+  total_size += 1 * this->labels_size();
+  for (int i = 0; i < this->labels_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->labels(i));
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -25240,6 +25516,7 @@ void RevocationRequestAttachment::MergeFrom(const ::google::protobuf::Message& f
 
 void RevocationRequestAttachment::MergeFrom(const RevocationRequestAttachment& from) {
   GOOGLE_CHECK_NE(&from, this);
+  labels_.MergeFrom(from.labels_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_parententityid()) {
       set_parententityid(from.parententityid());
@@ -25273,6 +25550,7 @@ void RevocationRequestAttachment::Swap(RevocationRequestAttachment* other) {
   if (other != this) {
     std::swap(parententityid_, other->parententityid_);
     std::swap(signedcontent_, other->signedcontent_);
+    labels_.Swap(&other->labels_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -25293,6 +25571,7 @@ void RevocationRequestAttachment::Swap(RevocationRequestAttachment* other) {
 #ifndef _MSC_VER
 const int XmlSignatureRejectionAttachment::kParentEntityIdFieldNumber;
 const int XmlSignatureRejectionAttachment::kSignedContentFieldNumber;
+const int XmlSignatureRejectionAttachment::kLabelsFieldNumber;
 #endif  // !_MSC_VER
 
 XmlSignatureRejectionAttachment::XmlSignatureRejectionAttachment()
@@ -25366,6 +25645,7 @@ void XmlSignatureRejectionAttachment::Clear() {
       if (signedcontent_ != NULL) signedcontent_->::Diadoc::Api::Proto::Events::SignedContent::Clear();
     }
   }
+  labels_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -25405,6 +25685,25 @@ bool XmlSignatureRejectionAttachment::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(26)) goto parse_Labels;
+        break;
+      }
+
+      // repeated string Labels = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_Labels:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_labels()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->labels(this->labels_size() - 1).data(),
+            this->labels(this->labels_size() - 1).length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "labels");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_Labels;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -25450,6 +25749,16 @@ void XmlSignatureRejectionAttachment::SerializeWithCachedSizes(
       2, this->signedcontent(), output);
   }
 
+  // repeated string Labels = 3;
+  for (int i = 0; i < this->labels_size(); i++) {
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->labels(i).data(), this->labels(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "labels");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      3, this->labels(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -25476,6 +25785,16 @@ void XmlSignatureRejectionAttachment::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         2, this->signedcontent(), target);
+  }
+
+  // repeated string Labels = 3;
+  for (int i = 0; i < this->labels_size(); i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->labels(i).data(), this->labels(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "labels");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(3, this->labels(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -25505,6 +25824,13 @@ int XmlSignatureRejectionAttachment::ByteSize() const {
     }
 
   }
+  // repeated string Labels = 3;
+  total_size += 1 * this->labels_size();
+  for (int i = 0; i < this->labels_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->labels(i));
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -25530,6 +25856,7 @@ void XmlSignatureRejectionAttachment::MergeFrom(const ::google::protobuf::Messag
 
 void XmlSignatureRejectionAttachment::MergeFrom(const XmlSignatureRejectionAttachment& from) {
   GOOGLE_CHECK_NE(&from, this);
+  labels_.MergeFrom(from.labels_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_parententityid()) {
       set_parententityid(from.parententityid());
@@ -25563,6 +25890,7 @@ void XmlSignatureRejectionAttachment::Swap(XmlSignatureRejectionAttachment* othe
   if (other != this) {
     std::swap(parententityid_, other->parententityid_);
     std::swap(signedcontent_, other->signedcontent_);
+    labels_.Swap(&other->labels_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -26718,6 +27046,7 @@ void EditDocumentPacketCommand::Swap(EditDocumentPacketCommand* other) {
 const int ResolutionRouteRemoval::kParentEntityIdFieldNumber;
 const int ResolutionRouteRemoval::kRouteIdFieldNumber;
 const int ResolutionRouteRemoval::kCommentFieldNumber;
+const int ResolutionRouteRemoval::kLabelsFieldNumber;
 #endif  // !_MSC_VER
 
 ResolutionRouteRemoval::ResolutionRouteRemoval()
@@ -26803,6 +27132,7 @@ void ResolutionRouteRemoval::Clear() {
       }
     }
   }
+  labels_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -26863,6 +27193,25 @@ bool ResolutionRouteRemoval::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(34)) goto parse_Labels;
+        break;
+      }
+
+      // repeated string Labels = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_Labels:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_labels()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->labels(this->labels_size() - 1).data(),
+            this->labels(this->labels_size() - 1).length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "labels");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_Labels;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -26922,6 +27271,16 @@ void ResolutionRouteRemoval::SerializeWithCachedSizes(
       3, this->comment(), output);
   }
 
+  // repeated string Labels = 4;
+  for (int i = 0; i < this->labels_size(); i++) {
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->labels(i).data(), this->labels(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "labels");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      4, this->labels(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -26965,6 +27324,16 @@ void ResolutionRouteRemoval::SerializeWithCachedSizes(
         3, this->comment(), target);
   }
 
+  // repeated string Labels = 4;
+  for (int i = 0; i < this->labels_size(); i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->labels(i).data(), this->labels(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "labels");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(4, this->labels(i), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -26999,6 +27368,13 @@ int ResolutionRouteRemoval::ByteSize() const {
     }
 
   }
+  // repeated string Labels = 4;
+  total_size += 1 * this->labels_size();
+  for (int i = 0; i < this->labels_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->labels(i));
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -27024,6 +27400,7 @@ void ResolutionRouteRemoval::MergeFrom(const ::google::protobuf::Message& from) 
 
 void ResolutionRouteRemoval::MergeFrom(const ResolutionRouteRemoval& from) {
   GOOGLE_CHECK_NE(&from, this);
+  labels_.MergeFrom(from.labels_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_parententityid()) {
       set_parententityid(from.parententityid());
@@ -27061,6 +27438,7 @@ void ResolutionRouteRemoval::Swap(ResolutionRouteRemoval* other) {
     std::swap(parententityid_, other->parententityid_);
     std::swap(routeid_, other->routeid_);
     std::swap(comment_, other->comment_);
+    labels_.Swap(&other->labels_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -27609,6 +27987,7 @@ const int TemplateDocumentAttachment::kVersionFieldNumber;
 const int TemplateDocumentAttachment::kMetadataFieldNumber;
 const int TemplateDocumentAttachment::kWorkflowIdFieldNumber;
 const int TemplateDocumentAttachment::kCustomDocumentIdFieldNumber;
+const int TemplateDocumentAttachment::kEditingSettingIdFieldNumber;
 #endif  // !_MSC_VER
 
 TemplateDocumentAttachment::TemplateDocumentAttachment()
@@ -27638,6 +28017,7 @@ void TemplateDocumentAttachment::SharedCtor() {
   version_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   workflowid_ = 0;
   customdocumentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  editingsettingid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -27661,6 +28041,9 @@ void TemplateDocumentAttachment::SharedDtor() {
   }
   if (customdocumentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete customdocumentid_;
+  }
+  if (editingsettingid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete editingsettingid_;
   }
   if (this != default_instance_) {
     delete unsignedcontent_;
@@ -27718,6 +28101,11 @@ void TemplateDocumentAttachment::Clear() {
       if (customdocumentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         customdocumentid_->clear();
       }
+    }
+  }
+  if (has_editingsettingid()) {
+    if (editingsettingid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+      editingsettingid_->clear();
     }
   }
   metadata_.Clear();
@@ -27857,6 +28245,23 @@ bool TemplateDocumentAttachment::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(74)) goto parse_EditingSettingId;
+        break;
+      }
+
+      // optional string EditingSettingId = 9;
+      case 9: {
+        if (tag == 74) {
+         parse_EditingSettingId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_editingsettingid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->editingsettingid().data(), this->editingsettingid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "editingsettingid");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -27953,6 +28358,16 @@ void TemplateDocumentAttachment::SerializeWithCachedSizes(
       8, this->customdocumentid(), output);
   }
 
+  // optional string EditingSettingId = 9;
+  if (has_editingsettingid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->editingsettingid().data(), this->editingsettingid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "editingsettingid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      9, this->editingsettingid(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -28037,6 +28452,17 @@ void TemplateDocumentAttachment::SerializeWithCachedSizes(
         8, this->customdocumentid(), target);
   }
 
+  // optional string EditingSettingId = 9;
+  if (has_editingsettingid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->editingsettingid().data(), this->editingsettingid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "editingsettingid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        9, this->editingsettingid(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -28099,6 +28525,15 @@ int TemplateDocumentAttachment::ByteSize() const {
     }
 
   }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    // optional string EditingSettingId = 9;
+    if (has_editingsettingid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->editingsettingid());
+    }
+
+  }
   // repeated .Diadoc.Api.Proto.Events.MetadataItem Metadata = 6;
   total_size += 1 * this->metadata_size();
   for (int i = 0; i < this->metadata_size(); i++) {
@@ -28156,6 +28591,11 @@ void TemplateDocumentAttachment::MergeFrom(const TemplateDocumentAttachment& fro
       set_customdocumentid(from.customdocumentid());
     }
   }
+  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    if (from.has_editingsettingid()) {
+      set_editingsettingid(from.editingsettingid());
+    }
+  }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
@@ -28188,6 +28628,7 @@ void TemplateDocumentAttachment::Swap(TemplateDocumentAttachment* other) {
     metadata_.Swap(&other->metadata_);
     std::swap(workflowid_, other->workflowid_);
     std::swap(customdocumentid_, other->customdocumentid_);
+    std::swap(editingsettingid_, other->editingsettingid_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -28199,6 +28640,298 @@ void TemplateDocumentAttachment::Swap(TemplateDocumentAttachment* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = TemplateDocumentAttachment_descriptor_;
   metadata.reflection = TemplateDocumentAttachment_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int UnsignedContent::kContentFieldNumber;
+const int UnsignedContent::kNameOnShelfFieldNumber;
+#endif  // !_MSC_VER
+
+UnsignedContent::UnsignedContent()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Events.UnsignedContent)
+}
+
+void UnsignedContent::InitAsDefaultInstance() {
+}
+
+UnsignedContent::UnsignedContent(const UnsignedContent& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Events.UnsignedContent)
+}
+
+void UnsignedContent::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  content_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  nameonshelf_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+UnsignedContent::~UnsignedContent() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Events.UnsignedContent)
+  SharedDtor();
+}
+
+void UnsignedContent::SharedDtor() {
+  if (content_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete content_;
+  }
+  if (nameonshelf_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete nameonshelf_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void UnsignedContent::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* UnsignedContent::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return UnsignedContent_descriptor_;
+}
+
+const UnsignedContent& UnsignedContent::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  return *default_instance_;
+}
+
+UnsignedContent* UnsignedContent::default_instance_ = NULL;
+
+UnsignedContent* UnsignedContent::New() const {
+  return new UnsignedContent;
+}
+
+void UnsignedContent::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    if (has_content()) {
+      if (content_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        content_->clear();
+      }
+    }
+    if (has_nameonshelf()) {
+      if (nameonshelf_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        nameonshelf_->clear();
+      }
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool UnsignedContent::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Events.UnsignedContent)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional bytes Content = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
+                input, this->mutable_content()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_NameOnShelf;
+        break;
+      }
+
+      // optional string NameOnShelf = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_NameOnShelf:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_nameonshelf()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->nameonshelf().data(), this->nameonshelf().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "nameonshelf");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Events.UnsignedContent)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Events.UnsignedContent)
+  return false;
+#undef DO_
+}
+
+void UnsignedContent::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Events.UnsignedContent)
+  // optional bytes Content = 1;
+  if (has_content()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
+      1, this->content(), output);
+  }
+
+  // optional string NameOnShelf = 2;
+  if (has_nameonshelf()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->nameonshelf().data(), this->nameonshelf().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "nameonshelf");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->nameonshelf(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Events.UnsignedContent)
+}
+
+::google::protobuf::uint8* UnsignedContent::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Events.UnsignedContent)
+  // optional bytes Content = 1;
+  if (has_content()) {
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
+        1, this->content(), target);
+  }
+
+  // optional string NameOnShelf = 2;
+  if (has_nameonshelf()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->nameonshelf().data(), this->nameonshelf().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "nameonshelf");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->nameonshelf(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Events.UnsignedContent)
+  return target;
+}
+
+int UnsignedContent::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional bytes Content = 1;
+    if (has_content()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::BytesSize(
+          this->content());
+    }
+
+    // optional string NameOnShelf = 2;
+    if (has_nameonshelf()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->nameonshelf());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void UnsignedContent::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const UnsignedContent* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const UnsignedContent*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void UnsignedContent::MergeFrom(const UnsignedContent& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_content()) {
+      set_content(from.content());
+    }
+    if (from.has_nameonshelf()) {
+      set_nameonshelf(from.nameonshelf());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void UnsignedContent::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void UnsignedContent::CopyFrom(const UnsignedContent& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UnsignedContent::IsInitialized() const {
+
+  return true;
+}
+
+void UnsignedContent::Swap(UnsignedContent* other) {
+  if (other != this) {
+    std::swap(content_, other->content_);
+    std::swap(nameonshelf_, other->nameonshelf_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata UnsignedContent::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = UnsignedContent_descriptor_;
+  metadata.reflection = UnsignedContent_reflection_;
   return metadata;
 }
 

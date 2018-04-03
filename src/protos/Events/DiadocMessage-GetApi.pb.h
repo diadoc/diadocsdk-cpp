@@ -1351,6 +1351,22 @@ class Entity : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Events::CancellationInfo* release_cancellationinfo();
   inline void set_allocated_cancellationinfo(::Diadoc::Api::Proto::Events::CancellationInfo* cancellationinfo);
 
+  // repeated string Labels = 25;
+  inline int labels_size() const;
+  inline void clear_labels();
+  static const int kLabelsFieldNumber = 25;
+  inline const ::std::string& labels(int index) const;
+  inline ::std::string* mutable_labels(int index);
+  inline void set_labels(int index, const ::std::string& value);
+  inline void set_labels(int index, const char* value);
+  inline void set_labels(int index, const char* value, size_t size);
+  inline ::std::string* add_labels();
+  inline void add_labels(const ::std::string& value);
+  inline void add_labels(const char* value);
+  inline void add_labels(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& labels() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_labels();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.Entity)
  private:
   inline void set_has_entitytype();
@@ -1423,6 +1439,7 @@ class Entity : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo* resolutionrouteassignmentinfo_;
   ::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo* resolutionrouteremovalinfo_;
   ::Diadoc::Api::Proto::Events::CancellationInfo* cancellationinfo_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> labels_;
   bool needrecipientsignature_;
   bool needreceipt_;
   bool isapprovementsignature_;
@@ -4897,6 +4914,60 @@ inline void Entity::set_allocated_cancellationinfo(::Diadoc::Api::Proto::Events:
     clear_has_cancellationinfo();
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Entity.CancellationInfo)
+}
+
+// repeated string Labels = 25;
+inline int Entity::labels_size() const {
+  return labels_.size();
+}
+inline void Entity::clear_labels() {
+  labels_.Clear();
+}
+inline const ::std::string& Entity::labels(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Entity.Labels)
+  return labels_.Get(index);
+}
+inline ::std::string* Entity::mutable_labels(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Entity.Labels)
+  return labels_.Mutable(index);
+}
+inline void Entity::set_labels(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Entity.Labels)
+  labels_.Mutable(index)->assign(value);
+}
+inline void Entity::set_labels(int index, const char* value) {
+  labels_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.Entity.Labels)
+}
+inline void Entity::set_labels(int index, const char* value, size_t size) {
+  labels_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.Entity.Labels)
+}
+inline ::std::string* Entity::add_labels() {
+  return labels_.Add();
+}
+inline void Entity::add_labels(const ::std::string& value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.Entity.Labels)
+}
+inline void Entity::add_labels(const char* value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:Diadoc.Api.Proto.Events.Entity.Labels)
+}
+inline void Entity::add_labels(const char* value, size_t size) {
+  labels_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:Diadoc.Api.Proto.Events.Entity.Labels)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+Entity::labels() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.Entity.Labels)
+  return labels_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+Entity::mutable_labels() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.Entity.Labels)
+  return &labels_;
 }
 
 // -------------------------------------------------------------------
