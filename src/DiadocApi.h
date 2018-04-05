@@ -149,7 +149,7 @@ public:
 	WebFile GenerateTorg12XmlForSeller(const Diadoc::Api::Proto::Invoicing::Torg12SellerTitleInfo& torg12SellerInfo, bool disableValidation = false);
 	WebFile GenerateTorg12XmlForBuyer(const Diadoc::Api::Proto::Invoicing::Torg12BuyerTitleInfo& torg12BuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId);
 	WebFile GenerateTovTorg551XmlForSeller(const Diadoc::Api::Proto::Invoicing::TovTorgSellerTitleInfo& tovTorgSellerInfo, bool disableValidation = false);
-	WebFile GenerateTovTorg551XmlForBuyer(const Diadoc::Api::Proto::Invoicing::TovTorgBuyerTitleInfo& tovTorgBuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId);
+	WebFile GenerateTovTorg551XmlForBuyer(const Diadoc::Api::Proto::Invoicing::TovTorgBuyerTitleInfo& tovTorgBuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId, const std::wstring& documentVersion = std::wstring());
 
 	WebFile GenerateAcceptanceCertificateXmlForSeller(const Diadoc::Api::Proto::Invoicing::AcceptanceCertificateSellerTitleInfo& acceptanceCertificateSellerInfo, bool disableValidation = false);
 	WebFile GenerateAcceptanceCertificateXmlForBuyer(const Diadoc::Api::Proto::Invoicing::AcceptanceCertificateBuyerTitleInfo& acceptanceCertificateBuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId);

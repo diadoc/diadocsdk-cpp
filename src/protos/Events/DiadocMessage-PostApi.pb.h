@@ -84,7 +84,6 @@ class DraftToSend;
 class PrepareDocumentsToSignRequest;
 class DraftDocumentToPatch;
 class ContentToPatch;
-class UnsignedContent;
 class DocumentToPatch;
 class DocumentPatchedContent;
 class PrepareDocumentsToSignResponse;
@@ -97,6 +96,7 @@ class EditDocumentPacketCommand;
 class ResolutionRouteRemoval;
 class TemplateToPost;
 class TemplateDocumentAttachment;
+class UnsignedContent;
 class TemplateTransformationToPost;
 class DocumentTransformation;
 
@@ -4722,6 +4722,22 @@ class SignatureVerification : public ::google::protobuf::Message {
   inline ::std::string* release_errormessage();
   inline void set_allocated_errormessage(::std::string* errormessage);
 
+  // repeated string Labels = 4;
+  inline int labels_size() const;
+  inline void clear_labels();
+  static const int kLabelsFieldNumber = 4;
+  inline const ::std::string& labels(int index) const;
+  inline ::std::string* mutable_labels(int index);
+  inline void set_labels(int index, const ::std::string& value);
+  inline void set_labels(int index, const char* value);
+  inline void set_labels(int index, const char* value, size_t size);
+  inline ::std::string* add_labels();
+  inline void add_labels(const ::std::string& value);
+  inline void add_labels(const char* value);
+  inline void add_labels(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& labels() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_labels();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.SignatureVerification)
  private:
   inline void set_has_initialdocumentid();
@@ -4737,6 +4753,7 @@ class SignatureVerification : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::std::string* initialdocumentid_;
   ::std::string* errormessage_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> labels_;
   bool isvalid_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -4855,6 +4872,22 @@ class ResolutionRequestAttachment : public ::google::protobuf::Message {
   inline ::std::string* release_comment();
   inline void set_allocated_comment(::std::string* comment);
 
+  // repeated string Labels = 6;
+  inline int labels_size() const;
+  inline void clear_labels();
+  static const int kLabelsFieldNumber = 6;
+  inline const ::std::string& labels(int index) const;
+  inline ::std::string* mutable_labels(int index);
+  inline void set_labels(int index, const ::std::string& value);
+  inline void set_labels(int index, const char* value);
+  inline void set_labels(int index, const char* value, size_t size);
+  inline ::std::string* add_labels();
+  inline void add_labels(const ::std::string& value);
+  inline void add_labels(const char* value);
+  inline void add_labels(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& labels() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_labels();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.ResolutionRequestAttachment)
  private:
   inline void set_has_initialdocumentid();
@@ -4876,6 +4909,7 @@ class ResolutionRequestAttachment : public ::google::protobuf::Message {
   ::std::string* targetuserid_;
   ::std::string* targetdepartmentid_;
   ::std::string* comment_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> labels_;
   int type_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -4975,6 +5009,22 @@ class ResolutionRouteAssignment : public ::google::protobuf::Message {
   inline ::std::string* release_comment();
   inline void set_allocated_comment(::std::string* comment);
 
+  // repeated string Labels = 4;
+  inline int labels_size() const;
+  inline void clear_labels();
+  static const int kLabelsFieldNumber = 4;
+  inline const ::std::string& labels(int index) const;
+  inline ::std::string* mutable_labels(int index);
+  inline void set_labels(int index, const ::std::string& value);
+  inline void set_labels(int index, const char* value);
+  inline void set_labels(int index, const char* value, size_t size);
+  inline ::std::string* add_labels();
+  inline void add_labels(const ::std::string& value);
+  inline void add_labels(const char* value);
+  inline void add_labels(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& labels() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_labels();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.ResolutionRouteAssignment)
  private:
   inline void set_has_initialdocumentid();
@@ -4991,6 +5041,7 @@ class ResolutionRouteAssignment : public ::google::protobuf::Message {
   ::std::string* initialdocumentid_;
   ::std::string* routeid_;
   ::std::string* comment_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> labels_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -5077,6 +5128,22 @@ class ResolutionRequestCancellationAttachment : public ::google::protobuf::Messa
   inline ::std::string* release_comment();
   inline void set_allocated_comment(::std::string* comment);
 
+  // repeated string Labels = 3;
+  inline int labels_size() const;
+  inline void clear_labels();
+  static const int kLabelsFieldNumber = 3;
+  inline const ::std::string& labels(int index) const;
+  inline ::std::string* mutable_labels(int index);
+  inline void set_labels(int index, const ::std::string& value);
+  inline void set_labels(int index, const char* value);
+  inline void set_labels(int index, const char* value, size_t size);
+  inline ::std::string* add_labels();
+  inline void add_labels(const ::std::string& value);
+  inline void add_labels(const char* value);
+  inline void add_labels(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& labels() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_labels();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment)
  private:
   inline void set_has_initialresolutionrequestid();
@@ -5090,6 +5157,7 @@ class ResolutionRequestCancellationAttachment : public ::google::protobuf::Messa
   mutable int _cached_size_;
   ::std::string* initialresolutionrequestid_;
   ::std::string* comment_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> labels_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -5260,6 +5328,22 @@ class ResolutionRequestDenialAttachment : public ::google::protobuf::Message {
   inline ::std::string* release_comment();
   inline void set_allocated_comment(::std::string* comment);
 
+  // repeated string Labels = 3;
+  inline int labels_size() const;
+  inline void clear_labels();
+  static const int kLabelsFieldNumber = 3;
+  inline const ::std::string& labels(int index) const;
+  inline ::std::string* mutable_labels(int index);
+  inline void set_labels(int index, const ::std::string& value);
+  inline void set_labels(int index, const char* value);
+  inline void set_labels(int index, const char* value, size_t size);
+  inline ::std::string* add_labels();
+  inline void add_labels(const ::std::string& value);
+  inline void add_labels(const char* value);
+  inline void add_labels(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& labels() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_labels();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.ResolutionRequestDenialAttachment)
  private:
   inline void set_has_initialresolutionrequestid();
@@ -5273,6 +5357,7 @@ class ResolutionRequestDenialAttachment : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::std::string* initialresolutionrequestid_;
   ::std::string* comment_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> labels_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -5366,6 +5451,22 @@ class ResolutionAttachment : public ::google::protobuf::Message {
   inline ::std::string* release_comment();
   inline void set_allocated_comment(::std::string* comment);
 
+  // repeated string Labels = 4;
+  inline int labels_size() const;
+  inline void clear_labels();
+  static const int kLabelsFieldNumber = 4;
+  inline const ::std::string& labels(int index) const;
+  inline ::std::string* mutable_labels(int index);
+  inline void set_labels(int index, const ::std::string& value);
+  inline void set_labels(int index, const char* value);
+  inline void set_labels(int index, const char* value, size_t size);
+  inline ::std::string* add_labels();
+  inline void add_labels(const ::std::string& value);
+  inline void add_labels(const char* value);
+  inline void add_labels(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& labels() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_labels();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.ResolutionAttachment)
  private:
   inline void set_has_initialdocumentid();
@@ -5381,6 +5482,7 @@ class ResolutionAttachment : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::std::string* initialdocumentid_;
   ::std::string* comment_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> labels_;
   int resolutiontype_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -5465,6 +5567,22 @@ class ReceiptAttachment : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Events::SignedContent* release_signedcontent();
   inline void set_allocated_signedcontent(::Diadoc::Api::Proto::Events::SignedContent* signedcontent);
 
+  // repeated string Labels = 4;
+  inline int labels_size() const;
+  inline void clear_labels();
+  static const int kLabelsFieldNumber = 4;
+  inline const ::std::string& labels(int index) const;
+  inline ::std::string* mutable_labels(int index);
+  inline void set_labels(int index, const ::std::string& value);
+  inline void set_labels(int index, const char* value);
+  inline void set_labels(int index, const char* value, size_t size);
+  inline ::std::string* add_labels();
+  inline void add_labels(const ::std::string& value);
+  inline void add_labels(const char* value);
+  inline void add_labels(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& labels() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_labels();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.ReceiptAttachment)
  private:
   inline void set_has_parententityid();
@@ -5478,6 +5596,7 @@ class ReceiptAttachment : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::std::string* parententityid_;
   ::Diadoc::Api::Proto::Events::SignedContent* signedcontent_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> labels_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -5561,6 +5680,22 @@ class CorrectionRequestAttachment : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Events::SignedContent* release_signedcontent();
   inline void set_allocated_signedcontent(::Diadoc::Api::Proto::Events::SignedContent* signedcontent);
 
+  // repeated string Labels = 4;
+  inline int labels_size() const;
+  inline void clear_labels();
+  static const int kLabelsFieldNumber = 4;
+  inline const ::std::string& labels(int index) const;
+  inline ::std::string* mutable_labels(int index);
+  inline void set_labels(int index, const ::std::string& value);
+  inline void set_labels(int index, const char* value);
+  inline void set_labels(int index, const char* value, size_t size);
+  inline ::std::string* add_labels();
+  inline void add_labels(const ::std::string& value);
+  inline void add_labels(const char* value);
+  inline void add_labels(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& labels() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_labels();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.CorrectionRequestAttachment)
  private:
   inline void set_has_parententityid();
@@ -5574,6 +5709,7 @@ class CorrectionRequestAttachment : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::std::string* parententityid_;
   ::Diadoc::Api::Proto::Events::SignedContent* signedcontent_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> labels_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -5698,6 +5834,22 @@ class DocumentSignature : public ::google::protobuf::Message {
   inline ::std::string* release_patchedcontentid();
   inline void set_allocated_patchedcontentid(::std::string* patchedcontentid);
 
+  // repeated string Labels = 8;
+  inline int labels_size() const;
+  inline void clear_labels();
+  static const int kLabelsFieldNumber = 8;
+  inline const ::std::string& labels(int index) const;
+  inline ::std::string* mutable_labels(int index);
+  inline void set_labels(int index, const ::std::string& value);
+  inline void set_labels(int index, const char* value);
+  inline void set_labels(int index, const char* value, size_t size);
+  inline ::std::string* add_labels();
+  inline void add_labels(const ::std::string& value);
+  inline void add_labels(const char* value);
+  inline void add_labels(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& labels() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_labels();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.DocumentSignature)
  private:
   inline void set_has_parententityid();
@@ -5721,6 +5873,7 @@ class DocumentSignature : public ::google::protobuf::Message {
   ::std::string* signature_;
   ::std::string* signaturenameonshelf_;
   ::std::string* patchedcontentid_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> labels_;
   bool signwithtestsignature_;
   bool isapprovementsignature_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -5930,6 +6083,22 @@ class RequestedSignatureRejection : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Events::SignedContent* release_signedcontent();
   inline void set_allocated_signedcontent(::Diadoc::Api::Proto::Events::SignedContent* signedcontent);
 
+  // repeated string Labels = 3;
+  inline int labels_size() const;
+  inline void clear_labels();
+  static const int kLabelsFieldNumber = 3;
+  inline const ::std::string& labels(int index) const;
+  inline ::std::string* mutable_labels(int index);
+  inline void set_labels(int index, const ::std::string& value);
+  inline void set_labels(int index, const char* value);
+  inline void set_labels(int index, const char* value, size_t size);
+  inline ::std::string* add_labels();
+  inline void add_labels(const ::std::string& value);
+  inline void add_labels(const char* value);
+  inline void add_labels(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& labels() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_labels();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.RequestedSignatureRejection)
  private:
   inline void set_has_parententityid();
@@ -5943,6 +6112,7 @@ class RequestedSignatureRejection : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::std::string* parententityid_;
   ::Diadoc::Api::Proto::Events::SignedContent* signedcontent_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> labels_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -6673,105 +6843,6 @@ class ContentToPatch : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class UnsignedContent : public ::google::protobuf::Message {
- public:
-  UnsignedContent();
-  virtual ~UnsignedContent();
-
-  UnsignedContent(const UnsignedContent& from);
-
-  inline UnsignedContent& operator=(const UnsignedContent& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const UnsignedContent& default_instance();
-
-  void Swap(UnsignedContent* other);
-
-  // implements Message ----------------------------------------------
-
-  UnsignedContent* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const UnsignedContent& from);
-  void MergeFrom(const UnsignedContent& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional bytes Content = 1;
-  inline bool has_content() const;
-  inline void clear_content();
-  static const int kContentFieldNumber = 1;
-  inline const ::std::string& content() const;
-  inline void set_content(const ::std::string& value);
-  inline void set_content(const char* value);
-  inline void set_content(const void* value, size_t size);
-  inline ::std::string* mutable_content();
-  inline ::std::string* release_content();
-  inline void set_allocated_content(::std::string* content);
-
-  // optional string NameOnShelf = 2;
-  inline bool has_nameonshelf() const;
-  inline void clear_nameonshelf();
-  static const int kNameOnShelfFieldNumber = 2;
-  inline const ::std::string& nameonshelf() const;
-  inline void set_nameonshelf(const ::std::string& value);
-  inline void set_nameonshelf(const char* value);
-  inline void set_nameonshelf(const char* value, size_t size);
-  inline ::std::string* mutable_nameonshelf();
-  inline ::std::string* release_nameonshelf();
-  inline void set_allocated_nameonshelf(::std::string* nameonshelf);
-
-  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.UnsignedContent)
- private:
-  inline void set_has_content();
-  inline void clear_has_content();
-  inline void set_has_nameonshelf();
-  inline void clear_has_nameonshelf();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::std::string* content_;
-  ::std::string* nameonshelf_;
-  friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
-  friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
-  friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
-
-  void InitAsDefaultInstance();
-  static UnsignedContent* default_instance_;
-};
-// -------------------------------------------------------------------
-
 class DocumentToPatch : public ::google::protobuf::Message {
  public:
   DocumentToPatch();
@@ -7257,6 +7328,22 @@ class RevocationRequestAttachment : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Events::SignedContent* release_signedcontent();
   inline void set_allocated_signedcontent(::Diadoc::Api::Proto::Events::SignedContent* signedcontent);
 
+  // repeated string Labels = 3;
+  inline int labels_size() const;
+  inline void clear_labels();
+  static const int kLabelsFieldNumber = 3;
+  inline const ::std::string& labels(int index) const;
+  inline ::std::string* mutable_labels(int index);
+  inline void set_labels(int index, const ::std::string& value);
+  inline void set_labels(int index, const char* value);
+  inline void set_labels(int index, const char* value, size_t size);
+  inline ::std::string* add_labels();
+  inline void add_labels(const ::std::string& value);
+  inline void add_labels(const char* value);
+  inline void add_labels(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& labels() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_labels();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.RevocationRequestAttachment)
  private:
   inline void set_has_parententityid();
@@ -7270,6 +7357,7 @@ class RevocationRequestAttachment : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::std::string* parententityid_;
   ::Diadoc::Api::Proto::Events::SignedContent* signedcontent_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> labels_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -7353,6 +7441,22 @@ class XmlSignatureRejectionAttachment : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Events::SignedContent* release_signedcontent();
   inline void set_allocated_signedcontent(::Diadoc::Api::Proto::Events::SignedContent* signedcontent);
 
+  // repeated string Labels = 3;
+  inline int labels_size() const;
+  inline void clear_labels();
+  static const int kLabelsFieldNumber = 3;
+  inline const ::std::string& labels(int index) const;
+  inline ::std::string* mutable_labels(int index);
+  inline void set_labels(int index, const ::std::string& value);
+  inline void set_labels(int index, const char* value);
+  inline void set_labels(int index, const char* value, size_t size);
+  inline ::std::string* add_labels();
+  inline void add_labels(const ::std::string& value);
+  inline void add_labels(const char* value);
+  inline void add_labels(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& labels() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_labels();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.XmlSignatureRejectionAttachment)
  private:
   inline void set_has_parententityid();
@@ -7366,6 +7470,7 @@ class XmlSignatureRejectionAttachment : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::std::string* parententityid_;
   ::Diadoc::Api::Proto::Events::SignedContent* signedcontent_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> labels_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -7822,6 +7927,22 @@ class ResolutionRouteRemoval : public ::google::protobuf::Message {
   inline ::std::string* release_comment();
   inline void set_allocated_comment(::std::string* comment);
 
+  // repeated string Labels = 4;
+  inline int labels_size() const;
+  inline void clear_labels();
+  static const int kLabelsFieldNumber = 4;
+  inline const ::std::string& labels(int index) const;
+  inline ::std::string* mutable_labels(int index);
+  inline void set_labels(int index, const ::std::string& value);
+  inline void set_labels(int index, const char* value);
+  inline void set_labels(int index, const char* value, size_t size);
+  inline ::std::string* add_labels();
+  inline void add_labels(const ::std::string& value);
+  inline void add_labels(const char* value);
+  inline void add_labels(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& labels() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_labels();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.ResolutionRouteRemoval)
  private:
   inline void set_has_parententityid();
@@ -7838,6 +7959,7 @@ class ResolutionRouteRemoval : public ::google::protobuf::Message {
   ::std::string* parententityid_;
   ::std::string* routeid_;
   ::std::string* comment_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> labels_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -8145,6 +8267,18 @@ class TemplateDocumentAttachment : public ::google::protobuf::Message {
   inline ::std::string* release_customdocumentid();
   inline void set_allocated_customdocumentid(::std::string* customdocumentid);
 
+  // optional string EditingSettingId = 9;
+  inline bool has_editingsettingid() const;
+  inline void clear_editingsettingid();
+  static const int kEditingSettingIdFieldNumber = 9;
+  inline const ::std::string& editingsettingid() const;
+  inline void set_editingsettingid(const ::std::string& value);
+  inline void set_editingsettingid(const char* value);
+  inline void set_editingsettingid(const char* value, size_t size);
+  inline ::std::string* mutable_editingsettingid();
+  inline ::std::string* release_editingsettingid();
+  inline void set_allocated_editingsettingid(::std::string* editingsettingid);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.TemplateDocumentAttachment)
  private:
   inline void set_has_unsignedcontent();
@@ -8161,6 +8295,8 @@ class TemplateDocumentAttachment : public ::google::protobuf::Message {
   inline void clear_has_workflowid();
   inline void set_has_customdocumentid();
   inline void clear_has_customdocumentid();
+  inline void set_has_editingsettingid();
+  inline void clear_has_editingsettingid();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -8173,6 +8309,7 @@ class TemplateDocumentAttachment : public ::google::protobuf::Message {
   ::std::string* version_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::MetadataItem > metadata_;
   ::std::string* customdocumentid_;
+  ::std::string* editingsettingid_;
   ::google::protobuf::int32 workflowid_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -8180,6 +8317,105 @@ class TemplateDocumentAttachment : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static TemplateDocumentAttachment* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class UnsignedContent : public ::google::protobuf::Message {
+ public:
+  UnsignedContent();
+  virtual ~UnsignedContent();
+
+  UnsignedContent(const UnsignedContent& from);
+
+  inline UnsignedContent& operator=(const UnsignedContent& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const UnsignedContent& default_instance();
+
+  void Swap(UnsignedContent* other);
+
+  // implements Message ----------------------------------------------
+
+  UnsignedContent* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const UnsignedContent& from);
+  void MergeFrom(const UnsignedContent& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional bytes Content = 1;
+  inline bool has_content() const;
+  inline void clear_content();
+  static const int kContentFieldNumber = 1;
+  inline const ::std::string& content() const;
+  inline void set_content(const ::std::string& value);
+  inline void set_content(const char* value);
+  inline void set_content(const void* value, size_t size);
+  inline ::std::string* mutable_content();
+  inline ::std::string* release_content();
+  inline void set_allocated_content(::std::string* content);
+
+  // optional string NameOnShelf = 2;
+  inline bool has_nameonshelf() const;
+  inline void clear_nameonshelf();
+  static const int kNameOnShelfFieldNumber = 2;
+  inline const ::std::string& nameonshelf() const;
+  inline void set_nameonshelf(const ::std::string& value);
+  inline void set_nameonshelf(const char* value);
+  inline void set_nameonshelf(const char* value, size_t size);
+  inline ::std::string* mutable_nameonshelf();
+  inline ::std::string* release_nameonshelf();
+  inline void set_allocated_nameonshelf(::std::string* nameonshelf);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.UnsignedContent)
+ private:
+  inline void set_has_content();
+  inline void clear_has_content();
+  inline void set_has_nameonshelf();
+  inline void clear_has_nameonshelf();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* content_;
+  ::std::string* nameonshelf_;
+  friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
+
+  void InitAsDefaultInstance();
+  static UnsignedContent* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -19855,6 +20091,60 @@ inline void SignatureVerification::set_allocated_errormessage(::std::string* err
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.SignatureVerification.ErrorMessage)
 }
 
+// repeated string Labels = 4;
+inline int SignatureVerification::labels_size() const {
+  return labels_.size();
+}
+inline void SignatureVerification::clear_labels() {
+  labels_.Clear();
+}
+inline const ::std::string& SignatureVerification::labels(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.SignatureVerification.Labels)
+  return labels_.Get(index);
+}
+inline ::std::string* SignatureVerification::mutable_labels(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.SignatureVerification.Labels)
+  return labels_.Mutable(index);
+}
+inline void SignatureVerification::set_labels(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.SignatureVerification.Labels)
+  labels_.Mutable(index)->assign(value);
+}
+inline void SignatureVerification::set_labels(int index, const char* value) {
+  labels_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.SignatureVerification.Labels)
+}
+inline void SignatureVerification::set_labels(int index, const char* value, size_t size) {
+  labels_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.SignatureVerification.Labels)
+}
+inline ::std::string* SignatureVerification::add_labels() {
+  return labels_.Add();
+}
+inline void SignatureVerification::add_labels(const ::std::string& value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.SignatureVerification.Labels)
+}
+inline void SignatureVerification::add_labels(const char* value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:Diadoc.Api.Proto.Events.SignatureVerification.Labels)
+}
+inline void SignatureVerification::add_labels(const char* value, size_t size) {
+  labels_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:Diadoc.Api.Proto.Events.SignatureVerification.Labels)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+SignatureVerification::labels() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.SignatureVerification.Labels)
+  return labels_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+SignatureVerification::mutable_labels() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.SignatureVerification.Labels)
+  return &labels_;
+}
+
 // -------------------------------------------------------------------
 
 // ResolutionRequestAttachment
@@ -20188,6 +20478,60 @@ inline void ResolutionRequestAttachment::set_allocated_comment(::std::string* co
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ResolutionRequestAttachment.Comment)
 }
 
+// repeated string Labels = 6;
+inline int ResolutionRequestAttachment::labels_size() const {
+  return labels_.size();
+}
+inline void ResolutionRequestAttachment::clear_labels() {
+  labels_.Clear();
+}
+inline const ::std::string& ResolutionRequestAttachment::labels(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionRequestAttachment.Labels)
+  return labels_.Get(index);
+}
+inline ::std::string* ResolutionRequestAttachment::mutable_labels(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ResolutionRequestAttachment.Labels)
+  return labels_.Mutable(index);
+}
+inline void ResolutionRequestAttachment::set_labels(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionRequestAttachment.Labels)
+  labels_.Mutable(index)->assign(value);
+}
+inline void ResolutionRequestAttachment::set_labels(int index, const char* value) {
+  labels_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ResolutionRequestAttachment.Labels)
+}
+inline void ResolutionRequestAttachment::set_labels(int index, const char* value, size_t size) {
+  labels_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ResolutionRequestAttachment.Labels)
+}
+inline ::std::string* ResolutionRequestAttachment::add_labels() {
+  return labels_.Add();
+}
+inline void ResolutionRequestAttachment::add_labels(const ::std::string& value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.ResolutionRequestAttachment.Labels)
+}
+inline void ResolutionRequestAttachment::add_labels(const char* value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:Diadoc.Api.Proto.Events.ResolutionRequestAttachment.Labels)
+}
+inline void ResolutionRequestAttachment::add_labels(const char* value, size_t size) {
+  labels_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:Diadoc.Api.Proto.Events.ResolutionRequestAttachment.Labels)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+ResolutionRequestAttachment::labels() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.ResolutionRequestAttachment.Labels)
+  return labels_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+ResolutionRequestAttachment::mutable_labels() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.ResolutionRequestAttachment.Labels)
+  return &labels_;
+}
+
 // -------------------------------------------------------------------
 
 // ResolutionRouteAssignment
@@ -20420,6 +20764,60 @@ inline void ResolutionRouteAssignment::set_allocated_comment(::std::string* comm
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.Comment)
 }
 
+// repeated string Labels = 4;
+inline int ResolutionRouteAssignment::labels_size() const {
+  return labels_.size();
+}
+inline void ResolutionRouteAssignment::clear_labels() {
+  labels_.Clear();
+}
+inline const ::std::string& ResolutionRouteAssignment::labels(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.Labels)
+  return labels_.Get(index);
+}
+inline ::std::string* ResolutionRouteAssignment::mutable_labels(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.Labels)
+  return labels_.Mutable(index);
+}
+inline void ResolutionRouteAssignment::set_labels(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.Labels)
+  labels_.Mutable(index)->assign(value);
+}
+inline void ResolutionRouteAssignment::set_labels(int index, const char* value) {
+  labels_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.Labels)
+}
+inline void ResolutionRouteAssignment::set_labels(int index, const char* value, size_t size) {
+  labels_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.Labels)
+}
+inline ::std::string* ResolutionRouteAssignment::add_labels() {
+  return labels_.Add();
+}
+inline void ResolutionRouteAssignment::add_labels(const ::std::string& value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.Labels)
+}
+inline void ResolutionRouteAssignment::add_labels(const char* value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.Labels)
+}
+inline void ResolutionRouteAssignment::add_labels(const char* value, size_t size) {
+  labels_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.Labels)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+ResolutionRouteAssignment::labels() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.Labels)
+  return labels_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+ResolutionRouteAssignment::mutable_labels() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.ResolutionRouteAssignment.Labels)
+  return &labels_;
+}
+
 // -------------------------------------------------------------------
 
 // ResolutionRequestCancellationAttachment
@@ -20574,6 +20972,60 @@ inline void ResolutionRequestCancellationAttachment::set_allocated_comment(::std
     comment_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment.Comment)
+}
+
+// repeated string Labels = 3;
+inline int ResolutionRequestCancellationAttachment::labels_size() const {
+  return labels_.size();
+}
+inline void ResolutionRequestCancellationAttachment::clear_labels() {
+  labels_.Clear();
+}
+inline const ::std::string& ResolutionRequestCancellationAttachment::labels(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment.Labels)
+  return labels_.Get(index);
+}
+inline ::std::string* ResolutionRequestCancellationAttachment::mutable_labels(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment.Labels)
+  return labels_.Mutable(index);
+}
+inline void ResolutionRequestCancellationAttachment::set_labels(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment.Labels)
+  labels_.Mutable(index)->assign(value);
+}
+inline void ResolutionRequestCancellationAttachment::set_labels(int index, const char* value) {
+  labels_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment.Labels)
+}
+inline void ResolutionRequestCancellationAttachment::set_labels(int index, const char* value, size_t size) {
+  labels_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment.Labels)
+}
+inline ::std::string* ResolutionRequestCancellationAttachment::add_labels() {
+  return labels_.Add();
+}
+inline void ResolutionRequestCancellationAttachment::add_labels(const ::std::string& value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment.Labels)
+}
+inline void ResolutionRequestCancellationAttachment::add_labels(const char* value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment.Labels)
+}
+inline void ResolutionRequestCancellationAttachment::add_labels(const char* value, size_t size) {
+  labels_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment.Labels)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+ResolutionRequestCancellationAttachment::labels() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment.Labels)
+  return labels_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+ResolutionRequestCancellationAttachment::mutable_labels() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment.Labels)
+  return &labels_;
 }
 
 // -------------------------------------------------------------------
@@ -20812,6 +21264,60 @@ inline void ResolutionRequestDenialAttachment::set_allocated_comment(::std::stri
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ResolutionRequestDenialAttachment.Comment)
 }
 
+// repeated string Labels = 3;
+inline int ResolutionRequestDenialAttachment::labels_size() const {
+  return labels_.size();
+}
+inline void ResolutionRequestDenialAttachment::clear_labels() {
+  labels_.Clear();
+}
+inline const ::std::string& ResolutionRequestDenialAttachment::labels(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionRequestDenialAttachment.Labels)
+  return labels_.Get(index);
+}
+inline ::std::string* ResolutionRequestDenialAttachment::mutable_labels(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ResolutionRequestDenialAttachment.Labels)
+  return labels_.Mutable(index);
+}
+inline void ResolutionRequestDenialAttachment::set_labels(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionRequestDenialAttachment.Labels)
+  labels_.Mutable(index)->assign(value);
+}
+inline void ResolutionRequestDenialAttachment::set_labels(int index, const char* value) {
+  labels_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ResolutionRequestDenialAttachment.Labels)
+}
+inline void ResolutionRequestDenialAttachment::set_labels(int index, const char* value, size_t size) {
+  labels_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ResolutionRequestDenialAttachment.Labels)
+}
+inline ::std::string* ResolutionRequestDenialAttachment::add_labels() {
+  return labels_.Add();
+}
+inline void ResolutionRequestDenialAttachment::add_labels(const ::std::string& value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.ResolutionRequestDenialAttachment.Labels)
+}
+inline void ResolutionRequestDenialAttachment::add_labels(const char* value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:Diadoc.Api.Proto.Events.ResolutionRequestDenialAttachment.Labels)
+}
+inline void ResolutionRequestDenialAttachment::add_labels(const char* value, size_t size) {
+  labels_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:Diadoc.Api.Proto.Events.ResolutionRequestDenialAttachment.Labels)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+ResolutionRequestDenialAttachment::labels() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.ResolutionRequestDenialAttachment.Labels)
+  return labels_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+ResolutionRequestDenialAttachment::mutable_labels() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.ResolutionRequestDenialAttachment.Labels)
+  return &labels_;
+}
+
 // -------------------------------------------------------------------
 
 // ResolutionAttachment
@@ -20993,6 +21499,60 @@ inline void ResolutionAttachment::set_allocated_comment(::std::string* comment) 
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ResolutionAttachment.Comment)
 }
 
+// repeated string Labels = 4;
+inline int ResolutionAttachment::labels_size() const {
+  return labels_.size();
+}
+inline void ResolutionAttachment::clear_labels() {
+  labels_.Clear();
+}
+inline const ::std::string& ResolutionAttachment::labels(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionAttachment.Labels)
+  return labels_.Get(index);
+}
+inline ::std::string* ResolutionAttachment::mutable_labels(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ResolutionAttachment.Labels)
+  return labels_.Mutable(index);
+}
+inline void ResolutionAttachment::set_labels(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionAttachment.Labels)
+  labels_.Mutable(index)->assign(value);
+}
+inline void ResolutionAttachment::set_labels(int index, const char* value) {
+  labels_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ResolutionAttachment.Labels)
+}
+inline void ResolutionAttachment::set_labels(int index, const char* value, size_t size) {
+  labels_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ResolutionAttachment.Labels)
+}
+inline ::std::string* ResolutionAttachment::add_labels() {
+  return labels_.Add();
+}
+inline void ResolutionAttachment::add_labels(const ::std::string& value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.ResolutionAttachment.Labels)
+}
+inline void ResolutionAttachment::add_labels(const char* value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:Diadoc.Api.Proto.Events.ResolutionAttachment.Labels)
+}
+inline void ResolutionAttachment::add_labels(const char* value, size_t size) {
+  labels_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:Diadoc.Api.Proto.Events.ResolutionAttachment.Labels)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+ResolutionAttachment::labels() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.ResolutionAttachment.Labels)
+  return labels_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+ResolutionAttachment::mutable_labels() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.ResolutionAttachment.Labels)
+  return &labels_;
+}
+
 // -------------------------------------------------------------------
 
 // ReceiptAttachment
@@ -21114,6 +21674,60 @@ inline void ReceiptAttachment::set_allocated_signedcontent(::Diadoc::Api::Proto:
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ReceiptAttachment.SignedContent)
 }
 
+// repeated string Labels = 4;
+inline int ReceiptAttachment::labels_size() const {
+  return labels_.size();
+}
+inline void ReceiptAttachment::clear_labels() {
+  labels_.Clear();
+}
+inline const ::std::string& ReceiptAttachment::labels(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ReceiptAttachment.Labels)
+  return labels_.Get(index);
+}
+inline ::std::string* ReceiptAttachment::mutable_labels(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ReceiptAttachment.Labels)
+  return labels_.Mutable(index);
+}
+inline void ReceiptAttachment::set_labels(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ReceiptAttachment.Labels)
+  labels_.Mutable(index)->assign(value);
+}
+inline void ReceiptAttachment::set_labels(int index, const char* value) {
+  labels_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ReceiptAttachment.Labels)
+}
+inline void ReceiptAttachment::set_labels(int index, const char* value, size_t size) {
+  labels_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ReceiptAttachment.Labels)
+}
+inline ::std::string* ReceiptAttachment::add_labels() {
+  return labels_.Add();
+}
+inline void ReceiptAttachment::add_labels(const ::std::string& value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.ReceiptAttachment.Labels)
+}
+inline void ReceiptAttachment::add_labels(const char* value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:Diadoc.Api.Proto.Events.ReceiptAttachment.Labels)
+}
+inline void ReceiptAttachment::add_labels(const char* value, size_t size) {
+  labels_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:Diadoc.Api.Proto.Events.ReceiptAttachment.Labels)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+ReceiptAttachment::labels() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.ReceiptAttachment.Labels)
+  return labels_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+ReceiptAttachment::mutable_labels() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.ReceiptAttachment.Labels)
+  return &labels_;
+}
+
 // -------------------------------------------------------------------
 
 // CorrectionRequestAttachment
@@ -21233,6 +21847,60 @@ inline void CorrectionRequestAttachment::set_allocated_signedcontent(::Diadoc::A
     clear_has_signedcontent();
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.CorrectionRequestAttachment.SignedContent)
+}
+
+// repeated string Labels = 4;
+inline int CorrectionRequestAttachment::labels_size() const {
+  return labels_.size();
+}
+inline void CorrectionRequestAttachment::clear_labels() {
+  labels_.Clear();
+}
+inline const ::std::string& CorrectionRequestAttachment::labels(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.CorrectionRequestAttachment.Labels)
+  return labels_.Get(index);
+}
+inline ::std::string* CorrectionRequestAttachment::mutable_labels(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.CorrectionRequestAttachment.Labels)
+  return labels_.Mutable(index);
+}
+inline void CorrectionRequestAttachment::set_labels(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.CorrectionRequestAttachment.Labels)
+  labels_.Mutable(index)->assign(value);
+}
+inline void CorrectionRequestAttachment::set_labels(int index, const char* value) {
+  labels_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.CorrectionRequestAttachment.Labels)
+}
+inline void CorrectionRequestAttachment::set_labels(int index, const char* value, size_t size) {
+  labels_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.CorrectionRequestAttachment.Labels)
+}
+inline ::std::string* CorrectionRequestAttachment::add_labels() {
+  return labels_.Add();
+}
+inline void CorrectionRequestAttachment::add_labels(const ::std::string& value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.CorrectionRequestAttachment.Labels)
+}
+inline void CorrectionRequestAttachment::add_labels(const char* value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:Diadoc.Api.Proto.Events.CorrectionRequestAttachment.Labels)
+}
+inline void CorrectionRequestAttachment::add_labels(const char* value, size_t size) {
+  labels_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:Diadoc.Api.Proto.Events.CorrectionRequestAttachment.Labels)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+CorrectionRequestAttachment::labels() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.CorrectionRequestAttachment.Labels)
+  return labels_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+CorrectionRequestAttachment::mutable_labels() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.CorrectionRequestAttachment.Labels)
+  return &labels_;
 }
 
 // -------------------------------------------------------------------
@@ -21589,6 +22257,60 @@ inline void DocumentSignature::set_allocated_patchedcontentid(::std::string* pat
     patchedcontentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.DocumentSignature.PatchedContentId)
+}
+
+// repeated string Labels = 8;
+inline int DocumentSignature::labels_size() const {
+  return labels_.size();
+}
+inline void DocumentSignature::clear_labels() {
+  labels_.Clear();
+}
+inline const ::std::string& DocumentSignature::labels(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.DocumentSignature.Labels)
+  return labels_.Get(index);
+}
+inline ::std::string* DocumentSignature::mutable_labels(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.DocumentSignature.Labels)
+  return labels_.Mutable(index);
+}
+inline void DocumentSignature::set_labels(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.DocumentSignature.Labels)
+  labels_.Mutable(index)->assign(value);
+}
+inline void DocumentSignature::set_labels(int index, const char* value) {
+  labels_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.DocumentSignature.Labels)
+}
+inline void DocumentSignature::set_labels(int index, const char* value, size_t size) {
+  labels_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.DocumentSignature.Labels)
+}
+inline ::std::string* DocumentSignature::add_labels() {
+  return labels_.Add();
+}
+inline void DocumentSignature::add_labels(const ::std::string& value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.DocumentSignature.Labels)
+}
+inline void DocumentSignature::add_labels(const char* value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:Diadoc.Api.Proto.Events.DocumentSignature.Labels)
+}
+inline void DocumentSignature::add_labels(const char* value, size_t size) {
+  labels_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:Diadoc.Api.Proto.Events.DocumentSignature.Labels)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+DocumentSignature::labels() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.DocumentSignature.Labels)
+  return labels_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+DocumentSignature::mutable_labels() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.DocumentSignature.Labels)
+  return &labels_;
 }
 
 // -------------------------------------------------------------------
@@ -21966,6 +22688,60 @@ inline void RequestedSignatureRejection::set_allocated_signedcontent(::Diadoc::A
     clear_has_signedcontent();
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.RequestedSignatureRejection.SignedContent)
+}
+
+// repeated string Labels = 3;
+inline int RequestedSignatureRejection::labels_size() const {
+  return labels_.size();
+}
+inline void RequestedSignatureRejection::clear_labels() {
+  labels_.Clear();
+}
+inline const ::std::string& RequestedSignatureRejection::labels(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.RequestedSignatureRejection.Labels)
+  return labels_.Get(index);
+}
+inline ::std::string* RequestedSignatureRejection::mutable_labels(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.RequestedSignatureRejection.Labels)
+  return labels_.Mutable(index);
+}
+inline void RequestedSignatureRejection::set_labels(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.RequestedSignatureRejection.Labels)
+  labels_.Mutable(index)->assign(value);
+}
+inline void RequestedSignatureRejection::set_labels(int index, const char* value) {
+  labels_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.RequestedSignatureRejection.Labels)
+}
+inline void RequestedSignatureRejection::set_labels(int index, const char* value, size_t size) {
+  labels_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.RequestedSignatureRejection.Labels)
+}
+inline ::std::string* RequestedSignatureRejection::add_labels() {
+  return labels_.Add();
+}
+inline void RequestedSignatureRejection::add_labels(const ::std::string& value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.RequestedSignatureRejection.Labels)
+}
+inline void RequestedSignatureRejection::add_labels(const char* value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:Diadoc.Api.Proto.Events.RequestedSignatureRejection.Labels)
+}
+inline void RequestedSignatureRejection::add_labels(const char* value, size_t size) {
+  labels_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:Diadoc.Api.Proto.Events.RequestedSignatureRejection.Labels)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+RequestedSignatureRejection::labels() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.RequestedSignatureRejection.Labels)
+  return labels_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+RequestedSignatureRejection::mutable_labels() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.RequestedSignatureRejection.Labels)
+  return &labels_;
 }
 
 // -------------------------------------------------------------------
@@ -23574,162 +24350,6 @@ ContentToPatch::mutable_extendedsigner() {
 
 // -------------------------------------------------------------------
 
-// UnsignedContent
-
-// optional bytes Content = 1;
-inline bool UnsignedContent::has_content() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void UnsignedContent::set_has_content() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void UnsignedContent::clear_has_content() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void UnsignedContent::clear_content() {
-  if (content_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    content_->clear();
-  }
-  clear_has_content();
-}
-inline const ::std::string& UnsignedContent::content() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.UnsignedContent.Content)
-  return *content_;
-}
-inline void UnsignedContent::set_content(const ::std::string& value) {
-  set_has_content();
-  if (content_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    content_ = new ::std::string;
-  }
-  content_->assign(value);
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.UnsignedContent.Content)
-}
-inline void UnsignedContent::set_content(const char* value) {
-  set_has_content();
-  if (content_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    content_ = new ::std::string;
-  }
-  content_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.UnsignedContent.Content)
-}
-inline void UnsignedContent::set_content(const void* value, size_t size) {
-  set_has_content();
-  if (content_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    content_ = new ::std::string;
-  }
-  content_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.UnsignedContent.Content)
-}
-inline ::std::string* UnsignedContent::mutable_content() {
-  set_has_content();
-  if (content_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    content_ = new ::std::string;
-  }
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.UnsignedContent.Content)
-  return content_;
-}
-inline ::std::string* UnsignedContent::release_content() {
-  clear_has_content();
-  if (content_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    return NULL;
-  } else {
-    ::std::string* temp = content_;
-    content_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    return temp;
-  }
-}
-inline void UnsignedContent::set_allocated_content(::std::string* content) {
-  if (content_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete content_;
-  }
-  if (content) {
-    set_has_content();
-    content_ = content;
-  } else {
-    clear_has_content();
-    content_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.UnsignedContent.Content)
-}
-
-// optional string NameOnShelf = 2;
-inline bool UnsignedContent::has_nameonshelf() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void UnsignedContent::set_has_nameonshelf() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void UnsignedContent::clear_has_nameonshelf() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void UnsignedContent::clear_nameonshelf() {
-  if (nameonshelf_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    nameonshelf_->clear();
-  }
-  clear_has_nameonshelf();
-}
-inline const ::std::string& UnsignedContent::nameonshelf() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.UnsignedContent.NameOnShelf)
-  return *nameonshelf_;
-}
-inline void UnsignedContent::set_nameonshelf(const ::std::string& value) {
-  set_has_nameonshelf();
-  if (nameonshelf_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    nameonshelf_ = new ::std::string;
-  }
-  nameonshelf_->assign(value);
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.UnsignedContent.NameOnShelf)
-}
-inline void UnsignedContent::set_nameonshelf(const char* value) {
-  set_has_nameonshelf();
-  if (nameonshelf_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    nameonshelf_ = new ::std::string;
-  }
-  nameonshelf_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.UnsignedContent.NameOnShelf)
-}
-inline void UnsignedContent::set_nameonshelf(const char* value, size_t size) {
-  set_has_nameonshelf();
-  if (nameonshelf_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    nameonshelf_ = new ::std::string;
-  }
-  nameonshelf_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.UnsignedContent.NameOnShelf)
-}
-inline ::std::string* UnsignedContent::mutable_nameonshelf() {
-  set_has_nameonshelf();
-  if (nameonshelf_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    nameonshelf_ = new ::std::string;
-  }
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.UnsignedContent.NameOnShelf)
-  return nameonshelf_;
-}
-inline ::std::string* UnsignedContent::release_nameonshelf() {
-  clear_has_nameonshelf();
-  if (nameonshelf_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    return NULL;
-  } else {
-    ::std::string* temp = nameonshelf_;
-    nameonshelf_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    return temp;
-  }
-}
-inline void UnsignedContent::set_allocated_nameonshelf(::std::string* nameonshelf) {
-  if (nameonshelf_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete nameonshelf_;
-  }
-  if (nameonshelf) {
-    set_has_nameonshelf();
-    nameonshelf_ = nameonshelf;
-  } else {
-    clear_has_nameonshelf();
-    nameonshelf_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.UnsignedContent.NameOnShelf)
-}
-
-// -------------------------------------------------------------------
-
 // DocumentToPatch
 
 // required .Diadoc.Api.Proto.DocumentId DocumentId = 1;
@@ -24382,6 +25002,60 @@ inline void RevocationRequestAttachment::set_allocated_signedcontent(::Diadoc::A
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.RevocationRequestAttachment.SignedContent)
 }
 
+// repeated string Labels = 3;
+inline int RevocationRequestAttachment::labels_size() const {
+  return labels_.size();
+}
+inline void RevocationRequestAttachment::clear_labels() {
+  labels_.Clear();
+}
+inline const ::std::string& RevocationRequestAttachment::labels(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.RevocationRequestAttachment.Labels)
+  return labels_.Get(index);
+}
+inline ::std::string* RevocationRequestAttachment::mutable_labels(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.RevocationRequestAttachment.Labels)
+  return labels_.Mutable(index);
+}
+inline void RevocationRequestAttachment::set_labels(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.RevocationRequestAttachment.Labels)
+  labels_.Mutable(index)->assign(value);
+}
+inline void RevocationRequestAttachment::set_labels(int index, const char* value) {
+  labels_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.RevocationRequestAttachment.Labels)
+}
+inline void RevocationRequestAttachment::set_labels(int index, const char* value, size_t size) {
+  labels_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.RevocationRequestAttachment.Labels)
+}
+inline ::std::string* RevocationRequestAttachment::add_labels() {
+  return labels_.Add();
+}
+inline void RevocationRequestAttachment::add_labels(const ::std::string& value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.RevocationRequestAttachment.Labels)
+}
+inline void RevocationRequestAttachment::add_labels(const char* value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:Diadoc.Api.Proto.Events.RevocationRequestAttachment.Labels)
+}
+inline void RevocationRequestAttachment::add_labels(const char* value, size_t size) {
+  labels_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:Diadoc.Api.Proto.Events.RevocationRequestAttachment.Labels)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+RevocationRequestAttachment::labels() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.RevocationRequestAttachment.Labels)
+  return labels_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+RevocationRequestAttachment::mutable_labels() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.RevocationRequestAttachment.Labels)
+  return &labels_;
+}
+
 // -------------------------------------------------------------------
 
 // XmlSignatureRejectionAttachment
@@ -24501,6 +25175,60 @@ inline void XmlSignatureRejectionAttachment::set_allocated_signedcontent(::Diado
     clear_has_signedcontent();
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.XmlSignatureRejectionAttachment.SignedContent)
+}
+
+// repeated string Labels = 3;
+inline int XmlSignatureRejectionAttachment::labels_size() const {
+  return labels_.size();
+}
+inline void XmlSignatureRejectionAttachment::clear_labels() {
+  labels_.Clear();
+}
+inline const ::std::string& XmlSignatureRejectionAttachment::labels(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.XmlSignatureRejectionAttachment.Labels)
+  return labels_.Get(index);
+}
+inline ::std::string* XmlSignatureRejectionAttachment::mutable_labels(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.XmlSignatureRejectionAttachment.Labels)
+  return labels_.Mutable(index);
+}
+inline void XmlSignatureRejectionAttachment::set_labels(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.XmlSignatureRejectionAttachment.Labels)
+  labels_.Mutable(index)->assign(value);
+}
+inline void XmlSignatureRejectionAttachment::set_labels(int index, const char* value) {
+  labels_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.XmlSignatureRejectionAttachment.Labels)
+}
+inline void XmlSignatureRejectionAttachment::set_labels(int index, const char* value, size_t size) {
+  labels_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.XmlSignatureRejectionAttachment.Labels)
+}
+inline ::std::string* XmlSignatureRejectionAttachment::add_labels() {
+  return labels_.Add();
+}
+inline void XmlSignatureRejectionAttachment::add_labels(const ::std::string& value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.XmlSignatureRejectionAttachment.Labels)
+}
+inline void XmlSignatureRejectionAttachment::add_labels(const char* value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:Diadoc.Api.Proto.Events.XmlSignatureRejectionAttachment.Labels)
+}
+inline void XmlSignatureRejectionAttachment::add_labels(const char* value, size_t size) {
+  labels_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:Diadoc.Api.Proto.Events.XmlSignatureRejectionAttachment.Labels)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+XmlSignatureRejectionAttachment::labels() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.XmlSignatureRejectionAttachment.Labels)
+  return labels_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+XmlSignatureRejectionAttachment::mutable_labels() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.XmlSignatureRejectionAttachment.Labels)
+  return &labels_;
 }
 
 // -------------------------------------------------------------------
@@ -25386,6 +26114,60 @@ inline void ResolutionRouteRemoval::set_allocated_comment(::std::string* comment
     comment_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.Comment)
+}
+
+// repeated string Labels = 4;
+inline int ResolutionRouteRemoval::labels_size() const {
+  return labels_.size();
+}
+inline void ResolutionRouteRemoval::clear_labels() {
+  labels_.Clear();
+}
+inline const ::std::string& ResolutionRouteRemoval::labels(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.Labels)
+  return labels_.Get(index);
+}
+inline ::std::string* ResolutionRouteRemoval::mutable_labels(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.Labels)
+  return labels_.Mutable(index);
+}
+inline void ResolutionRouteRemoval::set_labels(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.Labels)
+  labels_.Mutable(index)->assign(value);
+}
+inline void ResolutionRouteRemoval::set_labels(int index, const char* value) {
+  labels_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.Labels)
+}
+inline void ResolutionRouteRemoval::set_labels(int index, const char* value, size_t size) {
+  labels_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.Labels)
+}
+inline ::std::string* ResolutionRouteRemoval::add_labels() {
+  return labels_.Add();
+}
+inline void ResolutionRouteRemoval::add_labels(const ::std::string& value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.Labels)
+}
+inline void ResolutionRouteRemoval::add_labels(const char* value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.Labels)
+}
+inline void ResolutionRouteRemoval::add_labels(const char* value, size_t size) {
+  labels_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.Labels)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+ResolutionRouteRemoval::labels() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.Labels)
+  return labels_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+ResolutionRouteRemoval::mutable_labels() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.ResolutionRouteRemoval.Labels)
+  return &labels_;
 }
 
 // -------------------------------------------------------------------
@@ -26279,6 +27061,238 @@ inline void TemplateDocumentAttachment::set_allocated_customdocumentid(::std::st
     customdocumentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.TemplateDocumentAttachment.CustomDocumentId)
+}
+
+// optional string EditingSettingId = 9;
+inline bool TemplateDocumentAttachment::has_editingsettingid() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void TemplateDocumentAttachment::set_has_editingsettingid() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void TemplateDocumentAttachment::clear_has_editingsettingid() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void TemplateDocumentAttachment::clear_editingsettingid() {
+  if (editingsettingid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    editingsettingid_->clear();
+  }
+  clear_has_editingsettingid();
+}
+inline const ::std::string& TemplateDocumentAttachment::editingsettingid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.TemplateDocumentAttachment.EditingSettingId)
+  return *editingsettingid_;
+}
+inline void TemplateDocumentAttachment::set_editingsettingid(const ::std::string& value) {
+  set_has_editingsettingid();
+  if (editingsettingid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    editingsettingid_ = new ::std::string;
+  }
+  editingsettingid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.TemplateDocumentAttachment.EditingSettingId)
+}
+inline void TemplateDocumentAttachment::set_editingsettingid(const char* value) {
+  set_has_editingsettingid();
+  if (editingsettingid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    editingsettingid_ = new ::std::string;
+  }
+  editingsettingid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.TemplateDocumentAttachment.EditingSettingId)
+}
+inline void TemplateDocumentAttachment::set_editingsettingid(const char* value, size_t size) {
+  set_has_editingsettingid();
+  if (editingsettingid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    editingsettingid_ = new ::std::string;
+  }
+  editingsettingid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.TemplateDocumentAttachment.EditingSettingId)
+}
+inline ::std::string* TemplateDocumentAttachment::mutable_editingsettingid() {
+  set_has_editingsettingid();
+  if (editingsettingid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    editingsettingid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.TemplateDocumentAttachment.EditingSettingId)
+  return editingsettingid_;
+}
+inline ::std::string* TemplateDocumentAttachment::release_editingsettingid() {
+  clear_has_editingsettingid();
+  if (editingsettingid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = editingsettingid_;
+    editingsettingid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void TemplateDocumentAttachment::set_allocated_editingsettingid(::std::string* editingsettingid) {
+  if (editingsettingid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete editingsettingid_;
+  }
+  if (editingsettingid) {
+    set_has_editingsettingid();
+    editingsettingid_ = editingsettingid;
+  } else {
+    clear_has_editingsettingid();
+    editingsettingid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.TemplateDocumentAttachment.EditingSettingId)
+}
+
+// -------------------------------------------------------------------
+
+// UnsignedContent
+
+// optional bytes Content = 1;
+inline bool UnsignedContent::has_content() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void UnsignedContent::set_has_content() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void UnsignedContent::clear_has_content() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void UnsignedContent::clear_content() {
+  if (content_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    content_->clear();
+  }
+  clear_has_content();
+}
+inline const ::std::string& UnsignedContent::content() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.UnsignedContent.Content)
+  return *content_;
+}
+inline void UnsignedContent::set_content(const ::std::string& value) {
+  set_has_content();
+  if (content_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    content_ = new ::std::string;
+  }
+  content_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.UnsignedContent.Content)
+}
+inline void UnsignedContent::set_content(const char* value) {
+  set_has_content();
+  if (content_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    content_ = new ::std::string;
+  }
+  content_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.UnsignedContent.Content)
+}
+inline void UnsignedContent::set_content(const void* value, size_t size) {
+  set_has_content();
+  if (content_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    content_ = new ::std::string;
+  }
+  content_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.UnsignedContent.Content)
+}
+inline ::std::string* UnsignedContent::mutable_content() {
+  set_has_content();
+  if (content_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    content_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.UnsignedContent.Content)
+  return content_;
+}
+inline ::std::string* UnsignedContent::release_content() {
+  clear_has_content();
+  if (content_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = content_;
+    content_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UnsignedContent::set_allocated_content(::std::string* content) {
+  if (content_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete content_;
+  }
+  if (content) {
+    set_has_content();
+    content_ = content;
+  } else {
+    clear_has_content();
+    content_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.UnsignedContent.Content)
+}
+
+// optional string NameOnShelf = 2;
+inline bool UnsignedContent::has_nameonshelf() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void UnsignedContent::set_has_nameonshelf() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void UnsignedContent::clear_has_nameonshelf() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void UnsignedContent::clear_nameonshelf() {
+  if (nameonshelf_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    nameonshelf_->clear();
+  }
+  clear_has_nameonshelf();
+}
+inline const ::std::string& UnsignedContent::nameonshelf() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.UnsignedContent.NameOnShelf)
+  return *nameonshelf_;
+}
+inline void UnsignedContent::set_nameonshelf(const ::std::string& value) {
+  set_has_nameonshelf();
+  if (nameonshelf_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    nameonshelf_ = new ::std::string;
+  }
+  nameonshelf_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.UnsignedContent.NameOnShelf)
+}
+inline void UnsignedContent::set_nameonshelf(const char* value) {
+  set_has_nameonshelf();
+  if (nameonshelf_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    nameonshelf_ = new ::std::string;
+  }
+  nameonshelf_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.UnsignedContent.NameOnShelf)
+}
+inline void UnsignedContent::set_nameonshelf(const char* value, size_t size) {
+  set_has_nameonshelf();
+  if (nameonshelf_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    nameonshelf_ = new ::std::string;
+  }
+  nameonshelf_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.UnsignedContent.NameOnShelf)
+}
+inline ::std::string* UnsignedContent::mutable_nameonshelf() {
+  set_has_nameonshelf();
+  if (nameonshelf_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    nameonshelf_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.UnsignedContent.NameOnShelf)
+  return nameonshelf_;
+}
+inline ::std::string* UnsignedContent::release_nameonshelf() {
+  clear_has_nameonshelf();
+  if (nameonshelf_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = nameonshelf_;
+    nameonshelf_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UnsignedContent::set_allocated_nameonshelf(::std::string* nameonshelf) {
+  if (nameonshelf_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete nameonshelf_;
+  }
+  if (nameonshelf) {
+    set_has_nameonshelf();
+    nameonshelf_ = nameonshelf;
+  } else {
+    clear_has_nameonshelf();
+    nameonshelf_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.UnsignedContent.NameOnShelf)
 }
 
 // -------------------------------------------------------------------
