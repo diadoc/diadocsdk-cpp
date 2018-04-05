@@ -4596,6 +4596,18 @@ class MessagePatchToPost : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >*
       mutable_recipienttitles();
 
+  // repeated .Diadoc.Api.Proto.Events.CustomDataPatch EditingPatches = 23;
+  inline int editingpatches_size() const;
+  inline void clear_editingpatches();
+  static const int kEditingPatchesFieldNumber = 23;
+  inline const ::Diadoc::Api::Proto::Events::CustomDataPatch& editingpatches(int index) const;
+  inline ::Diadoc::Api::Proto::Events::CustomDataPatch* mutable_editingpatches(int index);
+  inline ::Diadoc::Api::Proto::Events::CustomDataPatch* add_editingpatches();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::CustomDataPatch >&
+      editingpatches() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::CustomDataPatch >*
+      mutable_editingpatches();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.MessagePatchToPost)
  private:
   inline void set_has_boxid();
@@ -4629,6 +4641,7 @@ class MessagePatchToPost : public ::google::protobuf::Message {
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment > universaltransferdocumentbuyertitles_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionRouteRemoval > resolutionrouteremovals_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment > recipienttitles_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::CustomDataPatch > editingpatches_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -19919,6 +19932,36 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::Recei
 MessagePatchToPost::mutable_recipienttitles() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.MessagePatchToPost.RecipientTitles)
   return &recipienttitles_;
+}
+
+// repeated .Diadoc.Api.Proto.Events.CustomDataPatch EditingPatches = 23;
+inline int MessagePatchToPost::editingpatches_size() const {
+  return editingpatches_.size();
+}
+inline void MessagePatchToPost::clear_editingpatches() {
+  editingpatches_.Clear();
+}
+inline const ::Diadoc::Api::Proto::Events::CustomDataPatch& MessagePatchToPost::editingpatches(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.MessagePatchToPost.EditingPatches)
+  return editingpatches_.Get(index);
+}
+inline ::Diadoc::Api::Proto::Events::CustomDataPatch* MessagePatchToPost::mutable_editingpatches(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.MessagePatchToPost.EditingPatches)
+  return editingpatches_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::Events::CustomDataPatch* MessagePatchToPost::add_editingpatches() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.MessagePatchToPost.EditingPatches)
+  return editingpatches_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::CustomDataPatch >&
+MessagePatchToPost::editingpatches() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.MessagePatchToPost.EditingPatches)
+  return editingpatches_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::CustomDataPatch >*
+MessagePatchToPost::mutable_editingpatches() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.MessagePatchToPost.EditingPatches)
+  return &editingpatches_;
 }
 
 // -------------------------------------------------------------------
