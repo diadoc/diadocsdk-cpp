@@ -8279,6 +8279,13 @@ class TemplateDocumentAttachment : public ::google::protobuf::Message {
   inline ::std::string* release_editingsettingid();
   inline void set_allocated_editingsettingid(::std::string* editingsettingid);
 
+  // optional bool NeedRecipientSignature = 10 [default = false];
+  inline bool has_needrecipientsignature() const;
+  inline void clear_needrecipientsignature();
+  static const int kNeedRecipientSignatureFieldNumber = 10;
+  inline bool needrecipientsignature() const;
+  inline void set_needrecipientsignature(bool value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.TemplateDocumentAttachment)
  private:
   inline void set_has_unsignedcontent();
@@ -8297,6 +8304,8 @@ class TemplateDocumentAttachment : public ::google::protobuf::Message {
   inline void clear_has_customdocumentid();
   inline void set_has_editingsettingid();
   inline void clear_has_editingsettingid();
+  inline void set_has_needrecipientsignature();
+  inline void clear_has_needrecipientsignature();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -8309,8 +8318,9 @@ class TemplateDocumentAttachment : public ::google::protobuf::Message {
   ::std::string* version_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::MetadataItem > metadata_;
   ::std::string* customdocumentid_;
-  ::std::string* editingsettingid_;
   ::google::protobuf::int32 workflowid_;
+  bool needrecipientsignature_;
+  ::std::string* editingsettingid_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -27137,6 +27147,30 @@ inline void TemplateDocumentAttachment::set_allocated_editingsettingid(::std::st
     editingsettingid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.TemplateDocumentAttachment.EditingSettingId)
+}
+
+// optional bool NeedRecipientSignature = 10 [default = false];
+inline bool TemplateDocumentAttachment::has_needrecipientsignature() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+inline void TemplateDocumentAttachment::set_has_needrecipientsignature() {
+  _has_bits_[0] |= 0x00000200u;
+}
+inline void TemplateDocumentAttachment::clear_has_needrecipientsignature() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+inline void TemplateDocumentAttachment::clear_needrecipientsignature() {
+  needrecipientsignature_ = false;
+  clear_has_needrecipientsignature();
+}
+inline bool TemplateDocumentAttachment::needrecipientsignature() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.TemplateDocumentAttachment.NeedRecipientSignature)
+  return needrecipientsignature_;
+}
+inline void TemplateDocumentAttachment::set_needrecipientsignature(bool value) {
+  set_has_needrecipientsignature();
+  needrecipientsignature_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.TemplateDocumentAttachment.NeedRecipientSignature)
 }
 
 // -------------------------------------------------------------------

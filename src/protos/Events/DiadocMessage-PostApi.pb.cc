@@ -1229,7 +1229,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(TemplateToPost));
   TemplateDocumentAttachment_descriptor_ = file->message_type(50);
-  static const int TemplateDocumentAttachment_offsets_[9] = {
+  static const int TemplateDocumentAttachment_offsets_[10] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, unsignedcontent_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, comment_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, typenamedid_),
@@ -1239,6 +1239,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, workflowid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, customdocumentid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, editingsettingid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, needrecipientsignature_),
   };
   TemplateDocumentAttachment_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1934,22 +1935,23 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
     "oBoxId\030\004 \002(\t\022\035\n\025MessageToDepartmentId\030\005 "
     "\001(\t\022P\n\023DocumentAttachments\030\006 \003(\01323.Diado"
     "c.Api.Proto.Events.TemplateDocumentAttac"
-    "hment\"\251\002\n\032TemplateDocumentAttachment\022A\n\017"
+    "hment\"\320\002\n\032TemplateDocumentAttachment\022A\n\017"
     "UnsignedContent\030\001 \002(\0132(.Diadoc.Api.Proto"
     ".Events.UnsignedContent\022\017\n\007Comment\030\002 \001(\t"
     "\022\023\n\013TypeNamedId\030\003 \002(\t\022\020\n\010Function\030\004 \001(\t\022"
     "\017\n\007Version\030\005 \001(\t\0227\n\010Metadata\030\006 \003(\0132%.Dia"
     "doc.Api.Proto.Events.MetadataItem\022\022\n\nWor"
     "kflowId\030\007 \001(\005\022\030\n\020CustomDocumentId\030\010 \001(\t\022"
-    "\030\n\020EditingSettingId\030\t \001(\t\"7\n\017UnsignedCon"
-    "tent\022\017\n\007Content\030\001 \001(\014\022\023\n\013NameOnShelf\030\002 \001"
-    "(\t\"\223\001\n\034TemplateTransformationToPost\022\r\n\005B"
-    "oxId\030\001 \002(\t\022\022\n\nTemplateId\030\002 \002(\t\022P\n\027Docume"
-    "ntTransformations\030\003 \003(\0132/.Diadoc.Api.Pro"
-    "to.Events.DocumentTransformation\"F\n\026Docu"
-    "mentTransformation\022\022\n\nDocumentId\030\001 \002(\t\022\030"
-    "\n\020CustomDocumentId\030\002 \001(\t*/\n\030CustomDataPa"
-    "tchOperation\022\007\n\003Set\020\000\022\n\n\006Remove\020\001", 15953);
+    "\030\n\020EditingSettingId\030\t \001(\t\022%\n\026NeedRecipie"
+    "ntSignature\030\n \001(\010:\005false\"7\n\017UnsignedCont"
+    "ent\022\017\n\007Content\030\001 \001(\014\022\023\n\013NameOnShelf\030\002 \001("
+    "\t\"\223\001\n\034TemplateTransformationToPost\022\r\n\005Bo"
+    "xId\030\001 \002(\t\022\022\n\nTemplateId\030\002 \002(\t\022P\n\027Documen"
+    "tTransformations\030\003 \003(\0132/.Diadoc.Api.Prot"
+    "o.Events.DocumentTransformation\"F\n\026Docum"
+    "entTransformation\022\022\n\nDocumentId\030\001 \002(\t\022\030\n"
+    "\020CustomDocumentId\030\002 \001(\t*/\n\030CustomDataPat"
+    "chOperation\022\007\n\003Set\020\000\022\n\n\006Remove\020\001", 15992);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Events/DiadocMessage-PostApi.proto", &protobuf_RegisterTypes);
   MessageToPost::default_instance_ = new MessageToPost();
@@ -27988,6 +27990,7 @@ const int TemplateDocumentAttachment::kMetadataFieldNumber;
 const int TemplateDocumentAttachment::kWorkflowIdFieldNumber;
 const int TemplateDocumentAttachment::kCustomDocumentIdFieldNumber;
 const int TemplateDocumentAttachment::kEditingSettingIdFieldNumber;
+const int TemplateDocumentAttachment::kNeedRecipientSignatureFieldNumber;
 #endif  // !_MSC_VER
 
 TemplateDocumentAttachment::TemplateDocumentAttachment()
@@ -28018,6 +28021,7 @@ void TemplateDocumentAttachment::SharedCtor() {
   workflowid_ = 0;
   customdocumentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   editingsettingid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  needrecipientsignature_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -28103,10 +28107,13 @@ void TemplateDocumentAttachment::Clear() {
       }
     }
   }
-  if (has_editingsettingid()) {
-    if (editingsettingid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-      editingsettingid_->clear();
+  if (_has_bits_[8 / 32] & 768) {
+    if (has_editingsettingid()) {
+      if (editingsettingid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        editingsettingid_->clear();
+      }
     }
+    needrecipientsignature_ = false;
   }
   metadata_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -28262,6 +28269,21 @@ bool TemplateDocumentAttachment::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(80)) goto parse_NeedRecipientSignature;
+        break;
+      }
+
+      // optional bool NeedRecipientSignature = 10 [default = false];
+      case 10: {
+        if (tag == 80) {
+         parse_NeedRecipientSignature:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &needrecipientsignature_)));
+          set_has_needrecipientsignature();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -28368,6 +28390,11 @@ void TemplateDocumentAttachment::SerializeWithCachedSizes(
       9, this->editingsettingid(), output);
   }
 
+  // optional bool NeedRecipientSignature = 10 [default = false];
+  if (has_needrecipientsignature()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(10, this->needrecipientsignature(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -28463,6 +28490,11 @@ void TemplateDocumentAttachment::SerializeWithCachedSizes(
         9, this->editingsettingid(), target);
   }
 
+  // optional bool NeedRecipientSignature = 10 [default = false];
+  if (has_needrecipientsignature()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(10, this->needrecipientsignature(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -28533,6 +28565,11 @@ int TemplateDocumentAttachment::ByteSize() const {
           this->editingsettingid());
     }
 
+    // optional bool NeedRecipientSignature = 10 [default = false];
+    if (has_needrecipientsignature()) {
+      total_size += 1 + 1;
+    }
+
   }
   // repeated .Diadoc.Api.Proto.Events.MetadataItem Metadata = 6;
   total_size += 1 * this->metadata_size();
@@ -28595,6 +28632,9 @@ void TemplateDocumentAttachment::MergeFrom(const TemplateDocumentAttachment& fro
     if (from.has_editingsettingid()) {
       set_editingsettingid(from.editingsettingid());
     }
+    if (from.has_needrecipientsignature()) {
+      set_needrecipientsignature(from.needrecipientsignature());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -28629,6 +28669,7 @@ void TemplateDocumentAttachment::Swap(TemplateDocumentAttachment* other) {
     std::swap(workflowid_, other->workflowid_);
     std::swap(customdocumentid_, other->customdocumentid_);
     std::swap(editingsettingid_, other->editingsettingid_);
+    std::swap(needrecipientsignature_, other->needrecipientsignature_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
