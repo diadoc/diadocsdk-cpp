@@ -124,11 +124,12 @@ enum AttachmentType {
   ResolutionRouteAssignmentAttachment = 66,
   ResolutionRouteRemovalAttachment = 67,
   Title = 68,
-  Cancellation = 69
+  Cancellation = 69,
+  Edition = 71
 };
 bool AttachmentType_IsValid(int value);
 const AttachmentType AttachmentType_MIN = UnknownAttachmentType;
-const AttachmentType AttachmentType_MAX = Cancellation;
+const AttachmentType AttachmentType_MAX = Edition;
 const int AttachmentType_ARRAYSIZE = AttachmentType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* AttachmentType_descriptor();
