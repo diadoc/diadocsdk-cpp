@@ -38,6 +38,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* AmendmentRequestMetadata_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   AmendmentRequestMetadata_reflection_ = NULL;
+const ::google::protobuf::Descriptor* Origin_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Origin_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* ResolutionStatusType_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* RevocationStatus_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* RoamingNotificationStatus_descriptor_ = NULL;
@@ -45,6 +48,7 @@ const ::google::protobuf::EnumDescriptor* SenderSignatureStatus_descriptor_ = NU
 const ::google::protobuf::EnumDescriptor* ProxySignatureStatus_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* GeneralReceiptStatus_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* RecipientResponseStatus_descriptor_ = NULL;
+const ::google::protobuf::EnumDescriptor* LetterType_descriptor_ = NULL;
 
 }  // namespace
 
@@ -56,7 +60,7 @@ void protobuf_AssignDesc_Documents_2fDocument_2eproto() {
       "Documents/Document.proto");
   GOOGLE_CHECK(file != NULL);
   Document_descriptor_ = file->message_type(0);
-  static const int Document_offsets_[69] = {
+  static const int Document_offsets_[70] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, indexkey_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, messageid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, entityid_),
@@ -126,6 +130,7 @@ void protobuf_AssignDesc_Documents_2fDocument_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, confirmationmetadata_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, recipientresponsestatus_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, amendmentrequestmetadata_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, origin_),
   };
   Document_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -204,6 +209,22 @@ void protobuf_AssignDesc_Documents_2fDocument_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(AmendmentRequestMetadata));
+  Origin_descriptor_ = file->message_type(5);
+  static const int Origin_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Origin, lettertype_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Origin, letterid_),
+  };
+  Origin_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      Origin_descriptor_,
+      Origin::default_instance_,
+      Origin_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Origin, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Origin, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(Origin));
   ResolutionStatusType_descriptor_ = file->enum_type(0);
   RevocationStatus_descriptor_ = file->enum_type(1);
   RoamingNotificationStatus_descriptor_ = file->enum_type(2);
@@ -211,6 +232,7 @@ void protobuf_AssignDesc_Documents_2fDocument_2eproto() {
   ProxySignatureStatus_descriptor_ = file->enum_type(4);
   GeneralReceiptStatus_descriptor_ = file->enum_type(5);
   RecipientResponseStatus_descriptor_ = file->enum_type(6);
+  LetterType_descriptor_ = file->enum_type(7);
 }
 
 namespace {
@@ -233,6 +255,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
     ConfirmationMetadata_descriptor_, &ConfirmationMetadata::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     AmendmentRequestMetadata_descriptor_, &AmendmentRequestMetadata::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    Origin_descriptor_, &Origin::default_instance());
 }
 
 }  // namespace
@@ -248,6 +272,8 @@ void protobuf_ShutdownFile_Documents_2fDocument_2eproto() {
   delete ConfirmationMetadata_reflection_;
   delete AmendmentRequestMetadata::default_instance_;
   delete AmendmentRequestMetadata_reflection_;
+  delete Origin::default_instance_;
+  delete Origin_reflection_;
 }
 
 void protobuf_AddDesc_Documents_2fDocument_2eproto() {
@@ -282,7 +308,7 @@ void protobuf_AddDesc_Documents_2fDocument_2eproto() {
     "UnilateralDocument.proto\032)Documents/Univ"
     "ersalTransferDocument.proto\032\026ResolutionT"
     "arget.proto\032\032ForwardDocumentEvent.proto\032"
-    "\"Events/DiadocMessage-PostApi.proto\"\207%\n\010"
+    "\"Events/DiadocMessage-PostApi.proto\"\273%\n\010"
     "Document\022\020\n\010IndexKey\030\001 \001(\t\022\021\n\tMessageId\030"
     "\002 \002(\t\022\020\n\010EntityId\030\003 \002(\t\022\036\n\026CreationTimes"
     "tampTicks\030\004 \002(\020\022\031\n\021CounteragentBoxId\030\005 \001"
@@ -401,58 +427,63 @@ void protobuf_AddDesc_Documents_2fDocument_2eproto() {
     "cipientResponseStatus:\036RecipientResponse"
     "StatusUnknown\022V\n\030AmendmentRequestMetadat"
     "a\030G \002(\01324.Diadoc.Api.Proto.Documents.Ame"
-    "ndmentRequestMetadata\"\310\001\n\020ResolutionStat"
-    "us\022W\n\004Type\030\001 \001(\01620.Diadoc.Api.Proto.Docu"
-    "ments.ResolutionStatusType:\027UnknownResol"
-    "utionStatus\0222\n\006Target\030\002 \001(\0132\".Diadoc.Api"
-    ".Proto.ResolutionTarget\022\024\n\014AuthorUserId\030"
-    "\003 \002(\t\022\021\n\tAuthorFIO\030\004 \002(\t\"\320\001\n\030RecipientRe"
-    "ceiptMetadata\022d\n\rReceiptStatus\030\001 \002(\01620.D"
-    "iadoc.Api.Proto.Documents.GeneralReceipt"
-    "Status:\033GeneralReceiptStatusUnknown\022N\n\024C"
-    "onfirmationMetadata\030\002 \001(\01320.Diadoc.Api.P"
-    "roto.Documents.ConfirmationMetadata\"\223\001\n\024"
-    "ConfirmationMetadata\022d\n\rReceiptStatus\030\001 "
-    "\002(\01620.Diadoc.Api.Proto.Documents.General"
-    "ReceiptStatus:\033GeneralReceiptStatusUnkno"
-    "wn\022\025\n\rDateTimeTicks\030\002 \002(\020\"\230\001\n\030AmendmentR"
-    "equestMetadata\022\026\n\016AmendmentFlags\030\001 \002(\005\022d"
-    "\n\rReceiptStatus\030\002 \002(\01620.Diadoc.Api.Proto"
-    ".Documents.GeneralReceiptStatus:\033General"
-    "ReceiptStatusUnknown*\254\001\n\024ResolutionStatu"
-    "sType\022$\n\027UnknownResolutionStatus\020\377\377\377\377\377\377\377"
-    "\377\377\001\022\010\n\004None\020\000\022\014\n\010Approved\020\001\022\017\n\013Disapprov"
-    "ed\020\002\022\030\n\024ApprovementRequested\020\003\022\026\n\022Signat"
-    "ureRequested\020\004\022\023\n\017SignatureDenied\020\005*\262\001\n\020"
-    "RevocationStatus\022\033\n\027UnknownRevocationSta"
-    "tus\020\000\022\030\n\024RevocationStatusNone\020\001\022\035\n\031Revoc"
-    "ationIsRequestedByMe\020\002\022\030\n\024RequestsMyRevo"
-    "cation\020\003\022\026\n\022RevocationAccepted\020\004\022\026\n\022Revo"
-    "cationRejected\020\005*\256\001\n\031RoamingNotification"
-    "Status\022$\n UnknownRoamingNotificationStat"
-    "us\020\000\022!\n\035RoamingNotificationStatusNone\020\001\022"
-    "$\n RoamingNotificationStatusSuccess\020\002\022\"\n"
-    "\036RoamingNotificationStatusError\020\003*\300\001\n\025Se"
-    "nderSignatureStatus\022 \n\034UnknownSenderSign"
-    "atureStatus\020\000\022\035\n\031WaitingForSenderSignatu"
-    "re\020\001\022\034\n\030SenderSignatureUnchecked\020\002\022\"\n\036Se"
-    "nderSignatureCheckedAndValid\020\003\022$\n Sender"
-    "SignatureCheckedAndInvalid\020\004*\302\001\n\024ProxySi"
-    "gnatureStatus\022\037\n\033UnknownProxySignatureSt"
-    "atus\020\000\022\034\n\030ProxySignatureStatusNone\020\001\022\034\n\030"
-    "WaitingForProxySignature\020\002\022\026\n\022WithProxyS"
-    "ignature\020\003\022\032\n\026ProxySignatureRejected\020\004\022\031"
-    "\n\025InvalidProxySignature\020\005*\234\001\n\024GeneralRec"
-    "eiptStatus\022\037\n\033GeneralReceiptStatusUnknow"
-    "n\020\000\022%\n!GeneralReceiptStatusNotAcceptable"
-    "\020\001\022\027\n\023HaveToCreateReceipt\020\002\022\025\n\021WaitingFo"
-    "rReceipt\020\003\022\014\n\010Finished\020\004*\353\001\n\027RecipientRe"
-    "sponseStatus\022\"\n\036RecipientResponseStatusU"
-    "nknown\020\000\022(\n$RecipientResponseStatusNotAc"
-    "ceptable\020\001\022 \n\034WaitingForRecipientSignatu"
-    "re\020\002\022\032\n\026WithRecipientSignature\020\003\022%\n!Reci"
-    "pientSignatureRequestRejected\020\004\022\035\n\031Inval"
-    "idRecipientSignature\020\005", 7262);
+    "ndmentRequestMetadata\0222\n\006Origin\030H \001(\0132\"."
+    "Diadoc.Api.Proto.Documents.Origin\"\310\001\n\020Re"
+    "solutionStatus\022W\n\004Type\030\001 \001(\01620.Diadoc.Ap"
+    "i.Proto.Documents.ResolutionStatusType:\027"
+    "UnknownResolutionStatus\0222\n\006Target\030\002 \001(\0132"
+    "\".Diadoc.Api.Proto.ResolutionTarget\022\024\n\014A"
+    "uthorUserId\030\003 \002(\t\022\021\n\tAuthorFIO\030\004 \002(\t\"\320\001\n"
+    "\030RecipientReceiptMetadata\022d\n\rReceiptStat"
+    "us\030\001 \002(\01620.Diadoc.Api.Proto.Documents.Ge"
+    "neralReceiptStatus:\033GeneralReceiptStatus"
+    "Unknown\022N\n\024ConfirmationMetadata\030\002 \001(\01320."
+    "Diadoc.Api.Proto.Documents.ConfirmationM"
+    "etadata\"\223\001\n\024ConfirmationMetadata\022d\n\rRece"
+    "iptStatus\030\001 \002(\01620.Diadoc.Api.Proto.Docum"
+    "ents.GeneralReceiptStatus:\033GeneralReceip"
+    "tStatusUnknown\022\025\n\rDateTimeTicks\030\002 \002(\020\"\230\001"
+    "\n\030AmendmentRequestMetadata\022\026\n\016AmendmentF"
+    "lags\030\001 \002(\005\022d\n\rReceiptStatus\030\002 \002(\01620.Diad"
+    "oc.Api.Proto.Documents.GeneralReceiptSta"
+    "tus:\033GeneralReceiptStatusUnknown\"V\n\006Orig"
+    "in\022:\n\nLetterType\030\001 \002(\0162&.Diadoc.Api.Prot"
+    "o.Documents.LetterType\022\020\n\010LetterId\030\002 \002(\t"
+    "*\254\001\n\024ResolutionStatusType\022$\n\027UnknownReso"
+    "lutionStatus\020\377\377\377\377\377\377\377\377\377\001\022\010\n\004None\020\000\022\014\n\010App"
+    "roved\020\001\022\017\n\013Disapproved\020\002\022\030\n\024ApprovementR"
+    "equested\020\003\022\026\n\022SignatureRequested\020\004\022\023\n\017Si"
+    "gnatureDenied\020\005*\262\001\n\020RevocationStatus\022\033\n\027"
+    "UnknownRevocationStatus\020\000\022\030\n\024RevocationS"
+    "tatusNone\020\001\022\035\n\031RevocationIsRequestedByMe"
+    "\020\002\022\030\n\024RequestsMyRevocation\020\003\022\026\n\022Revocati"
+    "onAccepted\020\004\022\026\n\022RevocationRejected\020\005*\256\001\n"
+    "\031RoamingNotificationStatus\022$\n UnknownRoa"
+    "mingNotificationStatus\020\000\022!\n\035RoamingNotif"
+    "icationStatusNone\020\001\022$\n RoamingNotificati"
+    "onStatusSuccess\020\002\022\"\n\036RoamingNotification"
+    "StatusError\020\003*\300\001\n\025SenderSignatureStatus\022"
+    " \n\034UnknownSenderSignatureStatus\020\000\022\035\n\031Wai"
+    "tingForSenderSignature\020\001\022\034\n\030SenderSignat"
+    "ureUnchecked\020\002\022\"\n\036SenderSignatureChecked"
+    "AndValid\020\003\022$\n SenderSignatureCheckedAndI"
+    "nvalid\020\004*\302\001\n\024ProxySignatureStatus\022\037\n\033Unk"
+    "nownProxySignatureStatus\020\000\022\034\n\030ProxySigna"
+    "tureStatusNone\020\001\022\034\n\030WaitingForProxySigna"
+    "ture\020\002\022\026\n\022WithProxySignature\020\003\022\032\n\026ProxyS"
+    "ignatureRejected\020\004\022\031\n\025InvalidProxySignat"
+    "ure\020\005*\234\001\n\024GeneralReceiptStatus\022\037\n\033Genera"
+    "lReceiptStatusUnknown\020\000\022%\n!GeneralReceip"
+    "tStatusNotAcceptable\020\001\022\027\n\023HaveToCreateRe"
+    "ceipt\020\002\022\025\n\021WaitingForReceipt\020\003\022\014\n\010Finish"
+    "ed\020\004*\353\001\n\027RecipientResponseStatus\022\"\n\036Reci"
+    "pientResponseStatusUnknown\020\000\022(\n$Recipien"
+    "tResponseStatusNotAcceptable\020\001\022 \n\034Waitin"
+    "gForRecipientSignature\020\002\022\032\n\026WithRecipien"
+    "tSignature\020\003\022%\n!RecipientSignatureReques"
+    "tRejected\020\004\022\035\n\031InvalidRecipientSignature"
+    "\020\005*D\n\nLetterType\022\013\n\007Unknown\020\000\022\n\n\006Letter\020"
+    "\001\022\t\n\005Draft\020\002\022\022\n\016TemplateLetter\020\003", 7472);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Documents/Document.proto", &protobuf_RegisterTypes);
   Document::default_instance_ = new Document();
@@ -460,11 +491,13 @@ void protobuf_AddDesc_Documents_2fDocument_2eproto() {
   RecipientReceiptMetadata::default_instance_ = new RecipientReceiptMetadata();
   ConfirmationMetadata::default_instance_ = new ConfirmationMetadata();
   AmendmentRequestMetadata::default_instance_ = new AmendmentRequestMetadata();
+  Origin::default_instance_ = new Origin();
   Document::default_instance_->InitAsDefaultInstance();
   ResolutionStatus::default_instance_->InitAsDefaultInstance();
   RecipientReceiptMetadata::default_instance_->InitAsDefaultInstance();
   ConfirmationMetadata::default_instance_->InitAsDefaultInstance();
   AmendmentRequestMetadata::default_instance_->InitAsDefaultInstance();
+  Origin::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_Documents_2fDocument_2eproto);
 }
 
@@ -597,6 +630,22 @@ bool RecipientResponseStatus_IsValid(int value) {
   }
 }
 
+const ::google::protobuf::EnumDescriptor* LetterType_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return LetterType_descriptor_;
+}
+bool LetterType_IsValid(int value) {
+  switch(value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+      return true;
+    default:
+      return false;
+  }
+}
+
 
 // ===================================================================
 
@@ -670,6 +719,7 @@ const int Document::kRecipientReceiptMetadataFieldNumber;
 const int Document::kConfirmationMetadataFieldNumber;
 const int Document::kRecipientResponseStatusFieldNumber;
 const int Document::kAmendmentRequestMetadataFieldNumber;
+const int Document::kOriginFieldNumber;
 #endif  // !_MSC_VER
 
 Document::Document()
@@ -707,6 +757,7 @@ void Document::InitAsDefaultInstance() {
   recipientreceiptmetadata_ = const_cast< ::Diadoc::Api::Proto::Documents::RecipientReceiptMetadata*>(&::Diadoc::Api::Proto::Documents::RecipientReceiptMetadata::default_instance());
   confirmationmetadata_ = const_cast< ::Diadoc::Api::Proto::Documents::ConfirmationMetadata*>(&::Diadoc::Api::Proto::Documents::ConfirmationMetadata::default_instance());
   amendmentrequestmetadata_ = const_cast< ::Diadoc::Api::Proto::Documents::AmendmentRequestMetadata*>(&::Diadoc::Api::Proto::Documents::AmendmentRequestMetadata::default_instance());
+  origin_ = const_cast< ::Diadoc::Api::Proto::Documents::Origin*>(&::Diadoc::Api::Proto::Documents::Origin::default_instance());
 }
 
 Document::Document(const Document& from)
@@ -783,6 +834,7 @@ void Document::SharedCtor() {
   confirmationmetadata_ = NULL;
   recipientresponsestatus_ = 0;
   amendmentrequestmetadata_ = NULL;
+  origin_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -875,6 +927,7 @@ void Document::SharedDtor() {
     delete recipientreceiptmetadata_;
     delete confirmationmetadata_;
     delete amendmentrequestmetadata_;
+    delete origin_;
   }
 }
 
@@ -1103,7 +1156,7 @@ void Document::Clear() {
       }
     }
   }
-  if (_has_bits_[64 / 32] & 30) {
+  if (_has_bits_[64 / 32] & 62) {
     if (has_recipientreceiptmetadata()) {
       if (recipientreceiptmetadata_ != NULL) recipientreceiptmetadata_->::Diadoc::Api::Proto::Documents::RecipientReceiptMetadata::Clear();
     }
@@ -1113,6 +1166,9 @@ void Document::Clear() {
     recipientresponsestatus_ = 0;
     if (has_amendmentrequestmetadata()) {
       if (amendmentrequestmetadata_ != NULL) amendmentrequestmetadata_->::Diadoc::Api::Proto::Documents::AmendmentRequestMetadata::Clear();
+    }
+    if (has_origin()) {
+      if (origin_ != NULL) origin_->::Diadoc::Api::Proto::Documents::Origin::Clear();
     }
   }
 
@@ -2178,6 +2234,19 @@ bool Document::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(578)) goto parse_Origin;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Documents.Origin Origin = 72;
+      case 72: {
+        if (tag == 578) {
+         parse_Origin:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_origin()));
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -2680,6 +2749,12 @@ void Document::SerializeWithCachedSizes(
   if (has_amendmentrequestmetadata()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       71, this->amendmentrequestmetadata(), output);
+  }
+
+  // optional .Diadoc.Api.Proto.Documents.Origin Origin = 72;
+  if (has_origin()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      72, this->origin(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -3218,6 +3293,13 @@ void Document::SerializeWithCachedSizes(
         71, this->amendmentrequestmetadata(), target);
   }
 
+  // optional .Diadoc.Api.Proto.Documents.Origin Origin = 72;
+  if (has_origin()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        72, this->origin(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -3667,6 +3749,13 @@ int Document::ByteSize() const {
           this->amendmentrequestmetadata());
     }
 
+    // optional .Diadoc.Api.Proto.Documents.Origin Origin = 72;
+    if (has_origin()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->origin());
+    }
+
   }
   // repeated .Diadoc.Api.Proto.DocumentId InitialDocumentIds = 7;
   total_size += 1 * this->initialdocumentids_size();
@@ -3947,6 +4036,9 @@ void Document::MergeFrom(const Document& from) {
     if (from.has_amendmentrequestmetadata()) {
       mutable_amendmentrequestmetadata()->::Diadoc::Api::Proto::Documents::AmendmentRequestMetadata::MergeFrom(from.amendmentrequestmetadata());
     }
+    if (from.has_origin()) {
+      mutable_origin()->::Diadoc::Api::Proto::Documents::Origin::MergeFrom(from.origin());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -4036,6 +4128,9 @@ bool Document::IsInitialized() const {
   if (has_amendmentrequestmetadata()) {
     if (!this->amendmentrequestmetadata().IsInitialized()) return false;
   }
+  if (has_origin()) {
+    if (!this->origin().IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -4110,6 +4205,7 @@ void Document::Swap(Document* other) {
     std::swap(confirmationmetadata_, other->confirmationmetadata_);
     std::swap(recipientresponsestatus_, other->recipientresponsestatus_);
     std::swap(amendmentrequestmetadata_, other->amendmentrequestmetadata_);
+    std::swap(origin_, other->origin_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     std::swap(_has_bits_[1], other->_has_bits_[1]);
     std::swap(_has_bits_[2], other->_has_bits_[2]);
@@ -5355,6 +5451,297 @@ void AmendmentRequestMetadata::Swap(AmendmentRequestMetadata* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = AmendmentRequestMetadata_descriptor_;
   metadata.reflection = AmendmentRequestMetadata_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int Origin::kLetterTypeFieldNumber;
+const int Origin::kLetterIdFieldNumber;
+#endif  // !_MSC_VER
+
+Origin::Origin()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Documents.Origin)
+}
+
+void Origin::InitAsDefaultInstance() {
+}
+
+Origin::Origin(const Origin& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Documents.Origin)
+}
+
+void Origin::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  lettertype_ = 0;
+  letterid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+Origin::~Origin() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Documents.Origin)
+  SharedDtor();
+}
+
+void Origin::SharedDtor() {
+  if (letterid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete letterid_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void Origin::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* Origin::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return Origin_descriptor_;
+}
+
+const Origin& Origin::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Documents_2fDocument_2eproto();
+  return *default_instance_;
+}
+
+Origin* Origin::default_instance_ = NULL;
+
+Origin* Origin::New() const {
+  return new Origin;
+}
+
+void Origin::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    lettertype_ = 0;
+    if (has_letterid()) {
+      if (letterid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        letterid_->clear();
+      }
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool Origin::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Documents.Origin)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required .Diadoc.Api.Proto.Documents.LetterType LetterType = 1;
+      case 1: {
+        if (tag == 8) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Diadoc::Api::Proto::Documents::LetterType_IsValid(value)) {
+            set_lettertype(static_cast< ::Diadoc::Api::Proto::Documents::LetterType >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(1, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_LetterId;
+        break;
+      }
+
+      // required string LetterId = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_LetterId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_letterid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->letterid().data(), this->letterid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "letterid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Documents.Origin)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Documents.Origin)
+  return false;
+#undef DO_
+}
+
+void Origin::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Documents.Origin)
+  // required .Diadoc.Api.Proto.Documents.LetterType LetterType = 1;
+  if (has_lettertype()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->lettertype(), output);
+  }
+
+  // required string LetterId = 2;
+  if (has_letterid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->letterid().data(), this->letterid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "letterid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->letterid(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Documents.Origin)
+}
+
+::google::protobuf::uint8* Origin::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Documents.Origin)
+  // required .Diadoc.Api.Proto.Documents.LetterType LetterType = 1;
+  if (has_lettertype()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->lettertype(), target);
+  }
+
+  // required string LetterId = 2;
+  if (has_letterid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->letterid().data(), this->letterid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "letterid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->letterid(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Documents.Origin)
+  return target;
+}
+
+int Origin::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required .Diadoc.Api.Proto.Documents.LetterType LetterType = 1;
+    if (has_lettertype()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->lettertype());
+    }
+
+    // required string LetterId = 2;
+    if (has_letterid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->letterid());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void Origin::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const Origin* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const Origin*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void Origin::MergeFrom(const Origin& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_lettertype()) {
+      set_lettertype(from.lettertype());
+    }
+    if (from.has_letterid()) {
+      set_letterid(from.letterid());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void Origin::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Origin::CopyFrom(const Origin& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Origin::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+
+  return true;
+}
+
+void Origin::Swap(Origin* other) {
+  if (other != this) {
+    std::swap(lettertype_, other->lettertype_);
+    std::swap(letterid_, other->letterid_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata Origin::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = Origin_descriptor_;
+  metadata.reflection = Origin_reflection_;
   return metadata;
 }
 
