@@ -216,26 +216,26 @@ inline bool RecipientResponseStatus_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<RecipientResponseStatus>(
     RecipientResponseStatus_descriptor(), name, value);
 }
-enum LetterType {
+enum MessageType {
   Unknown = 0,
-  Letter = 1,
-  Draft = 2,
+  MessageLetter = 1,
+  DraftLetter = 2,
   TemplateLetter = 3
 };
-bool LetterType_IsValid(int value);
-const LetterType LetterType_MIN = Unknown;
-const LetterType LetterType_MAX = TemplateLetter;
-const int LetterType_ARRAYSIZE = LetterType_MAX + 1;
+bool MessageType_IsValid(int value);
+const MessageType MessageType_MIN = Unknown;
+const MessageType MessageType_MAX = TemplateLetter;
+const int MessageType_ARRAYSIZE = MessageType_MAX + 1;
 
-const ::google::protobuf::EnumDescriptor* LetterType_descriptor();
-inline const ::std::string& LetterType_Name(LetterType value) {
+const ::google::protobuf::EnumDescriptor* MessageType_descriptor();
+inline const ::std::string& MessageType_Name(MessageType value) {
   return ::google::protobuf::internal::NameOfEnum(
-    LetterType_descriptor(), value);
+    MessageType_descriptor(), value);
 }
-inline bool LetterType_Parse(
-    const ::std::string& name, LetterType* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<LetterType>(
-    LetterType_descriptor(), name, value);
+inline bool MessageType_Parse(
+    const ::std::string& name, MessageType* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<MessageType>(
+    MessageType_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -1614,38 +1614,38 @@ class Origin : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // required .Diadoc.Api.Proto.Documents.LetterType LetterType = 1;
-  inline bool has_lettertype() const;
-  inline void clear_lettertype();
-  static const int kLetterTypeFieldNumber = 1;
-  inline ::Diadoc::Api::Proto::Documents::LetterType lettertype() const;
-  inline void set_lettertype(::Diadoc::Api::Proto::Documents::LetterType value);
+  // required .Diadoc.Api.Proto.Documents.MessageType MessageType = 1;
+  inline bool has_messagetype() const;
+  inline void clear_messagetype();
+  static const int kMessageTypeFieldNumber = 1;
+  inline ::Diadoc::Api::Proto::Documents::MessageType messagetype() const;
+  inline void set_messagetype(::Diadoc::Api::Proto::Documents::MessageType value);
 
-  // required string LetterId = 2;
-  inline bool has_letterid() const;
-  inline void clear_letterid();
-  static const int kLetterIdFieldNumber = 2;
-  inline const ::std::string& letterid() const;
-  inline void set_letterid(const ::std::string& value);
-  inline void set_letterid(const char* value);
-  inline void set_letterid(const char* value, size_t size);
-  inline ::std::string* mutable_letterid();
-  inline ::std::string* release_letterid();
-  inline void set_allocated_letterid(::std::string* letterid);
+  // required string MessageId = 2;
+  inline bool has_messageid() const;
+  inline void clear_messageid();
+  static const int kMessageIdFieldNumber = 2;
+  inline const ::std::string& messageid() const;
+  inline void set_messageid(const ::std::string& value);
+  inline void set_messageid(const char* value);
+  inline void set_messageid(const char* value, size_t size);
+  inline ::std::string* mutable_messageid();
+  inline ::std::string* release_messageid();
+  inline void set_allocated_messageid(::std::string* messageid);
 
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.Origin)
  private:
-  inline void set_has_lettertype();
-  inline void clear_has_lettertype();
-  inline void set_has_letterid();
-  inline void clear_has_letterid();
+  inline void set_has_messagetype();
+  inline void clear_has_messagetype();
+  inline void set_has_messageid();
+  inline void clear_has_messageid();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::std::string* letterid_;
-  int lettertype_;
+  ::std::string* messageid_;
+  int messagetype_;
   friend void  protobuf_AddDesc_Documents_2fDocument_2eproto();
   friend void protobuf_AssignDesc_Documents_2fDocument_2eproto();
   friend void protobuf_ShutdownFile_Documents_2fDocument_2eproto();
@@ -5208,105 +5208,105 @@ inline void AmendmentRequestMetadata::set_receiptstatus(::Diadoc::Api::Proto::Do
 
 // Origin
 
-// required .Diadoc.Api.Proto.Documents.LetterType LetterType = 1;
-inline bool Origin::has_lettertype() const {
+// required .Diadoc.Api.Proto.Documents.MessageType MessageType = 1;
+inline bool Origin::has_messagetype() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void Origin::set_has_lettertype() {
+inline void Origin::set_has_messagetype() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void Origin::clear_has_lettertype() {
+inline void Origin::clear_has_messagetype() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void Origin::clear_lettertype() {
-  lettertype_ = 0;
-  clear_has_lettertype();
+inline void Origin::clear_messagetype() {
+  messagetype_ = 0;
+  clear_has_messagetype();
 }
-inline ::Diadoc::Api::Proto::Documents::LetterType Origin::lettertype() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Origin.LetterType)
-  return static_cast< ::Diadoc::Api::Proto::Documents::LetterType >(lettertype_);
+inline ::Diadoc::Api::Proto::Documents::MessageType Origin::messagetype() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Origin.MessageType)
+  return static_cast< ::Diadoc::Api::Proto::Documents::MessageType >(messagetype_);
 }
-inline void Origin::set_lettertype(::Diadoc::Api::Proto::Documents::LetterType value) {
-  assert(::Diadoc::Api::Proto::Documents::LetterType_IsValid(value));
-  set_has_lettertype();
-  lettertype_ = value;
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Origin.LetterType)
+inline void Origin::set_messagetype(::Diadoc::Api::Proto::Documents::MessageType value) {
+  assert(::Diadoc::Api::Proto::Documents::MessageType_IsValid(value));
+  set_has_messagetype();
+  messagetype_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Origin.MessageType)
 }
 
-// required string LetterId = 2;
-inline bool Origin::has_letterid() const {
+// required string MessageId = 2;
+inline bool Origin::has_messageid() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void Origin::set_has_letterid() {
+inline void Origin::set_has_messageid() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void Origin::clear_has_letterid() {
+inline void Origin::clear_has_messageid() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void Origin::clear_letterid() {
-  if (letterid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    letterid_->clear();
+inline void Origin::clear_messageid() {
+  if (messageid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageid_->clear();
   }
-  clear_has_letterid();
+  clear_has_messageid();
 }
-inline const ::std::string& Origin::letterid() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Origin.LetterId)
-  return *letterid_;
+inline const ::std::string& Origin::messageid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Origin.MessageId)
+  return *messageid_;
 }
-inline void Origin::set_letterid(const ::std::string& value) {
-  set_has_letterid();
-  if (letterid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    letterid_ = new ::std::string;
+inline void Origin::set_messageid(const ::std::string& value) {
+  set_has_messageid();
+  if (messageid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageid_ = new ::std::string;
   }
-  letterid_->assign(value);
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Origin.LetterId)
+  messageid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Origin.MessageId)
 }
-inline void Origin::set_letterid(const char* value) {
-  set_has_letterid();
-  if (letterid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    letterid_ = new ::std::string;
+inline void Origin::set_messageid(const char* value) {
+  set_has_messageid();
+  if (messageid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageid_ = new ::std::string;
   }
-  letterid_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.Origin.LetterId)
+  messageid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.Origin.MessageId)
 }
-inline void Origin::set_letterid(const char* value, size_t size) {
-  set_has_letterid();
-  if (letterid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    letterid_ = new ::std::string;
+inline void Origin::set_messageid(const char* value, size_t size) {
+  set_has_messageid();
+  if (messageid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageid_ = new ::std::string;
   }
-  letterid_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.Origin.LetterId)
+  messageid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.Origin.MessageId)
 }
-inline ::std::string* Origin::mutable_letterid() {
-  set_has_letterid();
-  if (letterid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    letterid_ = new ::std::string;
+inline ::std::string* Origin::mutable_messageid() {
+  set_has_messageid();
+  if (messageid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageid_ = new ::std::string;
   }
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.Origin.LetterId)
-  return letterid_;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.Origin.MessageId)
+  return messageid_;
 }
-inline ::std::string* Origin::release_letterid() {
-  clear_has_letterid();
-  if (letterid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+inline ::std::string* Origin::release_messageid() {
+  clear_has_messageid();
+  if (messageid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     return NULL;
   } else {
-    ::std::string* temp = letterid_;
-    letterid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    ::std::string* temp = messageid_;
+    messageid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     return temp;
   }
 }
-inline void Origin::set_allocated_letterid(::std::string* letterid) {
-  if (letterid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete letterid_;
+inline void Origin::set_allocated_messageid(::std::string* messageid) {
+  if (messageid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete messageid_;
   }
-  if (letterid) {
-    set_has_letterid();
-    letterid_ = letterid;
+  if (messageid) {
+    set_has_messageid();
+    messageid_ = messageid;
   } else {
-    clear_has_letterid();
-    letterid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_messageid();
+    messageid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Origin.LetterId)
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Origin.MessageId)
 }
 
 
@@ -5356,10 +5356,10 @@ template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::Diadoc::Api::Proto::Documents::RecipientResponseStatus>() {
   return ::Diadoc::Api::Proto::Documents::RecipientResponseStatus_descriptor();
 }
-template <> struct is_proto_enum< ::Diadoc::Api::Proto::Documents::LetterType> : ::google::protobuf::internal::true_type {};
+template <> struct is_proto_enum< ::Diadoc::Api::Proto::Documents::MessageType> : ::google::protobuf::internal::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::Diadoc::Api::Proto::Documents::LetterType>() {
-  return ::Diadoc::Api::Proto::Documents::LetterType_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::Diadoc::Api::Proto::Documents::MessageType>() {
+  return ::Diadoc::Api::Proto::Documents::MessageType_descriptor();
 }
 
 }  // namespace google
