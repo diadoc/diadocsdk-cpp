@@ -1005,6 +1005,20 @@ DiadocApi::WebFile DiadocApi::GenerateUniversalTransferDocumentXmlForBuyer(const
 	return WebFile(request);
 }
 
+DiadocApi::WebFile DiadocApi::GenerateRecipientTitleXml(const std::wstring& boxId, const std::wstring& senderTitleMessageId, const std::wstring& senderTitleAttachmentId, const DiadocApi::Bytes_t& userContractData, const std::wstring& documentVersion)
+{
+	WppTraceDebugOut("GenerateRecipientTitleXml...");
+	std::wstringstream queryString;
+	queryString << L"/GenerateRecipientTitleXml?boxId=" << StringHelper::CanonicalizeUrl(boxId)
+		<< L"&senderTitleMessageId=" << StringHelper::CanonicalizeUrl(senderTitleMessageId)
+		<< L"&senderTitleAttachmentId=" << StringHelper::CanonicalizeUrl(senderTitleAttachmentId)
+		<< L"&documentVersion=" << StringHelper::CanonicalizeUrl(documentVersion);
+	auto connect = session_.Connect(api_url_.c_str(), api_port_);
+	auto request = connect.OpenRequest(POST.c_str(), queryString.str().c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
+	SendRequest(request, userContractData);
+	return WebFile(request);
+}
+
 // WARN: [[deprecated]]
 // WARN: Use overload with DocumentTitleType parameter
 Signers::ExtendedSignerDetails DiadocApi::GetExtendedSignerDetails(const std::wstring& token, const std::wstring& boxId, const std::wstring& thumbprint, bool forBuyer, bool forCorrection)
