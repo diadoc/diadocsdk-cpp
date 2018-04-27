@@ -10,7 +10,7 @@ import "Documents/NonformalizedDocument.proto";
 import "Documents/UnilateralDocument.proto";
 import "Documents/UniversalTransferDocument.proto";
 import "ResolutionTarget.proto";
-import "ForwardDocumentEvent.proto";
+import "ForwardDocumentEvent.proto"; 
 import "Events/DiadocMessage-PostApi.proto";
 
 package Diadoc.Api.Proto.Documents;
@@ -76,7 +76,7 @@ message Document {
 	optional string ResolutionRouteId = 60 [default = ""];
 	optional string AttachmentVersion = 61;
 	optional ProxySignatureStatus ProxySignatureStatus = 62 [default = UnknownProxySignatureStatus];
-
+	
 	required string TypeNamedId = 63;
 	required string Function = 64;
 	required int32 WorkflowId = 65;
@@ -138,7 +138,7 @@ enum ProxySignatureStatus {
 	ProxySignatureRejected = 4;
 	InvalidProxySignature = 5;
 }
-
+ 
 
 enum GeneralReceiptStatus {
 	GeneralReceiptStatusUnknown = 0;
