@@ -190,6 +190,13 @@ class OrganizationUserPermissions : public ::google::protobuf::Message {
   inline ::std::string* release_jobtitle();
   inline void set_allocated_jobtitle(::std::string* jobtitle);
 
+  // required bool CanCreateDocuments = 11;
+  inline bool has_cancreatedocuments() const;
+  inline void clear_cancreatedocuments();
+  static const int kCanCreateDocumentsFieldNumber = 11;
+  inline bool cancreatedocuments() const;
+  inline void set_cancreatedocuments(bool value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.OrganizationUserPermissions)
  private:
   inline void set_has_userdepartmentid();
@@ -206,6 +213,8 @@ class OrganizationUserPermissions : public ::google::protobuf::Message {
   inline void clear_has_canrequestresolutions();
   inline void set_has_jobtitle();
   inline void clear_has_jobtitle();
+  inline void set_has_cancreatedocuments();
+  inline void clear_has_cancreatedocuments();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -219,6 +228,7 @@ class OrganizationUserPermissions : public ::google::protobuf::Message {
   bool canrequestresolutions_;
   ::google::protobuf::RepeatedPtrField< ::std::string> selecteddepartmentids_;
   ::std::string* jobtitle_;
+  bool cancreatedocuments_;
   friend void  protobuf_AddDesc_OrganizationUserPermissions_2eproto();
   friend void protobuf_AssignDesc_OrganizationUserPermissions_2eproto();
   friend void protobuf_ShutdownFile_OrganizationUserPermissions_2eproto();
@@ -558,6 +568,30 @@ inline void OrganizationUserPermissions::set_allocated_jobtitle(::std::string* j
     jobtitle_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.OrganizationUserPermissions.JobTitle)
+}
+
+// required bool CanCreateDocuments = 11;
+inline bool OrganizationUserPermissions::has_cancreatedocuments() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void OrganizationUserPermissions::set_has_cancreatedocuments() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void OrganizationUserPermissions::clear_has_cancreatedocuments() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void OrganizationUserPermissions::clear_cancreatedocuments() {
+  cancreatedocuments_ = false;
+  clear_has_cancreatedocuments();
+}
+inline bool OrganizationUserPermissions::cancreatedocuments() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.OrganizationUserPermissions.CanCreateDocuments)
+  return cancreatedocuments_;
+}
+inline void OrganizationUserPermissions::set_cancreatedocuments(bool value) {
+  set_has_cancreatedocuments();
+  cancreatedocuments_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.OrganizationUserPermissions.CanCreateDocuments)
 }
 
 
