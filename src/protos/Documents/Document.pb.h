@@ -30,6 +30,7 @@
 #include "CustomDataItem.pb.h"
 #include "DocumentType.pb.h"
 #include "DocumentDirection.pb.h"
+#include "LockMode.pb.h"
 #include "Documents/AcceptanceCertificateDocument.pb.h"
 #include "Documents/BilateralDocument.pb.h"
 #include "Documents/InvoiceDocument.pb.h"
@@ -967,6 +968,13 @@ class Document : public ::google::protobuf::Message {
   inline ::std::string* release_editingsettingid();
   inline void set_allocated_editingsettingid(::std::string* editingsettingid);
 
+  // required .Diadoc.Api.Proto.LockMode LockMode = 74;
+  inline bool has_lockmode() const;
+  inline void clear_lockmode();
+  static const int kLockModeFieldNumber = 74;
+  inline ::Diadoc::Api::Proto::LockMode lockmode() const;
+  inline void set_lockmode(::Diadoc::Api::Proto::LockMode value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.Document)
  private:
   inline void set_has_indexkey();
@@ -1101,6 +1109,8 @@ class Document : public ::google::protobuf::Message {
   inline void clear_has_origin();
   inline void set_has_editingsettingid();
   inline void clear_has_editingsettingid();
+  inline void set_has_lockmode();
+  inline void clear_has_lockmode();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1177,6 +1187,7 @@ class Document : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Documents::AmendmentRequestMetadata* amendmentrequestmetadata_;
   ::Diadoc::Api::Proto::Documents::Origin* origin_;
   ::std::string* editingsettingid_;
+  int lockmode_;
   friend void  protobuf_AddDesc_Documents_2fDocument_2eproto();
   friend void protobuf_AssignDesc_Documents_2fDocument_2eproto();
   friend void protobuf_ShutdownFile_Documents_2fDocument_2eproto();
@@ -4895,6 +4906,31 @@ inline void Document::set_allocated_editingsettingid(::std::string* editingsetti
     editingsettingid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.EditingSettingId)
+}
+
+// required .Diadoc.Api.Proto.LockMode LockMode = 74;
+inline bool Document::has_lockmode() const {
+  return (_has_bits_[2] & 0x00000080u) != 0;
+}
+inline void Document::set_has_lockmode() {
+  _has_bits_[2] |= 0x00000080u;
+}
+inline void Document::clear_has_lockmode() {
+  _has_bits_[2] &= ~0x00000080u;
+}
+inline void Document::clear_lockmode() {
+  lockmode_ = 0;
+  clear_has_lockmode();
+}
+inline ::Diadoc::Api::Proto::LockMode Document::lockmode() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Document.LockMode)
+  return static_cast< ::Diadoc::Api::Proto::LockMode >(lockmode_);
+}
+inline void Document::set_lockmode(::Diadoc::Api::Proto::LockMode value) {
+  assert(::Diadoc::Api::Proto::LockMode_IsValid(value));
+  set_has_lockmode();
+  lockmode_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Document.LockMode)
 }
 
 // -------------------------------------------------------------------
