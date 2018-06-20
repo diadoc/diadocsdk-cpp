@@ -27,6 +27,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "DocumentId.pb.h"
 #include "CustomDataItem.pb.h"
+#include "LockMode.pb.h"
 #include "Invoicing/Signer.pb.h"
 #include "Invoicing/ExtendedSigner.pb.h"
 #include "Events/ResolutionInfo.pb.h"
@@ -540,6 +541,13 @@ class MessageToPost : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::DocumentAttachment >*
       mutable_documentattachments();
 
+  // optional .Diadoc.Api.Proto.LockMode LockMode = 35 [default = None];
+  inline bool has_lockmode() const;
+  inline void clear_lockmode();
+  static const int kLockModeFieldNumber = 35;
+  inline ::Diadoc::Api::Proto::LockMode lockmode() const;
+  inline void set_lockmode(::Diadoc::Api::Proto::LockMode value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.MessageToPost)
  private:
   inline void set_has_fromboxid();
@@ -566,6 +574,8 @@ class MessageToPost : public ::google::protobuf::Message {
   inline void clear_has_proxydepartmentid();
   inline void set_has_lockpacket();
   inline void clear_has_lockpacket();
+  inline void set_has_lockmode();
+  inline void clear_has_lockmode();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -603,6 +613,7 @@ class MessageToPost : public ::google::protobuf::Message {
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::SupplementaryAgreementAttachment > supplementaryagreements_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::XmlDocumentAttachment > universaltransferdocumentsellertitles_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::DocumentAttachment > documentattachments_;
+  int lockmode_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -9886,6 +9897,31 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::Docum
 MessageToPost::mutable_documentattachments() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.MessageToPost.DocumentAttachments)
   return &documentattachments_;
+}
+
+// optional .Diadoc.Api.Proto.LockMode LockMode = 35 [default = None];
+inline bool MessageToPost::has_lockmode() const {
+  return (_has_bits_[1] & 0x00000002u) != 0;
+}
+inline void MessageToPost::set_has_lockmode() {
+  _has_bits_[1] |= 0x00000002u;
+}
+inline void MessageToPost::clear_has_lockmode() {
+  _has_bits_[1] &= ~0x00000002u;
+}
+inline void MessageToPost::clear_lockmode() {
+  lockmode_ = 1;
+  clear_has_lockmode();
+}
+inline ::Diadoc::Api::Proto::LockMode MessageToPost::lockmode() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.MessageToPost.LockMode)
+  return static_cast< ::Diadoc::Api::Proto::LockMode >(lockmode_);
+}
+inline void MessageToPost::set_lockmode(::Diadoc::Api::Proto::LockMode value) {
+  assert(::Diadoc::Api::Proto::LockMode_IsValid(value));
+  set_has_lockmode();
+  lockmode_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.MessageToPost.LockMode)
 }
 
 // -------------------------------------------------------------------

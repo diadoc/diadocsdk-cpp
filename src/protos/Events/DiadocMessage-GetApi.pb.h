@@ -27,6 +27,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "Content.pb.h"
 #include "DocumentId.pb.h"
+#include "LockMode.pb.h"
 #include "Documents/Document.pb.h"
 #include "Events/CancellationInfo.pb.h"
 #include "Events/ResolutionInfo.pb.h"
@@ -591,6 +592,13 @@ class Message : public ::google::protobuf::Message {
   inline bool packetislocked() const;
   inline void set_packetislocked(bool value);
 
+  // required .Diadoc.Api.Proto.LockMode LockMode = 21;
+  inline bool has_lockmode() const;
+  inline void clear_lockmode();
+  static const int kLockModeFieldNumber = 21;
+  inline ::Diadoc::Api::Proto::LockMode lockmode() const;
+  inline void set_lockmode(::Diadoc::Api::Proto::LockMode value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.Message)
  private:
   inline void set_has_messageid();
@@ -629,6 +637,8 @@ class Message : public ::google::protobuf::Message {
   inline void clear_has_proxytitle();
   inline void set_has_packetislocked();
   inline void clear_has_packetislocked();
+  inline void set_has_lockmode();
+  inline void clear_has_lockmode();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -654,6 +664,7 @@ class Message : public ::google::protobuf::Message {
   bool packetislocked_;
   ::std::string* proxyboxid_;
   ::std::string* proxytitle_;
+  int lockmode_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dGetApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dGetApi_2eproto();
@@ -2753,6 +2764,31 @@ inline void Message::set_packetislocked(bool value) {
   set_has_packetislocked();
   packetislocked_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Message.PacketIsLocked)
+}
+
+// required .Diadoc.Api.Proto.LockMode LockMode = 21;
+inline bool Message::has_lockmode() const {
+  return (_has_bits_[0] & 0x00100000u) != 0;
+}
+inline void Message::set_has_lockmode() {
+  _has_bits_[0] |= 0x00100000u;
+}
+inline void Message::clear_has_lockmode() {
+  _has_bits_[0] &= ~0x00100000u;
+}
+inline void Message::clear_lockmode() {
+  lockmode_ = 0;
+  clear_has_lockmode();
+}
+inline ::Diadoc::Api::Proto::LockMode Message::lockmode() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Message.LockMode)
+  return static_cast< ::Diadoc::Api::Proto::LockMode >(lockmode_);
+}
+inline void Message::set_lockmode(::Diadoc::Api::Proto::LockMode value) {
+  assert(::Diadoc::Api::Proto::LockMode_IsValid(value));
+  set_has_lockmode();
+  lockmode_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Message.LockMode)
 }
 
 // -------------------------------------------------------------------
