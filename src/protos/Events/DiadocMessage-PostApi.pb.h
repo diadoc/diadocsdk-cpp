@@ -8118,6 +8118,13 @@ class TemplateToPost : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::TemplateDocumentAttachment >*
       mutable_documentattachments();
 
+  // optional .Diadoc.Api.Proto.LockMode LockMode = 7 [default = None];
+  inline bool has_lockmode() const;
+  inline void clear_lockmode();
+  static const int kLockModeFieldNumber = 7;
+  inline ::Diadoc::Api::Proto::LockMode lockmode() const;
+  inline void set_lockmode(::Diadoc::Api::Proto::LockMode value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.TemplateToPost)
  private:
   inline void set_has_fromboxid();
@@ -8130,6 +8137,8 @@ class TemplateToPost : public ::google::protobuf::Message {
   inline void clear_has_messagetoboxid();
   inline void set_has_messagetodepartmentid();
   inline void clear_has_messagetodepartmentid();
+  inline void set_has_lockmode();
+  inline void clear_has_lockmode();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -8141,6 +8150,7 @@ class TemplateToPost : public ::google::protobuf::Message {
   ::std::string* messagetoboxid_;
   ::std::string* messagetodepartmentid_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::TemplateDocumentAttachment > documentattachments_;
+  int lockmode_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -26671,6 +26681,31 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::Templ
 TemplateToPost::mutable_documentattachments() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.TemplateToPost.DocumentAttachments)
   return &documentattachments_;
+}
+
+// optional .Diadoc.Api.Proto.LockMode LockMode = 7 [default = None];
+inline bool TemplateToPost::has_lockmode() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void TemplateToPost::set_has_lockmode() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void TemplateToPost::clear_has_lockmode() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void TemplateToPost::clear_lockmode() {
+  lockmode_ = 1;
+  clear_has_lockmode();
+}
+inline ::Diadoc::Api::Proto::LockMode TemplateToPost::lockmode() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.TemplateToPost.LockMode)
+  return static_cast< ::Diadoc::Api::Proto::LockMode >(lockmode_);
+}
+inline void TemplateToPost::set_lockmode(::Diadoc::Api::Proto::LockMode value) {
+  assert(::Diadoc::Api::Proto::LockMode_IsValid(value));
+  set_has_lockmode();
+  lockmode_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.TemplateToPost.LockMode)
 }
 
 // -------------------------------------------------------------------
