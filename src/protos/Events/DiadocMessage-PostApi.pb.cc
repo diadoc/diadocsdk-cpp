@@ -1211,13 +1211,14 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ResolutionRouteRemoval));
   TemplateToPost_descriptor_ = file->message_type(49);
-  static const int TemplateToPost_offsets_[6] = {
+  static const int TemplateToPost_offsets_[7] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, fromboxid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, toboxid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, messagefromboxid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, messagetoboxid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, messagetodepartmentid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, documentattachments_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, lockmode_),
   };
   TemplateToPost_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1936,29 +1937,30 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
     "pi.Proto.DocumentId\"d\n\026ResolutionRouteRe"
     "moval\022\026\n\016ParentEntityId\030\001 \002(\t\022\017\n\007RouteId"
     "\030\002 \002(\t\022\021\n\007Comment\030\003 \001(\t:\000\022\016\n\006Labels\030\004 \003("
-    "\t\"\327\001\n\016TemplateToPost\022\021\n\tFromBoxId\030\001 \002(\t\022"
+    "\t\"\213\002\n\016TemplateToPost\022\021\n\tFromBoxId\030\001 \002(\t\022"
     "\017\n\007ToBoxId\030\002 \002(\t\022\030\n\020MessageFromBoxId\030\003 \002"
     "(\t\022\026\n\016MessageToBoxId\030\004 \002(\t\022\035\n\025MessageToD"
     "epartmentId\030\005 \001(\t\022P\n\023DocumentAttachments"
     "\030\006 \003(\01323.Diadoc.Api.Proto.Events.Templat"
-    "eDocumentAttachment\"\320\002\n\032TemplateDocument"
-    "Attachment\022A\n\017UnsignedContent\030\001 \002(\0132(.Di"
-    "adoc.Api.Proto.Events.UnsignedContent\022\017\n"
-    "\007Comment\030\002 \001(\t\022\023\n\013TypeNamedId\030\003 \002(\t\022\020\n\010F"
-    "unction\030\004 \001(\t\022\017\n\007Version\030\005 \001(\t\0227\n\010Metada"
-    "ta\030\006 \003(\0132%.Diadoc.Api.Proto.Events.Metad"
-    "ataItem\022\022\n\nWorkflowId\030\007 \001(\005\022\030\n\020CustomDoc"
-    "umentId\030\010 \001(\t\022\030\n\020EditingSettingId\030\t \001(\t\022"
-    "%\n\026NeedRecipientSignature\030\n \001(\010:\005false\"7"
-    "\n\017UnsignedContent\022\017\n\007Content\030\001 \001(\014\022\023\n\013Na"
-    "meOnShelf\030\002 \001(\t\"\223\001\n\034TemplateTransformati"
-    "onToPost\022\r\n\005BoxId\030\001 \002(\t\022\022\n\nTemplateId\030\002 "
-    "\002(\t\022P\n\027DocumentTransformations\030\003 \003(\0132/.D"
-    "iadoc.Api.Proto.Events.DocumentTransform"
-    "ation\"F\n\026DocumentTransformation\022\022\n\nDocum"
-    "entId\030\001 \002(\t\022\030\n\020CustomDocumentId\030\002 \001(\t*/\n"
-    "\030CustomDataPatchOperation\022\007\n\003Set\020\000\022\n\n\006Re"
-    "move\020\001", 16126);
+    "eDocumentAttachment\0222\n\010LockMode\030\007 \001(\0162\032."
+    "Diadoc.Api.Proto.LockMode:\004None\"\320\002\n\032Temp"
+    "lateDocumentAttachment\022A\n\017UnsignedConten"
+    "t\030\001 \002(\0132(.Diadoc.Api.Proto.Events.Unsign"
+    "edContent\022\017\n\007Comment\030\002 \001(\t\022\023\n\013TypeNamedI"
+    "d\030\003 \002(\t\022\020\n\010Function\030\004 \001(\t\022\017\n\007Version\030\005 \001"
+    "(\t\0227\n\010Metadata\030\006 \003(\0132%.Diadoc.Api.Proto."
+    "Events.MetadataItem\022\022\n\nWorkflowId\030\007 \001(\005\022"
+    "\030\n\020CustomDocumentId\030\010 \001(\t\022\030\n\020EditingSett"
+    "ingId\030\t \001(\t\022%\n\026NeedRecipientSignature\030\n "
+    "\001(\010:\005false\"7\n\017UnsignedContent\022\017\n\007Content"
+    "\030\001 \001(\014\022\023\n\013NameOnShelf\030\002 \001(\t\"\223\001\n\034Template"
+    "TransformationToPost\022\r\n\005BoxId\030\001 \002(\t\022\022\n\nT"
+    "emplateId\030\002 \002(\t\022P\n\027DocumentTransformatio"
+    "ns\030\003 \003(\0132/.Diadoc.Api.Proto.Events.Docum"
+    "entTransformation\"F\n\026DocumentTransformat"
+    "ion\022\022\n\nDocumentId\030\001 \002(\t\022\030\n\020CustomDocumen"
+    "tId\030\002 \001(\t*/\n\030CustomDataPatchOperation\022\007\n"
+    "\003Set\020\000\022\n\n\006Remove\020\001", 16178);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Events/DiadocMessage-PostApi.proto", &protobuf_RegisterTypes);
   MessageToPost::default_instance_ = new MessageToPost();
@@ -27561,6 +27563,7 @@ const int TemplateToPost::kMessageFromBoxIdFieldNumber;
 const int TemplateToPost::kMessageToBoxIdFieldNumber;
 const int TemplateToPost::kMessageToDepartmentIdFieldNumber;
 const int TemplateToPost::kDocumentAttachmentsFieldNumber;
+const int TemplateToPost::kLockModeFieldNumber;
 #endif  // !_MSC_VER
 
 TemplateToPost::TemplateToPost()
@@ -27587,6 +27590,7 @@ void TemplateToPost::SharedCtor() {
   messagefromboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   messagetoboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   messagetodepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  lockmode_ = 1;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -27637,7 +27641,7 @@ TemplateToPost* TemplateToPost::New() const {
 }
 
 void TemplateToPost::Clear() {
-  if (_has_bits_[0 / 32] & 31) {
+  if (_has_bits_[0 / 32] & 95) {
     if (has_fromboxid()) {
       if (fromboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         fromboxid_->clear();
@@ -27663,6 +27667,7 @@ void TemplateToPost::Clear() {
         messagetodepartmentid_->clear();
       }
     }
+    lockmode_ = 1;
   }
   documentattachments_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -27773,6 +27778,26 @@ bool TemplateToPost::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(50)) goto parse_DocumentAttachments;
+        if (input->ExpectTag(56)) goto parse_LockMode;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.LockMode LockMode = 7 [default = None];
+      case 7: {
+        if (tag == 56) {
+         parse_LockMode:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Diadoc::Api::Proto::LockMode_IsValid(value)) {
+            set_lockmode(static_cast< ::Diadoc::Api::Proto::LockMode >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(7, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -27858,6 +27883,12 @@ void TemplateToPost::SerializeWithCachedSizes(
       6, this->documentattachments(i), output);
   }
 
+  // optional .Diadoc.Api.Proto.LockMode LockMode = 7 [default = None];
+  if (has_lockmode()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      7, this->lockmode(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -27930,6 +27961,12 @@ void TemplateToPost::SerializeWithCachedSizes(
         6, this->documentattachments(i), target);
   }
 
+  // optional .Diadoc.Api.Proto.LockMode LockMode = 7 [default = None];
+  if (has_lockmode()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      7, this->lockmode(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -27975,6 +28012,12 @@ int TemplateToPost::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->messagetodepartmentid());
+    }
+
+    // optional .Diadoc.Api.Proto.LockMode LockMode = 7 [default = None];
+    if (has_lockmode()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->lockmode());
     }
 
   }
@@ -28028,6 +28071,9 @@ void TemplateToPost::MergeFrom(const TemplateToPost& from) {
     if (from.has_messagetodepartmentid()) {
       set_messagetodepartmentid(from.messagetodepartmentid());
     }
+    if (from.has_lockmode()) {
+      set_lockmode(from.lockmode());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -28059,6 +28105,7 @@ void TemplateToPost::Swap(TemplateToPost* other) {
     std::swap(messagetoboxid_, other->messagetoboxid_);
     std::swap(messagetodepartmentid_, other->messagetodepartmentid_);
     documentattachments_.Swap(&other->documentattachments_);
+    std::swap(lockmode_, other->lockmode_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
