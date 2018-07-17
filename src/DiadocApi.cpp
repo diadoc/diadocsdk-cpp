@@ -1005,6 +1005,22 @@ DiadocApi::WebFile DiadocApi::GenerateUniversalTransferDocumentXmlForBuyer(const
 	return WebFile(request);
 }
 
+DiadocApi::WebFile DiadocApi::GenerateSenderTitleXml(const std::wstring& boxId, const std::wstring& documentTypeNamedId, const std::wstring& documentFunction, const std::wstring& documentVersion, const Bytes_t& userContractData, const std::wstring& editingSettingId, bool disableValidation)
+{
+	WppTraceDebugOut("GenerateSenderTitleXml...");
+	std::wstringstream queryString;
+	queryString << L"/GenerateSenderTitleXml?boxId=" << StringHelper::CanonicalizeUrl(boxId)
+		<< L"&documentTypeNamedId=" << StringHelper::CanonicalizeUrl(documentTypeNamedId)
+		<< L"&documentFunction=" << StringHelper::CanonicalizeUrl(documentFunction)
+		<< L"&documentVersion=" << StringHelper::CanonicalizeUrl(documentVersion)
+		<< L"&editingSettingId=" << StringHelper::CanonicalizeUrl(editingSettingId)
+		<< (disableValidation ? L"&disableValidation" : L"");
+	auto connect = session_.Connect(api_url_.c_str(), api_port_);
+	auto request = connect.OpenRequest(POST.c_str(), queryString.str().c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
+	SendRequest(request, userContractData);
+	return WebFile(request);
+}
+
 DiadocApi::WebFile DiadocApi::GenerateRecipientTitleXml(const std::wstring& boxId, const std::wstring& senderTitleMessageId, const std::wstring& senderTitleAttachmentId, const DiadocApi::Bytes_t& userContractData, const std::wstring& documentVersion)
 {
 	WppTraceDebugOut("GenerateRecipientTitleXml...");

@@ -160,6 +160,7 @@ public:
 	WebFile GenerateUniversalTransferDocumentXmlForSeller(const Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentSellerTitleInfo& utdSellerInfo, bool disableValidation = false);
 	WebFile GenerateUniversalCorrectionDocumentXmlForSeller(const Diadoc::Api::Proto::Invoicing::UniversalCorrectionDocumentSellerTitleInfo& utdSellerInfo, bool disableValidation = false);
 	WebFile GenerateUniversalTransferDocumentXmlForBuyer(const Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo& utdBuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId);
+	WebFile GenerateSenderTitleXml(const std::wstring& boxId, const std::wstring& documentTypeNamedId, const std::wstring& documentFunction, const std::wstring& documentVersion, const Bytes_t& userContractData, const std::wstring& editingSettingId = std::wstring(), bool disableValidation = false);
 	WebFile GenerateRecipientTitleXml(const std::wstring& boxId, const std::wstring& senderTitleMessageId, const std::wstring& senderTitleAttachmentId, const Bytes_t& userContractData, const std::wstring& documentVersion);
 
 	// WARN: [[deprecated]]
