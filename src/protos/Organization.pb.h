@@ -452,6 +452,13 @@ class Organization : public ::google::protobuf::Message {
   inline bool isforeign() const;
   inline void set_isforeign(bool value);
 
+  // optional bool HasCertificateToSign = 26;
+  inline bool has_hascertificatetosign() const;
+  inline void clear_hascertificatetosign();
+  static const int kHasCertificateToSignFieldNumber = 26;
+  inline bool hascertificatetosign() const;
+  inline void set_hascertificatetosign(bool value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Organization)
  private:
   inline void set_has_orgid();
@@ -498,6 +505,8 @@ class Organization : public ::google::protobuf::Message {
   inline void clear_has_certificateofregistryinfo();
   inline void set_has_isforeign();
   inline void clear_has_isforeign();
+  inline void set_has_hascertificatetosign();
+  inline void clear_has_hascertificatetosign();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -520,13 +529,14 @@ class Organization : public ::google::protobuf::Message {
   bool istest_;
   bool isbranch_;
   ::google::protobuf::int32 invitationcount_;
+  ::google::protobuf::int32 searchcount_;
+  int sociability_;
+  ::std::string* liquidationdate_;
+  ::std::string* certificateofregistryinfo_;
   bool isroaming_;
   bool isemployee_;
   bool isforeign_;
-  ::google::protobuf::int32 searchcount_;
-  ::std::string* liquidationdate_;
-  ::std::string* certificateofregistryinfo_;
-  int sociability_;
+  bool hascertificatetosign_;
   friend void  protobuf_AddDesc_Organization_2eproto();
   friend void protobuf_AssignDesc_Organization_2eproto();
   friend void protobuf_ShutdownFile_Organization_2eproto();
@@ -2048,6 +2058,30 @@ inline void Organization::set_isforeign(bool value) {
   set_has_isforeign();
   isforeign_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Organization.IsForeign)
+}
+
+// optional bool HasCertificateToSign = 26;
+inline bool Organization::has_hascertificatetosign() const {
+  return (_has_bits_[0] & 0x01000000u) != 0;
+}
+inline void Organization::set_has_hascertificatetosign() {
+  _has_bits_[0] |= 0x01000000u;
+}
+inline void Organization::clear_has_hascertificatetosign() {
+  _has_bits_[0] &= ~0x01000000u;
+}
+inline void Organization::clear_hascertificatetosign() {
+  hascertificatetosign_ = false;
+  clear_has_hascertificatetosign();
+}
+inline bool Organization::hascertificatetosign() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Organization.HasCertificateToSign)
+  return hascertificatetosign_;
+}
+inline void Organization::set_hascertificatetosign(bool value) {
+  set_has_hascertificatetosign();
+  hascertificatetosign_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Organization.HasCertificateToSign)
 }
 
 // -------------------------------------------------------------------

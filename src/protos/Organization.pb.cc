@@ -62,7 +62,7 @@ void protobuf_AssignDesc_Organization_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(OrganizationList));
   Organization_descriptor_ = file->message_type(1);
-  static const int Organization_offsets_[24] = {
+  static const int Organization_offsets_[25] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, orgid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, inn_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, kpp_),
@@ -87,6 +87,7 @@ void protobuf_AssignDesc_Organization_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, liquidationdate_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, certificateofregistryinfo_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, isforeign_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Organization, hascertificatetosign_),
   };
   Organization_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -187,7 +188,7 @@ void protobuf_AddDesc_Organization_2eproto() {
     "\n\022Organization.proto\022\020Diadoc.Api.Proto\032\r"
     "Address.proto\"I\n\020OrganizationList\0225\n\rOrg"
     "anizations\030\001 \003(\0132\036.Diadoc.Api.Proto.Orga"
-    "nization\"\325\004\n\014Organization\022\r\n\005OrgId\030\001 \002(\t"
+    "nization\"\363\004\n\014Organization\022\r\n\005OrgId\030\001 \002(\t"
     "\022\013\n\003Inn\030\002 \002(\t\022\013\n\003Kpp\030\003 \001(\t\022\020\n\010FullName\030\004"
     " \002(\t\022\021\n\tShortName\030\005 \001(\t\022$\n\005Boxes\030\007 \003(\0132\025"
     ".Diadoc.Api.Proto.Box\022\014\n\004Ogrn\030\010 \001(\t\022\030\n\020F"
@@ -202,20 +203,20 @@ void protobuf_AddDesc_Organization_2eproto() {
     "\013Sociability\030\026 \002(\0162\035.Diadoc.Api.Proto.So"
     "ciability\022\027\n\017LiquidationDate\030\027 \001(\t\022!\n\031Ce"
     "rtificateOfRegistryInfo\030\030 \001(\t\022\021\n\tIsForei"
-    "gn\030\031 \001(\010\"\266\001\n\nDepartment\022\024\n\014DepartmentId\030"
-    "\001 \002(\t\022\032\n\022ParentDepartmentId\030\002 \002(\t\022\014\n\004Nam"
-    "e\030\003 \002(\t\022\024\n\014Abbreviation\030\004 \001(\t\022\013\n\003Kpp\030\005 \001"
-    "(\t\022*\n\007Address\030\006 \001(\0132\031.Diadoc.Api.Proto.A"
-    "ddress\022\031\n\nIsDisabled\030\007 \001(\010:\005false\"\325\001\n\003Bo"
-    "x\022\r\n\005BoxId\030\001 \002(\t\022\r\n\005Title\030\002 \002(\t\0224\n\014Organ"
-    "ization\030\003 \001(\0132\036.Diadoc.Api.Proto.Organiz"
-    "ation\022W\n\024InvoiceFormatVersion\030\004 \001(\01622.Di"
-    "adoc.Api.Proto.OrganizationInvoiceFormat"
-    "Version:\005v5_02\022!\n\031EncryptedDocumentsAllo"
-    "wed\030\005 \001(\010*8\n OrganizationInvoiceFormatVe"
-    "rsion\022\t\n\005v5_01\020\001\022\t\n\005v5_02\020\002*:\n\013Sociabili"
-    "ty\022\024\n\020AllOrganizations\020\000\022\025\n\021Counteragent"
-    "sOnly\020\001", 1247);
+    "gn\030\031 \001(\010\022\034\n\024HasCertificateToSign\030\032 \001(\010\"\266"
+    "\001\n\nDepartment\022\024\n\014DepartmentId\030\001 \002(\t\022\032\n\022P"
+    "arentDepartmentId\030\002 \002(\t\022\014\n\004Name\030\003 \002(\t\022\024\n"
+    "\014Abbreviation\030\004 \001(\t\022\013\n\003Kpp\030\005 \001(\t\022*\n\007Addr"
+    "ess\030\006 \001(\0132\031.Diadoc.Api.Proto.Address\022\031\n\n"
+    "IsDisabled\030\007 \001(\010:\005false\"\325\001\n\003Box\022\r\n\005BoxId"
+    "\030\001 \002(\t\022\r\n\005Title\030\002 \002(\t\0224\n\014Organization\030\003 "
+    "\001(\0132\036.Diadoc.Api.Proto.Organization\022W\n\024I"
+    "nvoiceFormatVersion\030\004 \001(\01622.Diadoc.Api.P"
+    "roto.OrganizationInvoiceFormatVersion:\005v"
+    "5_02\022!\n\031EncryptedDocumentsAllowed\030\005 \001(\010*"
+    "8\n OrganizationInvoiceFormatVersion\022\t\n\005v"
+    "5_01\020\001\022\t\n\005v5_02\020\002*:\n\013Sociability\022\024\n\020AllO"
+    "rganizations\020\000\022\025\n\021CounteragentsOnly\020\001", 1277);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Organization.proto", &protobuf_RegisterTypes);
   OrganizationList::default_instance_ = new OrganizationList();
@@ -511,6 +512,7 @@ const int Organization::kSociabilityFieldNumber;
 const int Organization::kLiquidationDateFieldNumber;
 const int Organization::kCertificateOfRegistryInfoFieldNumber;
 const int Organization::kIsForeignFieldNumber;
+const int Organization::kHasCertificateToSignFieldNumber;
 #endif  // !_MSC_VER
 
 Organization::Organization()
@@ -555,6 +557,7 @@ void Organization::SharedCtor() {
   liquidationdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   certificateofregistryinfo_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   isforeign_ = false;
+  hascertificatetosign_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -688,8 +691,8 @@ void Organization::Clear() {
     }
   }
   if (_has_bits_[16 / 32] & 16711680) {
-    ZR_(invitationcount_, searchcount_);
-    sociability_ = 0;
+    ZR_(invitationcount_, sociability_);
+    ZR_(isroaming_, isforeign_);
     if (has_liquidationdate()) {
       if (liquidationdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         liquidationdate_->clear();
@@ -701,6 +704,7 @@ void Organization::Clear() {
       }
     }
   }
+  hascertificatetosign_ = false;
 
 #undef OFFSET_OF_FIELD_
 #undef ZR_
@@ -1099,6 +1103,21 @@ bool Organization::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(208)) goto parse_HasCertificateToSign;
+        break;
+      }
+
+      // optional bool HasCertificateToSign = 26;
+      case 26: {
+        if (tag == 208) {
+         parse_HasCertificateToSign:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &hascertificatetosign_)));
+          set_has_hascertificatetosign();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -1307,6 +1326,11 @@ void Organization::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(25, this->isforeign(), output);
   }
 
+  // optional bool HasCertificateToSign = 26;
+  if (has_hascertificatetosign()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(26, this->hascertificatetosign(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -1510,6 +1534,11 @@ void Organization::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(25, this->isforeign(), target);
   }
 
+  // optional bool HasCertificateToSign = 26;
+  if (has_hascertificatetosign()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(26, this->hascertificatetosign(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -1666,6 +1695,13 @@ int Organization::ByteSize() const {
     }
 
   }
+  if (_has_bits_[24 / 32] & (0xffu << (24 % 32))) {
+    // optional bool HasCertificateToSign = 26;
+    if (has_hascertificatetosign()) {
+      total_size += 2 + 1;
+    }
+
+  }
   // repeated .Diadoc.Api.Proto.Box Boxes = 7;
   total_size += 1 * this->boxes_size();
   for (int i = 0; i < this->boxes_size(); i++) {
@@ -1781,6 +1817,11 @@ void Organization::MergeFrom(const Organization& from) {
       set_isforeign(from.isforeign());
     }
   }
+  if (from._has_bits_[24 / 32] & (0xffu << (24 % 32))) {
+    if (from.has_hascertificatetosign()) {
+      set_hascertificatetosign(from.hascertificatetosign());
+    }
+  }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
@@ -1833,6 +1874,7 @@ void Organization::Swap(Organization* other) {
     std::swap(liquidationdate_, other->liquidationdate_);
     std::swap(certificateofregistryinfo_, other->certificateofregistryinfo_);
     std::swap(isforeign_, other->isforeign_);
+    std::swap(hascertificatetosign_, other->hascertificatetosign_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
