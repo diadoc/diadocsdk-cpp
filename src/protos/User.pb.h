@@ -37,6 +37,8 @@ void protobuf_AssignDesc_User_2eproto();
 void protobuf_ShutdownFile_User_2eproto();
 
 class User;
+class UserV2;
+class FullName;
 
 // ===================================================================
 
@@ -179,6 +181,241 @@ class User : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static User* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class UserV2 : public ::google::protobuf::Message {
+ public:
+  UserV2();
+  virtual ~UserV2();
+
+  UserV2(const UserV2& from);
+
+  inline UserV2& operator=(const UserV2& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const UserV2& default_instance();
+
+  void Swap(UserV2* other);
+
+  // implements Message ----------------------------------------------
+
+  UserV2* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const UserV2& from);
+  void MergeFrom(const UserV2& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string UserId = 1;
+  inline bool has_userid() const;
+  inline void clear_userid();
+  static const int kUserIdFieldNumber = 1;
+  inline const ::std::string& userid() const;
+  inline void set_userid(const ::std::string& value);
+  inline void set_userid(const char* value);
+  inline void set_userid(const char* value, size_t size);
+  inline ::std::string* mutable_userid();
+  inline ::std::string* release_userid();
+  inline void set_allocated_userid(::std::string* userid);
+
+  // optional string Login = 2;
+  inline bool has_login() const;
+  inline void clear_login();
+  static const int kLoginFieldNumber = 2;
+  inline const ::std::string& login() const;
+  inline void set_login(const ::std::string& value);
+  inline void set_login(const char* value);
+  inline void set_login(const char* value, size_t size);
+  inline ::std::string* mutable_login();
+  inline ::std::string* release_login();
+  inline void set_allocated_login(::std::string* login);
+
+  // optional .Diadoc.Api.Proto.FullName FullName = 3;
+  inline bool has_fullname() const;
+  inline void clear_fullname();
+  static const int kFullNameFieldNumber = 3;
+  inline const ::Diadoc::Api::Proto::FullName& fullname() const;
+  inline ::Diadoc::Api::Proto::FullName* mutable_fullname();
+  inline ::Diadoc::Api::Proto::FullName* release_fullname();
+  inline void set_allocated_fullname(::Diadoc::Api::Proto::FullName* fullname);
+
+  // required bool IsRegistered = 4;
+  inline bool has_isregistered() const;
+  inline void clear_isregistered();
+  static const int kIsRegisteredFieldNumber = 4;
+  inline bool isregistered() const;
+  inline void set_isregistered(bool value);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.UserV2)
+ private:
+  inline void set_has_userid();
+  inline void clear_has_userid();
+  inline void set_has_login();
+  inline void clear_has_login();
+  inline void set_has_fullname();
+  inline void clear_has_fullname();
+  inline void set_has_isregistered();
+  inline void clear_has_isregistered();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* userid_;
+  ::std::string* login_;
+  ::Diadoc::Api::Proto::FullName* fullname_;
+  bool isregistered_;
+  friend void  protobuf_AddDesc_User_2eproto();
+  friend void protobuf_AssignDesc_User_2eproto();
+  friend void protobuf_ShutdownFile_User_2eproto();
+
+  void InitAsDefaultInstance();
+  static UserV2* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class FullName : public ::google::protobuf::Message {
+ public:
+  FullName();
+  virtual ~FullName();
+
+  FullName(const FullName& from);
+
+  inline FullName& operator=(const FullName& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const FullName& default_instance();
+
+  void Swap(FullName* other);
+
+  // implements Message ----------------------------------------------
+
+  FullName* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const FullName& from);
+  void MergeFrom(const FullName& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string LastName = 1;
+  inline bool has_lastname() const;
+  inline void clear_lastname();
+  static const int kLastNameFieldNumber = 1;
+  inline const ::std::string& lastname() const;
+  inline void set_lastname(const ::std::string& value);
+  inline void set_lastname(const char* value);
+  inline void set_lastname(const char* value, size_t size);
+  inline ::std::string* mutable_lastname();
+  inline ::std::string* release_lastname();
+  inline void set_allocated_lastname(::std::string* lastname);
+
+  // required string FirstName = 2;
+  inline bool has_firstname() const;
+  inline void clear_firstname();
+  static const int kFirstNameFieldNumber = 2;
+  inline const ::std::string& firstname() const;
+  inline void set_firstname(const ::std::string& value);
+  inline void set_firstname(const char* value);
+  inline void set_firstname(const char* value, size_t size);
+  inline ::std::string* mutable_firstname();
+  inline ::std::string* release_firstname();
+  inline void set_allocated_firstname(::std::string* firstname);
+
+  // optional string MiddleName = 3;
+  inline bool has_middlename() const;
+  inline void clear_middlename();
+  static const int kMiddleNameFieldNumber = 3;
+  inline const ::std::string& middlename() const;
+  inline void set_middlename(const ::std::string& value);
+  inline void set_middlename(const char* value);
+  inline void set_middlename(const char* value, size_t size);
+  inline ::std::string* mutable_middlename();
+  inline ::std::string* release_middlename();
+  inline void set_allocated_middlename(::std::string* middlename);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.FullName)
+ private:
+  inline void set_has_lastname();
+  inline void clear_has_lastname();
+  inline void set_has_firstname();
+  inline void clear_has_firstname();
+  inline void set_has_middlename();
+  inline void clear_has_middlename();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* lastname_;
+  ::std::string* firstname_;
+  ::std::string* middlename_;
+  friend void  protobuf_AddDesc_User_2eproto();
+  friend void protobuf_AssignDesc_User_2eproto();
+  friend void protobuf_ShutdownFile_User_2eproto();
+
+  void InitAsDefaultInstance();
+  static FullName* default_instance_;
 };
 // ===================================================================
 
@@ -519,6 +756,459 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::CertificateIn
 User::mutable_cloudcertificates() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.User.CloudCertificates)
   return &cloudcertificates_;
+}
+
+// -------------------------------------------------------------------
+
+// UserV2
+
+// required string UserId = 1;
+inline bool UserV2::has_userid() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void UserV2::set_has_userid() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void UserV2::clear_has_userid() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void UserV2::clear_userid() {
+  if (userid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    userid_->clear();
+  }
+  clear_has_userid();
+}
+inline const ::std::string& UserV2::userid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.UserV2.UserId)
+  return *userid_;
+}
+inline void UserV2::set_userid(const ::std::string& value) {
+  set_has_userid();
+  if (userid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    userid_ = new ::std::string;
+  }
+  userid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.UserV2.UserId)
+}
+inline void UserV2::set_userid(const char* value) {
+  set_has_userid();
+  if (userid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    userid_ = new ::std::string;
+  }
+  userid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.UserV2.UserId)
+}
+inline void UserV2::set_userid(const char* value, size_t size) {
+  set_has_userid();
+  if (userid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    userid_ = new ::std::string;
+  }
+  userid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.UserV2.UserId)
+}
+inline ::std::string* UserV2::mutable_userid() {
+  set_has_userid();
+  if (userid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    userid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.UserV2.UserId)
+  return userid_;
+}
+inline ::std::string* UserV2::release_userid() {
+  clear_has_userid();
+  if (userid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = userid_;
+    userid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UserV2::set_allocated_userid(::std::string* userid) {
+  if (userid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete userid_;
+  }
+  if (userid) {
+    set_has_userid();
+    userid_ = userid;
+  } else {
+    clear_has_userid();
+    userid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.UserV2.UserId)
+}
+
+// optional string Login = 2;
+inline bool UserV2::has_login() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void UserV2::set_has_login() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void UserV2::clear_has_login() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void UserV2::clear_login() {
+  if (login_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    login_->clear();
+  }
+  clear_has_login();
+}
+inline const ::std::string& UserV2::login() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.UserV2.Login)
+  return *login_;
+}
+inline void UserV2::set_login(const ::std::string& value) {
+  set_has_login();
+  if (login_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    login_ = new ::std::string;
+  }
+  login_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.UserV2.Login)
+}
+inline void UserV2::set_login(const char* value) {
+  set_has_login();
+  if (login_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    login_ = new ::std::string;
+  }
+  login_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.UserV2.Login)
+}
+inline void UserV2::set_login(const char* value, size_t size) {
+  set_has_login();
+  if (login_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    login_ = new ::std::string;
+  }
+  login_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.UserV2.Login)
+}
+inline ::std::string* UserV2::mutable_login() {
+  set_has_login();
+  if (login_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    login_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.UserV2.Login)
+  return login_;
+}
+inline ::std::string* UserV2::release_login() {
+  clear_has_login();
+  if (login_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = login_;
+    login_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UserV2::set_allocated_login(::std::string* login) {
+  if (login_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete login_;
+  }
+  if (login) {
+    set_has_login();
+    login_ = login;
+  } else {
+    clear_has_login();
+    login_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.UserV2.Login)
+}
+
+// optional .Diadoc.Api.Proto.FullName FullName = 3;
+inline bool UserV2::has_fullname() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void UserV2::set_has_fullname() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void UserV2::clear_has_fullname() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void UserV2::clear_fullname() {
+  if (fullname_ != NULL) fullname_->::Diadoc::Api::Proto::FullName::Clear();
+  clear_has_fullname();
+}
+inline const ::Diadoc::Api::Proto::FullName& UserV2::fullname() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.UserV2.FullName)
+  return fullname_ != NULL ? *fullname_ : *default_instance_->fullname_;
+}
+inline ::Diadoc::Api::Proto::FullName* UserV2::mutable_fullname() {
+  set_has_fullname();
+  if (fullname_ == NULL) fullname_ = new ::Diadoc::Api::Proto::FullName;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.UserV2.FullName)
+  return fullname_;
+}
+inline ::Diadoc::Api::Proto::FullName* UserV2::release_fullname() {
+  clear_has_fullname();
+  ::Diadoc::Api::Proto::FullName* temp = fullname_;
+  fullname_ = NULL;
+  return temp;
+}
+inline void UserV2::set_allocated_fullname(::Diadoc::Api::Proto::FullName* fullname) {
+  delete fullname_;
+  fullname_ = fullname;
+  if (fullname) {
+    set_has_fullname();
+  } else {
+    clear_has_fullname();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.UserV2.FullName)
+}
+
+// required bool IsRegistered = 4;
+inline bool UserV2::has_isregistered() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void UserV2::set_has_isregistered() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void UserV2::clear_has_isregistered() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void UserV2::clear_isregistered() {
+  isregistered_ = false;
+  clear_has_isregistered();
+}
+inline bool UserV2::isregistered() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.UserV2.IsRegistered)
+  return isregistered_;
+}
+inline void UserV2::set_isregistered(bool value) {
+  set_has_isregistered();
+  isregistered_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.UserV2.IsRegistered)
+}
+
+// -------------------------------------------------------------------
+
+// FullName
+
+// required string LastName = 1;
+inline bool FullName::has_lastname() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void FullName::set_has_lastname() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void FullName::clear_has_lastname() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void FullName::clear_lastname() {
+  if (lastname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    lastname_->clear();
+  }
+  clear_has_lastname();
+}
+inline const ::std::string& FullName::lastname() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.FullName.LastName)
+  return *lastname_;
+}
+inline void FullName::set_lastname(const ::std::string& value) {
+  set_has_lastname();
+  if (lastname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    lastname_ = new ::std::string;
+  }
+  lastname_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.FullName.LastName)
+}
+inline void FullName::set_lastname(const char* value) {
+  set_has_lastname();
+  if (lastname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    lastname_ = new ::std::string;
+  }
+  lastname_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.FullName.LastName)
+}
+inline void FullName::set_lastname(const char* value, size_t size) {
+  set_has_lastname();
+  if (lastname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    lastname_ = new ::std::string;
+  }
+  lastname_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.FullName.LastName)
+}
+inline ::std::string* FullName::mutable_lastname() {
+  set_has_lastname();
+  if (lastname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    lastname_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.FullName.LastName)
+  return lastname_;
+}
+inline ::std::string* FullName::release_lastname() {
+  clear_has_lastname();
+  if (lastname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = lastname_;
+    lastname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void FullName::set_allocated_lastname(::std::string* lastname) {
+  if (lastname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete lastname_;
+  }
+  if (lastname) {
+    set_has_lastname();
+    lastname_ = lastname;
+  } else {
+    clear_has_lastname();
+    lastname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.FullName.LastName)
+}
+
+// required string FirstName = 2;
+inline bool FullName::has_firstname() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void FullName::set_has_firstname() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void FullName::clear_has_firstname() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void FullName::clear_firstname() {
+  if (firstname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    firstname_->clear();
+  }
+  clear_has_firstname();
+}
+inline const ::std::string& FullName::firstname() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.FullName.FirstName)
+  return *firstname_;
+}
+inline void FullName::set_firstname(const ::std::string& value) {
+  set_has_firstname();
+  if (firstname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    firstname_ = new ::std::string;
+  }
+  firstname_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.FullName.FirstName)
+}
+inline void FullName::set_firstname(const char* value) {
+  set_has_firstname();
+  if (firstname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    firstname_ = new ::std::string;
+  }
+  firstname_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.FullName.FirstName)
+}
+inline void FullName::set_firstname(const char* value, size_t size) {
+  set_has_firstname();
+  if (firstname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    firstname_ = new ::std::string;
+  }
+  firstname_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.FullName.FirstName)
+}
+inline ::std::string* FullName::mutable_firstname() {
+  set_has_firstname();
+  if (firstname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    firstname_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.FullName.FirstName)
+  return firstname_;
+}
+inline ::std::string* FullName::release_firstname() {
+  clear_has_firstname();
+  if (firstname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = firstname_;
+    firstname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void FullName::set_allocated_firstname(::std::string* firstname) {
+  if (firstname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete firstname_;
+  }
+  if (firstname) {
+    set_has_firstname();
+    firstname_ = firstname;
+  } else {
+    clear_has_firstname();
+    firstname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.FullName.FirstName)
+}
+
+// optional string MiddleName = 3;
+inline bool FullName::has_middlename() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void FullName::set_has_middlename() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void FullName::clear_has_middlename() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void FullName::clear_middlename() {
+  if (middlename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    middlename_->clear();
+  }
+  clear_has_middlename();
+}
+inline const ::std::string& FullName::middlename() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.FullName.MiddleName)
+  return *middlename_;
+}
+inline void FullName::set_middlename(const ::std::string& value) {
+  set_has_middlename();
+  if (middlename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    middlename_ = new ::std::string;
+  }
+  middlename_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.FullName.MiddleName)
+}
+inline void FullName::set_middlename(const char* value) {
+  set_has_middlename();
+  if (middlename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    middlename_ = new ::std::string;
+  }
+  middlename_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.FullName.MiddleName)
+}
+inline void FullName::set_middlename(const char* value, size_t size) {
+  set_has_middlename();
+  if (middlename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    middlename_ = new ::std::string;
+  }
+  middlename_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.FullName.MiddleName)
+}
+inline ::std::string* FullName::mutable_middlename() {
+  set_has_middlename();
+  if (middlename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    middlename_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.FullName.MiddleName)
+  return middlename_;
+}
+inline ::std::string* FullName::release_middlename() {
+  clear_has_middlename();
+  if (middlename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = middlename_;
+    middlename_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void FullName::set_allocated_middlename(::std::string* middlename) {
+  if (middlename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete middlename_;
+  }
+  if (middlename) {
+    set_has_middlename();
+    middlename_ = middlename;
+  } else {
+    clear_has_middlename();
+    middlename_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.FullName.MiddleName)
 }
 
 

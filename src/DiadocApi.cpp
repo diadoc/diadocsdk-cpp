@@ -1227,6 +1227,21 @@ Diadoc::Api::Proto::User DiadocApi::GetMyUser()
 	return FromProtoBytes<Diadoc::Api::Proto::User>(PerformHttpRequest(L"/GetMyUser", GET));
 }
 
+Diadoc::Api::Proto::UserV2 DiadocApi::GetMyUserV2()
+{
+	WppTraceDebugOut("GetMyUserV2...");
+	return FromProtoBytes<Diadoc::Api::Proto::UserV2>(PerformHttpRequest(L"/V2/GetMyUser", GET));
+}
+
+Diadoc::Api::Proto::Employees::Employee DiadocApi::GetEmployee(const std::wstring& boxId, const std::wstring& userId)
+{
+	WppTraceDebugOut("GetEmployee...");
+	std::wstringstream buf;
+	buf << L"/GetEmployee?boxId=" << StringHelper::CanonicalizeUrl(boxId)
+		<< L"/&userId=" << StringHelper::CanonicalizeUrl(userId);
+	return FromProtoBytes<Diadoc::Api::Proto::Employees::Employee>(PerformHttpRequest(buf.str(), GET));
+}
+
 OrganizationUserPermissions DiadocApi::GetMyPermissions(const std::wstring& orgId)
 {
 	WppTraceDebugOut("GetMyPermissions...");

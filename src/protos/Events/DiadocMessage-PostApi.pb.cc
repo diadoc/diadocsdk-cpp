@@ -1547,8 +1547,8 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::Diadoc::Api::Proto::protobuf_AddDesc_DocumentId_2eproto();
-  ::Diadoc::Api::Proto::protobuf_AddDesc_CustomDataItem_2eproto();
   ::Diadoc::Api::Proto::protobuf_AddDesc_LockMode_2eproto();
+  ::Diadoc::Api::Proto::protobuf_AddDesc_CustomDataItem_2eproto();
   ::Diadoc::Api::Proto::Invoicing::protobuf_AddDesc_Invoicing_2fSigner_2eproto();
   ::Diadoc::Api::Proto::Invoicing::Signers::protobuf_AddDesc_Invoicing_2fExtendedSigner_2eproto();
   ::Diadoc::Api::Proto::Events::protobuf_AddDesc_Events_2fResolutionInfo_2eproto();
@@ -1558,7 +1558,7 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\"Events/DiadocMessage-PostApi.proto\022\027Di"
     "adoc.Api.Proto.Events\032\020DocumentId.proto\032"
-    "\024CustomDataItem.proto\032\016LockMode.proto\032\026I"
+    "\016LockMode.proto\032\024CustomDataItem.proto\032\026I"
     "nvoicing/Signer.proto\032\036Invoicing/Extende"
     "dSigner.proto\032\033Events/ResolutionInfo.pro"
     "to\032\"Events/ResolutionRequestInfo.proto\032 "

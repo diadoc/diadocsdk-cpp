@@ -151,9 +151,10 @@ void protobuf_AssignDesc_Documents_2fTypes_2fDocumentTypeDescription_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(DocumentWorkflow));
   DocumentTitle_descriptor_ = file->message_type(5);
-  static const int DocumentTitle_offsets_[4] = {
+  static const int DocumentTitle_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentTitle, isformal_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentTitle, xsdurl_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentTitle, userdataxsdurl_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentTitle, metadataitems_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentTitle, encryptedmetadataitems_),
   };
@@ -303,27 +304,28 @@ void protobuf_AddDesc_Documents_2fTypes_2fDocumentTypeDescription_2eproto() {
     "es.DocumentTitle\022\020\n\010IsActual\030\005 \002(\010\022E\n\tWo"
     "rkflows\030\006 \003(\01322.Diadoc.Api.Proto.Documen"
     "ts.Types.DocumentWorkflow\"1\n\020DocumentWor"
-    "kflow\022\n\n\002Id\030\001 \002(\005\022\021\n\tIsDefault\030\002 \002(\010\"\330\001\n"
+    "kflow\022\n\n\002Id\030\001 \002(\005\022\021\n\tIsDefault\030\002 \002(\010\"\360\001\n"
     "\rDocumentTitle\022\020\n\010IsFormal\030\001 \002(\010\022\016\n\006XsdU"
-    "rl\030\002 \001(\t\022M\n\rMetadataItems\030\003 \003(\01326.Diadoc"
-    ".Api.Proto.Documents.Types.DocumentMetad"
-    "ataItem\022V\n\026EncryptedMetadataItems\030\004 \003(\0132"
-    "6.Diadoc.Api.Proto.Documents.Types.Docum"
-    "entMetadataItem\"\312\001\n\024DocumentMetadataItem"
-    "\022\n\n\002Id\030\001 \002(\t\022H\n\004Type\030\002 \002(\0162:.Diadoc.Api."
-    "Proto.Documents.Types.DocumentMetadataIt"
-    "emType\022\022\n\nIsRequired\030\003 \002(\010\022H\n\006Source\030\004 \002"
-    "(\01628.Diadoc.Api.Proto.Documents.Types.Do"
-    "cumentMetadataSource\"N\n\024DetectedDocument"
-    "Type\022\023\n\013TypeNamedId\030\001 \002(\t\022\020\n\010Function\030\002 "
-    "\002(\t\022\017\n\007Version\030\003 \002(\t\"l\n\033DetectDocumentTy"
-    "pesResponse\022M\n\rDocumentTypes\030\001 \003(\01326.Dia"
-    "doc.Api.Proto.Documents.Types.DetectedDo"
-    "cumentType*-\n\017DocumentDocflow\022\014\n\010Externa"
-    "l\020\000\022\014\n\010Internal\020\001*T\n\030DocumentMetadataIte"
-    "mType\022\n\n\006String\020\000\022\013\n\007Integer\020\001\022\013\n\007Decima"
-    "l\020\002\022\010\n\004Date\020\003\022\010\n\004Time\020\004*+\n\026DocumentMetad"
-    "ataSource\022\007\n\003Xml\020\000\022\010\n\004User\020\001", 1628);
+    "rl\030\002 \001(\t\022\026\n\016UserDataXsdUrl\030\005 \001(\t\022M\n\rMeta"
+    "dataItems\030\003 \003(\01326.Diadoc.Api.Proto.Docum"
+    "ents.Types.DocumentMetadataItem\022V\n\026Encry"
+    "ptedMetadataItems\030\004 \003(\01326.Diadoc.Api.Pro"
+    "to.Documents.Types.DocumentMetadataItem\""
+    "\312\001\n\024DocumentMetadataItem\022\n\n\002Id\030\001 \002(\t\022H\n\004"
+    "Type\030\002 \002(\0162:.Diadoc.Api.Proto.Documents."
+    "Types.DocumentMetadataItemType\022\022\n\nIsRequ"
+    "ired\030\003 \002(\010\022H\n\006Source\030\004 \002(\01628.Diadoc.Api."
+    "Proto.Documents.Types.DocumentMetadataSo"
+    "urce\"N\n\024DetectedDocumentType\022\023\n\013TypeName"
+    "dId\030\001 \002(\t\022\020\n\010Function\030\002 \002(\t\022\017\n\007Version\030\003"
+    " \002(\t\"l\n\033DetectDocumentTypesResponse\022M\n\rD"
+    "ocumentTypes\030\001 \003(\01326.Diadoc.Api.Proto.Do"
+    "cuments.Types.DetectedDocumentType*-\n\017Do"
+    "cumentDocflow\022\014\n\010External\020\000\022\014\n\010Internal\020"
+    "\001*T\n\030DocumentMetadataItemType\022\n\n\006String\020"
+    "\000\022\013\n\007Integer\020\001\022\013\n\007Decimal\020\002\022\010\n\004Date\020\003\022\010\n"
+    "\004Time\020\004*+\n\026DocumentMetadataSource\022\007\n\003Xml"
+    "\020\000\022\010\n\004User\020\001", 1652);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Documents/Types/DocumentTypeDescription.proto", &protobuf_RegisterTypes);
   DocumentTypeDescription::default_instance_ = new DocumentTypeDescription();
@@ -2064,6 +2066,7 @@ void DocumentWorkflow::Swap(DocumentWorkflow* other) {
 #ifndef _MSC_VER
 const int DocumentTitle::kIsFormalFieldNumber;
 const int DocumentTitle::kXsdUrlFieldNumber;
+const int DocumentTitle::kUserDataXsdUrlFieldNumber;
 const int DocumentTitle::kMetadataItemsFieldNumber;
 const int DocumentTitle::kEncryptedMetadataItemsFieldNumber;
 #endif  // !_MSC_VER
@@ -2089,6 +2092,7 @@ void DocumentTitle::SharedCtor() {
   _cached_size_ = 0;
   isformal_ = false;
   xsdurl_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  userdataxsdurl_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -2100,6 +2104,9 @@ DocumentTitle::~DocumentTitle() {
 void DocumentTitle::SharedDtor() {
   if (xsdurl_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete xsdurl_;
+  }
+  if (userdataxsdurl_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete userdataxsdurl_;
   }
   if (this != default_instance_) {
   }
@@ -2127,11 +2134,16 @@ DocumentTitle* DocumentTitle::New() const {
 }
 
 void DocumentTitle::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+  if (_has_bits_[0 / 32] & 7) {
     isformal_ = false;
     if (has_xsdurl()) {
       if (xsdurl_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         xsdurl_->clear();
+      }
+    }
+    if (has_userdataxsdurl()) {
+      if (userdataxsdurl_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        userdataxsdurl_->clear();
       }
     }
   }
@@ -2206,6 +2218,23 @@ bool DocumentTitle::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(34)) goto parse_EncryptedMetadataItems;
+        if (input->ExpectTag(42)) goto parse_UserDataXsdUrl;
+        break;
+      }
+
+      // optional string UserDataXsdUrl = 5;
+      case 5: {
+        if (tag == 42) {
+         parse_UserDataXsdUrl:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_userdataxsdurl()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->userdataxsdurl().data(), this->userdataxsdurl().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "userdataxsdurl");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -2262,6 +2291,16 @@ void DocumentTitle::SerializeWithCachedSizes(
       4, this->encryptedmetadataitems(i), output);
   }
 
+  // optional string UserDataXsdUrl = 5;
+  if (has_userdataxsdurl()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->userdataxsdurl().data(), this->userdataxsdurl().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "userdataxsdurl");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->userdataxsdurl(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -2302,6 +2341,17 @@ void DocumentTitle::SerializeWithCachedSizes(
         4, this->encryptedmetadataitems(i), target);
   }
 
+  // optional string UserDataXsdUrl = 5;
+  if (has_userdataxsdurl()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->userdataxsdurl().data(), this->userdataxsdurl().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "userdataxsdurl");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->userdataxsdurl(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -2324,6 +2374,13 @@ int DocumentTitle::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->xsdurl());
+    }
+
+    // optional string UserDataXsdUrl = 5;
+    if (has_userdataxsdurl()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->userdataxsdurl());
     }
 
   }
@@ -2377,6 +2434,9 @@ void DocumentTitle::MergeFrom(const DocumentTitle& from) {
     if (from.has_xsdurl()) {
       set_xsdurl(from.xsdurl());
     }
+    if (from.has_userdataxsdurl()) {
+      set_userdataxsdurl(from.userdataxsdurl());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -2405,6 +2465,7 @@ void DocumentTitle::Swap(DocumentTitle* other) {
   if (other != this) {
     std::swap(isformal_, other->isformal_);
     std::swap(xsdurl_, other->xsdurl_);
+    std::swap(userdataxsdurl_, other->userdataxsdurl_);
     metadataitems_.Swap(&other->metadataitems_);
     encryptedmetadataitems_.Swap(&other->encryptedmetadataitems_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);

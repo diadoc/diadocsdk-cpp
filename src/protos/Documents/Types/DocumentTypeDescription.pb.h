@@ -723,6 +723,18 @@ class DocumentTitle : public ::google::protobuf::Message {
   inline ::std::string* release_xsdurl();
   inline void set_allocated_xsdurl(::std::string* xsdurl);
 
+  // optional string UserDataXsdUrl = 5;
+  inline bool has_userdataxsdurl() const;
+  inline void clear_userdataxsdurl();
+  static const int kUserDataXsdUrlFieldNumber = 5;
+  inline const ::std::string& userdataxsdurl() const;
+  inline void set_userdataxsdurl(const ::std::string& value);
+  inline void set_userdataxsdurl(const char* value);
+  inline void set_userdataxsdurl(const char* value, size_t size);
+  inline ::std::string* mutable_userdataxsdurl();
+  inline ::std::string* release_userdataxsdurl();
+  inline void set_allocated_userdataxsdurl(::std::string* userdataxsdurl);
+
   // repeated .Diadoc.Api.Proto.Documents.Types.DocumentMetadataItem MetadataItems = 3;
   inline int metadataitems_size() const;
   inline void clear_metadataitems();
@@ -753,12 +765,15 @@ class DocumentTitle : public ::google::protobuf::Message {
   inline void clear_has_isformal();
   inline void set_has_xsdurl();
   inline void clear_has_xsdurl();
+  inline void set_has_userdataxsdurl();
+  inline void clear_has_userdataxsdurl();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::std::string* xsdurl_;
+  ::std::string* userdataxsdurl_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentMetadataItem > metadataitems_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentMetadataItem > encryptedmetadataitems_;
   bool isformal_;
@@ -1834,6 +1849,82 @@ inline void DocumentTitle::set_allocated_xsdurl(::std::string* xsdurl) {
     xsdurl_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Types.DocumentTitle.XsdUrl)
+}
+
+// optional string UserDataXsdUrl = 5;
+inline bool DocumentTitle::has_userdataxsdurl() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void DocumentTitle::set_has_userdataxsdurl() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void DocumentTitle::clear_has_userdataxsdurl() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void DocumentTitle::clear_userdataxsdurl() {
+  if (userdataxsdurl_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    userdataxsdurl_->clear();
+  }
+  clear_has_userdataxsdurl();
+}
+inline const ::std::string& DocumentTitle::userdataxsdurl() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Types.DocumentTitle.UserDataXsdUrl)
+  return *userdataxsdurl_;
+}
+inline void DocumentTitle::set_userdataxsdurl(const ::std::string& value) {
+  set_has_userdataxsdurl();
+  if (userdataxsdurl_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    userdataxsdurl_ = new ::std::string;
+  }
+  userdataxsdurl_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Types.DocumentTitle.UserDataXsdUrl)
+}
+inline void DocumentTitle::set_userdataxsdurl(const char* value) {
+  set_has_userdataxsdurl();
+  if (userdataxsdurl_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    userdataxsdurl_ = new ::std::string;
+  }
+  userdataxsdurl_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.Types.DocumentTitle.UserDataXsdUrl)
+}
+inline void DocumentTitle::set_userdataxsdurl(const char* value, size_t size) {
+  set_has_userdataxsdurl();
+  if (userdataxsdurl_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    userdataxsdurl_ = new ::std::string;
+  }
+  userdataxsdurl_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.Types.DocumentTitle.UserDataXsdUrl)
+}
+inline ::std::string* DocumentTitle::mutable_userdataxsdurl() {
+  set_has_userdataxsdurl();
+  if (userdataxsdurl_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    userdataxsdurl_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.Types.DocumentTitle.UserDataXsdUrl)
+  return userdataxsdurl_;
+}
+inline ::std::string* DocumentTitle::release_userdataxsdurl() {
+  clear_has_userdataxsdurl();
+  if (userdataxsdurl_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = userdataxsdurl_;
+    userdataxsdurl_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void DocumentTitle::set_allocated_userdataxsdurl(::std::string* userdataxsdurl) {
+  if (userdataxsdurl_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete userdataxsdurl_;
+  }
+  if (userdataxsdurl) {
+    set_has_userdataxsdurl();
+    userdataxsdurl_ = userdataxsdurl;
+  } else {
+    clear_has_userdataxsdurl();
+    userdataxsdurl_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Types.DocumentTitle.UserDataXsdUrl)
 }
 
 // repeated .Diadoc.Api.Proto.Documents.Types.DocumentMetadataItem MetadataItems = 3;
