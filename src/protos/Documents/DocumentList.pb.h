@@ -113,10 +113,19 @@ class DocumentList : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Document >*
       mutable_documents();
 
+  // optional bool HasMoreResults = 3;
+  inline bool has_hasmoreresults() const;
+  inline void clear_hasmoreresults();
+  static const int kHasMoreResultsFieldNumber = 3;
+  inline bool hasmoreresults() const;
+  inline void set_hasmoreresults(bool value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.DocumentList)
  private:
   inline void set_has_totalcount();
   inline void clear_has_totalcount();
+  inline void set_has_hasmoreresults();
+  inline void clear_has_hasmoreresults();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -124,6 +133,7 @@ class DocumentList : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Document > documents_;
   ::google::protobuf::int32 totalcount_;
+  bool hasmoreresults_;
   friend void  protobuf_AddDesc_Documents_2fDocumentList_2eproto();
   friend void protobuf_AssignDesc_Documents_2fDocumentList_2eproto();
   friend void protobuf_ShutdownFile_Documents_2fDocumentList_2eproto();
@@ -190,6 +200,30 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Do
 DocumentList::mutable_documents() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Documents.DocumentList.Documents)
   return &documents_;
+}
+
+// optional bool HasMoreResults = 3;
+inline bool DocumentList::has_hasmoreresults() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void DocumentList::set_has_hasmoreresults() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void DocumentList::clear_has_hasmoreresults() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void DocumentList::clear_hasmoreresults() {
+  hasmoreresults_ = false;
+  clear_has_hasmoreresults();
+}
+inline bool DocumentList::hasmoreresults() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.DocumentList.HasMoreResults)
+  return hasmoreresults_;
+}
+inline void DocumentList::set_hasmoreresults(bool value) {
+  set_has_hasmoreresults();
+  hasmoreresults_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.DocumentList.HasMoreResults)
 }
 
 
