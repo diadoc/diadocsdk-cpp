@@ -26,8 +26,8 @@
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "DocumentId.pb.h"
-#include "CustomDataItem.pb.h"
 #include "LockMode.pb.h"
+#include "CustomDataItem.pb.h"
 #include "Invoicing/Signer.pb.h"
 #include "Invoicing/ExtendedSigner.pb.h"
 #include "Events/ResolutionInfo.pb.h"

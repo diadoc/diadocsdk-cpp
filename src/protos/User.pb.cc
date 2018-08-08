@@ -25,6 +25,12 @@ namespace {
 const ::google::protobuf::Descriptor* User_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   User_reflection_ = NULL;
+const ::google::protobuf::Descriptor* UserV2_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  UserV2_reflection_ = NULL;
+const ::google::protobuf::Descriptor* FullName_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  FullName_reflection_ = NULL;
 
 }  // namespace
 
@@ -54,6 +60,41 @@ void protobuf_AssignDesc_User_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(User));
+  UserV2_descriptor_ = file->message_type(1);
+  static const int UserV2_offsets_[4] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserV2, userid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserV2, login_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserV2, fullname_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserV2, isregistered_),
+  };
+  UserV2_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      UserV2_descriptor_,
+      UserV2::default_instance_,
+      UserV2_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserV2, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserV2, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(UserV2));
+  FullName_descriptor_ = file->message_type(2);
+  static const int FullName_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FullName, lastname_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FullName, firstname_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FullName, middlename_),
+  };
+  FullName_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      FullName_descriptor_,
+      FullName::default_instance_,
+      FullName_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FullName, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FullName, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(FullName));
 }
 
 namespace {
@@ -68,6 +109,10 @@ void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     User_descriptor_, &User::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    UserV2_descriptor_, &UserV2::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    FullName_descriptor_, &FullName::default_instance());
 }
 
 }  // namespace
@@ -75,6 +120,10 @@ void protobuf_RegisterTypes(const ::std::string&) {
 void protobuf_ShutdownFile_User_2eproto() {
   delete User::default_instance_;
   delete User_reflection_;
+  delete UserV2::default_instance_;
+  delete UserV2_reflection_;
+  delete FullName::default_instance_;
+  delete FullName_reflection_;
 }
 
 void protobuf_AddDesc_User_2eproto() {
@@ -89,11 +138,20 @@ void protobuf_AddDesc_User_2eproto() {
     "ateInfo.proto\"\211\001\n\004User\022\n\n\002Id\030\001 \001(\t\022\020\n\010La"
     "stName\030\002 \001(\t\022\021\n\tFirstName\030\003 \001(\t\022\022\n\nMiddl"
     "eName\030\004 \001(\t\022<\n\021CloudCertificates\030\005 \003(\0132!"
-    ".Diadoc.Api.Proto.CertificateInfo", 193);
+    ".Diadoc.Api.Proto.CertificateInfo\"k\n\006Use"
+    "rV2\022\016\n\006UserId\030\001 \002(\t\022\r\n\005Login\030\002 \001(\t\022,\n\010Fu"
+    "llName\030\003 \001(\0132\032.Diadoc.Api.Proto.FullName"
+    "\022\024\n\014IsRegistered\030\004 \002(\010\"C\n\010FullName\022\020\n\010La"
+    "stName\030\001 \002(\t\022\021\n\tFirstName\030\002 \002(\t\022\022\n\nMiddl"
+    "eName\030\003 \001(\t", 371);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "User.proto", &protobuf_RegisterTypes);
   User::default_instance_ = new User();
+  UserV2::default_instance_ = new UserV2();
+  FullName::default_instance_ = new FullName();
   User::default_instance_->InitAsDefaultInstance();
+  UserV2::default_instance_->InitAsDefaultInstance();
+  FullName::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_User_2eproto);
 }
 
@@ -561,6 +619,759 @@ void User::Swap(User* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = User_descriptor_;
   metadata.reflection = User_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int UserV2::kUserIdFieldNumber;
+const int UserV2::kLoginFieldNumber;
+const int UserV2::kFullNameFieldNumber;
+const int UserV2::kIsRegisteredFieldNumber;
+#endif  // !_MSC_VER
+
+UserV2::UserV2()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.UserV2)
+}
+
+void UserV2::InitAsDefaultInstance() {
+  fullname_ = const_cast< ::Diadoc::Api::Proto::FullName*>(&::Diadoc::Api::Proto::FullName::default_instance());
+}
+
+UserV2::UserV2(const UserV2& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.UserV2)
+}
+
+void UserV2::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  userid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  login_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  fullname_ = NULL;
+  isregistered_ = false;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+UserV2::~UserV2() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.UserV2)
+  SharedDtor();
+}
+
+void UserV2::SharedDtor() {
+  if (userid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete userid_;
+  }
+  if (login_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete login_;
+  }
+  if (this != default_instance_) {
+    delete fullname_;
+  }
+}
+
+void UserV2::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* UserV2::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return UserV2_descriptor_;
+}
+
+const UserV2& UserV2::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_User_2eproto();
+  return *default_instance_;
+}
+
+UserV2* UserV2::default_instance_ = NULL;
+
+UserV2* UserV2::New() const {
+  return new UserV2;
+}
+
+void UserV2::Clear() {
+  if (_has_bits_[0 / 32] & 15) {
+    if (has_userid()) {
+      if (userid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        userid_->clear();
+      }
+    }
+    if (has_login()) {
+      if (login_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        login_->clear();
+      }
+    }
+    if (has_fullname()) {
+      if (fullname_ != NULL) fullname_->::Diadoc::Api::Proto::FullName::Clear();
+    }
+    isregistered_ = false;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool UserV2::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.UserV2)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required string UserId = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_userid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->userid().data(), this->userid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "userid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_Login;
+        break;
+      }
+
+      // optional string Login = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_Login:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_login()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->login().data(), this->login().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "login");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_FullName;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.FullName FullName = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_FullName:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_fullname()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(32)) goto parse_IsRegistered;
+        break;
+      }
+
+      // required bool IsRegistered = 4;
+      case 4: {
+        if (tag == 32) {
+         parse_IsRegistered:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &isregistered_)));
+          set_has_isregistered();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.UserV2)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.UserV2)
+  return false;
+#undef DO_
+}
+
+void UserV2::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.UserV2)
+  // required string UserId = 1;
+  if (has_userid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->userid().data(), this->userid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "userid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->userid(), output);
+  }
+
+  // optional string Login = 2;
+  if (has_login()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->login().data(), this->login().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "login");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->login(), output);
+  }
+
+  // optional .Diadoc.Api.Proto.FullName FullName = 3;
+  if (has_fullname()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, this->fullname(), output);
+  }
+
+  // required bool IsRegistered = 4;
+  if (has_isregistered()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(4, this->isregistered(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.UserV2)
+}
+
+::google::protobuf::uint8* UserV2::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.UserV2)
+  // required string UserId = 1;
+  if (has_userid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->userid().data(), this->userid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "userid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->userid(), target);
+  }
+
+  // optional string Login = 2;
+  if (has_login()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->login().data(), this->login().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "login");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->login(), target);
+  }
+
+  // optional .Diadoc.Api.Proto.FullName FullName = 3;
+  if (has_fullname()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        3, this->fullname(), target);
+  }
+
+  // required bool IsRegistered = 4;
+  if (has_isregistered()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(4, this->isregistered(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.UserV2)
+  return target;
+}
+
+int UserV2::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required string UserId = 1;
+    if (has_userid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->userid());
+    }
+
+    // optional string Login = 2;
+    if (has_login()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->login());
+    }
+
+    // optional .Diadoc.Api.Proto.FullName FullName = 3;
+    if (has_fullname()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->fullname());
+    }
+
+    // required bool IsRegistered = 4;
+    if (has_isregistered()) {
+      total_size += 1 + 1;
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void UserV2::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const UserV2* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const UserV2*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void UserV2::MergeFrom(const UserV2& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_userid()) {
+      set_userid(from.userid());
+    }
+    if (from.has_login()) {
+      set_login(from.login());
+    }
+    if (from.has_fullname()) {
+      mutable_fullname()->::Diadoc::Api::Proto::FullName::MergeFrom(from.fullname());
+    }
+    if (from.has_isregistered()) {
+      set_isregistered(from.isregistered());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void UserV2::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void UserV2::CopyFrom(const UserV2& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UserV2::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000009) != 0x00000009) return false;
+
+  if (has_fullname()) {
+    if (!this->fullname().IsInitialized()) return false;
+  }
+  return true;
+}
+
+void UserV2::Swap(UserV2* other) {
+  if (other != this) {
+    std::swap(userid_, other->userid_);
+    std::swap(login_, other->login_);
+    std::swap(fullname_, other->fullname_);
+    std::swap(isregistered_, other->isregistered_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata UserV2::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = UserV2_descriptor_;
+  metadata.reflection = UserV2_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int FullName::kLastNameFieldNumber;
+const int FullName::kFirstNameFieldNumber;
+const int FullName::kMiddleNameFieldNumber;
+#endif  // !_MSC_VER
+
+FullName::FullName()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.FullName)
+}
+
+void FullName::InitAsDefaultInstance() {
+}
+
+FullName::FullName(const FullName& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.FullName)
+}
+
+void FullName::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  lastname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  firstname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  middlename_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+FullName::~FullName() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.FullName)
+  SharedDtor();
+}
+
+void FullName::SharedDtor() {
+  if (lastname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete lastname_;
+  }
+  if (firstname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete firstname_;
+  }
+  if (middlename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete middlename_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void FullName::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* FullName::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return FullName_descriptor_;
+}
+
+const FullName& FullName::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_User_2eproto();
+  return *default_instance_;
+}
+
+FullName* FullName::default_instance_ = NULL;
+
+FullName* FullName::New() const {
+  return new FullName;
+}
+
+void FullName::Clear() {
+  if (_has_bits_[0 / 32] & 7) {
+    if (has_lastname()) {
+      if (lastname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        lastname_->clear();
+      }
+    }
+    if (has_firstname()) {
+      if (firstname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        firstname_->clear();
+      }
+    }
+    if (has_middlename()) {
+      if (middlename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        middlename_->clear();
+      }
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool FullName::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.FullName)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required string LastName = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_lastname()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->lastname().data(), this->lastname().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "lastname");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_FirstName;
+        break;
+      }
+
+      // required string FirstName = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_FirstName:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_firstname()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->firstname().data(), this->firstname().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "firstname");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_MiddleName;
+        break;
+      }
+
+      // optional string MiddleName = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_MiddleName:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_middlename()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->middlename().data(), this->middlename().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "middlename");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.FullName)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.FullName)
+  return false;
+#undef DO_
+}
+
+void FullName::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.FullName)
+  // required string LastName = 1;
+  if (has_lastname()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->lastname().data(), this->lastname().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "lastname");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->lastname(), output);
+  }
+
+  // required string FirstName = 2;
+  if (has_firstname()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->firstname().data(), this->firstname().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "firstname");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->firstname(), output);
+  }
+
+  // optional string MiddleName = 3;
+  if (has_middlename()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->middlename().data(), this->middlename().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "middlename");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->middlename(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.FullName)
+}
+
+::google::protobuf::uint8* FullName::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.FullName)
+  // required string LastName = 1;
+  if (has_lastname()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->lastname().data(), this->lastname().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "lastname");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->lastname(), target);
+  }
+
+  // required string FirstName = 2;
+  if (has_firstname()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->firstname().data(), this->firstname().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "firstname");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->firstname(), target);
+  }
+
+  // optional string MiddleName = 3;
+  if (has_middlename()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->middlename().data(), this->middlename().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "middlename");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->middlename(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.FullName)
+  return target;
+}
+
+int FullName::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required string LastName = 1;
+    if (has_lastname()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->lastname());
+    }
+
+    // required string FirstName = 2;
+    if (has_firstname()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->firstname());
+    }
+
+    // optional string MiddleName = 3;
+    if (has_middlename()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->middlename());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void FullName::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const FullName* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const FullName*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void FullName::MergeFrom(const FullName& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_lastname()) {
+      set_lastname(from.lastname());
+    }
+    if (from.has_firstname()) {
+      set_firstname(from.firstname());
+    }
+    if (from.has_middlename()) {
+      set_middlename(from.middlename());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void FullName::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void FullName::CopyFrom(const FullName& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FullName::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+
+  return true;
+}
+
+void FullName::Swap(FullName* other) {
+  if (other != this) {
+    std::swap(lastname_, other->lastname_);
+    std::swap(firstname_, other->firstname_);
+    std::swap(middlename_, other->middlename_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata FullName::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = FullName_descriptor_;
+  metadata.reflection = FullName_reflection_;
   return metadata;
 }
 

@@ -592,7 +592,7 @@ class Message : public ::google::protobuf::Message {
   inline bool packetislocked() const;
   inline void set_packetislocked(bool value);
 
-  // required .Diadoc.Api.Proto.LockMode LockMode = 21;
+  // required .Diadoc.Api.Proto.LockMode LockMode = 21 [default = None];
   inline bool has_lockmode() const;
   inline void clear_lockmode();
   static const int kLockModeFieldNumber = 21;
@@ -2776,7 +2776,7 @@ inline void Message::set_packetislocked(bool value) {
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Message.PacketIsLocked)
 }
 
-// required .Diadoc.Api.Proto.LockMode LockMode = 21;
+// required .Diadoc.Api.Proto.LockMode LockMode = 21 [default = None];
 inline bool Message::has_lockmode() const {
   return (_has_bits_[0] & 0x00100000u) != 0;
 }
@@ -2787,7 +2787,7 @@ inline void Message::clear_has_lockmode() {
   _has_bits_[0] &= ~0x00100000u;
 }
 inline void Message::clear_lockmode() {
-  lockmode_ = 0;
+  lockmode_ = 1;
   clear_has_lockmode();
 }
 inline ::Diadoc::Api::Proto::LockMode Message::lockmode() const {
