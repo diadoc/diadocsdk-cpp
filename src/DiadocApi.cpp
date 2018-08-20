@@ -1254,8 +1254,26 @@ Diadoc::Api::Proto::Employees::Employee DiadocApi::GetEmployee(const std::wstrin
 	WppTraceDebugOut("GetEmployee...");
 	std::wstringstream buf;
 	buf << L"/GetEmployee?boxId=" << StringHelper::CanonicalizeUrl(boxId)
-		<< L"/&userId=" << StringHelper::CanonicalizeUrl(userId);
+		<< L"&userId=" << StringHelper::CanonicalizeUrl(userId);
 	return FromProtoBytes<Diadoc::Api::Proto::Employees::Employee>(PerformHttpRequest(buf.str(), GET));
+}
+
+Diadoc::Api::Proto::Employees::Subscriptions::EmployeeSubscriptions DiadocApi::GetSubscriptions(const std::wstring& boxId, const std::wstring& userId)
+{
+	WppTraceDebugOut("GetSubscriptions...");
+	std::wstringstream buf;
+	buf << L"/GetSubscriptions?boxId=" << StringHelper::CanonicalizeUrl(boxId)
+		<< L"&userId=" << StringHelper::CanonicalizeUrl(userId);
+	return FromProtoBytes<Diadoc::Api::Proto::Employees::Subscriptions::EmployeeSubscriptions>(PerformHttpRequest(buf.str(), GET));
+}
+
+Diadoc::Api::Proto::Employees::Subscriptions::EmployeeSubscriptions DiadocApi::UpdateSubscriptions(const std::wstring& boxId, const std::wstring& userId, const Diadoc::Api::Proto::Employees::Subscriptions::SubscriptionsToUpdate& subscriptionsToUpdate)
+{
+	WppTraceDebugOut("UpdateSubscriptions...");
+	std::wstringstream buf;
+	buf << L"/UpdateSubscriptions?boxId=" << StringHelper::CanonicalizeUrl(boxId)
+		<< L"&userId=" << StringHelper::CanonicalizeUrl(userId);
+	return FromProtoBytes<Diadoc::Api::Proto::Employees::Subscriptions::EmployeeSubscriptions>(PerformHttpRequest(buf.str(), ToProtoBytes(subscriptionsToUpdate), POST));
 }
 
 OrganizationUserPermissions DiadocApi::GetMyPermissions(const std::wstring& orgId)
