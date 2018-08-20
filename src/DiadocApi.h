@@ -27,6 +27,7 @@
 #include "protos\Organization.pb.h"
 #include "protos\User.pb.h"
 #include "protos\Employees\Employee.pb.h"
+#include "protos\Employees\Subscriptions\Subscription.pb.h"
 #include "protos\BoxList.pb.h"
 #include "protos\OrganizationUserPermissions.pb.h"
 #include "protos\OrganizationUser.pb.h"
@@ -236,6 +237,8 @@ public:
 	Diadoc::Api::Proto::User GetMyUser();
 	Diadoc::Api::Proto::UserV2 GetMyUserV2();
 	Diadoc::Api::Proto::Employees::Employee GetEmployee(const std::wstring& boxId, const std::wstring& userId);
+	Diadoc::Api::Proto::Employees::Subscriptions::EmployeeSubscriptions GetSubscriptions(const std::wstring& boxId, const std::wstring& userId);
+	Diadoc::Api::Proto::Employees::Subscriptions::EmployeeSubscriptions UpdateSubscriptions(const std::wstring& boxId, const std::wstring& userId, const Diadoc::Api::Proto::Employees::Subscriptions::SubscriptionsToUpdate& subscriptionsToUpdate);
 	Diadoc::Api::Proto::OrganizationUsersList GetOrganizationUsers(const std::wstring& orgId);
 	Diadoc::Api::Proto::Box GetBox(const std::wstring& boxId);
 	Diadoc::Api::Proto::Department GetDepartment(const std::wstring& orgId, const std::wstring& departmentId);
