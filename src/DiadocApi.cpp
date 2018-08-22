@@ -9,6 +9,7 @@
 #include "Invoicing\FnsRegistrationMessageInfo.pb.h"
 
 using namespace Diadoc::Api::Proto;
+using namespace Diadoc::Api::Proto::Auth;
 using namespace Diadoc::Api::Proto::Recognition;
 using namespace Diadoc::Api::Proto::Documents;
 using namespace Diadoc::Api::Proto::Documents::Types;
@@ -412,12 +413,15 @@ BoxInfo DiadocApi::GetBoxInfo(const std::wstring& boxId)
 void DiadocApi::Authenticate(const std::wstring& login, const std::wstring& password)
 {
 	WppTraceDebugOut(L"Authenticating by login/password pair...");
-	std::wstringstream wss;
-	wss << L"/Authenticate?login=" << StringHelper::CanonicalizeUrl(login) << L"&password=" << StringHelper::CanonicalizeUrl(password) << std::flush;
-	auto response = PerformHttpRequestString(wss.str(), POST);
+    AuthenticateByLoginInfo authenticateByLoginInfo;
+    authenticateByLoginInfo.set_login(StringHelper::Utf16ToUtf8(login));
+    authenticateByLoginInfo.set_password(StringHelper::Utf16ToUtf8(password));
+    auto response = PerformHttpRequestString(L"/AuthenticateByLogin", ToProtoBytes(authenticateByLoginInfo), POST);
 	token_ = StringHelper::Utf8ToUtf16(response);
 }
 
+// WARN: [[deprecated]]
+// WARN: Use /AuthenticateByCertificate
 void DiadocApi::Authenticate(const Bytes_t& certBytes, bool useLocalMachineStorage)
 {
 	WppTraceDebugOut(L"Authenticating by certBytes...");
@@ -425,6 +429,15 @@ void DiadocApi::Authenticate(const Bytes_t& certBytes, bool useLocalMachineStora
 	CertSystemStore store(useLocalMachineStorage);
 	auto decryptedResponse = store.Decrypt(response);
 	token_ = CryptHelper::ToBase64(decryptedResponse);
+}
+
+void DiadocApi::Authenticate(const AuthenticateByCertificateInfo& authenticateByCertificateInfo, bool useLocalMachineStorage)
+{
+    WppTraceDebugOut(L"Authenticating by certBytes...");
+    auto response = PerformHttpRequest(L"/AuthenticateByCertificate", ToProtoBytes(authenticateByCertificateInfo), POST);
+    CertSystemStore store(useLocalMachineStorage);
+    auto decryptedResponse = store.Decrypt(response);
+    token_ = CryptHelper::ToBase64(decryptedResponse);
 }
 
 void DiadocApi::VerifyThatUserHasAccessToAnyBox(const Bytes_t& certBytes)

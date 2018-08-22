@@ -3,6 +3,8 @@
 #include <Windows.h>
 #include <sstream>
 
+#include "protos\Auth\AuthenticateByLoginInfo.pb.h"
+#include "protos\Auth\AuthenticateByCertificateInfo.pb.h"
 #include "protos\Events\DiadocMessage-GetApi.pb.h"
 #include "protos\Events\DiadocMessage-PostApi.pb.h"
 #include "protos\Recognition\Recognition.pb.h"
@@ -52,6 +54,7 @@ public:
 	std::wstring GetDocumentPathUrl(std::wstring boxId, std::wstring messageId, std::wstring entityId);
 
 	void Authenticate(const Bytes_t& certBytes, bool useLocalMachineStorage = false);
+    void Authenticate(const Diadoc::Api::Proto::Auth::AuthenticateByCertificateInfo& authenticateByCertificateInfo, bool useLocalMachineStorage);
 	void VerifyThatUserHasAccessToAnyBox(const Bytes_t& certBytes);
 	void Authenticate(const std::wstring& login, const std::wstring& password);
 
