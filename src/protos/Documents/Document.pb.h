@@ -968,7 +968,7 @@ class Document : public ::google::protobuf::Message {
   inline ::std::string* release_editingsettingid();
   inline void set_allocated_editingsettingid(::std::string* editingsettingid);
 
-  // required .Diadoc.Api.Proto.LockMode LockMode = 74;
+  // required .Diadoc.Api.Proto.LockMode LockMode = 74 [default = None];
   inline bool has_lockmode() const;
   inline void clear_lockmode();
   static const int kLockModeFieldNumber = 74;
@@ -4908,7 +4908,7 @@ inline void Document::set_allocated_editingsettingid(::std::string* editingsetti
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.EditingSettingId)
 }
 
-// required .Diadoc.Api.Proto.LockMode LockMode = 74;
+// required .Diadoc.Api.Proto.LockMode LockMode = 74 [default = None];
 inline bool Document::has_lockmode() const {
   return (_has_bits_[2] & 0x00000080u) != 0;
 }
@@ -4919,7 +4919,7 @@ inline void Document::clear_has_lockmode() {
   _has_bits_[2] &= ~0x00000080u;
 }
 inline void Document::clear_lockmode() {
-  lockmode_ = 0;
+  lockmode_ = 1;
   clear_has_lockmode();
 }
 inline ::Diadoc::Api::Proto::LockMode Document::lockmode() const {

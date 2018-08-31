@@ -148,6 +148,13 @@ class OrganizationUserPermissions : public ::google::protobuf::Message {
   inline bool cansigndocuments() const;
   inline void set_cansigndocuments(bool value);
 
+  // required bool CanManageCounteragents = 6;
+  inline bool has_canmanagecounteragents() const;
+  inline void clear_canmanagecounteragents();
+  static const int kCanManageCounteragentsFieldNumber = 6;
+  inline bool canmanagecounteragents() const;
+  inline void set_canmanagecounteragents(bool value);
+
   // required bool CanAddResolutions = 7;
   inline bool has_canaddresolutions() const;
   inline void clear_canaddresolutions();
@@ -207,6 +214,8 @@ class OrganizationUserPermissions : public ::google::protobuf::Message {
   inline void clear_has_documentaccesslevel();
   inline void set_has_cansigndocuments();
   inline void clear_has_cansigndocuments();
+  inline void set_has_canmanagecounteragents();
+  inline void clear_has_canmanagecounteragents();
   inline void set_has_canaddresolutions();
   inline void clear_has_canaddresolutions();
   inline void set_has_canrequestresolutions();
@@ -224,10 +233,11 @@ class OrganizationUserPermissions : public ::google::protobuf::Message {
   int documentaccesslevel_;
   bool isadministrator_;
   bool cansigndocuments_;
+  bool canmanagecounteragents_;
   bool canaddresolutions_;
-  bool canrequestresolutions_;
   ::google::protobuf::RepeatedPtrField< ::std::string> selecteddepartmentids_;
   ::std::string* jobtitle_;
+  bool canrequestresolutions_;
   bool cancreatedocuments_;
   friend void  protobuf_AddDesc_OrganizationUserPermissions_2eproto();
   friend void protobuf_AssignDesc_OrganizationUserPermissions_2eproto();
@@ -392,15 +402,39 @@ inline void OrganizationUserPermissions::set_cansigndocuments(bool value) {
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.OrganizationUserPermissions.CanSignDocuments)
 }
 
-// required bool CanAddResolutions = 7;
-inline bool OrganizationUserPermissions::has_canaddresolutions() const {
+// required bool CanManageCounteragents = 6;
+inline bool OrganizationUserPermissions::has_canmanagecounteragents() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
-inline void OrganizationUserPermissions::set_has_canaddresolutions() {
+inline void OrganizationUserPermissions::set_has_canmanagecounteragents() {
   _has_bits_[0] |= 0x00000010u;
 }
-inline void OrganizationUserPermissions::clear_has_canaddresolutions() {
+inline void OrganizationUserPermissions::clear_has_canmanagecounteragents() {
   _has_bits_[0] &= ~0x00000010u;
+}
+inline void OrganizationUserPermissions::clear_canmanagecounteragents() {
+  canmanagecounteragents_ = false;
+  clear_has_canmanagecounteragents();
+}
+inline bool OrganizationUserPermissions::canmanagecounteragents() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.OrganizationUserPermissions.CanManageCounteragents)
+  return canmanagecounteragents_;
+}
+inline void OrganizationUserPermissions::set_canmanagecounteragents(bool value) {
+  set_has_canmanagecounteragents();
+  canmanagecounteragents_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.OrganizationUserPermissions.CanManageCounteragents)
+}
+
+// required bool CanAddResolutions = 7;
+inline bool OrganizationUserPermissions::has_canaddresolutions() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void OrganizationUserPermissions::set_has_canaddresolutions() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void OrganizationUserPermissions::clear_has_canaddresolutions() {
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline void OrganizationUserPermissions::clear_canaddresolutions() {
   canaddresolutions_ = false;
@@ -418,13 +452,13 @@ inline void OrganizationUserPermissions::set_canaddresolutions(bool value) {
 
 // required bool CanRequestResolutions = 8;
 inline bool OrganizationUserPermissions::has_canrequestresolutions() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000040u) != 0;
 }
 inline void OrganizationUserPermissions::set_has_canrequestresolutions() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000040u;
 }
 inline void OrganizationUserPermissions::clear_has_canrequestresolutions() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 inline void OrganizationUserPermissions::clear_canrequestresolutions() {
   canrequestresolutions_ = false;
@@ -496,13 +530,13 @@ OrganizationUserPermissions::mutable_selecteddepartmentids() {
 
 // optional string JobTitle = 10;
 inline bool OrganizationUserPermissions::has_jobtitle() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
+  return (_has_bits_[0] & 0x00000100u) != 0;
 }
 inline void OrganizationUserPermissions::set_has_jobtitle() {
-  _has_bits_[0] |= 0x00000080u;
+  _has_bits_[0] |= 0x00000100u;
 }
 inline void OrganizationUserPermissions::clear_has_jobtitle() {
-  _has_bits_[0] &= ~0x00000080u;
+  _has_bits_[0] &= ~0x00000100u;
 }
 inline void OrganizationUserPermissions::clear_jobtitle() {
   if (jobtitle_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
@@ -572,13 +606,13 @@ inline void OrganizationUserPermissions::set_allocated_jobtitle(::std::string* j
 
 // required bool CanCreateDocuments = 11;
 inline bool OrganizationUserPermissions::has_cancreatedocuments() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
+  return (_has_bits_[0] & 0x00000200u) != 0;
 }
 inline void OrganizationUserPermissions::set_has_cancreatedocuments() {
-  _has_bits_[0] |= 0x00000100u;
+  _has_bits_[0] |= 0x00000200u;
 }
 inline void OrganizationUserPermissions::clear_has_cancreatedocuments() {
-  _has_bits_[0] &= ~0x00000100u;
+  _has_bits_[0] &= ~0x00000200u;
 }
 inline void OrganizationUserPermissions::clear_cancreatedocuments() {
   cancreatedocuments_ = false;
