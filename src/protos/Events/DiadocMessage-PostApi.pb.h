@@ -68,6 +68,7 @@ class ServiceDetailsAttachment;
 class DocumentAttachment;
 class MetadataItem;
 class MessagePatchToPost;
+class EditingPatch;
 class SignatureVerification;
 class ResolutionRequestAttachment;
 class ResolutionRouteAssignment;
@@ -4607,16 +4608,16 @@ class MessagePatchToPost : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >*
       mutable_recipienttitles();
 
-  // repeated .Diadoc.Api.Proto.Events.CustomDataPatch EditingPatches = 23;
+  // repeated .Diadoc.Api.Proto.Events.EditingPatch EditingPatches = 24;
   inline int editingpatches_size() const;
   inline void clear_editingpatches();
-  static const int kEditingPatchesFieldNumber = 23;
-  inline const ::Diadoc::Api::Proto::Events::CustomDataPatch& editingpatches(int index) const;
-  inline ::Diadoc::Api::Proto::Events::CustomDataPatch* mutable_editingpatches(int index);
-  inline ::Diadoc::Api::Proto::Events::CustomDataPatch* add_editingpatches();
-  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::CustomDataPatch >&
+  static const int kEditingPatchesFieldNumber = 24;
+  inline const ::Diadoc::Api::Proto::Events::EditingPatch& editingpatches(int index) const;
+  inline ::Diadoc::Api::Proto::Events::EditingPatch* mutable_editingpatches(int index);
+  inline ::Diadoc::Api::Proto::Events::EditingPatch* add_editingpatches();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::EditingPatch >&
       editingpatches() const;
-  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::CustomDataPatch >*
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::EditingPatch >*
       mutable_editingpatches();
 
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.MessagePatchToPost)
@@ -4652,13 +4653,126 @@ class MessagePatchToPost : public ::google::protobuf::Message {
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment > universaltransferdocumentbuyertitles_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionRouteRemoval > resolutionrouteremovals_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment > recipienttitles_;
-  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::CustomDataPatch > editingpatches_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::EditingPatch > editingpatches_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
 
   void InitAsDefaultInstance();
   static MessagePatchToPost* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class EditingPatch : public ::google::protobuf::Message {
+ public:
+  EditingPatch();
+  virtual ~EditingPatch();
+
+  EditingPatch(const EditingPatch& from);
+
+  inline EditingPatch& operator=(const EditingPatch& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const EditingPatch& default_instance();
+
+  void Swap(EditingPatch* other);
+
+  // implements Message ----------------------------------------------
+
+  EditingPatch* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const EditingPatch& from);
+  void MergeFrom(const EditingPatch& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string ParentEntityId = 1;
+  inline bool has_parententityid() const;
+  inline void clear_parententityid();
+  static const int kParentEntityIdFieldNumber = 1;
+  inline const ::std::string& parententityid() const;
+  inline void set_parententityid(const ::std::string& value);
+  inline void set_parententityid(const char* value);
+  inline void set_parententityid(const char* value, size_t size);
+  inline ::std::string* mutable_parententityid();
+  inline ::std::string* release_parententityid();
+  inline void set_allocated_parententityid(::std::string* parententityid);
+
+  // required .Diadoc.Api.Proto.Events.UnsignedContent Content = 2;
+  inline bool has_content() const;
+  inline void clear_content();
+  static const int kContentFieldNumber = 2;
+  inline const ::Diadoc::Api::Proto::Events::UnsignedContent& content() const;
+  inline ::Diadoc::Api::Proto::Events::UnsignedContent* mutable_content();
+  inline ::Diadoc::Api::Proto::Events::UnsignedContent* release_content();
+  inline void set_allocated_content(::Diadoc::Api::Proto::Events::UnsignedContent* content);
+
+  // repeated string Labels = 3;
+  inline int labels_size() const;
+  inline void clear_labels();
+  static const int kLabelsFieldNumber = 3;
+  inline const ::std::string& labels(int index) const;
+  inline ::std::string* mutable_labels(int index);
+  inline void set_labels(int index, const ::std::string& value);
+  inline void set_labels(int index, const char* value);
+  inline void set_labels(int index, const char* value, size_t size);
+  inline ::std::string* add_labels();
+  inline void add_labels(const ::std::string& value);
+  inline void add_labels(const char* value);
+  inline void add_labels(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& labels() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_labels();
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.EditingPatch)
+ private:
+  inline void set_has_parententityid();
+  inline void clear_has_parententityid();
+  inline void set_has_content();
+  inline void clear_has_content();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* parententityid_;
+  ::Diadoc::Api::Proto::Events::UnsignedContent* content_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> labels_;
+  friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
+
+  void InitAsDefaultInstance();
+  static EditingPatch* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -19980,34 +20094,209 @@ MessagePatchToPost::mutable_recipienttitles() {
   return &recipienttitles_;
 }
 
-// repeated .Diadoc.Api.Proto.Events.CustomDataPatch EditingPatches = 23;
+// repeated .Diadoc.Api.Proto.Events.EditingPatch EditingPatches = 24;
 inline int MessagePatchToPost::editingpatches_size() const {
   return editingpatches_.size();
 }
 inline void MessagePatchToPost::clear_editingpatches() {
   editingpatches_.Clear();
 }
-inline const ::Diadoc::Api::Proto::Events::CustomDataPatch& MessagePatchToPost::editingpatches(int index) const {
+inline const ::Diadoc::Api::Proto::Events::EditingPatch& MessagePatchToPost::editingpatches(int index) const {
   // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.MessagePatchToPost.EditingPatches)
   return editingpatches_.Get(index);
 }
-inline ::Diadoc::Api::Proto::Events::CustomDataPatch* MessagePatchToPost::mutable_editingpatches(int index) {
+inline ::Diadoc::Api::Proto::Events::EditingPatch* MessagePatchToPost::mutable_editingpatches(int index) {
   // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.MessagePatchToPost.EditingPatches)
   return editingpatches_.Mutable(index);
 }
-inline ::Diadoc::Api::Proto::Events::CustomDataPatch* MessagePatchToPost::add_editingpatches() {
+inline ::Diadoc::Api::Proto::Events::EditingPatch* MessagePatchToPost::add_editingpatches() {
   // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.MessagePatchToPost.EditingPatches)
   return editingpatches_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::CustomDataPatch >&
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::EditingPatch >&
 MessagePatchToPost::editingpatches() const {
   // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.MessagePatchToPost.EditingPatches)
   return editingpatches_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::CustomDataPatch >*
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::EditingPatch >*
 MessagePatchToPost::mutable_editingpatches() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.MessagePatchToPost.EditingPatches)
   return &editingpatches_;
+}
+
+// -------------------------------------------------------------------
+
+// EditingPatch
+
+// required string ParentEntityId = 1;
+inline bool EditingPatch::has_parententityid() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void EditingPatch::set_has_parententityid() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void EditingPatch::clear_has_parententityid() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void EditingPatch::clear_parententityid() {
+  if (parententityid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_->clear();
+  }
+  clear_has_parententityid();
+}
+inline const ::std::string& EditingPatch::parententityid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.EditingPatch.ParentEntityId)
+  return *parententityid_;
+}
+inline void EditingPatch::set_parententityid(const ::std::string& value) {
+  set_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_ = new ::std::string;
+  }
+  parententityid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.EditingPatch.ParentEntityId)
+}
+inline void EditingPatch::set_parententityid(const char* value) {
+  set_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_ = new ::std::string;
+  }
+  parententityid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.EditingPatch.ParentEntityId)
+}
+inline void EditingPatch::set_parententityid(const char* value, size_t size) {
+  set_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_ = new ::std::string;
+  }
+  parententityid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.EditingPatch.ParentEntityId)
+}
+inline ::std::string* EditingPatch::mutable_parententityid() {
+  set_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.EditingPatch.ParentEntityId)
+  return parententityid_;
+}
+inline ::std::string* EditingPatch::release_parententityid() {
+  clear_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = parententityid_;
+    parententityid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void EditingPatch::set_allocated_parententityid(::std::string* parententityid) {
+  if (parententityid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete parententityid_;
+  }
+  if (parententityid) {
+    set_has_parententityid();
+    parententityid_ = parententityid;
+  } else {
+    clear_has_parententityid();
+    parententityid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.EditingPatch.ParentEntityId)
+}
+
+// required .Diadoc.Api.Proto.Events.UnsignedContent Content = 2;
+inline bool EditingPatch::has_content() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void EditingPatch::set_has_content() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void EditingPatch::clear_has_content() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void EditingPatch::clear_content() {
+  if (content_ != NULL) content_->::Diadoc::Api::Proto::Events::UnsignedContent::Clear();
+  clear_has_content();
+}
+inline const ::Diadoc::Api::Proto::Events::UnsignedContent& EditingPatch::content() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.EditingPatch.Content)
+  return content_ != NULL ? *content_ : *default_instance_->content_;
+}
+inline ::Diadoc::Api::Proto::Events::UnsignedContent* EditingPatch::mutable_content() {
+  set_has_content();
+  if (content_ == NULL) content_ = new ::Diadoc::Api::Proto::Events::UnsignedContent;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.EditingPatch.Content)
+  return content_;
+}
+inline ::Diadoc::Api::Proto::Events::UnsignedContent* EditingPatch::release_content() {
+  clear_has_content();
+  ::Diadoc::Api::Proto::Events::UnsignedContent* temp = content_;
+  content_ = NULL;
+  return temp;
+}
+inline void EditingPatch::set_allocated_content(::Diadoc::Api::Proto::Events::UnsignedContent* content) {
+  delete content_;
+  content_ = content;
+  if (content) {
+    set_has_content();
+  } else {
+    clear_has_content();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.EditingPatch.Content)
+}
+
+// repeated string Labels = 3;
+inline int EditingPatch::labels_size() const {
+  return labels_.size();
+}
+inline void EditingPatch::clear_labels() {
+  labels_.Clear();
+}
+inline const ::std::string& EditingPatch::labels(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.EditingPatch.Labels)
+  return labels_.Get(index);
+}
+inline ::std::string* EditingPatch::mutable_labels(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.EditingPatch.Labels)
+  return labels_.Mutable(index);
+}
+inline void EditingPatch::set_labels(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.EditingPatch.Labels)
+  labels_.Mutable(index)->assign(value);
+}
+inline void EditingPatch::set_labels(int index, const char* value) {
+  labels_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.EditingPatch.Labels)
+}
+inline void EditingPatch::set_labels(int index, const char* value, size_t size) {
+  labels_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.EditingPatch.Labels)
+}
+inline ::std::string* EditingPatch::add_labels() {
+  return labels_.Add();
+}
+inline void EditingPatch::add_labels(const ::std::string& value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.EditingPatch.Labels)
+}
+inline void EditingPatch::add_labels(const char* value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:Diadoc.Api.Proto.Events.EditingPatch.Labels)
+}
+inline void EditingPatch::add_labels(const char* value, size_t size) {
+  labels_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:Diadoc.Api.Proto.Events.EditingPatch.Labels)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+EditingPatch::labels() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.EditingPatch.Labels)
+  return labels_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+EditingPatch::mutable_labels() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.EditingPatch.Labels)
+  return &labels_;
 }
 
 // -------------------------------------------------------------------
