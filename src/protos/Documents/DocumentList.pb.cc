@@ -37,9 +37,10 @@ void protobuf_AssignDesc_Documents_2fDocumentList_2eproto() {
       "Documents/DocumentList.proto");
   GOOGLE_CHECK(file != NULL);
   DocumentList_descriptor_ = file->message_type(0);
-  static const int DocumentList_offsets_[2] = {
+  static const int DocumentList_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentList, totalcount_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentList, documents_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentList, hasmoreresults_),
   };
   DocumentList_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -85,9 +86,10 @@ void protobuf_AddDesc_Documents_2fDocumentList_2eproto() {
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\034Documents/DocumentList.proto\022\032Diadoc.A"
     "pi.Proto.Documents\032\030Documents/Document.p"
-    "roto\"[\n\014DocumentList\022\022\n\nTotalCount\030\001 \002(\005"
+    "roto\"s\n\014DocumentList\022\022\n\nTotalCount\030\001 \002(\005"
     "\0227\n\tDocuments\030\002 \003(\0132$.Diadoc.Api.Proto.D"
-    "ocuments.Document", 177);
+    "ocuments.Document\022\026\n\016HasMoreResults\030\003 \001("
+    "\010", 201);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Documents/DocumentList.proto", &protobuf_RegisterTypes);
   DocumentList::default_instance_ = new DocumentList();
@@ -107,6 +109,7 @@ struct StaticDescriptorInitializer_Documents_2fDocumentList_2eproto {
 #ifndef _MSC_VER
 const int DocumentList::kTotalCountFieldNumber;
 const int DocumentList::kDocumentsFieldNumber;
+const int DocumentList::kHasMoreResultsFieldNumber;
 #endif  // !_MSC_VER
 
 DocumentList::DocumentList()
@@ -128,6 +131,7 @@ DocumentList::DocumentList(const DocumentList& from)
 void DocumentList::SharedCtor() {
   _cached_size_ = 0;
   totalcount_ = 0;
+  hasmoreresults_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -163,7 +167,21 @@ DocumentList* DocumentList::New() const {
 }
 
 void DocumentList::Clear() {
-  totalcount_ = 0;
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<DocumentList*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  ZR_(totalcount_, hasmoreresults_);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
   documents_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -203,6 +221,21 @@ bool DocumentList::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(18)) goto parse_Documents;
+        if (input->ExpectTag(24)) goto parse_HasMoreResults;
+        break;
+      }
+
+      // optional bool HasMoreResults = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_HasMoreResults:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &hasmoreresults_)));
+          set_has_hasmoreresults();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -243,6 +276,11 @@ void DocumentList::SerializeWithCachedSizes(
       2, this->documents(i), output);
   }
 
+  // optional bool HasMoreResults = 3;
+  if (has_hasmoreresults()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->hasmoreresults(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -265,6 +303,11 @@ void DocumentList::SerializeWithCachedSizes(
         2, this->documents(i), target);
   }
 
+  // optional bool HasMoreResults = 3;
+  if (has_hasmoreresults()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->hasmoreresults(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -282,6 +325,11 @@ int DocumentList::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->totalcount());
+    }
+
+    // optional bool HasMoreResults = 3;
+    if (has_hasmoreresults()) {
+      total_size += 1 + 1;
     }
 
   }
@@ -323,6 +371,9 @@ void DocumentList::MergeFrom(const DocumentList& from) {
     if (from.has_totalcount()) {
       set_totalcount(from.totalcount());
     }
+    if (from.has_hasmoreresults()) {
+      set_hasmoreresults(from.hasmoreresults());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -350,6 +401,7 @@ void DocumentList::Swap(DocumentList* other) {
   if (other != this) {
     std::swap(totalcount_, other->totalcount_);
     documents_.Swap(&other->documents_);
+    std::swap(hasmoreresults_, other->hasmoreresults_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
