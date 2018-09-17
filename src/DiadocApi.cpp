@@ -1258,6 +1258,14 @@ Diadoc::Api::Proto::Employees::Employee DiadocApi::GetEmployee(const std::wstrin
 	return FromProtoBytes<Diadoc::Api::Proto::Employees::Employee>(PerformHttpRequest(buf.str(), GET));
 }
 
+Diadoc::Api::Proto::Employees::Employee DiadocApi::CreateEmployee(const std::wstring& boxId, const Diadoc::Api::Proto::Employees::EmployeeToCreate& employeeToCreate)
+{
+	WppTraceDebugOut("CreateEmployee...");
+	std::wstringstream buf;
+	buf << L"/CreateEmployee?boxId=" << StringHelper::CanonicalizeUrl(boxId);
+	return FromProtoBytes<Diadoc::Api::Proto::Employees::Employee>(PerformHttpRequest(buf.str(), ToProtoBytes(employeeToCreate), POST));
+}
+
 Diadoc::Api::Proto::Employees::Subscriptions::EmployeeSubscriptions DiadocApi::GetSubscriptions(const std::wstring& boxId, const std::wstring& userId)
 {
 	WppTraceDebugOut("GetSubscriptions...");
