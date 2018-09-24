@@ -26,6 +26,7 @@
 #include "protos\Counteragent.pb.h"
 #include "protos\Organization.pb.h"
 #include "protos\User.pb.h"
+#include "protos\Users\UserToUpdate.pb.h"
 #include "protos\Employees\Employee.pb.h"
 #include "protos\Employees\EmployeeToCreate.pb.h"
 #include "protos\Employees\Subscriptions\Subscription.pb.h"
@@ -237,6 +238,7 @@ public:
 	Diadoc::Api::Proto::OrganizationList GetMyOrganizations(bool autoRegister);
 	Diadoc::Api::Proto::User GetMyUser();
 	Diadoc::Api::Proto::UserV2 GetMyUserV2();
+	Diadoc::Api::Proto::UserV2 UpdateMyUser(Diadoc::Api::Proto::Users::UserToUpdate& userToUpdate);
 	Diadoc::Api::Proto::Employees::Employee GetEmployee(const std::wstring& boxId, const std::wstring& userId);
 	Diadoc::Api::Proto::Employees::Employee CreateEmployee(const std::wstring& boxId, const Diadoc::Api::Proto::Employees::EmployeeToCreate& employeeToCreate);
 	Diadoc::Api::Proto::Employees::Subscriptions::EmployeeSubscriptions GetSubscriptions(const std::wstring& boxId, const std::wstring& userId);

@@ -1249,6 +1249,12 @@ Diadoc::Api::Proto::UserV2 DiadocApi::GetMyUserV2()
 	return FromProtoBytes<Diadoc::Api::Proto::UserV2>(PerformHttpRequest(L"/V2/GetMyUser", GET));
 }
 
+Diadoc::Api::Proto::UserV2 DiadocApi::UpdateMyUser(Diadoc::Api::Proto::Users::UserToUpdate& userToUpdate)
+{
+	WppTraceDebugOut("UpdateMyUser...");
+	return FromProtoBytes<Diadoc::Api::Proto::UserV2>(PerformHttpRequest(L"/UpdateMyUser", ToProtoBytes(userToUpdate), POST));
+}
+
 Diadoc::Api::Proto::Employees::Employee DiadocApi::GetEmployee(const std::wstring& boxId, const std::wstring& userId)
 {
 	WppTraceDebugOut("GetEmployee...");
