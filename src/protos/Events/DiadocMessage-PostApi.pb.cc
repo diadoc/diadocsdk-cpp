@@ -179,6 +179,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* TemplateDocumentAttachment_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   TemplateDocumentAttachment_reflection_ = NULL;
+const ::google::protobuf::Descriptor* PredefinedRecipientTitle_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  PredefinedRecipientTitle_reflection_ = NULL;
 const ::google::protobuf::Descriptor* UnsignedContent_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   UnsignedContent_reflection_ = NULL;
@@ -1252,7 +1255,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(TemplateToPost));
   TemplateDocumentAttachment_descriptor_ = file->message_type(51);
-  static const int TemplateDocumentAttachment_offsets_[10] = {
+  static const int TemplateDocumentAttachment_offsets_[11] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, unsignedcontent_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, comment_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, typenamedid_),
@@ -1263,6 +1266,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, customdocumentid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, editingsettingid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, needrecipientsignature_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, predefinedrecipienttitle_),
   };
   TemplateDocumentAttachment_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1275,7 +1279,22 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(TemplateDocumentAttachment));
-  UnsignedContent_descriptor_ = file->message_type(52);
+  PredefinedRecipientTitle_descriptor_ = file->message_type(52);
+  static const int PredefinedRecipientTitle_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PredefinedRecipientTitle, unsignedcontent_),
+  };
+  PredefinedRecipientTitle_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      PredefinedRecipientTitle_descriptor_,
+      PredefinedRecipientTitle::default_instance_,
+      PredefinedRecipientTitle_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PredefinedRecipientTitle, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PredefinedRecipientTitle, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(PredefinedRecipientTitle));
+  UnsignedContent_descriptor_ = file->message_type(53);
   static const int UnsignedContent_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnsignedContent, content_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnsignedContent, nameonshelf_),
@@ -1291,7 +1310,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(UnsignedContent));
-  TemplateTransformationToPost_descriptor_ = file->message_type(53);
+  TemplateTransformationToPost_descriptor_ = file->message_type(54);
   static const int TemplateTransformationToPost_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateTransformationToPost, boxid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateTransformationToPost, templateid_),
@@ -1308,7 +1327,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(TemplateTransformationToPost));
-  DocumentTransformation_descriptor_ = file->message_type(54);
+  DocumentTransformation_descriptor_ = file->message_type(55);
   static const int DocumentTransformation_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentTransformation, documentid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentTransformation, customdocumentid_),
@@ -1442,6 +1461,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     TemplateDocumentAttachment_descriptor_, &TemplateDocumentAttachment::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    PredefinedRecipientTitle_descriptor_, &PredefinedRecipientTitle::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     UnsignedContent_descriptor_, &UnsignedContent::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     TemplateTransformationToPost_descriptor_, &TemplateTransformationToPost::default_instance());
@@ -1556,6 +1577,8 @@ void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto() {
   delete TemplateToPost_reflection_;
   delete TemplateDocumentAttachment::default_instance_;
   delete TemplateDocumentAttachment_reflection_;
+  delete PredefinedRecipientTitle::default_instance_;
+  delete PredefinedRecipientTitle_reflection_;
   delete UnsignedContent::default_instance_;
   delete UnsignedContent_reflection_;
   delete TemplateTransformationToPost::default_instance_;
@@ -1970,7 +1993,7 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
     "tId\030\005 \001(\t\022P\n\023DocumentAttachments\030\006 \003(\01323"
     ".Diadoc.Api.Proto.Events.TemplateDocumen"
     "tAttachment\0222\n\010LockMode\030\007 \001(\0162\032.Diadoc.A"
-    "pi.Proto.LockMode:\004None\"\320\002\n\032TemplateDocu"
+    "pi.Proto.LockMode:\004None\"\245\003\n\032TemplateDocu"
     "mentAttachment\022A\n\017UnsignedContent\030\001 \002(\0132"
     "(.Diadoc.Api.Proto.Events.UnsignedConten"
     "t\022\017\n\007Comment\030\002 \001(\t\022\023\n\013TypeNamedId\030\003 \002(\t\022"
@@ -1979,15 +2002,19 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
     "etadataItem\022\022\n\nWorkflowId\030\007 \001(\005\022\030\n\020Custo"
     "mDocumentId\030\010 \001(\t\022\030\n\020EditingSettingId\030\t "
     "\001(\t\022%\n\026NeedRecipientSignature\030\n \001(\010:\005fal"
-    "se\"7\n\017UnsignedContent\022\017\n\007Content\030\001 \001(\014\022\023"
-    "\n\013NameOnShelf\030\002 \001(\t\"\223\001\n\034TemplateTransfor"
-    "mationToPost\022\r\n\005BoxId\030\001 \002(\t\022\022\n\nTemplateI"
-    "d\030\002 \002(\t\022P\n\027DocumentTransformations\030\003 \003(\013"
-    "2/.Diadoc.Api.Proto.Events.DocumentTrans"
-    "formation\"F\n\026DocumentTransformation\022\022\n\nD"
-    "ocumentId\030\001 \002(\t\022\030\n\020CustomDocumentId\030\002 \001("
-    "\t*/\n\030CustomDataPatchOperation\022\007\n\003Set\020\000\022\n"
-    "\n\006Remove\020\001", 16290);
+    "se\022S\n\030PredefinedRecipientTitle\030\013 \001(\01321.D"
+    "iadoc.Api.Proto.Events.PredefinedRecipie"
+    "ntTitle\"]\n\030PredefinedRecipientTitle\022A\n\017U"
+    "nsignedContent\030\001 \002(\0132(.Diadoc.Api.Proto."
+    "Events.UnsignedContent\"7\n\017UnsignedConten"
+    "t\022\017\n\007Content\030\001 \001(\014\022\023\n\013NameOnShelf\030\002 \001(\t\""
+    "\223\001\n\034TemplateTransformationToPost\022\r\n\005BoxI"
+    "d\030\001 \002(\t\022\022\n\nTemplateId\030\002 \002(\t\022P\n\027DocumentT"
+    "ransformations\030\003 \003(\0132/.Diadoc.Api.Proto."
+    "Events.DocumentTransformation\"F\n\026Documen"
+    "tTransformation\022\022\n\nDocumentId\030\001 \002(\t\022\030\n\020C"
+    "ustomDocumentId\030\002 \001(\t*/\n\030CustomDataPatch"
+    "Operation\022\007\n\003Set\020\000\022\n\n\006Remove\020\001", 16470);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Events/DiadocMessage-PostApi.proto", &protobuf_RegisterTypes);
   MessageToPost::default_instance_ = new MessageToPost();
@@ -2042,6 +2069,7 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
   ResolutionRouteRemoval::default_instance_ = new ResolutionRouteRemoval();
   TemplateToPost::default_instance_ = new TemplateToPost();
   TemplateDocumentAttachment::default_instance_ = new TemplateDocumentAttachment();
+  PredefinedRecipientTitle::default_instance_ = new PredefinedRecipientTitle();
   UnsignedContent::default_instance_ = new UnsignedContent();
   TemplateTransformationToPost::default_instance_ = new TemplateTransformationToPost();
   DocumentTransformation::default_instance_ = new DocumentTransformation();
@@ -2097,6 +2125,7 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
   ResolutionRouteRemoval::default_instance_->InitAsDefaultInstance();
   TemplateToPost::default_instance_->InitAsDefaultInstance();
   TemplateDocumentAttachment::default_instance_->InitAsDefaultInstance();
+  PredefinedRecipientTitle::default_instance_->InitAsDefaultInstance();
   UnsignedContent::default_instance_->InitAsDefaultInstance();
   TemplateTransformationToPost::default_instance_->InitAsDefaultInstance();
   DocumentTransformation::default_instance_->InitAsDefaultInstance();
@@ -28503,6 +28532,7 @@ const int TemplateDocumentAttachment::kWorkflowIdFieldNumber;
 const int TemplateDocumentAttachment::kCustomDocumentIdFieldNumber;
 const int TemplateDocumentAttachment::kEditingSettingIdFieldNumber;
 const int TemplateDocumentAttachment::kNeedRecipientSignatureFieldNumber;
+const int TemplateDocumentAttachment::kPredefinedRecipientTitleFieldNumber;
 #endif  // !_MSC_VER
 
 TemplateDocumentAttachment::TemplateDocumentAttachment()
@@ -28513,6 +28543,7 @@ TemplateDocumentAttachment::TemplateDocumentAttachment()
 
 void TemplateDocumentAttachment::InitAsDefaultInstance() {
   unsignedcontent_ = const_cast< ::Diadoc::Api::Proto::Events::UnsignedContent*>(&::Diadoc::Api::Proto::Events::UnsignedContent::default_instance());
+  predefinedrecipienttitle_ = const_cast< ::Diadoc::Api::Proto::Events::PredefinedRecipientTitle*>(&::Diadoc::Api::Proto::Events::PredefinedRecipientTitle::default_instance());
 }
 
 TemplateDocumentAttachment::TemplateDocumentAttachment(const TemplateDocumentAttachment& from)
@@ -28534,6 +28565,7 @@ void TemplateDocumentAttachment::SharedCtor() {
   customdocumentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   editingsettingid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   needrecipientsignature_ = false;
+  predefinedrecipienttitle_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -28563,6 +28595,7 @@ void TemplateDocumentAttachment::SharedDtor() {
   }
   if (this != default_instance_) {
     delete unsignedcontent_;
+    delete predefinedrecipienttitle_;
   }
 }
 
@@ -28619,13 +28652,16 @@ void TemplateDocumentAttachment::Clear() {
       }
     }
   }
-  if (_has_bits_[8 / 32] & 768) {
+  if (_has_bits_[8 / 32] & 1792) {
     if (has_editingsettingid()) {
       if (editingsettingid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         editingsettingid_->clear();
       }
     }
     needrecipientsignature_ = false;
+    if (has_predefinedrecipienttitle()) {
+      if (predefinedrecipienttitle_ != NULL) predefinedrecipienttitle_->::Diadoc::Api::Proto::Events::PredefinedRecipientTitle::Clear();
+    }
   }
   metadata_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -28796,6 +28832,19 @@ bool TemplateDocumentAttachment::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(90)) goto parse_PredefinedRecipientTitle;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Events.PredefinedRecipientTitle PredefinedRecipientTitle = 11;
+      case 11: {
+        if (tag == 90) {
+         parse_PredefinedRecipientTitle:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_predefinedrecipienttitle()));
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -28907,6 +28956,12 @@ void TemplateDocumentAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(10, this->needrecipientsignature(), output);
   }
 
+  // optional .Diadoc.Api.Proto.Events.PredefinedRecipientTitle PredefinedRecipientTitle = 11;
+  if (has_predefinedrecipienttitle()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      11, this->predefinedrecipienttitle(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -29007,6 +29062,13 @@ void TemplateDocumentAttachment::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(10, this->needrecipientsignature(), target);
   }
 
+  // optional .Diadoc.Api.Proto.Events.PredefinedRecipientTitle PredefinedRecipientTitle = 11;
+  if (has_predefinedrecipienttitle()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        11, this->predefinedrecipienttitle(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -29082,6 +29144,13 @@ int TemplateDocumentAttachment::ByteSize() const {
       total_size += 1 + 1;
     }
 
+    // optional .Diadoc.Api.Proto.Events.PredefinedRecipientTitle PredefinedRecipientTitle = 11;
+    if (has_predefinedrecipienttitle()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->predefinedrecipienttitle());
+    }
+
   }
   // repeated .Diadoc.Api.Proto.Events.MetadataItem Metadata = 6;
   total_size += 1 * this->metadata_size();
@@ -29147,6 +29216,9 @@ void TemplateDocumentAttachment::MergeFrom(const TemplateDocumentAttachment& fro
     if (from.has_needrecipientsignature()) {
       set_needrecipientsignature(from.needrecipientsignature());
     }
+    if (from.has_predefinedrecipienttitle()) {
+      mutable_predefinedrecipienttitle()->::Diadoc::Api::Proto::Events::PredefinedRecipientTitle::MergeFrom(from.predefinedrecipienttitle());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -29167,6 +29239,9 @@ bool TemplateDocumentAttachment::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000005) != 0x00000005) return false;
 
   if (!::google::protobuf::internal::AllAreInitialized(this->metadata())) return false;
+  if (has_predefinedrecipienttitle()) {
+    if (!this->predefinedrecipienttitle().IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -29182,6 +29257,7 @@ void TemplateDocumentAttachment::Swap(TemplateDocumentAttachment* other) {
     std::swap(customdocumentid_, other->customdocumentid_);
     std::swap(editingsettingid_, other->editingsettingid_);
     std::swap(needrecipientsignature_, other->needrecipientsignature_);
+    std::swap(predefinedrecipienttitle_, other->predefinedrecipienttitle_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -29193,6 +29269,234 @@ void TemplateDocumentAttachment::Swap(TemplateDocumentAttachment* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = TemplateDocumentAttachment_descriptor_;
   metadata.reflection = TemplateDocumentAttachment_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int PredefinedRecipientTitle::kUnsignedContentFieldNumber;
+#endif  // !_MSC_VER
+
+PredefinedRecipientTitle::PredefinedRecipientTitle()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Events.PredefinedRecipientTitle)
+}
+
+void PredefinedRecipientTitle::InitAsDefaultInstance() {
+  unsignedcontent_ = const_cast< ::Diadoc::Api::Proto::Events::UnsignedContent*>(&::Diadoc::Api::Proto::Events::UnsignedContent::default_instance());
+}
+
+PredefinedRecipientTitle::PredefinedRecipientTitle(const PredefinedRecipientTitle& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Events.PredefinedRecipientTitle)
+}
+
+void PredefinedRecipientTitle::SharedCtor() {
+  _cached_size_ = 0;
+  unsignedcontent_ = NULL;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+PredefinedRecipientTitle::~PredefinedRecipientTitle() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Events.PredefinedRecipientTitle)
+  SharedDtor();
+}
+
+void PredefinedRecipientTitle::SharedDtor() {
+  if (this != default_instance_) {
+    delete unsignedcontent_;
+  }
+}
+
+void PredefinedRecipientTitle::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* PredefinedRecipientTitle::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return PredefinedRecipientTitle_descriptor_;
+}
+
+const PredefinedRecipientTitle& PredefinedRecipientTitle::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  return *default_instance_;
+}
+
+PredefinedRecipientTitle* PredefinedRecipientTitle::default_instance_ = NULL;
+
+PredefinedRecipientTitle* PredefinedRecipientTitle::New() const {
+  return new PredefinedRecipientTitle;
+}
+
+void PredefinedRecipientTitle::Clear() {
+  if (has_unsignedcontent()) {
+    if (unsignedcontent_ != NULL) unsignedcontent_->::Diadoc::Api::Proto::Events::UnsignedContent::Clear();
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool PredefinedRecipientTitle::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Events.PredefinedRecipientTitle)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required .Diadoc.Api.Proto.Events.UnsignedContent UnsignedContent = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_unsignedcontent()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Events.PredefinedRecipientTitle)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Events.PredefinedRecipientTitle)
+  return false;
+#undef DO_
+}
+
+void PredefinedRecipientTitle::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Events.PredefinedRecipientTitle)
+  // required .Diadoc.Api.Proto.Events.UnsignedContent UnsignedContent = 1;
+  if (has_unsignedcontent()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->unsignedcontent(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Events.PredefinedRecipientTitle)
+}
+
+::google::protobuf::uint8* PredefinedRecipientTitle::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Events.PredefinedRecipientTitle)
+  // required .Diadoc.Api.Proto.Events.UnsignedContent UnsignedContent = 1;
+  if (has_unsignedcontent()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, this->unsignedcontent(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Events.PredefinedRecipientTitle)
+  return target;
+}
+
+int PredefinedRecipientTitle::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required .Diadoc.Api.Proto.Events.UnsignedContent UnsignedContent = 1;
+    if (has_unsignedcontent()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->unsignedcontent());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void PredefinedRecipientTitle::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const PredefinedRecipientTitle* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const PredefinedRecipientTitle*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void PredefinedRecipientTitle::MergeFrom(const PredefinedRecipientTitle& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_unsignedcontent()) {
+      mutable_unsignedcontent()->::Diadoc::Api::Proto::Events::UnsignedContent::MergeFrom(from.unsignedcontent());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void PredefinedRecipientTitle::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void PredefinedRecipientTitle::CopyFrom(const PredefinedRecipientTitle& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PredefinedRecipientTitle::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+
+  return true;
+}
+
+void PredefinedRecipientTitle::Swap(PredefinedRecipientTitle* other) {
+  if (other != this) {
+    std::swap(unsignedcontent_, other->unsignedcontent_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata PredefinedRecipientTitle::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = PredefinedRecipientTitle_descriptor_;
+  metadata.reflection = PredefinedRecipientTitle_reflection_;
   return metadata;
 }
 

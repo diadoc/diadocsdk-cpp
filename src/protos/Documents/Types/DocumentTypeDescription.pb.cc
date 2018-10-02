@@ -115,13 +115,14 @@ void protobuf_AssignDesc_Documents_2fTypes_2fDocumentTypeDescription_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(DocumentFunction));
   DocumentVersion_descriptor_ = file->message_type(3);
-  static const int DocumentVersion_offsets_[6] = {
+  static const int DocumentVersion_offsets_[7] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentVersion, version_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentVersion, supportscontentpatching_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentVersion, supportsencrypting_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentVersion, titles_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentVersion, isactual_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentVersion, workflows_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentVersion, supportspredefinedrecipienttitle_),
   };
   DocumentVersion_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -297,35 +298,36 @@ void protobuf_AddDesc_Documents_2fTypes_2fDocumentTypeDescription_2eproto() {
     ".Types.DocumentTypeDescription\"e\n\020Docume"
     "ntFunction\022\014\n\004Name\030\001 \002(\t\022C\n\010Versions\030\002 \003"
     "(\01321.Diadoc.Api.Proto.Documents.Types.Do"
-    "cumentVersion\"\371\001\n\017DocumentVersion\022\017\n\007Ver"
+    "cumentVersion\"\243\002\n\017DocumentVersion\022\017\n\007Ver"
     "sion\030\001 \002(\t\022\037\n\027SupportsContentPatching\030\002 "
     "\002(\010\022\032\n\022SupportsEncrypting\030\003 \002(\010\022\?\n\006Title"
     "s\030\004 \003(\0132/.Diadoc.Api.Proto.Documents.Typ"
     "es.DocumentTitle\022\020\n\010IsActual\030\005 \002(\010\022E\n\tWo"
     "rkflows\030\006 \003(\01322.Diadoc.Api.Proto.Documen"
-    "ts.Types.DocumentWorkflow\"1\n\020DocumentWor"
-    "kflow\022\n\n\002Id\030\001 \002(\005\022\021\n\tIsDefault\030\002 \002(\010\"\360\001\n"
-    "\rDocumentTitle\022\020\n\010IsFormal\030\001 \002(\010\022\016\n\006XsdU"
-    "rl\030\002 \001(\t\022\026\n\016UserDataXsdUrl\030\005 \001(\t\022M\n\rMeta"
-    "dataItems\030\003 \003(\01326.Diadoc.Api.Proto.Docum"
-    "ents.Types.DocumentMetadataItem\022V\n\026Encry"
-    "ptedMetadataItems\030\004 \003(\01326.Diadoc.Api.Pro"
-    "to.Documents.Types.DocumentMetadataItem\""
-    "\312\001\n\024DocumentMetadataItem\022\n\n\002Id\030\001 \002(\t\022H\n\004"
-    "Type\030\002 \002(\0162:.Diadoc.Api.Proto.Documents."
-    "Types.DocumentMetadataItemType\022\022\n\nIsRequ"
-    "ired\030\003 \002(\010\022H\n\006Source\030\004 \002(\01628.Diadoc.Api."
-    "Proto.Documents.Types.DocumentMetadataSo"
-    "urce\"N\n\024DetectedDocumentType\022\023\n\013TypeName"
-    "dId\030\001 \002(\t\022\020\n\010Function\030\002 \002(\t\022\017\n\007Version\030\003"
-    " \002(\t\"l\n\033DetectDocumentTypesResponse\022M\n\rD"
-    "ocumentTypes\030\001 \003(\01326.Diadoc.Api.Proto.Do"
-    "cuments.Types.DetectedDocumentType*-\n\017Do"
-    "cumentDocflow\022\014\n\010External\020\000\022\014\n\010Internal\020"
-    "\001*T\n\030DocumentMetadataItemType\022\n\n\006String\020"
-    "\000\022\013\n\007Integer\020\001\022\013\n\007Decimal\020\002\022\010\n\004Date\020\003\022\010\n"
-    "\004Time\020\004*+\n\026DocumentMetadataSource\022\007\n\003Xml"
-    "\020\000\022\010\n\004User\020\001", 1652);
+    "ts.Types.DocumentWorkflow\022(\n SupportsPre"
+    "definedRecipientTitle\030\007 \002(\010\"1\n\020DocumentW"
+    "orkflow\022\n\n\002Id\030\001 \002(\005\022\021\n\tIsDefault\030\002 \002(\010\"\360"
+    "\001\n\rDocumentTitle\022\020\n\010IsFormal\030\001 \002(\010\022\016\n\006Xs"
+    "dUrl\030\002 \001(\t\022\026\n\016UserDataXsdUrl\030\005 \001(\t\022M\n\rMe"
+    "tadataItems\030\003 \003(\01326.Diadoc.Api.Proto.Doc"
+    "uments.Types.DocumentMetadataItem\022V\n\026Enc"
+    "ryptedMetadataItems\030\004 \003(\01326.Diadoc.Api.P"
+    "roto.Documents.Types.DocumentMetadataIte"
+    "m\"\312\001\n\024DocumentMetadataItem\022\n\n\002Id\030\001 \002(\t\022H"
+    "\n\004Type\030\002 \002(\0162:.Diadoc.Api.Proto.Document"
+    "s.Types.DocumentMetadataItemType\022\022\n\nIsRe"
+    "quired\030\003 \002(\010\022H\n\006Source\030\004 \002(\01628.Diadoc.Ap"
+    "i.Proto.Documents.Types.DocumentMetadata"
+    "Source\"N\n\024DetectedDocumentType\022\023\n\013TypeNa"
+    "medId\030\001 \002(\t\022\020\n\010Function\030\002 \002(\t\022\017\n\007Version"
+    "\030\003 \002(\t\"l\n\033DetectDocumentTypesResponse\022M\n"
+    "\rDocumentTypes\030\001 \003(\01326.Diadoc.Api.Proto."
+    "Documents.Types.DetectedDocumentType*-\n\017"
+    "DocumentDocflow\022\014\n\010External\020\000\022\014\n\010Interna"
+    "l\020\001*T\n\030DocumentMetadataItemType\022\n\n\006Strin"
+    "g\020\000\022\013\n\007Integer\020\001\022\013\n\007Decimal\020\002\022\010\n\004Date\020\003\022"
+    "\010\n\004Time\020\004*+\n\026DocumentMetadataSource\022\007\n\003X"
+    "ml\020\000\022\010\n\004User\020\001", 1694);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Documents/Types/DocumentTypeDescription.proto", &protobuf_RegisterTypes);
   DocumentTypeDescription::default_instance_ = new DocumentTypeDescription();
@@ -1348,6 +1350,7 @@ const int DocumentVersion::kSupportsEncryptingFieldNumber;
 const int DocumentVersion::kTitlesFieldNumber;
 const int DocumentVersion::kIsActualFieldNumber;
 const int DocumentVersion::kWorkflowsFieldNumber;
+const int DocumentVersion::kSupportsPredefinedRecipientTitleFieldNumber;
 #endif  // !_MSC_VER
 
 DocumentVersion::DocumentVersion()
@@ -1373,6 +1376,7 @@ void DocumentVersion::SharedCtor() {
   supportscontentpatching_ = false;
   supportsencrypting_ = false;
   isactual_ = false;
+  supportspredefinedrecipienttitle_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -1421,8 +1425,8 @@ void DocumentVersion::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 23) {
-    ZR_(supportscontentpatching_, isactual_);
+  if (_has_bits_[0 / 32] & 87) {
+    ZR_(supportscontentpatching_, supportspredefinedrecipienttitle_);
     if (has_version()) {
       if (version_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         version_->clear();
@@ -1534,6 +1538,21 @@ bool DocumentVersion::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(50)) goto parse_Workflows;
+        if (input->ExpectTag(56)) goto parse_SupportsPredefinedRecipientTitle;
+        break;
+      }
+
+      // required bool SupportsPredefinedRecipientTitle = 7;
+      case 7: {
+        if (tag == 56) {
+         parse_SupportsPredefinedRecipientTitle:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &supportspredefinedrecipienttitle_)));
+          set_has_supportspredefinedrecipienttitle();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -1600,6 +1619,11 @@ void DocumentVersion::SerializeWithCachedSizes(
       6, this->workflows(i), output);
   }
 
+  // required bool SupportsPredefinedRecipientTitle = 7;
+  if (has_supportspredefinedrecipienttitle()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(7, this->supportspredefinedrecipienttitle(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -1650,6 +1674,11 @@ void DocumentVersion::SerializeWithCachedSizes(
         6, this->workflows(i), target);
   }
 
+  // required bool SupportsPredefinedRecipientTitle = 7;
+  if (has_supportspredefinedrecipienttitle()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(7, this->supportspredefinedrecipienttitle(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -1681,6 +1710,11 @@ int DocumentVersion::ByteSize() const {
 
     // required bool IsActual = 5;
     if (has_isactual()) {
+      total_size += 1 + 1;
+    }
+
+    // required bool SupportsPredefinedRecipientTitle = 7;
+    if (has_supportspredefinedrecipienttitle()) {
       total_size += 1 + 1;
     }
 
@@ -1741,6 +1775,9 @@ void DocumentVersion::MergeFrom(const DocumentVersion& from) {
     if (from.has_isactual()) {
       set_isactual(from.isactual());
     }
+    if (from.has_supportspredefinedrecipienttitle()) {
+      set_supportspredefinedrecipienttitle(from.supportspredefinedrecipienttitle());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -1758,7 +1795,7 @@ void DocumentVersion::CopyFrom(const DocumentVersion& from) {
 }
 
 bool DocumentVersion::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000017) != 0x00000017) return false;
+  if ((_has_bits_[0] & 0x00000057) != 0x00000057) return false;
 
   if (!::google::protobuf::internal::AllAreInitialized(this->titles())) return false;
   if (!::google::protobuf::internal::AllAreInitialized(this->workflows())) return false;
@@ -1773,6 +1810,7 @@ void DocumentVersion::Swap(DocumentVersion* other) {
     titles_.Swap(&other->titles_);
     std::swap(isactual_, other->isactual_);
     workflows_.Swap(&other->workflows_);
+    std::swap(supportspredefinedrecipienttitle_, other->supportspredefinedrecipienttitle_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

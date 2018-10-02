@@ -98,6 +98,7 @@ class EditDocumentPacketCommand;
 class ResolutionRouteRemoval;
 class TemplateToPost;
 class TemplateDocumentAttachment;
+class PredefinedRecipientTitle;
 class UnsignedContent;
 class TemplateTransformationToPost;
 class DocumentTransformation;
@@ -8434,6 +8435,15 @@ class TemplateDocumentAttachment : public ::google::protobuf::Message {
   inline bool needrecipientsignature() const;
   inline void set_needrecipientsignature(bool value);
 
+  // optional .Diadoc.Api.Proto.Events.PredefinedRecipientTitle PredefinedRecipientTitle = 11;
+  inline bool has_predefinedrecipienttitle() const;
+  inline void clear_predefinedrecipienttitle();
+  static const int kPredefinedRecipientTitleFieldNumber = 11;
+  inline const ::Diadoc::Api::Proto::Events::PredefinedRecipientTitle& predefinedrecipienttitle() const;
+  inline ::Diadoc::Api::Proto::Events::PredefinedRecipientTitle* mutable_predefinedrecipienttitle();
+  inline ::Diadoc::Api::Proto::Events::PredefinedRecipientTitle* release_predefinedrecipienttitle();
+  inline void set_allocated_predefinedrecipienttitle(::Diadoc::Api::Proto::Events::PredefinedRecipientTitle* predefinedrecipienttitle);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.TemplateDocumentAttachment)
  private:
   inline void set_has_unsignedcontent();
@@ -8454,6 +8464,8 @@ class TemplateDocumentAttachment : public ::google::protobuf::Message {
   inline void clear_has_editingsettingid();
   inline void set_has_needrecipientsignature();
   inline void clear_has_needrecipientsignature();
+  inline void set_has_predefinedrecipienttitle();
+  inline void clear_has_predefinedrecipienttitle();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -8469,12 +8481,94 @@ class TemplateDocumentAttachment : public ::google::protobuf::Message {
   ::google::protobuf::int32 workflowid_;
   bool needrecipientsignature_;
   ::std::string* editingsettingid_;
+  ::Diadoc::Api::Proto::Events::PredefinedRecipientTitle* predefinedrecipienttitle_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
 
   void InitAsDefaultInstance();
   static TemplateDocumentAttachment* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class PredefinedRecipientTitle : public ::google::protobuf::Message {
+ public:
+  PredefinedRecipientTitle();
+  virtual ~PredefinedRecipientTitle();
+
+  PredefinedRecipientTitle(const PredefinedRecipientTitle& from);
+
+  inline PredefinedRecipientTitle& operator=(const PredefinedRecipientTitle& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const PredefinedRecipientTitle& default_instance();
+
+  void Swap(PredefinedRecipientTitle* other);
+
+  // implements Message ----------------------------------------------
+
+  PredefinedRecipientTitle* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const PredefinedRecipientTitle& from);
+  void MergeFrom(const PredefinedRecipientTitle& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required .Diadoc.Api.Proto.Events.UnsignedContent UnsignedContent = 1;
+  inline bool has_unsignedcontent() const;
+  inline void clear_unsignedcontent();
+  static const int kUnsignedContentFieldNumber = 1;
+  inline const ::Diadoc::Api::Proto::Events::UnsignedContent& unsignedcontent() const;
+  inline ::Diadoc::Api::Proto::Events::UnsignedContent* mutable_unsignedcontent();
+  inline ::Diadoc::Api::Proto::Events::UnsignedContent* release_unsignedcontent();
+  inline void set_allocated_unsignedcontent(::Diadoc::Api::Proto::Events::UnsignedContent* unsignedcontent);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.PredefinedRecipientTitle)
+ private:
+  inline void set_has_unsignedcontent();
+  inline void clear_has_unsignedcontent();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::Diadoc::Api::Proto::Events::UnsignedContent* unsignedcontent_;
+  friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
+
+  void InitAsDefaultInstance();
+  static PredefinedRecipientTitle* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -27574,6 +27668,92 @@ inline void TemplateDocumentAttachment::set_needrecipientsignature(bool value) {
   set_has_needrecipientsignature();
   needrecipientsignature_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.TemplateDocumentAttachment.NeedRecipientSignature)
+}
+
+// optional .Diadoc.Api.Proto.Events.PredefinedRecipientTitle PredefinedRecipientTitle = 11;
+inline bool TemplateDocumentAttachment::has_predefinedrecipienttitle() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+inline void TemplateDocumentAttachment::set_has_predefinedrecipienttitle() {
+  _has_bits_[0] |= 0x00000400u;
+}
+inline void TemplateDocumentAttachment::clear_has_predefinedrecipienttitle() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+inline void TemplateDocumentAttachment::clear_predefinedrecipienttitle() {
+  if (predefinedrecipienttitle_ != NULL) predefinedrecipienttitle_->::Diadoc::Api::Proto::Events::PredefinedRecipientTitle::Clear();
+  clear_has_predefinedrecipienttitle();
+}
+inline const ::Diadoc::Api::Proto::Events::PredefinedRecipientTitle& TemplateDocumentAttachment::predefinedrecipienttitle() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.TemplateDocumentAttachment.PredefinedRecipientTitle)
+  return predefinedrecipienttitle_ != NULL ? *predefinedrecipienttitle_ : *default_instance_->predefinedrecipienttitle_;
+}
+inline ::Diadoc::Api::Proto::Events::PredefinedRecipientTitle* TemplateDocumentAttachment::mutable_predefinedrecipienttitle() {
+  set_has_predefinedrecipienttitle();
+  if (predefinedrecipienttitle_ == NULL) predefinedrecipienttitle_ = new ::Diadoc::Api::Proto::Events::PredefinedRecipientTitle;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.TemplateDocumentAttachment.PredefinedRecipientTitle)
+  return predefinedrecipienttitle_;
+}
+inline ::Diadoc::Api::Proto::Events::PredefinedRecipientTitle* TemplateDocumentAttachment::release_predefinedrecipienttitle() {
+  clear_has_predefinedrecipienttitle();
+  ::Diadoc::Api::Proto::Events::PredefinedRecipientTitle* temp = predefinedrecipienttitle_;
+  predefinedrecipienttitle_ = NULL;
+  return temp;
+}
+inline void TemplateDocumentAttachment::set_allocated_predefinedrecipienttitle(::Diadoc::Api::Proto::Events::PredefinedRecipientTitle* predefinedrecipienttitle) {
+  delete predefinedrecipienttitle_;
+  predefinedrecipienttitle_ = predefinedrecipienttitle;
+  if (predefinedrecipienttitle) {
+    set_has_predefinedrecipienttitle();
+  } else {
+    clear_has_predefinedrecipienttitle();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.TemplateDocumentAttachment.PredefinedRecipientTitle)
+}
+
+// -------------------------------------------------------------------
+
+// PredefinedRecipientTitle
+
+// required .Diadoc.Api.Proto.Events.UnsignedContent UnsignedContent = 1;
+inline bool PredefinedRecipientTitle::has_unsignedcontent() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void PredefinedRecipientTitle::set_has_unsignedcontent() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void PredefinedRecipientTitle::clear_has_unsignedcontent() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void PredefinedRecipientTitle::clear_unsignedcontent() {
+  if (unsignedcontent_ != NULL) unsignedcontent_->::Diadoc::Api::Proto::Events::UnsignedContent::Clear();
+  clear_has_unsignedcontent();
+}
+inline const ::Diadoc::Api::Proto::Events::UnsignedContent& PredefinedRecipientTitle::unsignedcontent() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.PredefinedRecipientTitle.UnsignedContent)
+  return unsignedcontent_ != NULL ? *unsignedcontent_ : *default_instance_->unsignedcontent_;
+}
+inline ::Diadoc::Api::Proto::Events::UnsignedContent* PredefinedRecipientTitle::mutable_unsignedcontent() {
+  set_has_unsignedcontent();
+  if (unsignedcontent_ == NULL) unsignedcontent_ = new ::Diadoc::Api::Proto::Events::UnsignedContent;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.PredefinedRecipientTitle.UnsignedContent)
+  return unsignedcontent_;
+}
+inline ::Diadoc::Api::Proto::Events::UnsignedContent* PredefinedRecipientTitle::release_unsignedcontent() {
+  clear_has_unsignedcontent();
+  ::Diadoc::Api::Proto::Events::UnsignedContent* temp = unsignedcontent_;
+  unsignedcontent_ = NULL;
+  return temp;
+}
+inline void PredefinedRecipientTitle::set_allocated_unsignedcontent(::Diadoc::Api::Proto::Events::UnsignedContent* unsignedcontent) {
+  delete unsignedcontent_;
+  unsignedcontent_ = unsignedcontent;
+  if (unsignedcontent) {
+    set_has_unsignedcontent();
+  } else {
+    clear_has_unsignedcontent();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.PredefinedRecipientTitle.UnsignedContent)
 }
 
 // -------------------------------------------------------------------
