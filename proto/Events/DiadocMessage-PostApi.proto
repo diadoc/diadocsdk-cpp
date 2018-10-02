@@ -513,7 +513,7 @@ message ResolutionRouteRemoval {
 message TemplateToPost {
 	required string FromBoxId = 1;
 	required string ToBoxId = 2;
-required string MessageFromBoxId = 3;
+	required string MessageFromBoxId = 3;
 	required string MessageToBoxId = 4;
 	optional string MessageToDepartmentId = 5;
 	repeated TemplateDocumentAttachment DocumentAttachments = 6;
@@ -531,11 +531,11 @@ message TemplateDocumentAttachment {
 	optional string CustomDocumentId = 8;
 	optional string EditingSettingId = 9;
 	optional bool NeedRecipientSignature = 10 [default = false];
-  optional PredefinedRecipientTitle PredefinedRecipientTitle = 11;
+	optional PredefinedRecipientTitle PredefinedRecipientTitle = 11;
 }
 
 message PredefinedRecipientTitle {
-    required UnsignedContent UnsignedContent = 1;
+	required UnsignedContent UnsignedContent = 1;
 }
 
 message UnsignedContent {
