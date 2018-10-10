@@ -77,6 +77,7 @@ class ResolutionRequestDenialCancellationAttachment;
 class ResolutionRequestDenialAttachment;
 class ResolutionAttachment;
 class ReceiptAttachment;
+class RecipientTitleAttachment;
 class CorrectionRequestAttachment;
 class DocumentSignature;
 class DocumentSenderSignature;
@@ -4417,28 +4418,28 @@ class MessagePatchToPost : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RequestedSignatureRejection >*
       mutable_requestedsignaturerejections();
 
-  // repeated .Diadoc.Api.Proto.Events.ReceiptAttachment XmlTorg12BuyerTitles = 7;
+  // repeated .Diadoc.Api.Proto.Events.RecipientTitleAttachment XmlTorg12BuyerTitles = 7;
   inline int xmltorg12buyertitles_size() const;
   inline void clear_xmltorg12buyertitles();
   static const int kXmlTorg12BuyerTitlesFieldNumber = 7;
-  inline const ::Diadoc::Api::Proto::Events::ReceiptAttachment& xmltorg12buyertitles(int index) const;
-  inline ::Diadoc::Api::Proto::Events::ReceiptAttachment* mutable_xmltorg12buyertitles(int index);
-  inline ::Diadoc::Api::Proto::Events::ReceiptAttachment* add_xmltorg12buyertitles();
-  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >&
+  inline const ::Diadoc::Api::Proto::Events::RecipientTitleAttachment& xmltorg12buyertitles(int index) const;
+  inline ::Diadoc::Api::Proto::Events::RecipientTitleAttachment* mutable_xmltorg12buyertitles(int index);
+  inline ::Diadoc::Api::Proto::Events::RecipientTitleAttachment* add_xmltorg12buyertitles();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment >&
       xmltorg12buyertitles() const;
-  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >*
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment >*
       mutable_xmltorg12buyertitles();
 
-  // repeated .Diadoc.Api.Proto.Events.ReceiptAttachment XmlAcceptanceCertificateBuyerTitles = 8;
+  // repeated .Diadoc.Api.Proto.Events.RecipientTitleAttachment XmlAcceptanceCertificateBuyerTitles = 8;
   inline int xmlacceptancecertificatebuyertitles_size() const;
   inline void clear_xmlacceptancecertificatebuyertitles();
   static const int kXmlAcceptanceCertificateBuyerTitlesFieldNumber = 8;
-  inline const ::Diadoc::Api::Proto::Events::ReceiptAttachment& xmlacceptancecertificatebuyertitles(int index) const;
-  inline ::Diadoc::Api::Proto::Events::ReceiptAttachment* mutable_xmlacceptancecertificatebuyertitles(int index);
-  inline ::Diadoc::Api::Proto::Events::ReceiptAttachment* add_xmlacceptancecertificatebuyertitles();
-  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >&
+  inline const ::Diadoc::Api::Proto::Events::RecipientTitleAttachment& xmlacceptancecertificatebuyertitles(int index) const;
+  inline ::Diadoc::Api::Proto::Events::RecipientTitleAttachment* mutable_xmlacceptancecertificatebuyertitles(int index);
+  inline ::Diadoc::Api::Proto::Events::RecipientTitleAttachment* add_xmlacceptancecertificatebuyertitles();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment >&
       xmlacceptancecertificatebuyertitles() const;
-  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >*
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment >*
       mutable_xmlacceptancecertificatebuyertitles();
 
   // repeated .Diadoc.Api.Proto.Events.ResolutionAttachment Resolutions = 9;
@@ -4597,16 +4598,16 @@ class MessagePatchToPost : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionRouteRemoval >*
       mutable_resolutionrouteremovals();
 
-  // repeated .Diadoc.Api.Proto.Events.ReceiptAttachment RecipientTitles = 22;
+  // repeated .Diadoc.Api.Proto.Events.RecipientTitleAttachment RecipientTitles = 22;
   inline int recipienttitles_size() const;
   inline void clear_recipienttitles();
   static const int kRecipientTitlesFieldNumber = 22;
-  inline const ::Diadoc::Api::Proto::Events::ReceiptAttachment& recipienttitles(int index) const;
-  inline ::Diadoc::Api::Proto::Events::ReceiptAttachment* mutable_recipienttitles(int index);
-  inline ::Diadoc::Api::Proto::Events::ReceiptAttachment* add_recipienttitles();
-  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >&
+  inline const ::Diadoc::Api::Proto::Events::RecipientTitleAttachment& recipienttitles(int index) const;
+  inline ::Diadoc::Api::Proto::Events::RecipientTitleAttachment* mutable_recipienttitles(int index);
+  inline ::Diadoc::Api::Proto::Events::RecipientTitleAttachment* add_recipienttitles();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment >&
       recipienttitles() const;
-  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >*
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment >*
       mutable_recipienttitles();
 
   // repeated .Diadoc.Api.Proto.Events.EditingPatch EditingPatches = 24;
@@ -4638,8 +4639,8 @@ class MessagePatchToPost : public ::google::protobuf::Message {
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::CorrectionRequestAttachment > correctionrequests_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::DocumentSignature > signatures_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RequestedSignatureRejection > requestedsignaturerejections_;
-  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment > xmltorg12buyertitles_;
-  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment > xmlacceptancecertificatebuyertitles_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment > xmltorg12buyertitles_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment > xmlacceptancecertificatebuyertitles_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionAttachment > resolutions_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionRequestAttachment > resolutionrequests_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionRequestCancellationAttachment > resolutionrequestcancellations_;
@@ -4653,7 +4654,7 @@ class MessagePatchToPost : public ::google::protobuf::Message {
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::EditDocumentPacketCommand > editdocumentpacketcommands_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment > universaltransferdocumentbuyertitles_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionRouteRemoval > resolutionrouteremovals_;
-  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment > recipienttitles_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment > recipienttitles_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::EditingPatch > editingpatches_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -5742,6 +5743,129 @@ class ReceiptAttachment : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static ReceiptAttachment* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class RecipientTitleAttachment : public ::google::protobuf::Message {
+ public:
+  RecipientTitleAttachment();
+  virtual ~RecipientTitleAttachment();
+
+  RecipientTitleAttachment(const RecipientTitleAttachment& from);
+
+  inline RecipientTitleAttachment& operator=(const RecipientTitleAttachment& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const RecipientTitleAttachment& default_instance();
+
+  void Swap(RecipientTitleAttachment* other);
+
+  // implements Message ----------------------------------------------
+
+  RecipientTitleAttachment* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const RecipientTitleAttachment& from);
+  void MergeFrom(const RecipientTitleAttachment& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string ParentEntityId = 1;
+  inline bool has_parententityid() const;
+  inline void clear_parententityid();
+  static const int kParentEntityIdFieldNumber = 1;
+  inline const ::std::string& parententityid() const;
+  inline void set_parententityid(const ::std::string& value);
+  inline void set_parententityid(const char* value);
+  inline void set_parententityid(const char* value, size_t size);
+  inline ::std::string* mutable_parententityid();
+  inline ::std::string* release_parententityid();
+  inline void set_allocated_parententityid(::std::string* parententityid);
+
+  // required .Diadoc.Api.Proto.Events.SignedContent SignedContent = 2;
+  inline bool has_signedcontent() const;
+  inline void clear_signedcontent();
+  static const int kSignedContentFieldNumber = 2;
+  inline const ::Diadoc::Api::Proto::Events::SignedContent& signedcontent() const;
+  inline ::Diadoc::Api::Proto::Events::SignedContent* mutable_signedcontent();
+  inline ::Diadoc::Api::Proto::Events::SignedContent* release_signedcontent();
+  inline void set_allocated_signedcontent(::Diadoc::Api::Proto::Events::SignedContent* signedcontent);
+
+  // repeated string Labels = 4;
+  inline int labels_size() const;
+  inline void clear_labels();
+  static const int kLabelsFieldNumber = 4;
+  inline const ::std::string& labels(int index) const;
+  inline ::std::string* mutable_labels(int index);
+  inline void set_labels(int index, const ::std::string& value);
+  inline void set_labels(int index, const char* value);
+  inline void set_labels(int index, const char* value, size_t size);
+  inline ::std::string* add_labels();
+  inline void add_labels(const ::std::string& value);
+  inline void add_labels(const char* value);
+  inline void add_labels(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& labels() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_labels();
+
+  // required bool NeedReceipt = 5 [default = false];
+  inline bool has_needreceipt() const;
+  inline void clear_needreceipt();
+  static const int kNeedReceiptFieldNumber = 5;
+  inline bool needreceipt() const;
+  inline void set_needreceipt(bool value);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.RecipientTitleAttachment)
+ private:
+  inline void set_has_parententityid();
+  inline void clear_has_parententityid();
+  inline void set_has_signedcontent();
+  inline void clear_has_signedcontent();
+  inline void set_has_needreceipt();
+  inline void clear_has_needreceipt();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* parententityid_;
+  ::Diadoc::Api::Proto::Events::SignedContent* signedcontent_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> labels_;
+  bool needreceipt_;
+  friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
+
+  void InitAsDefaultInstance();
+  static RecipientTitleAttachment* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -19708,61 +19832,61 @@ MessagePatchToPost::mutable_requestedsignaturerejections() {
   return &requestedsignaturerejections_;
 }
 
-// repeated .Diadoc.Api.Proto.Events.ReceiptAttachment XmlTorg12BuyerTitles = 7;
+// repeated .Diadoc.Api.Proto.Events.RecipientTitleAttachment XmlTorg12BuyerTitles = 7;
 inline int MessagePatchToPost::xmltorg12buyertitles_size() const {
   return xmltorg12buyertitles_.size();
 }
 inline void MessagePatchToPost::clear_xmltorg12buyertitles() {
   xmltorg12buyertitles_.Clear();
 }
-inline const ::Diadoc::Api::Proto::Events::ReceiptAttachment& MessagePatchToPost::xmltorg12buyertitles(int index) const {
+inline const ::Diadoc::Api::Proto::Events::RecipientTitleAttachment& MessagePatchToPost::xmltorg12buyertitles(int index) const {
   // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.MessagePatchToPost.XmlTorg12BuyerTitles)
   return xmltorg12buyertitles_.Get(index);
 }
-inline ::Diadoc::Api::Proto::Events::ReceiptAttachment* MessagePatchToPost::mutable_xmltorg12buyertitles(int index) {
+inline ::Diadoc::Api::Proto::Events::RecipientTitleAttachment* MessagePatchToPost::mutable_xmltorg12buyertitles(int index) {
   // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.MessagePatchToPost.XmlTorg12BuyerTitles)
   return xmltorg12buyertitles_.Mutable(index);
 }
-inline ::Diadoc::Api::Proto::Events::ReceiptAttachment* MessagePatchToPost::add_xmltorg12buyertitles() {
+inline ::Diadoc::Api::Proto::Events::RecipientTitleAttachment* MessagePatchToPost::add_xmltorg12buyertitles() {
   // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.MessagePatchToPost.XmlTorg12BuyerTitles)
   return xmltorg12buyertitles_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >&
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment >&
 MessagePatchToPost::xmltorg12buyertitles() const {
   // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.MessagePatchToPost.XmlTorg12BuyerTitles)
   return xmltorg12buyertitles_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >*
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment >*
 MessagePatchToPost::mutable_xmltorg12buyertitles() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.MessagePatchToPost.XmlTorg12BuyerTitles)
   return &xmltorg12buyertitles_;
 }
 
-// repeated .Diadoc.Api.Proto.Events.ReceiptAttachment XmlAcceptanceCertificateBuyerTitles = 8;
+// repeated .Diadoc.Api.Proto.Events.RecipientTitleAttachment XmlAcceptanceCertificateBuyerTitles = 8;
 inline int MessagePatchToPost::xmlacceptancecertificatebuyertitles_size() const {
   return xmlacceptancecertificatebuyertitles_.size();
 }
 inline void MessagePatchToPost::clear_xmlacceptancecertificatebuyertitles() {
   xmlacceptancecertificatebuyertitles_.Clear();
 }
-inline const ::Diadoc::Api::Proto::Events::ReceiptAttachment& MessagePatchToPost::xmlacceptancecertificatebuyertitles(int index) const {
+inline const ::Diadoc::Api::Proto::Events::RecipientTitleAttachment& MessagePatchToPost::xmlacceptancecertificatebuyertitles(int index) const {
   // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.MessagePatchToPost.XmlAcceptanceCertificateBuyerTitles)
   return xmlacceptancecertificatebuyertitles_.Get(index);
 }
-inline ::Diadoc::Api::Proto::Events::ReceiptAttachment* MessagePatchToPost::mutable_xmlacceptancecertificatebuyertitles(int index) {
+inline ::Diadoc::Api::Proto::Events::RecipientTitleAttachment* MessagePatchToPost::mutable_xmlacceptancecertificatebuyertitles(int index) {
   // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.MessagePatchToPost.XmlAcceptanceCertificateBuyerTitles)
   return xmlacceptancecertificatebuyertitles_.Mutable(index);
 }
-inline ::Diadoc::Api::Proto::Events::ReceiptAttachment* MessagePatchToPost::add_xmlacceptancecertificatebuyertitles() {
+inline ::Diadoc::Api::Proto::Events::RecipientTitleAttachment* MessagePatchToPost::add_xmlacceptancecertificatebuyertitles() {
   // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.MessagePatchToPost.XmlAcceptanceCertificateBuyerTitles)
   return xmlacceptancecertificatebuyertitles_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >&
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment >&
 MessagePatchToPost::xmlacceptancecertificatebuyertitles() const {
   // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.MessagePatchToPost.XmlAcceptanceCertificateBuyerTitles)
   return xmlacceptancecertificatebuyertitles_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >*
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment >*
 MessagePatchToPost::mutable_xmlacceptancecertificatebuyertitles() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.MessagePatchToPost.XmlAcceptanceCertificateBuyerTitles)
   return &xmlacceptancecertificatebuyertitles_;
@@ -20158,31 +20282,31 @@ MessagePatchToPost::mutable_resolutionrouteremovals() {
   return &resolutionrouteremovals_;
 }
 
-// repeated .Diadoc.Api.Proto.Events.ReceiptAttachment RecipientTitles = 22;
+// repeated .Diadoc.Api.Proto.Events.RecipientTitleAttachment RecipientTitles = 22;
 inline int MessagePatchToPost::recipienttitles_size() const {
   return recipienttitles_.size();
 }
 inline void MessagePatchToPost::clear_recipienttitles() {
   recipienttitles_.Clear();
 }
-inline const ::Diadoc::Api::Proto::Events::ReceiptAttachment& MessagePatchToPost::recipienttitles(int index) const {
+inline const ::Diadoc::Api::Proto::Events::RecipientTitleAttachment& MessagePatchToPost::recipienttitles(int index) const {
   // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.MessagePatchToPost.RecipientTitles)
   return recipienttitles_.Get(index);
 }
-inline ::Diadoc::Api::Proto::Events::ReceiptAttachment* MessagePatchToPost::mutable_recipienttitles(int index) {
+inline ::Diadoc::Api::Proto::Events::RecipientTitleAttachment* MessagePatchToPost::mutable_recipienttitles(int index) {
   // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.MessagePatchToPost.RecipientTitles)
   return recipienttitles_.Mutable(index);
 }
-inline ::Diadoc::Api::Proto::Events::ReceiptAttachment* MessagePatchToPost::add_recipienttitles() {
+inline ::Diadoc::Api::Proto::Events::RecipientTitleAttachment* MessagePatchToPost::add_recipienttitles() {
   // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.MessagePatchToPost.RecipientTitles)
   return recipienttitles_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >&
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment >&
 MessagePatchToPost::recipienttitles() const {
   // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.MessagePatchToPost.RecipientTitles)
   return recipienttitles_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >*
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment >*
 MessagePatchToPost::mutable_recipienttitles() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.MessagePatchToPost.RecipientTitles)
   return &recipienttitles_;
@@ -22208,6 +22332,205 @@ inline ::google::protobuf::RepeatedPtrField< ::std::string>*
 ReceiptAttachment::mutable_labels() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.ReceiptAttachment.Labels)
   return &labels_;
+}
+
+// -------------------------------------------------------------------
+
+// RecipientTitleAttachment
+
+// required string ParentEntityId = 1;
+inline bool RecipientTitleAttachment::has_parententityid() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void RecipientTitleAttachment::set_has_parententityid() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void RecipientTitleAttachment::clear_has_parententityid() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void RecipientTitleAttachment::clear_parententityid() {
+  if (parententityid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_->clear();
+  }
+  clear_has_parententityid();
+}
+inline const ::std::string& RecipientTitleAttachment::parententityid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.RecipientTitleAttachment.ParentEntityId)
+  return *parententityid_;
+}
+inline void RecipientTitleAttachment::set_parententityid(const ::std::string& value) {
+  set_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_ = new ::std::string;
+  }
+  parententityid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.RecipientTitleAttachment.ParentEntityId)
+}
+inline void RecipientTitleAttachment::set_parententityid(const char* value) {
+  set_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_ = new ::std::string;
+  }
+  parententityid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.RecipientTitleAttachment.ParentEntityId)
+}
+inline void RecipientTitleAttachment::set_parententityid(const char* value, size_t size) {
+  set_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_ = new ::std::string;
+  }
+  parententityid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.RecipientTitleAttachment.ParentEntityId)
+}
+inline ::std::string* RecipientTitleAttachment::mutable_parententityid() {
+  set_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.RecipientTitleAttachment.ParentEntityId)
+  return parententityid_;
+}
+inline ::std::string* RecipientTitleAttachment::release_parententityid() {
+  clear_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = parententityid_;
+    parententityid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void RecipientTitleAttachment::set_allocated_parententityid(::std::string* parententityid) {
+  if (parententityid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete parententityid_;
+  }
+  if (parententityid) {
+    set_has_parententityid();
+    parententityid_ = parententityid;
+  } else {
+    clear_has_parententityid();
+    parententityid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.RecipientTitleAttachment.ParentEntityId)
+}
+
+// required .Diadoc.Api.Proto.Events.SignedContent SignedContent = 2;
+inline bool RecipientTitleAttachment::has_signedcontent() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void RecipientTitleAttachment::set_has_signedcontent() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void RecipientTitleAttachment::clear_has_signedcontent() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void RecipientTitleAttachment::clear_signedcontent() {
+  if (signedcontent_ != NULL) signedcontent_->::Diadoc::Api::Proto::Events::SignedContent::Clear();
+  clear_has_signedcontent();
+}
+inline const ::Diadoc::Api::Proto::Events::SignedContent& RecipientTitleAttachment::signedcontent() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.RecipientTitleAttachment.SignedContent)
+  return signedcontent_ != NULL ? *signedcontent_ : *default_instance_->signedcontent_;
+}
+inline ::Diadoc::Api::Proto::Events::SignedContent* RecipientTitleAttachment::mutable_signedcontent() {
+  set_has_signedcontent();
+  if (signedcontent_ == NULL) signedcontent_ = new ::Diadoc::Api::Proto::Events::SignedContent;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.RecipientTitleAttachment.SignedContent)
+  return signedcontent_;
+}
+inline ::Diadoc::Api::Proto::Events::SignedContent* RecipientTitleAttachment::release_signedcontent() {
+  clear_has_signedcontent();
+  ::Diadoc::Api::Proto::Events::SignedContent* temp = signedcontent_;
+  signedcontent_ = NULL;
+  return temp;
+}
+inline void RecipientTitleAttachment::set_allocated_signedcontent(::Diadoc::Api::Proto::Events::SignedContent* signedcontent) {
+  delete signedcontent_;
+  signedcontent_ = signedcontent;
+  if (signedcontent) {
+    set_has_signedcontent();
+  } else {
+    clear_has_signedcontent();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.RecipientTitleAttachment.SignedContent)
+}
+
+// repeated string Labels = 4;
+inline int RecipientTitleAttachment::labels_size() const {
+  return labels_.size();
+}
+inline void RecipientTitleAttachment::clear_labels() {
+  labels_.Clear();
+}
+inline const ::std::string& RecipientTitleAttachment::labels(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.RecipientTitleAttachment.Labels)
+  return labels_.Get(index);
+}
+inline ::std::string* RecipientTitleAttachment::mutable_labels(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.RecipientTitleAttachment.Labels)
+  return labels_.Mutable(index);
+}
+inline void RecipientTitleAttachment::set_labels(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.RecipientTitleAttachment.Labels)
+  labels_.Mutable(index)->assign(value);
+}
+inline void RecipientTitleAttachment::set_labels(int index, const char* value) {
+  labels_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.RecipientTitleAttachment.Labels)
+}
+inline void RecipientTitleAttachment::set_labels(int index, const char* value, size_t size) {
+  labels_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.RecipientTitleAttachment.Labels)
+}
+inline ::std::string* RecipientTitleAttachment::add_labels() {
+  return labels_.Add();
+}
+inline void RecipientTitleAttachment::add_labels(const ::std::string& value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.RecipientTitleAttachment.Labels)
+}
+inline void RecipientTitleAttachment::add_labels(const char* value) {
+  labels_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:Diadoc.Api.Proto.Events.RecipientTitleAttachment.Labels)
+}
+inline void RecipientTitleAttachment::add_labels(const char* value, size_t size) {
+  labels_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:Diadoc.Api.Proto.Events.RecipientTitleAttachment.Labels)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+RecipientTitleAttachment::labels() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.RecipientTitleAttachment.Labels)
+  return labels_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+RecipientTitleAttachment::mutable_labels() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.RecipientTitleAttachment.Labels)
+  return &labels_;
+}
+
+// required bool NeedReceipt = 5 [default = false];
+inline bool RecipientTitleAttachment::has_needreceipt() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void RecipientTitleAttachment::set_has_needreceipt() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void RecipientTitleAttachment::clear_has_needreceipt() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void RecipientTitleAttachment::clear_needreceipt() {
+  needreceipt_ = false;
+  clear_has_needreceipt();
+}
+inline bool RecipientTitleAttachment::needreceipt() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.RecipientTitleAttachment.NeedReceipt)
+  return needreceipt_;
+}
+inline void RecipientTitleAttachment::set_needreceipt(bool value) {
+  set_has_needreceipt();
+  needreceipt_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.RecipientTitleAttachment.NeedReceipt)
 }
 
 // -------------------------------------------------------------------
