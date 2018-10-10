@@ -306,7 +306,7 @@ message MessagePatchToPost {
 	repeated ResolutionRouteAssignment ResolutionRouteAssignments = 17;
 	repeated SignatureVerification SignatureVerifications = 18;
 	repeated EditDocumentPacketCommand EditDocumentPacketCommands = 19;
-	repeated ReceiptAttachment UniversalTransferDocumentBuyerTitles = 20;
+	repeated RecipientTitleAttachment UniversalTransferDocumentBuyerTitles = 20;
 	repeated ResolutionRouteRemoval ResolutionRouteRemovals = 21;
 	repeated RecipientTitleAttachment RecipientTitles = 22;
 	repeated EditingPatch EditingPatches = 24;

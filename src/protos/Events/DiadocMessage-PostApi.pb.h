@@ -4574,16 +4574,16 @@ class MessagePatchToPost : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::EditDocumentPacketCommand >*
       mutable_editdocumentpacketcommands();
 
-  // repeated .Diadoc.Api.Proto.Events.ReceiptAttachment UniversalTransferDocumentBuyerTitles = 20;
+  // repeated .Diadoc.Api.Proto.Events.RecipientTitleAttachment UniversalTransferDocumentBuyerTitles = 20;
   inline int universaltransferdocumentbuyertitles_size() const;
   inline void clear_universaltransferdocumentbuyertitles();
   static const int kUniversalTransferDocumentBuyerTitlesFieldNumber = 20;
-  inline const ::Diadoc::Api::Proto::Events::ReceiptAttachment& universaltransferdocumentbuyertitles(int index) const;
-  inline ::Diadoc::Api::Proto::Events::ReceiptAttachment* mutable_universaltransferdocumentbuyertitles(int index);
-  inline ::Diadoc::Api::Proto::Events::ReceiptAttachment* add_universaltransferdocumentbuyertitles();
-  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >&
+  inline const ::Diadoc::Api::Proto::Events::RecipientTitleAttachment& universaltransferdocumentbuyertitles(int index) const;
+  inline ::Diadoc::Api::Proto::Events::RecipientTitleAttachment* mutable_universaltransferdocumentbuyertitles(int index);
+  inline ::Diadoc::Api::Proto::Events::RecipientTitleAttachment* add_universaltransferdocumentbuyertitles();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment >&
       universaltransferdocumentbuyertitles() const;
-  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >*
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment >*
       mutable_universaltransferdocumentbuyertitles();
 
   // repeated .Diadoc.Api.Proto.Events.ResolutionRouteRemoval ResolutionRouteRemovals = 21;
@@ -4652,7 +4652,7 @@ class MessagePatchToPost : public ::google::protobuf::Message {
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionRouteAssignment > resolutionrouteassignments_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::SignatureVerification > signatureverifications_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::EditDocumentPacketCommand > editdocumentpacketcommands_;
-  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment > universaltransferdocumentbuyertitles_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment > universaltransferdocumentbuyertitles_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ResolutionRouteRemoval > resolutionrouteremovals_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment > recipienttitles_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::EditingPatch > editingpatches_;
@@ -20222,31 +20222,31 @@ MessagePatchToPost::mutable_editdocumentpacketcommands() {
   return &editdocumentpacketcommands_;
 }
 
-// repeated .Diadoc.Api.Proto.Events.ReceiptAttachment UniversalTransferDocumentBuyerTitles = 20;
+// repeated .Diadoc.Api.Proto.Events.RecipientTitleAttachment UniversalTransferDocumentBuyerTitles = 20;
 inline int MessagePatchToPost::universaltransferdocumentbuyertitles_size() const {
   return universaltransferdocumentbuyertitles_.size();
 }
 inline void MessagePatchToPost::clear_universaltransferdocumentbuyertitles() {
   universaltransferdocumentbuyertitles_.Clear();
 }
-inline const ::Diadoc::Api::Proto::Events::ReceiptAttachment& MessagePatchToPost::universaltransferdocumentbuyertitles(int index) const {
+inline const ::Diadoc::Api::Proto::Events::RecipientTitleAttachment& MessagePatchToPost::universaltransferdocumentbuyertitles(int index) const {
   // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.MessagePatchToPost.UniversalTransferDocumentBuyerTitles)
   return universaltransferdocumentbuyertitles_.Get(index);
 }
-inline ::Diadoc::Api::Proto::Events::ReceiptAttachment* MessagePatchToPost::mutable_universaltransferdocumentbuyertitles(int index) {
+inline ::Diadoc::Api::Proto::Events::RecipientTitleAttachment* MessagePatchToPost::mutable_universaltransferdocumentbuyertitles(int index) {
   // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.MessagePatchToPost.UniversalTransferDocumentBuyerTitles)
   return universaltransferdocumentbuyertitles_.Mutable(index);
 }
-inline ::Diadoc::Api::Proto::Events::ReceiptAttachment* MessagePatchToPost::add_universaltransferdocumentbuyertitles() {
+inline ::Diadoc::Api::Proto::Events::RecipientTitleAttachment* MessagePatchToPost::add_universaltransferdocumentbuyertitles() {
   // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.MessagePatchToPost.UniversalTransferDocumentBuyerTitles)
   return universaltransferdocumentbuyertitles_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >&
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment >&
 MessagePatchToPost::universaltransferdocumentbuyertitles() const {
   // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.MessagePatchToPost.UniversalTransferDocumentBuyerTitles)
   return universaltransferdocumentbuyertitles_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::ReceiptAttachment >*
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::RecipientTitleAttachment >*
 MessagePatchToPost::mutable_universaltransferdocumentbuyertitles() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.MessagePatchToPost.UniversalTransferDocumentBuyerTitles)
   return &universaltransferdocumentbuyertitles_;
