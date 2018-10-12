@@ -42,6 +42,7 @@ void protobuf_ShutdownFile_Employees_2fEmployee_2eproto();
 class Employee;
 class EmployeePermissions;
 class EmployeeAction;
+class EmployeeList;
 
 // ===================================================================
 
@@ -400,6 +401,98 @@ class EmployeeAction : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static EmployeeAction* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class EmployeeList : public ::google::protobuf::Message {
+ public:
+  EmployeeList();
+  virtual ~EmployeeList();
+
+  EmployeeList(const EmployeeList& from);
+
+  inline EmployeeList& operator=(const EmployeeList& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const EmployeeList& default_instance();
+
+  void Swap(EmployeeList* other);
+
+  // implements Message ----------------------------------------------
+
+  EmployeeList* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const EmployeeList& from);
+  void MergeFrom(const EmployeeList& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .Diadoc.Api.Proto.Employees.Employee Employees = 1;
+  inline int employees_size() const;
+  inline void clear_employees();
+  static const int kEmployeesFieldNumber = 1;
+  inline const ::Diadoc::Api::Proto::Employees::Employee& employees(int index) const;
+  inline ::Diadoc::Api::Proto::Employees::Employee* mutable_employees(int index);
+  inline ::Diadoc::Api::Proto::Employees::Employee* add_employees();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Employees::Employee >&
+      employees() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Employees::Employee >*
+      mutable_employees();
+
+  // required int32 TotalCount = 2;
+  inline bool has_totalcount() const;
+  inline void clear_totalcount();
+  static const int kTotalCountFieldNumber = 2;
+  inline ::google::protobuf::int32 totalcount() const;
+  inline void set_totalcount(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Employees.EmployeeList)
+ private:
+  inline void set_has_totalcount();
+  inline void clear_has_totalcount();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Employees::Employee > employees_;
+  ::google::protobuf::int32 totalcount_;
+  friend void  protobuf_AddDesc_Employees_2fEmployee_2eproto();
+  friend void protobuf_AssignDesc_Employees_2fEmployee_2eproto();
+  friend void protobuf_ShutdownFile_Employees_2fEmployee_2eproto();
+
+  void InitAsDefaultInstance();
+  static EmployeeList* default_instance_;
 };
 // ===================================================================
 
@@ -946,6 +1039,64 @@ inline void EmployeeAction::set_isallowed(bool value) {
   set_has_isallowed();
   isallowed_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Employees.EmployeeAction.IsAllowed)
+}
+
+// -------------------------------------------------------------------
+
+// EmployeeList
+
+// repeated .Diadoc.Api.Proto.Employees.Employee Employees = 1;
+inline int EmployeeList::employees_size() const {
+  return employees_.size();
+}
+inline void EmployeeList::clear_employees() {
+  employees_.Clear();
+}
+inline const ::Diadoc::Api::Proto::Employees::Employee& EmployeeList::employees(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Employees.EmployeeList.Employees)
+  return employees_.Get(index);
+}
+inline ::Diadoc::Api::Proto::Employees::Employee* EmployeeList::mutable_employees(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Employees.EmployeeList.Employees)
+  return employees_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::Employees::Employee* EmployeeList::add_employees() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Employees.EmployeeList.Employees)
+  return employees_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Employees::Employee >&
+EmployeeList::employees() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Employees.EmployeeList.Employees)
+  return employees_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Employees::Employee >*
+EmployeeList::mutable_employees() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Employees.EmployeeList.Employees)
+  return &employees_;
+}
+
+// required int32 TotalCount = 2;
+inline bool EmployeeList::has_totalcount() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void EmployeeList::set_has_totalcount() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void EmployeeList::clear_has_totalcount() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void EmployeeList::clear_totalcount() {
+  totalcount_ = 0;
+  clear_has_totalcount();
+}
+inline ::google::protobuf::int32 EmployeeList::totalcount() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Employees.EmployeeList.TotalCount)
+  return totalcount_;
+}
+inline void EmployeeList::set_totalcount(::google::protobuf::int32 value) {
+  set_has_totalcount();
+  totalcount_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Employees.EmployeeList.TotalCount)
 }
 
 

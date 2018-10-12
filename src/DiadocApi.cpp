@@ -1264,6 +1264,20 @@ Diadoc::Api::Proto::Employees::Employee DiadocApi::GetEmployee(const std::wstrin
 	return FromProtoBytes<Diadoc::Api::Proto::Employees::Employee>(PerformHttpRequest(buf.str(), GET));
 }
 
+Diadoc::Api::Proto::Employees::EmployeeList DiadocApi::GetEmployees(const std::wstring& boxId, int* page, int* count)
+{
+	WppTraceDebugOut("GetEmployees...");
+	std::wstringstream buf;
+	buf << L"/GetEmployees?boxId=" << StringHelper::CanonicalizeUrl(boxId);
+	if (page != NULL) {
+		buf << L"&page=" << *page;
+	}
+	if (count != NULL) {
+		buf << L"&count=" << *count;
+	}
+	return FromProtoBytes<Diadoc::Api::Proto::Employees::EmployeeList>(PerformHttpRequest(buf.str(), GET));
+}
+
 Diadoc::Api::Proto::Employees::Employee DiadocApi::CreateEmployee(const std::wstring& boxId, const Diadoc::Api::Proto::Employees::EmployeeToCreate& employeeToCreate)
 {
 	WppTraceDebugOut("CreateEmployee...");

@@ -32,6 +32,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* EmployeeAction_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   EmployeeAction_reflection_ = NULL;
+const ::google::protobuf::Descriptor* EmployeeList_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  EmployeeList_reflection_ = NULL;
 
 }  // namespace
 
@@ -96,6 +99,22 @@ void protobuf_AssignDesc_Employees_2fEmployee_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(EmployeeAction));
+  EmployeeList_descriptor_ = file->message_type(3);
+  static const int EmployeeList_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EmployeeList, employees_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EmployeeList, totalcount_),
+  };
+  EmployeeList_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      EmployeeList_descriptor_,
+      EmployeeList::default_instance_,
+      EmployeeList_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EmployeeList, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EmployeeList, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(EmployeeList));
 }
 
 namespace {
@@ -114,6 +133,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
     EmployeePermissions_descriptor_, &EmployeePermissions::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     EmployeeAction_descriptor_, &EmployeeAction::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    EmployeeList_descriptor_, &EmployeeList::default_instance());
 }
 
 }  // namespace
@@ -125,6 +146,8 @@ void protobuf_ShutdownFile_Employees_2fEmployee_2eproto() {
   delete EmployeePermissions_reflection_;
   delete EmployeeAction::default_instance_;
   delete EmployeeAction_reflection_;
+  delete EmployeeList::default_instance_;
+  delete EmployeeList_reflection_;
 }
 
 void protobuf_AddDesc_Employees_2fEmployee_2eproto() {
@@ -153,15 +176,19 @@ void protobuf_AddDesc_Employees_2fEmployee_2eproto() {
     "electedDepartmentIds\030\004 \003(\t\022;\n\007Actions\030\005 "
     "\003(\0132*.Diadoc.Api.Proto.Employees.Employe"
     "eAction\"1\n\016EmployeeAction\022\014\n\004Name\030\001 \002(\t\022"
-    "\021\n\tIsAllowed\030\002 \002(\010", 658);
+    "\021\n\tIsAllowed\030\002 \002(\010\"[\n\014EmployeeList\0227\n\tEm"
+    "ployees\030\001 \003(\0132$.Diadoc.Api.Proto.Employe"
+    "es.Employee\022\022\n\nTotalCount\030\002 \002(\005", 751);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Employees/Employee.proto", &protobuf_RegisterTypes);
   Employee::default_instance_ = new Employee();
   EmployeePermissions::default_instance_ = new EmployeePermissions();
   EmployeeAction::default_instance_ = new EmployeeAction();
+  EmployeeList::default_instance_ = new EmployeeList();
   Employee::default_instance_->InitAsDefaultInstance();
   EmployeePermissions::default_instance_->InitAsDefaultInstance();
   EmployeeAction::default_instance_->InitAsDefaultInstance();
+  EmployeeList::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_Employees_2fEmployee_2eproto);
 }
 
@@ -1293,6 +1320,270 @@ void EmployeeAction::Swap(EmployeeAction* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = EmployeeAction_descriptor_;
   metadata.reflection = EmployeeAction_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int EmployeeList::kEmployeesFieldNumber;
+const int EmployeeList::kTotalCountFieldNumber;
+#endif  // !_MSC_VER
+
+EmployeeList::EmployeeList()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Employees.EmployeeList)
+}
+
+void EmployeeList::InitAsDefaultInstance() {
+}
+
+EmployeeList::EmployeeList(const EmployeeList& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Employees.EmployeeList)
+}
+
+void EmployeeList::SharedCtor() {
+  _cached_size_ = 0;
+  totalcount_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+EmployeeList::~EmployeeList() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Employees.EmployeeList)
+  SharedDtor();
+}
+
+void EmployeeList::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void EmployeeList::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* EmployeeList::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return EmployeeList_descriptor_;
+}
+
+const EmployeeList& EmployeeList::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Employees_2fEmployee_2eproto();
+  return *default_instance_;
+}
+
+EmployeeList* EmployeeList::default_instance_ = NULL;
+
+EmployeeList* EmployeeList::New() const {
+  return new EmployeeList;
+}
+
+void EmployeeList::Clear() {
+  totalcount_ = 0;
+  employees_.Clear();
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool EmployeeList::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Employees.EmployeeList)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // repeated .Diadoc.Api.Proto.Employees.Employee Employees = 1;
+      case 1: {
+        if (tag == 10) {
+         parse_Employees:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_employees()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(10)) goto parse_Employees;
+        if (input->ExpectTag(16)) goto parse_TotalCount;
+        break;
+      }
+
+      // required int32 TotalCount = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_TotalCount:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &totalcount_)));
+          set_has_totalcount();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Employees.EmployeeList)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Employees.EmployeeList)
+  return false;
+#undef DO_
+}
+
+void EmployeeList::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Employees.EmployeeList)
+  // repeated .Diadoc.Api.Proto.Employees.Employee Employees = 1;
+  for (int i = 0; i < this->employees_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->employees(i), output);
+  }
+
+  // required int32 TotalCount = 2;
+  if (has_totalcount()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->totalcount(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Employees.EmployeeList)
+}
+
+::google::protobuf::uint8* EmployeeList::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Employees.EmployeeList)
+  // repeated .Diadoc.Api.Proto.Employees.Employee Employees = 1;
+  for (int i = 0; i < this->employees_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, this->employees(i), target);
+  }
+
+  // required int32 TotalCount = 2;
+  if (has_totalcount()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->totalcount(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Employees.EmployeeList)
+  return target;
+}
+
+int EmployeeList::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[1 / 32] & (0xffu << (1 % 32))) {
+    // required int32 TotalCount = 2;
+    if (has_totalcount()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->totalcount());
+    }
+
+  }
+  // repeated .Diadoc.Api.Proto.Employees.Employee Employees = 1;
+  total_size += 1 * this->employees_size();
+  for (int i = 0; i < this->employees_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->employees(i));
+  }
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void EmployeeList::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const EmployeeList* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const EmployeeList*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void EmployeeList::MergeFrom(const EmployeeList& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  employees_.MergeFrom(from.employees_);
+  if (from._has_bits_[1 / 32] & (0xffu << (1 % 32))) {
+    if (from.has_totalcount()) {
+      set_totalcount(from.totalcount());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void EmployeeList::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void EmployeeList::CopyFrom(const EmployeeList& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool EmployeeList::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000002) != 0x00000002) return false;
+
+  if (!::google::protobuf::internal::AllAreInitialized(this->employees())) return false;
+  return true;
+}
+
+void EmployeeList::Swap(EmployeeList* other) {
+  if (other != this) {
+    employees_.Swap(&other->employees_);
+    std::swap(totalcount_, other->totalcount_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata EmployeeList::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = EmployeeList_descriptor_;
+  metadata.reflection = EmployeeList_reflection_;
   return metadata;
 }
 
