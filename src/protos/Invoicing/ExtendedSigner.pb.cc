@@ -194,11 +194,12 @@ void protobuf_AddDesc_Invoicing_2fExtendedSigner_2eproto() {
     "nAndSignerForInvoice\020\006*w\n\014SignerStatus\022\022"
     "\n\016SellerEmployee\020\001\022\036\n\032InformationCreator"
     "Employee\020\002\022\035\n\031OtherOrganizationEmployee\020"
-    "\003\022\024\n\020AuthorizedPerson\020\004*\243\001\n\021DocumentTitl"
-    "eType\022\r\n\tUtdSeller\020\000\022\014\n\010UtdBuyer\020\001\022\r\n\tUc"
-    "dSeller\020\002\022\014\n\010UcdBuyer\020\003\022\024\n\020TovTorg551Sel"
-    "ler\020\004\022\023\n\017TovTorg551Buyer\020\005\022\024\n\020AccCert552"
-    "Seller\020\006\022\023\n\017AccCert552Buyer\020\007", 1709);
+    "\003\022\024\n\020AuthorizedPerson\020\004*\270\001\n\021DocumentTitl"
+    "eType\022\023\n\006Absent\020\377\377\377\377\377\377\377\377\377\001\022\r\n\tUtdSeller\020"
+    "\000\022\014\n\010UtdBuyer\020\001\022\r\n\tUcdSeller\020\002\022\014\n\010UcdBuy"
+    "er\020\003\022\024\n\020TovTorg551Seller\020\004\022\023\n\017TovTorg551"
+    "Buyer\020\005\022\024\n\020AccCert552Seller\020\006\022\023\n\017AccCert"
+    "552Buyer\020\007", 1730);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Invoicing/ExtendedSigner.proto", &protobuf_RegisterTypes);
   ExtendedSigner::default_instance_ = new ExtendedSigner();
@@ -272,6 +273,7 @@ const ::google::protobuf::EnumDescriptor* DocumentTitleType_descriptor() {
 }
 bool DocumentTitleType_IsValid(int value) {
   switch(value) {
+    case -1:
     case 0:
     case 1:
     case 2:

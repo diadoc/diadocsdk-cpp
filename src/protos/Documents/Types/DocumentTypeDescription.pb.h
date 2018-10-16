@@ -25,6 +25,7 @@
 #include <google/protobuf/extension_set.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "Invoicing/ExtendedSigner.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace Diadoc {
@@ -44,6 +45,7 @@ class DocumentFunction;
 class DocumentVersion;
 class DocumentWorkflow;
 class DocumentTitle;
+class SignerInfo;
 class DocumentMetadataItem;
 class DetectedDocumentType;
 class DetectDocumentTypesResponse;
@@ -66,6 +68,26 @@ inline bool DocumentDocflow_Parse(
     const ::std::string& name, DocumentDocflow* value) {
   return ::google::protobuf::internal::ParseNamedEnum<DocumentDocflow>(
     DocumentDocflow_descriptor(), name, value);
+}
+enum SignerType {
+  None = 0,
+  Signer = 1,
+  ExtendedSigner = 2
+};
+bool SignerType_IsValid(int value);
+const SignerType SignerType_MIN = None;
+const SignerType SignerType_MAX = ExtendedSigner;
+const int SignerType_ARRAYSIZE = SignerType_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* SignerType_descriptor();
+inline const ::std::string& SignerType_Name(SignerType value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    SignerType_descriptor(), value);
+}
+inline bool SignerType_Parse(
+    const ::std::string& name, SignerType* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<SignerType>(
+    SignerType_descriptor(), name, value);
 }
 enum DocumentMetadataItemType {
   String = 0,
@@ -745,6 +767,15 @@ class DocumentTitle : public ::google::protobuf::Message {
   inline ::std::string* release_userdataxsdurl();
   inline void set_allocated_userdataxsdurl(::std::string* userdataxsdurl);
 
+  // required .Diadoc.Api.Proto.Documents.Types.SignerInfo SignerInfo = 6;
+  inline bool has_signerinfo() const;
+  inline void clear_signerinfo();
+  static const int kSignerInfoFieldNumber = 6;
+  inline const ::Diadoc::Api::Proto::Documents::Types::SignerInfo& signerinfo() const;
+  inline ::Diadoc::Api::Proto::Documents::Types::SignerInfo* mutable_signerinfo();
+  inline ::Diadoc::Api::Proto::Documents::Types::SignerInfo* release_signerinfo();
+  inline void set_allocated_signerinfo(::Diadoc::Api::Proto::Documents::Types::SignerInfo* signerinfo);
+
   // repeated .Diadoc.Api.Proto.Documents.Types.DocumentMetadataItem MetadataItems = 3;
   inline int metadataitems_size() const;
   inline void clear_metadataitems();
@@ -777,6 +808,8 @@ class DocumentTitle : public ::google::protobuf::Message {
   inline void clear_has_xsdurl();
   inline void set_has_userdataxsdurl();
   inline void clear_has_userdataxsdurl();
+  inline void set_has_signerinfo();
+  inline void clear_has_signerinfo();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -784,6 +817,7 @@ class DocumentTitle : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::std::string* xsdurl_;
   ::std::string* userdataxsdurl_;
+  ::Diadoc::Api::Proto::Documents::Types::SignerInfo* signerinfo_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentMetadataItem > metadataitems_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentMetadataItem > encryptedmetadataitems_;
   bool isformal_;
@@ -793,6 +827,95 @@ class DocumentTitle : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static DocumentTitle* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class SignerInfo : public ::google::protobuf::Message {
+ public:
+  SignerInfo();
+  virtual ~SignerInfo();
+
+  SignerInfo(const SignerInfo& from);
+
+  inline SignerInfo& operator=(const SignerInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SignerInfo& default_instance();
+
+  void Swap(SignerInfo* other);
+
+  // implements Message ----------------------------------------------
+
+  SignerInfo* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const SignerInfo& from);
+  void MergeFrom(const SignerInfo& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required .Diadoc.Api.Proto.Documents.Types.SignerType SignerType = 1;
+  inline bool has_signertype() const;
+  inline void clear_signertype();
+  static const int kSignerTypeFieldNumber = 1;
+  inline ::Diadoc::Api::Proto::Documents::Types::SignerType signertype() const;
+  inline void set_signertype(::Diadoc::Api::Proto::Documents::Types::SignerType value);
+
+  // required .Diadoc.Api.Proto.Invoicing.Signers.DocumentTitleType ExtendedDocumentTitleType = 2 [default = Absent];
+  inline bool has_extendeddocumenttitletype() const;
+  inline void clear_extendeddocumenttitletype();
+  static const int kExtendedDocumentTitleTypeFieldNumber = 2;
+  inline ::Diadoc::Api::Proto::Invoicing::Signers::DocumentTitleType extendeddocumenttitletype() const;
+  inline void set_extendeddocumenttitletype(::Diadoc::Api::Proto::Invoicing::Signers::DocumentTitleType value);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.Types.SignerInfo)
+ private:
+  inline void set_has_signertype();
+  inline void clear_has_signertype();
+  inline void set_has_extendeddocumenttitletype();
+  inline void clear_has_extendeddocumenttitletype();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  int signertype_;
+  int extendeddocumenttitletype_;
+  friend void  protobuf_AddDesc_Documents_2fTypes_2fDocumentTypeDescription_2eproto();
+  friend void protobuf_AssignDesc_Documents_2fTypes_2fDocumentTypeDescription_2eproto();
+  friend void protobuf_ShutdownFile_Documents_2fTypes_2fDocumentTypeDescription_2eproto();
+
+  void InitAsDefaultInstance();
+  static SignerInfo* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -1961,6 +2084,47 @@ inline void DocumentTitle::set_allocated_userdataxsdurl(::std::string* userdatax
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Types.DocumentTitle.UserDataXsdUrl)
 }
 
+// required .Diadoc.Api.Proto.Documents.Types.SignerInfo SignerInfo = 6;
+inline bool DocumentTitle::has_signerinfo() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void DocumentTitle::set_has_signerinfo() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void DocumentTitle::clear_has_signerinfo() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void DocumentTitle::clear_signerinfo() {
+  if (signerinfo_ != NULL) signerinfo_->::Diadoc::Api::Proto::Documents::Types::SignerInfo::Clear();
+  clear_has_signerinfo();
+}
+inline const ::Diadoc::Api::Proto::Documents::Types::SignerInfo& DocumentTitle::signerinfo() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Types.DocumentTitle.SignerInfo)
+  return signerinfo_ != NULL ? *signerinfo_ : *default_instance_->signerinfo_;
+}
+inline ::Diadoc::Api::Proto::Documents::Types::SignerInfo* DocumentTitle::mutable_signerinfo() {
+  set_has_signerinfo();
+  if (signerinfo_ == NULL) signerinfo_ = new ::Diadoc::Api::Proto::Documents::Types::SignerInfo;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.Types.DocumentTitle.SignerInfo)
+  return signerinfo_;
+}
+inline ::Diadoc::Api::Proto::Documents::Types::SignerInfo* DocumentTitle::release_signerinfo() {
+  clear_has_signerinfo();
+  ::Diadoc::Api::Proto::Documents::Types::SignerInfo* temp = signerinfo_;
+  signerinfo_ = NULL;
+  return temp;
+}
+inline void DocumentTitle::set_allocated_signerinfo(::Diadoc::Api::Proto::Documents::Types::SignerInfo* signerinfo) {
+  delete signerinfo_;
+  signerinfo_ = signerinfo;
+  if (signerinfo) {
+    set_has_signerinfo();
+  } else {
+    clear_has_signerinfo();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Types.DocumentTitle.SignerInfo)
+}
+
 // repeated .Diadoc.Api.Proto.Documents.Types.DocumentMetadataItem MetadataItems = 3;
 inline int DocumentTitle::metadataitems_size() const {
   return metadataitems_.size();
@@ -2019,6 +2183,60 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Ty
 DocumentTitle::mutable_encryptedmetadataitems() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Documents.Types.DocumentTitle.EncryptedMetadataItems)
   return &encryptedmetadataitems_;
+}
+
+// -------------------------------------------------------------------
+
+// SignerInfo
+
+// required .Diadoc.Api.Proto.Documents.Types.SignerType SignerType = 1;
+inline bool SignerInfo::has_signertype() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void SignerInfo::set_has_signertype() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void SignerInfo::clear_has_signertype() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void SignerInfo::clear_signertype() {
+  signertype_ = 0;
+  clear_has_signertype();
+}
+inline ::Diadoc::Api::Proto::Documents::Types::SignerType SignerInfo::signertype() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Types.SignerInfo.SignerType)
+  return static_cast< ::Diadoc::Api::Proto::Documents::Types::SignerType >(signertype_);
+}
+inline void SignerInfo::set_signertype(::Diadoc::Api::Proto::Documents::Types::SignerType value) {
+  assert(::Diadoc::Api::Proto::Documents::Types::SignerType_IsValid(value));
+  set_has_signertype();
+  signertype_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Types.SignerInfo.SignerType)
+}
+
+// required .Diadoc.Api.Proto.Invoicing.Signers.DocumentTitleType ExtendedDocumentTitleType = 2 [default = Absent];
+inline bool SignerInfo::has_extendeddocumenttitletype() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void SignerInfo::set_has_extendeddocumenttitletype() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void SignerInfo::clear_has_extendeddocumenttitletype() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void SignerInfo::clear_extendeddocumenttitletype() {
+  extendeddocumenttitletype_ = -1;
+  clear_has_extendeddocumenttitletype();
+}
+inline ::Diadoc::Api::Proto::Invoicing::Signers::DocumentTitleType SignerInfo::extendeddocumenttitletype() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Types.SignerInfo.ExtendedDocumentTitleType)
+  return static_cast< ::Diadoc::Api::Proto::Invoicing::Signers::DocumentTitleType >(extendeddocumenttitletype_);
+}
+inline void SignerInfo::set_extendeddocumenttitletype(::Diadoc::Api::Proto::Invoicing::Signers::DocumentTitleType value) {
+  assert(::Diadoc::Api::Proto::Invoicing::Signers::DocumentTitleType_IsValid(value));
+  set_has_extendeddocumenttitletype();
+  extendeddocumenttitletype_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Types.SignerInfo.ExtendedDocumentTitleType)
 }
 
 // -------------------------------------------------------------------
@@ -2458,6 +2676,11 @@ template <> struct is_proto_enum< ::Diadoc::Api::Proto::Documents::Types::Docume
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::Diadoc::Api::Proto::Documents::Types::DocumentDocflow>() {
   return ::Diadoc::Api::Proto::Documents::Types::DocumentDocflow_descriptor();
+}
+template <> struct is_proto_enum< ::Diadoc::Api::Proto::Documents::Types::SignerType> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::Diadoc::Api::Proto::Documents::Types::SignerType>() {
+  return ::Diadoc::Api::Proto::Documents::Types::SignerType_descriptor();
 }
 template <> struct is_proto_enum< ::Diadoc::Api::Proto::Documents::Types::DocumentMetadataItemType> : ::google::protobuf::internal::true_type {};
 template <>
