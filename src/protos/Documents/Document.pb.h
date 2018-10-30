@@ -55,6 +55,7 @@ void protobuf_ShutdownFile_Documents_2fDocument_2eproto();
 class Document;
 class ResolutionStatus;
 class RecipientReceiptMetadata;
+class SenderReceiptMetadata;
 class ConfirmationMetadata;
 class AmendmentRequestMetadata;
 class Origin;
@@ -975,6 +976,15 @@ class Document : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::LockMode lockmode() const;
   inline void set_lockmode(::Diadoc::Api::Proto::LockMode value);
 
+  // required .Diadoc.Api.Proto.Documents.SenderReceiptMetadata SenderReceiptMetadata = 75;
+  inline bool has_senderreceiptmetadata() const;
+  inline void clear_senderreceiptmetadata();
+  static const int kSenderReceiptMetadataFieldNumber = 75;
+  inline const ::Diadoc::Api::Proto::Documents::SenderReceiptMetadata& senderreceiptmetadata() const;
+  inline ::Diadoc::Api::Proto::Documents::SenderReceiptMetadata* mutable_senderreceiptmetadata();
+  inline ::Diadoc::Api::Proto::Documents::SenderReceiptMetadata* release_senderreceiptmetadata();
+  inline void set_allocated_senderreceiptmetadata(::Diadoc::Api::Proto::Documents::SenderReceiptMetadata* senderreceiptmetadata);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.Document)
  private:
   inline void set_has_indexkey();
@@ -1111,6 +1121,8 @@ class Document : public ::google::protobuf::Message {
   inline void clear_has_editingsettingid();
   inline void set_has_lockmode();
   inline void clear_has_lockmode();
+  inline void set_has_senderreceiptmetadata();
+  inline void clear_has_senderreceiptmetadata();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1187,6 +1199,7 @@ class Document : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Documents::AmendmentRequestMetadata* amendmentrequestmetadata_;
   ::Diadoc::Api::Proto::Documents::Origin* origin_;
   ::std::string* editingsettingid_;
+  ::Diadoc::Api::Proto::Documents::SenderReceiptMetadata* senderreceiptmetadata_;
   int lockmode_;
   friend void  protobuf_AddDesc_Documents_2fDocument_2eproto();
   friend void protobuf_AssignDesc_Documents_2fDocument_2eproto();
@@ -1406,6 +1419,85 @@ class RecipientReceiptMetadata : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static RecipientReceiptMetadata* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class SenderReceiptMetadata : public ::google::protobuf::Message {
+ public:
+  SenderReceiptMetadata();
+  virtual ~SenderReceiptMetadata();
+
+  SenderReceiptMetadata(const SenderReceiptMetadata& from);
+
+  inline SenderReceiptMetadata& operator=(const SenderReceiptMetadata& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SenderReceiptMetadata& default_instance();
+
+  void Swap(SenderReceiptMetadata* other);
+
+  // implements Message ----------------------------------------------
+
+  SenderReceiptMetadata* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const SenderReceiptMetadata& from);
+  void MergeFrom(const SenderReceiptMetadata& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1;
+  inline bool has_receiptstatus() const;
+  inline void clear_receiptstatus();
+  static const int kReceiptStatusFieldNumber = 1;
+  inline ::Diadoc::Api::Proto::Documents::GeneralReceiptStatus receiptstatus() const;
+  inline void set_receiptstatus(::Diadoc::Api::Proto::Documents::GeneralReceiptStatus value);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.SenderReceiptMetadata)
+ private:
+  inline void set_has_receiptstatus();
+  inline void clear_has_receiptstatus();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  int receiptstatus_;
+  friend void  protobuf_AddDesc_Documents_2fDocument_2eproto();
+  friend void protobuf_AssignDesc_Documents_2fDocument_2eproto();
+  friend void protobuf_ShutdownFile_Documents_2fDocument_2eproto();
+
+  void InitAsDefaultInstance();
+  static SenderReceiptMetadata* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -4933,6 +5025,47 @@ inline void Document::set_lockmode(::Diadoc::Api::Proto::LockMode value) {
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Document.LockMode)
 }
 
+// required .Diadoc.Api.Proto.Documents.SenderReceiptMetadata SenderReceiptMetadata = 75;
+inline bool Document::has_senderreceiptmetadata() const {
+  return (_has_bits_[2] & 0x00000100u) != 0;
+}
+inline void Document::set_has_senderreceiptmetadata() {
+  _has_bits_[2] |= 0x00000100u;
+}
+inline void Document::clear_has_senderreceiptmetadata() {
+  _has_bits_[2] &= ~0x00000100u;
+}
+inline void Document::clear_senderreceiptmetadata() {
+  if (senderreceiptmetadata_ != NULL) senderreceiptmetadata_->::Diadoc::Api::Proto::Documents::SenderReceiptMetadata::Clear();
+  clear_has_senderreceiptmetadata();
+}
+inline const ::Diadoc::Api::Proto::Documents::SenderReceiptMetadata& Document::senderreceiptmetadata() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Document.SenderReceiptMetadata)
+  return senderreceiptmetadata_ != NULL ? *senderreceiptmetadata_ : *default_instance_->senderreceiptmetadata_;
+}
+inline ::Diadoc::Api::Proto::Documents::SenderReceiptMetadata* Document::mutable_senderreceiptmetadata() {
+  set_has_senderreceiptmetadata();
+  if (senderreceiptmetadata_ == NULL) senderreceiptmetadata_ = new ::Diadoc::Api::Proto::Documents::SenderReceiptMetadata;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.Document.SenderReceiptMetadata)
+  return senderreceiptmetadata_;
+}
+inline ::Diadoc::Api::Proto::Documents::SenderReceiptMetadata* Document::release_senderreceiptmetadata() {
+  clear_has_senderreceiptmetadata();
+  ::Diadoc::Api::Proto::Documents::SenderReceiptMetadata* temp = senderreceiptmetadata_;
+  senderreceiptmetadata_ = NULL;
+  return temp;
+}
+inline void Document::set_allocated_senderreceiptmetadata(::Diadoc::Api::Proto::Documents::SenderReceiptMetadata* senderreceiptmetadata) {
+  delete senderreceiptmetadata_;
+  senderreceiptmetadata_ = senderreceiptmetadata;
+  if (senderreceiptmetadata) {
+    set_has_senderreceiptmetadata();
+  } else {
+    clear_has_senderreceiptmetadata();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.SenderReceiptMetadata)
+}
+
 // -------------------------------------------------------------------
 
 // ResolutionStatus
@@ -5223,6 +5356,35 @@ inline void RecipientReceiptMetadata::set_allocated_confirmationmetadata(::Diado
     clear_has_confirmationmetadata();
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.RecipientReceiptMetadata.ConfirmationMetadata)
+}
+
+// -------------------------------------------------------------------
+
+// SenderReceiptMetadata
+
+// required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1;
+inline bool SenderReceiptMetadata::has_receiptstatus() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void SenderReceiptMetadata::set_has_receiptstatus() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void SenderReceiptMetadata::clear_has_receiptstatus() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void SenderReceiptMetadata::clear_receiptstatus() {
+  receiptstatus_ = 0;
+  clear_has_receiptstatus();
+}
+inline ::Diadoc::Api::Proto::Documents::GeneralReceiptStatus SenderReceiptMetadata::receiptstatus() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.SenderReceiptMetadata.ReceiptStatus)
+  return static_cast< ::Diadoc::Api::Proto::Documents::GeneralReceiptStatus >(receiptstatus_);
+}
+inline void SenderReceiptMetadata::set_receiptstatus(::Diadoc::Api::Proto::Documents::GeneralReceiptStatus value) {
+  assert(::Diadoc::Api::Proto::Documents::GeneralReceiptStatus_IsValid(value));
+  set_has_receiptstatus();
+  receiptstatus_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.SenderReceiptMetadata.ReceiptStatus)
 }
 
 // -------------------------------------------------------------------
