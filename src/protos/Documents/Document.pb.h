@@ -1475,7 +1475,7 @@ class SenderReceiptMetadata : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1;
+  // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1 [default = GeneralReceiptStatusUnknown];
   inline bool has_receiptstatus() const;
   inline void clear_receiptstatus();
   static const int kReceiptStatusFieldNumber = 1;
@@ -5362,7 +5362,7 @@ inline void RecipientReceiptMetadata::set_allocated_confirmationmetadata(::Diado
 
 // SenderReceiptMetadata
 
-// required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1;
+// required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1 [default = GeneralReceiptStatusUnknown];
 inline bool SenderReceiptMetadata::has_receiptstatus() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }

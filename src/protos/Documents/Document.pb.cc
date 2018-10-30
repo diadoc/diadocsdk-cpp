@@ -469,55 +469,55 @@ void protobuf_AddDesc_Documents_2fDocument_2eproto() {
     "Proto.Documents.GeneralReceiptStatus:\033Ge"
     "neralReceiptStatusUnknown\022N\n\024Confirmatio"
     "nMetadata\030\002 \001(\01320.Diadoc.Api.Proto.Docum"
-    "ents.ConfirmationMetadata\"`\n\025SenderRecei"
-    "ptMetadata\022G\n\rReceiptStatus\030\001 \002(\01620.Diad"
+    "ents.ConfirmationMetadata\"}\n\025SenderRecei"
+    "ptMetadata\022d\n\rReceiptStatus\030\001 \002(\01620.Diad"
     "oc.Api.Proto.Documents.GeneralReceiptSta"
-    "tus\"\223\001\n\024ConfirmationMetadata\022d\n\rReceiptS"
-    "tatus\030\001 \002(\01620.Diadoc.Api.Proto.Documents"
-    ".GeneralReceiptStatus:\033GeneralReceiptSta"
-    "tusUnknown\022\025\n\rDateTimeTicks\030\002 \002(\020\"\230\001\n\030Am"
-    "endmentRequestMetadata\022\026\n\016AmendmentFlags"
-    "\030\001 \002(\005\022d\n\rReceiptStatus\030\002 \002(\01620.Diadoc.A"
-    "pi.Proto.Documents.GeneralReceiptStatus:"
-    "\033GeneralReceiptStatusUnknown\"Y\n\006Origin\022<"
-    "\n\013MessageType\030\001 \002(\0162\'.Diadoc.Api.Proto.D"
-    "ocuments.MessageType\022\021\n\tMessageId\030\002 \002(\t*"
-    "\254\001\n\024ResolutionStatusType\022$\n\027UnknownResol"
-    "utionStatus\020\377\377\377\377\377\377\377\377\377\001\022\010\n\004None\020\000\022\014\n\010Appr"
-    "oved\020\001\022\017\n\013Disapproved\020\002\022\030\n\024ApprovementRe"
-    "quested\020\003\022\026\n\022SignatureRequested\020\004\022\023\n\017Sig"
-    "natureDenied\020\005*\262\001\n\020RevocationStatus\022\033\n\027U"
-    "nknownRevocationStatus\020\000\022\030\n\024RevocationSt"
-    "atusNone\020\001\022\035\n\031RevocationIsRequestedByMe\020"
-    "\002\022\030\n\024RequestsMyRevocation\020\003\022\026\n\022Revocatio"
-    "nAccepted\020\004\022\026\n\022RevocationRejected\020\005*\256\001\n\031"
-    "RoamingNotificationStatus\022$\n UnknownRoam"
-    "ingNotificationStatus\020\000\022!\n\035RoamingNotifi"
-    "cationStatusNone\020\001\022$\n RoamingNotificatio"
-    "nStatusSuccess\020\002\022\"\n\036RoamingNotificationS"
-    "tatusError\020\003*\300\001\n\025SenderSignatureStatus\022 "
-    "\n\034UnknownSenderSignatureStatus\020\000\022\035\n\031Wait"
-    "ingForSenderSignature\020\001\022\034\n\030SenderSignatu"
-    "reUnchecked\020\002\022\"\n\036SenderSignatureCheckedA"
-    "ndValid\020\003\022$\n SenderSignatureCheckedAndIn"
-    "valid\020\004*\302\001\n\024ProxySignatureStatus\022\037\n\033Unkn"
-    "ownProxySignatureStatus\020\000\022\034\n\030ProxySignat"
-    "ureStatusNone\020\001\022\034\n\030WaitingForProxySignat"
-    "ure\020\002\022\026\n\022WithProxySignature\020\003\022\032\n\026ProxySi"
-    "gnatureRejected\020\004\022\031\n\025InvalidProxySignatu"
-    "re\020\005*\234\001\n\024GeneralReceiptStatus\022\037\n\033General"
-    "ReceiptStatusUnknown\020\000\022%\n!GeneralReceipt"
-    "StatusNotAcceptable\020\001\022\027\n\023HaveToCreateRec"
-    "eipt\020\002\022\025\n\021WaitingForReceipt\020\003\022\014\n\010Finishe"
-    "d\020\004*\353\001\n\027RecipientResponseStatus\022\"\n\036Recip"
-    "ientResponseStatusUnknown\020\000\022(\n$Recipient"
-    "ResponseStatusNotAcceptable\020\001\022 \n\034Waiting"
-    "ForRecipientSignature\020\002\022\032\n\026WithRecipient"
-    "Signature\020\003\022%\n!RecipientSignatureRequest"
-    "Rejected\020\004\022\035\n\031InvalidRecipientSignature\020"
-    "\005*R\n\013MessageType\022\013\n\007Unknown\020\000\022\021\n\rMessage"
-    "Letter\020\001\022\017\n\013DraftLetter\020\002\022\022\n\016TemplateLet"
-    "ter\020\003", 7765);
+    "tus:\033GeneralReceiptStatusUnknown\"\223\001\n\024Con"
+    "firmationMetadata\022d\n\rReceiptStatus\030\001 \002(\016"
+    "20.Diadoc.Api.Proto.Documents.GeneralRec"
+    "eiptStatus:\033GeneralReceiptStatusUnknown\022"
+    "\025\n\rDateTimeTicks\030\002 \002(\020\"\230\001\n\030AmendmentRequ"
+    "estMetadata\022\026\n\016AmendmentFlags\030\001 \002(\005\022d\n\rR"
+    "eceiptStatus\030\002 \002(\01620.Diadoc.Api.Proto.Do"
+    "cuments.GeneralReceiptStatus:\033GeneralRec"
+    "eiptStatusUnknown\"Y\n\006Origin\022<\n\013MessageTy"
+    "pe\030\001 \002(\0162\'.Diadoc.Api.Proto.Documents.Me"
+    "ssageType\022\021\n\tMessageId\030\002 \002(\t*\254\001\n\024Resolut"
+    "ionStatusType\022$\n\027UnknownResolutionStatus"
+    "\020\377\377\377\377\377\377\377\377\377\001\022\010\n\004None\020\000\022\014\n\010Approved\020\001\022\017\n\013D"
+    "isapproved\020\002\022\030\n\024ApprovementRequested\020\003\022\026"
+    "\n\022SignatureRequested\020\004\022\023\n\017SignatureDenie"
+    "d\020\005*\262\001\n\020RevocationStatus\022\033\n\027UnknownRevoc"
+    "ationStatus\020\000\022\030\n\024RevocationStatusNone\020\001\022"
+    "\035\n\031RevocationIsRequestedByMe\020\002\022\030\n\024Reques"
+    "tsMyRevocation\020\003\022\026\n\022RevocationAccepted\020\004"
+    "\022\026\n\022RevocationRejected\020\005*\256\001\n\031RoamingNoti"
+    "ficationStatus\022$\n UnknownRoamingNotifica"
+    "tionStatus\020\000\022!\n\035RoamingNotificationStatu"
+    "sNone\020\001\022$\n RoamingNotificationStatusSucc"
+    "ess\020\002\022\"\n\036RoamingNotificationStatusError\020"
+    "\003*\300\001\n\025SenderSignatureStatus\022 \n\034UnknownSe"
+    "nderSignatureStatus\020\000\022\035\n\031WaitingForSende"
+    "rSignature\020\001\022\034\n\030SenderSignatureUnchecked"
+    "\020\002\022\"\n\036SenderSignatureCheckedAndValid\020\003\022$"
+    "\n SenderSignatureCheckedAndInvalid\020\004*\302\001\n"
+    "\024ProxySignatureStatus\022\037\n\033UnknownProxySig"
+    "natureStatus\020\000\022\034\n\030ProxySignatureStatusNo"
+    "ne\020\001\022\034\n\030WaitingForProxySignature\020\002\022\026\n\022Wi"
+    "thProxySignature\020\003\022\032\n\026ProxySignatureReje"
+    "cted\020\004\022\031\n\025InvalidProxySignature\020\005*\234\001\n\024Ge"
+    "neralReceiptStatus\022\037\n\033GeneralReceiptStat"
+    "usUnknown\020\000\022%\n!GeneralReceiptStatusNotAc"
+    "ceptable\020\001\022\027\n\023HaveToCreateReceipt\020\002\022\025\n\021W"
+    "aitingForReceipt\020\003\022\014\n\010Finished\020\004*\353\001\n\027Rec"
+    "ipientResponseStatus\022\"\n\036RecipientRespons"
+    "eStatusUnknown\020\000\022(\n$RecipientResponseSta"
+    "tusNotAcceptable\020\001\022 \n\034WaitingForRecipien"
+    "tSignature\020\002\022\032\n\026WithRecipientSignature\020\003"
+    "\022%\n!RecipientSignatureRequestRejected\020\004\022"
+    "\035\n\031InvalidRecipientSignature\020\005*R\n\013Messag"
+    "eType\022\013\n\007Unknown\020\000\022\021\n\rMessageLetter\020\001\022\017\n"
+    "\013DraftLetter\020\002\022\022\n\016TemplateLetter\020\003", 7794);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Documents/Document.proto", &protobuf_RegisterTypes);
   Document::default_instance_ = new Document();
@@ -5161,7 +5161,7 @@ bool SenderReceiptMetadata::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1;
+      // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1 [default = GeneralReceiptStatusUnknown];
       case 1: {
         if (tag == 8) {
           int value;
@@ -5205,7 +5205,7 @@ failure:
 void SenderReceiptMetadata::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Documents.SenderReceiptMetadata)
-  // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1;
+  // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1 [default = GeneralReceiptStatusUnknown];
   if (has_receiptstatus()) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       1, this->receiptstatus(), output);
@@ -5221,7 +5221,7 @@ void SenderReceiptMetadata::SerializeWithCachedSizes(
 ::google::protobuf::uint8* SenderReceiptMetadata::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Documents.SenderReceiptMetadata)
-  // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1;
+  // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1 [default = GeneralReceiptStatusUnknown];
   if (has_receiptstatus()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       1, this->receiptstatus(), target);
@@ -5239,7 +5239,7 @@ int SenderReceiptMetadata::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1;
+    // required .Diadoc.Api.Proto.Documents.GeneralReceiptStatus ReceiptStatus = 1 [default = GeneralReceiptStatusUnknown];
     if (has_receiptstatus()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->receiptstatus());
