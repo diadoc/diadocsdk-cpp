@@ -23,8 +23,8 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>
 #include <google/protobuf/extension_set.h>
-#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "ResolutionType.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace Diadoc {
@@ -39,27 +39,6 @@ void protobuf_ShutdownFile_Events_2fResolutionInfo_2eproto();
 
 class ResolutionInfo;
 
-enum ResolutionType {
-  UnknownResolutionType = -1,
-  UndefinedResolutionType = 0,
-  Approve = 1,
-  Disapprove = 2
-};
-bool ResolutionType_IsValid(int value);
-const ResolutionType ResolutionType_MIN = UnknownResolutionType;
-const ResolutionType ResolutionType_MAX = Disapprove;
-const int ResolutionType_ARRAYSIZE = ResolutionType_MAX + 1;
-
-const ::google::protobuf::EnumDescriptor* ResolutionType_descriptor();
-inline const ::std::string& ResolutionType_Name(ResolutionType value) {
-  return ::google::protobuf::internal::NameOfEnum(
-    ResolutionType_descriptor(), value);
-}
-inline bool ResolutionType_Parse(
-    const ::std::string& name, ResolutionType* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<ResolutionType>(
-    ResolutionType_descriptor(), name, value);
-}
 // ===================================================================
 
 class ResolutionInfo : public ::google::protobuf::Message {
@@ -115,12 +94,12 @@ class ResolutionInfo : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .Diadoc.Api.Proto.Events.ResolutionType ResolutionType = 1 [default = UnknownResolutionType];
+  // optional .Diadoc.Api.Proto.ResolutionType ResolutionType = 1 [default = UnknownResolutionType];
   inline bool has_resolutiontype() const;
   inline void clear_resolutiontype();
   static const int kResolutionTypeFieldNumber = 1;
-  inline ::Diadoc::Api::Proto::Events::ResolutionType resolutiontype() const;
-  inline void set_resolutiontype(::Diadoc::Api::Proto::Events::ResolutionType value);
+  inline ::Diadoc::Api::Proto::ResolutionType resolutiontype() const;
+  inline void set_resolutiontype(::Diadoc::Api::Proto::ResolutionType value);
 
   // required string Author = 2;
   inline bool has_author() const;
@@ -176,7 +155,7 @@ class ResolutionInfo : public ::google::protobuf::Message {
 
 // ResolutionInfo
 
-// optional .Diadoc.Api.Proto.Events.ResolutionType ResolutionType = 1 [default = UnknownResolutionType];
+// optional .Diadoc.Api.Proto.ResolutionType ResolutionType = 1 [default = UnknownResolutionType];
 inline bool ResolutionInfo::has_resolutiontype() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -190,12 +169,12 @@ inline void ResolutionInfo::clear_resolutiontype() {
   resolutiontype_ = -1;
   clear_has_resolutiontype();
 }
-inline ::Diadoc::Api::Proto::Events::ResolutionType ResolutionInfo::resolutiontype() const {
+inline ::Diadoc::Api::Proto::ResolutionType ResolutionInfo::resolutiontype() const {
   // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionInfo.ResolutionType)
-  return static_cast< ::Diadoc::Api::Proto::Events::ResolutionType >(resolutiontype_);
+  return static_cast< ::Diadoc::Api::Proto::ResolutionType >(resolutiontype_);
 }
-inline void ResolutionInfo::set_resolutiontype(::Diadoc::Api::Proto::Events::ResolutionType value) {
-  assert(::Diadoc::Api::Proto::Events::ResolutionType_IsValid(value));
+inline void ResolutionInfo::set_resolutiontype(::Diadoc::Api::Proto::ResolutionType value) {
+  assert(::Diadoc::Api::Proto::ResolutionType_IsValid(value));
   set_has_resolutiontype();
   resolutiontype_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionInfo.ResolutionType)
@@ -365,11 +344,6 @@ inline void ResolutionInfo::set_allocated_initialrequestid(::std::string* initia
 namespace google {
 namespace protobuf {
 
-template <> struct is_proto_enum< ::Diadoc::Api::Proto::Events::ResolutionType> : ::google::protobuf::internal::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::Diadoc::Api::Proto::Events::ResolutionType>() {
-  return ::Diadoc::Api::Proto::Events::ResolutionType_descriptor();
-}
 
 }  // namespace google
 }  // namespace protobuf

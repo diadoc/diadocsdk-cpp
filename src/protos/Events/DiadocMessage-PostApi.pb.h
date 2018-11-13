@@ -28,6 +28,8 @@
 #include "DocumentId.pb.h"
 #include "LockMode.pb.h"
 #include "CustomDataItem.pb.h"
+#include "ResolutionRequestType.pb.h"
+#include "ResolutionType.pb.h"
 #include "Invoicing/Signer.pb.h"
 #include "Invoicing/ExtendedSigner.pb.h"
 #include "Events/ResolutionInfo.pb.h"
@@ -4969,12 +4971,12 @@ class ResolutionRequestAttachment : public ::google::protobuf::Message {
   inline ::std::string* release_initialdocumentid();
   inline void set_allocated_initialdocumentid(::std::string* initialdocumentid);
 
-  // required .Diadoc.Api.Proto.Events.ResolutionRequestType Type = 2;
+  // required .Diadoc.Api.Proto.ResolutionRequestType Type = 2;
   inline bool has_type() const;
   inline void clear_type();
   static const int kTypeFieldNumber = 2;
-  inline ::Diadoc::Api::Proto::Events::ResolutionRequestType type() const;
-  inline void set_type(::Diadoc::Api::Proto::Events::ResolutionRequestType value);
+  inline ::Diadoc::Api::Proto::ResolutionRequestType type() const;
+  inline void set_type(::Diadoc::Api::Proto::ResolutionRequestType value);
 
   // optional string TargetUserId = 3;
   inline bool has_targetuserid() const;
@@ -5572,12 +5574,12 @@ class ResolutionAttachment : public ::google::protobuf::Message {
   inline ::std::string* release_initialdocumentid();
   inline void set_allocated_initialdocumentid(::std::string* initialdocumentid);
 
-  // required .Diadoc.Api.Proto.Events.ResolutionType ResolutionType = 2;
+  // required .Diadoc.Api.Proto.ResolutionType ResolutionType = 2;
   inline bool has_resolutiontype() const;
   inline void clear_resolutiontype();
   static const int kResolutionTypeFieldNumber = 2;
-  inline ::Diadoc::Api::Proto::Events::ResolutionType resolutiontype() const;
-  inline void set_resolutiontype(::Diadoc::Api::Proto::Events::ResolutionType value);
+  inline ::Diadoc::Api::Proto::ResolutionType resolutiontype() const;
+  inline void set_resolutiontype(::Diadoc::Api::Proto::ResolutionType value);
 
   // optional string Comment = 3;
   inline bool has_comment() const;
@@ -20831,7 +20833,7 @@ inline void ResolutionRequestAttachment::set_allocated_initialdocumentid(::std::
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ResolutionRequestAttachment.InitialDocumentId)
 }
 
-// required .Diadoc.Api.Proto.Events.ResolutionRequestType Type = 2;
+// required .Diadoc.Api.Proto.ResolutionRequestType Type = 2;
 inline bool ResolutionRequestAttachment::has_type() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -20845,12 +20847,12 @@ inline void ResolutionRequestAttachment::clear_type() {
   type_ = -1;
   clear_has_type();
 }
-inline ::Diadoc::Api::Proto::Events::ResolutionRequestType ResolutionRequestAttachment::type() const {
+inline ::Diadoc::Api::Proto::ResolutionRequestType ResolutionRequestAttachment::type() const {
   // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionRequestAttachment.Type)
-  return static_cast< ::Diadoc::Api::Proto::Events::ResolutionRequestType >(type_);
+  return static_cast< ::Diadoc::Api::Proto::ResolutionRequestType >(type_);
 }
-inline void ResolutionRequestAttachment::set_type(::Diadoc::Api::Proto::Events::ResolutionRequestType value) {
-  assert(::Diadoc::Api::Proto::Events::ResolutionRequestType_IsValid(value));
+inline void ResolutionRequestAttachment::set_type(::Diadoc::Api::Proto::ResolutionRequestType value) {
+  assert(::Diadoc::Api::Proto::ResolutionRequestType_IsValid(value));
   set_has_type();
   type_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionRequestAttachment.Type)
@@ -22004,7 +22006,7 @@ inline void ResolutionAttachment::set_allocated_initialdocumentid(::std::string*
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ResolutionAttachment.InitialDocumentId)
 }
 
-// required .Diadoc.Api.Proto.Events.ResolutionType ResolutionType = 2;
+// required .Diadoc.Api.Proto.ResolutionType ResolutionType = 2;
 inline bool ResolutionAttachment::has_resolutiontype() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -22018,12 +22020,12 @@ inline void ResolutionAttachment::clear_resolutiontype() {
   resolutiontype_ = -1;
   clear_has_resolutiontype();
 }
-inline ::Diadoc::Api::Proto::Events::ResolutionType ResolutionAttachment::resolutiontype() const {
+inline ::Diadoc::Api::Proto::ResolutionType ResolutionAttachment::resolutiontype() const {
   // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionAttachment.ResolutionType)
-  return static_cast< ::Diadoc::Api::Proto::Events::ResolutionType >(resolutiontype_);
+  return static_cast< ::Diadoc::Api::Proto::ResolutionType >(resolutiontype_);
 }
-inline void ResolutionAttachment::set_resolutiontype(::Diadoc::Api::Proto::Events::ResolutionType value) {
-  assert(::Diadoc::Api::Proto::Events::ResolutionType_IsValid(value));
+inline void ResolutionAttachment::set_resolutiontype(::Diadoc::Api::Proto::ResolutionType value) {
+  assert(::Diadoc::Api::Proto::ResolutionType_IsValid(value));
   set_has_resolutiontype();
   resolutiontype_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionAttachment.ResolutionType)

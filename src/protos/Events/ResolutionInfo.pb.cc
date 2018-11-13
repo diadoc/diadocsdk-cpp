@@ -26,7 +26,6 @@ namespace {
 const ::google::protobuf::Descriptor* ResolutionInfo_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   ResolutionInfo_reflection_ = NULL;
-const ::google::protobuf::EnumDescriptor* ResolutionType_descriptor_ = NULL;
 
 }  // namespace
 
@@ -54,7 +53,6 @@ void protobuf_AssignDesc_Events_2fResolutionInfo_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ResolutionInfo));
-  ResolutionType_descriptor_ = file->enum_type(0);
 }
 
 namespace {
@@ -84,15 +82,14 @@ void protobuf_AddDesc_Events_2fResolutionInfo_2eproto() {
   already_here = true;
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
+  ::Diadoc::Api::Proto::protobuf_AddDesc_ResolutionType_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\033Events/ResolutionInfo.proto\022\027Diadoc.Ap"
-    "i.Proto.Events\"\222\001\n\016ResolutionInfo\022V\n\016Res"
-    "olutionType\030\001 \001(\0162\'.Diadoc.Api.Proto.Eve"
-    "nts.ResolutionType:\025UnknownResolutionTyp"
-    "e\022\016\n\006Author\030\002 \002(\t\022\030\n\020InitialRequestId\030\003 "
-    "\001(\t*n\n\016ResolutionType\022\"\n\025UnknownResoluti"
-    "onType\020\377\377\377\377\377\377\377\377\377\001\022\033\n\027UndefinedResolution"
-    "Type\020\000\022\013\n\007Approve\020\001\022\016\n\nDisapprove\020\002", 315);
+    "i.Proto.Events\032\024ResolutionType.proto\"\213\001\n"
+    "\016ResolutionInfo\022O\n\016ResolutionType\030\001 \001(\0162"
+    " .Diadoc.Api.Proto.ResolutionType:\025Unkno"
+    "wnResolutionType\022\016\n\006Author\030\002 \002(\t\022\030\n\020Init"
+    "ialRequestId\030\003 \001(\t", 218);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Events/ResolutionInfo.proto", &protobuf_RegisterTypes);
   ResolutionInfo::default_instance_ = new ResolutionInfo();
@@ -106,22 +103,6 @@ struct StaticDescriptorInitializer_Events_2fResolutionInfo_2eproto {
     protobuf_AddDesc_Events_2fResolutionInfo_2eproto();
   }
 } static_descriptor_initializer_Events_2fResolutionInfo_2eproto_;
-const ::google::protobuf::EnumDescriptor* ResolutionType_descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return ResolutionType_descriptor_;
-}
-bool ResolutionType_IsValid(int value) {
-  switch(value) {
-    case -1:
-    case 0:
-    case 1:
-    case 2:
-      return true;
-    default:
-      return false;
-  }
-}
-
 
 // ===================================================================
 
@@ -221,15 +202,15 @@ bool ResolutionInfo::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .Diadoc.Api.Proto.Events.ResolutionType ResolutionType = 1 [default = UnknownResolutionType];
+      // optional .Diadoc.Api.Proto.ResolutionType ResolutionType = 1 [default = UnknownResolutionType];
       case 1: {
         if (tag == 8) {
           int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          if (::Diadoc::Api::Proto::Events::ResolutionType_IsValid(value)) {
-            set_resolutiontype(static_cast< ::Diadoc::Api::Proto::Events::ResolutionType >(value));
+          if (::Diadoc::Api::Proto::ResolutionType_IsValid(value)) {
+            set_resolutiontype(static_cast< ::Diadoc::Api::Proto::ResolutionType >(value));
           } else {
             mutable_unknown_fields()->AddVarint(1, value);
           }
@@ -299,7 +280,7 @@ failure:
 void ResolutionInfo::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Events.ResolutionInfo)
-  // optional .Diadoc.Api.Proto.Events.ResolutionType ResolutionType = 1 [default = UnknownResolutionType];
+  // optional .Diadoc.Api.Proto.ResolutionType ResolutionType = 1 [default = UnknownResolutionType];
   if (has_resolutiontype()) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       1, this->resolutiontype(), output);
@@ -335,7 +316,7 @@ void ResolutionInfo::SerializeWithCachedSizes(
 ::google::protobuf::uint8* ResolutionInfo::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Events.ResolutionInfo)
-  // optional .Diadoc.Api.Proto.Events.ResolutionType ResolutionType = 1 [default = UnknownResolutionType];
+  // optional .Diadoc.Api.Proto.ResolutionType ResolutionType = 1 [default = UnknownResolutionType];
   if (has_resolutiontype()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       1, this->resolutiontype(), target);
@@ -375,7 +356,7 @@ int ResolutionInfo::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .Diadoc.Api.Proto.Events.ResolutionType ResolutionType = 1 [default = UnknownResolutionType];
+    // optional .Diadoc.Api.Proto.ResolutionType ResolutionType = 1 [default = UnknownResolutionType];
     if (has_resolutiontype()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->resolutiontype());
