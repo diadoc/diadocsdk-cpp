@@ -23,9 +23,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>
 #include <google/protobuf/extension_set.h>
-#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "ResolutionTarget.pb.h"
+#include "ResolutionRequestType.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace Diadoc {
@@ -40,27 +40,6 @@ void protobuf_ShutdownFile_Events_2fResolutionRequestInfo_2eproto();
 
 class ResolutionRequestInfo;
 
-enum ResolutionRequestType {
-  UnknownResolutionRequestType = -1,
-  ApprovementRequest = 0,
-  SignatureRequest = 1,
-  ApprovementSignatureRequest = 2
-};
-bool ResolutionRequestType_IsValid(int value);
-const ResolutionRequestType ResolutionRequestType_MIN = UnknownResolutionRequestType;
-const ResolutionRequestType ResolutionRequestType_MAX = ApprovementSignatureRequest;
-const int ResolutionRequestType_ARRAYSIZE = ResolutionRequestType_MAX + 1;
-
-const ::google::protobuf::EnumDescriptor* ResolutionRequestType_descriptor();
-inline const ::std::string& ResolutionRequestType_Name(ResolutionRequestType value) {
-  return ::google::protobuf::internal::NameOfEnum(
-    ResolutionRequestType_descriptor(), value);
-}
-inline bool ResolutionRequestType_Parse(
-    const ::std::string& name, ResolutionRequestType* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<ResolutionRequestType>(
-    ResolutionRequestType_descriptor(), name, value);
-}
 // ===================================================================
 
 class ResolutionRequestInfo : public ::google::protobuf::Message {
@@ -116,12 +95,12 @@ class ResolutionRequestInfo : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .Diadoc.Api.Proto.Events.ResolutionRequestType RequestType = 1 [default = UnknownResolutionRequestType];
+  // optional .Diadoc.Api.Proto.ResolutionRequestType RequestType = 1 [default = UnknownResolutionRequestType];
   inline bool has_requesttype() const;
   inline void clear_requesttype();
   static const int kRequestTypeFieldNumber = 1;
-  inline ::Diadoc::Api::Proto::Events::ResolutionRequestType requesttype() const;
-  inline void set_requesttype(::Diadoc::Api::Proto::Events::ResolutionRequestType value);
+  inline ::Diadoc::Api::Proto::ResolutionRequestType requesttype() const;
+  inline void set_requesttype(::Diadoc::Api::Proto::ResolutionRequestType value);
 
   // required string Author = 2;
   inline bool has_author() const;
@@ -189,7 +168,7 @@ class ResolutionRequestInfo : public ::google::protobuf::Message {
 
 // ResolutionRequestInfo
 
-// optional .Diadoc.Api.Proto.Events.ResolutionRequestType RequestType = 1 [default = UnknownResolutionRequestType];
+// optional .Diadoc.Api.Proto.ResolutionRequestType RequestType = 1 [default = UnknownResolutionRequestType];
 inline bool ResolutionRequestInfo::has_requesttype() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -203,12 +182,12 @@ inline void ResolutionRequestInfo::clear_requesttype() {
   requesttype_ = -1;
   clear_has_requesttype();
 }
-inline ::Diadoc::Api::Proto::Events::ResolutionRequestType ResolutionRequestInfo::requesttype() const {
+inline ::Diadoc::Api::Proto::ResolutionRequestType ResolutionRequestInfo::requesttype() const {
   // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionRequestInfo.RequestType)
-  return static_cast< ::Diadoc::Api::Proto::Events::ResolutionRequestType >(requesttype_);
+  return static_cast< ::Diadoc::Api::Proto::ResolutionRequestType >(requesttype_);
 }
-inline void ResolutionRequestInfo::set_requesttype(::Diadoc::Api::Proto::Events::ResolutionRequestType value) {
-  assert(::Diadoc::Api::Proto::Events::ResolutionRequestType_IsValid(value));
+inline void ResolutionRequestInfo::set_requesttype(::Diadoc::Api::Proto::ResolutionRequestType value) {
+  assert(::Diadoc::Api::Proto::ResolutionRequestType_IsValid(value));
   set_has_requesttype();
   requesttype_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionRequestInfo.RequestType)
@@ -419,11 +398,6 @@ inline void ResolutionRequestInfo::set_allocated_resolvedwith(::std::string* res
 namespace google {
 namespace protobuf {
 
-template <> struct is_proto_enum< ::Diadoc::Api::Proto::Events::ResolutionRequestType> : ::google::protobuf::internal::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::Diadoc::Api::Proto::Events::ResolutionRequestType>() {
-  return ::Diadoc::Api::Proto::Events::ResolutionRequestType_descriptor();
-}
 
 }  // namespace google
 }  // namespace protobuf
