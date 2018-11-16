@@ -79,11 +79,12 @@ enum TaxRate {
   Percent_20 = 4,
   Fraction_10_110 = 5,
   Fraction_18_118 = 6,
-  TaxedByAgent = 7
+  TaxedByAgent = 7,
+  Fraction_20_120 = 8
 };
 bool TaxRate_IsValid(int value);
 const TaxRate TaxRate_MIN = NoVat;
-const TaxRate TaxRate_MAX = TaxedByAgent;
+const TaxRate TaxRate_MAX = Fraction_20_120;
 const int TaxRate_ARRAYSIZE = TaxRate_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* TaxRate_descriptor();
