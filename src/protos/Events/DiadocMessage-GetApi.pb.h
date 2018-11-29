@@ -1389,6 +1389,18 @@ class Entity : public ::google::protobuf::Message {
   inline const ::google::protobuf::RepeatedPtrField< ::std::string>& labels() const;
   inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_labels();
 
+  // optional string Version = 26;
+  inline bool has_version() const;
+  inline void clear_version();
+  static const int kVersionFieldNumber = 26;
+  inline const ::std::string& version() const;
+  inline void set_version(const ::std::string& value);
+  inline void set_version(const char* value);
+  inline void set_version(const char* value, size_t size);
+  inline ::std::string* mutable_version();
+  inline ::std::string* release_version();
+  inline void set_allocated_version(::std::string* version);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.Entity)
  private:
   inline void set_has_entitytype();
@@ -1437,6 +1449,8 @@ class Entity : public ::google::protobuf::Message {
   inline void clear_has_resolutionrouteremovalinfo();
   inline void set_has_cancellationinfo();
   inline void clear_has_cancellationinfo();
+  inline void set_has_version();
+  inline void clear_has_version();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1462,6 +1476,7 @@ class Entity : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo* resolutionrouteremovalinfo_;
   ::Diadoc::Api::Proto::Events::CancellationInfo* cancellationinfo_;
   ::google::protobuf::RepeatedPtrField< ::std::string> labels_;
+  ::std::string* version_;
   bool needrecipientsignature_;
   bool needreceipt_;
   bool isapprovementsignature_;
@@ -5040,6 +5055,82 @@ inline ::google::protobuf::RepeatedPtrField< ::std::string>*
 Entity::mutable_labels() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.Entity.Labels)
   return &labels_;
+}
+
+// optional string Version = 26;
+inline bool Entity::has_version() const {
+  return (_has_bits_[0] & 0x01000000u) != 0;
+}
+inline void Entity::set_has_version() {
+  _has_bits_[0] |= 0x01000000u;
+}
+inline void Entity::clear_has_version() {
+  _has_bits_[0] &= ~0x01000000u;
+}
+inline void Entity::clear_version() {
+  if (version_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    version_->clear();
+  }
+  clear_has_version();
+}
+inline const ::std::string& Entity::version() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Entity.Version)
+  return *version_;
+}
+inline void Entity::set_version(const ::std::string& value) {
+  set_has_version();
+  if (version_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    version_ = new ::std::string;
+  }
+  version_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Entity.Version)
+}
+inline void Entity::set_version(const char* value) {
+  set_has_version();
+  if (version_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    version_ = new ::std::string;
+  }
+  version_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.Entity.Version)
+}
+inline void Entity::set_version(const char* value, size_t size) {
+  set_has_version();
+  if (version_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    version_ = new ::std::string;
+  }
+  version_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.Entity.Version)
+}
+inline ::std::string* Entity::mutable_version() {
+  set_has_version();
+  if (version_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    version_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Entity.Version)
+  return version_;
+}
+inline ::std::string* Entity::release_version() {
+  clear_has_version();
+  if (version_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = version_;
+    version_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void Entity::set_allocated_version(::std::string* version) {
+  if (version_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete version_;
+  }
+  if (version) {
+    set_has_version();
+    version_ = version;
+  } else {
+    clear_has_version();
+    version_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Entity.Version)
 }
 
 // -------------------------------------------------------------------
