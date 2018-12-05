@@ -241,6 +241,7 @@ public:
 	Diadoc::Api::Proto::UserV2 GetMyUserV2();
 	Diadoc::Api::Proto::UserV2 UpdateMyUser(Diadoc::Api::Proto::Users::UserToUpdate& userToUpdate);
 	Diadoc::Api::Proto::Employees::Employee GetEmployee(const std::wstring& boxId, const std::wstring& userId);
+	Diadoc::Api::Proto::Employees::EmployeeList GetEmployees(const std::wstring& boxId, int* page = NULL, int* count = NULL);
 	Diadoc::Api::Proto::Employees::Employee CreateEmployee(const std::wstring& boxId, const Diadoc::Api::Proto::Employees::EmployeeToCreate& employeeToCreate);
 	Diadoc::Api::Proto::Employees::Employee UpdateEmployee(const std::wstring& boxId, const std::wstring& userId, const Diadoc::Api::Proto::Employees::EmployeeToUpdate& employeeToUpdate);
 	void DeleteEmployee(const std::wstring& boxId, const std::wstring& userId);
