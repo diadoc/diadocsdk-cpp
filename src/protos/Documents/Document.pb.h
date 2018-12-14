@@ -985,6 +985,18 @@ class Document : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Documents::SenderReceiptMetadata* release_senderreceiptmetadata();
   inline void set_allocated_senderreceiptmetadata(::Diadoc::Api::Proto::Documents::SenderReceiptMetadata* senderreceiptmetadata);
 
+  // required string Version = 76;
+  inline bool has_version() const;
+  inline void clear_version();
+  static const int kVersionFieldNumber = 76;
+  inline const ::std::string& version() const;
+  inline void set_version(const ::std::string& value);
+  inline void set_version(const char* value);
+  inline void set_version(const char* value, size_t size);
+  inline ::std::string* mutable_version();
+  inline ::std::string* release_version();
+  inline void set_allocated_version(::std::string* version);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.Document)
  private:
   inline void set_has_indexkey();
@@ -1123,6 +1135,8 @@ class Document : public ::google::protobuf::Message {
   inline void clear_has_lockmode();
   inline void set_has_senderreceiptmetadata();
   inline void clear_has_senderreceiptmetadata();
+  inline void set_has_version();
+  inline void clear_has_version();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1200,6 +1214,7 @@ class Document : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Documents::Origin* origin_;
   ::std::string* editingsettingid_;
   ::Diadoc::Api::Proto::Documents::SenderReceiptMetadata* senderreceiptmetadata_;
+  ::std::string* version_;
   int lockmode_;
   friend void  protobuf_AddDesc_Documents_2fDocument_2eproto();
   friend void protobuf_AssignDesc_Documents_2fDocument_2eproto();
@@ -5064,6 +5079,82 @@ inline void Document::set_allocated_senderreceiptmetadata(::Diadoc::Api::Proto::
     clear_has_senderreceiptmetadata();
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.SenderReceiptMetadata)
+}
+
+// required string Version = 76;
+inline bool Document::has_version() const {
+  return (_has_bits_[2] & 0x00000200u) != 0;
+}
+inline void Document::set_has_version() {
+  _has_bits_[2] |= 0x00000200u;
+}
+inline void Document::clear_has_version() {
+  _has_bits_[2] &= ~0x00000200u;
+}
+inline void Document::clear_version() {
+  if (version_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    version_->clear();
+  }
+  clear_has_version();
+}
+inline const ::std::string& Document::version() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Document.Version)
+  return *version_;
+}
+inline void Document::set_version(const ::std::string& value) {
+  set_has_version();
+  if (version_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    version_ = new ::std::string;
+  }
+  version_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Document.Version)
+}
+inline void Document::set_version(const char* value) {
+  set_has_version();
+  if (version_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    version_ = new ::std::string;
+  }
+  version_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.Document.Version)
+}
+inline void Document::set_version(const char* value, size_t size) {
+  set_has_version();
+  if (version_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    version_ = new ::std::string;
+  }
+  version_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.Document.Version)
+}
+inline ::std::string* Document::mutable_version() {
+  set_has_version();
+  if (version_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    version_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.Document.Version)
+  return version_;
+}
+inline ::std::string* Document::release_version() {
+  clear_has_version();
+  if (version_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = version_;
+    version_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void Document::set_allocated_version(::std::string* version) {
+  if (version_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete version_;
+  }
+  if (version) {
+    set_has_version();
+    version_ = version;
+  } else {
+    clear_has_version();
+    version_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.Version)
 }
 
 // -------------------------------------------------------------------

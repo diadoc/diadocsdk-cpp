@@ -64,7 +64,7 @@ void protobuf_AssignDesc_Docflow_2fDocumentInfo_2eproto() {
       "Docflow/DocumentInfo.proto");
   GOOGLE_CHECK(file != NULL);
   DocumentInfo_descriptor_ = file->message_type(0);
-  static const int DocumentInfo_offsets_[17] = {
+  static const int DocumentInfo_offsets_[18] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfo, documenttype_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfo, documentdirection_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfo, istest_),
@@ -82,6 +82,7 @@ void protobuf_AssignDesc_Docflow_2fDocumentInfo_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfo, universaltransferdocumentinfo_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfo, universalcorrectiondocumentinfo_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfo, attachmentversion_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfo, version_),
   };
   DocumentInfo_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -335,7 +336,7 @@ void protobuf_AddDesc_Docflow_2fDocumentInfo_2eproto() {
     "\n\032Docflow/DocumentInfo.proto\022\030Diadoc.Api"
     ".Proto.Docflow\032\022DocumentType.proto\032\027Docu"
     "mentDirection.proto\032-Invoicing/Universal"
-    "TransferDocumentInfo.proto\"\255\010\n\014DocumentI"
+    "TransferDocumentInfo.proto\"\276\010\n\014DocumentI"
     "nfo\022I\n\014DocumentType\030\001 \001(\0162\036.Diadoc.Api.P"
     "roto.DocumentType:\023UnknownDocumentType\022X"
     "\n\021DocumentDirection\030\002 \001(\0162#.Diadoc.Api.P"
@@ -362,54 +363,54 @@ void protobuf_AddDesc_Docflow_2fDocumentInfo_2eproto() {
     "ocumentInfo\022b\n\037UniversalCorrectionDocume"
     "ntInfo\030\020 \001(\01329.Diadoc.Api.Proto.Docflow."
     "UniversalCorrectionDocumentInfo\022\031\n\021Attac"
-    "hmentVersion\030\021 \001(\t\"E\n\025DocumentDateAndNum"
-    "ber\022\024\n\014DocumentDate\030\001 \001(\t\022\026\n\016DocumentNum"
-    "ber\030\002 \001(\t\"\237\001\n\021BasicDocumentInfo\022\r\n\005Total"
-    "\030\001 \001(\t\022\r\n\005NoVat\030\002 \001(\010\022\013\n\003Vat\030\003 \001(\t\022\017\n\007Gr"
-    "ounds\030\004 \001(\t\022N\n\025RevisionDateAndNumber\030\005 \001"
-    "(\0132/.Diadoc.Api.Proto.Docflow.DocumentDa"
-    "teAndNumber\"\236\001\n\023InvoiceDocumentInfo\022\r\n\005T"
-    "otal\030\001 \001(\t\022\013\n\003Vat\030\002 \001(\t\022\024\n\014CurrencyCode\030"
-    "\003 \001(\005\022U\n\034OriginalInvoiceDateAndNumber\030\004 "
-    "\001(\0132/.Diadoc.Api.Proto.Docflow.DocumentD"
-    "ateAndNumber\"\220\003\n\035InvoiceCorrectionDocume"
-    "ntInfo\022\020\n\010TotalInc\030\001 \001(\t\022\020\n\010TotalDec\030\002 \001"
-    "(\t\022\016\n\006VatInc\030\003 \001(\t\022\016\n\006VatDec\030\004 \001(\t\022\024\n\014Cu"
-    "rrencyCode\030\005 \001(\005\022U\n\034OriginalInvoiceDateA"
-    "ndNumber\030\006 \001(\0132/.Diadoc.Api.Proto.Docflo"
-    "w.DocumentDateAndNumber\022]\n$OriginalInvoi"
-    "ceRevisionDateAndNumber\030\007 \001(\0132/.Diadoc.A"
-    "pi.Proto.Docflow.DocumentDateAndNumber\022_"
-    "\n&OriginalInvoiceCorrectionDateAndNumber"
-    "\030\010 \001(\0132/.Diadoc.Api.Proto.Docflow.Docume"
-    "ntDateAndNumber\"\217\001\n\025PriceListDocumentInf"
-    "o\022\036\n\026PriceListEffectiveDate\030\001 \001(\t\022V\n\035Con"
-    "tractDocumentDateAndNumber\030\002 \001(\0132/.Diado"
-    "c.Api.Proto.Docflow.DocumentDateAndNumbe"
-    "r\"C\n\024ContractDocumentInfo\022\025\n\rContractPri"
-    "ce\030\001 \001(\t\022\024\n\014ContractType\030\002 \001(\t\"w\n\"Supple"
-    "mentaryAgreementDocumentInfo\022\r\n\005Total\030\001 "
-    "\001(\t\022\024\n\014ContractType\030\002 \001(\t\022\026\n\016ContractNum"
-    "ber\030\003 \001(\t\022\024\n\014ContractDate\030\004 \001(\t\"\366\001\n\035Univ"
-    "ersalTransferDocumentInfo\022\r\n\005Total\030\001 \001(\t"
-    "\022\013\n\003Vat\030\002 \001(\t\022\024\n\014CurrencyCode\030\003 \001(\005\022\017\n\007G"
-    "rounds\030\004 \001(\t\022:\n\010Function\030\005 \002(\0162(.Diadoc."
-    "Api.Proto.Invoicing.FunctionType\022V\n\035Orig"
-    "inalDocumentDateAndNumber\030\006 \001(\0132/.Diadoc"
+    "hmentVersion\030\021 \001(\t\022\017\n\007Version\030\022 \002(\t\"E\n\025D"
+    "ocumentDateAndNumber\022\024\n\014DocumentDate\030\001 \001"
+    "(\t\022\026\n\016DocumentNumber\030\002 \001(\t\"\237\001\n\021BasicDocu"
+    "mentInfo\022\r\n\005Total\030\001 \001(\t\022\r\n\005NoVat\030\002 \001(\010\022\013"
+    "\n\003Vat\030\003 \001(\t\022\017\n\007Grounds\030\004 \001(\t\022N\n\025Revision"
+    "DateAndNumber\030\005 \001(\0132/.Diadoc.Api.Proto.D"
+    "ocflow.DocumentDateAndNumber\"\236\001\n\023Invoice"
+    "DocumentInfo\022\r\n\005Total\030\001 \001(\t\022\013\n\003Vat\030\002 \001(\t"
+    "\022\024\n\014CurrencyCode\030\003 \001(\005\022U\n\034OriginalInvoic"
+    "eDateAndNumber\030\004 \001(\0132/.Diadoc.Api.Proto."
+    "Docflow.DocumentDateAndNumber\"\220\003\n\035Invoic"
+    "eCorrectionDocumentInfo\022\020\n\010TotalInc\030\001 \001("
+    "\t\022\020\n\010TotalDec\030\002 \001(\t\022\016\n\006VatInc\030\003 \001(\t\022\016\n\006V"
+    "atDec\030\004 \001(\t\022\024\n\014CurrencyCode\030\005 \001(\005\022U\n\034Ori"
+    "ginalInvoiceDateAndNumber\030\006 \001(\0132/.Diadoc"
     ".Api.Proto.Docflow.DocumentDateAndNumber"
-    "\"\342\003\n\037UniversalCorrectionDocumentInfo\022\020\n\010"
-    "TotalInc\030\001 \001(\t\022\020\n\010TotalDec\030\002 \001(\t\022\016\n\006VatI"
-    "nc\030\003 \001(\t\022\016\n\006VatDec\030\004 \001(\t\022\024\n\014CurrencyCode"
-    "\030\005 \001(\005\022\017\n\007Grounds\030\006 \001(\t\022:\n\010Function\030\007 \002("
-    "\0162(.Diadoc.Api.Proto.Invoicing.FunctionT"
-    "ype\022V\n\035OriginalDocumentDateAndNumber\030\010 \001"
-    "(\0132/.Diadoc.Api.Proto.Docflow.DocumentDa"
-    "teAndNumber\022^\n%OriginalDocumentRevisionD"
-    "ateAndNumber\030\t \001(\0132/.Diadoc.Api.Proto.Do"
-    "cflow.DocumentDateAndNumber\022`\n\'OriginalD"
-    "ocumentCorrectionDateAndNumber\030\n \001(\0132/.D"
-    "iadoc.Api.Proto.Docflow.DocumentDateAndN"
-    "umber", 3085);
+    "\022]\n$OriginalInvoiceRevisionDateAndNumber"
+    "\030\007 \001(\0132/.Diadoc.Api.Proto.Docflow.Docume"
+    "ntDateAndNumber\022_\n&OriginalInvoiceCorrec"
+    "tionDateAndNumber\030\010 \001(\0132/.Diadoc.Api.Pro"
+    "to.Docflow.DocumentDateAndNumber\"\217\001\n\025Pri"
+    "ceListDocumentInfo\022\036\n\026PriceListEffective"
+    "Date\030\001 \001(\t\022V\n\035ContractDocumentDateAndNum"
+    "ber\030\002 \001(\0132/.Diadoc.Api.Proto.Docflow.Doc"
+    "umentDateAndNumber\"C\n\024ContractDocumentIn"
+    "fo\022\025\n\rContractPrice\030\001 \001(\t\022\024\n\014ContractTyp"
+    "e\030\002 \001(\t\"w\n\"SupplementaryAgreementDocumen"
+    "tInfo\022\r\n\005Total\030\001 \001(\t\022\024\n\014ContractType\030\002 \001"
+    "(\t\022\026\n\016ContractNumber\030\003 \001(\t\022\024\n\014ContractDa"
+    "te\030\004 \001(\t\"\366\001\n\035UniversalTransferDocumentIn"
+    "fo\022\r\n\005Total\030\001 \001(\t\022\013\n\003Vat\030\002 \001(\t\022\024\n\014Curren"
+    "cyCode\030\003 \001(\005\022\017\n\007Grounds\030\004 \001(\t\022:\n\010Functio"
+    "n\030\005 \002(\0162(.Diadoc.Api.Proto.Invoicing.Fun"
+    "ctionType\022V\n\035OriginalDocumentDateAndNumb"
+    "er\030\006 \001(\0132/.Diadoc.Api.Proto.Docflow.Docu"
+    "mentDateAndNumber\"\342\003\n\037UniversalCorrectio"
+    "nDocumentInfo\022\020\n\010TotalInc\030\001 \001(\t\022\020\n\010Total"
+    "Dec\030\002 \001(\t\022\016\n\006VatInc\030\003 \001(\t\022\016\n\006VatDec\030\004 \001("
+    "\t\022\024\n\014CurrencyCode\030\005 \001(\005\022\017\n\007Grounds\030\006 \001(\t"
+    "\022:\n\010Function\030\007 \002(\0162(.Diadoc.Api.Proto.In"
+    "voicing.FunctionType\022V\n\035OriginalDocument"
+    "DateAndNumber\030\010 \001(\0132/.Diadoc.Api.Proto.D"
+    "ocflow.DocumentDateAndNumber\022^\n%Original"
+    "DocumentRevisionDateAndNumber\030\t \001(\0132/.Di"
+    "adoc.Api.Proto.Docflow.DocumentDateAndNu"
+    "mber\022`\n\'OriginalDocumentCorrectionDateAn"
+    "dNumber\030\n \001(\0132/.Diadoc.Api.Proto.Docflow"
+    ".DocumentDateAndNumber", 3102);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Docflow/DocumentInfo.proto", &protobuf_RegisterTypes);
   DocumentInfo::default_instance_ = new DocumentInfo();
@@ -462,6 +463,7 @@ const int DocumentInfo::kSupplementaryAgreementInfoFieldNumber;
 const int DocumentInfo::kUniversalTransferDocumentInfoFieldNumber;
 const int DocumentInfo::kUniversalCorrectionDocumentInfoFieldNumber;
 const int DocumentInfo::kAttachmentVersionFieldNumber;
+const int DocumentInfo::kVersionFieldNumber;
 #endif  // !_MSC_VER
 
 DocumentInfo::DocumentInfo()
@@ -509,6 +511,7 @@ void DocumentInfo::SharedCtor() {
   universaltransferdocumentinfo_ = NULL;
   universalcorrectiondocumentinfo_ = NULL;
   attachmentversion_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  version_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -532,6 +535,9 @@ void DocumentInfo::SharedDtor() {
   }
   if (attachmentversion_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete attachmentversion_;
+  }
+  if (version_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete version_;
   }
   if (this != default_instance_) {
     delete documentdateandnumber_;
@@ -622,9 +628,16 @@ void DocumentInfo::Clear() {
       if (universalcorrectiondocumentinfo_ != NULL) universalcorrectiondocumentinfo_->::Diadoc::Api::Proto::Docflow::UniversalCorrectionDocumentInfo::Clear();
     }
   }
-  if (has_attachmentversion()) {
-    if (attachmentversion_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-      attachmentversion_->clear();
+  if (_has_bits_[16 / 32] & 196608) {
+    if (has_attachmentversion()) {
+      if (attachmentversion_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        attachmentversion_->clear();
+      }
+    }
+    if (has_version()) {
+      if (version_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        version_->clear();
+      }
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -893,6 +906,23 @@ bool DocumentInfo::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(146)) goto parse_Version;
+        break;
+      }
+
+      // required string Version = 18;
+      case 18: {
+        if (tag == 146) {
+         parse_Version:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_version()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->version().data(), this->version().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "version");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -1043,6 +1073,16 @@ void DocumentInfo::SerializeWithCachedSizes(
       17, this->attachmentversion(), output);
   }
 
+  // required string Version = 18;
+  if (has_version()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->version().data(), this->version().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "version");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      18, this->version(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -1188,6 +1228,17 @@ void DocumentInfo::SerializeWithCachedSizes(
         17, this->attachmentversion(), target);
   }
 
+  // required string Version = 18;
+  if (has_version()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->version().data(), this->version().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "version");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        18, this->version(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -1319,6 +1370,13 @@ int DocumentInfo::ByteSize() const {
           this->attachmentversion());
     }
 
+    // required string Version = 18;
+    if (has_version()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->version());
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -1401,6 +1459,9 @@ void DocumentInfo::MergeFrom(const DocumentInfo& from) {
     if (from.has_attachmentversion()) {
       set_attachmentversion(from.attachmentversion());
     }
+    if (from.has_version()) {
+      set_version(from.version());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -1418,6 +1479,7 @@ void DocumentInfo::CopyFrom(const DocumentInfo& from) {
 }
 
 bool DocumentInfo::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00020000) != 0x00020000) return false;
 
   if (has_universaltransferdocumentinfo()) {
     if (!this->universaltransferdocumentinfo().IsInitialized()) return false;
@@ -1447,6 +1509,7 @@ void DocumentInfo::Swap(DocumentInfo* other) {
     std::swap(universaltransferdocumentinfo_, other->universaltransferdocumentinfo_);
     std::swap(universalcorrectiondocumentinfo_, other->universalcorrectiondocumentinfo_);
     std::swap(attachmentversion_, other->attachmentversion_);
+    std::swap(version_, other->version_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
