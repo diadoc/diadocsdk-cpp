@@ -47,6 +47,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* EmployeeCanBeInvitedForChatPatch_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   EmployeeCanBeInvitedForChatPatch_reflection_ = NULL;
+const ::google::protobuf::Descriptor* AuthorizationPermissionPatch_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  AuthorizationPermissionPatch_reflection_ = NULL;
 
 }  // namespace
 
@@ -75,12 +78,13 @@ void protobuf_AssignDesc_Employees_2fEmployeeToUpdate_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(EmployeeToUpdate));
   EmployeePermissionsPatch_descriptor_ = file->message_type(1);
-  static const int EmployeePermissionsPatch_offsets_[5] = {
+  static const int EmployeePermissionsPatch_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EmployeePermissionsPatch, department_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EmployeePermissionsPatch, isadministrator_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EmployeePermissionsPatch, documentaccesslevel_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EmployeePermissionsPatch, selecteddepartments_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EmployeePermissionsPatch, actions_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EmployeePermissionsPatch, authorizationpermission_),
   };
   EmployeePermissionsPatch_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -183,6 +187,22 @@ void protobuf_AssignDesc_Employees_2fEmployeeToUpdate_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(EmployeeCanBeInvitedForChatPatch));
+  AuthorizationPermissionPatch_descriptor_ = file->message_type(8);
+  static const int AuthorizationPermissionPatch_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AuthorizationPermissionPatch, isblocked_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AuthorizationPermissionPatch, comment_),
+  };
+  AuthorizationPermissionPatch_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      AuthorizationPermissionPatch_descriptor_,
+      AuthorizationPermissionPatch::default_instance_,
+      AuthorizationPermissionPatch_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AuthorizationPermissionPatch, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AuthorizationPermissionPatch, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(AuthorizationPermissionPatch));
 }
 
 namespace {
@@ -211,6 +231,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
     EmployeePositionPatch_descriptor_, &EmployeePositionPatch::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     EmployeeCanBeInvitedForChatPatch_descriptor_, &EmployeeCanBeInvitedForChatPatch::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    AuthorizationPermissionPatch_descriptor_, &AuthorizationPermissionPatch::default_instance());
 }
 
 }  // namespace
@@ -232,6 +254,8 @@ void protobuf_ShutdownFile_Employees_2fEmployeeToUpdate_2eproto() {
   delete EmployeePositionPatch_reflection_;
   delete EmployeeCanBeInvitedForChatPatch::default_instance_;
   delete EmployeeCanBeInvitedForChatPatch_reflection_;
+  delete AuthorizationPermissionPatch::default_instance_;
+  delete AuthorizationPermissionPatch_reflection_;
 }
 
 void protobuf_AddDesc_Employees_2fEmployeeToUpdate_2eproto() {
@@ -252,7 +276,7 @@ void protobuf_AddDesc_Employees_2fEmployeeToUpdate_2eproto() {
     "Diadoc.Api.Proto.Employees.EmployeePosit"
     "ionPatch\022Y\n\023CanBeInvitedForChat\030\003 \001(\0132<."
     "Diadoc.Api.Proto.Employees.EmployeeCanBe"
-    "InvitedForChatPatch\"\251\003\n\030EmployeePermissi"
+    "InvitedForChatPatch\"\204\004\n\030EmployeePermissi"
     "onsPatch\022G\n\nDepartment\030\001 \001(\01323.Diadoc.Ap"
     "i.Proto.Employees.EmployeeDepartmentPatc"
     "h\022Q\n\017IsAdministrator\030\002 \001(\01328.Diadoc.Api."
@@ -263,16 +287,20 @@ void protobuf_AddDesc_Employees_2fEmployeeToUpdate_2eproto() {
     " \001(\0132<.Diadoc.Api.Proto.Employees.Employ"
     "eeSelectedDepartmentsPatch\022;\n\007Actions\030\005 "
     "\003(\0132*.Diadoc.Api.Proto.Employees.Employe"
-    "eAction\"/\n\027EmployeeDepartmentPatch\022\024\n\014De"
-    "partmentId\030\001 \002(\t\"7\n\034EmployeeIsAdministra"
-    "torPatch\022\027\n\017IsAdministrator\030\001 \002(\010\"f\n Emp"
-    "loyeeDocumentAccessLevelPatch\022B\n\023Documen"
-    "tAccessLevel\030\001 \002(\0162%.Diadoc.Api.Proto.Do"
-    "cumentAccessLevel\"A\n EmployeeSelectedDep"
-    "artmentsPatch\022\035\n\025SelectedDepartmentIds\030\001"
-    " \003(\t\")\n\025EmployeePositionPatch\022\020\n\010Positio"
-    "n\030\001 \001(\t\"\?\n EmployeeCanBeInvitedForChatPa"
-    "tch\022\033\n\023CanBeInvitedForChat\030\001 \002(\010", 1192);
+    "eAction\022Y\n\027AuthorizationPermission\030\006 \001(\013"
+    "28.Diadoc.Api.Proto.Employees.Authorizat"
+    "ionPermissionPatch\"/\n\027EmployeeDepartment"
+    "Patch\022\024\n\014DepartmentId\030\001 \002(\t\"7\n\034EmployeeI"
+    "sAdministratorPatch\022\027\n\017IsAdministrator\030\001"
+    " \002(\010\"f\n EmployeeDocumentAccessLevelPatch"
+    "\022B\n\023DocumentAccessLevel\030\001 \002(\0162%.Diadoc.A"
+    "pi.Proto.DocumentAccessLevel\"A\n Employee"
+    "SelectedDepartmentsPatch\022\035\n\025SelectedDepa"
+    "rtmentIds\030\001 \003(\t\")\n\025EmployeePositionPatch"
+    "\022\020\n\010Position\030\001 \001(\t\"\?\n EmployeeCanBeInvit"
+    "edForChatPatch\022\033\n\023CanBeInvitedForChat\030\001 "
+    "\002(\010\"B\n\034AuthorizationPermissionPatch\022\021\n\tI"
+    "sBlocked\030\001 \002(\010\022\017\n\007Comment\030\002 \001(\t", 1351);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Employees/EmployeeToUpdate.proto", &protobuf_RegisterTypes);
   EmployeeToUpdate::default_instance_ = new EmployeeToUpdate();
@@ -283,6 +311,7 @@ void protobuf_AddDesc_Employees_2fEmployeeToUpdate_2eproto() {
   EmployeeSelectedDepartmentsPatch::default_instance_ = new EmployeeSelectedDepartmentsPatch();
   EmployeePositionPatch::default_instance_ = new EmployeePositionPatch();
   EmployeeCanBeInvitedForChatPatch::default_instance_ = new EmployeeCanBeInvitedForChatPatch();
+  AuthorizationPermissionPatch::default_instance_ = new AuthorizationPermissionPatch();
   EmployeeToUpdate::default_instance_->InitAsDefaultInstance();
   EmployeePermissionsPatch::default_instance_->InitAsDefaultInstance();
   EmployeeDepartmentPatch::default_instance_->InitAsDefaultInstance();
@@ -291,6 +320,7 @@ void protobuf_AddDesc_Employees_2fEmployeeToUpdate_2eproto() {
   EmployeeSelectedDepartmentsPatch::default_instance_->InitAsDefaultInstance();
   EmployeePositionPatch::default_instance_->InitAsDefaultInstance();
   EmployeeCanBeInvitedForChatPatch::default_instance_->InitAsDefaultInstance();
+  AuthorizationPermissionPatch::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_Employees_2fEmployeeToUpdate_2eproto);
 }
 
@@ -632,6 +662,7 @@ const int EmployeePermissionsPatch::kIsAdministratorFieldNumber;
 const int EmployeePermissionsPatch::kDocumentAccessLevelFieldNumber;
 const int EmployeePermissionsPatch::kSelectedDepartmentsFieldNumber;
 const int EmployeePermissionsPatch::kActionsFieldNumber;
+const int EmployeePermissionsPatch::kAuthorizationPermissionFieldNumber;
 #endif  // !_MSC_VER
 
 EmployeePermissionsPatch::EmployeePermissionsPatch()
@@ -645,6 +676,7 @@ void EmployeePermissionsPatch::InitAsDefaultInstance() {
   isadministrator_ = const_cast< ::Diadoc::Api::Proto::Employees::EmployeeIsAdministratorPatch*>(&::Diadoc::Api::Proto::Employees::EmployeeIsAdministratorPatch::default_instance());
   documentaccesslevel_ = const_cast< ::Diadoc::Api::Proto::Employees::EmployeeDocumentAccessLevelPatch*>(&::Diadoc::Api::Proto::Employees::EmployeeDocumentAccessLevelPatch::default_instance());
   selecteddepartments_ = const_cast< ::Diadoc::Api::Proto::Employees::EmployeeSelectedDepartmentsPatch*>(&::Diadoc::Api::Proto::Employees::EmployeeSelectedDepartmentsPatch::default_instance());
+  authorizationpermission_ = const_cast< ::Diadoc::Api::Proto::Employees::AuthorizationPermissionPatch*>(&::Diadoc::Api::Proto::Employees::AuthorizationPermissionPatch::default_instance());
 }
 
 EmployeePermissionsPatch::EmployeePermissionsPatch(const EmployeePermissionsPatch& from)
@@ -660,6 +692,7 @@ void EmployeePermissionsPatch::SharedCtor() {
   isadministrator_ = NULL;
   documentaccesslevel_ = NULL;
   selecteddepartments_ = NULL;
+  authorizationpermission_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -674,6 +707,7 @@ void EmployeePermissionsPatch::SharedDtor() {
     delete isadministrator_;
     delete documentaccesslevel_;
     delete selecteddepartments_;
+    delete authorizationpermission_;
   }
 }
 
@@ -699,7 +733,7 @@ EmployeePermissionsPatch* EmployeePermissionsPatch::New() const {
 }
 
 void EmployeePermissionsPatch::Clear() {
-  if (_has_bits_[0 / 32] & 15) {
+  if (_has_bits_[0 / 32] & 47) {
     if (has_department()) {
       if (department_ != NULL) department_->::Diadoc::Api::Proto::Employees::EmployeeDepartmentPatch::Clear();
     }
@@ -711,6 +745,9 @@ void EmployeePermissionsPatch::Clear() {
     }
     if (has_selecteddepartments()) {
       if (selecteddepartments_ != NULL) selecteddepartments_->::Diadoc::Api::Proto::Employees::EmployeeSelectedDepartmentsPatch::Clear();
+    }
+    if (has_authorizationpermission()) {
+      if (authorizationpermission_ != NULL) authorizationpermission_->::Diadoc::Api::Proto::Employees::AuthorizationPermissionPatch::Clear();
     }
   }
   actions_.Clear();
@@ -789,6 +826,19 @@ bool EmployeePermissionsPatch::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(42)) goto parse_Actions;
+        if (input->ExpectTag(50)) goto parse_AuthorizationPermission;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch AuthorizationPermission = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_AuthorizationPermission:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_authorizationpermission()));
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -848,6 +898,12 @@ void EmployeePermissionsPatch::SerializeWithCachedSizes(
       5, this->actions(i), output);
   }
 
+  // optional .Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch AuthorizationPermission = 6;
+  if (has_authorizationpermission()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6, this->authorizationpermission(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -893,6 +949,13 @@ void EmployeePermissionsPatch::SerializeWithCachedSizes(
         5, this->actions(i), target);
   }
 
+  // optional .Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch AuthorizationPermission = 6;
+  if (has_authorizationpermission()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        6, this->authorizationpermission(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -931,6 +994,13 @@ int EmployeePermissionsPatch::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->selecteddepartments());
+    }
+
+    // optional .Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch AuthorizationPermission = 6;
+    if (has_authorizationpermission()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->authorizationpermission());
     }
 
   }
@@ -981,6 +1051,9 @@ void EmployeePermissionsPatch::MergeFrom(const EmployeePermissionsPatch& from) {
     if (from.has_selecteddepartments()) {
       mutable_selecteddepartments()->::Diadoc::Api::Proto::Employees::EmployeeSelectedDepartmentsPatch::MergeFrom(from.selecteddepartments());
     }
+    if (from.has_authorizationpermission()) {
+      mutable_authorizationpermission()->::Diadoc::Api::Proto::Employees::AuthorizationPermissionPatch::MergeFrom(from.authorizationpermission());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -1009,6 +1082,9 @@ bool EmployeePermissionsPatch::IsInitialized() const {
     if (!this->documentaccesslevel().IsInitialized()) return false;
   }
   if (!::google::protobuf::internal::AllAreInitialized(this->actions())) return false;
+  if (has_authorizationpermission()) {
+    if (!this->authorizationpermission().IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -1019,6 +1095,7 @@ void EmployeePermissionsPatch::Swap(EmployeePermissionsPatch* other) {
     std::swap(documentaccesslevel_, other->documentaccesslevel_);
     std::swap(selecteddepartments_, other->selecteddepartments_);
     actions_.Swap(&other->actions_);
+    std::swap(authorizationpermission_, other->authorizationpermission_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -2419,6 +2496,289 @@ void EmployeeCanBeInvitedForChatPatch::Swap(EmployeeCanBeInvitedForChatPatch* ot
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = EmployeeCanBeInvitedForChatPatch_descriptor_;
   metadata.reflection = EmployeeCanBeInvitedForChatPatch_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int AuthorizationPermissionPatch::kIsBlockedFieldNumber;
+const int AuthorizationPermissionPatch::kCommentFieldNumber;
+#endif  // !_MSC_VER
+
+AuthorizationPermissionPatch::AuthorizationPermissionPatch()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch)
+}
+
+void AuthorizationPermissionPatch::InitAsDefaultInstance() {
+}
+
+AuthorizationPermissionPatch::AuthorizationPermissionPatch(const AuthorizationPermissionPatch& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch)
+}
+
+void AuthorizationPermissionPatch::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  isblocked_ = false;
+  comment_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+AuthorizationPermissionPatch::~AuthorizationPermissionPatch() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch)
+  SharedDtor();
+}
+
+void AuthorizationPermissionPatch::SharedDtor() {
+  if (comment_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete comment_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void AuthorizationPermissionPatch::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* AuthorizationPermissionPatch::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return AuthorizationPermissionPatch_descriptor_;
+}
+
+const AuthorizationPermissionPatch& AuthorizationPermissionPatch::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Employees_2fEmployeeToUpdate_2eproto();
+  return *default_instance_;
+}
+
+AuthorizationPermissionPatch* AuthorizationPermissionPatch::default_instance_ = NULL;
+
+AuthorizationPermissionPatch* AuthorizationPermissionPatch::New() const {
+  return new AuthorizationPermissionPatch;
+}
+
+void AuthorizationPermissionPatch::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    isblocked_ = false;
+    if (has_comment()) {
+      if (comment_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        comment_->clear();
+      }
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool AuthorizationPermissionPatch::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required bool IsBlocked = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &isblocked_)));
+          set_has_isblocked();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_Comment;
+        break;
+      }
+
+      // optional string Comment = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_Comment:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_comment()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->comment().data(), this->comment().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "comment");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch)
+  return false;
+#undef DO_
+}
+
+void AuthorizationPermissionPatch::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch)
+  // required bool IsBlocked = 1;
+  if (has_isblocked()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->isblocked(), output);
+  }
+
+  // optional string Comment = 2;
+  if (has_comment()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->comment().data(), this->comment().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "comment");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->comment(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch)
+}
+
+::google::protobuf::uint8* AuthorizationPermissionPatch::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch)
+  // required bool IsBlocked = 1;
+  if (has_isblocked()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->isblocked(), target);
+  }
+
+  // optional string Comment = 2;
+  if (has_comment()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->comment().data(), this->comment().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "comment");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->comment(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch)
+  return target;
+}
+
+int AuthorizationPermissionPatch::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required bool IsBlocked = 1;
+    if (has_isblocked()) {
+      total_size += 1 + 1;
+    }
+
+    // optional string Comment = 2;
+    if (has_comment()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->comment());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void AuthorizationPermissionPatch::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const AuthorizationPermissionPatch* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const AuthorizationPermissionPatch*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void AuthorizationPermissionPatch::MergeFrom(const AuthorizationPermissionPatch& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_isblocked()) {
+      set_isblocked(from.isblocked());
+    }
+    if (from.has_comment()) {
+      set_comment(from.comment());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void AuthorizationPermissionPatch::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AuthorizationPermissionPatch::CopyFrom(const AuthorizationPermissionPatch& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AuthorizationPermissionPatch::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+
+  return true;
+}
+
+void AuthorizationPermissionPatch::Swap(AuthorizationPermissionPatch* other) {
+  if (other != this) {
+    std::swap(isblocked_, other->isblocked_);
+    std::swap(comment_, other->comment_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata AuthorizationPermissionPatch::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = AuthorizationPermissionPatch_descriptor_;
+  metadata.reflection = AuthorizationPermissionPatch_reflection_;
   return metadata;
 }
 

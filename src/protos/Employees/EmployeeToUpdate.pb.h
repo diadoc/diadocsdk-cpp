@@ -46,6 +46,7 @@ class EmployeeDocumentAccessLevelPatch;
 class EmployeeSelectedDepartmentsPatch;
 class EmployeePositionPatch;
 class EmployeeCanBeInvitedForChatPatch;
+class AuthorizationPermissionPatch;
 
 // ===================================================================
 
@@ -255,6 +256,15 @@ class EmployeePermissionsPatch : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Employees::EmployeeAction >*
       mutable_actions();
 
+  // optional .Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch AuthorizationPermission = 6;
+  inline bool has_authorizationpermission() const;
+  inline void clear_authorizationpermission();
+  static const int kAuthorizationPermissionFieldNumber = 6;
+  inline const ::Diadoc::Api::Proto::Employees::AuthorizationPermissionPatch& authorizationpermission() const;
+  inline ::Diadoc::Api::Proto::Employees::AuthorizationPermissionPatch* mutable_authorizationpermission();
+  inline ::Diadoc::Api::Proto::Employees::AuthorizationPermissionPatch* release_authorizationpermission();
+  inline void set_allocated_authorizationpermission(::Diadoc::Api::Proto::Employees::AuthorizationPermissionPatch* authorizationpermission);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Employees.EmployeePermissionsPatch)
  private:
   inline void set_has_department();
@@ -265,6 +275,8 @@ class EmployeePermissionsPatch : public ::google::protobuf::Message {
   inline void clear_has_documentaccesslevel();
   inline void set_has_selecteddepartments();
   inline void clear_has_selecteddepartments();
+  inline void set_has_authorizationpermission();
+  inline void clear_has_authorizationpermission();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -275,6 +287,7 @@ class EmployeePermissionsPatch : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Employees::EmployeeDocumentAccessLevelPatch* documentaccesslevel_;
   ::Diadoc::Api::Proto::Employees::EmployeeSelectedDepartmentsPatch* selecteddepartments_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Employees::EmployeeAction > actions_;
+  ::Diadoc::Api::Proto::Employees::AuthorizationPermissionPatch* authorizationpermission_;
   friend void  protobuf_AddDesc_Employees_2fEmployeeToUpdate_2eproto();
   friend void protobuf_AssignDesc_Employees_2fEmployeeToUpdate_2eproto();
   friend void protobuf_ShutdownFile_Employees_2fEmployeeToUpdate_2eproto();
@@ -773,6 +786,100 @@ class EmployeeCanBeInvitedForChatPatch : public ::google::protobuf::Message {
   void InitAsDefaultInstance();
   static EmployeeCanBeInvitedForChatPatch* default_instance_;
 };
+// -------------------------------------------------------------------
+
+class AuthorizationPermissionPatch : public ::google::protobuf::Message {
+ public:
+  AuthorizationPermissionPatch();
+  virtual ~AuthorizationPermissionPatch();
+
+  AuthorizationPermissionPatch(const AuthorizationPermissionPatch& from);
+
+  inline AuthorizationPermissionPatch& operator=(const AuthorizationPermissionPatch& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const AuthorizationPermissionPatch& default_instance();
+
+  void Swap(AuthorizationPermissionPatch* other);
+
+  // implements Message ----------------------------------------------
+
+  AuthorizationPermissionPatch* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const AuthorizationPermissionPatch& from);
+  void MergeFrom(const AuthorizationPermissionPatch& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required bool IsBlocked = 1;
+  inline bool has_isblocked() const;
+  inline void clear_isblocked();
+  static const int kIsBlockedFieldNumber = 1;
+  inline bool isblocked() const;
+  inline void set_isblocked(bool value);
+
+  // optional string Comment = 2;
+  inline bool has_comment() const;
+  inline void clear_comment();
+  static const int kCommentFieldNumber = 2;
+  inline const ::std::string& comment() const;
+  inline void set_comment(const ::std::string& value);
+  inline void set_comment(const char* value);
+  inline void set_comment(const char* value, size_t size);
+  inline ::std::string* mutable_comment();
+  inline ::std::string* release_comment();
+  inline void set_allocated_comment(::std::string* comment);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch)
+ private:
+  inline void set_has_isblocked();
+  inline void clear_has_isblocked();
+  inline void set_has_comment();
+  inline void clear_has_comment();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* comment_;
+  bool isblocked_;
+  friend void  protobuf_AddDesc_Employees_2fEmployeeToUpdate_2eproto();
+  friend void protobuf_AssignDesc_Employees_2fEmployeeToUpdate_2eproto();
+  friend void protobuf_ShutdownFile_Employees_2fEmployeeToUpdate_2eproto();
+
+  void InitAsDefaultInstance();
+  static AuthorizationPermissionPatch* default_instance_;
+};
 // ===================================================================
 
 
@@ -1101,6 +1208,47 @@ EmployeePermissionsPatch::mutable_actions() {
   return &actions_;
 }
 
+// optional .Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch AuthorizationPermission = 6;
+inline bool EmployeePermissionsPatch::has_authorizationpermission() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void EmployeePermissionsPatch::set_has_authorizationpermission() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void EmployeePermissionsPatch::clear_has_authorizationpermission() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void EmployeePermissionsPatch::clear_authorizationpermission() {
+  if (authorizationpermission_ != NULL) authorizationpermission_->::Diadoc::Api::Proto::Employees::AuthorizationPermissionPatch::Clear();
+  clear_has_authorizationpermission();
+}
+inline const ::Diadoc::Api::Proto::Employees::AuthorizationPermissionPatch& EmployeePermissionsPatch::authorizationpermission() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Employees.EmployeePermissionsPatch.AuthorizationPermission)
+  return authorizationpermission_ != NULL ? *authorizationpermission_ : *default_instance_->authorizationpermission_;
+}
+inline ::Diadoc::Api::Proto::Employees::AuthorizationPermissionPatch* EmployeePermissionsPatch::mutable_authorizationpermission() {
+  set_has_authorizationpermission();
+  if (authorizationpermission_ == NULL) authorizationpermission_ = new ::Diadoc::Api::Proto::Employees::AuthorizationPermissionPatch;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Employees.EmployeePermissionsPatch.AuthorizationPermission)
+  return authorizationpermission_;
+}
+inline ::Diadoc::Api::Proto::Employees::AuthorizationPermissionPatch* EmployeePermissionsPatch::release_authorizationpermission() {
+  clear_has_authorizationpermission();
+  ::Diadoc::Api::Proto::Employees::AuthorizationPermissionPatch* temp = authorizationpermission_;
+  authorizationpermission_ = NULL;
+  return temp;
+}
+inline void EmployeePermissionsPatch::set_allocated_authorizationpermission(::Diadoc::Api::Proto::Employees::AuthorizationPermissionPatch* authorizationpermission) {
+  delete authorizationpermission_;
+  authorizationpermission_ = authorizationpermission;
+  if (authorizationpermission) {
+    set_has_authorizationpermission();
+  } else {
+    clear_has_authorizationpermission();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Employees.EmployeePermissionsPatch.AuthorizationPermission)
+}
+
 // -------------------------------------------------------------------
 
 // EmployeeDepartmentPatch
@@ -1402,6 +1550,110 @@ inline void EmployeeCanBeInvitedForChatPatch::set_canbeinvitedforchat(bool value
   set_has_canbeinvitedforchat();
   canbeinvitedforchat_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Employees.EmployeeCanBeInvitedForChatPatch.CanBeInvitedForChat)
+}
+
+// -------------------------------------------------------------------
+
+// AuthorizationPermissionPatch
+
+// required bool IsBlocked = 1;
+inline bool AuthorizationPermissionPatch::has_isblocked() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void AuthorizationPermissionPatch::set_has_isblocked() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void AuthorizationPermissionPatch::clear_has_isblocked() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void AuthorizationPermissionPatch::clear_isblocked() {
+  isblocked_ = false;
+  clear_has_isblocked();
+}
+inline bool AuthorizationPermissionPatch::isblocked() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch.IsBlocked)
+  return isblocked_;
+}
+inline void AuthorizationPermissionPatch::set_isblocked(bool value) {
+  set_has_isblocked();
+  isblocked_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch.IsBlocked)
+}
+
+// optional string Comment = 2;
+inline bool AuthorizationPermissionPatch::has_comment() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void AuthorizationPermissionPatch::set_has_comment() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void AuthorizationPermissionPatch::clear_has_comment() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void AuthorizationPermissionPatch::clear_comment() {
+  if (comment_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_->clear();
+  }
+  clear_has_comment();
+}
+inline const ::std::string& AuthorizationPermissionPatch::comment() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch.Comment)
+  return *comment_;
+}
+inline void AuthorizationPermissionPatch::set_comment(const ::std::string& value) {
+  set_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_ = new ::std::string;
+  }
+  comment_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch.Comment)
+}
+inline void AuthorizationPermissionPatch::set_comment(const char* value) {
+  set_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_ = new ::std::string;
+  }
+  comment_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch.Comment)
+}
+inline void AuthorizationPermissionPatch::set_comment(const char* value, size_t size) {
+  set_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_ = new ::std::string;
+  }
+  comment_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch.Comment)
+}
+inline ::std::string* AuthorizationPermissionPatch::mutable_comment() {
+  set_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch.Comment)
+  return comment_;
+}
+inline ::std::string* AuthorizationPermissionPatch::release_comment() {
+  clear_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = comment_;
+    comment_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void AuthorizationPermissionPatch::set_allocated_comment(::std::string* comment) {
+  if (comment_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete comment_;
+  }
+  if (comment) {
+    set_has_comment();
+    comment_ = comment;
+  } else {
+    clear_has_comment();
+    comment_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Employees.AuthorizationPermissionPatch.Comment)
 }
 
 

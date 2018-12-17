@@ -65,12 +65,13 @@ void protobuf_AssignDesc_Employees_2fEmployee_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(Employee));
   EmployeePermissions_descriptor_ = file->message_type(1);
-  static const int EmployeePermissions_offsets_[5] = {
+  static const int EmployeePermissions_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EmployeePermissions, userdepartmentid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EmployeePermissions, isadministrator_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EmployeePermissions, documentaccesslevel_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EmployeePermissions, selecteddepartmentids_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EmployeePermissions, actions_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EmployeePermissions, authorizationpermission_),
   };
   EmployeePermissions_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -168,17 +169,19 @@ void protobuf_AddDesc_Employees_2fEmployee_2eproto() {
     "c.Api.Proto.Employees.EmployeePermission"
     "s\022\020\n\010Position\030\003 \002(\t\022\033\n\023CanBeInvitedForCh"
     "at\030\004 \002(\010\0226\n\021CreationTimestamp\030\005 \001(\0132\033.Di"
-    "adoc.Api.Proto.Timestamp\"\204\002\n\023EmployeePer"
+    "adoc.Api.Proto.Timestamp\"\320\002\n\023EmployeePer"
     "missions\022\030\n\020UserDepartmentId\030\001 \002(\t\022\027\n\017Is"
     "Administrator\030\002 \002(\010\022^\n\023DocumentAccessLev"
     "el\030\003 \002(\0162%.Diadoc.Api.Proto.DocumentAcce"
     "ssLevel:\032UnknownDocumentAccessLevel\022\035\n\025S"
     "electedDepartmentIds\030\004 \003(\t\022;\n\007Actions\030\005 "
     "\003(\0132*.Diadoc.Api.Proto.Employees.Employe"
-    "eAction\"1\n\016EmployeeAction\022\014\n\004Name\030\001 \002(\t\022"
-    "\021\n\tIsAllowed\030\002 \002(\010\"[\n\014EmployeeList\0227\n\tEm"
-    "ployees\030\001 \003(\0132$.Diadoc.Api.Proto.Employe"
-    "es.Employee\022\022\n\nTotalCount\030\002 \002(\005", 751);
+    "eAction\022J\n\027AuthorizationPermission\030\006 \001(\013"
+    "2).Diadoc.Api.Proto.AuthorizationPermiss"
+    "ion\"1\n\016EmployeeAction\022\014\n\004Name\030\001 \002(\t\022\021\n\tI"
+    "sAllowed\030\002 \002(\010\"[\n\014EmployeeList\0227\n\tEmploy"
+    "ees\030\001 \003(\0132$.Diadoc.Api.Proto.Employees.E"
+    "mployee\022\022\n\nTotalCount\030\002 \002(\005", 827);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Employees/Employee.proto", &protobuf_RegisterTypes);
   Employee::default_instance_ = new Employee();
@@ -631,6 +634,7 @@ const int EmployeePermissions::kIsAdministratorFieldNumber;
 const int EmployeePermissions::kDocumentAccessLevelFieldNumber;
 const int EmployeePermissions::kSelectedDepartmentIdsFieldNumber;
 const int EmployeePermissions::kActionsFieldNumber;
+const int EmployeePermissions::kAuthorizationPermissionFieldNumber;
 #endif  // !_MSC_VER
 
 EmployeePermissions::EmployeePermissions()
@@ -640,6 +644,7 @@ EmployeePermissions::EmployeePermissions()
 }
 
 void EmployeePermissions::InitAsDefaultInstance() {
+  authorizationpermission_ = const_cast< ::Diadoc::Api::Proto::AuthorizationPermission*>(&::Diadoc::Api::Proto::AuthorizationPermission::default_instance());
 }
 
 EmployeePermissions::EmployeePermissions(const EmployeePermissions& from)
@@ -655,6 +660,7 @@ void EmployeePermissions::SharedCtor() {
   userdepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   isadministrator_ = false;
   documentaccesslevel_ = -1;
+  authorizationpermission_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -668,6 +674,7 @@ void EmployeePermissions::SharedDtor() {
     delete userdepartmentid_;
   }
   if (this != default_instance_) {
+    delete authorizationpermission_;
   }
 }
 
@@ -693,7 +700,7 @@ EmployeePermissions* EmployeePermissions::New() const {
 }
 
 void EmployeePermissions::Clear() {
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 39) {
     if (has_userdepartmentid()) {
       if (userdepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         userdepartmentid_->clear();
@@ -701,6 +708,9 @@ void EmployeePermissions::Clear() {
     }
     isadministrator_ = false;
     documentaccesslevel_ = -1;
+    if (has_authorizationpermission()) {
+      if (authorizationpermission_ != NULL) authorizationpermission_->::Diadoc::Api::Proto::AuthorizationPermission::Clear();
+    }
   }
   selecteddepartmentids_.Clear();
   actions_.Clear();
@@ -798,6 +808,19 @@ bool EmployeePermissions::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(42)) goto parse_Actions;
+        if (input->ExpectTag(50)) goto parse_AuthorizationPermission;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.AuthorizationPermission AuthorizationPermission = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_AuthorizationPermission:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_authorizationpermission()));
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -864,6 +887,12 @@ void EmployeePermissions::SerializeWithCachedSizes(
       5, this->actions(i), output);
   }
 
+  // optional .Diadoc.Api.Proto.AuthorizationPermission AuthorizationPermission = 6;
+  if (has_authorizationpermission()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6, this->authorizationpermission(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -913,6 +942,13 @@ void EmployeePermissions::SerializeWithCachedSizes(
         5, this->actions(i), target);
   }
 
+  // optional .Diadoc.Api.Proto.AuthorizationPermission AuthorizationPermission = 6;
+  if (has_authorizationpermission()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        6, this->authorizationpermission(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -941,6 +977,13 @@ int EmployeePermissions::ByteSize() const {
     if (has_documentaccesslevel()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->documentaccesslevel());
+    }
+
+    // optional .Diadoc.Api.Proto.AuthorizationPermission AuthorizationPermission = 6;
+    if (has_authorizationpermission()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->authorizationpermission());
     }
 
   }
@@ -996,6 +1039,9 @@ void EmployeePermissions::MergeFrom(const EmployeePermissions& from) {
     if (from.has_documentaccesslevel()) {
       set_documentaccesslevel(from.documentaccesslevel());
     }
+    if (from.has_authorizationpermission()) {
+      mutable_authorizationpermission()->::Diadoc::Api::Proto::AuthorizationPermission::MergeFrom(from.authorizationpermission());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -1016,6 +1062,9 @@ bool EmployeePermissions::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
 
   if (!::google::protobuf::internal::AllAreInitialized(this->actions())) return false;
+  if (has_authorizationpermission()) {
+    if (!this->authorizationpermission().IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -1026,6 +1075,7 @@ void EmployeePermissions::Swap(EmployeePermissions* other) {
     std::swap(documentaccesslevel_, other->documentaccesslevel_);
     selecteddepartmentids_.Swap(&other->selecteddepartmentids_);
     actions_.Swap(&other->actions_);
+    std::swap(authorizationpermission_, other->authorizationpermission_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
