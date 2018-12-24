@@ -885,7 +885,7 @@ DiadocApi::WebFile DiadocApi::GenerateTovTorg551XmlForSeller(const TovTorgSeller
 	auto requestBody = ToProtoBytes(tovTorgSellerInfo);
 	auto connect = session_.Connect(api_url_.c_str(), api_port_);
 	std::wstringstream queryString;
-	queryString << L"/GenerateTorg12XmlForSeller?documentVersion=tovtorg_05_01_03" << (disableValidation ? L"&disableValidation" : L"");
+	queryString << L"/GenerateTorg12XmlForSeller?documentVersion=tovtorg_05_01_04" << (disableValidation ? L"&disableValidation" : L"");
 	auto request = connect.OpenRequest(POST.c_str(), queryString.str().c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
 	SendRequest(request, requestBody);
 	return WebFile(request);
@@ -897,7 +897,7 @@ DiadocApi::WebFile DiadocApi::GenerateTovTorg551XmlForBuyer(const TovTorgBuyerTi
 	std::wstringstream queryString;
 
 	std::wstring version = documentVersion.empty()
-		? L"tovtorg_05_01_02"
+		? L"tovtorg_05_01_04"
 		: documentVersion;
 
 	queryString << L"/GenerateTorg12XmlForBuyer?boxId=" << StringHelper::CanonicalizeUrl(boxId)
@@ -943,7 +943,7 @@ DiadocApi::WebFile DiadocApi::GenerateAcceptanceCertificate552XmlForSeller(const
     auto requestBody = ToProtoBytes(acceptanceCertificateSellerInfo);
     auto connect = session_.Connect(api_url_.c_str(), api_port_);
     std::wstringstream queryString;
-    queryString << L"/GenerateAcceptanceCertificate552XmlForSeller?documentVersion=rezru_05_01_01" << (disableValidation ? L"&disableValidation" : L"");
+    queryString << L"/GenerateAcceptanceCertificate552XmlForSeller?documentVersion=rezru_05_01_02" << (disableValidation ? L"&disableValidation" : L"");
     auto request = connect.OpenRequest(POST.c_str(), queryString.str().c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
     SendRequest(request, requestBody);
     return WebFile(request);
@@ -956,7 +956,7 @@ DiadocApi::WebFile DiadocApi::GenerateAcceptanceCertificate552XmlForBuyer(const 
     queryString << L"/GenerateAcceptanceCertificate552XmlForBuyer?boxId=" << StringHelper::CanonicalizeUrl(boxId)
                 << L"&sellerTitleMessageId=" << StringHelper::CanonicalizeUrl(sellerTitleMessageId)
                 << L"&sellerTitleAttachmentId=" << StringHelper::CanonicalizeUrl(sellerTitleAttachmentId)
-                << L"&documentVersion=rezru_05_01_01";
+                << L"&documentVersion=rezru_05_01_02";
     auto requestBody = ToProtoBytes(acceptanceCertificateBuyerInfo);
     auto connect = session_.Connect(api_url_.c_str(), api_port_);
     auto request = connect.OpenRequest(POST.c_str(), queryString.str().c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
@@ -1092,7 +1092,7 @@ Torg12SellerTitleInfo DiadocApi::ParseTorg12SellerTitleXml(const Bytes_t& conten
 TovTorgSellerTitleInfo DiadocApi::ParseTovTorg551SellerTitleXml(const Bytes_t& content)
 {
 	WppTraceDebugOut("ParseTovTorg551SellerTitleXml...");
-	return FromProtoBytes<TovTorgSellerTitleInfo>(PerformHttpRequest(L"/ParseTorg12SellerTitleXml?documentVersion=tovtorg_05_01_03", content, L"POST"));
+	return FromProtoBytes<TovTorgSellerTitleInfo>(PerformHttpRequest(L"/ParseTorg12SellerTitleXml?documentVersion=tovtorg_05_01_04", content, L"POST"));
 }
 
 Torg12BuyerTitleInfo DiadocApi::ParseTorg12BuyerTitleXml(const Bytes_t& content)
@@ -1104,7 +1104,7 @@ Torg12BuyerTitleInfo DiadocApi::ParseTorg12BuyerTitleXml(const Bytes_t& content)
 TovTorgBuyerTitleInfo DiadocApi::ParseTovTorg551BuyerTitleXml(const Bytes_t& content)
 {
 	WppTraceDebugOut("ParseTovTorg551BuyerTitleXml...");
-	return FromProtoBytes<TovTorgBuyerTitleInfo>(PerformHttpRequest(L"/ParseTorg12BuyerTitleXml?documentVersion=tovtorg_05_01_02", content, L"POST"));
+	return FromProtoBytes<TovTorgBuyerTitleInfo>(PerformHttpRequest(L"/ParseTorg12BuyerTitleXml?documentVersion=tovtorg_05_01_04", content, L"POST"));
 }
 
 AcceptanceCertificateSellerTitleInfo DiadocApi::ParseAcceptanceCertificateSellerTitleXml(const Bytes_t& sellerTitleXmlContent)
@@ -1122,19 +1122,19 @@ AcceptanceCertificateBuyerTitleInfo DiadocApi::ParseAcceptanceCertificateBuyerTi
 AcceptanceCertificate552SellerTitleInfo DiadocApi::ParseAcceptanceCertificate552SellerTitleXml(const Bytes_t& sellerTitleXmlContent)
 {
     WppTraceDebugOut("ParseAcceptanceCertificate552SellerTitleXml...");
-    return FromProtoBytes<AcceptanceCertificate552SellerTitleInfo>(PerformHttpRequest(L"/ParseAcceptanceCertificate552SellerTitleXml?documentVersion=rezru_05_01_01", sellerTitleXmlContent, L"POST"));
+    return FromProtoBytes<AcceptanceCertificate552SellerTitleInfo>(PerformHttpRequest(L"/ParseAcceptanceCertificate552SellerTitleXml?documentVersion=rezru_05_01_02", sellerTitleXmlContent, L"POST"));
 }
 
 AcceptanceCertificate552BuyerTitleInfo DiadocApi::ParseAcceptanceCertificate552BuyerTitleXml(const Bytes_t& buyerTitleXmlContent)
 {
     WppTraceDebugOut("ParseAcceptanceCertificate552BuyerTitleXml...");
-    return FromProtoBytes<AcceptanceCertificate552BuyerTitleInfo>(PerformHttpRequest(L"/ParseAcceptanceCertificate552BuyerTitleXml?documentVersion=rezru_05_01_01", buyerTitleXmlContent, L"POST"));
+    return FromProtoBytes<AcceptanceCertificate552BuyerTitleInfo>(PerformHttpRequest(L"/ParseAcceptanceCertificate552BuyerTitleXml?documentVersion=rezru_05_01_02", buyerTitleXmlContent, L"POST"));
 }
 
 Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentSellerTitleInfo DiadocApi::ParseUniversalTransferDocumentSellerTitleXml(const Bytes_t& utdXmlContent)
 {
 	WppTraceDebugOut("ParseUniversalTransferDocumentSellerTitleXml...");
-	return FromProtoBytes<UniversalTransferDocumentSellerTitleInfo>(PerformHttpRequest(L"/ParseUniversalTransferDocumentSellerTitleXml?documentVersion=utd_05_01_04", utdXmlContent, L"POST"));
+	return FromProtoBytes<UniversalTransferDocumentSellerTitleInfo>(PerformHttpRequest(L"/ParseUniversalTransferDocumentSellerTitleXml?documentVersion=utd_05_01_05", utdXmlContent, L"POST"));
 }
 
 Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo DiadocApi::ParseUniversalTransferDocumentBuyerTitleXml(const Bytes_t& utdXmlContent)
@@ -1146,7 +1146,7 @@ Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo DiadocApi
 Diadoc::Api::Proto::Invoicing::UniversalCorrectionDocumentSellerTitleInfo DiadocApi::ParseUniversalCorrectionDocumentSellerTitleXml(const Bytes_t& utdXmlContent)
 {
 	WppTraceDebugOut("ParseUniversalCorrectionDocumentSellerTitleXml...");
-	return FromProtoBytes<UniversalCorrectionDocumentSellerTitleInfo>(PerformHttpRequest(L"/ParseUniversalCorrectionDocumentSellerTitleXml?documentVersion=ucd_05_01_02", utdXmlContent, L"POST"));
+	return FromProtoBytes<UniversalCorrectionDocumentSellerTitleInfo>(PerformHttpRequest(L"/ParseUniversalCorrectionDocumentSellerTitleXml?documentVersion=ucd_05_01_03", utdXmlContent, L"POST"));
 }
 
 Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo DiadocApi::ParseUniversalCorrectionDocumentBuyerTitleXml(const Bytes_t& utdXmlContent)
