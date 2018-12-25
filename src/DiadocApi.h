@@ -27,6 +27,11 @@
 #include "protos\Organization.pb.h"
 #include "protos\User.pb.h"
 #include "protos\Users\UserToUpdate.pb.h"
+#include "protos\Departments\Department.pb.h"
+#include "protos\Departments\DepartmentList.pb.h"
+#include "protos\Departments\DepartmentToCreate.pb.h"
+#include "protos\Departments\DepartmentToUpdate.pb.h"
+#include "protos\Departments\Routing.pb.h"
 #include "protos\Employees\Employee.pb.h"
 #include "protos\Employees\EmployeeToCreate.pb.h"
 #include "protos\Employees\EmployeeToUpdate.pb.h"
@@ -240,6 +245,13 @@ public:
 	Diadoc::Api::Proto::User GetMyUser();
 	Diadoc::Api::Proto::UserV2 GetMyUserV2();
 	Diadoc::Api::Proto::UserV2 UpdateMyUser(Diadoc::Api::Proto::Users::UserToUpdate& userToUpdate);
+
+	Diadoc::Api::Proto::Departments::Department GetDepartmentByFullId(const std::wstring& boxId, const std::wstring& departmentId);
+	Diadoc::Api::Proto::Departments::DepartmentList GetDepartments(const std::wstring& boxId, int* page = NULL, int* count = NULL);
+	Diadoc::Api::Proto::Departments::Department CreateDepartment(const std::wstring& boxId, const Diadoc::Api::Proto::Departments::DepartmentToCreate& departmentToCreate);
+	Diadoc::Api::Proto::Departments::Department UpdateDepartment(const std::wstring& boxId, const std::wstring& departmentId, Diadoc::Api::Proto::Departments::DepartmentToUpdate& departmentToUpdate);
+	void DeleteDepartment(const std::wstring& boxId, const std::wstring& departmentId);
+
 	Diadoc::Api::Proto::Employees::Employee GetEmployee(const std::wstring& boxId, const std::wstring& userId);
 	Diadoc::Api::Proto::Employees::EmployeeList GetEmployees(const std::wstring& boxId, int* page = NULL, int* count = NULL);
 	Diadoc::Api::Proto::Employees::Employee CreateEmployee(const std::wstring& boxId, const Diadoc::Api::Proto::Employees::EmployeeToCreate& employeeToCreate);

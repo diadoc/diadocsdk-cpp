@@ -1255,6 +1255,55 @@ Diadoc::Api::Proto::UserV2 DiadocApi::UpdateMyUser(Diadoc::Api::Proto::Users::Us
 	return FromProtoBytes<Diadoc::Api::Proto::UserV2>(PerformHttpRequest(L"/UpdateMyUser", ToProtoBytes(userToUpdate), POST));
 }
 
+Diadoc::Api::Proto::Departments::Department DiadocApi::GetDepartmentByFullId(const std::wstring& boxId, const std::wstring& departmentId)
+{
+	WppTraceDebugOut("GetDepartmentByFullId...");
+	std::wstringstream buf;
+	buf << L"/admin/GetDepartment?boxId=" << StringHelper::CanonicalizeUrl(boxId)
+		<< L"&departmentId=" << StringHelper::CanonicalizeUrl(departmentId);
+	return FromProtoBytes<Diadoc::Api::Proto::Departments::Department>(PerformHttpRequest(buf.str(), GET));
+}
+
+Diadoc::Api::Proto::Departments::DepartmentList DiadocApi::GetDepartments(const std::wstring& boxId, int* page, int* count)
+{
+	WppTraceDebugOut("GetDepartments...");
+	std::wstringstream buf;
+	buf << L"/admin/GetDepartments?boxId=" << StringHelper::CanonicalizeUrl(boxId);
+	if (page != NULL) {
+		buf << L"&page=" << *page;
+	}
+	if (count != NULL) {
+		buf << L"&count=" << *count;
+	}
+	return FromProtoBytes<Diadoc::Api::Proto::Departments::DepartmentList>(PerformHttpRequest(buf.str(), GET));
+}
+
+Diadoc::Api::Proto::Departments::Department DiadocApi::CreateDepartment(const std::wstring& boxId, const Diadoc::Api::Proto::Departments::DepartmentToCreate& departmentToCreate)
+{
+	WppTraceDebugOut("CreateDepartment...");
+	std::wstringstream buf;
+	buf << L"/admin/CreateDepartment?boxId=" << StringHelper::CanonicalizeUrl(boxId);
+	return FromProtoBytes<Diadoc::Api::Proto::Departments::Department>(PerformHttpRequest(buf.str(), ToProtoBytes(departmentToCreate), POST));
+}
+
+Diadoc::Api::Proto::Departments::Department DiadocApi::UpdateDepartment(const std::wstring& boxId, const std::wstring& departmentId, Diadoc::Api::Proto::Departments::DepartmentToUpdate& departmentToUpdate)
+{
+	WppTraceDebugOut("UpdateDepartment...");
+	std::wstringstream buf;
+	buf << L"/admin/UpdateDepartment?boxId=" << StringHelper::CanonicalizeUrl(boxId)
+		<< L"&departmentId=" << StringHelper::CanonicalizeUrl(departmentId);
+	return FromProtoBytes<Diadoc::Api::Proto::Departments::Department>(PerformHttpRequest(buf.str(), ToProtoBytes(departmentToUpdate), POST));
+}
+
+void DiadocApi::DeleteDepartment(const std::wstring& boxId, const std::wstring& departmentId)
+{
+	WppTraceDebugOut("DeleteDepartment...");
+	std::wstringstream buf;
+	buf << L"/admin/DeleteDepartment?boxId=" << StringHelper::CanonicalizeUrl(boxId)
+		<< L"&departmentId=" << StringHelper::CanonicalizeUrl(departmentId);
+	PerformHttpRequest(buf.str(), POST);
+}
+
 Diadoc::Api::Proto::Employees::Employee DiadocApi::GetEmployee(const std::wstring& boxId, const std::wstring& userId)
 {
 	WppTraceDebugOut("GetEmployee...");
