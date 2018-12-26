@@ -37,6 +37,7 @@ void protobuf_AssignDesc_OrganizationUserPermissions_2eproto();
 void protobuf_ShutdownFile_OrganizationUserPermissions_2eproto();
 
 class OrganizationUserPermissions;
+class AuthorizationPermission;
 
 enum DocumentAccessLevel {
   UnknownDocumentAccessLevel = -1,
@@ -204,6 +205,15 @@ class OrganizationUserPermissions : public ::google::protobuf::Message {
   inline bool cancreatedocuments() const;
   inline void set_cancreatedocuments(bool value);
 
+  // required .Diadoc.Api.Proto.AuthorizationPermission AuthorizationPermission = 12;
+  inline bool has_authorizationpermission() const;
+  inline void clear_authorizationpermission();
+  static const int kAuthorizationPermissionFieldNumber = 12;
+  inline const ::Diadoc::Api::Proto::AuthorizationPermission& authorizationpermission() const;
+  inline ::Diadoc::Api::Proto::AuthorizationPermission* mutable_authorizationpermission();
+  inline ::Diadoc::Api::Proto::AuthorizationPermission* release_authorizationpermission();
+  inline void set_allocated_authorizationpermission(::Diadoc::Api::Proto::AuthorizationPermission* authorizationpermission);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.OrganizationUserPermissions)
  private:
   inline void set_has_userdepartmentid();
@@ -224,6 +234,8 @@ class OrganizationUserPermissions : public ::google::protobuf::Message {
   inline void clear_has_jobtitle();
   inline void set_has_cancreatedocuments();
   inline void clear_has_cancreatedocuments();
+  inline void set_has_authorizationpermission();
+  inline void clear_has_authorizationpermission();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -237,6 +249,7 @@ class OrganizationUserPermissions : public ::google::protobuf::Message {
   bool canaddresolutions_;
   ::google::protobuf::RepeatedPtrField< ::std::string> selecteddepartmentids_;
   ::std::string* jobtitle_;
+  ::Diadoc::Api::Proto::AuthorizationPermission* authorizationpermission_;
   bool canrequestresolutions_;
   bool cancreatedocuments_;
   friend void  protobuf_AddDesc_OrganizationUserPermissions_2eproto();
@@ -245,6 +258,100 @@ class OrganizationUserPermissions : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static OrganizationUserPermissions* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class AuthorizationPermission : public ::google::protobuf::Message {
+ public:
+  AuthorizationPermission();
+  virtual ~AuthorizationPermission();
+
+  AuthorizationPermission(const AuthorizationPermission& from);
+
+  inline AuthorizationPermission& operator=(const AuthorizationPermission& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const AuthorizationPermission& default_instance();
+
+  void Swap(AuthorizationPermission* other);
+
+  // implements Message ----------------------------------------------
+
+  AuthorizationPermission* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const AuthorizationPermission& from);
+  void MergeFrom(const AuthorizationPermission& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required bool IsBlocked = 1;
+  inline bool has_isblocked() const;
+  inline void clear_isblocked();
+  static const int kIsBlockedFieldNumber = 1;
+  inline bool isblocked() const;
+  inline void set_isblocked(bool value);
+
+  // optional string Comment = 2;
+  inline bool has_comment() const;
+  inline void clear_comment();
+  static const int kCommentFieldNumber = 2;
+  inline const ::std::string& comment() const;
+  inline void set_comment(const ::std::string& value);
+  inline void set_comment(const char* value);
+  inline void set_comment(const char* value, size_t size);
+  inline ::std::string* mutable_comment();
+  inline ::std::string* release_comment();
+  inline void set_allocated_comment(::std::string* comment);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.AuthorizationPermission)
+ private:
+  inline void set_has_isblocked();
+  inline void clear_has_isblocked();
+  inline void set_has_comment();
+  inline void clear_has_comment();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* comment_;
+  bool isblocked_;
+  friend void  protobuf_AddDesc_OrganizationUserPermissions_2eproto();
+  friend void protobuf_AssignDesc_OrganizationUserPermissions_2eproto();
+  friend void protobuf_ShutdownFile_OrganizationUserPermissions_2eproto();
+
+  void InitAsDefaultInstance();
+  static AuthorizationPermission* default_instance_;
 };
 // ===================================================================
 
@@ -626,6 +733,151 @@ inline void OrganizationUserPermissions::set_cancreatedocuments(bool value) {
   set_has_cancreatedocuments();
   cancreatedocuments_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.OrganizationUserPermissions.CanCreateDocuments)
+}
+
+// required .Diadoc.Api.Proto.AuthorizationPermission AuthorizationPermission = 12;
+inline bool OrganizationUserPermissions::has_authorizationpermission() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+inline void OrganizationUserPermissions::set_has_authorizationpermission() {
+  _has_bits_[0] |= 0x00000400u;
+}
+inline void OrganizationUserPermissions::clear_has_authorizationpermission() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+inline void OrganizationUserPermissions::clear_authorizationpermission() {
+  if (authorizationpermission_ != NULL) authorizationpermission_->::Diadoc::Api::Proto::AuthorizationPermission::Clear();
+  clear_has_authorizationpermission();
+}
+inline const ::Diadoc::Api::Proto::AuthorizationPermission& OrganizationUserPermissions::authorizationpermission() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.OrganizationUserPermissions.AuthorizationPermission)
+  return authorizationpermission_ != NULL ? *authorizationpermission_ : *default_instance_->authorizationpermission_;
+}
+inline ::Diadoc::Api::Proto::AuthorizationPermission* OrganizationUserPermissions::mutable_authorizationpermission() {
+  set_has_authorizationpermission();
+  if (authorizationpermission_ == NULL) authorizationpermission_ = new ::Diadoc::Api::Proto::AuthorizationPermission;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.OrganizationUserPermissions.AuthorizationPermission)
+  return authorizationpermission_;
+}
+inline ::Diadoc::Api::Proto::AuthorizationPermission* OrganizationUserPermissions::release_authorizationpermission() {
+  clear_has_authorizationpermission();
+  ::Diadoc::Api::Proto::AuthorizationPermission* temp = authorizationpermission_;
+  authorizationpermission_ = NULL;
+  return temp;
+}
+inline void OrganizationUserPermissions::set_allocated_authorizationpermission(::Diadoc::Api::Proto::AuthorizationPermission* authorizationpermission) {
+  delete authorizationpermission_;
+  authorizationpermission_ = authorizationpermission;
+  if (authorizationpermission) {
+    set_has_authorizationpermission();
+  } else {
+    clear_has_authorizationpermission();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.OrganizationUserPermissions.AuthorizationPermission)
+}
+
+// -------------------------------------------------------------------
+
+// AuthorizationPermission
+
+// required bool IsBlocked = 1;
+inline bool AuthorizationPermission::has_isblocked() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void AuthorizationPermission::set_has_isblocked() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void AuthorizationPermission::clear_has_isblocked() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void AuthorizationPermission::clear_isblocked() {
+  isblocked_ = false;
+  clear_has_isblocked();
+}
+inline bool AuthorizationPermission::isblocked() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.AuthorizationPermission.IsBlocked)
+  return isblocked_;
+}
+inline void AuthorizationPermission::set_isblocked(bool value) {
+  set_has_isblocked();
+  isblocked_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.AuthorizationPermission.IsBlocked)
+}
+
+// optional string Comment = 2;
+inline bool AuthorizationPermission::has_comment() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void AuthorizationPermission::set_has_comment() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void AuthorizationPermission::clear_has_comment() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void AuthorizationPermission::clear_comment() {
+  if (comment_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_->clear();
+  }
+  clear_has_comment();
+}
+inline const ::std::string& AuthorizationPermission::comment() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.AuthorizationPermission.Comment)
+  return *comment_;
+}
+inline void AuthorizationPermission::set_comment(const ::std::string& value) {
+  set_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_ = new ::std::string;
+  }
+  comment_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.AuthorizationPermission.Comment)
+}
+inline void AuthorizationPermission::set_comment(const char* value) {
+  set_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_ = new ::std::string;
+  }
+  comment_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.AuthorizationPermission.Comment)
+}
+inline void AuthorizationPermission::set_comment(const char* value, size_t size) {
+  set_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_ = new ::std::string;
+  }
+  comment_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.AuthorizationPermission.Comment)
+}
+inline ::std::string* AuthorizationPermission::mutable_comment() {
+  set_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.AuthorizationPermission.Comment)
+  return comment_;
+}
+inline ::std::string* AuthorizationPermission::release_comment() {
+  clear_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = comment_;
+    comment_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void AuthorizationPermission::set_allocated_comment(::std::string* comment) {
+  if (comment_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete comment_;
+  }
+  if (comment) {
+    set_has_comment();
+    comment_ = comment;
+  } else {
+    clear_has_comment();
+    comment_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.AuthorizationPermission.Comment)
 }
 
 

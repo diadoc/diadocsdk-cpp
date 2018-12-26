@@ -283,6 +283,15 @@ class EmployeePermissions : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Employees::EmployeeAction >*
       mutable_actions();
 
+  // optional .Diadoc.Api.Proto.AuthorizationPermission AuthorizationPermission = 6;
+  inline bool has_authorizationpermission() const;
+  inline void clear_authorizationpermission();
+  static const int kAuthorizationPermissionFieldNumber = 6;
+  inline const ::Diadoc::Api::Proto::AuthorizationPermission& authorizationpermission() const;
+  inline ::Diadoc::Api::Proto::AuthorizationPermission* mutable_authorizationpermission();
+  inline ::Diadoc::Api::Proto::AuthorizationPermission* release_authorizationpermission();
+  inline void set_allocated_authorizationpermission(::Diadoc::Api::Proto::AuthorizationPermission* authorizationpermission);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Employees.EmployeePermissions)
  private:
   inline void set_has_userdepartmentid();
@@ -291,6 +300,8 @@ class EmployeePermissions : public ::google::protobuf::Message {
   inline void clear_has_isadministrator();
   inline void set_has_documentaccesslevel();
   inline void clear_has_documentaccesslevel();
+  inline void set_has_authorizationpermission();
+  inline void clear_has_authorizationpermission();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -301,6 +312,7 @@ class EmployeePermissions : public ::google::protobuf::Message {
   int documentaccesslevel_;
   ::google::protobuf::RepeatedPtrField< ::std::string> selecteddepartmentids_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Employees::EmployeeAction > actions_;
+  ::Diadoc::Api::Proto::AuthorizationPermission* authorizationpermission_;
   friend void  protobuf_AddDesc_Employees_2fEmployee_2eproto();
   friend void protobuf_AssignDesc_Employees_2fEmployee_2eproto();
   friend void protobuf_ShutdownFile_Employees_2fEmployee_2eproto();
@@ -935,6 +947,47 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Employees::Em
 EmployeePermissions::mutable_actions() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Employees.EmployeePermissions.Actions)
   return &actions_;
+}
+
+// optional .Diadoc.Api.Proto.AuthorizationPermission AuthorizationPermission = 6;
+inline bool EmployeePermissions::has_authorizationpermission() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void EmployeePermissions::set_has_authorizationpermission() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void EmployeePermissions::clear_has_authorizationpermission() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void EmployeePermissions::clear_authorizationpermission() {
+  if (authorizationpermission_ != NULL) authorizationpermission_->::Diadoc::Api::Proto::AuthorizationPermission::Clear();
+  clear_has_authorizationpermission();
+}
+inline const ::Diadoc::Api::Proto::AuthorizationPermission& EmployeePermissions::authorizationpermission() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Employees.EmployeePermissions.AuthorizationPermission)
+  return authorizationpermission_ != NULL ? *authorizationpermission_ : *default_instance_->authorizationpermission_;
+}
+inline ::Diadoc::Api::Proto::AuthorizationPermission* EmployeePermissions::mutable_authorizationpermission() {
+  set_has_authorizationpermission();
+  if (authorizationpermission_ == NULL) authorizationpermission_ = new ::Diadoc::Api::Proto::AuthorizationPermission;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Employees.EmployeePermissions.AuthorizationPermission)
+  return authorizationpermission_;
+}
+inline ::Diadoc::Api::Proto::AuthorizationPermission* EmployeePermissions::release_authorizationpermission() {
+  clear_has_authorizationpermission();
+  ::Diadoc::Api::Proto::AuthorizationPermission* temp = authorizationpermission_;
+  authorizationpermission_ = NULL;
+  return temp;
+}
+inline void EmployeePermissions::set_allocated_authorizationpermission(::Diadoc::Api::Proto::AuthorizationPermission* authorizationpermission) {
+  delete authorizationpermission_;
+  authorizationpermission_ = authorizationpermission;
+  if (authorizationpermission) {
+    set_has_authorizationpermission();
+  } else {
+    clear_has_authorizationpermission();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Employees.EmployeePermissions.AuthorizationPermission)
 }
 
 // -------------------------------------------------------------------
