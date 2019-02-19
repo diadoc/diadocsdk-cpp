@@ -39,11 +39,12 @@ enum ResolutionRequestType {
   UnknownResolutionRequestType = -1,
   ApprovementRequest = 0,
   SignatureRequest = 1,
-  ApprovementSignatureRequest = 2
+  ApprovementSignatureRequest = 2,
+  Custom = 3
 };
 bool ResolutionRequestType_IsValid(int value);
 const ResolutionRequestType ResolutionRequestType_MIN = UnknownResolutionRequestType;
-const ResolutionRequestType ResolutionRequestType_MAX = ApprovementSignatureRequest;
+const ResolutionRequestType ResolutionRequestType_MAX = Custom;
 const int ResolutionRequestType_ARRAYSIZE = ResolutionRequestType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* ResolutionRequestType_descriptor();
