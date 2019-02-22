@@ -3,7 +3,34 @@
 #include "ApiException.h"
 #include <cryptuiapi.h>
 
-const std::string Certificate::OID_GOST_34_11_94("1.2.643.2.2.9");
+LPCSTR OID_GOST_34_11_94 = "1.2.643.2.2.9"; // Функция хэширования ГОСТ Р 34.11-94
+LPCSTR OID_GOST_34_11_12_256 = "1.2.643.7.1.1.2.2"; // Функция хэширования ГОСТ Р 34.11-2012, длина выхода 256 бит
+LPCSTR OID_GOST_34_11_12_512 = "1.2.643.7.1.1.2.3"; // Функция хэширования ГОСТ Р 34.11-2012, длина выхода 512 бит
+LPCSTR OID_GOST_34_11_94_R3410EL = "1.2.643.2.2.3"; // Алгоритм цифровой подписи ГОСТ Р 34.10-2001
+LPCSTR OID_GOST_34_11_12_256_R3410 = "1.2.643.7.1.1.3.2"; // Алгоритм цифровой подписи ГОСТ Р 34.10-2012 для ключей длины 256 бит
+LPCSTR OID_GOST_34_11_12_512_R3410 = "1.2.643.7.1.1.3.3"; // Алгоритм цифровой подписи ГОСТ Р 34.10-2012 для ключей длины 512 бит
+
+struct cmp_str
+{
+	bool operator()(LPCSTR a, LPCSTR b) const
+	{
+		return std::strcmp(a, b) < 0;
+	}
+};
+
+static std::map<LPCSTR, LPCSTR, cmp_str> hashAlgorithmsMap = {
+	{ OID_GOST_34_11_94_R3410EL, OID_GOST_34_11_94 },
+	{ OID_GOST_34_11_12_256_R3410, OID_GOST_34_11_12_256 },
+	{ OID_GOST_34_11_12_512_R3410, OID_GOST_34_11_12_512 }
+};
+
+LPCSTR GetHashAlgorithmBySignatureAlgorithm(LPCSTR signatureAlgorithm)
+{
+	const auto element = hashAlgorithmsMap.find(signatureAlgorithm);
+	return element != hashAlgorithmsMap.cend()
+		? element->second
+		: OID_GOST_34_11_94;
+}
 
 Certificate::Certificate(PCCERT_CONTEXT handle)
 	: _handle(handle)
@@ -88,7 +115,7 @@ Certificate::Bytes_t Certificate::Sign(const Bytes_t& input) const
 	signPara.cMsgCert = 1;
 	signPara.rgpMsgCert = const_cast<PCCERT_CONTEXT*>(&_handle);
 	signPara.dwMsgEncodingType = X509_ASN_ENCODING | PKCS_7_ASN_ENCODING;
-	signPara.HashAlgorithm.pszObjId = const_cast<LPSTR>(OID_GOST_34_11_94.c_str());
+	signPara.HashAlgorithm.pszObjId = const_cast<LPSTR>(GetHashAlgorithmBySignatureAlgorithm(_handle->pCertInfo->SignatureAlgorithm.pszObjId));
 	if (!CryptSignMessage(&signPara, TRUE, 1, &dataToSign, &dwSizeToSign, NULL, &dwSizeSign))
 		throw CryptoApiException("CryptSignMessage error", GetLastError());
 	Bytes_t signBytes;

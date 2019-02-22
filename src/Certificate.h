@@ -28,16 +28,15 @@ public:
 	std::wstring GetFriendlyName() const;
 	void ShowCertificateUI(IN OPTIONAL HWND hwnd, IN OPTIONAL LPCWSTR pwszTitle, IN DWORD dwFlags) const;
 	Bytes_t GetCertificateHash(ALG_ID algId, DWORD flags) const;
-	
+
 	Bytes_t GetThumbprint() const;
 	std::wstring GetName() const;
 	std::wstring GetIssuerName() const;
 	std::wstring GetOrganizationName() const;
 	FILETIME GetValidFrom() const;
 	FILETIME GetValidTo() const;
-	
+
 
 private:
 	PCCERT_CONTEXT _handle;
-	static const std::string OID_GOST_34_11_94;
 };
