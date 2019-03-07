@@ -67,11 +67,12 @@ enum ResolutionStatusType {
   Disapproved = 2,
   ApprovementRequested = 3,
   SignatureRequested = 4,
-  SignatureDenied = 5
+  SignatureDenied = 5,
+  ActionsRequested = 6
 };
 bool ResolutionStatusType_IsValid(int value);
 const ResolutionStatusType ResolutionStatusType_MIN = UnknownResolutionStatus;
-const ResolutionStatusType ResolutionStatusType_MAX = SignatureDenied;
+const ResolutionStatusType ResolutionStatusType_MAX = ActionsRequested;
 const int ResolutionStatusType_ARRAYSIZE = ResolutionStatusType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* ResolutionStatusType_descriptor();

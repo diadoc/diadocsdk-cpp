@@ -90,7 +90,7 @@ message Document {
 	optional Origin Origin = 72;
 	optional string EditingSettingId = 73 [default = ""];
 	required LockMode LockMode = 74 [default = None];
-	required SenderReceiptMetadata SenderReceiptMetadata = 75;
+	required SenderReceiptMetadata SenderReceiptMetadata = 75; 
 	required string Version = 76;
 }
 
@@ -108,7 +108,8 @@ enum ResolutionStatusType {
 	Disapproved = 2;
 	ApprovementRequested = 3;
 	SignatureRequested = 4;
-	SignatureDenied = 5;
+	SignatureDenied = 5; 
+	ActionsRequested = 6;
 }
 
 enum RevocationStatus {
@@ -166,6 +167,7 @@ message ConfirmationMetadata {
 	required GeneralReceiptStatus ReceiptStatus = 1 [default = GeneralReceiptStatusUnknown];
 	required sfixed64 DateTimeTicks = 2;
 }
+
 
 message AmendmentRequestMetadata {
 	required int32 AmendmentFlags = 1;
