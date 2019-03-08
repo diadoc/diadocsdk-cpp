@@ -37,11 +37,12 @@ void protobuf_AssignDesc_Events_2fResolutionRequestInfo_2eproto() {
       "Events/ResolutionRequestInfo.proto");
   GOOGLE_CHECK(file != NULL);
   ResolutionRequestInfo_descriptor_ = file->message_type(0);
-  static const int ResolutionRequestInfo_offsets_[4] = {
+  static const int ResolutionRequestInfo_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRequestInfo, requesttype_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRequestInfo, author_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRequestInfo, target_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRequestInfo, resolvedwith_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolutionRequestInfo, actions_),
   };
   ResolutionRequestInfo_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -83,18 +84,20 @@ void protobuf_AddDesc_Events_2fResolutionRequestInfo_2eproto() {
   already_here = true;
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
+  ::Diadoc::Api::Proto::protobuf_AddDesc_ResolutionAction_2eproto();
   ::Diadoc::Api::Proto::protobuf_AddDesc_ResolutionTarget_2eproto();
   ::Diadoc::Api::Proto::protobuf_AddDesc_ResolutionRequestType_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\"Events/ResolutionRequestInfo.proto\022\027Di"
-    "adoc.Api.Proto.Events\032\026ResolutionTarget."
-    "proto\032\033ResolutionRequestType.proto\"\315\001\n\025R"
-    "esolutionRequestInfo\022Z\n\013RequestType\030\001 \001("
-    "\0162\'.Diadoc.Api.Proto.ResolutionRequestTy"
-    "pe:\034UnknownResolutionRequestType\022\016\n\006Auth"
-    "or\030\002 \002(\t\0222\n\006Target\030\003 \001(\0132\".Diadoc.Api.Pr"
-    "oto.ResolutionTarget\022\024\n\014ResolvedWith\030\004 \001"
-    "(\t", 322);
+    "adoc.Api.Proto.Events\032\026ResolutionAction."
+    "proto\032\026ResolutionTarget.proto\032\033Resolutio"
+    "nRequestType.proto\"\202\002\n\025ResolutionRequest"
+    "Info\022Z\n\013RequestType\030\001 \001(\0162\'.Diadoc.Api.P"
+    "roto.ResolutionRequestType:\034UnknownResol"
+    "utionRequestType\022\016\n\006Author\030\002 \002(\t\0222\n\006Targ"
+    "et\030\003 \001(\0132\".Diadoc.Api.Proto.ResolutionTa"
+    "rget\022\024\n\014ResolvedWith\030\004 \001(\t\0223\n\007Actions\030\005 "
+    "\003(\0162\".Diadoc.Api.Proto.ResolutionAction", 399);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Events/ResolutionRequestInfo.proto", &protobuf_RegisterTypes);
   ResolutionRequestInfo::default_instance_ = new ResolutionRequestInfo();
@@ -116,6 +119,7 @@ const int ResolutionRequestInfo::kRequestTypeFieldNumber;
 const int ResolutionRequestInfo::kAuthorFieldNumber;
 const int ResolutionRequestInfo::kTargetFieldNumber;
 const int ResolutionRequestInfo::kResolvedWithFieldNumber;
+const int ResolutionRequestInfo::kActionsFieldNumber;
 #endif  // !_MSC_VER
 
 ResolutionRequestInfo::ResolutionRequestInfo()
@@ -200,6 +204,7 @@ void ResolutionRequestInfo::Clear() {
       }
     }
   }
+  actions_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -276,6 +281,32 @@ bool ResolutionRequestInfo::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(40)) goto parse_Actions;
+        break;
+      }
+
+      // repeated .Diadoc.Api.Proto.ResolutionAction Actions = 5;
+      case 5: {
+        if (tag == 40) {
+         parse_Actions:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Diadoc::Api::Proto::ResolutionAction_IsValid(value)) {
+            add_actions(static_cast< ::Diadoc::Api::Proto::ResolutionAction >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(5, value);
+          }
+        } else if (tag == 42) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedEnumNoInline(
+                 input,
+                 &::Diadoc::Api::Proto::ResolutionAction_IsValid,
+                 this->mutable_actions())));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(40)) goto parse_Actions;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -337,6 +368,12 @@ void ResolutionRequestInfo::SerializeWithCachedSizes(
       4, this->resolvedwith(), output);
   }
 
+  // repeated .Diadoc.Api.Proto.ResolutionAction Actions = 5;
+  for (int i = 0; i < this->actions_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      5, this->actions(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -382,6 +419,12 @@ void ResolutionRequestInfo::SerializeWithCachedSizes(
         4, this->resolvedwith(), target);
   }
 
+  // repeated .Diadoc.Api.Proto.ResolutionAction Actions = 5;
+  for (int i = 0; i < this->actions_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      5, this->actions(i), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -422,6 +465,16 @@ int ResolutionRequestInfo::ByteSize() const {
     }
 
   }
+  // repeated .Diadoc.Api.Proto.ResolutionAction Actions = 5;
+  {
+    int data_size = 0;
+    for (int i = 0; i < this->actions_size(); i++) {
+      data_size += ::google::protobuf::internal::WireFormatLite::EnumSize(
+        this->actions(i));
+    }
+    total_size += 1 * this->actions_size() + data_size;
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -447,6 +500,7 @@ void ResolutionRequestInfo::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ResolutionRequestInfo::MergeFrom(const ResolutionRequestInfo& from) {
   GOOGLE_CHECK_NE(&from, this);
+  actions_.MergeFrom(from.actions_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_requesttype()) {
       set_requesttype(from.requesttype());
@@ -488,6 +542,7 @@ void ResolutionRequestInfo::Swap(ResolutionRequestInfo* other) {
     std::swap(author_, other->author_);
     std::swap(target_, other->target_);
     std::swap(resolvedwith_, other->resolvedwith_);
+    actions_.Swap(&other->actions_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

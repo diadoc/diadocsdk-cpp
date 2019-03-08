@@ -24,6 +24,7 @@
 #include <google/protobuf/repeated_field.h>
 #include <google/protobuf/extension_set.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "ResolutionAction.pb.h"
 #include "ResolutionTarget.pb.h"
 #include "ResolutionRequestType.pb.h"
 // @@protoc_insertion_point(includes)
@@ -135,6 +136,16 @@ class ResolutionRequestInfo : public ::google::protobuf::Message {
   inline ::std::string* release_resolvedwith();
   inline void set_allocated_resolvedwith(::std::string* resolvedwith);
 
+  // repeated .Diadoc.Api.Proto.ResolutionAction Actions = 5;
+  inline int actions_size() const;
+  inline void clear_actions();
+  static const int kActionsFieldNumber = 5;
+  inline ::Diadoc::Api::Proto::ResolutionAction actions(int index) const;
+  inline void set_actions(int index, ::Diadoc::Api::Proto::ResolutionAction value);
+  inline void add_actions(::Diadoc::Api::Proto::ResolutionAction value);
+  inline const ::google::protobuf::RepeatedField<int>& actions() const;
+  inline ::google::protobuf::RepeatedField<int>* mutable_actions();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.ResolutionRequestInfo)
  private:
   inline void set_has_requesttype();
@@ -153,6 +164,7 @@ class ResolutionRequestInfo : public ::google::protobuf::Message {
   ::std::string* author_;
   ::Diadoc::Api::Proto::ResolutionTarget* target_;
   ::std::string* resolvedwith_;
+  ::google::protobuf::RepeatedField<int> actions_;
   int requesttype_;
   friend void  protobuf_AddDesc_Events_2fResolutionRequestInfo_2eproto();
   friend void protobuf_AssignDesc_Events_2fResolutionRequestInfo_2eproto();
@@ -384,6 +396,38 @@ inline void ResolutionRequestInfo::set_allocated_resolvedwith(::std::string* res
     resolvedwith_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.ResolutionRequestInfo.ResolvedWith)
+}
+
+// repeated .Diadoc.Api.Proto.ResolutionAction Actions = 5;
+inline int ResolutionRequestInfo::actions_size() const {
+  return actions_.size();
+}
+inline void ResolutionRequestInfo::clear_actions() {
+  actions_.Clear();
+}
+inline ::Diadoc::Api::Proto::ResolutionAction ResolutionRequestInfo::actions(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.ResolutionRequestInfo.Actions)
+  return static_cast< ::Diadoc::Api::Proto::ResolutionAction >(actions_.Get(index));
+}
+inline void ResolutionRequestInfo::set_actions(int index, ::Diadoc::Api::Proto::ResolutionAction value) {
+  assert(::Diadoc::Api::Proto::ResolutionAction_IsValid(value));
+  actions_.Set(index, value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.ResolutionRequestInfo.Actions)
+}
+inline void ResolutionRequestInfo::add_actions(::Diadoc::Api::Proto::ResolutionAction value) {
+  assert(::Diadoc::Api::Proto::ResolutionAction_IsValid(value));
+  actions_.Add(value);
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.ResolutionRequestInfo.Actions)
+}
+inline const ::google::protobuf::RepeatedField<int>&
+ResolutionRequestInfo::actions() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.ResolutionRequestInfo.Actions)
+  return actions_;
+}
+inline ::google::protobuf::RepeatedField<int>*
+ResolutionRequestInfo::mutable_actions() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.ResolutionRequestInfo.Actions)
+  return &actions_;
 }
 
 
