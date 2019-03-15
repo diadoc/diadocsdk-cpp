@@ -1,4 +1,4 @@
-#include "stdafx.h"
+﻿#include "stdafx.h"
 #include "DiadocApi.h"
 #include "ApiException.h"
 #include "HttpConnect.h"
@@ -413,7 +413,7 @@ void DiadocApi::Authenticate(const std::wstring& login, const std::wstring& pass
 {
 	WppTraceDebugOut(L"Authenticating by login/password pair...");
 	std::wstringstream wss;
-	wss << L"/Authenticate?login=" << StringHelper::CanonicalizeUrl(login) << L"&password=" << StringHelper::CanonicalizeUrl(password) << std::flush;
+	wss << L"/V2/Authenticate?login=" << StringHelper::CanonicalizeUrl(login) << L"&password=" << StringHelper::CanonicalizeUrl(password) << std::flush;
 	auto response = PerformHttpRequestString(wss.str(), POST);
 	token_ = StringHelper::Utf8ToUtf16(response);
 }
@@ -421,10 +421,14 @@ void DiadocApi::Authenticate(const std::wstring& login, const std::wstring& pass
 void DiadocApi::Authenticate(const Bytes_t& certBytes, bool useLocalMachineStorage)
 {
 	WppTraceDebugOut(L"Authenticating by certBytes...");
-	auto response = PerformHttpRequest(L"/Authenticate", certBytes, POST);
+	auto response = PerformHttpRequest(L"/V2/Authenticate", certBytes, POST);
 	CertSystemStore store(useLocalMachineStorage);
-	auto decryptedResponse = store.Decrypt(response);
-	token_ = CryptHelper::ToBase64(decryptedResponse);
+	auto decryptedToken = store.Decrypt(response);
+
+	std::wstringstream wss;
+	wss << L"/V2/AuthenticateConfirm?token=" << StringHelper::CanonicalizeUrl(CryptHelper::ToBase64(decryptedToken)) << std::flush;
+	auto confirmResponse = PerformHttpRequestString(wss.str(), certBytes, POST);
+	token_ = StringHelper::Utf8ToUtf16(confirmResponse);
 }
 
 void DiadocApi::VerifyThatUserHasAccessToAnyBox(const Bytes_t& certBytes)
