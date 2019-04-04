@@ -196,6 +196,7 @@ public:
 	Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo ParseUniversalTransferDocumentBuyerTitleXml(const Bytes_t& utdXmlContent);
 	Diadoc::Api::Proto::Invoicing::UniversalCorrectionDocumentSellerTitleInfo ParseUniversalCorrectionDocumentSellerTitleXml(const Bytes_t& utdXmlContent);
 	Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo ParseUniversalCorrectionDocumentBuyerTitleXml(const Bytes_t& utdXmlContent);
+	Bytes_t ParseTitleXml(const std::wstring& boxId, const std::wstring& documentTypeNamedId, const std::wstring& documentFunction, const std::wstring& documentVersion, int titleIndex, const Bytes_t& content);
 
 	Diadoc::Api::Proto::Invoicing::RevocationRequestInfo ParseRevocationRequestXml(const Bytes_t& xmlContent);
 	Diadoc::Api::Proto::Invoicing::SignatureRejectionInfo ParseSignatureRejectionXml(const Bytes_t& xmlContent);
