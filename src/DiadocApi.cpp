@@ -1694,3 +1694,16 @@ DiadocApi::WebFile DiadocApi::GetContent(const std::wstring& typeNamedId, const 
 	SendRequest(request, requestBody);
 	return WebFile(request);
 }
+
+Diadoc::Api::Proto::Registration::RegistrationResponse DiadocApi::Register(const Diadoc::Api::Proto::Registration::RegistrationRequest& request)
+{
+	WppTraceDebugOut("Register...");
+	DiadocApi::Bytes_t result = PerformHttpRequest(L"/Register", ToProtoBytes(request), POST);
+	return FromProtoBytes<Diadoc::Api::Proto::Registration::RegistrationResponse>(result);
+}
+
+void DiadocApi::RegisterConfirm(const Diadoc::Api::Proto::Registration::RegistrationConfirmRequest& request)
+{
+	WppTraceDebugOut("RegisterConfirm...");
+	PerformHttpRequest(L"/RegisterConfirm", ToProtoBytes(request), POST);
+}
