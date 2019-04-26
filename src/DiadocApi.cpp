@@ -1254,6 +1254,14 @@ OrganizationList DiadocApi::GetMyOrganizations(bool autoRegister)
 	return FromProtoBytes<OrganizationList>(PerformHttpRequest(buf.str(), GET));
 }
 
+Diadoc::Api::Proto::Organizations::OrganizationFeatures DiadocApi::GetOrganizationFeatures(const std::wstring& boxId)
+{
+	WppTraceDebugOut("GetOrganizationFeatures...");
+	std::wstringstream buf;
+	buf << L"/GetOrganizationFeatures?boxId=" << StringHelper::CanonicalizeUrl(boxId);
+	return FromProtoBytes<Diadoc::Api::Proto::Organizations::OrganizationFeatures>(PerformHttpRequest(buf.str(), GET));
+}
+
 Diadoc::Api::Proto::User DiadocApi::GetMyUser()
 {
 	WppTraceDebugOut("GetMyUser...");
