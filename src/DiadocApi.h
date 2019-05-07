@@ -44,6 +44,7 @@
 #include "protos\AsyncMethodResult.pb.h"
 #include "protos\CloudSign.pb.h"
 #include "protos\AcquireCounteragent.pb.h"
+#include "protos\Registration\RegistrationRequest.pb.h"
 #include "DocumentFilter.h"
 #include "HttpSession.h"
 #include "TaskResult.h"
@@ -300,6 +301,9 @@ public:
 	Diadoc::Api::Proto::Documents::Types::DetectDocumentTypesResponse DetectDocumentTypes(const std::wstring& boxId, const std::wstring& nameOnShelf);
 	Diadoc::Api::Proto::Documents::Types::DetectDocumentTypesResponse DetectDocumentTypes(const std::wstring& boxId, const Bytes_t& content);
 	WebFile GetContent(const std::wstring& typeNamedId, const std::wstring& function, const std::wstring& version, int titleIndex);
+
+	Diadoc::Api::Proto::Registration::RegistrationResponse Register(const Diadoc::Api::Proto::Registration::RegistrationRequest& request);
+	void RegisterConfirm(const Diadoc::Api::Proto::Registration::RegistrationConfirmRequest& request);
 
 protected:
 	Bytes_t PerformHttpRequest(const std::wstring& queryString, const Bytes_t& requestBody, const std::wstring& method);
