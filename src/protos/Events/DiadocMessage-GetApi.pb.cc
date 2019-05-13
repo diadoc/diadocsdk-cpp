@@ -44,6 +44,12 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* EntityPatch_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   EntityPatch_reflection_ = NULL;
+const ::google::protobuf::Descriptor* TemplateToLetterTransformationInfo_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  TemplateToLetterTransformationInfo_reflection_ = NULL;
+const ::google::protobuf::Descriptor* TemplateTransformationInfo_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  TemplateTransformationInfo_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* EntityType_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* AttachmentType_descriptor_ = NULL;
 
@@ -90,7 +96,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(BoxEvent));
   Message_descriptor_ = file->message_type(2);
-  static const int Message_offsets_[21] = {
+  static const int Message_offsets_[23] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, messageid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, timestampticks_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, lastpatchtimestampticks_),
@@ -112,6 +118,8 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, proxytitle_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, packetislocked_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, lockmode_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, messagetype_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, templatetolettertransformationinfo_),
   };
   Message_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -149,7 +157,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(Template));
   MessagePatch_descriptor_ = file->message_type(4);
-  static const int MessagePatch_offsets_[13] = {
+  static const int MessagePatch_offsets_[14] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessagePatch, messageid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessagePatch, timestampticks_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessagePatch, entities_),
@@ -163,6 +171,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessagePatch, messageisdelivered_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessagePatch, deliveredpatchid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessagePatch, patchid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessagePatch, messagetype_),
   };
   MessagePatch_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -176,7 +185,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(MessagePatch));
   Entity_descriptor_ = file->message_type(5);
-  static const int Entity_offsets_[25] = {
+  static const int Entity_offsets_[26] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, entitytype_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, entityid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, parententityid_),
@@ -202,6 +211,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, cancellationinfo_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, labels_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, version_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, templatetransformationinfo_),
   };
   Entity_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -234,6 +244,40 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(EntityPatch));
+  TemplateToLetterTransformationInfo_descriptor_ = file->message_type(7);
+  static const int TemplateToLetterTransformationInfo_offsets_[4] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToLetterTransformationInfo, letterfromboxid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToLetterTransformationInfo, lettertoboxid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToLetterTransformationInfo, letterfromdepartmentid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToLetterTransformationInfo, lettertodepartmentid_),
+  };
+  TemplateToLetterTransformationInfo_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      TemplateToLetterTransformationInfo_descriptor_,
+      TemplateToLetterTransformationInfo::default_instance_,
+      TemplateToLetterTransformationInfo_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToLetterTransformationInfo, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToLetterTransformationInfo, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(TemplateToLetterTransformationInfo));
+  TemplateTransformationInfo_descriptor_ = file->message_type(8);
+  static const int TemplateTransformationInfo_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateTransformationInfo, transformedtodocumentid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateTransformationInfo, author_),
+  };
+  TemplateTransformationInfo_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      TemplateTransformationInfo_descriptor_,
+      TemplateTransformationInfo::default_instance_,
+      TemplateTransformationInfo_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateTransformationInfo, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateTransformationInfo, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(TemplateTransformationInfo));
   EntityType_descriptor_ = file->enum_type(0);
   AttachmentType_descriptor_ = file->enum_type(1);
 }
@@ -262,6 +306,10 @@ void protobuf_RegisterTypes(const ::std::string&) {
     Entity_descriptor_, &Entity::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     EntityPatch_descriptor_, &EntityPatch::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    TemplateToLetterTransformationInfo_descriptor_, &TemplateToLetterTransformationInfo::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    TemplateTransformationInfo_descriptor_, &TemplateTransformationInfo::default_instance());
 }
 
 }  // namespace
@@ -281,6 +329,10 @@ void protobuf_ShutdownFile_Events_2fDiadocMessage_2dGetApi_2eproto() {
   delete Entity_reflection_;
   delete EntityPatch::default_instance_;
   delete EntityPatch_reflection_;
+  delete TemplateToLetterTransformationInfo::default_instance_;
+  delete TemplateToLetterTransformationInfo_reflection_;
+  delete TemplateTransformationInfo::default_instance_;
+  delete TemplateTransformationInfo_reflection_;
 }
 
 void protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
@@ -312,7 +364,7 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
     "oxEvent\022\017\n\007EventId\030\001 \002(\t\0221\n\007Message\030\002 \001("
     "\0132 .Diadoc.Api.Proto.Events.Message\0224\n\005P"
     "atch\030\003 \001(\0132%.Diadoc.Api.Proto.Events.Mes"
-    "sagePatch\"\320\004\n\007Message\022\021\n\tMessageId\030\001 \002(\t"
+    "sagePatch\"\367\005\n\007Message\022\021\n\tMessageId\030\001 \002(\t"
     "\022\026\n\016TimestampTicks\030\002 \002(\020\022\037\n\027LastPatchTim"
     "estampTicks\030\003 \002(\020\022\021\n\tFromBoxId\030\004 \002(\t\022\021\n\t"
     "FromTitle\030\005 \002(\t\022\017\n\007ToBoxId\030\006 \001(\t\022\017\n\007ToTi"
@@ -327,94 +379,109 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
     "e\022\022\n\nProxyBoxId\030\022 \001(\t\022\022\n\nProxyTitle\030\023 \001("
     "\t\022\035\n\016PacketIsLocked\030\024 \001(\010:\005false\0222\n\010Lock"
     "Mode\030\025 \002(\0162\032.Diadoc.Api.Proto.LockMode:\004"
-    "None\"\245\002\n\010Template\022\021\n\tMessageId\030\001 \002(\t\022\026\n\016"
-    "TimestampTicks\030\002 \002(\020\022\021\n\tFromBoxId\030\003 \002(\t\022"
-    "\017\n\007ToBoxId\030\004 \002(\t\022\030\n\020MessageFromBoxId\030\005 \002"
-    "(\t\022\026\n\016MessageToBoxId\030\006 \002(\t\0221\n\010Entities\030\007"
-    " \003(\0132\037.Diadoc.Api.Proto.Events.Entity\022\030\n"
-    "\tIsDeleted\030\010 \001(\010:\005false\022\035\n\025MessageToDepa"
-    "rtmentId\030\t \001(\t\022,\n\010LockMode\030\n \002(\0162\032.Diado"
-    "c.Api.Proto.LockMode\"\274\003\n\014MessagePatch\022\021\n"
-    "\tMessageId\030\001 \002(\t\022\026\n\016TimestampTicks\030\002 \002(\020"
-    "\0221\n\010Entities\030\003 \003(\0132\037.Diadoc.Api.Proto.Ev"
-    "ents.Entity\022\027\n\010ForDraft\030\004 \001(\010:\005false\022\036\n\017"
-    "DraftIsRecycled\030\005 \001(\010:\005false\022)\n!DraftIsT"
-    "ransformedToMessageIdList\030\006 \003(\t\022\034\n\rDraft"
-    "IsLocked\030\007 \001(\010:\005false\022\037\n\020MessageIsDelete"
-    "d\030\010 \001(\010:\005false\022;\n\rEntityPatches\030\t \003(\0132$."
-    "Diadoc.Api.Proto.Events.EntityPatch\022 \n\021M"
-    "essageIsRestored\030\n \001(\010:\005false\022!\n\022Message"
-    "IsDelivered\030\013 \001(\010:\005false\022\030\n\020DeliveredPat"
-    "chId\030\014 \001(\t\022\017\n\007PatchId\030\r \002(\t\"\375\010\n\006Entity\022J"
-    "\n\nEntityType\030\001 \001(\0162#.Diadoc.Api.Proto.Ev"
-    "ents.EntityType:\021UnknownEntityType\022\020\n\010En"
-    "tityId\030\002 \002(\t\022\026\n\016ParentEntityId\030\003 \001(\t\022*\n\007"
-    "Content\030\004 \001(\0132\031.Diadoc.Api.Proto.Content"
-    "\022V\n\016AttachmentType\030\005 \001(\0162\'.Diadoc.Api.Pr"
-    "oto.Events.AttachmentType:\025UnknownAttach"
-    "mentType\022\020\n\010FileName\030\006 \001(\t\022%\n\026NeedRecipi"
-    "entSignature\030\007 \001(\010:\005false\022\023\n\013SignerBoxId"
-    "\030\010 \001(\t\022\033\n\023NotDeliveredEventId\030\n \001(\t\022:\n\014D"
-    "ocumentInfo\030\013 \001(\0132$.Diadoc.Api.Proto.Doc"
-    "uments.Document\022\032\n\017RawCreationDate\030\014 \001(\020"
-    ":\0010\022\?\n\016ResolutionInfo\030\r \001(\0132\'.Diadoc.Api"
-    ".Proto.Events.ResolutionInfo\022\032\n\022SignerDe"
-    "partmentId\030\016 \001(\t\022M\n\025ResolutionRequestInf"
-    "o\030\017 \001(\0132..Diadoc.Api.Proto.Events.Resolu"
-    "tionRequestInfo\022Y\n\033ResolutionRequestDeni"
-    "alInfo\030\020 \001(\01324.Diadoc.Api.Proto.Events.R"
-    "esolutionRequestDenialInfo\022\032\n\013NeedReceip"
-    "t\030\021 \001(\010:\005false\022\020\n\010PacketId\030\022 \001(\t\022%\n\026IsAp"
-    "provementSignature\030\023 \001(\010:\005false\022!\n\022IsEnc"
-    "ryptedContent\030\024 \001(\010:\005false\022\031\n\021Attachment"
-    "Version\030\025 \001(\t\022]\n\035ResolutionRouteAssignme"
-    "ntInfo\030\026 \001(\01326.Diadoc.Api.Proto.Events.R"
-    "esolutionRouteAssignmentInfo\022W\n\032Resoluti"
-    "onRouteRemovalInfo\030\027 \001(\01323.Diadoc.Api.Pr"
-    "oto.Events.ResolutionRouteRemovalInfo\022C\n"
-    "\020CancellationInfo\030\030 \001(\0132).Diadoc.Api.Pro"
-    "to.Events.CancellationInfo\022\016\n\006Labels\030\031 \003"
-    "(\t\022\017\n\007Version\030\032 \001(\t\"\272\001\n\013EntityPatch\022\020\n\010E"
-    "ntityId\030\001 \002(\t\022 \n\021DocumentIsDeleted\030\002 \001(\010"
-    ":\005false\022\031\n\021MovedToDepartment\030\003 \001(\t\022!\n\022Do"
-    "cumentIsRestored\030\004 \001(\010:\005false\022\037\n\020Content"
-    "IsPatched\030\005 \001(\010:\005false\022\030\n\020ForwardedToBox"
-    "Id\030\006 \001(\t*B\n\nEntityType\022\025\n\021UnknownEntityT"
-    "ype\020\000\022\016\n\nAttachment\020\001\022\r\n\tSignature\020\002*\264\n\n"
-    "\016AttachmentType\022\"\n\025UnknownAttachmentType"
-    "\020\377\377\377\377\377\377\377\377\377\001\022\021\n\rNonformalized\020\000\022\013\n\007Invoic"
-    "e\020\001\022\022\n\016InvoiceReceipt\020\002\022\027\n\023InvoiceConfir"
-    "mation\020\003\022\034\n\030InvoiceCorrectionRequest\020\004\022\025"
-    "\n\021AttachmentComment\020\005\022\037\n\033DeliveryFailure"
-    "Notification\020\006\022\020\n\014EancomInvoic\020\007\022\035\n\031Sign"
-    "atureRequestRejection\020\010\022(\n$EcrCatConform"
-    "anceCertificateMetadata\020\t\022\037\n\033SignatureVe"
-    "rificationReport\020\n\022\032\n\026TrustConnectionReq"
-    "uest\020\013\022\n\n\006Torg12\020\014\022\023\n\017InvoiceRevision\020\r\022"
-    "\025\n\021InvoiceCorrection\020\016\022\035\n\031InvoiceCorrect"
-    "ionRevision\020\017\022\031\n\025AcceptanceCertificate\020\020"
-    "\022\022\n\016StructuredData\020\021\022\023\n\017ProformaInvoice\020"
-    "\022\022\r\n\tXmlTorg12\020\023\022\034\n\030XmlAcceptanceCertifi"
-    "cate\020\024\022\027\n\023XmlTorg12BuyerTitle\020\025\022&\n\"XmlAc"
-    "ceptanceCertificateBuyerTitle\020\026\022\016\n\nResol"
-    "ution\020\027\022\025\n\021ResolutionRequest\020\030\022\033\n\027Resolu"
-    "tionRequestDenial\020\031\022\r\n\tPriceList\020\032\022\013\n\007Re"
-    "ceipt\020\033\022\031\n\025XmlSignatureRejection\020\034\022\025\n\021Re"
-    "vocationRequest\020\035\022\026\n\022PriceListAgreement\020"
-    "\036\022\027\n\023CertificateRegistry\020\"\022\025\n\021Reconcilia"
-    "tionAct\020#\022\014\n\010Contract\020$\022\n\n\006Torg13\020%\022\022\n\016S"
-    "erviceDetails\020&\022\027\n\023RoamingNotification\020\'"
-    "\022\032\n\026SupplementaryAgreement\020(\022\035\n\031Universa"
-    "lTransferDocument\020)\022\'\n#UniversalTransfer"
-    "DocumentBuyerTitle\020*\022%\n!UniversalTransfe"
-    "rDocumentRevision\020-\022\037\n\033UniversalCorrecti"
-    "onDocument\0201\022\'\n#UniversalCorrectionDocum"
-    "entRevision\0202\022)\n%UniversalCorrectionDocu"
-    "mentBuyerTitle\0203\022\016\n\nCustomData\020@\022\020\n\014Move"
-    "Document\020A\022\'\n#ResolutionRouteAssignmentA"
-    "ttachment\020B\022$\n ResolutionRouteRemovalAtt"
-    "achment\020C\022\t\n\005Title\020D\022\020\n\014Cancellation\020E\022\013"
-    "\n\007Edition\020G", 4611);
+    "None\022<\n\013MessageType\030\026 \002(\0162\'.Diadoc.Api.P"
+    "roto.Documents.MessageType\022g\n\"TemplateTo"
+    "LetterTransformationInfo\030\027 \001(\0132;.Diadoc."
+    "Api.Proto.Events.TemplateToLetterTransfo"
+    "rmationInfo\"\245\002\n\010Template\022\021\n\tMessageId\030\001 "
+    "\002(\t\022\026\n\016TimestampTicks\030\002 \002(\020\022\021\n\tFromBoxId"
+    "\030\003 \002(\t\022\017\n\007ToBoxId\030\004 \002(\t\022\030\n\020MessageFromBo"
+    "xId\030\005 \002(\t\022\026\n\016MessageToBoxId\030\006 \002(\t\0221\n\010Ent"
+    "ities\030\007 \003(\0132\037.Diadoc.Api.Proto.Events.En"
+    "tity\022\030\n\tIsDeleted\030\010 \001(\010:\005false\022\035\n\025Messag"
+    "eToDepartmentId\030\t \001(\t\022,\n\010LockMode\030\n \002(\0162"
+    "\032.Diadoc.Api.Proto.LockMode\"\372\003\n\014MessageP"
+    "atch\022\021\n\tMessageId\030\001 \002(\t\022\026\n\016TimestampTick"
+    "s\030\002 \002(\020\0221\n\010Entities\030\003 \003(\0132\037.Diadoc.Api.P"
+    "roto.Events.Entity\022\027\n\010ForDraft\030\004 \001(\010:\005fa"
+    "lse\022\036\n\017DraftIsRecycled\030\005 \001(\010:\005false\022)\n!D"
+    "raftIsTransformedToMessageIdList\030\006 \003(\t\022\034"
+    "\n\rDraftIsLocked\030\007 \001(\010:\005false\022\037\n\020MessageI"
+    "sDeleted\030\010 \001(\010:\005false\022;\n\rEntityPatches\030\t"
+    " \003(\0132$.Diadoc.Api.Proto.Events.EntityPat"
+    "ch\022 \n\021MessageIsRestored\030\n \001(\010:\005false\022!\n\022"
+    "MessageIsDelivered\030\013 \001(\010:\005false\022\030\n\020Deliv"
+    "eredPatchId\030\014 \001(\t\022\017\n\007PatchId\030\r \002(\t\022<\n\013Me"
+    "ssageType\030\017 \002(\0162\'.Diadoc.Api.Proto.Docum"
+    "ents.MessageType\"\326\t\n\006Entity\022J\n\nEntityTyp"
+    "e\030\001 \001(\0162#.Diadoc.Api.Proto.Events.Entity"
+    "Type:\021UnknownEntityType\022\020\n\010EntityId\030\002 \002("
+    "\t\022\026\n\016ParentEntityId\030\003 \001(\t\022*\n\007Content\030\004 \001"
+    "(\0132\031.Diadoc.Api.Proto.Content\022V\n\016Attachm"
+    "entType\030\005 \001(\0162\'.Diadoc.Api.Proto.Events."
+    "AttachmentType:\025UnknownAttachmentType\022\020\n"
+    "\010FileName\030\006 \001(\t\022%\n\026NeedRecipientSignatur"
+    "e\030\007 \001(\010:\005false\022\023\n\013SignerBoxId\030\010 \001(\t\022\033\n\023N"
+    "otDeliveredEventId\030\n \001(\t\022:\n\014DocumentInfo"
+    "\030\013 \001(\0132$.Diadoc.Api.Proto.Documents.Docu"
+    "ment\022\032\n\017RawCreationDate\030\014 \001(\020:\0010\022\?\n\016Reso"
+    "lutionInfo\030\r \001(\0132\'.Diadoc.Api.Proto.Even"
+    "ts.ResolutionInfo\022\032\n\022SignerDepartmentId\030"
+    "\016 \001(\t\022M\n\025ResolutionRequestInfo\030\017 \001(\0132..D"
+    "iadoc.Api.Proto.Events.ResolutionRequest"
+    "Info\022Y\n\033ResolutionRequestDenialInfo\030\020 \001("
+    "\01324.Diadoc.Api.Proto.Events.ResolutionRe"
+    "questDenialInfo\022\032\n\013NeedReceipt\030\021 \001(\010:\005fa"
+    "lse\022\020\n\010PacketId\030\022 \001(\t\022%\n\026IsApprovementSi"
+    "gnature\030\023 \001(\010:\005false\022!\n\022IsEncryptedConte"
+    "nt\030\024 \001(\010:\005false\022\031\n\021AttachmentVersion\030\025 \001"
+    "(\t\022]\n\035ResolutionRouteAssignmentInfo\030\026 \001("
+    "\01326.Diadoc.Api.Proto.Events.ResolutionRo"
+    "uteAssignmentInfo\022W\n\032ResolutionRouteRemo"
+    "valInfo\030\027 \001(\01323.Diadoc.Api.Proto.Events."
+    "ResolutionRouteRemovalInfo\022C\n\020Cancellati"
+    "onInfo\030\030 \001(\0132).Diadoc.Api.Proto.Events.C"
+    "ancellationInfo\022\016\n\006Labels\030\031 \003(\t\022\017\n\007Versi"
+    "on\030\032 \001(\t\022W\n\032TemplateTransformationInfo\030\033"
+    " \001(\01323.Diadoc.Api.Proto.Events.TemplateT"
+    "ransformationInfo\"\272\001\n\013EntityPatch\022\020\n\010Ent"
+    "ityId\030\001 \002(\t\022 \n\021DocumentIsDeleted\030\002 \001(\010:\005"
+    "false\022\031\n\021MovedToDepartment\030\003 \001(\t\022!\n\022Docu"
+    "mentIsRestored\030\004 \001(\010:\005false\022\037\n\020ContentIs"
+    "Patched\030\005 \001(\010:\005false\022\030\n\020ForwardedToBoxId"
+    "\030\006 \001(\t\"\222\001\n\"TemplateToLetterTransformatio"
+    "nInfo\022\027\n\017LetterFromBoxId\030\001 \002(\t\022\025\n\rLetter"
+    "ToBoxId\030\002 \002(\t\022\036\n\026LetterFromDepartmentId\030"
+    "\003 \001(\t\022\034\n\024LetterToDepartmentId\030\004 \001(\t\"k\n\032T"
+    "emplateTransformationInfo\022=\n\027Transformed"
+    "ToDocumentId\030\001 \001(\0132\034.Diadoc.Api.Proto.Do"
+    "cumentId\022\016\n\006Author\030\002 \001(\t*B\n\nEntityType\022\025"
+    "\n\021UnknownEntityType\020\000\022\016\n\nAttachment\020\001\022\r\n"
+    "\tSignature\020\002*\351\n\n\016AttachmentType\022\"\n\025Unkno"
+    "wnAttachmentType\020\377\377\377\377\377\377\377\377\377\001\022\021\n\rNonformal"
+    "ized\020\000\022\013\n\007Invoice\020\001\022\022\n\016InvoiceReceipt\020\002\022"
+    "\027\n\023InvoiceConfirmation\020\003\022\034\n\030InvoiceCorre"
+    "ctionRequest\020\004\022\025\n\021AttachmentComment\020\005\022\037\n"
+    "\033DeliveryFailureNotification\020\006\022\020\n\014Eancom"
+    "Invoic\020\007\022\035\n\031SignatureRequestRejection\020\010\022"
+    "(\n$EcrCatConformanceCertificateMetadata\020"
+    "\t\022\037\n\033SignatureVerificationReport\020\n\022\032\n\026Tr"
+    "ustConnectionRequest\020\013\022\n\n\006Torg12\020\014\022\023\n\017In"
+    "voiceRevision\020\r\022\025\n\021InvoiceCorrection\020\016\022\035"
+    "\n\031InvoiceCorrectionRevision\020\017\022\031\n\025Accepta"
+    "nceCertificate\020\020\022\022\n\016StructuredData\020\021\022\023\n\017"
+    "ProformaInvoice\020\022\022\r\n\tXmlTorg12\020\023\022\034\n\030XmlA"
+    "cceptanceCertificate\020\024\022\027\n\023XmlTorg12Buyer"
+    "Title\020\025\022&\n\"XmlAcceptanceCertificateBuyer"
+    "Title\020\026\022\016\n\nResolution\020\027\022\025\n\021ResolutionReq"
+    "uest\020\030\022\033\n\027ResolutionRequestDenial\020\031\022\r\n\tP"
+    "riceList\020\032\022\013\n\007Receipt\020\033\022\031\n\025XmlSignatureR"
+    "ejection\020\034\022\025\n\021RevocationRequest\020\035\022\026\n\022Pri"
+    "ceListAgreement\020\036\022\027\n\023CertificateRegistry"
+    "\020\"\022\025\n\021ReconciliationAct\020#\022\014\n\010Contract\020$\022"
+    "\n\n\006Torg13\020%\022\022\n\016ServiceDetails\020&\022\027\n\023Roami"
+    "ngNotification\020\'\022\032\n\026SupplementaryAgreeme"
+    "nt\020(\022\035\n\031UniversalTransferDocument\020)\022\'\n#U"
+    "niversalTransferDocumentBuyerTitle\020*\022%\n!"
+    "UniversalTransferDocumentRevision\020-\022\037\n\033U"
+    "niversalCorrectionDocument\0201\022\'\n#Universa"
+    "lCorrectionDocumentRevision\0202\022)\n%Univers"
+    "alCorrectionDocumentBuyerTitle\0203\022\016\n\nCust"
+    "omData\020@\022\020\n\014MoveDocument\020A\022\'\n#Resolution"
+    "RouteAssignmentAttachment\020B\022$\n Resolutio"
+    "nRouteRemovalAttachment\020C\022\t\n\005Title\020D\022\020\n\014"
+    "Cancellation\020E\022\013\n\007Edition\020G\022\027\n\023DeletionR"
+    "estoration\020H\022\032\n\026TemplateTransformation\020I", 5240);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Events/DiadocMessage-GetApi.proto", &protobuf_RegisterTypes);
   BoxEventList::default_instance_ = new BoxEventList();
@@ -424,6 +491,8 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
   MessagePatch::default_instance_ = new MessagePatch();
   Entity::default_instance_ = new Entity();
   EntityPatch::default_instance_ = new EntityPatch();
+  TemplateToLetterTransformationInfo::default_instance_ = new TemplateToLetterTransformationInfo();
+  TemplateTransformationInfo::default_instance_ = new TemplateTransformationInfo();
   BoxEventList::default_instance_->InitAsDefaultInstance();
   BoxEvent::default_instance_->InitAsDefaultInstance();
   Message::default_instance_->InitAsDefaultInstance();
@@ -431,6 +500,8 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
   MessagePatch::default_instance_->InitAsDefaultInstance();
   Entity::default_instance_->InitAsDefaultInstance();
   EntityPatch::default_instance_->InitAsDefaultInstance();
+  TemplateToLetterTransformationInfo::default_instance_->InitAsDefaultInstance();
+  TemplateTransformationInfo::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_Events_2fDiadocMessage_2dGetApi_2eproto);
 }
 
@@ -513,6 +584,8 @@ bool AttachmentType_IsValid(int value) {
     case 68:
     case 69:
     case 71:
+    case 72:
+    case 73:
       return true;
     default:
       return false;
@@ -1147,6 +1220,8 @@ const int Message::kProxyBoxIdFieldNumber;
 const int Message::kProxyTitleFieldNumber;
 const int Message::kPacketIsLockedFieldNumber;
 const int Message::kLockModeFieldNumber;
+const int Message::kMessageTypeFieldNumber;
+const int Message::kTemplateToLetterTransformationInfoFieldNumber;
 #endif  // !_MSC_VER
 
 Message::Message()
@@ -1156,6 +1231,7 @@ Message::Message()
 }
 
 void Message::InitAsDefaultInstance() {
+  templatetolettertransformationinfo_ = const_cast< ::Diadoc::Api::Proto::Events::TemplateToLetterTransformationInfo*>(&::Diadoc::Api::Proto::Events::TemplateToLetterTransformationInfo::default_instance());
 }
 
 Message::Message(const Message& from)
@@ -1187,6 +1263,8 @@ void Message::SharedCtor() {
   proxytitle_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   packetislocked_ = false;
   lockmode_ = 1;
+  messagetype_ = 0;
+  templatetolettertransformationinfo_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -1221,6 +1299,7 @@ void Message::SharedDtor() {
     delete proxytitle_;
   }
   if (this != default_instance_) {
+    delete templatetolettertransformationinfo_;
   }
 }
 
@@ -1292,7 +1371,7 @@ void Message::Clear() {
       }
     }
   }
-  if (_has_bits_[16 / 32] & 2031616) {
+  if (_has_bits_[16 / 32] & 8323072) {
     ZR_(isproxified_, packetislocked_);
     if (has_proxyboxid()) {
       if (proxyboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
@@ -1305,6 +1384,10 @@ void Message::Clear() {
       }
     }
     lockmode_ = 1;
+    messagetype_ = 0;
+    if (has_templatetolettertransformationinfo()) {
+      if (templatetolettertransformationinfo_ != NULL) templatetolettertransformationinfo_->::Diadoc::Api::Proto::Events::TemplateToLetterTransformationInfo::Clear();
+    }
   }
 
 #undef OFFSET_OF_FIELD_
@@ -1660,6 +1743,39 @@ bool Message::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(176)) goto parse_MessageType;
+        break;
+      }
+
+      // required .Diadoc.Api.Proto.Documents.MessageType MessageType = 22;
+      case 22: {
+        if (tag == 176) {
+         parse_MessageType:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Diadoc::Api::Proto::Documents::MessageType_IsValid(value)) {
+            set_messagetype(static_cast< ::Diadoc::Api::Proto::Documents::MessageType >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(22, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(186)) goto parse_TemplateToLetterTransformationInfo;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo TemplateToLetterTransformationInfo = 23;
+      case 23: {
+        if (tag == 186) {
+         parse_TemplateToLetterTransformationInfo:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_templatetolettertransformationinfo()));
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -1841,6 +1957,18 @@ void Message::SerializeWithCachedSizes(
       21, this->lockmode(), output);
   }
 
+  // required .Diadoc.Api.Proto.Documents.MessageType MessageType = 22;
+  if (has_messagetype()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      22, this->messagetype(), output);
+  }
+
+  // optional .Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo TemplateToLetterTransformationInfo = 23;
+  if (has_templatetolettertransformationinfo()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      23, this->templatetolettertransformationinfo(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -2012,6 +2140,19 @@ void Message::SerializeWithCachedSizes(
       21, this->lockmode(), target);
   }
 
+  // required .Diadoc.Api.Proto.Documents.MessageType MessageType = 22;
+  if (has_messagetype()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      22, this->messagetype(), target);
+  }
+
+  // optional .Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo TemplateToLetterTransformationInfo = 23;
+  if (has_templatetolettertransformationinfo()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        23, this->templatetolettertransformationinfo(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -2140,6 +2281,19 @@ int Message::ByteSize() const {
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->lockmode());
     }
 
+    // required .Diadoc.Api.Proto.Documents.MessageType MessageType = 22;
+    if (has_messagetype()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->messagetype());
+    }
+
+    // optional .Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo TemplateToLetterTransformationInfo = 23;
+    if (has_templatetolettertransformationinfo()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->templatetolettertransformationinfo());
+    }
+
   }
   // repeated .Diadoc.Api.Proto.Events.Entity Entities = 8;
   total_size += 1 * this->entities_size();
@@ -2245,6 +2399,12 @@ void Message::MergeFrom(const Message& from) {
     if (from.has_lockmode()) {
       set_lockmode(from.lockmode());
     }
+    if (from.has_messagetype()) {
+      set_messagetype(from.messagetype());
+    }
+    if (from.has_templatetolettertransformationinfo()) {
+      mutable_templatetolettertransformationinfo()->::Diadoc::Api::Proto::Events::TemplateToLetterTransformationInfo::MergeFrom(from.templatetolettertransformationinfo());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -2262,9 +2422,12 @@ void Message::CopyFrom(const Message& from) {
 }
 
 bool Message::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0010001f) != 0x0010001f) return false;
+  if ((_has_bits_[0] & 0x0030001f) != 0x0030001f) return false;
 
   if (!::google::protobuf::internal::AllAreInitialized(this->entities())) return false;
+  if (has_templatetolettertransformationinfo()) {
+    if (!this->templatetolettertransformationinfo().IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -2291,6 +2454,8 @@ void Message::Swap(Message* other) {
     std::swap(proxytitle_, other->proxytitle_);
     std::swap(packetislocked_, other->packetislocked_);
     std::swap(lockmode_, other->lockmode_);
+    std::swap(messagetype_, other->messagetype_);
+    std::swap(templatetolettertransformationinfo_, other->templatetolettertransformationinfo_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -3028,6 +3193,7 @@ const int MessagePatch::kMessageIsRestoredFieldNumber;
 const int MessagePatch::kMessageIsDeliveredFieldNumber;
 const int MessagePatch::kDeliveredPatchIdFieldNumber;
 const int MessagePatch::kPatchIdFieldNumber;
+const int MessagePatch::kMessageTypeFieldNumber;
 #endif  // !_MSC_VER
 
 MessagePatch::MessagePatch()
@@ -3059,6 +3225,7 @@ void MessagePatch::SharedCtor() {
   messageisdelivered_ = false;
   deliveredpatchid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   patchid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  messagetype_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -3122,7 +3289,7 @@ void MessagePatch::Clear() {
     }
     timestampticks_ = GOOGLE_LONGLONG(0);
   }
-  if (_has_bits_[8 / 32] & 7680) {
+  if (_has_bits_[8 / 32] & 15872) {
     ZR_(messageisrestored_, messageisdelivered_);
     if (has_deliveredpatchid()) {
       if (deliveredpatchid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
@@ -3134,6 +3301,7 @@ void MessagePatch::Clear() {
         patchid_->clear();
       }
     }
+    messagetype_ = 0;
   }
 
 #undef OFFSET_OF_FIELD_
@@ -3354,6 +3522,26 @@ bool MessagePatch::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(120)) goto parse_MessageType;
+        break;
+      }
+
+      // required .Diadoc.Api.Proto.Documents.MessageType MessageType = 15;
+      case 15: {
+        if (tag == 120) {
+         parse_MessageType:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Diadoc::Api::Proto::Documents::MessageType_IsValid(value)) {
+            set_messagetype(static_cast< ::Diadoc::Api::Proto::Documents::MessageType >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(15, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -3470,6 +3658,12 @@ void MessagePatch::SerializeWithCachedSizes(
       13, this->patchid(), output);
   }
 
+  // required .Diadoc.Api.Proto.Documents.MessageType MessageType = 15;
+  if (has_messagetype()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      15, this->messagetype(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -3572,6 +3766,12 @@ void MessagePatch::SerializeWithCachedSizes(
         13, this->patchid(), target);
   }
 
+  // required .Diadoc.Api.Proto.Documents.MessageType MessageType = 15;
+  if (has_messagetype()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      15, this->messagetype(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -3640,6 +3840,12 @@ int MessagePatch::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->patchid());
+    }
+
+    // required .Diadoc.Api.Proto.Documents.MessageType MessageType = 15;
+    if (has_messagetype()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->messagetype());
     }
 
   }
@@ -3727,6 +3933,9 @@ void MessagePatch::MergeFrom(const MessagePatch& from) {
     if (from.has_patchid()) {
       set_patchid(from.patchid());
     }
+    if (from.has_messagetype()) {
+      set_messagetype(from.messagetype());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -3744,7 +3953,7 @@ void MessagePatch::CopyFrom(const MessagePatch& from) {
 }
 
 bool MessagePatch::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00001003) != 0x00001003) return false;
+  if ((_has_bits_[0] & 0x00003003) != 0x00003003) return false;
 
   if (!::google::protobuf::internal::AllAreInitialized(this->entities())) return false;
   if (!::google::protobuf::internal::AllAreInitialized(this->entitypatches())) return false;
@@ -3766,6 +3975,7 @@ void MessagePatch::Swap(MessagePatch* other) {
     std::swap(messageisdelivered_, other->messageisdelivered_);
     std::swap(deliveredpatchid_, other->deliveredpatchid_);
     std::swap(patchid_, other->patchid_);
+    std::swap(messagetype_, other->messagetype_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -3809,6 +4019,7 @@ const int Entity::kResolutionRouteRemovalInfoFieldNumber;
 const int Entity::kCancellationInfoFieldNumber;
 const int Entity::kLabelsFieldNumber;
 const int Entity::kVersionFieldNumber;
+const int Entity::kTemplateTransformationInfoFieldNumber;
 #endif  // !_MSC_VER
 
 Entity::Entity()
@@ -3826,6 +4037,7 @@ void Entity::InitAsDefaultInstance() {
   resolutionrouteassignmentinfo_ = const_cast< ::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo*>(&::Diadoc::Api::Proto::Events::ResolutionRouteAssignmentInfo::default_instance());
   resolutionrouteremovalinfo_ = const_cast< ::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo*>(&::Diadoc::Api::Proto::Events::ResolutionRouteRemovalInfo::default_instance());
   cancellationinfo_ = const_cast< ::Diadoc::Api::Proto::Events::CancellationInfo*>(&::Diadoc::Api::Proto::Events::CancellationInfo::default_instance());
+  templatetransformationinfo_ = const_cast< ::Diadoc::Api::Proto::Events::TemplateTransformationInfo*>(&::Diadoc::Api::Proto::Events::TemplateTransformationInfo::default_instance());
 }
 
 Entity::Entity(const Entity& from)
@@ -3862,6 +4074,7 @@ void Entity::SharedCtor() {
   resolutionrouteremovalinfo_ = NULL;
   cancellationinfo_ = NULL;
   version_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  templatetransformationinfo_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -3907,6 +4120,7 @@ void Entity::SharedDtor() {
     delete resolutionrouteassignmentinfo_;
     delete resolutionrouteremovalinfo_;
     delete cancellationinfo_;
+    delete templatetransformationinfo_;
   }
 }
 
@@ -4018,9 +4232,14 @@ void Entity::Clear() {
       if (cancellationinfo_ != NULL) cancellationinfo_->::Diadoc::Api::Proto::Events::CancellationInfo::Clear();
     }
   }
-  if (has_version()) {
-    if (version_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-      version_->clear();
+  if (_has_bits_[24 / 32] & 50331648) {
+    if (has_version()) {
+      if (version_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        version_->clear();
+      }
+    }
+    if (has_templatetransformationinfo()) {
+      if (templatetransformationinfo_ != NULL) templatetransformationinfo_->::Diadoc::Api::Proto::Events::TemplateTransformationInfo::Clear();
     }
   }
 
@@ -4428,6 +4647,19 @@ bool Entity::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(218)) goto parse_TemplateTransformationInfo;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Events.TemplateTransformationInfo TemplateTransformationInfo = 27;
+      case 27: {
+        if (tag == 218) {
+         parse_TemplateTransformationInfo:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_templatetransformationinfo()));
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -4642,6 +4874,12 @@ void Entity::SerializeWithCachedSizes(
       26, this->version(), output);
   }
 
+  // optional .Diadoc.Api.Proto.Events.TemplateTransformationInfo TemplateTransformationInfo = 27;
+  if (has_templatetransformationinfo()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      27, this->templatetransformationinfo(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -4854,6 +5092,13 @@ void Entity::SerializeWithCachedSizes(
         26, this->version(), target);
   }
 
+  // optional .Diadoc.Api.Proto.Events.TemplateTransformationInfo TemplateTransformationInfo = 27;
+  if (has_templatetransformationinfo()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        27, this->templatetransformationinfo(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -5028,6 +5273,13 @@ int Entity::ByteSize() const {
           this->version());
     }
 
+    // optional .Diadoc.Api.Proto.Events.TemplateTransformationInfo TemplateTransformationInfo = 27;
+    if (has_templatetransformationinfo()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->templatetransformationinfo());
+    }
+
   }
   // repeated string Labels = 25;
   total_size += 2 * this->labels_size();
@@ -5141,6 +5393,9 @@ void Entity::MergeFrom(const Entity& from) {
     if (from.has_version()) {
       set_version(from.version());
     }
+    if (from.has_templatetransformationinfo()) {
+      mutable_templatetransformationinfo()->::Diadoc::Api::Proto::Events::TemplateTransformationInfo::MergeFrom(from.templatetransformationinfo());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -5184,6 +5439,9 @@ bool Entity::IsInitialized() const {
   if (has_cancellationinfo()) {
     if (!this->cancellationinfo().IsInitialized()) return false;
   }
+  if (has_templatetransformationinfo()) {
+    if (!this->templatetransformationinfo().IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -5214,6 +5472,7 @@ void Entity::Swap(Entity* other) {
     std::swap(cancellationinfo_, other->cancellationinfo_);
     labels_.Swap(&other->labels_);
     std::swap(version_, other->version_);
+    std::swap(templatetransformationinfo_, other->templatetransformationinfo_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -5712,6 +5971,721 @@ void EntityPatch::Swap(EntityPatch* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = EntityPatch_descriptor_;
   metadata.reflection = EntityPatch_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int TemplateToLetterTransformationInfo::kLetterFromBoxIdFieldNumber;
+const int TemplateToLetterTransformationInfo::kLetterToBoxIdFieldNumber;
+const int TemplateToLetterTransformationInfo::kLetterFromDepartmentIdFieldNumber;
+const int TemplateToLetterTransformationInfo::kLetterToDepartmentIdFieldNumber;
+#endif  // !_MSC_VER
+
+TemplateToLetterTransformationInfo::TemplateToLetterTransformationInfo()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo)
+}
+
+void TemplateToLetterTransformationInfo::InitAsDefaultInstance() {
+}
+
+TemplateToLetterTransformationInfo::TemplateToLetterTransformationInfo(const TemplateToLetterTransformationInfo& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo)
+}
+
+void TemplateToLetterTransformationInfo::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  letterfromboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  lettertoboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  letterfromdepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  lettertodepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+TemplateToLetterTransformationInfo::~TemplateToLetterTransformationInfo() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo)
+  SharedDtor();
+}
+
+void TemplateToLetterTransformationInfo::SharedDtor() {
+  if (letterfromboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete letterfromboxid_;
+  }
+  if (lettertoboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete lettertoboxid_;
+  }
+  if (letterfromdepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete letterfromdepartmentid_;
+  }
+  if (lettertodepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete lettertodepartmentid_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void TemplateToLetterTransformationInfo::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* TemplateToLetterTransformationInfo::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return TemplateToLetterTransformationInfo_descriptor_;
+}
+
+const TemplateToLetterTransformationInfo& TemplateToLetterTransformationInfo::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto();
+  return *default_instance_;
+}
+
+TemplateToLetterTransformationInfo* TemplateToLetterTransformationInfo::default_instance_ = NULL;
+
+TemplateToLetterTransformationInfo* TemplateToLetterTransformationInfo::New() const {
+  return new TemplateToLetterTransformationInfo;
+}
+
+void TemplateToLetterTransformationInfo::Clear() {
+  if (_has_bits_[0 / 32] & 15) {
+    if (has_letterfromboxid()) {
+      if (letterfromboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        letterfromboxid_->clear();
+      }
+    }
+    if (has_lettertoboxid()) {
+      if (lettertoboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        lettertoboxid_->clear();
+      }
+    }
+    if (has_letterfromdepartmentid()) {
+      if (letterfromdepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        letterfromdepartmentid_->clear();
+      }
+    }
+    if (has_lettertodepartmentid()) {
+      if (lettertodepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        lettertodepartmentid_->clear();
+      }
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool TemplateToLetterTransformationInfo::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required string LetterFromBoxId = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_letterfromboxid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->letterfromboxid().data(), this->letterfromboxid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "letterfromboxid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_LetterToBoxId;
+        break;
+      }
+
+      // required string LetterToBoxId = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_LetterToBoxId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_lettertoboxid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->lettertoboxid().data(), this->lettertoboxid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "lettertoboxid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_LetterFromDepartmentId;
+        break;
+      }
+
+      // optional string LetterFromDepartmentId = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_LetterFromDepartmentId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_letterfromdepartmentid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->letterfromdepartmentid().data(), this->letterfromdepartmentid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "letterfromdepartmentid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_LetterToDepartmentId;
+        break;
+      }
+
+      // optional string LetterToDepartmentId = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_LetterToDepartmentId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_lettertodepartmentid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->lettertodepartmentid().data(), this->lettertodepartmentid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "lettertodepartmentid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo)
+  return false;
+#undef DO_
+}
+
+void TemplateToLetterTransformationInfo::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo)
+  // required string LetterFromBoxId = 1;
+  if (has_letterfromboxid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->letterfromboxid().data(), this->letterfromboxid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "letterfromboxid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->letterfromboxid(), output);
+  }
+
+  // required string LetterToBoxId = 2;
+  if (has_lettertoboxid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->lettertoboxid().data(), this->lettertoboxid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "lettertoboxid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->lettertoboxid(), output);
+  }
+
+  // optional string LetterFromDepartmentId = 3;
+  if (has_letterfromdepartmentid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->letterfromdepartmentid().data(), this->letterfromdepartmentid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "letterfromdepartmentid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->letterfromdepartmentid(), output);
+  }
+
+  // optional string LetterToDepartmentId = 4;
+  if (has_lettertodepartmentid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->lettertodepartmentid().data(), this->lettertodepartmentid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "lettertodepartmentid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->lettertodepartmentid(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo)
+}
+
+::google::protobuf::uint8* TemplateToLetterTransformationInfo::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo)
+  // required string LetterFromBoxId = 1;
+  if (has_letterfromboxid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->letterfromboxid().data(), this->letterfromboxid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "letterfromboxid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->letterfromboxid(), target);
+  }
+
+  // required string LetterToBoxId = 2;
+  if (has_lettertoboxid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->lettertoboxid().data(), this->lettertoboxid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "lettertoboxid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->lettertoboxid(), target);
+  }
+
+  // optional string LetterFromDepartmentId = 3;
+  if (has_letterfromdepartmentid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->letterfromdepartmentid().data(), this->letterfromdepartmentid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "letterfromdepartmentid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->letterfromdepartmentid(), target);
+  }
+
+  // optional string LetterToDepartmentId = 4;
+  if (has_lettertodepartmentid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->lettertodepartmentid().data(), this->lettertodepartmentid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "lettertodepartmentid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->lettertodepartmentid(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo)
+  return target;
+}
+
+int TemplateToLetterTransformationInfo::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required string LetterFromBoxId = 1;
+    if (has_letterfromboxid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->letterfromboxid());
+    }
+
+    // required string LetterToBoxId = 2;
+    if (has_lettertoboxid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->lettertoboxid());
+    }
+
+    // optional string LetterFromDepartmentId = 3;
+    if (has_letterfromdepartmentid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->letterfromdepartmentid());
+    }
+
+    // optional string LetterToDepartmentId = 4;
+    if (has_lettertodepartmentid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->lettertodepartmentid());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void TemplateToLetterTransformationInfo::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const TemplateToLetterTransformationInfo* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const TemplateToLetterTransformationInfo*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void TemplateToLetterTransformationInfo::MergeFrom(const TemplateToLetterTransformationInfo& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_letterfromboxid()) {
+      set_letterfromboxid(from.letterfromboxid());
+    }
+    if (from.has_lettertoboxid()) {
+      set_lettertoboxid(from.lettertoboxid());
+    }
+    if (from.has_letterfromdepartmentid()) {
+      set_letterfromdepartmentid(from.letterfromdepartmentid());
+    }
+    if (from.has_lettertodepartmentid()) {
+      set_lettertodepartmentid(from.lettertodepartmentid());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void TemplateToLetterTransformationInfo::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void TemplateToLetterTransformationInfo::CopyFrom(const TemplateToLetterTransformationInfo& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TemplateToLetterTransformationInfo::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+
+  return true;
+}
+
+void TemplateToLetterTransformationInfo::Swap(TemplateToLetterTransformationInfo* other) {
+  if (other != this) {
+    std::swap(letterfromboxid_, other->letterfromboxid_);
+    std::swap(lettertoboxid_, other->lettertoboxid_);
+    std::swap(letterfromdepartmentid_, other->letterfromdepartmentid_);
+    std::swap(lettertodepartmentid_, other->lettertodepartmentid_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata TemplateToLetterTransformationInfo::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = TemplateToLetterTransformationInfo_descriptor_;
+  metadata.reflection = TemplateToLetterTransformationInfo_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int TemplateTransformationInfo::kTransformedToDocumentIdFieldNumber;
+const int TemplateTransformationInfo::kAuthorFieldNumber;
+#endif  // !_MSC_VER
+
+TemplateTransformationInfo::TemplateTransformationInfo()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Events.TemplateTransformationInfo)
+}
+
+void TemplateTransformationInfo::InitAsDefaultInstance() {
+  transformedtodocumentid_ = const_cast< ::Diadoc::Api::Proto::DocumentId*>(&::Diadoc::Api::Proto::DocumentId::default_instance());
+}
+
+TemplateTransformationInfo::TemplateTransformationInfo(const TemplateTransformationInfo& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Events.TemplateTransformationInfo)
+}
+
+void TemplateTransformationInfo::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  transformedtodocumentid_ = NULL;
+  author_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+TemplateTransformationInfo::~TemplateTransformationInfo() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Events.TemplateTransformationInfo)
+  SharedDtor();
+}
+
+void TemplateTransformationInfo::SharedDtor() {
+  if (author_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete author_;
+  }
+  if (this != default_instance_) {
+    delete transformedtodocumentid_;
+  }
+}
+
+void TemplateTransformationInfo::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* TemplateTransformationInfo::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return TemplateTransformationInfo_descriptor_;
+}
+
+const TemplateTransformationInfo& TemplateTransformationInfo::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto();
+  return *default_instance_;
+}
+
+TemplateTransformationInfo* TemplateTransformationInfo::default_instance_ = NULL;
+
+TemplateTransformationInfo* TemplateTransformationInfo::New() const {
+  return new TemplateTransformationInfo;
+}
+
+void TemplateTransformationInfo::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    if (has_transformedtodocumentid()) {
+      if (transformedtodocumentid_ != NULL) transformedtodocumentid_->::Diadoc::Api::Proto::DocumentId::Clear();
+    }
+    if (has_author()) {
+      if (author_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        author_->clear();
+      }
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool TemplateTransformationInfo::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Events.TemplateTransformationInfo)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional .Diadoc.Api.Proto.DocumentId TransformedToDocumentId = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_transformedtodocumentid()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_Author;
+        break;
+      }
+
+      // optional string Author = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_Author:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_author()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->author().data(), this->author().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "author");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Events.TemplateTransformationInfo)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Events.TemplateTransformationInfo)
+  return false;
+#undef DO_
+}
+
+void TemplateTransformationInfo::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Events.TemplateTransformationInfo)
+  // optional .Diadoc.Api.Proto.DocumentId TransformedToDocumentId = 1;
+  if (has_transformedtodocumentid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->transformedtodocumentid(), output);
+  }
+
+  // optional string Author = 2;
+  if (has_author()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->author().data(), this->author().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "author");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->author(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Events.TemplateTransformationInfo)
+}
+
+::google::protobuf::uint8* TemplateTransformationInfo::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Events.TemplateTransformationInfo)
+  // optional .Diadoc.Api.Proto.DocumentId TransformedToDocumentId = 1;
+  if (has_transformedtodocumentid()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, this->transformedtodocumentid(), target);
+  }
+
+  // optional string Author = 2;
+  if (has_author()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->author().data(), this->author().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "author");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->author(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Events.TemplateTransformationInfo)
+  return target;
+}
+
+int TemplateTransformationInfo::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional .Diadoc.Api.Proto.DocumentId TransformedToDocumentId = 1;
+    if (has_transformedtodocumentid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->transformedtodocumentid());
+    }
+
+    // optional string Author = 2;
+    if (has_author()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->author());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void TemplateTransformationInfo::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const TemplateTransformationInfo* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const TemplateTransformationInfo*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void TemplateTransformationInfo::MergeFrom(const TemplateTransformationInfo& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_transformedtodocumentid()) {
+      mutable_transformedtodocumentid()->::Diadoc::Api::Proto::DocumentId::MergeFrom(from.transformedtodocumentid());
+    }
+    if (from.has_author()) {
+      set_author(from.author());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void TemplateTransformationInfo::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void TemplateTransformationInfo::CopyFrom(const TemplateTransformationInfo& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TemplateTransformationInfo::IsInitialized() const {
+
+  if (has_transformedtodocumentid()) {
+    if (!this->transformedtodocumentid().IsInitialized()) return false;
+  }
+  return true;
+}
+
+void TemplateTransformationInfo::Swap(TemplateTransformationInfo* other) {
+  if (other != this) {
+    std::swap(transformedtodocumentid_, other->transformedtodocumentid_);
+    std::swap(author_, other->author_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata TemplateTransformationInfo::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = TemplateTransformationInfo_descriptor_;
+  metadata.reflection = TemplateTransformationInfo_reflection_;
   return metadata;
 }
 
