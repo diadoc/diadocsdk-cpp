@@ -1159,6 +1159,19 @@ Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo DiadocApi
 	return FromProtoBytes<UniversalTransferDocumentBuyerTitleInfo>(PerformHttpRequest(L"/ParseUniversalCorrectionDocumentBuyerTitleXml", utdXmlContent, L"POST"));
 }
 
+DiadocApi::Bytes_t DiadocApi::ParseTitleXml(const std::wstring& boxId, const std::wstring& documentTypeNamedId, const std::wstring& documentFunction, const std::wstring& documentVersion, int titleIndex, const Bytes_t& content)
+{
+	WppTraceDebugOut("ParseTitleXml...");
+	std::wstringstream buf;
+	buf << L"/ParseTitleXml";
+	buf << L"?boxId=" << StringHelper::CanonicalizeUrl(boxId);
+	buf << L"&documentTypeNamedId=" << StringHelper::CanonicalizeUrl(documentTypeNamedId);
+	buf << L"&documentFunction=" << StringHelper::CanonicalizeUrl(documentFunction);
+	buf << L"&documentVersion=" << StringHelper::CanonicalizeUrl(documentVersion);
+	buf << L"&titleIndex=" << titleIndex;
+	return PerformHttpRequest(buf.str(), content, L"POST");
+}
+
 RevocationRequestInfo DiadocApi::ParseRevocationRequestXml(const Bytes_t& xmlContent)
 {
 	WppTraceDebugOut("ParseRevocationRequestXml...");
