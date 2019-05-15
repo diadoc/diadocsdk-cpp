@@ -36,6 +36,10 @@
 #include "protos\Employees\EmployeeToCreate.pb.h"
 #include "protos\Employees\EmployeeToUpdate.pb.h"
 #include "protos\Employees\Subscriptions\Subscription.pb.h"
+#include "protos\Organizations\AutoBlockStatus.pb.h"
+#include "protos\Organizations\ManualBlockStatus.pb.h"
+#include "protos\Organizations\BlockStatus.pb.h"
+#include "protos\Organizations\OrganizationFeatures.pb.h"
 #include "protos\BoxList.pb.h"
 #include "protos\OrganizationUserPermissions.pb.h"
 #include "protos\OrganizationUser.pb.h"
@@ -244,6 +248,7 @@ public:
 	Diadoc::Api::Proto::Organization GetOrganizationByFnsParticipantId(const std::wstring& fnsParticipantId);
 	Diadoc::Api::Proto::OrganizationList GetMyOrganizations();
 	Diadoc::Api::Proto::OrganizationList GetMyOrganizations(bool autoRegister);
+	Diadoc::Api::Proto::Organizations::OrganizationFeatures GetOrganizationFeatures(const std::wstring& boxId);
 	Diadoc::Api::Proto::User GetMyUser();
 	Diadoc::Api::Proto::UserV2 GetMyUserV2();
 	Diadoc::Api::Proto::UserV2 UpdateMyUser(Diadoc::Api::Proto::Users::UserToUpdate& userToUpdate);
