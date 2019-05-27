@@ -191,15 +191,17 @@ void protobuf_AddDesc_Invoicing_2fExtendedSigner_2eproto() {
     "ation\020\003\022!\n\035MadeOperationAndSignedInvoice"
     "\020\004\0222\n.MadeAndResponsibleForOperationAndS"
     "ignedInvoice\020\005\022.\n*ResponsibleForOperatio"
-    "nAndSignerForInvoice\020\006*w\n\014SignerStatus\022\022"
-    "\n\016SellerEmployee\020\001\022\036\n\032InformationCreator"
-    "Employee\020\002\022\035\n\031OtherOrganizationEmployee\020"
-    "\003\022\024\n\020AuthorizedPerson\020\004*\270\001\n\021DocumentTitl"
-    "eType\022\023\n\006Absent\020\377\377\377\377\377\377\377\377\377\001\022\r\n\tUtdSeller\020"
-    "\000\022\014\n\010UtdBuyer\020\001\022\r\n\tUcdSeller\020\002\022\014\n\010UcdBuy"
-    "er\020\003\022\024\n\020TovTorg551Seller\020\004\022\023\n\017TovTorg551"
-    "Buyer\020\005\022\024\n\020AccCert552Seller\020\006\022\023\n\017AccCert"
-    "552Buyer\020\007", 1730);
+    "nAndSignerForInvoice\020\006*\257\001\n\014SignerStatus\022"
+    "\022\n\016SellerEmployee\020\001\022\036\n\032InformationCreato"
+    "rEmployee\020\002\022\035\n\031OtherOrganizationEmployee"
+    "\020\003\022\024\n\020AuthorizedPerson\020\004\022\021\n\rBuyerEmploye"
+    "e\020\005\022#\n\037InformationCreatorBuyerEmployee\020\006"
+    "*\311\001\n\021DocumentTitleType\022\023\n\006Absent\020\377\377\377\377\377\377\377"
+    "\377\377\001\022\r\n\tUtdSeller\020\000\022\014\n\010UtdBuyer\020\001\022\r\n\tUcdS"
+    "eller\020\002\022\014\n\010UcdBuyer\020\003\022\024\n\020TovTorg551Selle"
+    "r\020\004\022\023\n\017TovTorg551Buyer\020\005\022\024\n\020AccCert552Se"
+    "ller\020\006\022\023\n\017AccCert552Buyer\020\007\022\017\n\013Utd820Buy"
+    "er\020\010", 1804);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Invoicing/ExtendedSigner.proto", &protobuf_RegisterTypes);
   ExtendedSigner::default_instance_ = new ExtendedSigner();
@@ -261,6 +263,8 @@ bool SignerStatus_IsValid(int value) {
     case 2:
     case 3:
     case 4:
+    case 5:
+    case 6:
       return true;
     default:
       return false;
@@ -282,6 +286,7 @@ bool DocumentTitleType_IsValid(int value) {
     case 5:
     case 6:
     case 7:
+    case 8:
       return true;
     default:
       return false;

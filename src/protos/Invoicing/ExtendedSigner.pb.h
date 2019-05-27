@@ -90,11 +90,13 @@ enum SignerStatus {
   SellerEmployee = 1,
   InformationCreatorEmployee = 2,
   OtherOrganizationEmployee = 3,
-  AuthorizedPerson = 4
+  AuthorizedPerson = 4,
+  BuyerEmployee = 5,
+  InformationCreatorBuyerEmployee = 6
 };
 bool SignerStatus_IsValid(int value);
 const SignerStatus SignerStatus_MIN = SellerEmployee;
-const SignerStatus SignerStatus_MAX = AuthorizedPerson;
+const SignerStatus SignerStatus_MAX = InformationCreatorBuyerEmployee;
 const int SignerStatus_ARRAYSIZE = SignerStatus_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* SignerStatus_descriptor();
@@ -116,11 +118,12 @@ enum DocumentTitleType {
   TovTorg551Seller = 4,
   TovTorg551Buyer = 5,
   AccCert552Seller = 6,
-  AccCert552Buyer = 7
+  AccCert552Buyer = 7,
+  Utd820Buyer = 8
 };
 bool DocumentTitleType_IsValid(int value);
 const DocumentTitleType DocumentTitleType_MIN = Absent;
-const DocumentTitleType DocumentTitleType_MAX = AccCert552Buyer;
+const DocumentTitleType DocumentTitleType_MAX = Utd820Buyer;
 const int DocumentTitleType_ARRAYSIZE = DocumentTitleType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* DocumentTitleType_descriptor();
