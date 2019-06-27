@@ -1184,11 +1184,13 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(XmlSignatureRejectionAttachment));
   RoamingNotificationToPost_descriptor_ = file->message_type(47);
-  static const int RoamingNotificationToPost_offsets_[4] = {
+  static const int RoamingNotificationToPost_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RoamingNotificationToPost, boxid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RoamingNotificationToPost, eventid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RoamingNotificationToPost, success_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RoamingNotificationToPost, description_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RoamingNotificationToPost, messageid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RoamingNotificationToPost, notifiableentityids_),
   };
   RoamingNotificationToPost_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -2008,49 +2010,50 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
     "\t\"\210\001\n\037XmlSignatureRejectionAttachment\022\026\n"
     "\016ParentEntityId\030\001 \002(\t\022=\n\rSignedContent\030\002"
     " \002(\0132&.Diadoc.Api.Proto.Events.SignedCon"
-    "tent\022\016\n\006Labels\030\003 \003(\t\"a\n\031RoamingNotificat"
-    "ionToPost\022\r\n\005BoxId\030\001 \002(\t\022\017\n\007EventId\030\002 \002("
-    "\t\022\017\n\007Success\030\003 \002(\010\022\023\n\013Description\030\004 \001(\t\""
-    "\213\001\n\017CustomDataPatch\022\026\n\016ParentEntityId\030\001 "
-    "\002(\t\022D\n\tOperation\030\002 \002(\01621.Diadoc.Api.Prot"
-    "o.Events.CustomDataPatchOperation\022\013\n\003Key"
-    "\030\003 \002(\t\022\r\n\005Value\030\004 \001(\t\"\254\001\n\031EditDocumentPa"
-    "cketCommand\022\022\n\nDocumentId\030\001 \002(\t\022:\n\024AddDo"
-    "cumentsToPacket\030\002 \003(\0132\034.Diadoc.Api.Proto"
-    ".DocumentId\022\?\n\031RemoveDocumentsFromPacket"
-    "\030\003 \003(\0132\034.Diadoc.Api.Proto.DocumentId\"d\n\026"
-    "ResolutionRouteRemoval\022\026\n\016ParentEntityId"
-    "\030\001 \002(\t\022\017\n\007RouteId\030\002 \002(\t\022\021\n\007Comment\030\003 \001(\t"
-    ":\000\022\016\n\006Labels\030\004 \003(\t\"\275\002\n\016TemplateToPost\022\021\n"
-    "\tFromBoxId\030\001 \002(\t\022\017\n\007ToBoxId\030\002 \002(\t\022\030\n\020Mes"
-    "sageFromBoxId\030\003 \002(\t\022\026\n\016MessageToBoxId\030\004 "
-    "\002(\t\022\035\n\025MessageToDepartmentId\030\005 \001(\t\022P\n\023Do"
-    "cumentAttachments\030\006 \003(\01323.Diadoc.Api.Pro"
-    "to.Events.TemplateDocumentAttachment\0222\n\010"
-    "LockMode\030\007 \001(\0162\032.Diadoc.Api.Proto.LockMo"
-    "de:\004None\022\030\n\020FromDepartmentId\030\010 \001(\t\022\026\n\016To"
-    "DepartmentId\030\t \001(\t\"\245\003\n\032TemplateDocumentA"
-    "ttachment\022A\n\017UnsignedContent\030\001 \002(\0132(.Dia"
-    "doc.Api.Proto.Events.UnsignedContent\022\017\n\007"
-    "Comment\030\002 \001(\t\022\023\n\013TypeNamedId\030\003 \002(\t\022\020\n\010Fu"
-    "nction\030\004 \001(\t\022\017\n\007Version\030\005 \001(\t\0227\n\010Metadat"
-    "a\030\006 \003(\0132%.Diadoc.Api.Proto.Events.Metada"
-    "taItem\022\022\n\nWorkflowId\030\007 \001(\005\022\030\n\020CustomDocu"
-    "mentId\030\010 \001(\t\022\030\n\020EditingSettingId\030\t \001(\t\022%"
-    "\n\026NeedRecipientSignature\030\n \001(\010:\005false\022S\n"
-    "\030PredefinedRecipientTitle\030\013 \001(\01321.Diadoc"
-    ".Api.Proto.Events.PredefinedRecipientTit"
-    "le\"]\n\030PredefinedRecipientTitle\022A\n\017Unsign"
-    "edContent\030\001 \002(\0132(.Diadoc.Api.Proto.Event"
-    "s.UnsignedContent\"7\n\017UnsignedContent\022\017\n\007"
-    "Content\030\001 \001(\014\022\023\n\013NameOnShelf\030\002 \001(\t\"\223\001\n\034T"
-    "emplateTransformationToPost\022\r\n\005BoxId\030\001 \002"
-    "(\t\022\022\n\nTemplateId\030\002 \002(\t\022P\n\027DocumentTransf"
-    "ormations\030\003 \003(\0132/.Diadoc.Api.Proto.Event"
-    "s.DocumentTransformation\"F\n\026DocumentTran"
-    "sformation\022\022\n\nDocumentId\030\001 \002(\t\022\030\n\020Custom"
-    "DocumentId\030\002 \001(\t*/\n\030CustomDataPatchOpera"
-    "tion\022\007\n\003Set\020\000\022\n\n\006Remove\020\001", 16745);
+    "tent\022\016\n\006Labels\030\003 \003(\t\"\221\001\n\031RoamingNotifica"
+    "tionToPost\022\r\n\005BoxId\030\001 \002(\t\022\017\n\007EventId\030\002 \002"
+    "(\t\022\017\n\007Success\030\003 \002(\010\022\023\n\013Description\030\004 \001(\t"
+    "\022\021\n\tMessageId\030\005 \001(\t\022\033\n\023NotifiableEntityI"
+    "ds\030\006 \003(\t\"\213\001\n\017CustomDataPatch\022\026\n\016ParentEn"
+    "tityId\030\001 \002(\t\022D\n\tOperation\030\002 \002(\01621.Diadoc"
+    ".Api.Proto.Events.CustomDataPatchOperati"
+    "on\022\013\n\003Key\030\003 \002(\t\022\r\n\005Value\030\004 \001(\t\"\254\001\n\031EditD"
+    "ocumentPacketCommand\022\022\n\nDocumentId\030\001 \002(\t"
+    "\022:\n\024AddDocumentsToPacket\030\002 \003(\0132\034.Diadoc."
+    "Api.Proto.DocumentId\022\?\n\031RemoveDocumentsF"
+    "romPacket\030\003 \003(\0132\034.Diadoc.Api.Proto.Docum"
+    "entId\"d\n\026ResolutionRouteRemoval\022\026\n\016Paren"
+    "tEntityId\030\001 \002(\t\022\017\n\007RouteId\030\002 \002(\t\022\021\n\007Comm"
+    "ent\030\003 \001(\t:\000\022\016\n\006Labels\030\004 \003(\t\"\275\002\n\016Template"
+    "ToPost\022\021\n\tFromBoxId\030\001 \002(\t\022\017\n\007ToBoxId\030\002 \002"
+    "(\t\022\030\n\020MessageFromBoxId\030\003 \002(\t\022\026\n\016MessageT"
+    "oBoxId\030\004 \002(\t\022\035\n\025MessageToDepartmentId\030\005 "
+    "\001(\t\022P\n\023DocumentAttachments\030\006 \003(\01323.Diado"
+    "c.Api.Proto.Events.TemplateDocumentAttac"
+    "hment\0222\n\010LockMode\030\007 \001(\0162\032.Diadoc.Api.Pro"
+    "to.LockMode:\004None\022\030\n\020FromDepartmentId\030\010 "
+    "\001(\t\022\026\n\016ToDepartmentId\030\t \001(\t\"\245\003\n\032Template"
+    "DocumentAttachment\022A\n\017UnsignedContent\030\001 "
+    "\002(\0132(.Diadoc.Api.Proto.Events.UnsignedCo"
+    "ntent\022\017\n\007Comment\030\002 \001(\t\022\023\n\013TypeNamedId\030\003 "
+    "\002(\t\022\020\n\010Function\030\004 \001(\t\022\017\n\007Version\030\005 \001(\t\0227"
+    "\n\010Metadata\030\006 \003(\0132%.Diadoc.Api.Proto.Even"
+    "ts.MetadataItem\022\022\n\nWorkflowId\030\007 \001(\005\022\030\n\020C"
+    "ustomDocumentId\030\010 \001(\t\022\030\n\020EditingSettingI"
+    "d\030\t \001(\t\022%\n\026NeedRecipientSignature\030\n \001(\010:"
+    "\005false\022S\n\030PredefinedRecipientTitle\030\013 \001(\013"
+    "21.Diadoc.Api.Proto.Events.PredefinedRec"
+    "ipientTitle\"]\n\030PredefinedRecipientTitle\022"
+    "A\n\017UnsignedContent\030\001 \002(\0132(.Diadoc.Api.Pr"
+    "oto.Events.UnsignedContent\"7\n\017UnsignedCo"
+    "ntent\022\017\n\007Content\030\001 \001(\014\022\023\n\013NameOnShelf\030\002 "
+    "\001(\t\"\223\001\n\034TemplateTransformationToPost\022\r\n\005"
+    "BoxId\030\001 \002(\t\022\022\n\nTemplateId\030\002 \002(\t\022P\n\027Docum"
+    "entTransformations\030\003 \003(\0132/.Diadoc.Api.Pr"
+    "oto.Events.DocumentTransformation\"F\n\026Doc"
+    "umentTransformation\022\022\n\nDocumentId\030\001 \002(\t\022"
+    "\030\n\020CustomDocumentId\030\002 \001(\t*/\n\030CustomDataP"
+    "atchOperation\022\007\n\003Set\020\000\022\n\n\006Remove\020\001", 16794);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Events/DiadocMessage-PostApi.proto", &protobuf_RegisterTypes);
   MessageToPost::default_instance_ = new MessageToPost();
@@ -26826,6 +26829,8 @@ const int RoamingNotificationToPost::kBoxIdFieldNumber;
 const int RoamingNotificationToPost::kEventIdFieldNumber;
 const int RoamingNotificationToPost::kSuccessFieldNumber;
 const int RoamingNotificationToPost::kDescriptionFieldNumber;
+const int RoamingNotificationToPost::kMessageIdFieldNumber;
+const int RoamingNotificationToPost::kNotifiableEntityIdsFieldNumber;
 #endif  // !_MSC_VER
 
 RoamingNotificationToPost::RoamingNotificationToPost()
@@ -26851,6 +26856,7 @@ void RoamingNotificationToPost::SharedCtor() {
   eventid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   success_ = false;
   description_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  messageid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -26868,6 +26874,9 @@ void RoamingNotificationToPost::SharedDtor() {
   }
   if (description_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete description_;
+  }
+  if (messageid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete messageid_;
   }
   if (this != default_instance_) {
   }
@@ -26895,7 +26904,7 @@ RoamingNotificationToPost* RoamingNotificationToPost::New() const {
 }
 
 void RoamingNotificationToPost::Clear() {
-  if (_has_bits_[0 / 32] & 15) {
+  if (_has_bits_[0 / 32] & 31) {
     if (has_boxid()) {
       if (boxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         boxid_->clear();
@@ -26912,7 +26921,13 @@ void RoamingNotificationToPost::Clear() {
         description_->clear();
       }
     }
+    if (has_messageid()) {
+      if (messageid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        messageid_->clear();
+      }
+    }
   }
+  notifiableentityids_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -26988,6 +27003,42 @@ bool RoamingNotificationToPost::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(42)) goto parse_MessageId;
+        break;
+      }
+
+      // optional string MessageId = 5;
+      case 5: {
+        if (tag == 42) {
+         parse_MessageId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_messageid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->messageid().data(), this->messageid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "messageid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(50)) goto parse_NotifiableEntityIds;
+        break;
+      }
+
+      // repeated string NotifiableEntityIds = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_NotifiableEntityIds:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_notifiableentityids()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->notifiableentityids(this->notifiableentityids_size() - 1).data(),
+            this->notifiableentityids(this->notifiableentityids_size() - 1).length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "notifiableentityids");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(50)) goto parse_NotifiableEntityIds;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -27052,6 +27103,26 @@ void RoamingNotificationToPost::SerializeWithCachedSizes(
       4, this->description(), output);
   }
 
+  // optional string MessageId = 5;
+  if (has_messageid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->messageid().data(), this->messageid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "messageid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->messageid(), output);
+  }
+
+  // repeated string NotifiableEntityIds = 6;
+  for (int i = 0; i < this->notifiableentityids_size(); i++) {
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->notifiableentityids(i).data(), this->notifiableentityids(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "notifiableentityids");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      6, this->notifiableentityids(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -27100,6 +27171,27 @@ void RoamingNotificationToPost::SerializeWithCachedSizes(
         4, this->description(), target);
   }
 
+  // optional string MessageId = 5;
+  if (has_messageid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->messageid().data(), this->messageid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "messageid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->messageid(), target);
+  }
+
+  // repeated string NotifiableEntityIds = 6;
+  for (int i = 0; i < this->notifiableentityids_size(); i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->notifiableentityids(i).data(), this->notifiableentityids(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "notifiableentityids");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(6, this->notifiableentityids(i), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -27138,7 +27230,21 @@ int RoamingNotificationToPost::ByteSize() const {
           this->description());
     }
 
+    // optional string MessageId = 5;
+    if (has_messageid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->messageid());
+    }
+
   }
+  // repeated string NotifiableEntityIds = 6;
+  total_size += 1 * this->notifiableentityids_size();
+  for (int i = 0; i < this->notifiableentityids_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->notifiableentityids(i));
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -27164,6 +27270,7 @@ void RoamingNotificationToPost::MergeFrom(const ::google::protobuf::Message& fro
 
 void RoamingNotificationToPost::MergeFrom(const RoamingNotificationToPost& from) {
   GOOGLE_CHECK_NE(&from, this);
+  notifiableentityids_.MergeFrom(from.notifiableentityids_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_boxid()) {
       set_boxid(from.boxid());
@@ -27176,6 +27283,9 @@ void RoamingNotificationToPost::MergeFrom(const RoamingNotificationToPost& from)
     }
     if (from.has_description()) {
       set_description(from.description());
+    }
+    if (from.has_messageid()) {
+      set_messageid(from.messageid());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -27205,6 +27315,8 @@ void RoamingNotificationToPost::Swap(RoamingNotificationToPost* other) {
     std::swap(eventid_, other->eventid_);
     std::swap(success_, other->success_);
     std::swap(description_, other->description_);
+    std::swap(messageid_, other->messageid_);
+    notifiableentityids_.Swap(&other->notifiableentityids_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

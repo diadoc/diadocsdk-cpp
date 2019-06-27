@@ -40,7 +40,7 @@ void protobuf_AssignDesc_OrganizationUserPermissions_2eproto() {
       "OrganizationUserPermissions.proto");
   GOOGLE_CHECK(file != NULL);
   OrganizationUserPermissions_descriptor_ = file->message_type(0);
-  static const int OrganizationUserPermissions_offsets_[11] = {
+  static const int OrganizationUserPermissions_offsets_[12] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OrganizationUserPermissions, userdepartmentid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OrganizationUserPermissions, isadministrator_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OrganizationUserPermissions, documentaccesslevel_),
@@ -52,6 +52,7 @@ void protobuf_AssignDesc_OrganizationUserPermissions_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OrganizationUserPermissions, jobtitle_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OrganizationUserPermissions, cancreatedocuments_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OrganizationUserPermissions, authorizationpermission_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OrganizationUserPermissions, candeleterestoredocuments_),
   };
   OrganizationUserPermissions_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -116,7 +117,7 @@ void protobuf_AddDesc_OrganizationUserPermissions_2eproto() {
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n!OrganizationUserPermissions.proto\022\020Dia"
-    "doc.Api.Proto\"\275\003\n\033OrganizationUserPermis"
+    "doc.Api.Proto\"\340\003\n\033OrganizationUserPermis"
     "sions\022\030\n\020UserDepartmentId\030\001 \002(\t\022\027\n\017IsAdm"
     "inistrator\030\002 \002(\010\022^\n\023DocumentAccessLevel\030"
     "\003 \001(\0162%.Diadoc.Api.Proto.DocumentAccessL"
@@ -127,13 +128,13 @@ void protobuf_AddDesc_OrganizationUserPermissions_2eproto() {
     "DepartmentIds\030\t \003(\t\022\020\n\010JobTitle\030\n \001(\t\022\032\n"
     "\022CanCreateDocuments\030\013 \002(\010\022J\n\027Authorizati"
     "onPermission\030\014 \002(\0132).Diadoc.Api.Proto.Au"
-    "thorizationPermission\"=\n\027AuthorizationPe"
-    "rmission\022\021\n\tIsBlocked\030\001 \002(\010\022\017\n\007Comment\030\002"
-    " \001(\t*\236\001\n\023DocumentAccessLevel\022\'\n\032UnknownD"
-    "ocumentAccessLevel\020\377\377\377\377\377\377\377\377\377\001\022\022\n\016Departm"
-    "entOnly\020\000\022\037\n\033DepartmentAndSubdepartments"
-    "\020\001\022\020\n\014AllDocuments\020\002\022\027\n\023SelectedDepartme"
-    "nts\020\003", 725);
+    "thorizationPermission\022!\n\031CanDeleteRestor"
+    "eDocuments\030\r \002(\010\"=\n\027AuthorizationPermiss"
+    "ion\022\021\n\tIsBlocked\030\001 \002(\010\022\017\n\007Comment\030\002 \001(\t*"
+    "\236\001\n\023DocumentAccessLevel\022\'\n\032UnknownDocume"
+    "ntAccessLevel\020\377\377\377\377\377\377\377\377\377\001\022\022\n\016DepartmentOn"
+    "ly\020\000\022\037\n\033DepartmentAndSubdepartments\020\001\022\020\n"
+    "\014AllDocuments\020\002\022\027\n\023SelectedDepartments\020\003", 760);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "OrganizationUserPermissions.proto", &protobuf_RegisterTypes);
   OrganizationUserPermissions::default_instance_ = new OrganizationUserPermissions();
@@ -181,6 +182,7 @@ const int OrganizationUserPermissions::kSelectedDepartmentIdsFieldNumber;
 const int OrganizationUserPermissions::kJobTitleFieldNumber;
 const int OrganizationUserPermissions::kCanCreateDocumentsFieldNumber;
 const int OrganizationUserPermissions::kAuthorizationPermissionFieldNumber;
+const int OrganizationUserPermissions::kCanDeleteRestoreDocumentsFieldNumber;
 #endif  // !_MSC_VER
 
 OrganizationUserPermissions::OrganizationUserPermissions()
@@ -213,6 +215,7 @@ void OrganizationUserPermissions::SharedCtor() {
   jobtitle_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   cancreatedocuments_ = false;
   authorizationpermission_ = NULL;
+  candeleterestoredocuments_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -275,13 +278,13 @@ void OrganizationUserPermissions::Clear() {
     documentaccesslevel_ = -1;
     canrequestresolutions_ = false;
   }
-  if (_has_bits_[8 / 32] & 1792) {
+  if (_has_bits_[8 / 32] & 3840) {
+    ZR_(cancreatedocuments_, candeleterestoredocuments_);
     if (has_jobtitle()) {
       if (jobtitle_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         jobtitle_->clear();
       }
     }
-    cancreatedocuments_ = false;
     if (has_authorizationpermission()) {
       if (authorizationpermission_ != NULL) authorizationpermission_->::Diadoc::Api::Proto::AuthorizationPermission::Clear();
     }
@@ -476,6 +479,21 @@ bool OrganizationUserPermissions::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(104)) goto parse_CanDeleteRestoreDocuments;
+        break;
+      }
+
+      // required bool CanDeleteRestoreDocuments = 13;
+      case 13: {
+        if (tag == 104) {
+         parse_CanDeleteRestoreDocuments:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &candeleterestoredocuments_)));
+          set_has_candeleterestoredocuments();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -577,6 +595,11 @@ void OrganizationUserPermissions::SerializeWithCachedSizes(
       12, this->authorizationpermission(), output);
   }
 
+  // required bool CanDeleteRestoreDocuments = 13;
+  if (has_candeleterestoredocuments()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(13, this->candeleterestoredocuments(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -662,6 +685,11 @@ void OrganizationUserPermissions::SerializeWithCachedSizes(
         12, this->authorizationpermission(), target);
   }
 
+  // required bool CanDeleteRestoreDocuments = 13;
+  if (has_candeleterestoredocuments()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(13, this->candeleterestoredocuments(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -733,6 +761,11 @@ int OrganizationUserPermissions::ByteSize() const {
           this->authorizationpermission());
     }
 
+    // required bool CanDeleteRestoreDocuments = 13;
+    if (has_candeleterestoredocuments()) {
+      total_size += 1 + 1;
+    }
+
   }
   // repeated string SelectedDepartmentIds = 9;
   total_size += 1 * this->selecteddepartmentids_size();
@@ -800,6 +833,9 @@ void OrganizationUserPermissions::MergeFrom(const OrganizationUserPermissions& f
     if (from.has_authorizationpermission()) {
       mutable_authorizationpermission()->::Diadoc::Api::Proto::AuthorizationPermission::MergeFrom(from.authorizationpermission());
     }
+    if (from.has_candeleterestoredocuments()) {
+      set_candeleterestoredocuments(from.candeleterestoredocuments());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -817,7 +853,7 @@ void OrganizationUserPermissions::CopyFrom(const OrganizationUserPermissions& fr
 }
 
 bool OrganizationUserPermissions::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000067b) != 0x0000067b) return false;
+  if ((_has_bits_[0] & 0x00000e7b) != 0x00000e7b) return false;
 
   if (has_authorizationpermission()) {
     if (!this->authorizationpermission().IsInitialized()) return false;
@@ -838,6 +874,7 @@ void OrganizationUserPermissions::Swap(OrganizationUserPermissions* other) {
     std::swap(jobtitle_, other->jobtitle_);
     std::swap(cancreatedocuments_, other->cancreatedocuments_);
     std::swap(authorizationpermission_, other->authorizationpermission_);
+    std::swap(candeleterestoredocuments_, other->candeleterestoredocuments_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
