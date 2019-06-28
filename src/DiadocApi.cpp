@@ -512,6 +512,16 @@ Message DiadocApi::TransformTemplateToMessage(const TemplateTransformationToPost
 	return FromProtoBytes<Message>(PerformHttpRequest(buf.str(), ToProtoBytes(templateTransformationToPost), POST));
 }
 
+CustomPrintFormDetectionResult DiadocApi::DetectCustomPrintForms(const std::wstring& boxId, const CustomPrintFormDetectionRequest request)
+{
+	WppTraceDebugOut(L"DetectCustomPrintForms...");
+	std::wstringstream buf;
+	buf << L"/DetectCustomPrintForms";
+	if (!boxId.empty())
+		buf << L"?boxId=" << StringHelper::CanonicalizeUrl(boxId);
+	return FromProtoBytes<CustomPrintFormDetectionResult>(PerformHttpRequest(buf.str(), ToProtoBytes(request), POST));
+}
+
 Template DiadocApi::GetTemplate(const std::wstring& boxId, const std::wstring& templateId, const std::wstring& entityId)
 {
 	WppTraceDebugOut(L"GetTemplate...");

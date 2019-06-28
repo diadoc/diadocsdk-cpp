@@ -48,6 +48,7 @@
 #include "protos\AsyncMethodResult.pb.h"
 #include "protos\CloudSign.pb.h"
 #include "protos\AcquireCounteragent.pb.h"
+#include "protos\CustomPrintFormDetection.pb.h"
 #include "protos\Registration\RegistrationRequest.pb.h"
 #include "DocumentFilter.h"
 #include "HttpSession.h"
@@ -100,6 +101,8 @@ public:
 	
 	std::wstring Recognize(const std::wstring& fileName, const Bytes_t& fileContent);
 	Diadoc::Api::Proto::Recognition::Recognized GetRecognized(const std::wstring& recognitionId);
+
+	Diadoc::Api::Proto::CustomPrintFormDetectionResult DetectCustomPrintForms(const std::wstring& boxId, const Diadoc::Api::Proto::CustomPrintFormDetectionRequest request);
 
 	class PrintFormResult
 	{
