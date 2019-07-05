@@ -472,6 +472,14 @@ BoxEvent DiadocApi::GetEvent(const std::wstring& boxId, const std::wstring& even
 	return FromProtoBytes<BoxEvent>(PerformHttpRequest(buf.str(), GET));
 }
 
+Diadoc::Api::Proto::Events::BoxEvent DiadocApi::GetLastEvent(const std::wstring& boxId)
+{
+	WppTraceDebugOut("GetLastEvent...");
+	std::wstringstream buf;
+	buf << L"/GetLastEvent?boxId=" << StringHelper::CanonicalizeUrl(boxId);
+	return FromProtoBytes<Diadoc::Api::Proto::Events::BoxEvent>(PerformHttpRequest(buf.str(), GET));
+}
+
 Message DiadocApi::PostDiadocMessage(const MessageToPost& msg, const std::wstring& operationId)
 {
 	WppTraceDebugOut(L"PostDiadocMessage...");
