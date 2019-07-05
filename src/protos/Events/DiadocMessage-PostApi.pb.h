@@ -8366,6 +8366,30 @@ class TemplateToPost : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::LockMode lockmode() const;
   inline void set_lockmode(::Diadoc::Api::Proto::LockMode value);
 
+  // optional string FromDepartmentId = 8;
+  inline bool has_fromdepartmentid() const;
+  inline void clear_fromdepartmentid();
+  static const int kFromDepartmentIdFieldNumber = 8;
+  inline const ::std::string& fromdepartmentid() const;
+  inline void set_fromdepartmentid(const ::std::string& value);
+  inline void set_fromdepartmentid(const char* value);
+  inline void set_fromdepartmentid(const char* value, size_t size);
+  inline ::std::string* mutable_fromdepartmentid();
+  inline ::std::string* release_fromdepartmentid();
+  inline void set_allocated_fromdepartmentid(::std::string* fromdepartmentid);
+
+  // optional string ToDepartmentId = 9;
+  inline bool has_todepartmentid() const;
+  inline void clear_todepartmentid();
+  static const int kToDepartmentIdFieldNumber = 9;
+  inline const ::std::string& todepartmentid() const;
+  inline void set_todepartmentid(const ::std::string& value);
+  inline void set_todepartmentid(const char* value);
+  inline void set_todepartmentid(const char* value, size_t size);
+  inline ::std::string* mutable_todepartmentid();
+  inline ::std::string* release_todepartmentid();
+  inline void set_allocated_todepartmentid(::std::string* todepartmentid);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.TemplateToPost)
  private:
   inline void set_has_fromboxid();
@@ -8380,6 +8404,10 @@ class TemplateToPost : public ::google::protobuf::Message {
   inline void clear_has_messagetodepartmentid();
   inline void set_has_lockmode();
   inline void clear_has_lockmode();
+  inline void set_has_fromdepartmentid();
+  inline void clear_has_fromdepartmentid();
+  inline void set_has_todepartmentid();
+  inline void clear_has_todepartmentid();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -8391,6 +8419,8 @@ class TemplateToPost : public ::google::protobuf::Message {
   ::std::string* messagetoboxid_;
   ::std::string* messagetodepartmentid_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::TemplateDocumentAttachment > documentattachments_;
+  ::std::string* fromdepartmentid_;
+  ::std::string* todepartmentid_;
   int lockmode_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -27414,6 +27444,158 @@ inline void TemplateToPost::set_lockmode(::Diadoc::Api::Proto::LockMode value) {
   set_has_lockmode();
   lockmode_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.TemplateToPost.LockMode)
+}
+
+// optional string FromDepartmentId = 8;
+inline bool TemplateToPost::has_fromdepartmentid() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void TemplateToPost::set_has_fromdepartmentid() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void TemplateToPost::clear_has_fromdepartmentid() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void TemplateToPost::clear_fromdepartmentid() {
+  if (fromdepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    fromdepartmentid_->clear();
+  }
+  clear_has_fromdepartmentid();
+}
+inline const ::std::string& TemplateToPost::fromdepartmentid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.TemplateToPost.FromDepartmentId)
+  return *fromdepartmentid_;
+}
+inline void TemplateToPost::set_fromdepartmentid(const ::std::string& value) {
+  set_has_fromdepartmentid();
+  if (fromdepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    fromdepartmentid_ = new ::std::string;
+  }
+  fromdepartmentid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.TemplateToPost.FromDepartmentId)
+}
+inline void TemplateToPost::set_fromdepartmentid(const char* value) {
+  set_has_fromdepartmentid();
+  if (fromdepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    fromdepartmentid_ = new ::std::string;
+  }
+  fromdepartmentid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.TemplateToPost.FromDepartmentId)
+}
+inline void TemplateToPost::set_fromdepartmentid(const char* value, size_t size) {
+  set_has_fromdepartmentid();
+  if (fromdepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    fromdepartmentid_ = new ::std::string;
+  }
+  fromdepartmentid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.TemplateToPost.FromDepartmentId)
+}
+inline ::std::string* TemplateToPost::mutable_fromdepartmentid() {
+  set_has_fromdepartmentid();
+  if (fromdepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    fromdepartmentid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.TemplateToPost.FromDepartmentId)
+  return fromdepartmentid_;
+}
+inline ::std::string* TemplateToPost::release_fromdepartmentid() {
+  clear_has_fromdepartmentid();
+  if (fromdepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = fromdepartmentid_;
+    fromdepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void TemplateToPost::set_allocated_fromdepartmentid(::std::string* fromdepartmentid) {
+  if (fromdepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete fromdepartmentid_;
+  }
+  if (fromdepartmentid) {
+    set_has_fromdepartmentid();
+    fromdepartmentid_ = fromdepartmentid;
+  } else {
+    clear_has_fromdepartmentid();
+    fromdepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.TemplateToPost.FromDepartmentId)
+}
+
+// optional string ToDepartmentId = 9;
+inline bool TemplateToPost::has_todepartmentid() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void TemplateToPost::set_has_todepartmentid() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void TemplateToPost::clear_has_todepartmentid() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void TemplateToPost::clear_todepartmentid() {
+  if (todepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    todepartmentid_->clear();
+  }
+  clear_has_todepartmentid();
+}
+inline const ::std::string& TemplateToPost::todepartmentid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.TemplateToPost.ToDepartmentId)
+  return *todepartmentid_;
+}
+inline void TemplateToPost::set_todepartmentid(const ::std::string& value) {
+  set_has_todepartmentid();
+  if (todepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    todepartmentid_ = new ::std::string;
+  }
+  todepartmentid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.TemplateToPost.ToDepartmentId)
+}
+inline void TemplateToPost::set_todepartmentid(const char* value) {
+  set_has_todepartmentid();
+  if (todepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    todepartmentid_ = new ::std::string;
+  }
+  todepartmentid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.TemplateToPost.ToDepartmentId)
+}
+inline void TemplateToPost::set_todepartmentid(const char* value, size_t size) {
+  set_has_todepartmentid();
+  if (todepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    todepartmentid_ = new ::std::string;
+  }
+  todepartmentid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.TemplateToPost.ToDepartmentId)
+}
+inline ::std::string* TemplateToPost::mutable_todepartmentid() {
+  set_has_todepartmentid();
+  if (todepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    todepartmentid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.TemplateToPost.ToDepartmentId)
+  return todepartmentid_;
+}
+inline ::std::string* TemplateToPost::release_todepartmentid() {
+  clear_has_todepartmentid();
+  if (todepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = todepartmentid_;
+    todepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void TemplateToPost::set_allocated_todepartmentid(::std::string* todepartmentid) {
+  if (todepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete todepartmentid_;
+  }
+  if (todepartmentid) {
+    set_has_todepartmentid();
+    todepartmentid_ = todepartmentid;
+  } else {
+    clear_has_todepartmentid();
+    todepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.TemplateToPost.ToDepartmentId)
 }
 
 // -------------------------------------------------------------------

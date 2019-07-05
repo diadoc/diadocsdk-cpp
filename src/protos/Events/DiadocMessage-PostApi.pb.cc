@@ -1255,7 +1255,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ResolutionRouteRemoval));
   TemplateToPost_descriptor_ = file->message_type(51);
-  static const int TemplateToPost_offsets_[7] = {
+  static const int TemplateToPost_offsets_[9] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, fromboxid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, toboxid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, messagefromboxid_),
@@ -1263,6 +1263,8 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, messagetodepartmentid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, documentattachments_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, lockmode_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, fromdepartmentid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, todepartmentid_),
   };
   TemplateToPost_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -2019,35 +2021,36 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
     "\030\003 \003(\0132\034.Diadoc.Api.Proto.DocumentId\"d\n\026"
     "ResolutionRouteRemoval\022\026\n\016ParentEntityId"
     "\030\001 \002(\t\022\017\n\007RouteId\030\002 \002(\t\022\021\n\007Comment\030\003 \001(\t"
-    ":\000\022\016\n\006Labels\030\004 \003(\t\"\213\002\n\016TemplateToPost\022\021\n"
+    ":\000\022\016\n\006Labels\030\004 \003(\t\"\275\002\n\016TemplateToPost\022\021\n"
     "\tFromBoxId\030\001 \002(\t\022\017\n\007ToBoxId\030\002 \002(\t\022\030\n\020Mes"
     "sageFromBoxId\030\003 \002(\t\022\026\n\016MessageToBoxId\030\004 "
     "\002(\t\022\035\n\025MessageToDepartmentId\030\005 \001(\t\022P\n\023Do"
     "cumentAttachments\030\006 \003(\01323.Diadoc.Api.Pro"
     "to.Events.TemplateDocumentAttachment\0222\n\010"
     "LockMode\030\007 \001(\0162\032.Diadoc.Api.Proto.LockMo"
-    "de:\004None\"\245\003\n\032TemplateDocumentAttachment\022"
-    "A\n\017UnsignedContent\030\001 \002(\0132(.Diadoc.Api.Pr"
-    "oto.Events.UnsignedContent\022\017\n\007Comment\030\002 "
-    "\001(\t\022\023\n\013TypeNamedId\030\003 \002(\t\022\020\n\010Function\030\004 \001"
-    "(\t\022\017\n\007Version\030\005 \001(\t\0227\n\010Metadata\030\006 \003(\0132%."
-    "Diadoc.Api.Proto.Events.MetadataItem\022\022\n\n"
-    "WorkflowId\030\007 \001(\005\022\030\n\020CustomDocumentId\030\010 \001"
-    "(\t\022\030\n\020EditingSettingId\030\t \001(\t\022%\n\026NeedReci"
-    "pientSignature\030\n \001(\010:\005false\022S\n\030Predefine"
-    "dRecipientTitle\030\013 \001(\01321.Diadoc.Api.Proto"
-    ".Events.PredefinedRecipientTitle\"]\n\030Pred"
-    "efinedRecipientTitle\022A\n\017UnsignedContent\030"
-    "\001 \002(\0132(.Diadoc.Api.Proto.Events.Unsigned"
-    "Content\"7\n\017UnsignedContent\022\017\n\007Content\030\001 "
-    "\001(\014\022\023\n\013NameOnShelf\030\002 \001(\t\"\223\001\n\034TemplateTra"
-    "nsformationToPost\022\r\n\005BoxId\030\001 \002(\t\022\022\n\nTemp"
-    "lateId\030\002 \002(\t\022P\n\027DocumentTransformations\030"
-    "\003 \003(\0132/.Diadoc.Api.Proto.Events.Document"
-    "Transformation\"F\n\026DocumentTransformation"
-    "\022\022\n\nDocumentId\030\001 \002(\t\022\030\n\020CustomDocumentId"
-    "\030\002 \001(\t*/\n\030CustomDataPatchOperation\022\007\n\003Se"
-    "t\020\000\022\n\n\006Remove\020\001", 16695);
+    "de:\004None\022\030\n\020FromDepartmentId\030\010 \001(\t\022\026\n\016To"
+    "DepartmentId\030\t \001(\t\"\245\003\n\032TemplateDocumentA"
+    "ttachment\022A\n\017UnsignedContent\030\001 \002(\0132(.Dia"
+    "doc.Api.Proto.Events.UnsignedContent\022\017\n\007"
+    "Comment\030\002 \001(\t\022\023\n\013TypeNamedId\030\003 \002(\t\022\020\n\010Fu"
+    "nction\030\004 \001(\t\022\017\n\007Version\030\005 \001(\t\0227\n\010Metadat"
+    "a\030\006 \003(\0132%.Diadoc.Api.Proto.Events.Metada"
+    "taItem\022\022\n\nWorkflowId\030\007 \001(\005\022\030\n\020CustomDocu"
+    "mentId\030\010 \001(\t\022\030\n\020EditingSettingId\030\t \001(\t\022%"
+    "\n\026NeedRecipientSignature\030\n \001(\010:\005false\022S\n"
+    "\030PredefinedRecipientTitle\030\013 \001(\01321.Diadoc"
+    ".Api.Proto.Events.PredefinedRecipientTit"
+    "le\"]\n\030PredefinedRecipientTitle\022A\n\017Unsign"
+    "edContent\030\001 \002(\0132(.Diadoc.Api.Proto.Event"
+    "s.UnsignedContent\"7\n\017UnsignedContent\022\017\n\007"
+    "Content\030\001 \001(\014\022\023\n\013NameOnShelf\030\002 \001(\t\"\223\001\n\034T"
+    "emplateTransformationToPost\022\r\n\005BoxId\030\001 \002"
+    "(\t\022\022\n\nTemplateId\030\002 \002(\t\022P\n\027DocumentTransf"
+    "ormations\030\003 \003(\0132/.Diadoc.Api.Proto.Event"
+    "s.DocumentTransformation\"F\n\026DocumentTran"
+    "sformation\022\022\n\nDocumentId\030\001 \002(\t\022\030\n\020Custom"
+    "DocumentId\030\002 \001(\t*/\n\030CustomDataPatchOpera"
+    "tion\022\007\n\003Set\020\000\022\n\n\006Remove\020\001", 16745);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Events/DiadocMessage-PostApi.proto", &protobuf_RegisterTypes);
   MessageToPost::default_instance_ = new MessageToPost();
@@ -28374,6 +28377,8 @@ const int TemplateToPost::kMessageToBoxIdFieldNumber;
 const int TemplateToPost::kMessageToDepartmentIdFieldNumber;
 const int TemplateToPost::kDocumentAttachmentsFieldNumber;
 const int TemplateToPost::kLockModeFieldNumber;
+const int TemplateToPost::kFromDepartmentIdFieldNumber;
+const int TemplateToPost::kToDepartmentIdFieldNumber;
 #endif  // !_MSC_VER
 
 TemplateToPost::TemplateToPost()
@@ -28401,6 +28406,8 @@ void TemplateToPost::SharedCtor() {
   messagetoboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   messagetodepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   lockmode_ = 1;
+  fromdepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  todepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -28424,6 +28431,12 @@ void TemplateToPost::SharedDtor() {
   }
   if (messagetodepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete messagetodepartmentid_;
+  }
+  if (fromdepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete fromdepartmentid_;
+  }
+  if (todepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete todepartmentid_;
   }
   if (this != default_instance_) {
   }
@@ -28451,7 +28464,7 @@ TemplateToPost* TemplateToPost::New() const {
 }
 
 void TemplateToPost::Clear() {
-  if (_has_bits_[0 / 32] & 95) {
+  if (_has_bits_[0 / 32] & 223) {
     if (has_fromboxid()) {
       if (fromboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         fromboxid_->clear();
@@ -28478,6 +28491,16 @@ void TemplateToPost::Clear() {
       }
     }
     lockmode_ = 1;
+    if (has_fromdepartmentid()) {
+      if (fromdepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        fromdepartmentid_->clear();
+      }
+    }
+  }
+  if (has_todepartmentid()) {
+    if (todepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+      todepartmentid_->clear();
+    }
   }
   documentattachments_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -28608,6 +28631,40 @@ bool TemplateToPost::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(66)) goto parse_FromDepartmentId;
+        break;
+      }
+
+      // optional string FromDepartmentId = 8;
+      case 8: {
+        if (tag == 66) {
+         parse_FromDepartmentId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_fromdepartmentid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->fromdepartmentid().data(), this->fromdepartmentid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "fromdepartmentid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(74)) goto parse_ToDepartmentId;
+        break;
+      }
+
+      // optional string ToDepartmentId = 9;
+      case 9: {
+        if (tag == 74) {
+         parse_ToDepartmentId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_todepartmentid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->todepartmentid().data(), this->todepartmentid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "todepartmentid");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -28699,6 +28756,26 @@ void TemplateToPost::SerializeWithCachedSizes(
       7, this->lockmode(), output);
   }
 
+  // optional string FromDepartmentId = 8;
+  if (has_fromdepartmentid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->fromdepartmentid().data(), this->fromdepartmentid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "fromdepartmentid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      8, this->fromdepartmentid(), output);
+  }
+
+  // optional string ToDepartmentId = 9;
+  if (has_todepartmentid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->todepartmentid().data(), this->todepartmentid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "todepartmentid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      9, this->todepartmentid(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -28777,6 +28854,28 @@ void TemplateToPost::SerializeWithCachedSizes(
       7, this->lockmode(), target);
   }
 
+  // optional string FromDepartmentId = 8;
+  if (has_fromdepartmentid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->fromdepartmentid().data(), this->fromdepartmentid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "fromdepartmentid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        8, this->fromdepartmentid(), target);
+  }
+
+  // optional string ToDepartmentId = 9;
+  if (has_todepartmentid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->todepartmentid().data(), this->todepartmentid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "todepartmentid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        9, this->todepartmentid(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -28828,6 +28927,22 @@ int TemplateToPost::ByteSize() const {
     if (has_lockmode()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->lockmode());
+    }
+
+    // optional string FromDepartmentId = 8;
+    if (has_fromdepartmentid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->fromdepartmentid());
+    }
+
+  }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    // optional string ToDepartmentId = 9;
+    if (has_todepartmentid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->todepartmentid());
     }
 
   }
@@ -28884,6 +28999,14 @@ void TemplateToPost::MergeFrom(const TemplateToPost& from) {
     if (from.has_lockmode()) {
       set_lockmode(from.lockmode());
     }
+    if (from.has_fromdepartmentid()) {
+      set_fromdepartmentid(from.fromdepartmentid());
+    }
+  }
+  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    if (from.has_todepartmentid()) {
+      set_todepartmentid(from.todepartmentid());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -28916,6 +29039,8 @@ void TemplateToPost::Swap(TemplateToPost* other) {
     std::swap(messagetodepartmentid_, other->messagetodepartmentid_);
     documentattachments_.Swap(&other->documentattachments_);
     std::swap(lockmode_, other->lockmode_);
+    std::swap(fromdepartmentid_, other->fromdepartmentid_);
+    std::swap(todepartmentid_, other->todepartmentid_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
