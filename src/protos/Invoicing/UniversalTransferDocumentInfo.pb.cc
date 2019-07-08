@@ -698,7 +698,7 @@ void protobuf_AddDesc_Invoicing_2fUniversalTransferDocumentInfo_2eproto() {
     "nfo\022\033\n\023InvoiceRevisionDate\030\001 \002(\t\022\035\n\025Invo"
     "iceRevisionNumber\030\002 \002(\t\"\272\001\n\014EventContent"
     "\022\026\n\016CostChangeInfo\030\001 \001(\t\022\032\n\022TransferDocD"
-    "etails\030\002 \002(\t\022\030\n\020OperationContent\030\003 \002(\t\022\030"
+    "etails\030\002 \001(\t\022\030\n\020OperationContent\030\003 \002(\t\022\030"
     "\n\020NotificationDate\030\004 \001(\t\022B\n\016CorrectionBa"
     "se\030\005 \003(\0132*.Diadoc.Api.Proto.Invoicing.Co"
     "rrectionBase\"x\n\016CorrectionBase\022\030\n\020BaseDo"
@@ -9598,7 +9598,7 @@ bool EventContent::MergePartialFromCodedStream(
         break;
       }
 
-      // required string TransferDocDetails = 2;
+      // optional string TransferDocDetails = 2;
       case 2: {
         if (tag == 18) {
          parse_TransferDocDetails:
@@ -9698,7 +9698,7 @@ void EventContent::SerializeWithCachedSizes(
       1, this->costchangeinfo(), output);
   }
 
-  // required string TransferDocDetails = 2;
+  // optional string TransferDocDetails = 2;
   if (has_transferdocdetails()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->transferdocdetails().data(), this->transferdocdetails().length(),
@@ -9755,7 +9755,7 @@ void EventContent::SerializeWithCachedSizes(
         1, this->costchangeinfo(), target);
   }
 
-  // required string TransferDocDetails = 2;
+  // optional string TransferDocDetails = 2;
   if (has_transferdocdetails()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->transferdocdetails().data(), this->transferdocdetails().length(),
@@ -9814,7 +9814,7 @@ int EventContent::ByteSize() const {
           this->costchangeinfo());
     }
 
-    // required string TransferDocDetails = 2;
+    // optional string TransferDocDetails = 2;
     if (has_transferdocdetails()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -9900,7 +9900,7 @@ void EventContent::CopyFrom(const EventContent& from) {
 }
 
 bool EventContent::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000006) != 0x00000006) return false;
+  if ((_has_bits_[0] & 0x00000004) != 0x00000004) return false;
 
   if (!::google::protobuf::internal::AllAreInitialized(this->correctionbase())) return false;
   return true;

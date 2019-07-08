@@ -2691,7 +2691,7 @@ class EventContent : public ::google::protobuf::Message {
   inline ::std::string* release_costchangeinfo();
   inline void set_allocated_costchangeinfo(::std::string* costchangeinfo);
 
-  // required string TransferDocDetails = 2;
+  // optional string TransferDocDetails = 2;
   inline bool has_transferdocdetails() const;
   inline void clear_transferdocdetails();
   static const int kTransferDocDetailsFieldNumber = 2;
@@ -10243,7 +10243,7 @@ inline void EventContent::set_allocated_costchangeinfo(::std::string* costchange
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Invoicing.EventContent.CostChangeInfo)
 }
 
-// required string TransferDocDetails = 2;
+// optional string TransferDocDetails = 2;
 inline bool EventContent::has_transferdocdetails() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
