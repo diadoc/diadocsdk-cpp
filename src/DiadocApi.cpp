@@ -1378,6 +1378,14 @@ void DiadocApi::DeleteEmployee(const std::wstring& boxId, const std::wstring& us
 	PerformHttpRequest(buf.str(), POST);
 }
 
+Diadoc::Api::Proto::Employees::Employee DiadocApi::GetMyEmployee(const std::wstring& boxId)
+{
+	WppTraceDebugOut("GetMyEmployee...");
+	std::wstringstream buf;
+	buf << L"/GetMyEmployee?boxId=" << StringHelper::CanonicalizeUrl(boxId);
+	return FromProtoBytes<Diadoc::Api::Proto::Employees::Employee>(PerformHttpRequest(buf.str(), GET));
+}
+
 Diadoc::Api::Proto::Employees::Subscriptions::EmployeeSubscriptions DiadocApi::GetSubscriptions(const std::wstring& boxId, const std::wstring& userId)
 {
 	WppTraceDebugOut("GetSubscriptions...");

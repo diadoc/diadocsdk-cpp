@@ -7841,6 +7841,34 @@ class RoamingNotificationToPost : public ::google::protobuf::Message {
   inline ::std::string* release_description();
   inline void set_allocated_description(::std::string* description);
 
+  // optional string MessageId = 5;
+  inline bool has_messageid() const;
+  inline void clear_messageid();
+  static const int kMessageIdFieldNumber = 5;
+  inline const ::std::string& messageid() const;
+  inline void set_messageid(const ::std::string& value);
+  inline void set_messageid(const char* value);
+  inline void set_messageid(const char* value, size_t size);
+  inline ::std::string* mutable_messageid();
+  inline ::std::string* release_messageid();
+  inline void set_allocated_messageid(::std::string* messageid);
+
+  // repeated string NotifiableEntityIds = 6;
+  inline int notifiableentityids_size() const;
+  inline void clear_notifiableentityids();
+  static const int kNotifiableEntityIdsFieldNumber = 6;
+  inline const ::std::string& notifiableentityids(int index) const;
+  inline ::std::string* mutable_notifiableentityids(int index);
+  inline void set_notifiableentityids(int index, const ::std::string& value);
+  inline void set_notifiableentityids(int index, const char* value);
+  inline void set_notifiableentityids(int index, const char* value, size_t size);
+  inline ::std::string* add_notifiableentityids();
+  inline void add_notifiableentityids(const ::std::string& value);
+  inline void add_notifiableentityids(const char* value);
+  inline void add_notifiableentityids(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& notifiableentityids() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_notifiableentityids();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.RoamingNotificationToPost)
  private:
   inline void set_has_boxid();
@@ -7851,6 +7879,8 @@ class RoamingNotificationToPost : public ::google::protobuf::Message {
   inline void clear_has_success();
   inline void set_has_description();
   inline void clear_has_description();
+  inline void set_has_messageid();
+  inline void clear_has_messageid();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -7859,6 +7889,8 @@ class RoamingNotificationToPost : public ::google::protobuf::Message {
   ::std::string* boxid_;
   ::std::string* eventid_;
   ::std::string* description_;
+  ::std::string* messageid_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> notifiableentityids_;
   bool success_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -26322,6 +26354,136 @@ inline void RoamingNotificationToPost::set_allocated_description(::std::string* 
     description_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.RoamingNotificationToPost.Description)
+}
+
+// optional string MessageId = 5;
+inline bool RoamingNotificationToPost::has_messageid() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void RoamingNotificationToPost::set_has_messageid() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void RoamingNotificationToPost::clear_has_messageid() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void RoamingNotificationToPost::clear_messageid() {
+  if (messageid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageid_->clear();
+  }
+  clear_has_messageid();
+}
+inline const ::std::string& RoamingNotificationToPost::messageid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.RoamingNotificationToPost.MessageId)
+  return *messageid_;
+}
+inline void RoamingNotificationToPost::set_messageid(const ::std::string& value) {
+  set_has_messageid();
+  if (messageid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageid_ = new ::std::string;
+  }
+  messageid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.RoamingNotificationToPost.MessageId)
+}
+inline void RoamingNotificationToPost::set_messageid(const char* value) {
+  set_has_messageid();
+  if (messageid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageid_ = new ::std::string;
+  }
+  messageid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.RoamingNotificationToPost.MessageId)
+}
+inline void RoamingNotificationToPost::set_messageid(const char* value, size_t size) {
+  set_has_messageid();
+  if (messageid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageid_ = new ::std::string;
+  }
+  messageid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.RoamingNotificationToPost.MessageId)
+}
+inline ::std::string* RoamingNotificationToPost::mutable_messageid() {
+  set_has_messageid();
+  if (messageid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.RoamingNotificationToPost.MessageId)
+  return messageid_;
+}
+inline ::std::string* RoamingNotificationToPost::release_messageid() {
+  clear_has_messageid();
+  if (messageid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = messageid_;
+    messageid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void RoamingNotificationToPost::set_allocated_messageid(::std::string* messageid) {
+  if (messageid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete messageid_;
+  }
+  if (messageid) {
+    set_has_messageid();
+    messageid_ = messageid;
+  } else {
+    clear_has_messageid();
+    messageid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.RoamingNotificationToPost.MessageId)
+}
+
+// repeated string NotifiableEntityIds = 6;
+inline int RoamingNotificationToPost::notifiableentityids_size() const {
+  return notifiableentityids_.size();
+}
+inline void RoamingNotificationToPost::clear_notifiableentityids() {
+  notifiableentityids_.Clear();
+}
+inline const ::std::string& RoamingNotificationToPost::notifiableentityids(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.RoamingNotificationToPost.NotifiableEntityIds)
+  return notifiableentityids_.Get(index);
+}
+inline ::std::string* RoamingNotificationToPost::mutable_notifiableentityids(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.RoamingNotificationToPost.NotifiableEntityIds)
+  return notifiableentityids_.Mutable(index);
+}
+inline void RoamingNotificationToPost::set_notifiableentityids(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.RoamingNotificationToPost.NotifiableEntityIds)
+  notifiableentityids_.Mutable(index)->assign(value);
+}
+inline void RoamingNotificationToPost::set_notifiableentityids(int index, const char* value) {
+  notifiableentityids_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.RoamingNotificationToPost.NotifiableEntityIds)
+}
+inline void RoamingNotificationToPost::set_notifiableentityids(int index, const char* value, size_t size) {
+  notifiableentityids_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.RoamingNotificationToPost.NotifiableEntityIds)
+}
+inline ::std::string* RoamingNotificationToPost::add_notifiableentityids() {
+  return notifiableentityids_.Add();
+}
+inline void RoamingNotificationToPost::add_notifiableentityids(const ::std::string& value) {
+  notifiableentityids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.RoamingNotificationToPost.NotifiableEntityIds)
+}
+inline void RoamingNotificationToPost::add_notifiableentityids(const char* value) {
+  notifiableentityids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:Diadoc.Api.Proto.Events.RoamingNotificationToPost.NotifiableEntityIds)
+}
+inline void RoamingNotificationToPost::add_notifiableentityids(const char* value, size_t size) {
+  notifiableentityids_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:Diadoc.Api.Proto.Events.RoamingNotificationToPost.NotifiableEntityIds)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+RoamingNotificationToPost::notifiableentityids() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.RoamingNotificationToPost.NotifiableEntityIds)
+  return notifiableentityids_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+RoamingNotificationToPost::mutable_notifiableentityids() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.RoamingNotificationToPost.NotifiableEntityIds)
+  return &notifiableentityids_;
 }
 
 // -------------------------------------------------------------------

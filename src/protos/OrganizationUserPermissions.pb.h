@@ -214,6 +214,13 @@ class OrganizationUserPermissions : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::AuthorizationPermission* release_authorizationpermission();
   inline void set_allocated_authorizationpermission(::Diadoc::Api::Proto::AuthorizationPermission* authorizationpermission);
 
+  // required bool CanDeleteRestoreDocuments = 13;
+  inline bool has_candeleterestoredocuments() const;
+  inline void clear_candeleterestoredocuments();
+  static const int kCanDeleteRestoreDocumentsFieldNumber = 13;
+  inline bool candeleterestoredocuments() const;
+  inline void set_candeleterestoredocuments(bool value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.OrganizationUserPermissions)
  private:
   inline void set_has_userdepartmentid();
@@ -236,6 +243,8 @@ class OrganizationUserPermissions : public ::google::protobuf::Message {
   inline void clear_has_cancreatedocuments();
   inline void set_has_authorizationpermission();
   inline void clear_has_authorizationpermission();
+  inline void set_has_candeleterestoredocuments();
+  inline void clear_has_candeleterestoredocuments();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -252,6 +261,7 @@ class OrganizationUserPermissions : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::AuthorizationPermission* authorizationpermission_;
   bool canrequestresolutions_;
   bool cancreatedocuments_;
+  bool candeleterestoredocuments_;
   friend void  protobuf_AddDesc_OrganizationUserPermissions_2eproto();
   friend void protobuf_AssignDesc_OrganizationUserPermissions_2eproto();
   friend void protobuf_ShutdownFile_OrganizationUserPermissions_2eproto();
@@ -774,6 +784,30 @@ inline void OrganizationUserPermissions::set_allocated_authorizationpermission(:
     clear_has_authorizationpermission();
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.OrganizationUserPermissions.AuthorizationPermission)
+}
+
+// required bool CanDeleteRestoreDocuments = 13;
+inline bool OrganizationUserPermissions::has_candeleterestoredocuments() const {
+  return (_has_bits_[0] & 0x00000800u) != 0;
+}
+inline void OrganizationUserPermissions::set_has_candeleterestoredocuments() {
+  _has_bits_[0] |= 0x00000800u;
+}
+inline void OrganizationUserPermissions::clear_has_candeleterestoredocuments() {
+  _has_bits_[0] &= ~0x00000800u;
+}
+inline void OrganizationUserPermissions::clear_candeleterestoredocuments() {
+  candeleterestoredocuments_ = false;
+  clear_has_candeleterestoredocuments();
+}
+inline bool OrganizationUserPermissions::candeleterestoredocuments() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.OrganizationUserPermissions.CanDeleteRestoreDocuments)
+  return candeleterestoredocuments_;
+}
+inline void OrganizationUserPermissions::set_candeleterestoredocuments(bool value) {
+  set_has_candeleterestoredocuments();
+  candeleterestoredocuments_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.OrganizationUserPermissions.CanDeleteRestoreDocuments)
 }
 
 // -------------------------------------------------------------------
