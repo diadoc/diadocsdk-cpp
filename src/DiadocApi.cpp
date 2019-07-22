@@ -1579,20 +1579,20 @@ void DiadocApi::MoveDocuments(const Diadoc::Api::Proto::Documents::DocumentsMove
 	PerformHttpRequest(L"/MoveDocuments", requestBody, POST);
 }
 
-KeyValueStorageApiGetResponse DiadocApi::GetOrganizationStorageEntries(const std::wstring& orgId, const KeyValueStorageApiGetRequest& keys)
+KeyValueStorageApiGetResponse DiadocApi::GetOrganizationStorageEntries(const std::wstring& boxId, const KeyValueStorageApiGetRequest& keys)
 {
 	WppTraceDebugOut("GetOrganizationStorageEntries...");
 	std::wstringstream buf;
-	buf << L"/KeyValueStorageGet?orgId=" << StringHelper::CanonicalizeUrl(orgId);
+	buf << L"/V2/KeyValueStorageGet?boxId=" << StringHelper::CanonicalizeUrl(boxId);
 	auto requestBody = ToProtoBytes(keys);
 	return FromProtoBytes<KeyValueStorageApiGetResponse>(PerformHttpRequest(buf.str(), requestBody, POST));
 }
 
-void DiadocApi::PutOrganizationStorageEntries(const std::wstring& orgId, const KeyValueStorageApiPutRequest& entries)
+void DiadocApi::PutOrganizationStorageEntries(const std::wstring& boxId, const KeyValueStorageApiPutRequest& entries)
 {
 	WppTraceDebugOut("PutOrganizationStorageEntries...");
 	std::wstringstream buf;
-	buf << L"/KeyValueStoragePut?orgId=" << StringHelper::CanonicalizeUrl(orgId);
+	buf << L"/V2/KeyValueStoragePut?boxId=" << StringHelper::CanonicalizeUrl(boxId);
 	auto requestBody = ToProtoBytes(entries);
 	PerformHttpRequest(buf.str(), requestBody, POST);
 }
