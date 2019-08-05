@@ -978,28 +978,32 @@ DiadocApi::WebFile DiadocApi::GenerateAcceptanceCertificate552XmlForBuyer(const 
     return WebFile(request);
 }
 
-DiadocApi::WebFile DiadocApi::GenerateUniversalTransferDocumentXmlForSeller(const UniversalTransferDocumentSellerTitleInfo& utdSellerInfo, bool disableValidation)
+DiadocApi::WebFile DiadocApi::GenerateUniversalTransferDocumentXmlForSeller(const UniversalTransferDocumentSellerTitleInfo& utdSellerInfo, bool disableValidation, const std::wstring& documentVersion)
 {
 	WppTraceDebugOut("GenerateUniversalTransferDocumentXmlForSeller...");
 	auto requestBody = ToProtoBytes(utdSellerInfo);
 	auto connect = session_.Connect(api_url_.c_str(), api_port_);
+
 	std::wstringstream queryString;
 	queryString << L"/GenerateUniversalTransferDocumentXmlForSeller"
-		<< (disableValidation ? L"?disableValidation" : L"");
+		<< L"?documentVersion=" << StringHelper::CanonicalizeUrl(documentVersion)
+		<< (disableValidation ? L"&disableValidation" : L"");
 	auto request = connect.OpenRequest(POST.c_str(), queryString.str().c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
 	SendRequest(request, requestBody);
 	return WebFile(request);
 }
 
-DiadocApi::WebFile DiadocApi::GenerateUniversalCorrectionDocumentXmlForSeller(const UniversalCorrectionDocumentSellerTitleInfo& utdSellerInfo, bool disableValidation)
+DiadocApi::WebFile DiadocApi::GenerateUniversalCorrectionDocumentXmlForSeller(const UniversalCorrectionDocumentSellerTitleInfo& utdSellerInfo, bool disableValidation, const std::wstring& documentVersion)
 {
 	WppTraceDebugOut("GenerateUniversalCorrectionDocumentXmlForSeller...");
 	auto requestBody = ToProtoBytes(utdSellerInfo);
 	auto connect = session_.Connect(api_url_.c_str(), api_port_);
+
 	std::wstringstream queryString;
 	queryString << L"/GenerateUniversalTransferDocumentXmlForSeller"
 		<< L"?correction"
-		<< (disableValidation ? L"&disableValidation" : L"");
+		<< (disableValidation ? L"&disableValidation" : L"")
+		<< L"&documentVersion=" << StringHelper::CanonicalizeUrl(documentVersion);
 	auto request = connect.OpenRequest(POST.c_str(), queryString.str().c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
 	SendRequest(request, requestBody);
 	return WebFile(request);
@@ -1145,10 +1149,13 @@ AcceptanceCertificate552BuyerTitleInfo DiadocApi::ParseAcceptanceCertificate552B
     return FromProtoBytes<AcceptanceCertificate552BuyerTitleInfo>(PerformHttpRequest(L"/ParseAcceptanceCertificate552BuyerTitleXml?documentVersion=rezru_05_01_02", buyerTitleXmlContent, L"POST"));
 }
 
-Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentSellerTitleInfo DiadocApi::ParseUniversalTransferDocumentSellerTitleXml(const Bytes_t& utdXmlContent)
+Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentSellerTitleInfo DiadocApi::ParseUniversalTransferDocumentSellerTitleXml(const Bytes_t& utdXmlContent, const std::wstring& documentVersion)
 {
 	WppTraceDebugOut("ParseUniversalTransferDocumentSellerTitleXml...");
-	return FromProtoBytes<UniversalTransferDocumentSellerTitleInfo>(PerformHttpRequest(L"/ParseUniversalTransferDocumentSellerTitleXml?documentVersion=utd_05_01_05", utdXmlContent, L"POST"));
+	std::wstringstream queryString;
+	queryString << L"/ParseUniversalTransferDocumentSellerTitleXml"
+		<< L"?documentVersion=" << StringHelper::CanonicalizeUrl(documentVersion);
+	return FromProtoBytes<UniversalTransferDocumentSellerTitleInfo>(PerformHttpRequest(queryString.str(), utdXmlContent, L"POST"));
 }
 
 Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo DiadocApi::ParseUniversalTransferDocumentBuyerTitleXml(const Bytes_t& utdXmlContent)
@@ -1157,10 +1164,14 @@ Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo DiadocApi
 	return FromProtoBytes<UniversalTransferDocumentBuyerTitleInfo>(PerformHttpRequest(L"/ParseUniversalTransferDocumentBuyerTitleXml", utdXmlContent, L"POST"));
 }
 
-Diadoc::Api::Proto::Invoicing::UniversalCorrectionDocumentSellerTitleInfo DiadocApi::ParseUniversalCorrectionDocumentSellerTitleXml(const Bytes_t& utdXmlContent)
+Diadoc::Api::Proto::Invoicing::UniversalCorrectionDocumentSellerTitleInfo DiadocApi::ParseUniversalCorrectionDocumentSellerTitleXml(const Bytes_t& utdXmlContent, const std::wstring& documentVersion)
 {
 	WppTraceDebugOut("ParseUniversalCorrectionDocumentSellerTitleXml...");
-	return FromProtoBytes<UniversalCorrectionDocumentSellerTitleInfo>(PerformHttpRequest(L"/ParseUniversalCorrectionDocumentSellerTitleXml?documentVersion=ucd_05_01_03", utdXmlContent, L"POST"));
+	
+	std::wstringstream queryString;
+	queryString << L"/ParseUniversalTransferDocumentSellerTitleXml"
+		<< L"?documentVersion=" << StringHelper::CanonicalizeUrl(documentVersion);
+	return FromProtoBytes<UniversalCorrectionDocumentSellerTitleInfo>(PerformHttpRequest(queryString.str(), utdXmlContent, L"POST"));
 }
 
 Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo DiadocApi::ParseUniversalCorrectionDocumentBuyerTitleXml(const Bytes_t& utdXmlContent)

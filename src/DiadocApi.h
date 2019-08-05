@@ -174,8 +174,8 @@ public:
 	WebFile GenerateAcceptanceCertificate552XmlForSeller(const Diadoc::Api::Proto::Invoicing::AcceptanceCertificate552SellerTitleInfo& acceptanceCertificateSellerInfo, bool disableValidation = false);
 	WebFile GenerateAcceptanceCertificate552XmlForBuyer(const Diadoc::Api::Proto::Invoicing::AcceptanceCertificate552BuyerTitleInfo& acceptanceCertificateBuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId);
 
-	WebFile GenerateUniversalTransferDocumentXmlForSeller(const Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentSellerTitleInfo& utdSellerInfo, bool disableValidation = false);
-	WebFile GenerateUniversalCorrectionDocumentXmlForSeller(const Diadoc::Api::Proto::Invoicing::UniversalCorrectionDocumentSellerTitleInfo& utdSellerInfo, bool disableValidation = false);
+	WebFile GenerateUniversalTransferDocumentXmlForSeller(const Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentSellerTitleInfo& utdSellerInfo, bool disableValidation = false, const std::wstring& documentVersion = L"utd_05_01_05");
+	WebFile GenerateUniversalCorrectionDocumentXmlForSeller(const Diadoc::Api::Proto::Invoicing::UniversalCorrectionDocumentSellerTitleInfo& utdSellerInfo, bool disableValidation = false, const std::wstring& documentVersion = L"ucd_05_01_03");
 	WebFile GenerateUniversalTransferDocumentXmlForBuyer(const Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo& utdBuyerInfo, const std::wstring& boxId, const std::wstring& sellerTitleMessageId, const std::wstring& sellerTitleAttachmentId);
 	WebFile GenerateSenderTitleXml(const std::wstring& boxId, const std::wstring& documentTypeNamedId, const std::wstring& documentFunction, const std::wstring& documentVersion, const Bytes_t& userContractData, const std::wstring& editingSettingId = std::wstring(), bool disableValidation = false);
 	WebFile GenerateRecipientTitleXml(const std::wstring& boxId, const std::wstring& senderTitleMessageId, const std::wstring& senderTitleAttachmentId, const Bytes_t& userContractData, const std::wstring& documentVersion);
@@ -199,9 +199,9 @@ public:
 	Diadoc::Api::Proto::Invoicing::AcceptanceCertificateBuyerTitleInfo ParseAcceptanceCertificateBuyerTitleXml(const Bytes_t& buyerTitleXmlContent);
 	Diadoc::Api::Proto::Invoicing::AcceptanceCertificate552SellerTitleInfo ParseAcceptanceCertificate552SellerTitleXml(const Bytes_t& sellerTitleXmlContent);
 	Diadoc::Api::Proto::Invoicing::AcceptanceCertificate552BuyerTitleInfo ParseAcceptanceCertificate552BuyerTitleXml(const Bytes_t& buyerTitleXmlContent);
-	Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentSellerTitleInfo ParseUniversalTransferDocumentSellerTitleXml(const Bytes_t& utdXmlContent);
+	Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentSellerTitleInfo ParseUniversalTransferDocumentSellerTitleXml(const Bytes_t& utdXmlContent, const std::wstring& documentVersion = L"utd_05_01_05");
 	Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo ParseUniversalTransferDocumentBuyerTitleXml(const Bytes_t& utdXmlContent);
-	Diadoc::Api::Proto::Invoicing::UniversalCorrectionDocumentSellerTitleInfo ParseUniversalCorrectionDocumentSellerTitleXml(const Bytes_t& utdXmlContent);
+	Diadoc::Api::Proto::Invoicing::UniversalCorrectionDocumentSellerTitleInfo ParseUniversalCorrectionDocumentSellerTitleXml(const Bytes_t& utdXmlContent, const std::wstring& documentVersion = L"ucd_05_01_03");
 	Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo ParseUniversalCorrectionDocumentBuyerTitleXml(const Bytes_t& utdXmlContent);
 	Bytes_t ParseTitleXml(const std::wstring& boxId, const std::wstring& documentTypeNamedId, const std::wstring& documentFunction, const std::wstring& documentVersion, int titleIndex, const Bytes_t& content);
 
