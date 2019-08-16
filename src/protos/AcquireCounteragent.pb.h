@@ -25,6 +25,7 @@
 #include <google/protobuf/extension_set.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "Events/DiadocMessage-PostApi.pb.h"
+#include "DocumentId.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace Diadoc {
@@ -354,16 +355,28 @@ class AcquireCounteragentResult : public ::google::protobuf::Message {
   inline ::std::string* release_orgid();
   inline void set_allocated_orgid(::std::string* orgid);
 
+  // optional .Diadoc.Api.Proto.DocumentId InvitationDocumentId = 2;
+  inline bool has_invitationdocumentid() const;
+  inline void clear_invitationdocumentid();
+  static const int kInvitationDocumentIdFieldNumber = 2;
+  inline const ::Diadoc::Api::Proto::DocumentId& invitationdocumentid() const;
+  inline ::Diadoc::Api::Proto::DocumentId* mutable_invitationdocumentid();
+  inline ::Diadoc::Api::Proto::DocumentId* release_invitationdocumentid();
+  inline void set_allocated_invitationdocumentid(::Diadoc::Api::Proto::DocumentId* invitationdocumentid);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.AcquireCounteragentResult)
  private:
   inline void set_has_orgid();
   inline void clear_has_orgid();
+  inline void set_has_invitationdocumentid();
+  inline void clear_has_invitationdocumentid();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::std::string* orgid_;
+  ::Diadoc::Api::Proto::DocumentId* invitationdocumentid_;
   friend void  protobuf_AddDesc_AcquireCounteragent_2eproto();
   friend void protobuf_AssignDesc_AcquireCounteragent_2eproto();
   friend void protobuf_ShutdownFile_AcquireCounteragent_2eproto();
@@ -946,6 +959,47 @@ inline void AcquireCounteragentResult::set_allocated_orgid(::std::string* orgid)
     orgid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.AcquireCounteragentResult.OrgId)
+}
+
+// optional .Diadoc.Api.Proto.DocumentId InvitationDocumentId = 2;
+inline bool AcquireCounteragentResult::has_invitationdocumentid() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void AcquireCounteragentResult::set_has_invitationdocumentid() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void AcquireCounteragentResult::clear_has_invitationdocumentid() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void AcquireCounteragentResult::clear_invitationdocumentid() {
+  if (invitationdocumentid_ != NULL) invitationdocumentid_->::Diadoc::Api::Proto::DocumentId::Clear();
+  clear_has_invitationdocumentid();
+}
+inline const ::Diadoc::Api::Proto::DocumentId& AcquireCounteragentResult::invitationdocumentid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.AcquireCounteragentResult.InvitationDocumentId)
+  return invitationdocumentid_ != NULL ? *invitationdocumentid_ : *default_instance_->invitationdocumentid_;
+}
+inline ::Diadoc::Api::Proto::DocumentId* AcquireCounteragentResult::mutable_invitationdocumentid() {
+  set_has_invitationdocumentid();
+  if (invitationdocumentid_ == NULL) invitationdocumentid_ = new ::Diadoc::Api::Proto::DocumentId;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.AcquireCounteragentResult.InvitationDocumentId)
+  return invitationdocumentid_;
+}
+inline ::Diadoc::Api::Proto::DocumentId* AcquireCounteragentResult::release_invitationdocumentid() {
+  clear_has_invitationdocumentid();
+  ::Diadoc::Api::Proto::DocumentId* temp = invitationdocumentid_;
+  invitationdocumentid_ = NULL;
+  return temp;
+}
+inline void AcquireCounteragentResult::set_allocated_invitationdocumentid(::Diadoc::Api::Proto::DocumentId* invitationdocumentid) {
+  delete invitationdocumentid_;
+  invitationdocumentid_ = invitationdocumentid;
+  if (invitationdocumentid) {
+    set_has_invitationdocumentid();
+  } else {
+    clear_has_invitationdocumentid();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.AcquireCounteragentResult.InvitationDocumentId)
 }
 
 

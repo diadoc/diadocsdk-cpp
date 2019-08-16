@@ -62,13 +62,14 @@ void protobuf_AssignDesc_Counteragent_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CounteragentList));
   Counteragent_descriptor_ = file->message_type(1);
-  static const int Counteragent_offsets_[6] = {
+  static const int Counteragent_offsets_[7] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Counteragent, indexkey_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Counteragent, organization_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Counteragent, currentstatus_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Counteragent, lasteventtimestampticks_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Counteragent, messagefromcounteragent_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Counteragent, messagetocounteragent_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Counteragent, invitationdocumentid_),
   };
   Counteragent_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -154,26 +155,29 @@ void protobuf_AddDesc_Counteragent_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::Diadoc::Api::Proto::protobuf_AddDesc_Organization_2eproto();
+  ::Diadoc::Api::Proto::protobuf_AddDesc_DocumentId_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\022Counteragent.proto\022\020Diadoc.Api.Proto\032\022"
-    "Organization.proto\"]\n\020CounteragentList\022\022"
-    "\n\nTotalCount\030\001 \002(\005\0225\n\rCounteragents\030\002 \003("
-    "\0132\036.Diadoc.Api.Proto.Counteragent\"\217\002\n\014Co"
-    "unteragent\022\020\n\010IndexKey\030\001 \001(\t\0224\n\014Organiza"
-    "tion\030\002 \002(\0132\036.Diadoc.Api.Proto.Organizati"
-    "on\022V\n\rCurrentStatus\030\003 \001(\0162$.Diadoc.Api.P"
-    "roto.CounteragentStatus:\031UnknownCountera"
-    "gentStatus\022\037\n\027LastEventTimestampTicks\030\004 "
-    "\002(\020\022\037\n\027MessageFromCounteragent\030\006 \001(\t\022\035\n\025"
-    "MessageToCounteragent\030\007 \001(\t\"R\n\033Counterag"
-    "entCertificateList\0223\n\014Certificates\030\001 \003(\013"
-    "2\035.Diadoc.Api.Proto.Certificate\")\n\013Certi"
-    "ficate\022\032\n\022RawCertificateData\030\001 \002(\014*\251\001\n\022C"
-    "ounteragentStatus\022\035\n\031UnknownCounteragent"
-    "Status\020\000\022\024\n\020IsMyCounteragent\020\001\022\r\n\tInvite"
-    "sMe\020\002\022\021\n\rIsInvitedByMe\020\003\022\r\n\tRejectsMe\020\005\022"
-    "\022\n\016IsRejectedByMe\020\006\022\031\n\025NotInCounteragent"
-    "List\020\007", 726);
+    "Organization.proto\032\020DocumentId.proto\"]\n\020"
+    "CounteragentList\022\022\n\nTotalCount\030\001 \002(\005\0225\n\r"
+    "Counteragents\030\002 \003(\0132\036.Diadoc.Api.Proto.C"
+    "ounteragent\"\313\002\n\014Counteragent\022\020\n\010IndexKey"
+    "\030\001 \001(\t\0224\n\014Organization\030\002 \002(\0132\036.Diadoc.Ap"
+    "i.Proto.Organization\022V\n\rCurrentStatus\030\003 "
+    "\001(\0162$.Diadoc.Api.Proto.CounteragentStatu"
+    "s:\031UnknownCounteragentStatus\022\037\n\027LastEven"
+    "tTimestampTicks\030\004 \002(\020\022\037\n\027MessageFromCoun"
+    "teragent\030\006 \001(\t\022\035\n\025MessageToCounteragent\030"
+    "\007 \001(\t\022:\n\024InvitationDocumentId\030\010 \001(\0132\034.Di"
+    "adoc.Api.Proto.DocumentId\"R\n\033Counteragen"
+    "tCertificateList\0223\n\014Certificates\030\001 \003(\0132\035"
+    ".Diadoc.Api.Proto.Certificate\")\n\013Certifi"
+    "cate\022\032\n\022RawCertificateData\030\001 \002(\014*\251\001\n\022Cou"
+    "nteragentStatus\022\035\n\031UnknownCounteragentSt"
+    "atus\020\000\022\024\n\020IsMyCounteragent\020\001\022\r\n\tInvitesM"
+    "e\020\002\022\021\n\rIsInvitedByMe\020\003\022\r\n\tRejectsMe\020\005\022\022\n"
+    "\016IsRejectedByMe\020\006\022\031\n\025NotInCounteragentLi"
+    "st\020\007", 804);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Counteragent.proto", &protobuf_RegisterTypes);
   CounteragentList::default_instance_ = new CounteragentList();
@@ -485,6 +489,7 @@ const int Counteragent::kCurrentStatusFieldNumber;
 const int Counteragent::kLastEventTimestampTicksFieldNumber;
 const int Counteragent::kMessageFromCounteragentFieldNumber;
 const int Counteragent::kMessageToCounteragentFieldNumber;
+const int Counteragent::kInvitationDocumentIdFieldNumber;
 #endif  // !_MSC_VER
 
 Counteragent::Counteragent()
@@ -495,6 +500,7 @@ Counteragent::Counteragent()
 
 void Counteragent::InitAsDefaultInstance() {
   organization_ = const_cast< ::Diadoc::Api::Proto::Organization*>(&::Diadoc::Api::Proto::Organization::default_instance());
+  invitationdocumentid_ = const_cast< ::Diadoc::Api::Proto::DocumentId*>(&::Diadoc::Api::Proto::DocumentId::default_instance());
 }
 
 Counteragent::Counteragent(const Counteragent& from)
@@ -513,6 +519,7 @@ void Counteragent::SharedCtor() {
   lasteventtimestampticks_ = GOOGLE_LONGLONG(0);
   messagefromcounteragent_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   messagetocounteragent_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  invitationdocumentid_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -533,6 +540,7 @@ void Counteragent::SharedDtor() {
   }
   if (this != default_instance_) {
     delete organization_;
+    delete invitationdocumentid_;
   }
 }
 
@@ -558,7 +566,7 @@ Counteragent* Counteragent::New() const {
 }
 
 void Counteragent::Clear() {
-  if (_has_bits_[0 / 32] & 63) {
+  if (_has_bits_[0 / 32] & 127) {
     if (has_indexkey()) {
       if (indexkey_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         indexkey_->clear();
@@ -578,6 +586,9 @@ void Counteragent::Clear() {
       if (messagetocounteragent_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         messagetocounteragent_->clear();
       }
+    }
+    if (has_invitationdocumentid()) {
+      if (invitationdocumentid_ != NULL) invitationdocumentid_->::Diadoc::Api::Proto::DocumentId::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -688,6 +699,19 @@ bool Counteragent::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(66)) goto parse_InvitationDocumentId;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.DocumentId InvitationDocumentId = 8;
+      case 8: {
+        if (tag == 66) {
+         parse_InvitationDocumentId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_invitationdocumentid()));
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -764,6 +788,12 @@ void Counteragent::SerializeWithCachedSizes(
       7, this->messagetocounteragent(), output);
   }
 
+  // optional .Diadoc.Api.Proto.DocumentId InvitationDocumentId = 8;
+  if (has_invitationdocumentid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      8, this->invitationdocumentid(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -825,6 +855,13 @@ void Counteragent::SerializeWithCachedSizes(
         7, this->messagetocounteragent(), target);
   }
 
+  // optional .Diadoc.Api.Proto.DocumentId InvitationDocumentId = 8;
+  if (has_invitationdocumentid()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        8, this->invitationdocumentid(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -876,6 +913,13 @@ int Counteragent::ByteSize() const {
           this->messagetocounteragent());
     }
 
+    // optional .Diadoc.Api.Proto.DocumentId InvitationDocumentId = 8;
+    if (has_invitationdocumentid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->invitationdocumentid());
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -921,6 +965,9 @@ void Counteragent::MergeFrom(const Counteragent& from) {
     if (from.has_messagetocounteragent()) {
       set_messagetocounteragent(from.messagetocounteragent());
     }
+    if (from.has_invitationdocumentid()) {
+      mutable_invitationdocumentid()->::Diadoc::Api::Proto::DocumentId::MergeFrom(from.invitationdocumentid());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -943,6 +990,9 @@ bool Counteragent::IsInitialized() const {
   if (has_organization()) {
     if (!this->organization().IsInitialized()) return false;
   }
+  if (has_invitationdocumentid()) {
+    if (!this->invitationdocumentid().IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -954,6 +1004,7 @@ void Counteragent::Swap(Counteragent* other) {
     std::swap(lasteventtimestampticks_, other->lasteventtimestampticks_);
     std::swap(messagefromcounteragent_, other->messagefromcounteragent_);
     std::swap(messagetocounteragent_, other->messagetocounteragent_);
+    std::swap(invitationdocumentid_, other->invitationdocumentid_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
