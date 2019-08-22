@@ -1175,7 +1175,7 @@ Diadoc::Api::Proto::Invoicing::UniversalTransferDocumentBuyerTitleInfo DiadocApi
 Diadoc::Api::Proto::Invoicing::UniversalCorrectionDocumentSellerTitleInfo DiadocApi::ParseUniversalCorrectionDocumentSellerTitleXml(const Bytes_t& utdXmlContent, const std::wstring& documentVersion)
 {
 	WppTraceDebugOut("ParseUniversalCorrectionDocumentSellerTitleXml...");
-	
+
 	std::wstringstream queryString;
 	queryString << L"/ParseUniversalTransferDocumentSellerTitleXml"
 		<< L"?documentVersion=" << StringHelper::CanonicalizeUrl(documentVersion);
@@ -1738,7 +1738,7 @@ DetectDocumentTypesResponse DiadocApi::DetectDocumentTypes(const std::wstring& b
 	return FromProtoBytes<DetectDocumentTypesResponse>(PerformHttpRequest(buf.str(), content, POST));
 }
 
-DiadocApi::WebFile DiadocApi::GetContent(const std::wstring& typeNamedId, const std::wstring& function, const std::wstring& version, int titleIndex)
+DiadocApi::WebFile DiadocApi::GetContent(const std::wstring& typeNamedId, const std::wstring& function, const std::wstring& version, int titleIndex, XsdContentType contentType)
 {
 	WppTraceDebugOut("GetContent...");
 	std::wstringstream buf;
@@ -1746,6 +1746,12 @@ DiadocApi::WebFile DiadocApi::GetContent(const std::wstring& typeNamedId, const 
 	buf << L"&function=" << StringHelper::CanonicalizeUrl(function);
 	buf << L"&version=" << StringHelper::CanonicalizeUrl(version);
 	buf << L"&titleIndex=" << titleIndex;
+	switch (contentType)
+	{
+		case TitleXsd: buf << L"&contentType=TitleXsd"; break;
+		case UserContractXsd: buf << L"&contentType=UserContractXsd"; break;
+		default: throw std::runtime_error("Invalid XsdContentType value");
+	}
 	auto connect = session_.Connect(api_url_.c_str(), api_port_);
 	auto request = connect.OpenRequest(GET.c_str(), buf.str().c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
 	Bytes_t requestBody;

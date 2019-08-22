@@ -19,6 +19,7 @@ set (DIADOC_API_HEADERS
 	targetver.h
 	TaskResult.h
 	trace.h
+	XsdContentType.h
 )
 
 set (DIADOC_API_SOURCES
