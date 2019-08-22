@@ -53,6 +53,7 @@
 #include "DocumentFilter.h"
 #include "HttpSession.h"
 #include "TaskResult.h"
+#include "XsdContentType.h"
 
 class DiadocApi
 {
@@ -73,7 +74,7 @@ public:
 	Diadoc::Api::Proto::BoxList GetBoxes();
 	Diadoc::Api::Proto::BoxList GetBoxesByInnKpp(const std::wstring& inn, const std::wstring& kpp);
 	Diadoc::Api::Proto::BoxInfo GetBoxInfo(const std::wstring& boxId);
-	
+
 	Diadoc::Api::Proto::Events::BoxEventList GetNewEvents(const std::wstring& boxId, const std::wstring& afterMessageId = std::wstring());
 	Diadoc::Api::Proto::Events::BoxEvent GetEvent(const std::wstring& boxId, const std::wstring& eventId);
 
@@ -98,7 +99,7 @@ public:
 		__int64* timestampTo, const std::wstring& fromDocumentDate, const std::wstring& toDocumentDate, const std::wstring& departmentId, bool excludeSubdepartments, const std::string& afterIndexKey, int* count = NULL);
 	Diadoc::Api::Proto::Documents::DocumentList GetDocuments(const DocumentFilter& documentFilter);
 	Diadoc::Api::Proto::Documents::Document GetDocument(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& entityId);
-	
+
 	std::wstring Recognize(const std::wstring& fileName, const Bytes_t& fileContent);
 	Diadoc::Api::Proto::Recognition::Recognized GetRecognized(const std::wstring& recognitionId);
 
@@ -157,7 +158,7 @@ public:
 
 	WebFile GenerateInvoiceDocumentReceiptXml(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& attachmentId, const Diadoc::Api::Proto::Invoicing::Signer);
 	WebFile GenerateInvoiceCorrectionRequestXml(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& attachmentId, const Diadoc::Api::Proto::Invoicing::InvoiceCorrectionRequestInfo& correctionInfo);
-	
+
 	WebFile GenerateRevocationRequestXml(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& attachmentId, const Diadoc::Api::Proto::Invoicing::RevocationRequestInfo& revocationRequestInfo);
 	WebFile GenerateSignatureRejectionXml(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& attachmentId, const Diadoc::Api::Proto::Invoicing::SignatureRejectionInfo& signatureRejectionInfo);
 
@@ -296,7 +297,7 @@ public:
 	Diadoc::Api::Proto::Docflow::GetDocflowBatchResponse GetDocflows(const std::wstring& boxId, const Diadoc::Api::Proto::Docflow::GetDocflowBatchRequest& request);
 	Diadoc::Api::Proto::Docflow::GetDocflowEventsResponse GetDocflowEvents(const std::wstring& boxId, const Diadoc::Api::Proto::Docflow::GetDocflowEventsRequest& request);
 	Diadoc::Api::Proto::SignatureInfo GetSignatureInfo(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& entityId);
-	
+
 	void ForwardDocument(const std::wstring& boxId, const Diadoc::Api::Proto::Forwarding::ForwardDocumentRequest& request);
 	Diadoc::Api::Proto::Forwarding::GetForwardedDocumentsResponse GetForwardedDocuments(const std::wstring& boxId, const Diadoc::Api::Proto::Forwarding::GetForwardedDocumentsRequest& request);
 	Diadoc::Api::Proto::Forwarding::GetForwardedDocumentEventsResponse GetForwardedDocumentEvents(const std::wstring& boxId, const Diadoc::Api::Proto::Forwarding::GetForwardedDocumentEventsRequest& request);
@@ -312,7 +313,7 @@ public:
 	Diadoc::Api::Proto::Documents::Types::GetDocumentTypesResponse GetDocumentTypes(const std::wstring& boxId);
 	Diadoc::Api::Proto::Documents::Types::DetectDocumentTypesResponse DetectDocumentTypes(const std::wstring& boxId, const std::wstring& nameOnShelf);
 	Diadoc::Api::Proto::Documents::Types::DetectDocumentTypesResponse DetectDocumentTypes(const std::wstring& boxId, const Bytes_t& content);
-	WebFile GetContent(const std::wstring& typeNamedId, const std::wstring& function, const std::wstring& version, int titleIndex);
+	WebFile GetContent(const std::wstring& typeNamedId, const std::wstring& function, const std::wstring& version, int titleIndex, XsdContentType contentType = TitleXsd);
 
 	Diadoc::Api::Proto::Registration::RegistrationResponse Register(const Diadoc::Api::Proto::Registration::RegistrationRequest& request);
 	void RegisterConfirm(const Diadoc::Api::Proto::Registration::RegistrationConfirmRequest& request);
