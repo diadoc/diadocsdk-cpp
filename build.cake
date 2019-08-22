@@ -1,4 +1,4 @@
-#addin "Cake.CMake"
+#addin nuget:?package=Cake.CMake&version=1.1.1
 using Cake.Common.Diagnostics;
 using System.Text.RegularExpressions;
 
@@ -46,18 +46,18 @@ Task("CMake-Generate")
 		};
 		CMake("./", settings);
 	});
-	
+
 Task("CMake-Build-ProtoC")
 	.IsDependentOn("CMake-Generate")
 	.Does(() =>
 	{
 		var cmakeBuildSettings = GetBuildCMakeSettings()
 			.WithArguments(args => args.AppendSwitch("--target", "protoc"));
-				
+
 		var exitCode = StartProcess("cmake", cmakeBuildSettings);
 		if (exitCode != 0)
 			throw new Exception("failed to build with cmake");
-			
+
 		if (!FileExists(protocExe))
 			throw new Exception("protoc not found");
 	});
@@ -70,10 +70,10 @@ Task("CMake-Build")
 		var cmakeBuildSettings = GetBuildCMakeSettings();
 		var exitCode = StartProcess("cmake", cmakeBuildSettings);
 		if (exitCode != 0)
-			throw new Exception("failed to build with cmake"); 
+			throw new Exception("failed to build with cmake");
 	});
 
-	
+
 Task("GenerateProtoFiles")
 	.IsDependentOn("CMake-Build-ProtoC")
 	.Does(() =>
@@ -88,7 +88,7 @@ Task("GenerateProtoFiles")
 		var boxListFile = destinationProtoDir.CombineWithFilePath("BoxList.proto");
 		CompileProtoFiles(new [] { boxListFile }, destinationProtoDir, destinationProtoDir);
 	});
-	
+
 Task("PrepareBinaries")
 	.IsDependentOn("CMake-Build")
 	.Does(() =>
@@ -99,7 +99,7 @@ Task("PrepareBinaries")
 		CopyDirectory(buildDir.Combine("lib/" + configuration), buildDir.Combine(configuration + "/lib"));
 		Zip(buildDir.Combine(configuration), zipFileName);
 	});
-	
+
 Task("PublishArtifactsToAppVeyor")
 	.IsDependentOn("PrepareBinaries")
 	.WithCriteria(x => BuildSystem.IsRunningOnAppVeyor)
@@ -107,14 +107,14 @@ Task("PublishArtifactsToAppVeyor")
 	{
 		AppVeyor.UploadArtifact(zipFileName);
 	});
-	
+
 //////////////////////////////////////////////////////////////////////
 // TASK TARGETS
 //////////////////////////////////////////////////////////////////////
 
 Task("Default")
 	.IsDependentOn("AppVeyor");
-	
+
 Task("AppVeyor")
 	.IsDependentOn("PrepareBinaries")
 	.IsDependentOn("PublishArtifactsToAppVeyor");
@@ -135,7 +135,7 @@ public ProcessSettings GetBuildCMakeSettings()
 		.WithArguments(x => x
 			.AppendSwitchQuoted("--build", buildDir.FullPath)
 			.AppendSwitch("--config", configuration));
-			
+
 	return cmakeBuildSettings;
 }
 
@@ -150,7 +150,7 @@ public void CompileProtoFiles(IEnumerable<FilePath> files, DirectoryPath sourceP
 	{
 		protocArguments.WithArguments(args => args.Append(file.FullPath));
 	}
-	
+
 	var exitCode = StartProcess(protocExe, protocArguments);
 	if (exitCode != 0)
 	{
