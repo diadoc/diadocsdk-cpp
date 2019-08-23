@@ -320,7 +320,8 @@ public:
 	void RegisterConfirm(const Diadoc::Api::Proto::Registration::RegistrationConfirmRequest& request);
 
 protected:
-	Bytes_t PerformHttpRequest(const std::wstring& queryString, const Bytes_t& requestBody, const std::wstring& method);
+	DiadocApi::Bytes_t PerformHttpRequest(const std::wstring & queryString, const Bytes_t & requestBody, const std::wstring & method);
+	DiadocApi::Bytes_t PerformHttpRequest(const std::wstring & queryString, const Bytes_t & requestBody, const std::wstring & method, const std::wstring * contentType);
 	TaskResult<Bytes_t> PerformAsyncHttpRequest(const std::wstring& queryString, const Bytes_t& requestBody, const std::wstring& method);
 	Bytes_t PerformHttpRequest(const std::wstring& queryString, const std::wstring& method);
 	std::string PerformHttpRequestString(const std::wstring& queryString, const Bytes_t& requestBody, const std::wstring& method);
@@ -343,11 +344,15 @@ private:
 	static std::wstring GetVersionString();
 	static std::wstring GetUserAgent();
 	static std::string GetValueFromDraftResponseLine(const std::string& line);
-	void SendRequest(HttpRequest& request, const Bytes_t& requestBody);
+	
 
 	Diadoc::Api::Proto::Organization GetOrganization(const std::wstring& id, const std::wstring& idName);
 
+	void SendRequest(HttpRequest & request, const Bytes_t & requestBody, const std::wstring* contentType = 0);
+
 	std::wstring AuthorizationHeader();
+
+	std::wstring ContentTypeHeader(const std::wstring & contentType);
 
 	static Bytes_t ToProtoBytes(const google::protobuf::MessageLite& obj);
 
