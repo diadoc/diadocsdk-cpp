@@ -292,8 +292,8 @@ public:
 
 	Diadoc::Api::Proto::OrganizationUserPermissions GetMyPermissions(const std::wstring& orgId);
 
-	Diadoc::Api::Proto::KeyValueStorage::KeyValueStorageApiGetResponse GetOrganizationStorageEntries(const std::wstring& orgId, const Diadoc::Api::Proto::KeyValueStorage::KeyValueStorageApiGetRequest& keys);
-	void PutOrganizationStorageEntries(const std::wstring& orgId, const Diadoc::Api::Proto::KeyValueStorage::KeyValueStorageApiPutRequest& entries);
+	Diadoc::Api::Proto::KeyValueStorage::KeyValueStorageApiGetResponse GetOrganizationStorageEntries(const std::wstring& boxId, const Diadoc::Api::Proto::KeyValueStorage::KeyValueStorageApiGetRequest& keys);
+	void PutOrganizationStorageEntries(const std::wstring& boxId, const Diadoc::Api::Proto::KeyValueStorage::KeyValueStorageApiPutRequest& entries);
 
 	Diadoc::Api::Proto::Docflow::GetDocflowBatchResponse GetDocflows(const std::wstring& boxId, const Diadoc::Api::Proto::Docflow::GetDocflowBatchRequest& request);
 	Diadoc::Api::Proto::Docflow::GetDocflowEventsResponse GetDocflowEvents(const std::wstring& boxId, const Diadoc::Api::Proto::Docflow::GetDocflowEventsRequest& request);
