@@ -156,7 +156,8 @@ void protobuf_AssignDesc_Documents_2fTypes_2fDocumentTypeDescription_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(DocumentWorkflow));
   DocumentTitle_descriptor_ = file->message_type(5);
-  static const int DocumentTitle_offsets_[6] = {
+  static const int DocumentTitle_offsets_[7] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentTitle, index_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentTitle, isformal_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentTitle, xsdurl_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentTitle, userdataxsdurl_),
@@ -334,35 +335,36 @@ void protobuf_AddDesc_Documents_2fTypes_2fDocumentTypeDescription_2eproto() {
     "\006 \003(\01322.Diadoc.Api.Proto.Documents.Types"
     ".DocumentWorkflow\022(\n SupportsPredefinedR"
     "ecipientTitle\030\007 \002(\010\"1\n\020DocumentWorkflow\022"
-    "\n\n\002Id\030\001 \002(\005\022\021\n\tIsDefault\030\002 \002(\010\"\262\002\n\rDocum"
-    "entTitle\022\020\n\010IsFormal\030\001 \002(\010\022\016\n\006XsdUrl\030\002 \001"
-    "(\t\022\026\n\016UserDataXsdUrl\030\005 \001(\t\022@\n\nSignerInfo"
-    "\030\006 \002(\0132,.Diadoc.Api.Proto.Documents.Type"
-    "s.SignerInfo\022M\n\rMetadataItems\030\003 \003(\01326.Di"
-    "adoc.Api.Proto.Documents.Types.DocumentM"
-    "etadataItem\022V\n\026EncryptedMetadataItems\030\004 "
-    "\003(\01326.Diadoc.Api.Proto.Documents.Types.D"
-    "ocumentMetadataItem\"\260\001\n\nSignerInfo\022@\n\nSi"
-    "gnerType\030\001 \002(\0162,.Diadoc.Api.Proto.Docume"
-    "nts.Types.SignerType\022`\n\031ExtendedDocument"
-    "TitleType\030\002 \002(\01625.Diadoc.Api.Proto.Invoi"
-    "cing.Signers.DocumentTitleType:\006Absent\"\312"
-    "\001\n\024DocumentMetadataItem\022\n\n\002Id\030\001 \002(\t\022H\n\004T"
-    "ype\030\002 \002(\0162:.Diadoc.Api.Proto.Documents.T"
-    "ypes.DocumentMetadataItemType\022\022\n\nIsRequi"
-    "red\030\003 \002(\010\022H\n\006Source\030\004 \002(\01628.Diadoc.Api.P"
-    "roto.Documents.Types.DocumentMetadataSou"
-    "rce\"N\n\024DetectedDocumentType\022\023\n\013TypeNamed"
-    "Id\030\001 \002(\t\022\020\n\010Function\030\002 \002(\t\022\017\n\007Version\030\003 "
-    "\002(\t\"l\n\033DetectDocumentTypesResponse\022M\n\rDo"
-    "cumentTypes\030\001 \003(\01326.Diadoc.Api.Proto.Doc"
-    "uments.Types.DetectedDocumentType*-\n\017Doc"
-    "umentDocflow\022\014\n\010External\020\000\022\014\n\010Internal\020\001"
-    "*6\n\nSignerType\022\010\n\004None\020\000\022\n\n\006Signer\020\001\022\022\n\016"
-    "ExtendedSigner\020\002*T\n\030DocumentMetadataItem"
-    "Type\022\n\n\006String\020\000\022\013\n\007Integer\020\001\022\013\n\007Decimal"
-    "\020\002\022\010\n\004Date\020\003\022\010\n\004Time\020\004*+\n\026DocumentMetada"
-    "taSource\022\007\n\003Xml\020\000\022\010\n\004User\020\001", 2027);
+    "\n\n\002Id\030\001 \002(\005\022\021\n\tIsDefault\030\002 \002(\010\"\301\002\n\rDocum"
+    "entTitle\022\r\n\005Index\030\007 \002(\005\022\020\n\010IsFormal\030\001 \002("
+    "\010\022\016\n\006XsdUrl\030\002 \001(\t\022\026\n\016UserDataXsdUrl\030\005 \001("
+    "\t\022@\n\nSignerInfo\030\006 \002(\0132,.Diadoc.Api.Proto"
+    ".Documents.Types.SignerInfo\022M\n\rMetadataI"
+    "tems\030\003 \003(\01326.Diadoc.Api.Proto.Documents."
+    "Types.DocumentMetadataItem\022V\n\026EncryptedM"
+    "etadataItems\030\004 \003(\01326.Diadoc.Api.Proto.Do"
+    "cuments.Types.DocumentMetadataItem\"\260\001\n\nS"
+    "ignerInfo\022@\n\nSignerType\030\001 \002(\0162,.Diadoc.A"
+    "pi.Proto.Documents.Types.SignerType\022`\n\031E"
+    "xtendedDocumentTitleType\030\002 \002(\01625.Diadoc."
+    "Api.Proto.Invoicing.Signers.DocumentTitl"
+    "eType:\006Absent\"\312\001\n\024DocumentMetadataItem\022\n"
+    "\n\002Id\030\001 \002(\t\022H\n\004Type\030\002 \002(\0162:.Diadoc.Api.Pr"
+    "oto.Documents.Types.DocumentMetadataItem"
+    "Type\022\022\n\nIsRequired\030\003 \002(\010\022H\n\006Source\030\004 \002(\016"
+    "28.Diadoc.Api.Proto.Documents.Types.Docu"
+    "mentMetadataSource\"N\n\024DetectedDocumentTy"
+    "pe\022\023\n\013TypeNamedId\030\001 \002(\t\022\020\n\010Function\030\002 \002("
+    "\t\022\017\n\007Version\030\003 \002(\t\"l\n\033DetectDocumentType"
+    "sResponse\022M\n\rDocumentTypes\030\001 \003(\01326.Diado"
+    "c.Api.Proto.Documents.Types.DetectedDocu"
+    "mentType*-\n\017DocumentDocflow\022\014\n\010External\020"
+    "\000\022\014\n\010Internal\020\001*6\n\nSignerType\022\010\n\004None\020\000\022"
+    "\n\n\006Signer\020\001\022\022\n\016ExtendedSigner\020\002*T\n\030Docum"
+    "entMetadataItemType\022\n\n\006String\020\000\022\013\n\007Integ"
+    "er\020\001\022\013\n\007Decimal\020\002\022\010\n\004Date\020\003\022\010\n\004Time\020\004*+\n"
+    "\026DocumentMetadataSource\022\007\n\003Xml\020\000\022\010\n\004User"
+    "\020\001", 2042);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Documents/Types/DocumentTypeDescription.proto", &protobuf_RegisterTypes);
   DocumentTypeDescription::default_instance_ = new DocumentTypeDescription();
@@ -2154,6 +2156,7 @@ void DocumentWorkflow::Swap(DocumentWorkflow* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
+const int DocumentTitle::kIndexFieldNumber;
 const int DocumentTitle::kIsFormalFieldNumber;
 const int DocumentTitle::kXsdUrlFieldNumber;
 const int DocumentTitle::kUserDataXsdUrlFieldNumber;
@@ -2182,6 +2185,7 @@ DocumentTitle::DocumentTitle(const DocumentTitle& from)
 void DocumentTitle::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
+  index_ = 0;
   isformal_ = false;
   xsdurl_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   userdataxsdurl_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -2228,8 +2232,18 @@ DocumentTitle* DocumentTitle::New() const {
 }
 
 void DocumentTitle::Clear() {
-  if (_has_bits_[0 / 32] & 15) {
-    isformal_ = false;
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<DocumentTitle*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  if (_has_bits_[0 / 32] & 31) {
+    ZR_(index_, isformal_);
     if (has_xsdurl()) {
       if (xsdurl_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         xsdurl_->clear();
@@ -2244,6 +2258,10 @@ void DocumentTitle::Clear() {
       if (signerinfo_ != NULL) signerinfo_->::Diadoc::Api::Proto::Documents::Types::SignerInfo::Clear();
     }
   }
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
   metadataitems_.Clear();
   encryptedmetadataitems_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -2345,6 +2363,21 @@ bool DocumentTitle::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(56)) goto parse_Index;
+        break;
+      }
+
+      // required int32 Index = 7;
+      case 7: {
+        if (tag == 56) {
+         parse_Index:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &index_)));
+          set_has_index();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -2417,6 +2450,11 @@ void DocumentTitle::SerializeWithCachedSizes(
       6, this->signerinfo(), output);
   }
 
+  // required int32 Index = 7;
+  if (has_index()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->index(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -2475,6 +2513,11 @@ void DocumentTitle::SerializeWithCachedSizes(
         6, this->signerinfo(), target);
   }
 
+  // required int32 Index = 7;
+  if (has_index()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(7, this->index(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -2487,6 +2530,13 @@ int DocumentTitle::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required int32 Index = 7;
+    if (has_index()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->index());
+    }
+
     // required bool IsFormal = 1;
     if (has_isformal()) {
       total_size += 1 + 1;
@@ -2558,6 +2608,9 @@ void DocumentTitle::MergeFrom(const DocumentTitle& from) {
   metadataitems_.MergeFrom(from.metadataitems_);
   encryptedmetadataitems_.MergeFrom(from.encryptedmetadataitems_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_index()) {
+      set_index(from.index());
+    }
     if (from.has_isformal()) {
       set_isformal(from.isformal());
     }
@@ -2587,7 +2640,7 @@ void DocumentTitle::CopyFrom(const DocumentTitle& from) {
 }
 
 bool DocumentTitle::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000009) != 0x00000009) return false;
+  if ((_has_bits_[0] & 0x00000013) != 0x00000013) return false;
 
   if (has_signerinfo()) {
     if (!this->signerinfo().IsInitialized()) return false;
@@ -2599,6 +2652,7 @@ bool DocumentTitle::IsInitialized() const {
 
 void DocumentTitle::Swap(DocumentTitle* other) {
   if (other != this) {
+    std::swap(index_, other->index_);
     std::swap(isformal_, other->isformal_);
     std::swap(xsdurl_, other->xsdurl_);
     std::swap(userdataxsdurl_, other->userdataxsdurl_);

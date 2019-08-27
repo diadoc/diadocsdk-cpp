@@ -736,6 +736,13 @@ class DocumentTitle : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
+  // required int32 Index = 7;
+  inline bool has_index() const;
+  inline void clear_index();
+  static const int kIndexFieldNumber = 7;
+  inline ::google::protobuf::int32 index() const;
+  inline void set_index(::google::protobuf::int32 value);
+
   // required bool IsFormal = 1;
   inline bool has_isformal() const;
   inline void clear_isformal();
@@ -802,6 +809,8 @@ class DocumentTitle : public ::google::protobuf::Message {
 
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.Types.DocumentTitle)
  private:
+  inline void set_has_index();
+  inline void clear_has_index();
   inline void set_has_isformal();
   inline void clear_has_isformal();
   inline void set_has_xsdurl();
@@ -815,12 +824,13 @@ class DocumentTitle : public ::google::protobuf::Message {
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
+  ::google::protobuf::int32 index_;
+  bool isformal_;
   ::std::string* xsdurl_;
   ::std::string* userdataxsdurl_;
   ::Diadoc::Api::Proto::Documents::Types::SignerInfo* signerinfo_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentMetadataItem > metadataitems_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentMetadataItem > encryptedmetadataitems_;
-  bool isformal_;
   friend void  protobuf_AddDesc_Documents_2fTypes_2fDocumentTypeDescription_2eproto();
   friend void protobuf_AssignDesc_Documents_2fTypes_2fDocumentTypeDescription_2eproto();
   friend void protobuf_ShutdownFile_Documents_2fTypes_2fDocumentTypeDescription_2eproto();
@@ -1908,15 +1918,39 @@ inline void DocumentWorkflow::set_isdefault(bool value) {
 
 // DocumentTitle
 
-// required bool IsFormal = 1;
-inline bool DocumentTitle::has_isformal() const {
+// required int32 Index = 7;
+inline bool DocumentTitle::has_index() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void DocumentTitle::set_has_isformal() {
+inline void DocumentTitle::set_has_index() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void DocumentTitle::clear_has_isformal() {
+inline void DocumentTitle::clear_has_index() {
   _has_bits_[0] &= ~0x00000001u;
+}
+inline void DocumentTitle::clear_index() {
+  index_ = 0;
+  clear_has_index();
+}
+inline ::google::protobuf::int32 DocumentTitle::index() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Types.DocumentTitle.Index)
+  return index_;
+}
+inline void DocumentTitle::set_index(::google::protobuf::int32 value) {
+  set_has_index();
+  index_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Types.DocumentTitle.Index)
+}
+
+// required bool IsFormal = 1;
+inline bool DocumentTitle::has_isformal() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void DocumentTitle::set_has_isformal() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void DocumentTitle::clear_has_isformal() {
+  _has_bits_[0] &= ~0x00000002u;
 }
 inline void DocumentTitle::clear_isformal() {
   isformal_ = false;
@@ -1934,13 +1968,13 @@ inline void DocumentTitle::set_isformal(bool value) {
 
 // optional string XsdUrl = 2;
 inline bool DocumentTitle::has_xsdurl() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
+  return (_has_bits_[0] & 0x00000004u) != 0;
 }
 inline void DocumentTitle::set_has_xsdurl() {
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000004u;
 }
 inline void DocumentTitle::clear_has_xsdurl() {
-  _has_bits_[0] &= ~0x00000002u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline void DocumentTitle::clear_xsdurl() {
   if (xsdurl_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
@@ -2010,13 +2044,13 @@ inline void DocumentTitle::set_allocated_xsdurl(::std::string* xsdurl) {
 
 // optional string UserDataXsdUrl = 5;
 inline bool DocumentTitle::has_userdataxsdurl() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 inline void DocumentTitle::set_has_userdataxsdurl() {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
 }
 inline void DocumentTitle::clear_has_userdataxsdurl() {
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline void DocumentTitle::clear_userdataxsdurl() {
   if (userdataxsdurl_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
@@ -2086,13 +2120,13 @@ inline void DocumentTitle::set_allocated_userdataxsdurl(::std::string* userdatax
 
 // required .Diadoc.Api.Proto.Documents.Types.SignerInfo SignerInfo = 6;
 inline bool DocumentTitle::has_signerinfo() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 inline void DocumentTitle::set_has_signerinfo() {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000010u;
 }
 inline void DocumentTitle::clear_has_signerinfo() {
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline void DocumentTitle::clear_signerinfo() {
   if (signerinfo_ != NULL) signerinfo_->::Diadoc::Api::Proto::Documents::Types::SignerInfo::Clear();
