@@ -78,8 +78,9 @@ void protobuf_AssignDesc_AcquireCounteragent_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(InvitationDocument));
   AcquireCounteragentResult_descriptor_ = file->message_type(2);
-  static const int AcquireCounteragentResult_offsets_[1] = {
+  static const int AcquireCounteragentResult_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AcquireCounteragentResult, orgid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AcquireCounteragentResult, invitationdocumentid_),
   };
   AcquireCounteragentResult_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -130,18 +131,21 @@ void protobuf_AddDesc_AcquireCounteragent_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::Diadoc::Api::Proto::Events::protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
+  ::Diadoc::Api::Proto::protobuf_AddDesc_DocumentId_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\031AcquireCounteragent.proto\022\020Diadoc.Api."
     "Proto\032\"Events/DiadocMessage-PostApi.prot"
-    "o\"\231\001\n\032AcquireCounteragentRequest\022\r\n\005OrgI"
-    "d\030\001 \001(\t\022\013\n\003Inn\030\002 \001(\t\022\035\n\025MessageToCounter"
-    "agent\030\003 \001(\t\022@\n\022InvitationDocument\030\004 \001(\0132"
-    "$.Diadoc.Api.Proto.InvitationDocument\"\226\001"
-    "\n\022InvitationDocument\022=\n\rSignedContent\030\001 "
-    "\002(\0132&.Diadoc.Api.Proto.Events.SignedCont"
-    "ent\022\020\n\010FileName\030\002 \002(\t\022!\n\022SignatureReques"
-    "ted\030\003 \001(\010:\005false\022\014\n\004Type\030\004 \001(\t\"*\n\031Acquir"
-    "eCounteragentResult\022\r\n\005OrgId\030\001 \002(\t", 434);
+    "o\032\020DocumentId.proto\"\231\001\n\032AcquireCounterag"
+    "entRequest\022\r\n\005OrgId\030\001 \001(\t\022\013\n\003Inn\030\002 \001(\t\022\035"
+    "\n\025MessageToCounteragent\030\003 \001(\t\022@\n\022Invitat"
+    "ionDocument\030\004 \001(\0132$.Diadoc.Api.Proto.Inv"
+    "itationDocument\"\226\001\n\022InvitationDocument\022="
+    "\n\rSignedContent\030\001 \002(\0132&.Diadoc.Api.Proto"
+    ".Events.SignedContent\022\020\n\010FileName\030\002 \002(\t\022"
+    "!\n\022SignatureRequested\030\003 \001(\010:\005false\022\014\n\004Ty"
+    "pe\030\004 \001(\t\"f\n\031AcquireCounteragentResult\022\r\n"
+    "\005OrgId\030\001 \002(\t\022:\n\024InvitationDocumentId\030\002 \001"
+    "(\0132\034.Diadoc.Api.Proto.DocumentId", 512);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "AcquireCounteragent.proto", &protobuf_RegisterTypes);
   AcquireCounteragentRequest::default_instance_ = new AcquireCounteragentRequest();
@@ -960,6 +964,7 @@ void InvitationDocument::Swap(InvitationDocument* other) {
 
 #ifndef _MSC_VER
 const int AcquireCounteragentResult::kOrgIdFieldNumber;
+const int AcquireCounteragentResult::kInvitationDocumentIdFieldNumber;
 #endif  // !_MSC_VER
 
 AcquireCounteragentResult::AcquireCounteragentResult()
@@ -969,6 +974,7 @@ AcquireCounteragentResult::AcquireCounteragentResult()
 }
 
 void AcquireCounteragentResult::InitAsDefaultInstance() {
+  invitationdocumentid_ = const_cast< ::Diadoc::Api::Proto::DocumentId*>(&::Diadoc::Api::Proto::DocumentId::default_instance());
 }
 
 AcquireCounteragentResult::AcquireCounteragentResult(const AcquireCounteragentResult& from)
@@ -982,6 +988,7 @@ void AcquireCounteragentResult::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   orgid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  invitationdocumentid_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -995,6 +1002,7 @@ void AcquireCounteragentResult::SharedDtor() {
     delete orgid_;
   }
   if (this != default_instance_) {
+    delete invitationdocumentid_;
   }
 }
 
@@ -1020,9 +1028,14 @@ AcquireCounteragentResult* AcquireCounteragentResult::New() const {
 }
 
 void AcquireCounteragentResult::Clear() {
-  if (has_orgid()) {
-    if (orgid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-      orgid_->clear();
+  if (_has_bits_[0 / 32] & 3) {
+    if (has_orgid()) {
+      if (orgid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        orgid_->clear();
+      }
+    }
+    if (has_invitationdocumentid()) {
+      if (invitationdocumentid_ != NULL) invitationdocumentid_->::Diadoc::Api::Proto::DocumentId::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -1048,6 +1061,19 @@ bool AcquireCounteragentResult::MergePartialFromCodedStream(
             this->orgid().data(), this->orgid().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
             "orgid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_InvitationDocumentId;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.DocumentId InvitationDocumentId = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_InvitationDocumentId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_invitationdocumentid()));
         } else {
           goto handle_unusual;
         }
@@ -1090,6 +1116,12 @@ void AcquireCounteragentResult::SerializeWithCachedSizes(
       1, this->orgid(), output);
   }
 
+  // optional .Diadoc.Api.Proto.DocumentId InvitationDocumentId = 2;
+  if (has_invitationdocumentid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->invitationdocumentid(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -1111,6 +1143,13 @@ void AcquireCounteragentResult::SerializeWithCachedSizes(
         1, this->orgid(), target);
   }
 
+  // optional .Diadoc.Api.Proto.DocumentId InvitationDocumentId = 2;
+  if (has_invitationdocumentid()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        2, this->invitationdocumentid(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -1128,6 +1167,13 @@ int AcquireCounteragentResult::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->orgid());
+    }
+
+    // optional .Diadoc.Api.Proto.DocumentId InvitationDocumentId = 2;
+    if (has_invitationdocumentid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->invitationdocumentid());
     }
 
   }
@@ -1160,6 +1206,9 @@ void AcquireCounteragentResult::MergeFrom(const AcquireCounteragentResult& from)
     if (from.has_orgid()) {
       set_orgid(from.orgid());
     }
+    if (from.has_invitationdocumentid()) {
+      mutable_invitationdocumentid()->::Diadoc::Api::Proto::DocumentId::MergeFrom(from.invitationdocumentid());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -1179,12 +1228,16 @@ void AcquireCounteragentResult::CopyFrom(const AcquireCounteragentResult& from) 
 bool AcquireCounteragentResult::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
 
+  if (has_invitationdocumentid()) {
+    if (!this->invitationdocumentid().IsInitialized()) return false;
+  }
   return true;
 }
 
 void AcquireCounteragentResult::Swap(AcquireCounteragentResult* other) {
   if (other != this) {
     std::swap(orgid_, other->orgid_);
+    std::swap(invitationdocumentid_, other->invitationdocumentid_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
