@@ -7,6 +7,8 @@
 #include "CryptHelper.h"
 #include "StringHelper.h"
 #include "Invoicing\FnsRegistrationMessageInfo.pb.h"
+#include "protos\LoginPassword.pb.h"
+
 
 using namespace Diadoc::Api::Proto;
 using namespace Diadoc::Api::Proto::Recognition;
@@ -250,11 +252,17 @@ DWORD ChooseAuthScheme(DWORD dwSupportedSchemes)
 
 DiadocApi::Bytes_t DiadocApi::PerformHttpRequest(const std::wstring& queryString, const Bytes_t& requestBody, const std::wstring& method)
 {
+	return PerformHttpRequest(queryString, requestBody, method, 0);
+}
+
+DiadocApi::Bytes_t DiadocApi::PerformHttpRequest(const std::wstring& queryString, const Bytes_t& requestBody, const std::wstring& method, const std::wstring* contentType)
+{
 	auto connect = session_.Connect(api_url_.c_str(), api_port_);
 	auto request = connect.OpenRequest(method.c_str(), queryString.c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
-	SendRequest(request, requestBody);
+	SendRequest(request, requestBody, contentType);
 	return request.ReadAllResponse();
 }
+
 
 TaskResult<DiadocApi::Bytes_t> DiadocApi::PerformAsyncHttpRequest(const std::wstring& queryString, const Bytes_t& requestBody, const std::wstring& method)
 {
@@ -273,12 +281,19 @@ std::string response_as_string(const HttpRequest& request)
 	return std::string(bytes.begin(), bytes.end());
 }
 
-void DiadocApi::SendRequest(HttpRequest& request, const Bytes_t& requestBody)
+void DiadocApi::SendRequest(HttpRequest& request, const Bytes_t& requestBody, const std::wstring* contentType)
 {
 	WppTraceDebugOut(L"SendRequest...");
 	DWORD dwProxyAuthScheme = 0;
-	auto autorizationHeader = AuthorizationHeader();
+	auto headers = AuthorizationHeader();
 	int authorizationCount = 0;
+
+	if (contentType != NULL)
+	{
+		headers += L";";
+		headers += ContentTypeHeader(*contentType);
+	}
+
 	while (true)
 	{
 		//  If a proxy authentication challenge was responded to, reset
@@ -294,7 +309,7 @@ void DiadocApi::SendRequest(HttpRequest& request, const Bytes_t& requestBody)
 		}
 
 		WppTraceDebugOut(L"\tSending request...");
-		request.Send(autorizationHeader.c_str(), autorizationHeader.size(), WINHTTP_NO_REQUEST_DATA, 0, requestBody.size(), 0);
+		request.Send(headers.c_str(), headers.size(), WINHTTP_NO_REQUEST_DATA, 0, requestBody.size(), 0);
 		if (!requestBody.empty()) {
 			WppTraceDebugOut(L"\tWriting data (%i size)...",requestBody.size());
 			request.WriteData(&requestBody[0], requestBody.size());
@@ -352,6 +367,13 @@ std::wstring DiadocApi::AuthorizationHeader()
 	headers_stream << L"Authorization: DiadocAuth ddauth_api_client_id=" << api_client_id_;
 	if (token_.length() > 0)
 		headers_stream << L",ddauth_token=" << token_.c_str();
+	return headers_stream.str();
+}
+
+std::wstring DiadocApi::ContentTypeHeader(const std::wstring& contentType)
+{
+	std::wstringstream headers_stream;
+	headers_stream << L"Content-Type:" << contentType;
 	return headers_stream.str();
 }
 
@@ -413,20 +435,26 @@ void DiadocApi::Authenticate(const std::wstring& login, const std::wstring& pass
 {
 	WppTraceDebugOut(L"Authenticating by login/password pair...");
 	std::wstringstream wss;
-	wss << L"/V2/Authenticate?login=" << StringHelper::CanonicalizeUrl(login) << L"&password=" << StringHelper::CanonicalizeUrl(password) << std::flush;
-	auto response = PerformHttpRequestString(wss.str(), POST);
+	wss << L"/V3/Authenticate?type=password" << std::flush;
+	Diadoc::Api::Proto::LoginPassword loginPassword;
+
+	loginPassword.set_allocated_login(&std::string(login.begin(), login.end()));
+	loginPassword.set_allocated_password(&std::string(password.begin(), password.end()));
+
+	auto response = PerformHttpRequestString(wss.str(), ToProtoBytes(loginPassword), POST);
 	token_ = StringHelper::Utf8ToUtf16(response);
 }
 
 void DiadocApi::Authenticate(const Bytes_t& certBytes, bool useLocalMachineStorage)
 {
 	WppTraceDebugOut(L"Authenticating by certBytes...");
-	auto response = PerformHttpRequest(L"/V2/Authenticate", certBytes, POST);
+	std::wstring contentType = L"application/octet-stream";
+	auto response = PerformHttpRequest(L"/V3/Authenticate?type=certificate", certBytes, POST, &contentType);
 	CertSystemStore store(useLocalMachineStorage);
 	auto decryptedToken = store.Decrypt(response);
 
 	std::wstringstream wss;
-	wss << L"/V2/AuthenticateConfirm?token=" << StringHelper::CanonicalizeUrl(CryptHelper::ToBase64(decryptedToken)) << std::flush;
+	wss << L"/V3/AuthenticateConfirm?token=" << StringHelper::CanonicalizeUrl(CryptHelper::ToBase64(decryptedToken)) << std::flush;
 	auto confirmResponse = PerformHttpRequestString(wss.str(), certBytes, POST);
 	token_ = StringHelper::Utf8ToUtf16(confirmResponse);
 }
