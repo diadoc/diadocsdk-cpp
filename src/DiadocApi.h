@@ -47,6 +47,7 @@
 #include "protos\GetOrganizationsByInnList.pb.h"
 #include "protos\AsyncMethodResult.pb.h"
 #include "protos\CloudSign.pb.h"
+#include "protos\Dss\DssSign.pb.h"
 #include "protos\AcquireCounteragent.pb.h"
 #include "protos\CustomPrintFormDetection.pb.h"
 #include "protos\Registration\RegistrationRequest.pb.h"
@@ -310,6 +311,8 @@ public:
 	TaskResult<Diadoc::Api::Proto::CloudSignConfirmResult> CloudSignConfirmResult(const std::wstring& taskId);
 	Diadoc::Api::Proto::AsyncMethodResult AutoSignReceipts(const std::wstring& boxId, const std::wstring& certificateThumbprint, const std::wstring& batchKey);
 	TaskResult<Diadoc::Api::Proto::AutosignReceiptsResult> WaitAutosignReceiptsResult(const std::wstring& taskId);
+	Diadoc::Api::Proto::AsyncMethodResult DssSign(const std::wstring& boxId, const Diadoc::Api::Proto::Dss::DssSignRequest& request, const std::wstring& certificateThumbprint);
+	Diadoc::Api::Proto::Dss::DssSignResult DssSignResult(const std::wstring& boxId, const std::wstring& taskId);
 	Diadoc::Api::Proto::Documents::DocumentList GetDocumentsByMessageId(const std::wstring& boxId, const std::wstring& messageId);
 	Diadoc::Api::Proto::Documents::Types::GetDocumentTypesResponse GetDocumentTypes(const std::wstring& boxId);
 	Diadoc::Api::Proto::Documents::Types::DetectDocumentTypesResponse DetectDocumentTypes(const std::wstring& boxId, const std::wstring& nameOnShelf);

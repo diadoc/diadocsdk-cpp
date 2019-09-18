@@ -19,6 +19,7 @@ using namespace Diadoc::Api::Proto::Forwarding;
 using namespace Diadoc::Api::Proto::Events;
 using namespace Diadoc::Api::Proto::Invoicing;
 using namespace Diadoc::Api::Proto::KeyValueStorage;
+using namespace Diadoc::Api::Proto::Dss;
 
 const std::wstring DiadocApi::GET(L"GET");
 const std::wstring DiadocApi::POST(L"POST");
@@ -1760,6 +1761,24 @@ AsyncMethodResult DiadocApi::AutoSignReceipts(const std::wstring& boxId, const s
 TaskResult<AutosignReceiptsResult> DiadocApi::WaitAutosignReceiptsResult(const std::wstring &taskId)
 {
 	return PerformAsyncHttpRequest<Diadoc::Api::Proto::AutosignReceiptsResult>("AutosignReceiptsResult", L"taskId=" + StringHelper::CanonicalizeUrl(taskId), GET);
+}
+
+AsyncMethodResult DiadocApi::DssSign(const std::wstring& boxId, const DssSignRequest& request, const std::wstring& certificateThumbprint)
+{
+	WppTraceDebugOut("DssSign...");
+	std::wstringstream buf;
+	buf << L"/DssSign?boxId=" << StringHelper::CanonicalizeUrl(boxId);
+	buf << L"&certificateThumbprint=" << StringHelper::CanonicalizeUrl(certificateThumbprint);
+	return FromProtoBytes<AsyncMethodResult>(PerformHttpRequest(buf.str(), ToProtoBytes(request), POST));
+}
+
+DssSignResult DiadocApi::DssSignResult(const std::wstring& boxId, const std::wstring& taskId)
+{
+	WppTraceDebugOut("DssSignResult...");
+	std::wstringstream buf;
+	buf << L"/DssSignResult?boxId=" << StringHelper::CanonicalizeUrl(boxId);
+	buf << L"&taskId=" << StringHelper::CanonicalizeUrl(taskId);
+	return FromProtoBytes<Dss::DssSignResult>(PerformHttpRequest(buf.str(), GET));
 }
 
 DocumentList DiadocApi::GetDocumentsByMessageId(const std::wstring& boxId, const std::wstring& messageId)
