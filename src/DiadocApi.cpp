@@ -803,6 +803,19 @@ DiadocApi::WebFile::~WebFile()
 {
 }
 
+
+DiadocApi::WebFile DiadocApi::GenerateReceiptXml(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& attachmentId, const Diadoc::Api::Proto::Invoicing::Signer signer)
+{
+    WppTraceDebugOut("GenerateReceiptXml...");
+    auto requestBody = ToProtoBytes(signer);
+    std::wstringstream buf;
+    buf << L"/GenerateReceiptXml?boxId=" << StringHelper::CanonicalizeUrl(boxId) << L"&messageId=" << StringHelper::CanonicalizeUrl(messageId) << L"&attachmentId=" << StringHelper::CanonicalizeUrl(attachmentId);
+    auto connect = session_.Connect(api_url_.c_str(), api_port_);
+    auto request = connect.OpenRequest(POST.c_str(), buf.str().c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
+    SendRequest(request, requestBody);
+    return WebFile(request);
+}
+
 DiadocApi::WebFile DiadocApi::GenerateDocumentReceiptXml(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& attachmentId, const Diadoc::Api::Proto::Invoicing::Signer signer)
 {
 	WppTraceDebugOut("GenerateDocumentReceiptXml...");
