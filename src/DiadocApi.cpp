@@ -1826,6 +1826,22 @@ DetectDocumentTypesResponse DiadocApi::DetectDocumentTypes(const std::wstring& b
 	return FromProtoBytes<DetectDocumentTypesResponse>(PerformHttpRequest(buf.str(), content, POST));
 }
 
+DetectTitleResponse DiadocApi::DetectDocumentTitles(const std::wstring& boxId, const std::wstring& nameOnShelf)
+{
+    WppTraceDebugOut("DetectDocumentTitles...");
+    auto queryString = L"/DetectDocumentTitles?boxId=" + StringHelper::CanonicalizeUrl(boxId)
+                       + L"&nameOnShelf=" + StringHelper::CanonicalizeUrl(nameOnShelf);
+    return FromProtoBytes<DetectTitleResponse>(PerformHttpRequest(queryString, GET));
+}
+
+DetectTitleResponse DiadocApi::DetectDocumentTitles(const std::wstring& boxId, const Bytes_t& content)
+{
+    WppTraceDebugOut("DetectDocumentTitles...");
+    std::wstringstream buf;
+    buf << L"/DetectDocumentTitles?boxId=" << StringHelper::CanonicalizeUrl(boxId);
+    return FromProtoBytes<DetectTitleResponse>(PerformHttpRequest(buf.str(), content, POST));
+}
+
 DiadocApi::WebFile DiadocApi::GetContent(const std::wstring& typeNamedId, const std::wstring& function, const std::wstring& version, int titleIndex, XsdContentType contentType)
 {
 	WppTraceDebugOut("GetContent...");
