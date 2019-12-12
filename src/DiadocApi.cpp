@@ -291,7 +291,7 @@ void DiadocApi::SendRequest(HttpRequest& request, const Bytes_t& requestBody, co
 
 	if (contentType != NULL)
 	{
-		headers += L";";
+		headers += L"\r\n";
 		headers += ContentTypeHeader(*contentType);
 	}
 
