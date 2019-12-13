@@ -7,6 +7,7 @@
 #include "protos\Events\DiadocMessage-PostApi.pb.h"
 #include "protos\Recognition\Recognition.pb.h"
 #include "protos\Documents\Document.pb.h"
+#include "protos\Documents\DetectTitleResponse.pb.h"
 #include "protos\Documents\DocumentList.pb.h"
 #include "protos\Documents\DocumentsMoveOperation.pb.h"
 #include "protos\Documents\DocumentProtocol.pb.h"
@@ -317,8 +318,19 @@ public:
 	Diadoc::Api::Proto::Dss::DssSignResult DssSignResult(const std::wstring& boxId, const std::wstring& taskId);
 	Diadoc::Api::Proto::Documents::DocumentList GetDocumentsByMessageId(const std::wstring& boxId, const std::wstring& messageId);
 	Diadoc::Api::Proto::Documents::Types::GetDocumentTypesResponse GetDocumentTypes(const std::wstring& boxId);
+
+	// WARN: [[deprecated]]
+	// WARN: Use DetectDocumentTitles method
 	Diadoc::Api::Proto::Documents::Types::DetectDocumentTypesResponse DetectDocumentTypes(const std::wstring& boxId, const std::wstring& nameOnShelf);
+
+	Diadoc::Api::Proto::Documents::DetectTitleResponse DetectDocumentTitles(const std::wstring& boxId, const std::wstring& nameOnShelf);
+
+	// WARN: [[deprecated]]
+	// WARN: Use DetectDocumentTitles method
 	Diadoc::Api::Proto::Documents::Types::DetectDocumentTypesResponse DetectDocumentTypes(const std::wstring& boxId, const Bytes_t& content);
+
+	Diadoc::Api::Proto::Documents::DetectTitleResponse DetectDocumentTitles(const std::wstring& boxId, const Bytes_t& content);
+
 	WebFile GetContent(const std::wstring& typeNamedId, const std::wstring& function, const std::wstring& version, int titleIndex, XsdContentType contentType = TitleXsd);
 
 	Diadoc::Api::Proto::Registration::RegistrationResponse Register(const Diadoc::Api::Proto::Registration::RegistrationRequest& request);
@@ -349,7 +361,7 @@ private:
 	static std::wstring GetVersionString();
 	static std::wstring GetUserAgent();
 	static std::string GetValueFromDraftResponseLine(const std::string& line);
-	
+
 
 	Diadoc::Api::Proto::Organization GetOrganization(const std::wstring& id, const std::wstring& idName);
 
