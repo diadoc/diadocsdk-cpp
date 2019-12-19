@@ -26,6 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "Timestamp.pb.h"
 #include "DocumentId.pb.h"
+#include "TotalCountType.pb.h"
 #include "TimeBasedFilter.pb.h"
 #include "Forwarding/ForwardedDocument.pb.h"
 // @@protoc_insertion_point(includes)
@@ -601,10 +602,19 @@ class GetForwardedDocumentEventsResponse : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Forwarding::ForwardedDocumentEvent >*
       mutable_events();
 
+  // required .Diadoc.Api.Proto.TotalCountType TotalCountType = 3;
+  inline bool has_totalcounttype() const;
+  inline void clear_totalcounttype();
+  static const int kTotalCountTypeFieldNumber = 3;
+  inline ::Diadoc::Api::Proto::TotalCountType totalcounttype() const;
+  inline void set_totalcounttype(::Diadoc::Api::Proto::TotalCountType value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Forwarding.GetForwardedDocumentEventsResponse)
  private:
   inline void set_has_totalcount();
   inline void clear_has_totalcount();
+  inline void set_has_totalcounttype();
+  inline void clear_has_totalcounttype();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -612,6 +622,7 @@ class GetForwardedDocumentEventsResponse : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Forwarding::ForwardedDocumentEvent > events_;
   ::google::protobuf::int32 totalcount_;
+  int totalcounttype_;
   friend void  protobuf_AddDesc_Forwarding_2fForwardingApi_2eproto();
   friend void protobuf_AssignDesc_Forwarding_2fForwardingApi_2eproto();
   friend void protobuf_ShutdownFile_Forwarding_2fForwardingApi_2eproto();
@@ -1266,6 +1277,31 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Forwarding::F
 GetForwardedDocumentEventsResponse::mutable_events() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Forwarding.GetForwardedDocumentEventsResponse.Events)
   return &events_;
+}
+
+// required .Diadoc.Api.Proto.TotalCountType TotalCountType = 3;
+inline bool GetForwardedDocumentEventsResponse::has_totalcounttype() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void GetForwardedDocumentEventsResponse::set_has_totalcounttype() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void GetForwardedDocumentEventsResponse::clear_has_totalcounttype() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void GetForwardedDocumentEventsResponse::clear_totalcounttype() {
+  totalcounttype_ = 0;
+  clear_has_totalcounttype();
+}
+inline ::Diadoc::Api::Proto::TotalCountType GetForwardedDocumentEventsResponse::totalcounttype() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Forwarding.GetForwardedDocumentEventsResponse.TotalCountType)
+  return static_cast< ::Diadoc::Api::Proto::TotalCountType >(totalcounttype_);
+}
+inline void GetForwardedDocumentEventsResponse::set_totalcounttype(::Diadoc::Api::Proto::TotalCountType value) {
+  assert(::Diadoc::Api::Proto::TotalCountType_IsValid(value));
+  set_has_totalcounttype();
+  totalcounttype_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Forwarding.GetForwardedDocumentEventsResponse.TotalCountType)
 }
 
 // -------------------------------------------------------------------

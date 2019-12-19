@@ -32,9 +32,6 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* DocflowStatusModel_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   DocflowStatusModel_reflection_ = NULL;
-const ::google::protobuf::Descriptor* RoamingNotification_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  RoamingNotification_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* DocflowStatusSeverity_descriptor_ = NULL;
 
 }  // namespace
@@ -113,22 +110,6 @@ void protobuf_AssignDesc_Docflow_2fDocflow_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(DocflowStatusModel));
-  RoamingNotification_descriptor_ = file->message_type(3);
-  static const int RoamingNotification_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RoamingNotification, notification_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RoamingNotification, issuccess_),
-  };
-  RoamingNotification_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      RoamingNotification_descriptor_,
-      RoamingNotification::default_instance_,
-      RoamingNotification_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RoamingNotification, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RoamingNotification, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(RoamingNotification));
   DocflowStatusSeverity_descriptor_ = file->enum_type(0);
 }
 
@@ -148,8 +129,6 @@ void protobuf_RegisterTypes(const ::std::string&) {
     DocflowStatus_descriptor_, &DocflowStatus::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     DocflowStatusModel_descriptor_, &DocflowStatusModel::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    RoamingNotification_descriptor_, &RoamingNotification::default_instance());
 }
 
 }  // namespace
@@ -161,8 +140,6 @@ void protobuf_ShutdownFile_Docflow_2fDocflow_2eproto() {
   delete DocflowStatus_reflection_;
   delete DocflowStatusModel::default_instance_;
   delete DocflowStatusModel_reflection_;
-  delete RoamingNotification::default_instance_;
-  delete RoamingNotification_reflection_;
 }
 
 void protobuf_AddDesc_Docflow_2fDocflow_2eproto() {
@@ -181,6 +158,7 @@ void protobuf_AddDesc_Docflow_2fDocflow_2eproto() {
   ::Diadoc::Api::Proto::Docflow::protobuf_AddDesc_Docflow_2fRevocationDocflow_2eproto();
   ::Diadoc::Api::Proto::Docflow::protobuf_AddDesc_Docflow_2fResolutionDocflow_2eproto();
   ::Diadoc::Api::Proto::Docflow::protobuf_AddDesc_Docflow_2fUniversalTransferDocumentDocflow_2eproto();
+  ::Diadoc::Api::Proto::Docflow::protobuf_AddDesc_Docflow_2fRoamingNotification_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\025Docflow/Docflow.proto\022\030Diadoc.Api.Prot"
     "o.Docflow\032\017Timestamp.proto\032\024CustomDataIt"
@@ -190,63 +168,59 @@ void protobuf_AddDesc_Docflow_2fDocflow_2eproto() {
     "low.proto\032!Docflow/XmlBilateralDocflow.p"
     "roto\032\037Docflow/RevocationDocflow.proto\032\037D"
     "ocflow/ResolutionDocflow.proto\032.Docflow/"
-    "UniversalTransferDocumentDocflow.proto\"\376"
-    "\t\n\007Docflow\022\022\n\nIsFinished\030\001 \001(\010\022F\n\022Docume"
-    "ntAttachment\030\002 \001(\0132*.Diadoc.Api.Proto.Do"
-    "cflow.SignedAttachment\022\024\n\014DepartmentId\030\003"
-    " \001(\t\022\031\n\021DocumentIsDeleted\030\004 \001(\010\022>\n\rDocfl"
-    "owStatus\030\005 \001(\0132\'.Diadoc.Api.Proto.Docflo"
-    "w.DocflowStatus\0222\n\rSendTimestamp\030\006 \001(\0132\033"
-    ".Diadoc.Api.Proto.Timestamp\0226\n\021DeliveryT"
-    "imestamp\030\007 \001(\0132\033.Diadoc.Api.Proto.Timest"
-    "amp\022N\n\025InboundInvoiceDocflow\030\010 \001(\0132/.Dia"
-    "doc.Api.Proto.Docflow.InboundInvoiceDocf"
-    "low\022P\n\026OutboundInvoiceDocflow\030\t \001(\01320.Di"
-    "adoc.Api.Proto.Docflow.OutboundInvoiceDo"
-    "cflow\022J\n\023XmlBilateralDocflow\030\n \001(\0132-.Dia"
-    "doc.Api.Proto.Docflow.XmlBilateralDocflo"
-    "w\022D\n\020BilateralDocflow\030\013 \001(\0132*.Diadoc.Api"
-    ".Proto.Docflow.BilateralDocflow\022F\n\021Unila"
-    "teralDocflow\030\014 \001(\0132+.Diadoc.Api.Proto.Do"
-    "cflow.UnilateralDocflow\022F\n\021RevocationDoc"
-    "flow\030\r \001(\0132+.Diadoc.Api.Proto.Docflow.Re"
-    "vocationDocflow\022F\n\021ResolutionDocflow\030\016 \001"
-    "(\0132+.Diadoc.Api.Proto.Docflow.Resolution"
-    "Docflow\0220\n(CanDocumentBeRevokedUnilatera"
-    "llyBySender\030\017 \001(\010\022\020\n\010PacketId\030\020 \001(\t\0224\n\nC"
-    "ustomData\030\021 \003(\0132 .Diadoc.Api.Proto.Custo"
-    "mDataItem\022r\n\'InboundUniversalTransferDoc"
-    "umentDocflow\030\022 \001(\0132A.Diadoc.Api.Proto.Do"
-    "cflow.InboundUniversalTransferDocumentDo"
-    "cflow\022t\n(OutboundUniversalTransferDocume"
-    "ntDocflow\030\023 \001(\0132B.Diadoc.Api.Proto.Docfl"
-    "ow.OutboundUniversalTransferDocumentDocf"
-    "low\022J\n\023RoamingNotification\030\024 \001(\0132-.Diado"
-    "c.Api.Proto.Docflow.RoamingNotification\""
-    "\233\001\n\rDocflowStatus\022C\n\rPrimaryStatus\030\001 \001(\013"
-    "2,.Diadoc.Api.Proto.Docflow.DocflowStatu"
-    "sModel\022E\n\017SecondaryStatus\030\002 \001(\0132,.Diadoc"
-    ".Api.Proto.Docflow.DocflowStatusModel\"\235\001"
-    "\n\022DocflowStatusModel\022_\n\010Severity\030\001 \001(\0162/"
-    ".Diadoc.Api.Proto.Docflow.DocflowStatusS"
-    "everity:\034UnknownDocflowStatusSeverity\022\022\n"
-    "\nStatusText\030\002 \001(\t\022\022\n\nStatusHint\030\003 \001(\t\"`\n"
-    "\023RoamingNotification\0226\n\014Notification\030\001 \002"
-    "(\0132 .Diadoc.Api.Proto.Docflow.Entity\022\021\n\t"
-    "IsSuccess\030\002 \002(\010*h\n\025DocflowStatusSeverity"
-    "\022 \n\034UnknownDocflowStatusSeverity\020\000\022\010\n\004In"
-    "fo\020\001\022\013\n\007Success\020\002\022\013\n\007Warning\020\003\022\t\n\005Error\020"
-    "\004", 2161);
+    "UniversalTransferDocumentDocflow.proto\032!"
+    "Docflow/RoamingNotification.proto\"\376\t\n\007Do"
+    "cflow\022\022\n\nIsFinished\030\001 \001(\010\022F\n\022DocumentAtt"
+    "achment\030\002 \001(\0132*.Diadoc.Api.Proto.Docflow"
+    ".SignedAttachment\022\024\n\014DepartmentId\030\003 \001(\t\022"
+    "\031\n\021DocumentIsDeleted\030\004 \001(\010\022>\n\rDocflowSta"
+    "tus\030\005 \001(\0132\'.Diadoc.Api.Proto.Docflow.Doc"
+    "flowStatus\0222\n\rSendTimestamp\030\006 \001(\0132\033.Diad"
+    "oc.Api.Proto.Timestamp\0226\n\021DeliveryTimest"
+    "amp\030\007 \001(\0132\033.Diadoc.Api.Proto.Timestamp\022N"
+    "\n\025InboundInvoiceDocflow\030\010 \001(\0132/.Diadoc.A"
+    "pi.Proto.Docflow.InboundInvoiceDocflow\022P"
+    "\n\026OutboundInvoiceDocflow\030\t \001(\01320.Diadoc."
+    "Api.Proto.Docflow.OutboundInvoiceDocflow"
+    "\022J\n\023XmlBilateralDocflow\030\n \001(\0132-.Diadoc.A"
+    "pi.Proto.Docflow.XmlBilateralDocflow\022D\n\020"
+    "BilateralDocflow\030\013 \001(\0132*.Diadoc.Api.Prot"
+    "o.Docflow.BilateralDocflow\022F\n\021Unilateral"
+    "Docflow\030\014 \001(\0132+.Diadoc.Api.Proto.Docflow"
+    ".UnilateralDocflow\022F\n\021RevocationDocflow\030"
+    "\r \001(\0132+.Diadoc.Api.Proto.Docflow.Revocat"
+    "ionDocflow\022F\n\021ResolutionDocflow\030\016 \001(\0132+."
+    "Diadoc.Api.Proto.Docflow.ResolutionDocfl"
+    "ow\0220\n(CanDocumentBeRevokedUnilaterallyBy"
+    "Sender\030\017 \001(\010\022\020\n\010PacketId\030\020 \001(\t\0224\n\nCustom"
+    "Data\030\021 \003(\0132 .Diadoc.Api.Proto.CustomData"
+    "Item\022r\n\'InboundUniversalTransferDocument"
+    "Docflow\030\022 \001(\0132A.Diadoc.Api.Proto.Docflow"
+    ".InboundUniversalTransferDocumentDocflow"
+    "\022t\n(OutboundUniversalTransferDocumentDoc"
+    "flow\030\023 \001(\0132B.Diadoc.Api.Proto.Docflow.Ou"
+    "tboundUniversalTransferDocumentDocflow\022J"
+    "\n\023RoamingNotification\030\024 \001(\0132-.Diadoc.Api"
+    ".Proto.Docflow.RoamingNotification\"\233\001\n\rD"
+    "ocflowStatus\022C\n\rPrimaryStatus\030\001 \001(\0132,.Di"
+    "adoc.Api.Proto.Docflow.DocflowStatusMode"
+    "l\022E\n\017SecondaryStatus\030\002 \001(\0132,.Diadoc.Api."
+    "Proto.Docflow.DocflowStatusModel\"\235\001\n\022Doc"
+    "flowStatusModel\022_\n\010Severity\030\001 \001(\0162/.Diad"
+    "oc.Api.Proto.Docflow.DocflowStatusSeveri"
+    "ty:\034UnknownDocflowStatusSeverity\022\022\n\nStat"
+    "usText\030\002 \001(\t\022\022\n\nStatusHint\030\003 \001(\t*h\n\025Docf"
+    "lowStatusSeverity\022 \n\034UnknownDocflowStatu"
+    "sSeverity\020\000\022\010\n\004Info\020\001\022\013\n\007Success\020\002\022\013\n\007Wa"
+    "rning\020\003\022\t\n\005Error\020\004", 2098);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Docflow/Docflow.proto", &protobuf_RegisterTypes);
   Docflow::default_instance_ = new Docflow();
   DocflowStatus::default_instance_ = new DocflowStatus();
   DocflowStatusModel::default_instance_ = new DocflowStatusModel();
-  RoamingNotification::default_instance_ = new RoamingNotification();
   Docflow::default_instance_->InitAsDefaultInstance();
   DocflowStatus::default_instance_->InitAsDefaultInstance();
   DocflowStatusModel::default_instance_->InitAsDefaultInstance();
-  RoamingNotification::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_Docflow_2fDocflow_2eproto);
 }
 
@@ -2024,276 +1998,6 @@ void DocflowStatusModel::Swap(DocflowStatusModel* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = DocflowStatusModel_descriptor_;
   metadata.reflection = DocflowStatusModel_reflection_;
-  return metadata;
-}
-
-
-// ===================================================================
-
-#ifndef _MSC_VER
-const int RoamingNotification::kNotificationFieldNumber;
-const int RoamingNotification::kIsSuccessFieldNumber;
-#endif  // !_MSC_VER
-
-RoamingNotification::RoamingNotification()
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Docflow.RoamingNotification)
-}
-
-void RoamingNotification::InitAsDefaultInstance() {
-  notification_ = const_cast< ::Diadoc::Api::Proto::Docflow::Entity*>(&::Diadoc::Api::Proto::Docflow::Entity::default_instance());
-}
-
-RoamingNotification::RoamingNotification(const RoamingNotification& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Docflow.RoamingNotification)
-}
-
-void RoamingNotification::SharedCtor() {
-  _cached_size_ = 0;
-  notification_ = NULL;
-  issuccess_ = false;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-}
-
-RoamingNotification::~RoamingNotification() {
-  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Docflow.RoamingNotification)
-  SharedDtor();
-}
-
-void RoamingNotification::SharedDtor() {
-  if (this != default_instance_) {
-    delete notification_;
-  }
-}
-
-void RoamingNotification::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* RoamingNotification::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return RoamingNotification_descriptor_;
-}
-
-const RoamingNotification& RoamingNotification::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_Docflow_2fDocflow_2eproto();
-  return *default_instance_;
-}
-
-RoamingNotification* RoamingNotification::default_instance_ = NULL;
-
-RoamingNotification* RoamingNotification::New() const {
-  return new RoamingNotification;
-}
-
-void RoamingNotification::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
-    if (has_notification()) {
-      if (notification_ != NULL) notification_->::Diadoc::Api::Proto::Docflow::Entity::Clear();
-    }
-    issuccess_ = false;
-  }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
-}
-
-bool RoamingNotification::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Docflow.RoamingNotification)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required .Diadoc.Api.Proto.Docflow.Entity Notification = 1;
-      case 1: {
-        if (tag == 10) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_notification()));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(16)) goto parse_IsSuccess;
-        break;
-      }
-
-      // required bool IsSuccess = 2;
-      case 2: {
-        if (tag == 16) {
-         parse_IsSuccess:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &issuccess_)));
-          set_has_issuccess();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectAtEnd()) goto success;
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Docflow.RoamingNotification)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Docflow.RoamingNotification)
-  return false;
-#undef DO_
-}
-
-void RoamingNotification::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Docflow.RoamingNotification)
-  // required .Diadoc.Api.Proto.Docflow.Entity Notification = 1;
-  if (has_notification()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->notification(), output);
-  }
-
-  // required bool IsSuccess = 2;
-  if (has_issuccess()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->issuccess(), output);
-  }
-
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Docflow.RoamingNotification)
-}
-
-::google::protobuf::uint8* RoamingNotification::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Docflow.RoamingNotification)
-  // required .Diadoc.Api.Proto.Docflow.Entity Notification = 1;
-  if (has_notification()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, this->notification(), target);
-  }
-
-  // required bool IsSuccess = 2;
-  if (has_issuccess()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->issuccess(), target);
-  }
-
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Docflow.RoamingNotification)
-  return target;
-}
-
-int RoamingNotification::ByteSize() const {
-  int total_size = 0;
-
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required .Diadoc.Api.Proto.Docflow.Entity Notification = 1;
-    if (has_notification()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->notification());
-    }
-
-    // required bool IsSuccess = 2;
-    if (has_issuccess()) {
-      total_size += 1 + 1;
-    }
-
-  }
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void RoamingNotification::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const RoamingNotification* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const RoamingNotification*>(
-      &from);
-  if (source == NULL) {
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-    MergeFrom(*source);
-  }
-}
-
-void RoamingNotification::MergeFrom(const RoamingNotification& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_notification()) {
-      mutable_notification()->::Diadoc::Api::Proto::Docflow::Entity::MergeFrom(from.notification());
-    }
-    if (from.has_issuccess()) {
-      set_issuccess(from.issuccess());
-    }
-  }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-}
-
-void RoamingNotification::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void RoamingNotification::CopyFrom(const RoamingNotification& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool RoamingNotification::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
-
-  if (has_notification()) {
-    if (!this->notification().IsInitialized()) return false;
-  }
-  return true;
-}
-
-void RoamingNotification::Swap(RoamingNotification* other) {
-  if (other != this) {
-    std::swap(notification_, other->notification_);
-    std::swap(issuccess_, other->issuccess_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
-}
-
-::google::protobuf::Metadata RoamingNotification::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = RoamingNotification_descriptor_;
-  metadata.reflection = RoamingNotification_reflection_;
   return metadata;
 }
 
