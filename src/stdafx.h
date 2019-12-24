@@ -21,4 +21,6 @@
 
 #include <tchar.h>
 #include <strsafe.h>
+#include <locale>
+#include <codecvt>
 #include "trace.h"

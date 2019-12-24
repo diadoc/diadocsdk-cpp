@@ -439,8 +439,10 @@ void DiadocApi::Authenticate(const std::wstring& login, const std::wstring& pass
 	wss << L"/V3/Authenticate?type=password" << std::flush;
 	Diadoc::Api::Proto::LoginPassword loginPassword;
 
-	loginPassword.set_login(std::string(login.begin(), login.end()));
-	loginPassword.set_password(std::string(password.begin(), password.end()));
+	static std::wstring_convert<std::codecvt_utf8<wchar_t>> utf8conv;
+
+	loginPassword.set_login(utf8conv.to_bytes(login));
+	loginPassword.set_password(utf8conv.to_bytes(password));
 
 	auto response = PerformHttpRequestString(wss.str(), ToProtoBytes(loginPassword), POST);
 	token_ = StringHelper::Utf8ToUtf16(response);
