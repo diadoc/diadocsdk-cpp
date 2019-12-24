@@ -28,6 +28,7 @@
 #include "Content.pb.h"
 #include "DocumentId.pb.h"
 #include "LockMode.pb.h"
+#include "TotalCountType.pb.h"
 #include "Documents/Document.pb.h"
 #include "Events/CancellationInfo.pb.h"
 #include "Events/ResolutionInfo.pb.h"
@@ -55,7 +56,28 @@ class Entity;
 class EntityPatch;
 class TemplateToLetterTransformationInfo;
 class TemplateTransformationInfo;
+class TemplateRefusalInfo;
 
+enum TemplateRefusalType {
+  UnknownTemplateRefusalType = 0,
+  Refusal = 1,
+  Withdrawal = 2
+};
+bool TemplateRefusalType_IsValid(int value);
+const TemplateRefusalType TemplateRefusalType_MIN = UnknownTemplateRefusalType;
+const TemplateRefusalType TemplateRefusalType_MAX = Withdrawal;
+const int TemplateRefusalType_ARRAYSIZE = TemplateRefusalType_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* TemplateRefusalType_descriptor();
+inline const ::std::string& TemplateRefusalType_Name(TemplateRefusalType value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    TemplateRefusalType_descriptor(), value);
+}
+inline bool TemplateRefusalType_Parse(
+    const ::std::string& name, TemplateRefusalType* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<TemplateRefusalType>(
+    TemplateRefusalType_descriptor(), name, value);
+}
 enum EntityType {
   UnknownEntityType = 0,
   Attachment = 1,
@@ -130,11 +152,12 @@ enum AttachmentType {
   Cancellation = 69,
   Edition = 71,
   DeletionRestoration = 72,
-  TemplateTransformation = 73
+  TemplateTransformation = 73,
+  TemplateRefusal = 74
 };
 bool AttachmentType_IsValid(int value);
 const AttachmentType AttachmentType_MIN = UnknownAttachmentType;
-const AttachmentType AttachmentType_MAX = TemplateTransformation;
+const AttachmentType AttachmentType_MAX = TemplateRefusal;
 const int AttachmentType_ARRAYSIZE = AttachmentType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* AttachmentType_descriptor();
@@ -221,10 +244,19 @@ class BoxEventList : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 totalcount() const;
   inline void set_totalcount(::google::protobuf::int32 value);
 
+  // required .Diadoc.Api.Proto.TotalCountType TotalCountType = 3;
+  inline bool has_totalcounttype() const;
+  inline void clear_totalcounttype();
+  static const int kTotalCountTypeFieldNumber = 3;
+  inline ::Diadoc::Api::Proto::TotalCountType totalcounttype() const;
+  inline void set_totalcounttype(::Diadoc::Api::Proto::TotalCountType value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.BoxEventList)
  private:
   inline void set_has_totalcount();
   inline void clear_has_totalcount();
+  inline void set_has_totalcounttype();
+  inline void clear_has_totalcounttype();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -232,6 +264,7 @@ class BoxEventList : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::BoxEvent > events_;
   ::google::protobuf::int32 totalcount_;
+  int totalcounttype_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dGetApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dGetApi_2eproto();
@@ -1446,6 +1479,15 @@ class Entity : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Events::TemplateTransformationInfo* release_templatetransformationinfo();
   inline void set_allocated_templatetransformationinfo(::Diadoc::Api::Proto::Events::TemplateTransformationInfo* templatetransformationinfo);
 
+  // optional .Diadoc.Api.Proto.Events.TemplateRefusalInfo TemplateRefusalInfo = 28;
+  inline bool has_templaterefusalinfo() const;
+  inline void clear_templaterefusalinfo();
+  static const int kTemplateRefusalInfoFieldNumber = 28;
+  inline const ::Diadoc::Api::Proto::Events::TemplateRefusalInfo& templaterefusalinfo() const;
+  inline ::Diadoc::Api::Proto::Events::TemplateRefusalInfo* mutable_templaterefusalinfo();
+  inline ::Diadoc::Api::Proto::Events::TemplateRefusalInfo* release_templaterefusalinfo();
+  inline void set_allocated_templaterefusalinfo(::Diadoc::Api::Proto::Events::TemplateRefusalInfo* templaterefusalinfo);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.Entity)
  private:
   inline void set_has_entitytype();
@@ -1498,6 +1540,8 @@ class Entity : public ::google::protobuf::Message {
   inline void clear_has_version();
   inline void set_has_templatetransformationinfo();
   inline void clear_has_templatetransformationinfo();
+  inline void set_has_templaterefusalinfo();
+  inline void clear_has_templaterefusalinfo();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1525,6 +1569,7 @@ class Entity : public ::google::protobuf::Message {
   ::google::protobuf::RepeatedPtrField< ::std::string> labels_;
   ::std::string* version_;
   ::Diadoc::Api::Proto::Events::TemplateTransformationInfo* templatetransformationinfo_;
+  ::Diadoc::Api::Proto::Events::TemplateRefusalInfo* templaterefusalinfo_;
   bool needrecipientsignature_;
   bool needreceipt_;
   bool isapprovementsignature_;
@@ -1905,6 +1950,130 @@ class TemplateTransformationInfo : public ::google::protobuf::Message {
   void InitAsDefaultInstance();
   static TemplateTransformationInfo* default_instance_;
 };
+// -------------------------------------------------------------------
+
+class TemplateRefusalInfo : public ::google::protobuf::Message {
+ public:
+  TemplateRefusalInfo();
+  virtual ~TemplateRefusalInfo();
+
+  TemplateRefusalInfo(const TemplateRefusalInfo& from);
+
+  inline TemplateRefusalInfo& operator=(const TemplateRefusalInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const TemplateRefusalInfo& default_instance();
+
+  void Swap(TemplateRefusalInfo* other);
+
+  // implements Message ----------------------------------------------
+
+  TemplateRefusalInfo* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const TemplateRefusalInfo& from);
+  void MergeFrom(const TemplateRefusalInfo& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required .Diadoc.Api.Proto.Events.TemplateRefusalType Type = 1 [default = UnknownTemplateRefusalType];
+  inline bool has_type() const;
+  inline void clear_type();
+  static const int kTypeFieldNumber = 1;
+  inline ::Diadoc::Api::Proto::Events::TemplateRefusalType type() const;
+  inline void set_type(::Diadoc::Api::Proto::Events::TemplateRefusalType value);
+
+  // required string BoxId = 2;
+  inline bool has_boxid() const;
+  inline void clear_boxid();
+  static const int kBoxIdFieldNumber = 2;
+  inline const ::std::string& boxid() const;
+  inline void set_boxid(const ::std::string& value);
+  inline void set_boxid(const char* value);
+  inline void set_boxid(const char* value, size_t size);
+  inline ::std::string* mutable_boxid();
+  inline ::std::string* release_boxid();
+  inline void set_allocated_boxid(::std::string* boxid);
+
+  // optional string Author = 3;
+  inline bool has_author() const;
+  inline void clear_author();
+  static const int kAuthorFieldNumber = 3;
+  inline const ::std::string& author() const;
+  inline void set_author(const ::std::string& value);
+  inline void set_author(const char* value);
+  inline void set_author(const char* value, size_t size);
+  inline ::std::string* mutable_author();
+  inline ::std::string* release_author();
+  inline void set_allocated_author(::std::string* author);
+
+  // optional string Comment = 4;
+  inline bool has_comment() const;
+  inline void clear_comment();
+  static const int kCommentFieldNumber = 4;
+  inline const ::std::string& comment() const;
+  inline void set_comment(const ::std::string& value);
+  inline void set_comment(const char* value);
+  inline void set_comment(const char* value, size_t size);
+  inline ::std::string* mutable_comment();
+  inline ::std::string* release_comment();
+  inline void set_allocated_comment(::std::string* comment);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.TemplateRefusalInfo)
+ private:
+  inline void set_has_type();
+  inline void clear_has_type();
+  inline void set_has_boxid();
+  inline void clear_has_boxid();
+  inline void set_has_author();
+  inline void clear_has_author();
+  inline void set_has_comment();
+  inline void clear_has_comment();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* boxid_;
+  ::std::string* author_;
+  ::std::string* comment_;
+  int type_;
+  friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto();
+  friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dGetApi_2eproto();
+  friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dGetApi_2eproto();
+
+  void InitAsDefaultInstance();
+  static TemplateRefusalInfo* default_instance_;
+};
 // ===================================================================
 
 
@@ -1964,6 +2133,31 @@ inline void BoxEventList::set_totalcount(::google::protobuf::int32 value) {
   set_has_totalcount();
   totalcount_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.BoxEventList.TotalCount)
+}
+
+// required .Diadoc.Api.Proto.TotalCountType TotalCountType = 3;
+inline bool BoxEventList::has_totalcounttype() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void BoxEventList::set_has_totalcounttype() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void BoxEventList::clear_has_totalcounttype() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void BoxEventList::clear_totalcounttype() {
+  totalcounttype_ = 0;
+  clear_has_totalcounttype();
+}
+inline ::Diadoc::Api::Proto::TotalCountType BoxEventList::totalcounttype() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.BoxEventList.TotalCountType)
+  return static_cast< ::Diadoc::Api::Proto::TotalCountType >(totalcounttype_);
+}
+inline void BoxEventList::set_totalcounttype(::Diadoc::Api::Proto::TotalCountType value) {
+  assert(::Diadoc::Api::Proto::TotalCountType_IsValid(value));
+  set_has_totalcounttype();
+  totalcounttype_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.BoxEventList.TotalCountType)
 }
 
 // -------------------------------------------------------------------
@@ -5538,6 +5732,47 @@ inline void Entity::set_allocated_templatetransformationinfo(::Diadoc::Api::Prot
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Entity.TemplateTransformationInfo)
 }
 
+// optional .Diadoc.Api.Proto.Events.TemplateRefusalInfo TemplateRefusalInfo = 28;
+inline bool Entity::has_templaterefusalinfo() const {
+  return (_has_bits_[0] & 0x04000000u) != 0;
+}
+inline void Entity::set_has_templaterefusalinfo() {
+  _has_bits_[0] |= 0x04000000u;
+}
+inline void Entity::clear_has_templaterefusalinfo() {
+  _has_bits_[0] &= ~0x04000000u;
+}
+inline void Entity::clear_templaterefusalinfo() {
+  if (templaterefusalinfo_ != NULL) templaterefusalinfo_->::Diadoc::Api::Proto::Events::TemplateRefusalInfo::Clear();
+  clear_has_templaterefusalinfo();
+}
+inline const ::Diadoc::Api::Proto::Events::TemplateRefusalInfo& Entity::templaterefusalinfo() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Entity.TemplateRefusalInfo)
+  return templaterefusalinfo_ != NULL ? *templaterefusalinfo_ : *default_instance_->templaterefusalinfo_;
+}
+inline ::Diadoc::Api::Proto::Events::TemplateRefusalInfo* Entity::mutable_templaterefusalinfo() {
+  set_has_templaterefusalinfo();
+  if (templaterefusalinfo_ == NULL) templaterefusalinfo_ = new ::Diadoc::Api::Proto::Events::TemplateRefusalInfo;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Entity.TemplateRefusalInfo)
+  return templaterefusalinfo_;
+}
+inline ::Diadoc::Api::Proto::Events::TemplateRefusalInfo* Entity::release_templaterefusalinfo() {
+  clear_has_templaterefusalinfo();
+  ::Diadoc::Api::Proto::Events::TemplateRefusalInfo* temp = templaterefusalinfo_;
+  templaterefusalinfo_ = NULL;
+  return temp;
+}
+inline void Entity::set_allocated_templaterefusalinfo(::Diadoc::Api::Proto::Events::TemplateRefusalInfo* templaterefusalinfo) {
+  delete templaterefusalinfo_;
+  templaterefusalinfo_ = templaterefusalinfo;
+  if (templaterefusalinfo) {
+    set_has_templaterefusalinfo();
+  } else {
+    clear_has_templaterefusalinfo();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Entity.TemplateRefusalInfo)
+}
+
 // -------------------------------------------------------------------
 
 // EntityPatch
@@ -6271,6 +6506,263 @@ inline void TemplateTransformationInfo::set_allocated_author(::std::string* auth
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.TemplateTransformationInfo.Author)
 }
 
+// -------------------------------------------------------------------
+
+// TemplateRefusalInfo
+
+// required .Diadoc.Api.Proto.Events.TemplateRefusalType Type = 1 [default = UnknownTemplateRefusalType];
+inline bool TemplateRefusalInfo::has_type() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void TemplateRefusalInfo::set_has_type() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void TemplateRefusalInfo::clear_has_type() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void TemplateRefusalInfo::clear_type() {
+  type_ = 0;
+  clear_has_type();
+}
+inline ::Diadoc::Api::Proto::Events::TemplateRefusalType TemplateRefusalInfo::type() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.TemplateRefusalInfo.Type)
+  return static_cast< ::Diadoc::Api::Proto::Events::TemplateRefusalType >(type_);
+}
+inline void TemplateRefusalInfo::set_type(::Diadoc::Api::Proto::Events::TemplateRefusalType value) {
+  assert(::Diadoc::Api::Proto::Events::TemplateRefusalType_IsValid(value));
+  set_has_type();
+  type_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.TemplateRefusalInfo.Type)
+}
+
+// required string BoxId = 2;
+inline bool TemplateRefusalInfo::has_boxid() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void TemplateRefusalInfo::set_has_boxid() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void TemplateRefusalInfo::clear_has_boxid() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void TemplateRefusalInfo::clear_boxid() {
+  if (boxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    boxid_->clear();
+  }
+  clear_has_boxid();
+}
+inline const ::std::string& TemplateRefusalInfo::boxid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.TemplateRefusalInfo.BoxId)
+  return *boxid_;
+}
+inline void TemplateRefusalInfo::set_boxid(const ::std::string& value) {
+  set_has_boxid();
+  if (boxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    boxid_ = new ::std::string;
+  }
+  boxid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.TemplateRefusalInfo.BoxId)
+}
+inline void TemplateRefusalInfo::set_boxid(const char* value) {
+  set_has_boxid();
+  if (boxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    boxid_ = new ::std::string;
+  }
+  boxid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.TemplateRefusalInfo.BoxId)
+}
+inline void TemplateRefusalInfo::set_boxid(const char* value, size_t size) {
+  set_has_boxid();
+  if (boxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    boxid_ = new ::std::string;
+  }
+  boxid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.TemplateRefusalInfo.BoxId)
+}
+inline ::std::string* TemplateRefusalInfo::mutable_boxid() {
+  set_has_boxid();
+  if (boxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    boxid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.TemplateRefusalInfo.BoxId)
+  return boxid_;
+}
+inline ::std::string* TemplateRefusalInfo::release_boxid() {
+  clear_has_boxid();
+  if (boxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = boxid_;
+    boxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void TemplateRefusalInfo::set_allocated_boxid(::std::string* boxid) {
+  if (boxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete boxid_;
+  }
+  if (boxid) {
+    set_has_boxid();
+    boxid_ = boxid;
+  } else {
+    clear_has_boxid();
+    boxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.TemplateRefusalInfo.BoxId)
+}
+
+// optional string Author = 3;
+inline bool TemplateRefusalInfo::has_author() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void TemplateRefusalInfo::set_has_author() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void TemplateRefusalInfo::clear_has_author() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void TemplateRefusalInfo::clear_author() {
+  if (author_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    author_->clear();
+  }
+  clear_has_author();
+}
+inline const ::std::string& TemplateRefusalInfo::author() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.TemplateRefusalInfo.Author)
+  return *author_;
+}
+inline void TemplateRefusalInfo::set_author(const ::std::string& value) {
+  set_has_author();
+  if (author_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    author_ = new ::std::string;
+  }
+  author_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.TemplateRefusalInfo.Author)
+}
+inline void TemplateRefusalInfo::set_author(const char* value) {
+  set_has_author();
+  if (author_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    author_ = new ::std::string;
+  }
+  author_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.TemplateRefusalInfo.Author)
+}
+inline void TemplateRefusalInfo::set_author(const char* value, size_t size) {
+  set_has_author();
+  if (author_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    author_ = new ::std::string;
+  }
+  author_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.TemplateRefusalInfo.Author)
+}
+inline ::std::string* TemplateRefusalInfo::mutable_author() {
+  set_has_author();
+  if (author_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    author_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.TemplateRefusalInfo.Author)
+  return author_;
+}
+inline ::std::string* TemplateRefusalInfo::release_author() {
+  clear_has_author();
+  if (author_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = author_;
+    author_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void TemplateRefusalInfo::set_allocated_author(::std::string* author) {
+  if (author_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete author_;
+  }
+  if (author) {
+    set_has_author();
+    author_ = author;
+  } else {
+    clear_has_author();
+    author_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.TemplateRefusalInfo.Author)
+}
+
+// optional string Comment = 4;
+inline bool TemplateRefusalInfo::has_comment() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void TemplateRefusalInfo::set_has_comment() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void TemplateRefusalInfo::clear_has_comment() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void TemplateRefusalInfo::clear_comment() {
+  if (comment_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_->clear();
+  }
+  clear_has_comment();
+}
+inline const ::std::string& TemplateRefusalInfo::comment() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.TemplateRefusalInfo.Comment)
+  return *comment_;
+}
+inline void TemplateRefusalInfo::set_comment(const ::std::string& value) {
+  set_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_ = new ::std::string;
+  }
+  comment_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.TemplateRefusalInfo.Comment)
+}
+inline void TemplateRefusalInfo::set_comment(const char* value) {
+  set_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_ = new ::std::string;
+  }
+  comment_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.TemplateRefusalInfo.Comment)
+}
+inline void TemplateRefusalInfo::set_comment(const char* value, size_t size) {
+  set_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_ = new ::std::string;
+  }
+  comment_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.TemplateRefusalInfo.Comment)
+}
+inline ::std::string* TemplateRefusalInfo::mutable_comment() {
+  set_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    comment_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.TemplateRefusalInfo.Comment)
+  return comment_;
+}
+inline ::std::string* TemplateRefusalInfo::release_comment() {
+  clear_has_comment();
+  if (comment_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = comment_;
+    comment_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void TemplateRefusalInfo::set_allocated_comment(::std::string* comment) {
+  if (comment_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete comment_;
+  }
+  if (comment) {
+    set_has_comment();
+    comment_ = comment;
+  } else {
+    clear_has_comment();
+    comment_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.TemplateRefusalInfo.Comment)
+}
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -6283,6 +6775,11 @@ inline void TemplateTransformationInfo::set_allocated_author(::std::string* auth
 namespace google {
 namespace protobuf {
 
+template <> struct is_proto_enum< ::Diadoc::Api::Proto::Events::TemplateRefusalType> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::Diadoc::Api::Proto::Events::TemplateRefusalType>() {
+  return ::Diadoc::Api::Proto::Events::TemplateRefusalType_descriptor();
+}
 template <> struct is_proto_enum< ::Diadoc::Api::Proto::Events::EntityType> : ::google::protobuf::internal::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::Diadoc::Api::Proto::Events::EntityType>() {

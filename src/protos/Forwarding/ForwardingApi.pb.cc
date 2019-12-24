@@ -136,9 +136,10 @@ void protobuf_AssignDesc_Forwarding_2fForwardingApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(GetForwardedDocumentEventsRequest));
   GetForwardedDocumentEventsResponse_descriptor_ = file->message_type(5);
-  static const int GetForwardedDocumentEventsResponse_offsets_[2] = {
+  static const int GetForwardedDocumentEventsResponse_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetForwardedDocumentEventsResponse, totalcount_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetForwardedDocumentEventsResponse, events_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetForwardedDocumentEventsResponse, totalcounttype_),
   };
   GetForwardedDocumentEventsResponse_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -224,40 +225,43 @@ void protobuf_AddDesc_Forwarding_2fForwardingApi_2eproto() {
 
   ::Diadoc::Api::Proto::protobuf_AddDesc_Timestamp_2eproto();
   ::Diadoc::Api::Proto::protobuf_AddDesc_DocumentId_2eproto();
+  ::Diadoc::Api::Proto::protobuf_AddDesc_TotalCountType_2eproto();
   ::Diadoc::Api::Proto::protobuf_AddDesc_TimeBasedFilter_2eproto();
   ::Diadoc::Api::Proto::Forwarding::protobuf_AddDesc_Forwarding_2fForwardedDocument_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\036Forwarding/ForwardingApi.proto\022\033Diadoc"
     ".Api.Proto.Forwarding\032\017Timestamp.proto\032\020"
-    "DocumentId.proto\032\025TimeBasedFilter.proto\032"
-    "\"Forwarding/ForwardedDocument.proto\"[\n\026F"
-    "orwardDocumentRequest\022\017\n\007ToBoxId\030\001 \002(\t\0220"
-    "\n\nDocumentId\030\002 \002(\0132\034.Diadoc.Api.Proto.Do"
-    "cumentId\"\237\001\n\027ForwardDocumentResponse\0225\n\020"
-    "ForwardTimestamp\030\001 \001(\0132\033.Diadoc.Api.Prot"
-    "o.Timestamp\022M\n\023ForwardedDocumentId\030\002 \001(\013"
-    "20.Diadoc.Api.Proto.Forwarding.Forwarded"
-    "DocumentId\"\222\001\n\034GetForwardedDocumentsRequ"
-    "est\022N\n\024ForwardedDocumentIds\030\001 \003(\01320.Diad"
-    "oc.Api.Proto.Forwarding.ForwardedDocumen"
-    "tId\022\"\n\023InjectEntityContent\030\002 \001(\010:\005false\""
-    "k\n\035GetForwardedDocumentsResponse\022J\n\022Forw"
-    "ardedDocuments\030\001 \003(\0132..Diadoc.Api.Proto."
-    "Forwarding.ForwardedDocument\"\274\001\n!GetForw"
-    "ardedDocumentEventsRequest\0221\n\006Filter\030\001 \002"
-    "(\0132!.Diadoc.Api.Proto.TimeBasedFilter\022\025\n"
-    "\rAfterIndexKey\030\002 \001(\014\022)\n\032PopulateForwarde"
-    "dDocuments\030\003 \001(\010:\005false\022\"\n\023InjectEntityC"
-    "ontent\030\004 \001(\010:\005false\"}\n\"GetForwardedDocum"
-    "entEventsResponse\022\022\n\nTotalCount\030\001 \001(\005\022C\n"
-    "\006Events\030\002 \003(\01323.Diadoc.Api.Proto.Forward"
-    "ing.ForwardedDocumentEvent\"\364\001\n\026Forwarded"
-    "DocumentEvent\022.\n\tTimestamp\030\001 \001(\0132\033.Diado"
-    "c.Api.Proto.Timestamp\022M\n\023ForwardedDocume"
-    "ntId\030\002 \001(\01320.Diadoc.Api.Proto.Forwarding"
-    ".ForwardedDocumentId\022\020\n\010IndexKey\030\003 \001(\014\022I"
-    "\n\021ForwardedDocument\030\004 \001(\0132..Diadoc.Api.P"
-    "roto.Forwarding.ForwardedDocument", 1233);
+    "DocumentId.proto\032\024TotalCountType.proto\032\025"
+    "TimeBasedFilter.proto\032\"Forwarding/Forwar"
+    "dedDocument.proto\"[\n\026ForwardDocumentRequ"
+    "est\022\017\n\007ToBoxId\030\001 \002(\t\0220\n\nDocumentId\030\002 \002(\013"
+    "2\034.Diadoc.Api.Proto.DocumentId\"\237\001\n\027Forwa"
+    "rdDocumentResponse\0225\n\020ForwardTimestamp\030\001"
+    " \001(\0132\033.Diadoc.Api.Proto.Timestamp\022M\n\023For"
+    "wardedDocumentId\030\002 \001(\01320.Diadoc.Api.Prot"
+    "o.Forwarding.ForwardedDocumentId\"\222\001\n\034Get"
+    "ForwardedDocumentsRequest\022N\n\024ForwardedDo"
+    "cumentIds\030\001 \003(\01320.Diadoc.Api.Proto.Forwa"
+    "rding.ForwardedDocumentId\022\"\n\023InjectEntit"
+    "yContent\030\002 \001(\010:\005false\"k\n\035GetForwardedDoc"
+    "umentsResponse\022J\n\022ForwardedDocuments\030\001 \003"
+    "(\0132..Diadoc.Api.Proto.Forwarding.Forward"
+    "edDocument\"\274\001\n!GetForwardedDocumentEvent"
+    "sRequest\0221\n\006Filter\030\001 \002(\0132!.Diadoc.Api.Pr"
+    "oto.TimeBasedFilter\022\025\n\rAfterIndexKey\030\002 \001"
+    "(\014\022)\n\032PopulateForwardedDocuments\030\003 \001(\010:\005"
+    "false\022\"\n\023InjectEntityContent\030\004 \001(\010:\005fals"
+    "e\"\267\001\n\"GetForwardedDocumentEventsResponse"
+    "\022\022\n\nTotalCount\030\001 \001(\005\022C\n\006Events\030\002 \003(\01323.D"
+    "iadoc.Api.Proto.Forwarding.ForwardedDocu"
+    "mentEvent\0228\n\016TotalCountType\030\003 \002(\0162 .Diad"
+    "oc.Api.Proto.TotalCountType\"\364\001\n\026Forwarde"
+    "dDocumentEvent\022.\n\tTimestamp\030\001 \001(\0132\033.Diad"
+    "oc.Api.Proto.Timestamp\022M\n\023ForwardedDocum"
+    "entId\030\002 \001(\01320.Diadoc.Api.Proto.Forwardin"
+    "g.ForwardedDocumentId\022\020\n\010IndexKey\030\003 \001(\014\022"
+    "I\n\021ForwardedDocument\030\004 \001(\0132..Diadoc.Api."
+    "Proto.Forwarding.ForwardedDocument", 1314);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Forwarding/ForwardingApi.proto", &protobuf_RegisterTypes);
   ForwardDocumentRequest::default_instance_ = new ForwardDocumentRequest();
@@ -1710,6 +1714,7 @@ void GetForwardedDocumentEventsRequest::Swap(GetForwardedDocumentEventsRequest* 
 #ifndef _MSC_VER
 const int GetForwardedDocumentEventsResponse::kTotalCountFieldNumber;
 const int GetForwardedDocumentEventsResponse::kEventsFieldNumber;
+const int GetForwardedDocumentEventsResponse::kTotalCountTypeFieldNumber;
 #endif  // !_MSC_VER
 
 GetForwardedDocumentEventsResponse::GetForwardedDocumentEventsResponse()
@@ -1731,6 +1736,7 @@ GetForwardedDocumentEventsResponse::GetForwardedDocumentEventsResponse(const Get
 void GetForwardedDocumentEventsResponse::SharedCtor() {
   _cached_size_ = 0;
   totalcount_ = 0;
+  totalcounttype_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -1766,7 +1772,21 @@ GetForwardedDocumentEventsResponse* GetForwardedDocumentEventsResponse::New() co
 }
 
 void GetForwardedDocumentEventsResponse::Clear() {
-  totalcount_ = 0;
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<GetForwardedDocumentEventsResponse*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  ZR_(totalcount_, totalcounttype_);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
   events_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -1806,6 +1826,26 @@ bool GetForwardedDocumentEventsResponse::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(18)) goto parse_Events;
+        if (input->ExpectTag(24)) goto parse_TotalCountType;
+        break;
+      }
+
+      // required .Diadoc.Api.Proto.TotalCountType TotalCountType = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_TotalCountType:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Diadoc::Api::Proto::TotalCountType_IsValid(value)) {
+            set_totalcounttype(static_cast< ::Diadoc::Api::Proto::TotalCountType >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(3, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -1846,6 +1886,12 @@ void GetForwardedDocumentEventsResponse::SerializeWithCachedSizes(
       2, this->events(i), output);
   }
 
+  // required .Diadoc.Api.Proto.TotalCountType TotalCountType = 3;
+  if (has_totalcounttype()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      3, this->totalcounttype(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -1868,6 +1914,12 @@ void GetForwardedDocumentEventsResponse::SerializeWithCachedSizes(
         2, this->events(i), target);
   }
 
+  // required .Diadoc.Api.Proto.TotalCountType TotalCountType = 3;
+  if (has_totalcounttype()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      3, this->totalcounttype(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -1885,6 +1937,12 @@ int GetForwardedDocumentEventsResponse::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->totalcount());
+    }
+
+    // required .Diadoc.Api.Proto.TotalCountType TotalCountType = 3;
+    if (has_totalcounttype()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->totalcounttype());
     }
 
   }
@@ -1926,6 +1984,9 @@ void GetForwardedDocumentEventsResponse::MergeFrom(const GetForwardedDocumentEve
     if (from.has_totalcount()) {
       set_totalcount(from.totalcount());
     }
+    if (from.has_totalcounttype()) {
+      set_totalcounttype(from.totalcounttype());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -1943,6 +2004,7 @@ void GetForwardedDocumentEventsResponse::CopyFrom(const GetForwardedDocumentEven
 }
 
 bool GetForwardedDocumentEventsResponse::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000004) != 0x00000004) return false;
 
   if (!::google::protobuf::internal::AllAreInitialized(this->events())) return false;
   return true;
@@ -1952,6 +2014,7 @@ void GetForwardedDocumentEventsResponse::Swap(GetForwardedDocumentEventsResponse
   if (other != this) {
     std::swap(totalcount_, other->totalcount_);
     events_.Swap(&other->events_);
+    std::swap(totalcounttype_, other->totalcounttype_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

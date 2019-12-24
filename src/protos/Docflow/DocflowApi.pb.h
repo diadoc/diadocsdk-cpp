@@ -27,6 +27,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "Timestamp.pb.h"
 #include "DocumentId.pb.h"
+#include "TotalCountType.pb.h"
 #include "TimeBasedFilter.pb.h"
 #include "Docflow/DocumentWithDocflow.pb.h"
 // @@protoc_insertion_point(includes)
@@ -1073,10 +1074,19 @@ class GetDocflowEventsResponse : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::DocflowEvent >*
       mutable_events();
 
+  // required .Diadoc.Api.Proto.TotalCountType TotalCountType = 3;
+  inline bool has_totalcounttype() const;
+  inline void clear_totalcounttype();
+  static const int kTotalCountTypeFieldNumber = 3;
+  inline ::Diadoc::Api::Proto::TotalCountType totalcounttype() const;
+  inline void set_totalcounttype(::Diadoc::Api::Proto::TotalCountType value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Docflow.GetDocflowEventsResponse)
  private:
   inline void set_has_totalcount();
   inline void clear_has_totalcount();
+  inline void set_has_totalcounttype();
+  inline void clear_has_totalcounttype();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1084,6 +1094,7 @@ class GetDocflowEventsResponse : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::DocflowEvent > events_;
   ::google::protobuf::int32 totalcount_;
+  int totalcounttype_;
   friend void  protobuf_AddDesc_Docflow_2fDocflowApi_2eproto();
   friend void protobuf_AssignDesc_Docflow_2fDocflowApi_2eproto();
   friend void protobuf_ShutdownFile_Docflow_2fDocflowApi_2eproto();
@@ -2388,6 +2399,31 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::Docf
 GetDocflowEventsResponse::mutable_events() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Docflow.GetDocflowEventsResponse.Events)
   return &events_;
+}
+
+// required .Diadoc.Api.Proto.TotalCountType TotalCountType = 3;
+inline bool GetDocflowEventsResponse::has_totalcounttype() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void GetDocflowEventsResponse::set_has_totalcounttype() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void GetDocflowEventsResponse::clear_has_totalcounttype() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void GetDocflowEventsResponse::clear_totalcounttype() {
+  totalcounttype_ = 0;
+  clear_has_totalcounttype();
+}
+inline ::Diadoc::Api::Proto::TotalCountType GetDocflowEventsResponse::totalcounttype() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.GetDocflowEventsResponse.TotalCountType)
+  return static_cast< ::Diadoc::Api::Proto::TotalCountType >(totalcounttype_);
+}
+inline void GetDocflowEventsResponse::set_totalcounttype(::Diadoc::Api::Proto::TotalCountType value) {
+  assert(::Diadoc::Api::Proto::TotalCountType_IsValid(value));
+  set_has_totalcounttype();
+  totalcounttype_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.GetDocflowEventsResponse.TotalCountType)
 }
 
 // -------------------------------------------------------------------

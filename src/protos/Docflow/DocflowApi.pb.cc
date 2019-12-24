@@ -219,9 +219,10 @@ void protobuf_AssignDesc_Docflow_2fDocflowApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(GetDocflowEventsRequest));
   GetDocflowEventsResponse_descriptor_ = file->message_type(9);
-  static const int GetDocflowEventsResponse_offsets_[2] = {
+  static const int GetDocflowEventsResponse_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetDocflowEventsResponse, totalcount_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetDocflowEventsResponse, events_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetDocflowEventsResponse, totalcounttype_),
   };
   GetDocflowEventsResponse_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -327,57 +328,60 @@ void protobuf_AddDesc_Docflow_2fDocflowApi_2eproto() {
 
   ::Diadoc::Api::Proto::protobuf_AddDesc_Timestamp_2eproto();
   ::Diadoc::Api::Proto::protobuf_AddDesc_DocumentId_2eproto();
+  ::Diadoc::Api::Proto::protobuf_AddDesc_TotalCountType_2eproto();
   ::Diadoc::Api::Proto::protobuf_AddDesc_TimeBasedFilter_2eproto();
   ::Diadoc::Api::Proto::Docflow::protobuf_AddDesc_Docflow_2fDocumentWithDocflow_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\030Docflow/DocflowApi.proto\022\030Diadoc.Api.P"
     "roto.Docflow\032\017Timestamp.proto\032\020DocumentI"
-    "d.proto\032\025TimeBasedFilter.proto\032!Docflow/"
-    "DocumentWithDocflow.proto\"W\n\026GetDocflowB"
-    "atchRequest\022=\n\010Requests\030\001 \003(\0132+.Diadoc.A"
-    "pi.Proto.Docflow.GetDocflowRequest\"~\n\021Ge"
-    "tDocflowRequest\0220\n\nDocumentId\030\001 \002(\0132\034.Di"
-    "adoc.Api.Proto.DocumentId\022\023\n\013LastEventId"
-    "\030\002 \001(\t\022\"\n\023InjectEntityContent\030\003 \001(\010:\005fal"
-    "se\"[\n\027GetDocflowBatchResponse\022@\n\tDocumen"
-    "ts\030\001 \003(\0132-.Diadoc.Api.Proto.Docflow.Docu"
-    "mentWithDocflow\"\276\001\n\025SearchDocflowsReques"
-    "t\022\023\n\013QueryString\030\001 \002(\t\022\022\n\005Count\030\002 \001(\005:\0031"
-    "00\022\022\n\nFirstIndex\030\003 \001(\005\022D\n\005Scope\030\004 \001(\0162%."
-    "Diadoc.Api.Proto.Docflow.SearchScope:\016Se"
-    "archScopeAny\022\"\n\023InjectEntityContent\030\005 \001("
-    "\010:\005false\"u\n\026SearchDocflowsResponse\022@\n\tDo"
-    "cuments\030\001 \003(\0132-.Diadoc.Api.Proto.Docflow"
-    ".DocumentWithDocflow\022\031\n\021HaveMoreDocument"
-    "s\030\002 \001(\010\"\177\n\034GetDocflowsByPacketIdRequest\022"
-    "\020\n\010PacketId\030\001 \002(\t\022\022\n\005Count\030\002 \001(\005:\003100\022\"\n"
-    "\023InjectEntityContent\030\003 \001(\010:\005false\022\025\n\rAft"
-    "erIndexKey\030\004 \001(\014\"d\n\017FetchedDocument\022\?\n\010D"
-    "ocument\030\001 \002(\0132-.Diadoc.Api.Proto.Docflow"
-    ".DocumentWithDocflow\022\020\n\010IndexKey\030\002 \002(\014\"w"
-    "\n\035GetDocflowsByPacketIdResponse\022<\n\tDocum"
-    "ents\030\001 \003(\0132).Diadoc.Api.Proto.Docflow.Fe"
-    "tchedDocument\022\030\n\020NextPageIndexKey\030\002 \001(\014\""
-    "\330\001\n\027GetDocflowEventsRequest\0221\n\006Filter\030\001 "
-    "\002(\0132!.Diadoc.Api.Proto.TimeBasedFilter\022\025"
-    "\n\rAfterIndexKey\030\002 \001(\014\022 \n\021PopulateDocumen"
-    "ts\030\003 \001(\010:\005false\022\"\n\023InjectEntityContent\030\004"
-    " \001(\010:\005false\022-\n\036PopulatePreviousDocumentS"
-    "tates\030\005 \001(\010:\005false\"f\n\030GetDocflowEventsRe"
-    "sponse\022\022\n\nTotalCount\030\001 \001(\005\0226\n\006Events\030\002 \003"
-    "(\0132&.Diadoc.Api.Proto.Docflow.DocflowEve"
-    "nt\"\273\002\n\014DocflowEvent\022\017\n\007EventId\030\001 \001(\t\022.\n\t"
-    "Timestamp\030\002 \001(\0132\033.Diadoc.Api.Proto.Times"
-    "tamp\0220\n\nDocumentId\030\003 \001(\0132\034.Diadoc.Api.Pr"
-    "oto.DocumentId\022\020\n\010IndexKey\030\004 \001(\014\022\?\n\010Docu"
-    "ment\030\005 \001(\0132-.Diadoc.Api.Proto.Docflow.Do"
-    "cumentWithDocflow\022\027\n\017PreviousEventId\030\006 \001"
-    "(\t\022L\n\025PreviousDocumentState\030\007 \001(\0132-.Diad"
-    "oc.Api.Proto.Docflow.DocumentWithDocflow"
-    "*\204\001\n\013SearchScope\022\022\n\016SearchScopeAny\020\000\022\027\n\023"
-    "SearchScopeIncoming\020\001\022\027\n\023SearchScopeOutg"
-    "oing\020\002\022\026\n\022SearchScopeDeleted\020\003\022\027\n\023Search"
-    "ScopeInternal\020\004", 1895);
+    "d.proto\032\024TotalCountType.proto\032\025TimeBased"
+    "Filter.proto\032!Docflow/DocumentWithDocflo"
+    "w.proto\"W\n\026GetDocflowBatchRequest\022=\n\010Req"
+    "uests\030\001 \003(\0132+.Diadoc.Api.Proto.Docflow.G"
+    "etDocflowRequest\"~\n\021GetDocflowRequest\0220\n"
+    "\nDocumentId\030\001 \002(\0132\034.Diadoc.Api.Proto.Doc"
+    "umentId\022\023\n\013LastEventId\030\002 \001(\t\022\"\n\023InjectEn"
+    "tityContent\030\003 \001(\010:\005false\"[\n\027GetDocflowBa"
+    "tchResponse\022@\n\tDocuments\030\001 \003(\0132-.Diadoc."
+    "Api.Proto.Docflow.DocumentWithDocflow\"\276\001"
+    "\n\025SearchDocflowsRequest\022\023\n\013QueryString\030\001"
+    " \002(\t\022\022\n\005Count\030\002 \001(\005:\003100\022\022\n\nFirstIndex\030\003"
+    " \001(\005\022D\n\005Scope\030\004 \001(\0162%.Diadoc.Api.Proto.D"
+    "ocflow.SearchScope:\016SearchScopeAny\022\"\n\023In"
+    "jectEntityContent\030\005 \001(\010:\005false\"u\n\026Search"
+    "DocflowsResponse\022@\n\tDocuments\030\001 \003(\0132-.Di"
+    "adoc.Api.Proto.Docflow.DocumentWithDocfl"
+    "ow\022\031\n\021HaveMoreDocuments\030\002 \001(\010\"\177\n\034GetDocf"
+    "lowsByPacketIdRequest\022\020\n\010PacketId\030\001 \002(\t\022"
+    "\022\n\005Count\030\002 \001(\005:\003100\022\"\n\023InjectEntityConte"
+    "nt\030\003 \001(\010:\005false\022\025\n\rAfterIndexKey\030\004 \001(\014\"d"
+    "\n\017FetchedDocument\022\?\n\010Document\030\001 \002(\0132-.Di"
+    "adoc.Api.Proto.Docflow.DocumentWithDocfl"
+    "ow\022\020\n\010IndexKey\030\002 \002(\014\"w\n\035GetDocflowsByPac"
+    "ketIdResponse\022<\n\tDocuments\030\001 \003(\0132).Diado"
+    "c.Api.Proto.Docflow.FetchedDocument\022\030\n\020N"
+    "extPageIndexKey\030\002 \001(\014\"\330\001\n\027GetDocflowEven"
+    "tsRequest\0221\n\006Filter\030\001 \002(\0132!.Diadoc.Api.P"
+    "roto.TimeBasedFilter\022\025\n\rAfterIndexKey\030\002 "
+    "\001(\014\022 \n\021PopulateDocuments\030\003 \001(\010:\005false\022\"\n"
+    "\023InjectEntityContent\030\004 \001(\010:\005false\022-\n\036Pop"
+    "ulatePreviousDocumentStates\030\005 \001(\010:\005false"
+    "\"\240\001\n\030GetDocflowEventsResponse\022\022\n\nTotalCo"
+    "unt\030\001 \001(\005\0226\n\006Events\030\002 \003(\0132&.Diadoc.Api.P"
+    "roto.Docflow.DocflowEvent\0228\n\016TotalCountT"
+    "ype\030\003 \002(\0162 .Diadoc.Api.Proto.TotalCountT"
+    "ype\"\273\002\n\014DocflowEvent\022\017\n\007EventId\030\001 \001(\t\022.\n"
+    "\tTimestamp\030\002 \001(\0132\033.Diadoc.Api.Proto.Time"
+    "stamp\0220\n\nDocumentId\030\003 \001(\0132\034.Diadoc.Api.P"
+    "roto.DocumentId\022\020\n\010IndexKey\030\004 \001(\014\022\?\n\010Doc"
+    "ument\030\005 \001(\0132-.Diadoc.Api.Proto.Docflow.D"
+    "ocumentWithDocflow\022\027\n\017PreviousEventId\030\006 "
+    "\001(\t\022L\n\025PreviousDocumentState\030\007 \001(\0132-.Dia"
+    "doc.Api.Proto.Docflow.DocumentWithDocflo"
+    "w*\204\001\n\013SearchScope\022\022\n\016SearchScopeAny\020\000\022\027\n"
+    "\023SearchScopeIncoming\020\001\022\027\n\023SearchScopeOut"
+    "going\020\002\022\026\n\022SearchScopeDeleted\020\003\022\027\n\023Searc"
+    "hScopeInternal\020\004", 1976);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Docflow/DocflowApi.proto", &protobuf_RegisterTypes);
   GetDocflowBatchRequest::default_instance_ = new GetDocflowBatchRequest();
@@ -3209,6 +3213,7 @@ void GetDocflowEventsRequest::Swap(GetDocflowEventsRequest* other) {
 #ifndef _MSC_VER
 const int GetDocflowEventsResponse::kTotalCountFieldNumber;
 const int GetDocflowEventsResponse::kEventsFieldNumber;
+const int GetDocflowEventsResponse::kTotalCountTypeFieldNumber;
 #endif  // !_MSC_VER
 
 GetDocflowEventsResponse::GetDocflowEventsResponse()
@@ -3230,6 +3235,7 @@ GetDocflowEventsResponse::GetDocflowEventsResponse(const GetDocflowEventsRespons
 void GetDocflowEventsResponse::SharedCtor() {
   _cached_size_ = 0;
   totalcount_ = 0;
+  totalcounttype_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -3265,7 +3271,21 @@ GetDocflowEventsResponse* GetDocflowEventsResponse::New() const {
 }
 
 void GetDocflowEventsResponse::Clear() {
-  totalcount_ = 0;
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<GetDocflowEventsResponse*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  ZR_(totalcount_, totalcounttype_);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
   events_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -3305,6 +3325,26 @@ bool GetDocflowEventsResponse::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(18)) goto parse_Events;
+        if (input->ExpectTag(24)) goto parse_TotalCountType;
+        break;
+      }
+
+      // required .Diadoc.Api.Proto.TotalCountType TotalCountType = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_TotalCountType:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Diadoc::Api::Proto::TotalCountType_IsValid(value)) {
+            set_totalcounttype(static_cast< ::Diadoc::Api::Proto::TotalCountType >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(3, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -3345,6 +3385,12 @@ void GetDocflowEventsResponse::SerializeWithCachedSizes(
       2, this->events(i), output);
   }
 
+  // required .Diadoc.Api.Proto.TotalCountType TotalCountType = 3;
+  if (has_totalcounttype()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      3, this->totalcounttype(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -3367,6 +3413,12 @@ void GetDocflowEventsResponse::SerializeWithCachedSizes(
         2, this->events(i), target);
   }
 
+  // required .Diadoc.Api.Proto.TotalCountType TotalCountType = 3;
+  if (has_totalcounttype()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      3, this->totalcounttype(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -3384,6 +3436,12 @@ int GetDocflowEventsResponse::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->totalcount());
+    }
+
+    // required .Diadoc.Api.Proto.TotalCountType TotalCountType = 3;
+    if (has_totalcounttype()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->totalcounttype());
     }
 
   }
@@ -3425,6 +3483,9 @@ void GetDocflowEventsResponse::MergeFrom(const GetDocflowEventsResponse& from) {
     if (from.has_totalcount()) {
       set_totalcount(from.totalcount());
     }
+    if (from.has_totalcounttype()) {
+      set_totalcounttype(from.totalcounttype());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -3442,6 +3503,7 @@ void GetDocflowEventsResponse::CopyFrom(const GetDocflowEventsResponse& from) {
 }
 
 bool GetDocflowEventsResponse::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000004) != 0x00000004) return false;
 
   if (!::google::protobuf::internal::AllAreInitialized(this->events())) return false;
   return true;
@@ -3451,6 +3513,7 @@ void GetDocflowEventsResponse::Swap(GetDocflowEventsResponse* other) {
   if (other != this) {
     std::swap(totalcount_, other->totalcount_);
     events_.Swap(&other->events_);
+    std::swap(totalcounttype_, other->totalcounttype_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

@@ -85,6 +85,7 @@ public:
 	Diadoc::Api::Proto::Events::PrepareDocumentsToSignResponse PrepareDocumentsToSign(const Diadoc::Api::Proto::Events::PrepareDocumentsToSignRequest& request);
 	Diadoc::Api::Proto::Events::Message SendDraft(const Diadoc::Api::Proto::Events::DraftToSend& request, const std::wstring& operationId = std::wstring());
 	Diadoc::Api::Proto::Events::Template PostTemplate(const Diadoc::Api::Proto::Events::TemplateToPost& templateToPost, const std::wstring& operationId = std::wstring());
+	Diadoc::Api::Proto::Events::MessagePatch PostTemplatePatch(const std::wstring& boxId, const std::wstring& templateId, const Diadoc::Api::Proto::Events::TemplatePatchToPost& patch, const std::wstring& operationId = std::wstring());
 	Diadoc::Api::Proto::Events::Message TransformTemplateToMessage(const Diadoc::Api::Proto::Events::TemplateTransformationToPost& templateTransformationToPost, const std::wstring& operationId = std::wstring());
 	Diadoc::Api::Proto::Events::Template GetTemplate(const std::wstring& boxId, const std::wstring& templateId, const std::wstring& entityId = std::wstring());
 

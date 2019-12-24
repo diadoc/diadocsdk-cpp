@@ -35,6 +35,7 @@
 #include "Docflow/RevocationDocflow.pb.h"
 #include "Docflow/ResolutionDocflow.pb.h"
 #include "Docflow/UniversalTransferDocumentDocflow.pb.h"
+#include "Docflow/RoamingNotification.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace Diadoc {
@@ -50,7 +51,6 @@ void protobuf_ShutdownFile_Docflow_2fDocflow_2eproto();
 class Docflow;
 class DocflowStatus;
 class DocflowStatusModel;
-class RoamingNotification;
 
 enum DocflowStatusSeverity {
   UnknownDocflowStatusSeverity = 0,
@@ -585,97 +585,6 @@ class DocflowStatusModel : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static DocflowStatusModel* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class RoamingNotification : public ::google::protobuf::Message {
- public:
-  RoamingNotification();
-  virtual ~RoamingNotification();
-
-  RoamingNotification(const RoamingNotification& from);
-
-  inline RoamingNotification& operator=(const RoamingNotification& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const RoamingNotification& default_instance();
-
-  void Swap(RoamingNotification* other);
-
-  // implements Message ----------------------------------------------
-
-  RoamingNotification* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const RoamingNotification& from);
-  void MergeFrom(const RoamingNotification& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // required .Diadoc.Api.Proto.Docflow.Entity Notification = 1;
-  inline bool has_notification() const;
-  inline void clear_notification();
-  static const int kNotificationFieldNumber = 1;
-  inline const ::Diadoc::Api::Proto::Docflow::Entity& notification() const;
-  inline ::Diadoc::Api::Proto::Docflow::Entity* mutable_notification();
-  inline ::Diadoc::Api::Proto::Docflow::Entity* release_notification();
-  inline void set_allocated_notification(::Diadoc::Api::Proto::Docflow::Entity* notification);
-
-  // required bool IsSuccess = 2;
-  inline bool has_issuccess() const;
-  inline void clear_issuccess();
-  static const int kIsSuccessFieldNumber = 2;
-  inline bool issuccess() const;
-  inline void set_issuccess(bool value);
-
-  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Docflow.RoamingNotification)
- private:
-  inline void set_has_notification();
-  inline void clear_has_notification();
-  inline void set_has_issuccess();
-  inline void clear_has_issuccess();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::Diadoc::Api::Proto::Docflow::Entity* notification_;
-  bool issuccess_;
-  friend void  protobuf_AddDesc_Docflow_2fDocflow_2eproto();
-  friend void protobuf_AssignDesc_Docflow_2fDocflow_2eproto();
-  friend void protobuf_ShutdownFile_Docflow_2fDocflow_2eproto();
-
-  void InitAsDefaultInstance();
-  static RoamingNotification* default_instance_;
 };
 // ===================================================================
 
@@ -1777,75 +1686,6 @@ inline void DocflowStatusModel::set_allocated_statushint(::std::string* statushi
     statushint_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.DocflowStatusModel.StatusHint)
-}
-
-// -------------------------------------------------------------------
-
-// RoamingNotification
-
-// required .Diadoc.Api.Proto.Docflow.Entity Notification = 1;
-inline bool RoamingNotification::has_notification() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void RoamingNotification::set_has_notification() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void RoamingNotification::clear_has_notification() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void RoamingNotification::clear_notification() {
-  if (notification_ != NULL) notification_->::Diadoc::Api::Proto::Docflow::Entity::Clear();
-  clear_has_notification();
-}
-inline const ::Diadoc::Api::Proto::Docflow::Entity& RoamingNotification::notification() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.RoamingNotification.Notification)
-  return notification_ != NULL ? *notification_ : *default_instance_->notification_;
-}
-inline ::Diadoc::Api::Proto::Docflow::Entity* RoamingNotification::mutable_notification() {
-  set_has_notification();
-  if (notification_ == NULL) notification_ = new ::Diadoc::Api::Proto::Docflow::Entity;
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.RoamingNotification.Notification)
-  return notification_;
-}
-inline ::Diadoc::Api::Proto::Docflow::Entity* RoamingNotification::release_notification() {
-  clear_has_notification();
-  ::Diadoc::Api::Proto::Docflow::Entity* temp = notification_;
-  notification_ = NULL;
-  return temp;
-}
-inline void RoamingNotification::set_allocated_notification(::Diadoc::Api::Proto::Docflow::Entity* notification) {
-  delete notification_;
-  notification_ = notification;
-  if (notification) {
-    set_has_notification();
-  } else {
-    clear_has_notification();
-  }
-  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.RoamingNotification.Notification)
-}
-
-// required bool IsSuccess = 2;
-inline bool RoamingNotification::has_issuccess() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void RoamingNotification::set_has_issuccess() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void RoamingNotification::clear_has_issuccess() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void RoamingNotification::clear_issuccess() {
-  issuccess_ = false;
-  clear_has_issuccess();
-}
-inline bool RoamingNotification::issuccess() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.RoamingNotification.IsSuccess)
-  return issuccess_;
-}
-inline void RoamingNotification::set_issuccess(bool value) {
-  set_has_issuccess();
-  issuccess_ = value;
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.RoamingNotification.IsSuccess)
 }
 
 

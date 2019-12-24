@@ -539,6 +539,18 @@ Template DiadocApi::PostTemplate(const TemplateToPost& templateToPost, const std
 	return FromProtoBytes<Template>(PerformHttpRequest(buf.str(), ToProtoBytes(templateToPost), POST));
 }
 
+MessagePatch DiadocApi::PostTemplatePatch(const std::wstring& boxId, const std::wstring& templateId, const TemplatePatchToPost& patch, const std::wstring& operationId)
+{
+	WppTraceDebugOut(L"PostTemplatePatch...");
+	std::wstringstream buf;
+	buf << L"/PostTemplatePatch";
+	buf << L"?boxId=" << StringHelper::CanonicalizeUrl(boxId);
+	buf << L"&templateId=" << StringHelper::CanonicalizeUrl(templateId);
+	if (!operationId.empty())
+		buf << L"&operationId=" << StringHelper::CanonicalizeUrl(operationId);
+	return FromProtoBytes<MessagePatch>(PerformHttpRequest(buf.str(), ToProtoBytes(patch), POST));
+}
+
 Message DiadocApi::TransformTemplateToMessage(const TemplateTransformationToPost& templateTransformationToPost, const std::wstring& operationId)
 {
 	WppTraceDebugOut(L"TransformTemplateToMessage...");
