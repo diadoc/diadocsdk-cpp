@@ -73,6 +73,8 @@ public:
 	void VerifyThatUserHasAccessToAnyBox(const Bytes_t& certBytes);
 	void Authenticate(const std::wstring& login, const std::wstring& password);
 
+	DiadocApi::Bytes_t PerformHttpRequestGet(const std::wstring& queryString);
+
 	Diadoc::Api::Proto::BoxList GetBoxes();
 	Diadoc::Api::Proto::BoxList GetBoxesByInnKpp(const std::wstring& inn, const std::wstring& kpp);
 	Diadoc::Api::Proto::BoxInfo GetBoxInfo(const std::wstring& boxId);

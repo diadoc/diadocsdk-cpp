@@ -406,6 +406,13 @@ std::wstring DiadocApi::GetVersionString()
 	return wss.str();
 }
 
+DiadocApi::Bytes_t DiadocApi::PerformHttpRequestGet(const std::wstring& queryString)
+{
+	WppTraceDebugOut(L"PerformHttpRequestGet...");
+	return PerformHttpRequest(queryString, GET);
+
+}
+
 BoxList DiadocApi::GetBoxes()
 {
 	WppTraceDebugOut(L"GetBoxes...");
