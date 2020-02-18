@@ -11,6 +11,7 @@
 #include "protos\Documents\DocumentList.pb.h"
 #include "protos\Documents\DocumentsMoveOperation.pb.h"
 #include "protos\Documents\DocumentProtocol.pb.h"
+#include "protos\Documents\DocumentZip.pb.h"
 #include "protos\Documents\Types\DocumentTypeDescription.pb.h"
 #include "protos\Docflow\DocflowApi.pb.h"
 #include "protos\Forwarding\ForwardingApi.pb.h"
@@ -141,6 +142,10 @@ public:
 	PrintFormResult GeneratePrintForm(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& documentId);
 
 	TaskResult<Diadoc::Api::Proto::Documents::DocumentProtocol> GenerateDocumentProtocol(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& documentId);
+
+	TaskResult<Diadoc::Api::Proto::Documents::DocumentZipGenerationResult> GenerateDocumentZip(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& documentId, bool fullDocflow);
+
+    Bytes_t ShelfDownload(const std::wstring& nameOnShelf);
 
 	class WebFile
 	{

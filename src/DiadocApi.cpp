@@ -727,6 +727,22 @@ TaskResult<DocumentProtocol> DiadocApi::GenerateDocumentProtocol(const std::wstr
 	return PerformAsyncHttpRequest<DocumentProtocol>("GenerateDocumentProtocol", buf.str(), GET);
 }
 
+TaskResult<DocumentZipGenerationResult> DiadocApi::GenerateDocumentZip(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& documentId, bool fullDocflow)
+{
+    std::wstringstream buf;
+    buf << "?boxId=" << StringHelper::CanonicalizeUrl(boxId) << L"&messageId=" << StringHelper::CanonicalizeUrl(messageId) << L"&documentId=" << StringHelper::CanonicalizeUrl(documentId);
+    buf << L"&fullDocflow=" << (fullDocflow ? L"True" : L"False");
+    return PerformAsyncHttpRequest<DocumentZipGenerationResult>("GenerateDocumentZip", buf.str(), GET);
+}
+
+DiadocApi::Bytes_t DiadocApi::ShelfDownload(const std::wstring& nameOnShelf)
+{
+    WppTraceDebugOut(L"ShelfDownload...");
+	std::wstringstream buf;
+	buf << L"/ShelfDownload?nameOnShelf=" << StringHelper::CanonicalizeUrl(nameOnShelf);
+	return PerformHttpRequest(buf.str(), GET);
+}
+
 DocumentList DiadocApi::GetDocuments(const std::wstring& boxId, const std::wstring& filterCategory, const std::wstring& counteragentBoxId, __int64* timestampFrom, __int64* timestampTo,
 	const std::wstring& fromDocumentDate, const std::wstring& toDocumentDate, const std::wstring& departmentId, bool excludeSubdepartments, const std::string& afterIndexKey, int* count)
 {
