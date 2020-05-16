@@ -69,11 +69,17 @@ enum SignerPowers {
   PersonDocumentedOperation = 3,
   MadeOperationAndSignedInvoice = 4,
   MadeAndResponsibleForOperationAndSignedInvoice = 5,
-  ResponsibleForOperationAndSignerForInvoice = 6
+  ResponsibleForOperationAndSignerForInvoice = 6,
+  ChairmanCommission = 7,
+  MemberCommission = 8,
+  PersonApprovedDocument = 21,
+  PersonConfirmedDocument = 22,
+  PersonAgreedOnDocument = 23,
+  PersonOtherPower = 29
 };
 bool SignerPowers_IsValid(int value);
 const SignerPowers SignerPowers_MIN = InvoiceSigner;
-const SignerPowers SignerPowers_MAX = ResponsibleForOperationAndSignerForInvoice;
+const SignerPowers SignerPowers_MAX = PersonOtherPower;
 const int SignerPowers_ARRAYSIZE = SignerPowers_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* SignerPowers_descriptor();
@@ -119,11 +125,13 @@ enum DocumentTitleType {
   TovTorg551Buyer = 5,
   AccCert552Seller = 6,
   AccCert552Buyer = 7,
-  Utd820Buyer = 8
+  Utd820Buyer = 8,
+  PriRasxBuyer = 9,
+  PriRasxAddInformation = 10
 };
 bool DocumentTitleType_IsValid(int value);
 const DocumentTitleType DocumentTitleType_MIN = Absent;
-const DocumentTitleType DocumentTitleType_MAX = Utd820Buyer;
+const DocumentTitleType DocumentTitleType_MAX = PriRasxAddInformation;
 const int DocumentTitleType_ARRAYSIZE = DocumentTitleType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* DocumentTitleType_descriptor();
