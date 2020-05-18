@@ -199,14 +199,13 @@ void protobuf_AddDesc_Invoicing_2fExtendedSigner_2eproto() {
     "erEmployee\020\001\022\036\n\032InformationCreatorEmploy"
     "ee\020\002\022\035\n\031OtherOrganizationEmployee\020\003\022\024\n\020A"
     "uthorizedPerson\020\004\022\021\n\rBuyerEmployee\020\005\022#\n\037"
-    "InformationCreatorBuyerEmployee\020\006*\366\001\n\021Do"
+    "InformationCreatorBuyerEmployee\020\006*\362\001\n\021Do"
     "cumentTitleType\022\023\n\006Absent\020\377\377\377\377\377\377\377\377\377\001\022\r\n\t"
     "UtdSeller\020\000\022\014\n\010UtdBuyer\020\001\022\r\n\tUcdSeller\020\002"
     "\022\014\n\010UcdBuyer\020\003\022\024\n\020TovTorg551Seller\020\004\022\023\n\017"
     "TovTorg551Buyer\020\005\022\024\n\020AccCert552Seller\020\006\022"
-    "\023\n\017AccCert552Buyer\020\007\022\017\n\013Utd820Buyer\020\010\022\020\n"
-    "\014PriRasxBuyer\020\t\022\031\n\025PriRasxAddInformation"
-    "\020\n", 2002);
+    "\023\n\017AccCert552Buyer\020\007\022\017\n\013Utd820Buyer\020\010\022\016\n"
+    "\nTorg2Buyer\020\t\022\027\n\023Torg2AdditionalInfo\020\n", 1998);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Invoicing/ExtendedSigner.proto", &protobuf_RegisterTypes);
   ExtendedSigner::default_instance_ = new ExtendedSigner();

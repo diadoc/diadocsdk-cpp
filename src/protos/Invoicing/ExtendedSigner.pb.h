@@ -126,12 +126,12 @@ enum DocumentTitleType {
   AccCert552Seller = 6,
   AccCert552Buyer = 7,
   Utd820Buyer = 8,
-  PriRasxBuyer = 9,
-  PriRasxAddInformation = 10
+  Torg2Buyer = 9,
+  Torg2AdditionalInfo = 10
 };
 bool DocumentTitleType_IsValid(int value);
 const DocumentTitleType DocumentTitleType_MIN = Absent;
-const DocumentTitleType DocumentTitleType_MAX = PriRasxAddInformation;
+const DocumentTitleType DocumentTitleType_MAX = Torg2AdditionalInfo;
 const int DocumentTitleType_ARRAYSIZE = DocumentTitleType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* DocumentTitleType_descriptor();
