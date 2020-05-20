@@ -185,23 +185,27 @@ void protobuf_AddDesc_Invoicing_2fExtendedSigner_2eproto() {
     "s\022\030\n\020SignerPowersBase\030\007 \001(\t\022\033\n\023SignerOrg"
     "PowersBase\030\010 \001(\t*G\n\nSignerType\022\017\n\013LegalE"
     "ntity\020\001\022\024\n\020IndividualEntity\020\002\022\022\n\016Physica"
-    "lPerson\020\003*\372\001\n\014SignerPowers\022\021\n\rInvoiceSig"
+    "lPerson\020\003*\223\003\n\014SignerPowers\022\021\n\rInvoiceSig"
     "ner\020\000\022\027\n\023PersonMadeOperation\020\001\022\030\n\024MadeAn"
     "dSignOperation\020\002\022\035\n\031PersonDocumentedOper"
     "ation\020\003\022!\n\035MadeOperationAndSignedInvoice"
     "\020\004\0222\n.MadeAndResponsibleForOperationAndS"
     "ignedInvoice\020\005\022.\n*ResponsibleForOperatio"
-    "nAndSignerForInvoice\020\006*\257\001\n\014SignerStatus\022"
-    "\022\n\016SellerEmployee\020\001\022\036\n\032InformationCreato"
-    "rEmployee\020\002\022\035\n\031OtherOrganizationEmployee"
-    "\020\003\022\024\n\020AuthorizedPerson\020\004\022\021\n\rBuyerEmploye"
-    "e\020\005\022#\n\037InformationCreatorBuyerEmployee\020\006"
-    "*\311\001\n\021DocumentTitleType\022\023\n\006Absent\020\377\377\377\377\377\377\377"
-    "\377\377\001\022\r\n\tUtdSeller\020\000\022\014\n\010UtdBuyer\020\001\022\r\n\tUcdS"
-    "eller\020\002\022\014\n\010UcdBuyer\020\003\022\024\n\020TovTorg551Selle"
-    "r\020\004\022\023\n\017TovTorg551Buyer\020\005\022\024\n\020AccCert552Se"
-    "ller\020\006\022\023\n\017AccCert552Buyer\020\007\022\017\n\013Utd820Buy"
-    "er\020\010", 1804);
+    "nAndSignerForInvoice\020\006\022\026\n\022ChairmanCommis"
+    "sion\020\007\022\024\n\020MemberCommission\020\010\022\032\n\026PersonAp"
+    "provedDocument\020\025\022\033\n\027PersonConfirmedDocum"
+    "ent\020\026\022\032\n\026PersonAgreedOnDocument\020\027\022\024\n\020Per"
+    "sonOtherPower\020\035*\257\001\n\014SignerStatus\022\022\n\016Sell"
+    "erEmployee\020\001\022\036\n\032InformationCreatorEmploy"
+    "ee\020\002\022\035\n\031OtherOrganizationEmployee\020\003\022\024\n\020A"
+    "uthorizedPerson\020\004\022\021\n\rBuyerEmployee\020\005\022#\n\037"
+    "InformationCreatorBuyerEmployee\020\006*\362\001\n\021Do"
+    "cumentTitleType\022\023\n\006Absent\020\377\377\377\377\377\377\377\377\377\001\022\r\n\t"
+    "UtdSeller\020\000\022\014\n\010UtdBuyer\020\001\022\r\n\tUcdSeller\020\002"
+    "\022\014\n\010UcdBuyer\020\003\022\024\n\020TovTorg551Seller\020\004\022\023\n\017"
+    "TovTorg551Buyer\020\005\022\024\n\020AccCert552Seller\020\006\022"
+    "\023\n\017AccCert552Buyer\020\007\022\017\n\013Utd820Buyer\020\010\022\016\n"
+    "\nTorg2Buyer\020\t\022\027\n\023Torg2AdditionalInfo\020\n", 1998);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Invoicing/ExtendedSigner.proto", &protobuf_RegisterTypes);
   ExtendedSigner::default_instance_ = new ExtendedSigner();
@@ -247,6 +251,12 @@ bool SignerPowers_IsValid(int value) {
     case 4:
     case 5:
     case 6:
+    case 7:
+    case 8:
+    case 21:
+    case 22:
+    case 23:
+    case 29:
       return true;
     default:
       return false;
@@ -287,6 +297,8 @@ bool DocumentTitleType_IsValid(int value) {
     case 6:
     case 7:
     case 8:
+    case 9:
+    case 10:
       return true;
     default:
       return false;
