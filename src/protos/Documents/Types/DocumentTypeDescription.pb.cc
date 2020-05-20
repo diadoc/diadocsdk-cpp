@@ -119,14 +119,15 @@ void protobuf_AssignDesc_Documents_2fTypes_2fDocumentTypeDescription_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(DocumentFunction));
   DocumentVersion_descriptor_ = file->message_type(3);
-  static const int DocumentVersion_offsets_[7] = {
+  static const int DocumentVersion_offsets_[8] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentVersion, version_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentVersion, supportscontentpatching_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentVersion, supportsencrypting_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentVersion, supportspredefinedrecipienttitle_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentVersion, supportsamendmentrequest_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentVersion, titles_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentVersion, isactual_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentVersion, workflows_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentVersion, supportspredefinedrecipienttitle_),
   };
   DocumentVersion_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -327,44 +328,44 @@ void protobuf_AddDesc_Documents_2fTypes_2fDocumentTypeDescription_2eproto() {
     "ocumentTypeDescription\"e\n\020DocumentFuncti"
     "on\022\014\n\004Name\030\001 \002(\t\022C\n\010Versions\030\002 \003(\01321.Dia"
     "doc.Api.Proto.Documents.Types.DocumentVe"
-    "rsion\"\243\002\n\017DocumentVersion\022\017\n\007Version\030\001 \002"
+    "rsion\"\305\002\n\017DocumentVersion\022\017\n\007Version\030\001 \002"
     "(\t\022\037\n\027SupportsContentPatching\030\002 \002(\010\022\032\n\022S"
-    "upportsEncrypting\030\003 \002(\010\022\?\n\006Titles\030\004 \003(\0132"
-    "/.Diadoc.Api.Proto.Documents.Types.Docum"
-    "entTitle\022\020\n\010IsActual\030\005 \002(\010\022E\n\tWorkflows\030"
-    "\006 \003(\01322.Diadoc.Api.Proto.Documents.Types"
-    ".DocumentWorkflow\022(\n SupportsPredefinedR"
-    "ecipientTitle\030\007 \002(\010\"1\n\020DocumentWorkflow\022"
-    "\n\n\002Id\030\001 \002(\005\022\021\n\tIsDefault\030\002 \002(\010\"\301\002\n\rDocum"
-    "entTitle\022\r\n\005Index\030\007 \002(\005\022\020\n\010IsFormal\030\001 \002("
-    "\010\022\016\n\006XsdUrl\030\002 \001(\t\022\026\n\016UserDataXsdUrl\030\005 \001("
-    "\t\022@\n\nSignerInfo\030\006 \002(\0132,.Diadoc.Api.Proto"
-    ".Documents.Types.SignerInfo\022M\n\rMetadataI"
-    "tems\030\003 \003(\01326.Diadoc.Api.Proto.Documents."
-    "Types.DocumentMetadataItem\022V\n\026EncryptedM"
-    "etadataItems\030\004 \003(\01326.Diadoc.Api.Proto.Do"
-    "cuments.Types.DocumentMetadataItem\"\260\001\n\nS"
-    "ignerInfo\022@\n\nSignerType\030\001 \002(\0162,.Diadoc.A"
-    "pi.Proto.Documents.Types.SignerType\022`\n\031E"
-    "xtendedDocumentTitleType\030\002 \002(\01625.Diadoc."
-    "Api.Proto.Invoicing.Signers.DocumentTitl"
-    "eType:\006Absent\"\312\001\n\024DocumentMetadataItem\022\n"
-    "\n\002Id\030\001 \002(\t\022H\n\004Type\030\002 \002(\0162:.Diadoc.Api.Pr"
-    "oto.Documents.Types.DocumentMetadataItem"
-    "Type\022\022\n\nIsRequired\030\003 \002(\010\022H\n\006Source\030\004 \002(\016"
-    "28.Diadoc.Api.Proto.Documents.Types.Docu"
-    "mentMetadataSource\"N\n\024DetectedDocumentTy"
-    "pe\022\023\n\013TypeNamedId\030\001 \002(\t\022\020\n\010Function\030\002 \002("
-    "\t\022\017\n\007Version\030\003 \002(\t\"l\n\033DetectDocumentType"
-    "sResponse\022M\n\rDocumentTypes\030\001 \003(\01326.Diado"
-    "c.Api.Proto.Documents.Types.DetectedDocu"
-    "mentType*-\n\017DocumentDocflow\022\014\n\010External\020"
-    "\000\022\014\n\010Internal\020\001*6\n\nSignerType\022\010\n\004None\020\000\022"
-    "\n\n\006Signer\020\001\022\022\n\016ExtendedSigner\020\002*T\n\030Docum"
-    "entMetadataItemType\022\n\n\006String\020\000\022\013\n\007Integ"
-    "er\020\001\022\013\n\007Decimal\020\002\022\010\n\004Date\020\003\022\010\n\004Time\020\004*+\n"
-    "\026DocumentMetadataSource\022\007\n\003Xml\020\000\022\010\n\004User"
-    "\020\001", 2042);
+    "upportsEncrypting\030\003 \002(\010\022(\n SupportsPrede"
+    "finedRecipientTitle\030\007 \002(\010\022 \n\030SupportsAme"
+    "ndmentRequest\030\010 \002(\010\022\?\n\006Titles\030\004 \003(\0132/.Di"
+    "adoc.Api.Proto.Documents.Types.DocumentT"
+    "itle\022\020\n\010IsActual\030\005 \002(\010\022E\n\tWorkflows\030\006 \003("
+    "\01322.Diadoc.Api.Proto.Documents.Types.Doc"
+    "umentWorkflow\"1\n\020DocumentWorkflow\022\n\n\002Id\030"
+    "\001 \002(\005\022\021\n\tIsDefault\030\002 \002(\010\"\301\002\n\rDocumentTit"
+    "le\022\r\n\005Index\030\007 \002(\005\022\020\n\010IsFormal\030\001 \002(\010\022\016\n\006X"
+    "sdUrl\030\002 \001(\t\022\026\n\016UserDataXsdUrl\030\005 \001(\t\022@\n\nS"
+    "ignerInfo\030\006 \002(\0132,.Diadoc.Api.Proto.Docum"
+    "ents.Types.SignerInfo\022M\n\rMetadataItems\030\003"
+    " \003(\01326.Diadoc.Api.Proto.Documents.Types."
+    "DocumentMetadataItem\022V\n\026EncryptedMetadat"
+    "aItems\030\004 \003(\01326.Diadoc.Api.Proto.Document"
+    "s.Types.DocumentMetadataItem\"\260\001\n\nSignerI"
+    "nfo\022@\n\nSignerType\030\001 \002(\0162,.Diadoc.Api.Pro"
+    "to.Documents.Types.SignerType\022`\n\031Extende"
+    "dDocumentTitleType\030\002 \002(\01625.Diadoc.Api.Pr"
+    "oto.Invoicing.Signers.DocumentTitleType:"
+    "\006Absent\"\312\001\n\024DocumentMetadataItem\022\n\n\002Id\030\001"
+    " \002(\t\022H\n\004Type\030\002 \002(\0162:.Diadoc.Api.Proto.Do"
+    "cuments.Types.DocumentMetadataItemType\022\022"
+    "\n\nIsRequired\030\003 \002(\010\022H\n\006Source\030\004 \002(\01628.Dia"
+    "doc.Api.Proto.Documents.Types.DocumentMe"
+    "tadataSource\"N\n\024DetectedDocumentType\022\023\n\013"
+    "TypeNamedId\030\001 \002(\t\022\020\n\010Function\030\002 \002(\t\022\017\n\007V"
+    "ersion\030\003 \002(\t\"l\n\033DetectDocumentTypesRespo"
+    "nse\022M\n\rDocumentTypes\030\001 \003(\01326.Diadoc.Api."
+    "Proto.Documents.Types.DetectedDocumentTy"
+    "pe*-\n\017DocumentDocflow\022\014\n\010External\020\000\022\014\n\010I"
+    "nternal\020\001*6\n\nSignerType\022\010\n\004None\020\000\022\n\n\006Sig"
+    "ner\020\001\022\022\n\016ExtendedSigner\020\002*T\n\030DocumentMet"
+    "adataItemType\022\n\n\006String\020\000\022\013\n\007Integer\020\001\022\013"
+    "\n\007Decimal\020\002\022\010\n\004Date\020\003\022\010\n\004Time\020\004*+\n\026Docum"
+    "entMetadataSource\022\007\n\003Xml\020\000\022\010\n\004User\020\001", 2076);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Documents/Types/DocumentTypeDescription.proto", &protobuf_RegisterTypes);
   DocumentTypeDescription::default_instance_ = new DocumentTypeDescription();
@@ -1401,10 +1402,11 @@ void DocumentFunction::Swap(DocumentFunction* other) {
 const int DocumentVersion::kVersionFieldNumber;
 const int DocumentVersion::kSupportsContentPatchingFieldNumber;
 const int DocumentVersion::kSupportsEncryptingFieldNumber;
+const int DocumentVersion::kSupportsPredefinedRecipientTitleFieldNumber;
+const int DocumentVersion::kSupportsAmendmentRequestFieldNumber;
 const int DocumentVersion::kTitlesFieldNumber;
 const int DocumentVersion::kIsActualFieldNumber;
 const int DocumentVersion::kWorkflowsFieldNumber;
-const int DocumentVersion::kSupportsPredefinedRecipientTitleFieldNumber;
 #endif  // !_MSC_VER
 
 DocumentVersion::DocumentVersion()
@@ -1429,8 +1431,9 @@ void DocumentVersion::SharedCtor() {
   version_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   supportscontentpatching_ = false;
   supportsencrypting_ = false;
-  isactual_ = false;
   supportspredefinedrecipienttitle_ = false;
+  supportsamendmentrequest_ = false;
+  isactual_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -1479,8 +1482,8 @@ void DocumentVersion::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 87) {
-    ZR_(supportscontentpatching_, supportspredefinedrecipienttitle_);
+  if (_has_bits_[0 / 32] & 95) {
+    ZR_(supportscontentpatching_, isactual_);
     if (has_version()) {
       if (version_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         version_->clear();
@@ -1607,6 +1610,21 @@ bool DocumentVersion::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(64)) goto parse_SupportsAmendmentRequest;
+        break;
+      }
+
+      // required bool SupportsAmendmentRequest = 8;
+      case 8: {
+        if (tag == 64) {
+         parse_SupportsAmendmentRequest:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &supportsamendmentrequest_)));
+          set_has_supportsamendmentrequest();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -1678,6 +1696,11 @@ void DocumentVersion::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(7, this->supportspredefinedrecipienttitle(), output);
   }
 
+  // required bool SupportsAmendmentRequest = 8;
+  if (has_supportsamendmentrequest()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(8, this->supportsamendmentrequest(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -1733,6 +1756,11 @@ void DocumentVersion::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(7, this->supportspredefinedrecipienttitle(), target);
   }
 
+  // required bool SupportsAmendmentRequest = 8;
+  if (has_supportsamendmentrequest()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(8, this->supportsamendmentrequest(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -1762,13 +1790,18 @@ int DocumentVersion::ByteSize() const {
       total_size += 1 + 1;
     }
 
-    // required bool IsActual = 5;
-    if (has_isactual()) {
+    // required bool SupportsPredefinedRecipientTitle = 7;
+    if (has_supportspredefinedrecipienttitle()) {
       total_size += 1 + 1;
     }
 
-    // required bool SupportsPredefinedRecipientTitle = 7;
-    if (has_supportspredefinedrecipienttitle()) {
+    // required bool SupportsAmendmentRequest = 8;
+    if (has_supportsamendmentrequest()) {
+      total_size += 1 + 1;
+    }
+
+    // required bool IsActual = 5;
+    if (has_isactual()) {
       total_size += 1 + 1;
     }
 
@@ -1826,11 +1859,14 @@ void DocumentVersion::MergeFrom(const DocumentVersion& from) {
     if (from.has_supportsencrypting()) {
       set_supportsencrypting(from.supportsencrypting());
     }
-    if (from.has_isactual()) {
-      set_isactual(from.isactual());
-    }
     if (from.has_supportspredefinedrecipienttitle()) {
       set_supportspredefinedrecipienttitle(from.supportspredefinedrecipienttitle());
+    }
+    if (from.has_supportsamendmentrequest()) {
+      set_supportsamendmentrequest(from.supportsamendmentrequest());
+    }
+    if (from.has_isactual()) {
+      set_isactual(from.isactual());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -1849,7 +1885,7 @@ void DocumentVersion::CopyFrom(const DocumentVersion& from) {
 }
 
 bool DocumentVersion::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000057) != 0x00000057) return false;
+  if ((_has_bits_[0] & 0x0000005f) != 0x0000005f) return false;
 
   if (!::google::protobuf::internal::AllAreInitialized(this->titles())) return false;
   if (!::google::protobuf::internal::AllAreInitialized(this->workflows())) return false;
@@ -1861,10 +1897,11 @@ void DocumentVersion::Swap(DocumentVersion* other) {
     std::swap(version_, other->version_);
     std::swap(supportscontentpatching_, other->supportscontentpatching_);
     std::swap(supportsencrypting_, other->supportsencrypting_);
+    std::swap(supportspredefinedrecipienttitle_, other->supportspredefinedrecipienttitle_);
+    std::swap(supportsamendmentrequest_, other->supportsamendmentrequest_);
     titles_.Swap(&other->titles_);
     std::swap(isactual_, other->isactual_);
     workflows_.Swap(&other->workflows_);
-    std::swap(supportspredefinedrecipienttitle_, other->supportspredefinedrecipienttitle_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
