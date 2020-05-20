@@ -523,6 +523,20 @@ class DocumentVersion : public ::google::protobuf::Message {
   inline bool supportsencrypting() const;
   inline void set_supportsencrypting(bool value);
 
+  // required bool SupportsPredefinedRecipientTitle = 7;
+  inline bool has_supportspredefinedrecipienttitle() const;
+  inline void clear_supportspredefinedrecipienttitle();
+  static const int kSupportsPredefinedRecipientTitleFieldNumber = 7;
+  inline bool supportspredefinedrecipienttitle() const;
+  inline void set_supportspredefinedrecipienttitle(bool value);
+
+  // required bool SupportsAmendmentRequest = 8;
+  inline bool has_supportsamendmentrequest() const;
+  inline void clear_supportsamendmentrequest();
+  static const int kSupportsAmendmentRequestFieldNumber = 8;
+  inline bool supportsamendmentrequest() const;
+  inline void set_supportsamendmentrequest(bool value);
+
   // repeated .Diadoc.Api.Proto.Documents.Types.DocumentTitle Titles = 4;
   inline int titles_size() const;
   inline void clear_titles();
@@ -554,13 +568,6 @@ class DocumentVersion : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow >*
       mutable_workflows();
 
-  // required bool SupportsPredefinedRecipientTitle = 7;
-  inline bool has_supportspredefinedrecipienttitle() const;
-  inline void clear_supportspredefinedrecipienttitle();
-  static const int kSupportsPredefinedRecipientTitleFieldNumber = 7;
-  inline bool supportspredefinedrecipienttitle() const;
-  inline void set_supportspredefinedrecipienttitle(bool value);
-
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.Types.DocumentVersion)
  private:
   inline void set_has_version();
@@ -569,22 +576,25 @@ class DocumentVersion : public ::google::protobuf::Message {
   inline void clear_has_supportscontentpatching();
   inline void set_has_supportsencrypting();
   inline void clear_has_supportsencrypting();
-  inline void set_has_isactual();
-  inline void clear_has_isactual();
   inline void set_has_supportspredefinedrecipienttitle();
   inline void clear_has_supportspredefinedrecipienttitle();
+  inline void set_has_supportsamendmentrequest();
+  inline void clear_has_supportsamendmentrequest();
+  inline void set_has_isactual();
+  inline void clear_has_isactual();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::std::string* version_;
-  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentTitle > titles_;
-  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow > workflows_;
   bool supportscontentpatching_;
   bool supportsencrypting_;
-  bool isactual_;
   bool supportspredefinedrecipienttitle_;
+  bool supportsamendmentrequest_;
+  bool isactual_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentTitle > titles_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Types::DocumentWorkflow > workflows_;
   friend void  protobuf_AddDesc_Documents_2fTypes_2fDocumentTypeDescription_2eproto();
   friend void protobuf_AssignDesc_Documents_2fTypes_2fDocumentTypeDescription_2eproto();
   friend void protobuf_ShutdownFile_Documents_2fTypes_2fDocumentTypeDescription_2eproto();
@@ -1754,6 +1764,54 @@ inline void DocumentVersion::set_supportsencrypting(bool value) {
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Types.DocumentVersion.SupportsEncrypting)
 }
 
+// required bool SupportsPredefinedRecipientTitle = 7;
+inline bool DocumentVersion::has_supportspredefinedrecipienttitle() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void DocumentVersion::set_has_supportspredefinedrecipienttitle() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void DocumentVersion::clear_has_supportspredefinedrecipienttitle() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void DocumentVersion::clear_supportspredefinedrecipienttitle() {
+  supportspredefinedrecipienttitle_ = false;
+  clear_has_supportspredefinedrecipienttitle();
+}
+inline bool DocumentVersion::supportspredefinedrecipienttitle() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Types.DocumentVersion.SupportsPredefinedRecipientTitle)
+  return supportspredefinedrecipienttitle_;
+}
+inline void DocumentVersion::set_supportspredefinedrecipienttitle(bool value) {
+  set_has_supportspredefinedrecipienttitle();
+  supportspredefinedrecipienttitle_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Types.DocumentVersion.SupportsPredefinedRecipientTitle)
+}
+
+// required bool SupportsAmendmentRequest = 8;
+inline bool DocumentVersion::has_supportsamendmentrequest() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void DocumentVersion::set_has_supportsamendmentrequest() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void DocumentVersion::clear_has_supportsamendmentrequest() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void DocumentVersion::clear_supportsamendmentrequest() {
+  supportsamendmentrequest_ = false;
+  clear_has_supportsamendmentrequest();
+}
+inline bool DocumentVersion::supportsamendmentrequest() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Types.DocumentVersion.SupportsAmendmentRequest)
+  return supportsamendmentrequest_;
+}
+inline void DocumentVersion::set_supportsamendmentrequest(bool value) {
+  set_has_supportsamendmentrequest();
+  supportsamendmentrequest_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Types.DocumentVersion.SupportsAmendmentRequest)
+}
+
 // repeated .Diadoc.Api.Proto.Documents.Types.DocumentTitle Titles = 4;
 inline int DocumentVersion::titles_size() const {
   return titles_.size();
@@ -1786,13 +1844,13 @@ DocumentVersion::mutable_titles() {
 
 // required bool IsActual = 5;
 inline bool DocumentVersion::has_isactual() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000040u) != 0;
 }
 inline void DocumentVersion::set_has_isactual() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000040u;
 }
 inline void DocumentVersion::clear_has_isactual() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 inline void DocumentVersion::clear_isactual() {
   isactual_ = false;
@@ -1836,30 +1894,6 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::Ty
 DocumentVersion::mutable_workflows() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Documents.Types.DocumentVersion.Workflows)
   return &workflows_;
-}
-
-// required bool SupportsPredefinedRecipientTitle = 7;
-inline bool DocumentVersion::has_supportspredefinedrecipienttitle() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-inline void DocumentVersion::set_has_supportspredefinedrecipienttitle() {
-  _has_bits_[0] |= 0x00000040u;
-}
-inline void DocumentVersion::clear_has_supportspredefinedrecipienttitle() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-inline void DocumentVersion::clear_supportspredefinedrecipienttitle() {
-  supportspredefinedrecipienttitle_ = false;
-  clear_has_supportspredefinedrecipienttitle();
-}
-inline bool DocumentVersion::supportspredefinedrecipienttitle() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Types.DocumentVersion.SupportsPredefinedRecipientTitle)
-  return supportspredefinedrecipienttitle_;
-}
-inline void DocumentVersion::set_supportspredefinedrecipienttitle(bool value) {
-  set_has_supportspredefinedrecipienttitle();
-  supportspredefinedrecipienttitle_ = value;
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Types.DocumentVersion.SupportsPredefinedRecipientTitle)
 }
 
 // -------------------------------------------------------------------
