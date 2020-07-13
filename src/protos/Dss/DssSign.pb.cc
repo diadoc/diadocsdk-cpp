@@ -35,6 +35,8 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* DssFileSigningResult_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   DssFileSigningResult_reflection_ = NULL;
+const ::google::protobuf::EnumDescriptor* DssConfirmType_descriptor_ = NULL;
+const ::google::protobuf::EnumDescriptor* DssOperator_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* DssFileSigningStatus_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* DssOperationStatus_descriptor_ = NULL;
 
@@ -79,9 +81,12 @@ void protobuf_AssignDesc_Dss_2fDssSign_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(DssSignFile));
   DssSignResult_descriptor_ = file->message_type(2);
-  static const int DssSignResult_offsets_[2] = {
+  static const int DssSignResult_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DssSignResult, operationstatus_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DssSignResult, filesigningresults_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DssSignResult, confirmtype_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DssSignResult, operator__),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DssSignResult, phonelastnumbers_),
   };
   DssSignResult_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -110,8 +115,10 @@ void protobuf_AssignDesc_Dss_2fDssSign_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(DssFileSigningResult));
-  DssFileSigningStatus_descriptor_ = file->enum_type(0);
-  DssOperationStatus_descriptor_ = file->enum_type(1);
+  DssConfirmType_descriptor_ = file->enum_type(0);
+  DssOperator_descriptor_ = file->enum_type(1);
+  DssFileSigningStatus_descriptor_ = file->enum_type(2);
+  DssOperationStatus_descriptor_ = file->enum_type(3);
 }
 
 namespace {
@@ -160,20 +167,29 @@ void protobuf_AddDesc_Dss_2fDssSign_2eproto() {
     "\005Files\030\001 \003(\0132!.Diadoc.Api.Proto.Dss.DssS"
     "ignFile\"N\n\013DssSignFile\022-\n\007Content\030\001 \002(\0132"
     "\034.Diadoc.Api.Proto.Content_v3\022\020\n\010FileNam"
-    "e\030\002 \001(\t\"\243\001\n\rDssSignResult\022J\n\017OperationSt"
+    "e\030\002 \001(\t\"\322\002\n\rDssSignResult\022J\n\017OperationSt"
     "atus\030\001 \001(\0162(.Diadoc.Api.Proto.Dss.DssOpe"
     "rationStatus:\007Unknown\022F\n\022FileSigningResu"
     "lts\030\002 \003(\0132*.Diadoc.Api.Proto.Dss.DssFile"
-    "SigningResult\"\206\001\n\024DssFileSigningResult\022["
-    "\n\021FileSigningStatus\030\001 \001(\0162*.Diadoc.Api.P"
-    "roto.Dss.DssFileSigningStatus:\024UnknownSi"
-    "gningStatus\022\021\n\tSignature\030\002 \001(\014*X\n\024DssFil"
-    "eSigningStatus\022\030\n\024UnknownSigningStatus\020\000"
-    "\022\024\n\020SigningCompleted\020\001\022\020\n\014SigningError\020\002"
-    "*\217\001\n\022DssOperationStatus\022\013\n\007Unknown\020\000\022\016\n\n"
-    "InProgress\020\001\022\r\n\tCompleted\020\002\022\022\n\016CanceledB"
-    "yUser\020\003\022\013\n\007Timeout\020\004\022\013\n\007Crashed\020\005\022\037\n\033Use"
-    "rHasUnconfirmedOperation\020\006", 746);
+    "SigningResult\022M\n\013ConfirmType\030\003 \001(\0162$.Dia"
+    "doc.Api.Proto.Dss.DssConfirmType:\022Confir"
+    "mTypeUnknown\022D\n\010Operator\030\004 \001(\0162!.Diadoc."
+    "Api.Proto.Dss.DssOperator:\017OperatorUnkno"
+    "wn\022\030\n\020PhoneLastNumbers\030\005 \001(\t\"\206\001\n\024DssFile"
+    "SigningResult\022[\n\021FileSigningStatus\030\001 \001(\016"
+    "2*.Diadoc.Api.Proto.Dss.DssFileSigningSt"
+    "atus:\024UnknownSigningStatus\022\021\n\tSignature\030"
+    "\002 \001(\014*[\n\016DssConfirmType\022\037\n\022ConfirmTypeUn"
+    "known\020\377\377\377\377\377\377\377\377\377\001\022\010\n\004None\020\000\022\007\n\003Sms\020\001\022\t\n\005M"
+    "yDss\020\002\022\n\n\006Applet\020\003*;\n\013DssOperator\022\023\n\017Ope"
+    "ratorUnknown\020\000\022\013\n\007Megafon\020\001\022\n\n\006Kontur\020\002*"
+    "X\n\024DssFileSigningStatus\022\030\n\024UnknownSignin"
+    "gStatus\020\000\022\024\n\020SigningCompleted\020\001\022\020\n\014Signi"
+    "ngError\020\002*\253\001\n\022DssOperationStatus\022\013\n\007Unkn"
+    "own\020\000\022\016\n\nInProgress\020\001\022\r\n\tCompleted\020\002\022\022\n\016"
+    "CanceledByUser\020\003\022\013\n\007Timeout\020\004\022\013\n\007Crashed"
+    "\020\005\022\037\n\033UserHasUnconfirmedOperation\020\006\022\032\n\026O"
+    "perationRetryRequired\020\007", 1103);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Dss/DssSign.proto", &protobuf_RegisterTypes);
   DssSignRequest::default_instance_ = new DssSignRequest();
@@ -193,6 +209,38 @@ struct StaticDescriptorInitializer_Dss_2fDssSign_2eproto {
     protobuf_AddDesc_Dss_2fDssSign_2eproto();
   }
 } static_descriptor_initializer_Dss_2fDssSign_2eproto_;
+const ::google::protobuf::EnumDescriptor* DssConfirmType_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return DssConfirmType_descriptor_;
+}
+bool DssConfirmType_IsValid(int value) {
+  switch(value) {
+    case -1:
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::google::protobuf::EnumDescriptor* DssOperator_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return DssOperator_descriptor_;
+}
+bool DssOperator_IsValid(int value) {
+  switch(value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
 const ::google::protobuf::EnumDescriptor* DssFileSigningStatus_descriptor() {
   protobuf_AssignDescriptorsOnce();
   return DssFileSigningStatus_descriptor_;
@@ -221,6 +269,7 @@ bool DssOperationStatus_IsValid(int value) {
     case 4:
     case 5:
     case 6:
+    case 7:
       return true;
     default:
       return false;
@@ -746,6 +795,9 @@ void DssSignFile::Swap(DssSignFile* other) {
 #ifndef _MSC_VER
 const int DssSignResult::kOperationStatusFieldNumber;
 const int DssSignResult::kFileSigningResultsFieldNumber;
+const int DssSignResult::kConfirmTypeFieldNumber;
+const int DssSignResult::kOperatorFieldNumber;
+const int DssSignResult::kPhoneLastNumbersFieldNumber;
 #endif  // !_MSC_VER
 
 DssSignResult::DssSignResult()
@@ -765,8 +817,12 @@ DssSignResult::DssSignResult(const DssSignResult& from)
 }
 
 void DssSignResult::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   operationstatus_ = 0;
+  confirmtype_ = -1;
+  operator__ = 0;
+  phonelastnumbers_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -776,6 +832,9 @@ DssSignResult::~DssSignResult() {
 }
 
 void DssSignResult::SharedDtor() {
+  if (phonelastnumbers_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete phonelastnumbers_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -802,7 +861,16 @@ DssSignResult* DssSignResult::New() const {
 }
 
 void DssSignResult::Clear() {
-  operationstatus_ = 0;
+  if (_has_bits_[0 / 32] & 29) {
+    operationstatus_ = 0;
+    confirmtype_ = -1;
+    operator__ = 0;
+    if (has_phonelastnumbers()) {
+      if (phonelastnumbers_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        phonelastnumbers_->clear();
+      }
+    }
+  }
   filesigningresults_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -847,6 +915,63 @@ bool DssSignResult::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(18)) goto parse_FileSigningResults;
+        if (input->ExpectTag(24)) goto parse_ConfirmType;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Dss.DssConfirmType ConfirmType = 3 [default = ConfirmTypeUnknown];
+      case 3: {
+        if (tag == 24) {
+         parse_ConfirmType:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Diadoc::Api::Proto::Dss::DssConfirmType_IsValid(value)) {
+            set_confirmtype(static_cast< ::Diadoc::Api::Proto::Dss::DssConfirmType >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(3, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(32)) goto parse_Operator;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Dss.DssOperator Operator = 4 [default = OperatorUnknown];
+      case 4: {
+        if (tag == 32) {
+         parse_Operator:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Diadoc::Api::Proto::Dss::DssOperator_IsValid(value)) {
+            set_operator_(static_cast< ::Diadoc::Api::Proto::Dss::DssOperator >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(4, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_PhoneLastNumbers;
+        break;
+      }
+
+      // optional string PhoneLastNumbers = 5;
+      case 5: {
+        if (tag == 42) {
+         parse_PhoneLastNumbers:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_phonelastnumbers()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->phonelastnumbers().data(), this->phonelastnumbers().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "phonelastnumbers");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -888,6 +1013,28 @@ void DssSignResult::SerializeWithCachedSizes(
       2, this->filesigningresults(i), output);
   }
 
+  // optional .Diadoc.Api.Proto.Dss.DssConfirmType ConfirmType = 3 [default = ConfirmTypeUnknown];
+  if (has_confirmtype()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      3, this->confirmtype(), output);
+  }
+
+  // optional .Diadoc.Api.Proto.Dss.DssOperator Operator = 4 [default = OperatorUnknown];
+  if (has_operator_()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      4, this->operator_(), output);
+  }
+
+  // optional string PhoneLastNumbers = 5;
+  if (has_phonelastnumbers()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->phonelastnumbers().data(), this->phonelastnumbers().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "phonelastnumbers");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->phonelastnumbers(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -911,6 +1058,29 @@ void DssSignResult::SerializeWithCachedSizes(
         2, this->filesigningresults(i), target);
   }
 
+  // optional .Diadoc.Api.Proto.Dss.DssConfirmType ConfirmType = 3 [default = ConfirmTypeUnknown];
+  if (has_confirmtype()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      3, this->confirmtype(), target);
+  }
+
+  // optional .Diadoc.Api.Proto.Dss.DssOperator Operator = 4 [default = OperatorUnknown];
+  if (has_operator_()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      4, this->operator_(), target);
+  }
+
+  // optional string PhoneLastNumbers = 5;
+  if (has_phonelastnumbers()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->phonelastnumbers().data(), this->phonelastnumbers().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "phonelastnumbers");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->phonelastnumbers(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -927,6 +1097,25 @@ int DssSignResult::ByteSize() const {
     if (has_operationstatus()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->operationstatus());
+    }
+
+    // optional .Diadoc.Api.Proto.Dss.DssConfirmType ConfirmType = 3 [default = ConfirmTypeUnknown];
+    if (has_confirmtype()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->confirmtype());
+    }
+
+    // optional .Diadoc.Api.Proto.Dss.DssOperator Operator = 4 [default = OperatorUnknown];
+    if (has_operator_()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->operator_());
+    }
+
+    // optional string PhoneLastNumbers = 5;
+    if (has_phonelastnumbers()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->phonelastnumbers());
     }
 
   }
@@ -968,6 +1157,15 @@ void DssSignResult::MergeFrom(const DssSignResult& from) {
     if (from.has_operationstatus()) {
       set_operationstatus(from.operationstatus());
     }
+    if (from.has_confirmtype()) {
+      set_confirmtype(from.confirmtype());
+    }
+    if (from.has_operator_()) {
+      set_operator_(from.operator_());
+    }
+    if (from.has_phonelastnumbers()) {
+      set_phonelastnumbers(from.phonelastnumbers());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -993,6 +1191,9 @@ void DssSignResult::Swap(DssSignResult* other) {
   if (other != this) {
     std::swap(operationstatus_, other->operationstatus_);
     filesigningresults_.Swap(&other->filesigningresults_);
+    std::swap(confirmtype_, other->confirmtype_);
+    std::swap(operator__, other->operator__);
+    std::swap(phonelastnumbers_, other->phonelastnumbers_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
