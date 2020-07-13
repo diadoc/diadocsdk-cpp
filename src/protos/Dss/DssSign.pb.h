@@ -43,6 +43,48 @@ class DssSignFile;
 class DssSignResult;
 class DssFileSigningResult;
 
+enum DssConfirmType {
+  ConfirmTypeUnknown = -1,
+  None = 0,
+  Sms = 1,
+  MyDss = 2,
+  Applet = 3
+};
+bool DssConfirmType_IsValid(int value);
+const DssConfirmType DssConfirmType_MIN = ConfirmTypeUnknown;
+const DssConfirmType DssConfirmType_MAX = Applet;
+const int DssConfirmType_ARRAYSIZE = DssConfirmType_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* DssConfirmType_descriptor();
+inline const ::std::string& DssConfirmType_Name(DssConfirmType value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    DssConfirmType_descriptor(), value);
+}
+inline bool DssConfirmType_Parse(
+    const ::std::string& name, DssConfirmType* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<DssConfirmType>(
+    DssConfirmType_descriptor(), name, value);
+}
+enum DssOperator {
+  OperatorUnknown = 0,
+  Megafon = 1,
+  Kontur = 2
+};
+bool DssOperator_IsValid(int value);
+const DssOperator DssOperator_MIN = OperatorUnknown;
+const DssOperator DssOperator_MAX = Kontur;
+const int DssOperator_ARRAYSIZE = DssOperator_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* DssOperator_descriptor();
+inline const ::std::string& DssOperator_Name(DssOperator value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    DssOperator_descriptor(), value);
+}
+inline bool DssOperator_Parse(
+    const ::std::string& name, DssOperator* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<DssOperator>(
+    DssOperator_descriptor(), name, value);
+}
 enum DssFileSigningStatus {
   UnknownSigningStatus = 0,
   SigningCompleted = 1,
@@ -70,11 +112,12 @@ enum DssOperationStatus {
   CanceledByUser = 3,
   Timeout = 4,
   Crashed = 5,
-  UserHasUnconfirmedOperation = 6
+  UserHasUnconfirmedOperation = 6,
+  OperationRetryRequired = 7
 };
 bool DssOperationStatus_IsValid(int value);
 const DssOperationStatus DssOperationStatus_MIN = Unknown;
-const DssOperationStatus DssOperationStatus_MAX = UserHasUnconfirmedOperation;
+const DssOperationStatus DssOperationStatus_MAX = OperationRetryRequired;
 const int DssOperationStatus_ARRAYSIZE = DssOperationStatus_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* DssOperationStatus_descriptor();
@@ -339,10 +382,42 @@ class DssSignResult : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Dss::DssFileSigningResult >*
       mutable_filesigningresults();
 
+  // optional .Diadoc.Api.Proto.Dss.DssConfirmType ConfirmType = 3 [default = ConfirmTypeUnknown];
+  inline bool has_confirmtype() const;
+  inline void clear_confirmtype();
+  static const int kConfirmTypeFieldNumber = 3;
+  inline ::Diadoc::Api::Proto::Dss::DssConfirmType confirmtype() const;
+  inline void set_confirmtype(::Diadoc::Api::Proto::Dss::DssConfirmType value);
+
+  // optional .Diadoc.Api.Proto.Dss.DssOperator Operator = 4 [default = OperatorUnknown];
+  inline bool has_operator_() const;
+  inline void clear_operator_();
+  static const int kOperatorFieldNumber = 4;
+  inline ::Diadoc::Api::Proto::Dss::DssOperator operator_() const;
+  inline void set_operator_(::Diadoc::Api::Proto::Dss::DssOperator value);
+
+  // optional string PhoneLastNumbers = 5;
+  inline bool has_phonelastnumbers() const;
+  inline void clear_phonelastnumbers();
+  static const int kPhoneLastNumbersFieldNumber = 5;
+  inline const ::std::string& phonelastnumbers() const;
+  inline void set_phonelastnumbers(const ::std::string& value);
+  inline void set_phonelastnumbers(const char* value);
+  inline void set_phonelastnumbers(const char* value, size_t size);
+  inline ::std::string* mutable_phonelastnumbers();
+  inline ::std::string* release_phonelastnumbers();
+  inline void set_allocated_phonelastnumbers(::std::string* phonelastnumbers);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Dss.DssSignResult)
  private:
   inline void set_has_operationstatus();
   inline void clear_has_operationstatus();
+  inline void set_has_confirmtype();
+  inline void clear_has_confirmtype();
+  inline void set_has_operator_();
+  inline void clear_has_operator_();
+  inline void set_has_phonelastnumbers();
+  inline void clear_has_phonelastnumbers();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -350,6 +425,9 @@ class DssSignResult : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Dss::DssFileSigningResult > filesigningresults_;
   int operationstatus_;
+  int confirmtype_;
+  ::std::string* phonelastnumbers_;
+  int operator__;
   friend void  protobuf_AddDesc_Dss_2fDssSign_2eproto();
   friend void protobuf_AssignDesc_Dss_2fDssSign_2eproto();
   friend void protobuf_ShutdownFile_Dss_2fDssSign_2eproto();
@@ -668,6 +746,132 @@ DssSignResult::mutable_filesigningresults() {
   return &filesigningresults_;
 }
 
+// optional .Diadoc.Api.Proto.Dss.DssConfirmType ConfirmType = 3 [default = ConfirmTypeUnknown];
+inline bool DssSignResult::has_confirmtype() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void DssSignResult::set_has_confirmtype() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void DssSignResult::clear_has_confirmtype() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void DssSignResult::clear_confirmtype() {
+  confirmtype_ = -1;
+  clear_has_confirmtype();
+}
+inline ::Diadoc::Api::Proto::Dss::DssConfirmType DssSignResult::confirmtype() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Dss.DssSignResult.ConfirmType)
+  return static_cast< ::Diadoc::Api::Proto::Dss::DssConfirmType >(confirmtype_);
+}
+inline void DssSignResult::set_confirmtype(::Diadoc::Api::Proto::Dss::DssConfirmType value) {
+  assert(::Diadoc::Api::Proto::Dss::DssConfirmType_IsValid(value));
+  set_has_confirmtype();
+  confirmtype_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Dss.DssSignResult.ConfirmType)
+}
+
+// optional .Diadoc.Api.Proto.Dss.DssOperator Operator = 4 [default = OperatorUnknown];
+inline bool DssSignResult::has_operator_() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void DssSignResult::set_has_operator_() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void DssSignResult::clear_has_operator_() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void DssSignResult::clear_operator_() {
+  operator__ = 0;
+  clear_has_operator_();
+}
+inline ::Diadoc::Api::Proto::Dss::DssOperator DssSignResult::operator_() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Dss.DssSignResult.Operator)
+  return static_cast< ::Diadoc::Api::Proto::Dss::DssOperator >(operator__);
+}
+inline void DssSignResult::set_operator_(::Diadoc::Api::Proto::Dss::DssOperator value) {
+  assert(::Diadoc::Api::Proto::Dss::DssOperator_IsValid(value));
+  set_has_operator_();
+  operator__ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Dss.DssSignResult.Operator)
+}
+
+// optional string PhoneLastNumbers = 5;
+inline bool DssSignResult::has_phonelastnumbers() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void DssSignResult::set_has_phonelastnumbers() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void DssSignResult::clear_has_phonelastnumbers() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void DssSignResult::clear_phonelastnumbers() {
+  if (phonelastnumbers_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    phonelastnumbers_->clear();
+  }
+  clear_has_phonelastnumbers();
+}
+inline const ::std::string& DssSignResult::phonelastnumbers() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Dss.DssSignResult.PhoneLastNumbers)
+  return *phonelastnumbers_;
+}
+inline void DssSignResult::set_phonelastnumbers(const ::std::string& value) {
+  set_has_phonelastnumbers();
+  if (phonelastnumbers_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    phonelastnumbers_ = new ::std::string;
+  }
+  phonelastnumbers_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Dss.DssSignResult.PhoneLastNumbers)
+}
+inline void DssSignResult::set_phonelastnumbers(const char* value) {
+  set_has_phonelastnumbers();
+  if (phonelastnumbers_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    phonelastnumbers_ = new ::std::string;
+  }
+  phonelastnumbers_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Dss.DssSignResult.PhoneLastNumbers)
+}
+inline void DssSignResult::set_phonelastnumbers(const char* value, size_t size) {
+  set_has_phonelastnumbers();
+  if (phonelastnumbers_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    phonelastnumbers_ = new ::std::string;
+  }
+  phonelastnumbers_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Dss.DssSignResult.PhoneLastNumbers)
+}
+inline ::std::string* DssSignResult::mutable_phonelastnumbers() {
+  set_has_phonelastnumbers();
+  if (phonelastnumbers_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    phonelastnumbers_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Dss.DssSignResult.PhoneLastNumbers)
+  return phonelastnumbers_;
+}
+inline ::std::string* DssSignResult::release_phonelastnumbers() {
+  clear_has_phonelastnumbers();
+  if (phonelastnumbers_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = phonelastnumbers_;
+    phonelastnumbers_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void DssSignResult::set_allocated_phonelastnumbers(::std::string* phonelastnumbers) {
+  if (phonelastnumbers_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete phonelastnumbers_;
+  }
+  if (phonelastnumbers) {
+    set_has_phonelastnumbers();
+    phonelastnumbers_ = phonelastnumbers;
+  } else {
+    clear_has_phonelastnumbers();
+    phonelastnumbers_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Dss.DssSignResult.PhoneLastNumbers)
+}
+
 // -------------------------------------------------------------------
 
 // DssFileSigningResult
@@ -785,6 +989,16 @@ inline void DssFileSigningResult::set_allocated_signature(::std::string* signatu
 namespace google {
 namespace protobuf {
 
+template <> struct is_proto_enum< ::Diadoc::Api::Proto::Dss::DssConfirmType> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::Diadoc::Api::Proto::Dss::DssConfirmType>() {
+  return ::Diadoc::Api::Proto::Dss::DssConfirmType_descriptor();
+}
+template <> struct is_proto_enum< ::Diadoc::Api::Proto::Dss::DssOperator> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::Diadoc::Api::Proto::Dss::DssOperator>() {
+  return ::Diadoc::Api::Proto::Dss::DssOperator_descriptor();
+}
 template <> struct is_proto_enum< ::Diadoc::Api::Proto::Dss::DssFileSigningStatus> : ::google::protobuf::internal::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::Diadoc::Api::Proto::Dss::DssFileSigningStatus>() {
