@@ -777,6 +777,18 @@ class Box : public ::google::protobuf::Message {
   inline ::std::string* release_boxid();
   inline void set_allocated_boxid(::std::string* boxid);
 
+  // required string BoxIdGuid = 6;
+  inline bool has_boxidguid() const;
+  inline void clear_boxidguid();
+  static const int kBoxIdGuidFieldNumber = 6;
+  inline const ::std::string& boxidguid() const;
+  inline void set_boxidguid(const ::std::string& value);
+  inline void set_boxidguid(const char* value);
+  inline void set_boxidguid(const char* value, size_t size);
+  inline ::std::string* mutable_boxidguid();
+  inline ::std::string* release_boxidguid();
+  inline void set_allocated_boxidguid(::std::string* boxidguid);
+
   // required string Title = 2;
   inline bool has_title() const;
   inline void clear_title();
@@ -816,6 +828,8 @@ class Box : public ::google::protobuf::Message {
  private:
   inline void set_has_boxid();
   inline void clear_has_boxid();
+  inline void set_has_boxidguid();
+  inline void clear_has_boxidguid();
   inline void set_has_title();
   inline void clear_has_title();
   inline void set_has_organization();
@@ -830,6 +844,7 @@ class Box : public ::google::protobuf::Message {
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::std::string* boxid_;
+  ::std::string* boxidguid_;
   ::std::string* title_;
   ::Diadoc::Api::Proto::Organization* organization_;
   int invoiceformatversion_;
@@ -2613,15 +2628,91 @@ inline void Box::set_allocated_boxid(::std::string* boxid) {
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Box.BoxId)
 }
 
-// required string Title = 2;
-inline bool Box::has_title() const {
+// required string BoxIdGuid = 6;
+inline bool Box::has_boxidguid() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void Box::set_has_title() {
+inline void Box::set_has_boxidguid() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void Box::clear_has_title() {
+inline void Box::clear_has_boxidguid() {
   _has_bits_[0] &= ~0x00000002u;
+}
+inline void Box::clear_boxidguid() {
+  if (boxidguid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    boxidguid_->clear();
+  }
+  clear_has_boxidguid();
+}
+inline const ::std::string& Box::boxidguid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Box.BoxIdGuid)
+  return *boxidguid_;
+}
+inline void Box::set_boxidguid(const ::std::string& value) {
+  set_has_boxidguid();
+  if (boxidguid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    boxidguid_ = new ::std::string;
+  }
+  boxidguid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Box.BoxIdGuid)
+}
+inline void Box::set_boxidguid(const char* value) {
+  set_has_boxidguid();
+  if (boxidguid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    boxidguid_ = new ::std::string;
+  }
+  boxidguid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Box.BoxIdGuid)
+}
+inline void Box::set_boxidguid(const char* value, size_t size) {
+  set_has_boxidguid();
+  if (boxidguid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    boxidguid_ = new ::std::string;
+  }
+  boxidguid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Box.BoxIdGuid)
+}
+inline ::std::string* Box::mutable_boxidguid() {
+  set_has_boxidguid();
+  if (boxidguid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    boxidguid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Box.BoxIdGuid)
+  return boxidguid_;
+}
+inline ::std::string* Box::release_boxidguid() {
+  clear_has_boxidguid();
+  if (boxidguid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = boxidguid_;
+    boxidguid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void Box::set_allocated_boxidguid(::std::string* boxidguid) {
+  if (boxidguid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete boxidguid_;
+  }
+  if (boxidguid) {
+    set_has_boxidguid();
+    boxidguid_ = boxidguid;
+  } else {
+    clear_has_boxidguid();
+    boxidguid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Box.BoxIdGuid)
+}
+
+// required string Title = 2;
+inline bool Box::has_title() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void Box::set_has_title() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void Box::clear_has_title() {
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline void Box::clear_title() {
   if (title_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
@@ -2691,13 +2782,13 @@ inline void Box::set_allocated_title(::std::string* title) {
 
 // optional .Diadoc.Api.Proto.Organization Organization = 3;
 inline bool Box::has_organization() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 inline void Box::set_has_organization() {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
 }
 inline void Box::clear_has_organization() {
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline void Box::clear_organization() {
   if (organization_ != NULL) organization_->::Diadoc::Api::Proto::Organization::Clear();
@@ -2732,13 +2823,13 @@ inline void Box::set_allocated_organization(::Diadoc::Api::Proto::Organization* 
 
 // optional .Diadoc.Api.Proto.OrganizationInvoiceFormatVersion InvoiceFormatVersion = 4 [default = v5_02];
 inline bool Box::has_invoiceformatversion() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 inline void Box::set_has_invoiceformatversion() {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000010u;
 }
 inline void Box::clear_has_invoiceformatversion() {
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline void Box::clear_invoiceformatversion() {
   invoiceformatversion_ = 2;
@@ -2757,13 +2848,13 @@ inline void Box::set_invoiceformatversion(::Diadoc::Api::Proto::OrganizationInvo
 
 // optional bool EncryptedDocumentsAllowed = 5;
 inline bool Box::has_encrypteddocumentsallowed() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000020u) != 0;
 }
 inline void Box::set_has_encrypteddocumentsallowed() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000020u;
 }
 inline void Box::clear_has_encrypteddocumentsallowed() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline void Box::clear_encrypteddocumentsallowed() {
   encrypteddocumentsallowed_ = false;

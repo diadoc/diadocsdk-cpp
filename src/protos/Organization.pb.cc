@@ -122,8 +122,9 @@ void protobuf_AssignDesc_Organization_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(Department));
   Box_descriptor_ = file->message_type(3);
-  static const int Box_offsets_[5] = {
+  static const int Box_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Box, boxid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Box, boxidguid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Box, title_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Box, organization_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Box, invoiceformatversion_),
@@ -208,15 +209,16 @@ void protobuf_AddDesc_Organization_2eproto() {
     "arentDepartmentId\030\002 \002(\t\022\014\n\004Name\030\003 \002(\t\022\024\n"
     "\014Abbreviation\030\004 \001(\t\022\013\n\003Kpp\030\005 \001(\t\022*\n\007Addr"
     "ess\030\006 \001(\0132\031.Diadoc.Api.Proto.Address\022\031\n\n"
-    "IsDisabled\030\007 \001(\010:\005false\"\325\001\n\003Box\022\r\n\005BoxId"
-    "\030\001 \002(\t\022\r\n\005Title\030\002 \002(\t\0224\n\014Organization\030\003 "
-    "\001(\0132\036.Diadoc.Api.Proto.Organization\022W\n\024I"
-    "nvoiceFormatVersion\030\004 \001(\01622.Diadoc.Api.P"
-    "roto.OrganizationInvoiceFormatVersion:\005v"
-    "5_02\022!\n\031EncryptedDocumentsAllowed\030\005 \001(\010*"
-    "8\n OrganizationInvoiceFormatVersion\022\t\n\005v"
-    "5_01\020\001\022\t\n\005v5_02\020\002*:\n\013Sociability\022\024\n\020AllO"
-    "rganizations\020\000\022\025\n\021CounteragentsOnly\020\001", 1277);
+    "IsDisabled\030\007 \001(\010:\005false\"\350\001\n\003Box\022\r\n\005BoxId"
+    "\030\001 \002(\t\022\021\n\tBoxIdGuid\030\006 \002(\t\022\r\n\005Title\030\002 \002(\t"
+    "\0224\n\014Organization\030\003 \001(\0132\036.Diadoc.Api.Prot"
+    "o.Organization\022W\n\024InvoiceFormatVersion\030\004"
+    " \001(\01622.Diadoc.Api.Proto.OrganizationInvo"
+    "iceFormatVersion:\005v5_02\022!\n\031EncryptedDocu"
+    "mentsAllowed\030\005 \001(\010*8\n OrganizationInvoic"
+    "eFormatVersion\022\t\n\005v5_01\020\001\022\t\n\005v5_02\020\002*:\n\013"
+    "Sociability\022\024\n\020AllOrganizations\020\000\022\025\n\021Cou"
+    "nteragentsOnly\020\001", 1296);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Organization.proto", &protobuf_RegisterTypes);
   OrganizationList::default_instance_ = new OrganizationList();
@@ -2460,6 +2462,7 @@ void Department::Swap(Department* other) {
 
 #ifndef _MSC_VER
 const int Box::kBoxIdFieldNumber;
+const int Box::kBoxIdGuidFieldNumber;
 const int Box::kTitleFieldNumber;
 const int Box::kOrganizationFieldNumber;
 const int Box::kInvoiceFormatVersionFieldNumber;
@@ -2487,6 +2490,7 @@ void Box::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   boxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  boxidguid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   title_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   organization_ = NULL;
   invoiceformatversion_ = 2;
@@ -2502,6 +2506,9 @@ Box::~Box() {
 void Box::SharedDtor() {
   if (boxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete boxid_;
+  }
+  if (boxidguid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete boxidguid_;
   }
   if (title_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete title_;
@@ -2533,10 +2540,15 @@ Box* Box::New() const {
 }
 
 void Box::Clear() {
-  if (_has_bits_[0 / 32] & 31) {
+  if (_has_bits_[0 / 32] & 63) {
     if (has_boxid()) {
       if (boxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         boxid_->clear();
+      }
+    }
+    if (has_boxidguid()) {
+      if (boxidguid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        boxidguid_->clear();
       }
     }
     if (has_title()) {
@@ -2641,6 +2653,23 @@ bool Box::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(50)) goto parse_BoxIdGuid;
+        break;
+      }
+
+      // required string BoxIdGuid = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_BoxIdGuid:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_boxidguid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->boxidguid().data(), this->boxidguid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "boxidguid");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -2707,6 +2736,16 @@ void Box::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(5, this->encrypteddocumentsallowed(), output);
   }
 
+  // required string BoxIdGuid = 6;
+  if (has_boxidguid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->boxidguid().data(), this->boxidguid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "boxidguid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      6, this->boxidguid(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -2757,6 +2796,17 @@ void Box::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(5, this->encrypteddocumentsallowed(), target);
   }
 
+  // required string BoxIdGuid = 6;
+  if (has_boxidguid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->boxidguid().data(), this->boxidguid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "boxidguid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        6, this->boxidguid(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -2774,6 +2824,13 @@ int Box::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->boxid());
+    }
+
+    // required string BoxIdGuid = 6;
+    if (has_boxidguid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->boxidguid());
     }
 
     // required string Title = 2;
@@ -2831,6 +2888,9 @@ void Box::MergeFrom(const Box& from) {
     if (from.has_boxid()) {
       set_boxid(from.boxid());
     }
+    if (from.has_boxidguid()) {
+      set_boxidguid(from.boxidguid());
+    }
     if (from.has_title()) {
       set_title(from.title());
     }
@@ -2860,7 +2920,7 @@ void Box::CopyFrom(const Box& from) {
 }
 
 bool Box::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
 
   if (has_organization()) {
     if (!this->organization().IsInitialized()) return false;
@@ -2871,6 +2931,7 @@ bool Box::IsInitialized() const {
 void Box::Swap(Box* other) {
   if (other != this) {
     std::swap(boxid_, other->boxid_);
+    std::swap(boxidguid_, other->boxidguid_);
     std::swap(title_, other->title_);
     std::swap(organization_, other->organization_);
     std::swap(invoiceformatversion_, other->invoiceformatversion_);
