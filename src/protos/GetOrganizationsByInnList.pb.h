@@ -26,6 +26,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "Organization.pb.h"
 #include "Counteragent.pb.h"
+#include "DocumentId.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace Diadoc {
@@ -205,6 +206,39 @@ class OrganizationWithCounteragentStatus : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 lasteventtimestampticks() const;
   inline void set_lasteventtimestampticks(::google::protobuf::int64 value);
 
+  // optional string MessageFromCounteragent = 4;
+  inline bool has_messagefromcounteragent() const;
+  inline void clear_messagefromcounteragent();
+  static const int kMessageFromCounteragentFieldNumber = 4;
+  inline const ::std::string& messagefromcounteragent() const;
+  inline void set_messagefromcounteragent(const ::std::string& value);
+  inline void set_messagefromcounteragent(const char* value);
+  inline void set_messagefromcounteragent(const char* value, size_t size);
+  inline ::std::string* mutable_messagefromcounteragent();
+  inline ::std::string* release_messagefromcounteragent();
+  inline void set_allocated_messagefromcounteragent(::std::string* messagefromcounteragent);
+
+  // optional string MessageToCounteragent = 5;
+  inline bool has_messagetocounteragent() const;
+  inline void clear_messagetocounteragent();
+  static const int kMessageToCounteragentFieldNumber = 5;
+  inline const ::std::string& messagetocounteragent() const;
+  inline void set_messagetocounteragent(const ::std::string& value);
+  inline void set_messagetocounteragent(const char* value);
+  inline void set_messagetocounteragent(const char* value, size_t size);
+  inline ::std::string* mutable_messagetocounteragent();
+  inline ::std::string* release_messagetocounteragent();
+  inline void set_allocated_messagetocounteragent(::std::string* messagetocounteragent);
+
+  // optional .Diadoc.Api.Proto.DocumentId InvitationDocumentId = 6;
+  inline bool has_invitationdocumentid() const;
+  inline void clear_invitationdocumentid();
+  static const int kInvitationDocumentIdFieldNumber = 6;
+  inline const ::Diadoc::Api::Proto::DocumentId& invitationdocumentid() const;
+  inline ::Diadoc::Api::Proto::DocumentId* mutable_invitationdocumentid();
+  inline ::Diadoc::Api::Proto::DocumentId* release_invitationdocumentid();
+  inline void set_allocated_invitationdocumentid(::Diadoc::Api::Proto::DocumentId* invitationdocumentid);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.OrganizationWithCounteragentStatus)
  private:
   inline void set_has_organization();
@@ -213,6 +247,12 @@ class OrganizationWithCounteragentStatus : public ::google::protobuf::Message {
   inline void clear_has_counteragentstatus();
   inline void set_has_lasteventtimestampticks();
   inline void clear_has_lasteventtimestampticks();
+  inline void set_has_messagefromcounteragent();
+  inline void clear_has_messagefromcounteragent();
+  inline void set_has_messagetocounteragent();
+  inline void clear_has_messagetocounteragent();
+  inline void set_has_invitationdocumentid();
+  inline void clear_has_invitationdocumentid();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -220,6 +260,9 @@ class OrganizationWithCounteragentStatus : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::Diadoc::Api::Proto::Organization* organization_;
   ::google::protobuf::int64 lasteventtimestampticks_;
+  ::std::string* messagefromcounteragent_;
+  ::std::string* messagetocounteragent_;
+  ::Diadoc::Api::Proto::DocumentId* invitationdocumentid_;
   int counteragentstatus_;
   friend void  protobuf_AddDesc_GetOrganizationsByInnList_2eproto();
   friend void protobuf_AssignDesc_GetOrganizationsByInnList_2eproto();
@@ -463,6 +506,199 @@ inline void OrganizationWithCounteragentStatus::set_lasteventtimestampticks(::go
   set_has_lasteventtimestampticks();
   lasteventtimestampticks_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.OrganizationWithCounteragentStatus.LastEventTimestampTicks)
+}
+
+// optional string MessageFromCounteragent = 4;
+inline bool OrganizationWithCounteragentStatus::has_messagefromcounteragent() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void OrganizationWithCounteragentStatus::set_has_messagefromcounteragent() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void OrganizationWithCounteragentStatus::clear_has_messagefromcounteragent() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void OrganizationWithCounteragentStatus::clear_messagefromcounteragent() {
+  if (messagefromcounteragent_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagefromcounteragent_->clear();
+  }
+  clear_has_messagefromcounteragent();
+}
+inline const ::std::string& OrganizationWithCounteragentStatus::messagefromcounteragent() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.OrganizationWithCounteragentStatus.MessageFromCounteragent)
+  return *messagefromcounteragent_;
+}
+inline void OrganizationWithCounteragentStatus::set_messagefromcounteragent(const ::std::string& value) {
+  set_has_messagefromcounteragent();
+  if (messagefromcounteragent_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagefromcounteragent_ = new ::std::string;
+  }
+  messagefromcounteragent_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.OrganizationWithCounteragentStatus.MessageFromCounteragent)
+}
+inline void OrganizationWithCounteragentStatus::set_messagefromcounteragent(const char* value) {
+  set_has_messagefromcounteragent();
+  if (messagefromcounteragent_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagefromcounteragent_ = new ::std::string;
+  }
+  messagefromcounteragent_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.OrganizationWithCounteragentStatus.MessageFromCounteragent)
+}
+inline void OrganizationWithCounteragentStatus::set_messagefromcounteragent(const char* value, size_t size) {
+  set_has_messagefromcounteragent();
+  if (messagefromcounteragent_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagefromcounteragent_ = new ::std::string;
+  }
+  messagefromcounteragent_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.OrganizationWithCounteragentStatus.MessageFromCounteragent)
+}
+inline ::std::string* OrganizationWithCounteragentStatus::mutable_messagefromcounteragent() {
+  set_has_messagefromcounteragent();
+  if (messagefromcounteragent_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagefromcounteragent_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.OrganizationWithCounteragentStatus.MessageFromCounteragent)
+  return messagefromcounteragent_;
+}
+inline ::std::string* OrganizationWithCounteragentStatus::release_messagefromcounteragent() {
+  clear_has_messagefromcounteragent();
+  if (messagefromcounteragent_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = messagefromcounteragent_;
+    messagefromcounteragent_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void OrganizationWithCounteragentStatus::set_allocated_messagefromcounteragent(::std::string* messagefromcounteragent) {
+  if (messagefromcounteragent_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete messagefromcounteragent_;
+  }
+  if (messagefromcounteragent) {
+    set_has_messagefromcounteragent();
+    messagefromcounteragent_ = messagefromcounteragent;
+  } else {
+    clear_has_messagefromcounteragent();
+    messagefromcounteragent_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.OrganizationWithCounteragentStatus.MessageFromCounteragent)
+}
+
+// optional string MessageToCounteragent = 5;
+inline bool OrganizationWithCounteragentStatus::has_messagetocounteragent() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void OrganizationWithCounteragentStatus::set_has_messagetocounteragent() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void OrganizationWithCounteragentStatus::clear_has_messagetocounteragent() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void OrganizationWithCounteragentStatus::clear_messagetocounteragent() {
+  if (messagetocounteragent_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagetocounteragent_->clear();
+  }
+  clear_has_messagetocounteragent();
+}
+inline const ::std::string& OrganizationWithCounteragentStatus::messagetocounteragent() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.OrganizationWithCounteragentStatus.MessageToCounteragent)
+  return *messagetocounteragent_;
+}
+inline void OrganizationWithCounteragentStatus::set_messagetocounteragent(const ::std::string& value) {
+  set_has_messagetocounteragent();
+  if (messagetocounteragent_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagetocounteragent_ = new ::std::string;
+  }
+  messagetocounteragent_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.OrganizationWithCounteragentStatus.MessageToCounteragent)
+}
+inline void OrganizationWithCounteragentStatus::set_messagetocounteragent(const char* value) {
+  set_has_messagetocounteragent();
+  if (messagetocounteragent_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagetocounteragent_ = new ::std::string;
+  }
+  messagetocounteragent_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.OrganizationWithCounteragentStatus.MessageToCounteragent)
+}
+inline void OrganizationWithCounteragentStatus::set_messagetocounteragent(const char* value, size_t size) {
+  set_has_messagetocounteragent();
+  if (messagetocounteragent_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagetocounteragent_ = new ::std::string;
+  }
+  messagetocounteragent_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.OrganizationWithCounteragentStatus.MessageToCounteragent)
+}
+inline ::std::string* OrganizationWithCounteragentStatus::mutable_messagetocounteragent() {
+  set_has_messagetocounteragent();
+  if (messagetocounteragent_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messagetocounteragent_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.OrganizationWithCounteragentStatus.MessageToCounteragent)
+  return messagetocounteragent_;
+}
+inline ::std::string* OrganizationWithCounteragentStatus::release_messagetocounteragent() {
+  clear_has_messagetocounteragent();
+  if (messagetocounteragent_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = messagetocounteragent_;
+    messagetocounteragent_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void OrganizationWithCounteragentStatus::set_allocated_messagetocounteragent(::std::string* messagetocounteragent) {
+  if (messagetocounteragent_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete messagetocounteragent_;
+  }
+  if (messagetocounteragent) {
+    set_has_messagetocounteragent();
+    messagetocounteragent_ = messagetocounteragent;
+  } else {
+    clear_has_messagetocounteragent();
+    messagetocounteragent_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.OrganizationWithCounteragentStatus.MessageToCounteragent)
+}
+
+// optional .Diadoc.Api.Proto.DocumentId InvitationDocumentId = 6;
+inline bool OrganizationWithCounteragentStatus::has_invitationdocumentid() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void OrganizationWithCounteragentStatus::set_has_invitationdocumentid() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void OrganizationWithCounteragentStatus::clear_has_invitationdocumentid() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void OrganizationWithCounteragentStatus::clear_invitationdocumentid() {
+  if (invitationdocumentid_ != NULL) invitationdocumentid_->::Diadoc::Api::Proto::DocumentId::Clear();
+  clear_has_invitationdocumentid();
+}
+inline const ::Diadoc::Api::Proto::DocumentId& OrganizationWithCounteragentStatus::invitationdocumentid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.OrganizationWithCounteragentStatus.InvitationDocumentId)
+  return invitationdocumentid_ != NULL ? *invitationdocumentid_ : *default_instance_->invitationdocumentid_;
+}
+inline ::Diadoc::Api::Proto::DocumentId* OrganizationWithCounteragentStatus::mutable_invitationdocumentid() {
+  set_has_invitationdocumentid();
+  if (invitationdocumentid_ == NULL) invitationdocumentid_ = new ::Diadoc::Api::Proto::DocumentId;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.OrganizationWithCounteragentStatus.InvitationDocumentId)
+  return invitationdocumentid_;
+}
+inline ::Diadoc::Api::Proto::DocumentId* OrganizationWithCounteragentStatus::release_invitationdocumentid() {
+  clear_has_invitationdocumentid();
+  ::Diadoc::Api::Proto::DocumentId* temp = invitationdocumentid_;
+  invitationdocumentid_ = NULL;
+  return temp;
+}
+inline void OrganizationWithCounteragentStatus::set_allocated_invitationdocumentid(::Diadoc::Api::Proto::DocumentId* invitationdocumentid) {
+  delete invitationdocumentid_;
+  invitationdocumentid_ = invitationdocumentid;
+  if (invitationdocumentid) {
+    set_has_invitationdocumentid();
+  } else {
+    clear_has_invitationdocumentid();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.OrganizationWithCounteragentStatus.InvitationDocumentId)
 }
 
 // -------------------------------------------------------------------
