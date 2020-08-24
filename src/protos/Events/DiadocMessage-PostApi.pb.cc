@@ -1287,7 +1287,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(TemplateToPost));
   TemplateDocumentAttachment_descriptor_ = file->message_type(52);
-  static const int TemplateDocumentAttachment_offsets_[12] = {
+  static const int TemplateDocumentAttachment_offsets_[13] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, unsignedcontent_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, comment_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, typenamedid_),
@@ -1300,6 +1300,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, needrecipientsignature_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, predefinedrecipienttitle_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, refusaldisabled_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateDocumentAttachment, customdata_),
   };
   TemplateDocumentAttachment_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -2081,7 +2082,7 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
     "ents.TemplateDocumentAttachment\0222\n\010LockM"
     "ode\030\007 \001(\0162\032.Diadoc.Api.Proto.LockMode:\004N"
     "one\022\030\n\020FromDepartmentId\030\010 \001(\t\022\026\n\016ToDepar"
-    "tmentId\030\t \001(\t\"\305\003\n\032TemplateDocumentAttach"
+    "tmentId\030\t \001(\t\"\373\003\n\032TemplateDocumentAttach"
     "ment\022A\n\017UnsignedContent\030\001 \002(\0132(.Diadoc.A"
     "pi.Proto.Events.UnsignedContent\022\017\n\007Comme"
     "nt\030\002 \001(\t\022\023\n\013TypeNamedId\030\003 \002(\t\022\020\n\010Functio"
@@ -2092,22 +2093,24 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
     "dRecipientSignature\030\n \001(\010:\005false\022S\n\030Pred"
     "efinedRecipientTitle\030\013 \001(\01321.Diadoc.Api."
     "Proto.Events.PredefinedRecipientTitle\022\036\n"
-    "\017RefusalDisabled\030\014 \001(\010:\005false\"[\n\023Templat"
-    "ePatchToPost\022D\n\010Refusals\030\001 \003(\01322.Diadoc."
-    "Api.Proto.Events.TemplateRefusalAttachme"
-    "nt\"P\n\031TemplateRefusalAttachment\022\022\n\nDocum"
-    "entId\030\001 \002(\t\022\017\n\007Comment\030\002 \001(\t\022\016\n\006Labels\030\003"
-    " \003(\t\"]\n\030PredefinedRecipientTitle\022A\n\017Unsi"
-    "gnedContent\030\001 \002(\0132(.Diadoc.Api.Proto.Eve"
-    "nts.UnsignedContent\"7\n\017UnsignedContent\022\017"
-    "\n\007Content\030\001 \001(\014\022\023\n\013NameOnShelf\030\002 \001(\t\"\223\001\n"
-    "\034TemplateTransformationToPost\022\r\n\005BoxId\030\001"
-    " \002(\t\022\022\n\nTemplateId\030\002 \002(\t\022P\n\027DocumentTran"
-    "sformations\030\003 \003(\0132/.Diadoc.Api.Proto.Eve"
-    "nts.DocumentTransformation\"F\n\026DocumentTr"
-    "ansformation\022\022\n\nDocumentId\030\001 \002(\t\022\030\n\020Cust"
-    "omDocumentId\030\002 \001(\t*/\n\030CustomDataPatchOpe"
-    "ration\022\007\n\003Set\020\000\022\n\n\006Remove\020\001", 17027);
+    "\017RefusalDisabled\030\014 \001(\010:\005false\0224\n\nCustomD"
+    "ata\030\r \003(\0132 .Diadoc.Api.Proto.CustomDataI"
+    "tem\"[\n\023TemplatePatchToPost\022D\n\010Refusals\030\001"
+    " \003(\01322.Diadoc.Api.Proto.Events.TemplateR"
+    "efusalAttachment\"P\n\031TemplateRefusalAttac"
+    "hment\022\022\n\nDocumentId\030\001 \002(\t\022\017\n\007Comment\030\002 \001"
+    "(\t\022\016\n\006Labels\030\003 \003(\t\"]\n\030PredefinedRecipien"
+    "tTitle\022A\n\017UnsignedContent\030\001 \002(\0132(.Diadoc"
+    ".Api.Proto.Events.UnsignedContent\"7\n\017Uns"
+    "ignedContent\022\017\n\007Content\030\001 \001(\014\022\023\n\013NameOnS"
+    "helf\030\002 \001(\t\"\223\001\n\034TemplateTransformationToP"
+    "ost\022\r\n\005BoxId\030\001 \002(\t\022\022\n\nTemplateId\030\002 \002(\t\022P"
+    "\n\027DocumentTransformations\030\003 \003(\0132/.Diadoc"
+    ".Api.Proto.Events.DocumentTransformation"
+    "\"F\n\026DocumentTransformation\022\022\n\nDocumentId"
+    "\030\001 \002(\t\022\030\n\020CustomDocumentId\030\002 \001(\t*/\n\030Cust"
+    "omDataPatchOperation\022\007\n\003Set\020\000\022\n\n\006Remove\020"
+    "\001", 17081);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Events/DiadocMessage-PostApi.proto", &protobuf_RegisterTypes);
   MessageToPost::default_instance_ = new MessageToPost();
@@ -29300,6 +29303,7 @@ const int TemplateDocumentAttachment::kEditingSettingIdFieldNumber;
 const int TemplateDocumentAttachment::kNeedRecipientSignatureFieldNumber;
 const int TemplateDocumentAttachment::kPredefinedRecipientTitleFieldNumber;
 const int TemplateDocumentAttachment::kRefusalDisabledFieldNumber;
+const int TemplateDocumentAttachment::kCustomDataFieldNumber;
 #endif  // !_MSC_VER
 
 TemplateDocumentAttachment::TemplateDocumentAttachment()
@@ -29446,6 +29450,7 @@ void TemplateDocumentAttachment::Clear() {
 #undef ZR_
 
   metadata_.Clear();
+  customdata_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -29642,6 +29647,20 @@ bool TemplateDocumentAttachment::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(106)) goto parse_CustomData;
+        break;
+      }
+
+      // repeated .Diadoc.Api.Proto.CustomDataItem CustomData = 13;
+      case 13: {
+        if (tag == 106) {
+         parse_CustomData:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_customdata()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(106)) goto parse_CustomData;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -29764,6 +29783,12 @@ void TemplateDocumentAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(12, this->refusaldisabled(), output);
   }
 
+  // repeated .Diadoc.Api.Proto.CustomDataItem CustomData = 13;
+  for (int i = 0; i < this->customdata_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      13, this->customdata(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -29876,6 +29901,13 @@ void TemplateDocumentAttachment::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(12, this->refusaldisabled(), target);
   }
 
+  // repeated .Diadoc.Api.Proto.CustomDataItem CustomData = 13;
+  for (int i = 0; i < this->customdata_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        13, this->customdata(i), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -29972,6 +30004,14 @@ int TemplateDocumentAttachment::ByteSize() const {
         this->metadata(i));
   }
 
+  // repeated .Diadoc.Api.Proto.CustomDataItem CustomData = 13;
+  total_size += 1 * this->customdata_size();
+  for (int i = 0; i < this->customdata_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->customdata(i));
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -29998,6 +30038,7 @@ void TemplateDocumentAttachment::MergeFrom(const ::google::protobuf::Message& fr
 void TemplateDocumentAttachment::MergeFrom(const TemplateDocumentAttachment& from) {
   GOOGLE_CHECK_NE(&from, this);
   metadata_.MergeFrom(from.metadata_);
+  customdata_.MergeFrom(from.customdata_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_unsignedcontent()) {
       mutable_unsignedcontent()->::Diadoc::Api::Proto::Events::UnsignedContent::MergeFrom(from.unsignedcontent());
@@ -30057,6 +30098,7 @@ bool TemplateDocumentAttachment::IsInitialized() const {
   if (has_predefinedrecipienttitle()) {
     if (!this->predefinedrecipienttitle().IsInitialized()) return false;
   }
+  if (!::google::protobuf::internal::AllAreInitialized(this->customdata())) return false;
   return true;
 }
 
@@ -30074,6 +30116,7 @@ void TemplateDocumentAttachment::Swap(TemplateDocumentAttachment* other) {
     std::swap(needrecipientsignature_, other->needrecipientsignature_);
     std::swap(predefinedrecipienttitle_, other->predefinedrecipienttitle_);
     std::swap(refusaldisabled_, other->refusaldisabled_);
+    customdata_.Swap(&other->customdata_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

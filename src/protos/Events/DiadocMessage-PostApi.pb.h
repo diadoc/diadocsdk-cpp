@@ -8656,6 +8656,18 @@ class TemplateDocumentAttachment : public ::google::protobuf::Message {
   inline bool refusaldisabled() const;
   inline void set_refusaldisabled(bool value);
 
+  // repeated .Diadoc.Api.Proto.CustomDataItem CustomData = 13;
+  inline int customdata_size() const;
+  inline void clear_customdata();
+  static const int kCustomDataFieldNumber = 13;
+  inline const ::Diadoc::Api::Proto::CustomDataItem& customdata(int index) const;
+  inline ::Diadoc::Api::Proto::CustomDataItem* mutable_customdata(int index);
+  inline ::Diadoc::Api::Proto::CustomDataItem* add_customdata();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::CustomDataItem >&
+      customdata() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::CustomDataItem >*
+      mutable_customdata();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.TemplateDocumentAttachment)
  private:
   inline void set_has_unsignedcontent();
@@ -8697,6 +8709,7 @@ class TemplateDocumentAttachment : public ::google::protobuf::Message {
   bool needrecipientsignature_;
   bool refusaldisabled_;
   ::Diadoc::Api::Proto::Events::PredefinedRecipientTitle* predefinedrecipienttitle_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::CustomDataItem > customdata_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -28703,6 +28716,36 @@ inline void TemplateDocumentAttachment::set_refusaldisabled(bool value) {
   set_has_refusaldisabled();
   refusaldisabled_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.TemplateDocumentAttachment.RefusalDisabled)
+}
+
+// repeated .Diadoc.Api.Proto.CustomDataItem CustomData = 13;
+inline int TemplateDocumentAttachment::customdata_size() const {
+  return customdata_.size();
+}
+inline void TemplateDocumentAttachment::clear_customdata() {
+  customdata_.Clear();
+}
+inline const ::Diadoc::Api::Proto::CustomDataItem& TemplateDocumentAttachment::customdata(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.TemplateDocumentAttachment.CustomData)
+  return customdata_.Get(index);
+}
+inline ::Diadoc::Api::Proto::CustomDataItem* TemplateDocumentAttachment::mutable_customdata(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.TemplateDocumentAttachment.CustomData)
+  return customdata_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::CustomDataItem* TemplateDocumentAttachment::add_customdata() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Events.TemplateDocumentAttachment.CustomData)
+  return customdata_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::CustomDataItem >&
+TemplateDocumentAttachment::customdata() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Events.TemplateDocumentAttachment.CustomData)
+  return customdata_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::CustomDataItem >*
+TemplateDocumentAttachment::mutable_customdata() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Events.TemplateDocumentAttachment.CustomData)
+  return &customdata_;
 }
 
 // -------------------------------------------------------------------
