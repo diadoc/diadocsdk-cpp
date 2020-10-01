@@ -29,6 +29,7 @@
 #include "Docflow/AttachmentV3.pb.h"
 #include "Docflow/RoamingNotification.pb.h"
 #include "Docflow/ResolutionDocflowV3.pb.h"
+#include "OuterDocflowStatus.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace Diadoc {
@@ -51,6 +52,9 @@ class RevocationDocflowV3;
 class RevocationRequestDocflow;
 class RevocationResponseDocflow;
 class ReceiptDocflowV3;
+class OuterDocflow;
+class OuterDocflowEntities;
+class StatusEntity;
 
 // ===================================================================
 
@@ -197,6 +201,30 @@ class DocflowV3 : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Docflow::ResolutionEntitiesV3* release_resolutionentities();
   inline void set_allocated_resolutionentities(::Diadoc::Api::Proto::Docflow::ResolutionEntitiesV3* resolutionentities);
 
+  // repeated .Diadoc.Api.Proto.Docflow.OuterDocflow OuterDocflows = 12;
+  inline int outerdocflows_size() const;
+  inline void clear_outerdocflows();
+  static const int kOuterDocflowsFieldNumber = 12;
+  inline const ::Diadoc::Api::Proto::Docflow::OuterDocflow& outerdocflows(int index) const;
+  inline ::Diadoc::Api::Proto::Docflow::OuterDocflow* mutable_outerdocflows(int index);
+  inline ::Diadoc::Api::Proto::Docflow::OuterDocflow* add_outerdocflows();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::OuterDocflow >&
+      outerdocflows() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::OuterDocflow >*
+      mutable_outerdocflows();
+
+  // repeated .Diadoc.Api.Proto.Docflow.OuterDocflowEntities OuterDocflowEntities = 13;
+  inline int outerdocflowentities_size() const;
+  inline void clear_outerdocflowentities();
+  static const int kOuterDocflowEntitiesFieldNumber = 13;
+  inline const ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities& outerdocflowentities(int index) const;
+  inline ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities* mutable_outerdocflowentities(int index);
+  inline ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities* add_outerdocflowentities();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities >&
+      outerdocflowentities() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities >*
+      mutable_outerdocflowentities();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Docflow.DocflowV3)
  private:
   inline void set_has_sendertitle();
@@ -234,6 +262,8 @@ class DocflowV3 : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Docflow::ReceiptDocflowV3* senderreceipt_;
   ::Diadoc::Api::Proto::Docflow::ResolutionDocflowV3* resolution_;
   ::Diadoc::Api::Proto::Docflow::ResolutionEntitiesV3* resolutionentities_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::OuterDocflow > outerdocflows_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities > outerdocflowentities_;
   friend void  protobuf_AddDesc_Docflow_2fDocflowV3_2eproto();
   friend void protobuf_AssignDesc_Docflow_2fDocflowV3_2eproto();
   friend void protobuf_ShutdownFile_Docflow_2fDocflowV3_2eproto();
@@ -1020,6 +1050,18 @@ class RevocationDocflowV3 : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Docflow::ResolutionEntitiesV3* release_resolutionentities();
   inline void set_allocated_resolutionentities(::Diadoc::Api::Proto::Docflow::ResolutionEntitiesV3* resolutionentities);
 
+  // repeated .Diadoc.Api.Proto.Docflow.OuterDocflowEntities OuterDocflowEntities = 7;
+  inline int outerdocflowentities_size() const;
+  inline void clear_outerdocflowentities();
+  static const int kOuterDocflowEntitiesFieldNumber = 7;
+  inline const ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities& outerdocflowentities(int index) const;
+  inline ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities* mutable_outerdocflowentities(int index);
+  inline ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities* add_outerdocflowentities();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities >&
+      outerdocflowentities() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities >*
+      mutable_outerdocflowentities();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Docflow.RevocationDocflowV3)
  private:
   inline void set_has_isfinished();
@@ -1045,6 +1087,7 @@ class RevocationDocflowV3 : public ::google::protobuf::Message {
   int revocationstatus_;
   ::std::string* initiatorboxid_;
   ::Diadoc::Api::Proto::Docflow::ResolutionEntitiesV3* resolutionentities_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities > outerdocflowentities_;
   friend void  protobuf_AddDesc_Docflow_2fDocflowV3_2eproto();
   friend void protobuf_AssignDesc_Docflow_2fDocflowV3_2eproto();
   friend void protobuf_ShutdownFile_Docflow_2fDocflowV3_2eproto();
@@ -1413,6 +1456,325 @@ class ReceiptDocflowV3 : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static ReceiptDocflowV3* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class OuterDocflow : public ::google::protobuf::Message {
+ public:
+  OuterDocflow();
+  virtual ~OuterDocflow();
+
+  OuterDocflow(const OuterDocflow& from);
+
+  inline OuterDocflow& operator=(const OuterDocflow& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const OuterDocflow& default_instance();
+
+  void Swap(OuterDocflow* other);
+
+  // implements Message ----------------------------------------------
+
+  OuterDocflow* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const OuterDocflow& from);
+  void MergeFrom(const OuterDocflow& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string DocflowNamedId = 1;
+  inline bool has_docflownamedid() const;
+  inline void clear_docflownamedid();
+  static const int kDocflowNamedIdFieldNumber = 1;
+  inline const ::std::string& docflownamedid() const;
+  inline void set_docflownamedid(const ::std::string& value);
+  inline void set_docflownamedid(const char* value);
+  inline void set_docflownamedid(const char* value, size_t size);
+  inline ::std::string* mutable_docflownamedid();
+  inline ::std::string* release_docflownamedid();
+  inline void set_allocated_docflownamedid(::std::string* docflownamedid);
+
+  // required string ParentEntityId = 2;
+  inline bool has_parententityid() const;
+  inline void clear_parententityid();
+  static const int kParentEntityIdFieldNumber = 2;
+  inline const ::std::string& parententityid() const;
+  inline void set_parententityid(const ::std::string& value);
+  inline void set_parententityid(const char* value);
+  inline void set_parententityid(const char* value, size_t size);
+  inline ::std::string* mutable_parententityid();
+  inline ::std::string* release_parententityid();
+  inline void set_allocated_parententityid(::std::string* parententityid);
+
+  // required string OuterDocflowEntityId = 3;
+  inline bool has_outerdocflowentityid() const;
+  inline void clear_outerdocflowentityid();
+  static const int kOuterDocflowEntityIdFieldNumber = 3;
+  inline const ::std::string& outerdocflowentityid() const;
+  inline void set_outerdocflowentityid(const ::std::string& value);
+  inline void set_outerdocflowentityid(const char* value);
+  inline void set_outerdocflowentityid(const char* value, size_t size);
+  inline ::std::string* mutable_outerdocflowentityid();
+  inline ::std::string* release_outerdocflowentityid();
+  inline void set_allocated_outerdocflowentityid(::std::string* outerdocflowentityid);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Docflow.OuterDocflow)
+ private:
+  inline void set_has_docflownamedid();
+  inline void clear_has_docflownamedid();
+  inline void set_has_parententityid();
+  inline void clear_has_parententityid();
+  inline void set_has_outerdocflowentityid();
+  inline void clear_has_outerdocflowentityid();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* docflownamedid_;
+  ::std::string* parententityid_;
+  ::std::string* outerdocflowentityid_;
+  friend void  protobuf_AddDesc_Docflow_2fDocflowV3_2eproto();
+  friend void protobuf_AssignDesc_Docflow_2fDocflowV3_2eproto();
+  friend void protobuf_ShutdownFile_Docflow_2fDocflowV3_2eproto();
+
+  void InitAsDefaultInstance();
+  static OuterDocflow* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class OuterDocflowEntities : public ::google::protobuf::Message {
+ public:
+  OuterDocflowEntities();
+  virtual ~OuterDocflowEntities();
+
+  OuterDocflowEntities(const OuterDocflowEntities& from);
+
+  inline OuterDocflowEntities& operator=(const OuterDocflowEntities& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const OuterDocflowEntities& default_instance();
+
+  void Swap(OuterDocflowEntities* other);
+
+  // implements Message ----------------------------------------------
+
+  OuterDocflowEntities* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const OuterDocflowEntities& from);
+  void MergeFrom(const OuterDocflowEntities& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string DocflowNamedId = 1;
+  inline bool has_docflownamedid() const;
+  inline void clear_docflownamedid();
+  static const int kDocflowNamedIdFieldNumber = 1;
+  inline const ::std::string& docflownamedid() const;
+  inline void set_docflownamedid(const ::std::string& value);
+  inline void set_docflownamedid(const char* value);
+  inline void set_docflownamedid(const char* value, size_t size);
+  inline ::std::string* mutable_docflownamedid();
+  inline ::std::string* release_docflownamedid();
+  inline void set_allocated_docflownamedid(::std::string* docflownamedid);
+
+  // required string DocflowFriendlyName = 2;
+  inline bool has_docflowfriendlyname() const;
+  inline void clear_docflowfriendlyname();
+  static const int kDocflowFriendlyNameFieldNumber = 2;
+  inline const ::std::string& docflowfriendlyname() const;
+  inline void set_docflowfriendlyname(const ::std::string& value);
+  inline void set_docflowfriendlyname(const char* value);
+  inline void set_docflowfriendlyname(const char* value, size_t size);
+  inline ::std::string* mutable_docflowfriendlyname();
+  inline ::std::string* release_docflowfriendlyname();
+  inline void set_allocated_docflowfriendlyname(::std::string* docflowfriendlyname);
+
+  // repeated .Diadoc.Api.Proto.Docflow.StatusEntity StatusEntities = 3;
+  inline int statusentities_size() const;
+  inline void clear_statusentities();
+  static const int kStatusEntitiesFieldNumber = 3;
+  inline const ::Diadoc::Api::Proto::Docflow::StatusEntity& statusentities(int index) const;
+  inline ::Diadoc::Api::Proto::Docflow::StatusEntity* mutable_statusentities(int index);
+  inline ::Diadoc::Api::Proto::Docflow::StatusEntity* add_statusentities();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::StatusEntity >&
+      statusentities() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::StatusEntity >*
+      mutable_statusentities();
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Docflow.OuterDocflowEntities)
+ private:
+  inline void set_has_docflownamedid();
+  inline void clear_has_docflownamedid();
+  inline void set_has_docflowfriendlyname();
+  inline void clear_has_docflowfriendlyname();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* docflownamedid_;
+  ::std::string* docflowfriendlyname_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::StatusEntity > statusentities_;
+  friend void  protobuf_AddDesc_Docflow_2fDocflowV3_2eproto();
+  friend void protobuf_AssignDesc_Docflow_2fDocflowV3_2eproto();
+  friend void protobuf_ShutdownFile_Docflow_2fDocflowV3_2eproto();
+
+  void InitAsDefaultInstance();
+  static OuterDocflowEntities* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class StatusEntity : public ::google::protobuf::Message {
+ public:
+  StatusEntity();
+  virtual ~StatusEntity();
+
+  StatusEntity(const StatusEntity& from);
+
+  inline StatusEntity& operator=(const StatusEntity& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const StatusEntity& default_instance();
+
+  void Swap(StatusEntity* other);
+
+  // implements Message ----------------------------------------------
+
+  StatusEntity* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const StatusEntity& from);
+  void MergeFrom(const StatusEntity& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required .Diadoc.Api.Proto.Docflow.SignedAttachmentV3 Attachment = 1;
+  inline bool has_attachment() const;
+  inline void clear_attachment();
+  static const int kAttachmentFieldNumber = 1;
+  inline const ::Diadoc::Api::Proto::Docflow::SignedAttachmentV3& attachment() const;
+  inline ::Diadoc::Api::Proto::Docflow::SignedAttachmentV3* mutable_attachment();
+  inline ::Diadoc::Api::Proto::Docflow::SignedAttachmentV3* release_attachment();
+  inline void set_allocated_attachment(::Diadoc::Api::Proto::Docflow::SignedAttachmentV3* attachment);
+
+  // required .Diadoc.Api.Proto.Status Status = 2;
+  inline bool has_status() const;
+  inline void clear_status();
+  static const int kStatusFieldNumber = 2;
+  inline const ::Diadoc::Api::Proto::Status& status() const;
+  inline ::Diadoc::Api::Proto::Status* mutable_status();
+  inline ::Diadoc::Api::Proto::Status* release_status();
+  inline void set_allocated_status(::Diadoc::Api::Proto::Status* status);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Docflow.StatusEntity)
+ private:
+  inline void set_has_attachment();
+  inline void clear_has_attachment();
+  inline void set_has_status();
+  inline void clear_has_status();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::Diadoc::Api::Proto::Docflow::SignedAttachmentV3* attachment_;
+  ::Diadoc::Api::Proto::Status* status_;
+  friend void  protobuf_AddDesc_Docflow_2fDocflowV3_2eproto();
+  friend void protobuf_AssignDesc_Docflow_2fDocflowV3_2eproto();
+  friend void protobuf_ShutdownFile_Docflow_2fDocflowV3_2eproto();
+
+  void InitAsDefaultInstance();
+  static StatusEntity* default_instance_;
 };
 // ===================================================================
 
@@ -1829,6 +2191,66 @@ inline void DocflowV3::set_allocated_resolutionentities(::Diadoc::Api::Proto::Do
     clear_has_resolutionentities();
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.DocflowV3.ResolutionEntities)
+}
+
+// repeated .Diadoc.Api.Proto.Docflow.OuterDocflow OuterDocflows = 12;
+inline int DocflowV3::outerdocflows_size() const {
+  return outerdocflows_.size();
+}
+inline void DocflowV3::clear_outerdocflows() {
+  outerdocflows_.Clear();
+}
+inline const ::Diadoc::Api::Proto::Docflow::OuterDocflow& DocflowV3::outerdocflows(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.DocflowV3.OuterDocflows)
+  return outerdocflows_.Get(index);
+}
+inline ::Diadoc::Api::Proto::Docflow::OuterDocflow* DocflowV3::mutable_outerdocflows(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.DocflowV3.OuterDocflows)
+  return outerdocflows_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::Docflow::OuterDocflow* DocflowV3::add_outerdocflows() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Docflow.DocflowV3.OuterDocflows)
+  return outerdocflows_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::OuterDocflow >&
+DocflowV3::outerdocflows() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Docflow.DocflowV3.OuterDocflows)
+  return outerdocflows_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::OuterDocflow >*
+DocflowV3::mutable_outerdocflows() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Docflow.DocflowV3.OuterDocflows)
+  return &outerdocflows_;
+}
+
+// repeated .Diadoc.Api.Proto.Docflow.OuterDocflowEntities OuterDocflowEntities = 13;
+inline int DocflowV3::outerdocflowentities_size() const {
+  return outerdocflowentities_.size();
+}
+inline void DocflowV3::clear_outerdocflowentities() {
+  outerdocflowentities_.Clear();
+}
+inline const ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities& DocflowV3::outerdocflowentities(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.DocflowV3.OuterDocflowEntities)
+  return outerdocflowentities_.Get(index);
+}
+inline ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities* DocflowV3::mutable_outerdocflowentities(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.DocflowV3.OuterDocflowEntities)
+  return outerdocflowentities_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities* DocflowV3::add_outerdocflowentities() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Docflow.DocflowV3.OuterDocflowEntities)
+  return outerdocflowentities_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities >&
+DocflowV3::outerdocflowentities() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Docflow.DocflowV3.OuterDocflowEntities)
+  return outerdocflowentities_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities >*
+DocflowV3::mutable_outerdocflowentities() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Docflow.DocflowV3.OuterDocflowEntities)
+  return &outerdocflowentities_;
 }
 
 // -------------------------------------------------------------------
@@ -3187,6 +3609,36 @@ inline void RevocationDocflowV3::set_allocated_resolutionentities(::Diadoc::Api:
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.RevocationDocflowV3.ResolutionEntities)
 }
 
+// repeated .Diadoc.Api.Proto.Docflow.OuterDocflowEntities OuterDocflowEntities = 7;
+inline int RevocationDocflowV3::outerdocflowentities_size() const {
+  return outerdocflowentities_.size();
+}
+inline void RevocationDocflowV3::clear_outerdocflowentities() {
+  outerdocflowentities_.Clear();
+}
+inline const ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities& RevocationDocflowV3::outerdocflowentities(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.RevocationDocflowV3.OuterDocflowEntities)
+  return outerdocflowentities_.Get(index);
+}
+inline ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities* RevocationDocflowV3::mutable_outerdocflowentities(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.RevocationDocflowV3.OuterDocflowEntities)
+  return outerdocflowentities_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities* RevocationDocflowV3::add_outerdocflowentities() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Docflow.RevocationDocflowV3.OuterDocflowEntities)
+  return outerdocflowentities_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities >&
+RevocationDocflowV3::outerdocflowentities() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Docflow.RevocationDocflowV3.OuterDocflowEntities)
+  return outerdocflowentities_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities >*
+RevocationDocflowV3::mutable_outerdocflowentities() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Docflow.RevocationDocflowV3.OuterDocflowEntities)
+  return &outerdocflowentities_;
+}
+
 // -------------------------------------------------------------------
 
 // RevocationRequestDocflow
@@ -3732,6 +4184,510 @@ inline void ReceiptDocflowV3::set_status(::Diadoc::Api::Proto::Documents::Genera
   set_has_status();
   status_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.ReceiptDocflowV3.Status)
+}
+
+// -------------------------------------------------------------------
+
+// OuterDocflow
+
+// required string DocflowNamedId = 1;
+inline bool OuterDocflow::has_docflownamedid() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void OuterDocflow::set_has_docflownamedid() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void OuterDocflow::clear_has_docflownamedid() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void OuterDocflow::clear_docflownamedid() {
+  if (docflownamedid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    docflownamedid_->clear();
+  }
+  clear_has_docflownamedid();
+}
+inline const ::std::string& OuterDocflow::docflownamedid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.OuterDocflow.DocflowNamedId)
+  return *docflownamedid_;
+}
+inline void OuterDocflow::set_docflownamedid(const ::std::string& value) {
+  set_has_docflownamedid();
+  if (docflownamedid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    docflownamedid_ = new ::std::string;
+  }
+  docflownamedid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.OuterDocflow.DocflowNamedId)
+}
+inline void OuterDocflow::set_docflownamedid(const char* value) {
+  set_has_docflownamedid();
+  if (docflownamedid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    docflownamedid_ = new ::std::string;
+  }
+  docflownamedid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Docflow.OuterDocflow.DocflowNamedId)
+}
+inline void OuterDocflow::set_docflownamedid(const char* value, size_t size) {
+  set_has_docflownamedid();
+  if (docflownamedid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    docflownamedid_ = new ::std::string;
+  }
+  docflownamedid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Docflow.OuterDocflow.DocflowNamedId)
+}
+inline ::std::string* OuterDocflow::mutable_docflownamedid() {
+  set_has_docflownamedid();
+  if (docflownamedid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    docflownamedid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.OuterDocflow.DocflowNamedId)
+  return docflownamedid_;
+}
+inline ::std::string* OuterDocflow::release_docflownamedid() {
+  clear_has_docflownamedid();
+  if (docflownamedid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = docflownamedid_;
+    docflownamedid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void OuterDocflow::set_allocated_docflownamedid(::std::string* docflownamedid) {
+  if (docflownamedid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete docflownamedid_;
+  }
+  if (docflownamedid) {
+    set_has_docflownamedid();
+    docflownamedid_ = docflownamedid;
+  } else {
+    clear_has_docflownamedid();
+    docflownamedid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.OuterDocflow.DocflowNamedId)
+}
+
+// required string ParentEntityId = 2;
+inline bool OuterDocflow::has_parententityid() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void OuterDocflow::set_has_parententityid() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void OuterDocflow::clear_has_parententityid() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void OuterDocflow::clear_parententityid() {
+  if (parententityid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_->clear();
+  }
+  clear_has_parententityid();
+}
+inline const ::std::string& OuterDocflow::parententityid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.OuterDocflow.ParentEntityId)
+  return *parententityid_;
+}
+inline void OuterDocflow::set_parententityid(const ::std::string& value) {
+  set_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_ = new ::std::string;
+  }
+  parententityid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.OuterDocflow.ParentEntityId)
+}
+inline void OuterDocflow::set_parententityid(const char* value) {
+  set_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_ = new ::std::string;
+  }
+  parententityid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Docflow.OuterDocflow.ParentEntityId)
+}
+inline void OuterDocflow::set_parententityid(const char* value, size_t size) {
+  set_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_ = new ::std::string;
+  }
+  parententityid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Docflow.OuterDocflow.ParentEntityId)
+}
+inline ::std::string* OuterDocflow::mutable_parententityid() {
+  set_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.OuterDocflow.ParentEntityId)
+  return parententityid_;
+}
+inline ::std::string* OuterDocflow::release_parententityid() {
+  clear_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = parententityid_;
+    parententityid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void OuterDocflow::set_allocated_parententityid(::std::string* parententityid) {
+  if (parententityid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete parententityid_;
+  }
+  if (parententityid) {
+    set_has_parententityid();
+    parententityid_ = parententityid;
+  } else {
+    clear_has_parententityid();
+    parententityid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.OuterDocflow.ParentEntityId)
+}
+
+// required string OuterDocflowEntityId = 3;
+inline bool OuterDocflow::has_outerdocflowentityid() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void OuterDocflow::set_has_outerdocflowentityid() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void OuterDocflow::clear_has_outerdocflowentityid() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void OuterDocflow::clear_outerdocflowentityid() {
+  if (outerdocflowentityid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    outerdocflowentityid_->clear();
+  }
+  clear_has_outerdocflowentityid();
+}
+inline const ::std::string& OuterDocflow::outerdocflowentityid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.OuterDocflow.OuterDocflowEntityId)
+  return *outerdocflowentityid_;
+}
+inline void OuterDocflow::set_outerdocflowentityid(const ::std::string& value) {
+  set_has_outerdocflowentityid();
+  if (outerdocflowentityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    outerdocflowentityid_ = new ::std::string;
+  }
+  outerdocflowentityid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.OuterDocflow.OuterDocflowEntityId)
+}
+inline void OuterDocflow::set_outerdocflowentityid(const char* value) {
+  set_has_outerdocflowentityid();
+  if (outerdocflowentityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    outerdocflowentityid_ = new ::std::string;
+  }
+  outerdocflowentityid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Docflow.OuterDocflow.OuterDocflowEntityId)
+}
+inline void OuterDocflow::set_outerdocflowentityid(const char* value, size_t size) {
+  set_has_outerdocflowentityid();
+  if (outerdocflowentityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    outerdocflowentityid_ = new ::std::string;
+  }
+  outerdocflowentityid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Docflow.OuterDocflow.OuterDocflowEntityId)
+}
+inline ::std::string* OuterDocflow::mutable_outerdocflowentityid() {
+  set_has_outerdocflowentityid();
+  if (outerdocflowentityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    outerdocflowentityid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.OuterDocflow.OuterDocflowEntityId)
+  return outerdocflowentityid_;
+}
+inline ::std::string* OuterDocflow::release_outerdocflowentityid() {
+  clear_has_outerdocflowentityid();
+  if (outerdocflowentityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = outerdocflowentityid_;
+    outerdocflowentityid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void OuterDocflow::set_allocated_outerdocflowentityid(::std::string* outerdocflowentityid) {
+  if (outerdocflowentityid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete outerdocflowentityid_;
+  }
+  if (outerdocflowentityid) {
+    set_has_outerdocflowentityid();
+    outerdocflowentityid_ = outerdocflowentityid;
+  } else {
+    clear_has_outerdocflowentityid();
+    outerdocflowentityid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.OuterDocflow.OuterDocflowEntityId)
+}
+
+// -------------------------------------------------------------------
+
+// OuterDocflowEntities
+
+// required string DocflowNamedId = 1;
+inline bool OuterDocflowEntities::has_docflownamedid() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void OuterDocflowEntities::set_has_docflownamedid() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void OuterDocflowEntities::clear_has_docflownamedid() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void OuterDocflowEntities::clear_docflownamedid() {
+  if (docflownamedid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    docflownamedid_->clear();
+  }
+  clear_has_docflownamedid();
+}
+inline const ::std::string& OuterDocflowEntities::docflownamedid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.OuterDocflowEntities.DocflowNamedId)
+  return *docflownamedid_;
+}
+inline void OuterDocflowEntities::set_docflownamedid(const ::std::string& value) {
+  set_has_docflownamedid();
+  if (docflownamedid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    docflownamedid_ = new ::std::string;
+  }
+  docflownamedid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.OuterDocflowEntities.DocflowNamedId)
+}
+inline void OuterDocflowEntities::set_docflownamedid(const char* value) {
+  set_has_docflownamedid();
+  if (docflownamedid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    docflownamedid_ = new ::std::string;
+  }
+  docflownamedid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Docflow.OuterDocflowEntities.DocflowNamedId)
+}
+inline void OuterDocflowEntities::set_docflownamedid(const char* value, size_t size) {
+  set_has_docflownamedid();
+  if (docflownamedid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    docflownamedid_ = new ::std::string;
+  }
+  docflownamedid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Docflow.OuterDocflowEntities.DocflowNamedId)
+}
+inline ::std::string* OuterDocflowEntities::mutable_docflownamedid() {
+  set_has_docflownamedid();
+  if (docflownamedid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    docflownamedid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.OuterDocflowEntities.DocflowNamedId)
+  return docflownamedid_;
+}
+inline ::std::string* OuterDocflowEntities::release_docflownamedid() {
+  clear_has_docflownamedid();
+  if (docflownamedid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = docflownamedid_;
+    docflownamedid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void OuterDocflowEntities::set_allocated_docflownamedid(::std::string* docflownamedid) {
+  if (docflownamedid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete docflownamedid_;
+  }
+  if (docflownamedid) {
+    set_has_docflownamedid();
+    docflownamedid_ = docflownamedid;
+  } else {
+    clear_has_docflownamedid();
+    docflownamedid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.OuterDocflowEntities.DocflowNamedId)
+}
+
+// required string DocflowFriendlyName = 2;
+inline bool OuterDocflowEntities::has_docflowfriendlyname() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void OuterDocflowEntities::set_has_docflowfriendlyname() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void OuterDocflowEntities::clear_has_docflowfriendlyname() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void OuterDocflowEntities::clear_docflowfriendlyname() {
+  if (docflowfriendlyname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    docflowfriendlyname_->clear();
+  }
+  clear_has_docflowfriendlyname();
+}
+inline const ::std::string& OuterDocflowEntities::docflowfriendlyname() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.OuterDocflowEntities.DocflowFriendlyName)
+  return *docflowfriendlyname_;
+}
+inline void OuterDocflowEntities::set_docflowfriendlyname(const ::std::string& value) {
+  set_has_docflowfriendlyname();
+  if (docflowfriendlyname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    docflowfriendlyname_ = new ::std::string;
+  }
+  docflowfriendlyname_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.OuterDocflowEntities.DocflowFriendlyName)
+}
+inline void OuterDocflowEntities::set_docflowfriendlyname(const char* value) {
+  set_has_docflowfriendlyname();
+  if (docflowfriendlyname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    docflowfriendlyname_ = new ::std::string;
+  }
+  docflowfriendlyname_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Docflow.OuterDocflowEntities.DocflowFriendlyName)
+}
+inline void OuterDocflowEntities::set_docflowfriendlyname(const char* value, size_t size) {
+  set_has_docflowfriendlyname();
+  if (docflowfriendlyname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    docflowfriendlyname_ = new ::std::string;
+  }
+  docflowfriendlyname_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Docflow.OuterDocflowEntities.DocflowFriendlyName)
+}
+inline ::std::string* OuterDocflowEntities::mutable_docflowfriendlyname() {
+  set_has_docflowfriendlyname();
+  if (docflowfriendlyname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    docflowfriendlyname_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.OuterDocflowEntities.DocflowFriendlyName)
+  return docflowfriendlyname_;
+}
+inline ::std::string* OuterDocflowEntities::release_docflowfriendlyname() {
+  clear_has_docflowfriendlyname();
+  if (docflowfriendlyname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = docflowfriendlyname_;
+    docflowfriendlyname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void OuterDocflowEntities::set_allocated_docflowfriendlyname(::std::string* docflowfriendlyname) {
+  if (docflowfriendlyname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete docflowfriendlyname_;
+  }
+  if (docflowfriendlyname) {
+    set_has_docflowfriendlyname();
+    docflowfriendlyname_ = docflowfriendlyname;
+  } else {
+    clear_has_docflowfriendlyname();
+    docflowfriendlyname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.OuterDocflowEntities.DocflowFriendlyName)
+}
+
+// repeated .Diadoc.Api.Proto.Docflow.StatusEntity StatusEntities = 3;
+inline int OuterDocflowEntities::statusentities_size() const {
+  return statusentities_.size();
+}
+inline void OuterDocflowEntities::clear_statusentities() {
+  statusentities_.Clear();
+}
+inline const ::Diadoc::Api::Proto::Docflow::StatusEntity& OuterDocflowEntities::statusentities(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.OuterDocflowEntities.StatusEntities)
+  return statusentities_.Get(index);
+}
+inline ::Diadoc::Api::Proto::Docflow::StatusEntity* OuterDocflowEntities::mutable_statusentities(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.OuterDocflowEntities.StatusEntities)
+  return statusentities_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::Docflow::StatusEntity* OuterDocflowEntities::add_statusentities() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Docflow.OuterDocflowEntities.StatusEntities)
+  return statusentities_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::StatusEntity >&
+OuterDocflowEntities::statusentities() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Docflow.OuterDocflowEntities.StatusEntities)
+  return statusentities_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::StatusEntity >*
+OuterDocflowEntities::mutable_statusentities() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Docflow.OuterDocflowEntities.StatusEntities)
+  return &statusentities_;
+}
+
+// -------------------------------------------------------------------
+
+// StatusEntity
+
+// required .Diadoc.Api.Proto.Docflow.SignedAttachmentV3 Attachment = 1;
+inline bool StatusEntity::has_attachment() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void StatusEntity::set_has_attachment() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void StatusEntity::clear_has_attachment() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void StatusEntity::clear_attachment() {
+  if (attachment_ != NULL) attachment_->::Diadoc::Api::Proto::Docflow::SignedAttachmentV3::Clear();
+  clear_has_attachment();
+}
+inline const ::Diadoc::Api::Proto::Docflow::SignedAttachmentV3& StatusEntity::attachment() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.StatusEntity.Attachment)
+  return attachment_ != NULL ? *attachment_ : *default_instance_->attachment_;
+}
+inline ::Diadoc::Api::Proto::Docflow::SignedAttachmentV3* StatusEntity::mutable_attachment() {
+  set_has_attachment();
+  if (attachment_ == NULL) attachment_ = new ::Diadoc::Api::Proto::Docflow::SignedAttachmentV3;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.StatusEntity.Attachment)
+  return attachment_;
+}
+inline ::Diadoc::Api::Proto::Docflow::SignedAttachmentV3* StatusEntity::release_attachment() {
+  clear_has_attachment();
+  ::Diadoc::Api::Proto::Docflow::SignedAttachmentV3* temp = attachment_;
+  attachment_ = NULL;
+  return temp;
+}
+inline void StatusEntity::set_allocated_attachment(::Diadoc::Api::Proto::Docflow::SignedAttachmentV3* attachment) {
+  delete attachment_;
+  attachment_ = attachment;
+  if (attachment) {
+    set_has_attachment();
+  } else {
+    clear_has_attachment();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.StatusEntity.Attachment)
+}
+
+// required .Diadoc.Api.Proto.Status Status = 2;
+inline bool StatusEntity::has_status() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void StatusEntity::set_has_status() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void StatusEntity::clear_has_status() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void StatusEntity::clear_status() {
+  if (status_ != NULL) status_->::Diadoc::Api::Proto::Status::Clear();
+  clear_has_status();
+}
+inline const ::Diadoc::Api::Proto::Status& StatusEntity::status() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.StatusEntity.Status)
+  return status_ != NULL ? *status_ : *default_instance_->status_;
+}
+inline ::Diadoc::Api::Proto::Status* StatusEntity::mutable_status() {
+  set_has_status();
+  if (status_ == NULL) status_ = new ::Diadoc::Api::Proto::Status;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.StatusEntity.Status)
+  return status_;
+}
+inline ::Diadoc::Api::Proto::Status* StatusEntity::release_status() {
+  clear_has_status();
+  ::Diadoc::Api::Proto::Status* temp = status_;
+  status_ = NULL;
+  return temp;
+}
+inline void StatusEntity::set_allocated_status(::Diadoc::Api::Proto::Status* status) {
+  delete status_;
+  status_ = status;
+  if (status) {
+    set_has_status();
+  } else {
+    clear_has_status();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.StatusEntity.Status)
 }
 
 

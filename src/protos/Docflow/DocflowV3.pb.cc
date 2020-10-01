@@ -53,6 +53,15 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* ReceiptDocflowV3_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   ReceiptDocflowV3_reflection_ = NULL;
+const ::google::protobuf::Descriptor* OuterDocflow_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  OuterDocflow_reflection_ = NULL;
+const ::google::protobuf::Descriptor* OuterDocflowEntities_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  OuterDocflowEntities_reflection_ = NULL;
+const ::google::protobuf::Descriptor* StatusEntity_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  StatusEntity_reflection_ = NULL;
 
 }  // namespace
 
@@ -64,7 +73,7 @@ void protobuf_AssignDesc_Docflow_2fDocflowV3_2eproto() {
       "Docflow/DocflowV3.proto");
   GOOGLE_CHECK(file != NULL);
   DocflowV3_descriptor_ = file->message_type(0);
-  static const int DocflowV3_offsets_[10] = {
+  static const int DocflowV3_offsets_[12] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocflowV3, sendertitle_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocflowV3, confirmation_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocflowV3, proxyresponse_),
@@ -75,6 +84,8 @@ void protobuf_AssignDesc_Docflow_2fDocflowV3_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocflowV3, senderreceipt_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocflowV3, resolution_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocflowV3, resolutionentities_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocflowV3, outerdocflows_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocflowV3, outerdocflowentities_),
   };
   DocflowV3_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -186,13 +197,14 @@ void protobuf_AssignDesc_Docflow_2fDocflowV3_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(AmendmentRequestDocflow));
   RevocationDocflowV3_descriptor_ = file->message_type(6);
-  static const int RevocationDocflowV3_offsets_[6] = {
+  static const int RevocationDocflowV3_offsets_[7] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RevocationDocflowV3, isfinished_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RevocationDocflowV3, revocationrequest_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RevocationDocflowV3, revocationresponse_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RevocationDocflowV3, initiatorboxid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RevocationDocflowV3, revocationstatus_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RevocationDocflowV3, resolutionentities_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RevocationDocflowV3, outerdocflowentities_),
   };
   RevocationDocflowV3_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -260,6 +272,56 @@ void protobuf_AssignDesc_Docflow_2fDocflowV3_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ReceiptDocflowV3));
+  OuterDocflow_descriptor_ = file->message_type(10);
+  static const int OuterDocflow_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OuterDocflow, docflownamedid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OuterDocflow, parententityid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OuterDocflow, outerdocflowentityid_),
+  };
+  OuterDocflow_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      OuterDocflow_descriptor_,
+      OuterDocflow::default_instance_,
+      OuterDocflow_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OuterDocflow, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OuterDocflow, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(OuterDocflow));
+  OuterDocflowEntities_descriptor_ = file->message_type(11);
+  static const int OuterDocflowEntities_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OuterDocflowEntities, docflownamedid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OuterDocflowEntities, docflowfriendlyname_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OuterDocflowEntities, statusentities_),
+  };
+  OuterDocflowEntities_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      OuterDocflowEntities_descriptor_,
+      OuterDocflowEntities::default_instance_,
+      OuterDocflowEntities_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OuterDocflowEntities, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OuterDocflowEntities, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(OuterDocflowEntities));
+  StatusEntity_descriptor_ = file->message_type(12);
+  static const int StatusEntity_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StatusEntity, attachment_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StatusEntity, status_),
+  };
+  StatusEntity_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      StatusEntity_descriptor_,
+      StatusEntity::default_instance_,
+      StatusEntity_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StatusEntity, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StatusEntity, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(StatusEntity));
 }
 
 namespace {
@@ -292,6 +354,12 @@ void protobuf_RegisterTypes(const ::std::string&) {
     RevocationResponseDocflow_descriptor_, &RevocationResponseDocflow::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     ReceiptDocflowV3_descriptor_, &ReceiptDocflowV3::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    OuterDocflow_descriptor_, &OuterDocflow::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    OuterDocflowEntities_descriptor_, &OuterDocflowEntities::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    StatusEntity_descriptor_, &StatusEntity::default_instance());
 }
 
 }  // namespace
@@ -317,6 +385,12 @@ void protobuf_ShutdownFile_Docflow_2fDocflowV3_2eproto() {
   delete RevocationResponseDocflow_reflection_;
   delete ReceiptDocflowV3::default_instance_;
   delete ReceiptDocflowV3_reflection_;
+  delete OuterDocflow::default_instance_;
+  delete OuterDocflow_reflection_;
+  delete OuterDocflowEntities::default_instance_;
+  delete OuterDocflowEntities_reflection_;
+  delete StatusEntity::default_instance_;
+  delete StatusEntity_reflection_;
 }
 
 void protobuf_AddDesc_Docflow_2fDocflowV3_2eproto() {
@@ -330,98 +404,114 @@ void protobuf_AddDesc_Docflow_2fDocflowV3_2eproto() {
   ::Diadoc::Api::Proto::Docflow::protobuf_AddDesc_Docflow_2fAttachmentV3_2eproto();
   ::Diadoc::Api::Proto::Docflow::protobuf_AddDesc_Docflow_2fRoamingNotification_2eproto();
   ::Diadoc::Api::Proto::Docflow::protobuf_AddDesc_Docflow_2fResolutionDocflowV3_2eproto();
+  ::Diadoc::Api::Proto::protobuf_AddDesc_OuterDocflowStatus_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\027Docflow/DocflowV3.proto\022\030Diadoc.Api.Pr"
     "oto.Docflow\032\017Timestamp.proto\032\030Documents/"
     "Document.proto\032\032Docflow/AttachmentV3.pro"
     "to\032!Docflow/RoamingNotification.proto\032!D"
-    "ocflow/ResolutionDocflowV3.proto\"\331\005\n\tDoc"
-    "flowV3\022A\n\013SenderTitle\030\001 \002(\0132,.Diadoc.Api"
-    ".Proto.Docflow.SenderTitleDocflow\022C\n\014Con"
-    "firmation\030\002 \001(\0132-.Diadoc.Api.Proto.Docfl"
-    "ow.ConfirmationDocflow\022K\n\rProxyResponse\030"
-    "\013 \001(\01324.Diadoc.Api.Proto.Docflow.Partici"
-    "pantResponseDocflow\022D\n\020RecipientReceipt\030"
-    "\004 \001(\0132*.Diadoc.Api.Proto.Docflow.Receipt"
-    "DocflowV3\022O\n\021RecipientResponse\030\005 \001(\01324.D"
-    "iadoc.Api.Proto.Docflow.ParticipantRespo"
-    "nseDocflow\022K\n\020AmendmentRequest\030\006 \001(\01321.D"
-    "iadoc.Api.Proto.Docflow.AmendmentRequest"
-    "Docflow\022A\n\nRevocation\030\007 \001(\0132-.Diadoc.Api"
-    ".Proto.Docflow.RevocationDocflowV3\022A\n\rSe"
-    "nderReceipt\030\010 \001(\0132*.Diadoc.Api.Proto.Doc"
-    "flow.ReceiptDocflowV3\022A\n\nResolution\030\t \001("
-    "\0132-.Diadoc.Api.Proto.Docflow.ResolutionD"
-    "ocflowV3\022J\n\022ResolutionEntities\030\n \001(\0132..D"
-    "iadoc.Api.Proto.Docflow.ResolutionEntiti"
-    "esV3\"\347\002\n\022SenderTitleDocflow\022\022\n\nIsFinishe"
-    "d\030\001 \002(\010\022@\n\nAttachment\030\002 \002(\0132,.Diadoc.Api"
-    ".Proto.Docflow.SignedAttachmentV3\022+\n\006Sen"
-    "tAt\030\003 \001(\0132\033.Diadoc.Api.Proto.Timestamp\0220"
-    "\n\013DeliveredAt\030\004 \001(\0132\033.Diadoc.Api.Proto.T"
-    "imestamp\022J\n\023RoamingNotification\030\005 \001(\0132-."
-    "Diadoc.Api.Proto.Docflow.RoamingNotifica"
-    "tion\022P\n\025SenderSignatureStatus\030\006 \002(\01621.Di"
-    "adoc.Api.Proto.Documents.SenderSignature"
-    "Status\"\346\001\n\023ConfirmationDocflow\022\022\n\nIsFini"
-    "shed\030\001 \002(\010\022L\n\026ConfirmationAttachment\030\002 \001"
-    "(\0132,.Diadoc.Api.Proto.Docflow.SignedAtta"
-    "chmentV3\0220\n\013ConfirmedAt\030\003 \001(\0132\033.Diadoc.A"
-    "pi.Proto.Timestamp\022;\n\007Receipt\030\004 \001(\0132*.Di"
-    "adoc.Api.Proto.Docflow.ReceiptDocflowV3\""
-    "\274\001\n\031SignatureRejectionDocflow\022H\n\022Signatu"
-    "reRejection\030\001 \002(\0132,.Diadoc.Api.Proto.Doc"
-    "flow.SignedAttachmentV3\022\020\n\010IsFormal\030\002 \002("
-    "\010\0220\n\013DeliveredAt\030\003 \001(\0132\033.Diadoc.Api.Prot"
-    "o.Timestamp\022\021\n\tPlainText\030\004 \001(\t\"\233\003\n\032Parti"
-    "cipantResponseDocflow\022\022\n\nIsFinished\030\001 \002("
-    "\010\0228\n\tSignature\030\002 \001(\0132%.Diadoc.Api.Proto."
-    "Docflow.SignatureV3\022;\n\005Title\030\003 \001(\0132,.Dia"
+    "ocflow/ResolutionDocflowV3.proto\032\030OuterD"
+    "ocflowStatus.proto\"\346\006\n\tDocflowV3\022A\n\013Send"
+    "erTitle\030\001 \002(\0132,.Diadoc.Api.Proto.Docflow"
+    ".SenderTitleDocflow\022C\n\014Confirmation\030\002 \001("
+    "\0132-.Diadoc.Api.Proto.Docflow.Confirmatio"
+    "nDocflow\022K\n\rProxyResponse\030\013 \001(\01324.Diadoc"
+    ".Api.Proto.Docflow.ParticipantResponseDo"
+    "cflow\022D\n\020RecipientReceipt\030\004 \001(\0132*.Diadoc"
+    ".Api.Proto.Docflow.ReceiptDocflowV3\022O\n\021R"
+    "ecipientResponse\030\005 \001(\01324.Diadoc.Api.Prot"
+    "o.Docflow.ParticipantResponseDocflow\022K\n\020"
+    "AmendmentRequest\030\006 \001(\01321.Diadoc.Api.Prot"
+    "o.Docflow.AmendmentRequestDocflow\022A\n\nRev"
+    "ocation\030\007 \001(\0132-.Diadoc.Api.Proto.Docflow"
+    ".RevocationDocflowV3\022A\n\rSenderReceipt\030\010 "
+    "\001(\0132*.Diadoc.Api.Proto.Docflow.ReceiptDo"
+    "cflowV3\022A\n\nResolution\030\t \001(\0132-.Diadoc.Api"
+    ".Proto.Docflow.ResolutionDocflowV3\022J\n\022Re"
+    "solutionEntities\030\n \001(\0132..Diadoc.Api.Prot"
+    "o.Docflow.ResolutionEntitiesV3\022=\n\rOuterD"
+    "ocflows\030\014 \003(\0132&.Diadoc.Api.Proto.Docflow"
+    ".OuterDocflow\022L\n\024OuterDocflowEntities\030\r "
+    "\003(\0132..Diadoc.Api.Proto.Docflow.OuterDocf"
+    "lowEntities\"\347\002\n\022SenderTitleDocflow\022\022\n\nIs"
+    "Finished\030\001 \002(\010\022@\n\nAttachment\030\002 \002(\0132,.Dia"
     "doc.Api.Proto.Docflow.SignedAttachmentV3"
-    "\022F\n\tRejection\030\004 \001(\01323.Diadoc.Api.Proto.D"
-    "ocflow.SignatureRejectionDocflow\022+\n\006Sent"
-    "At\030\005 \001(\0132\033.Diadoc.Api.Proto.Timestamp\0220\n"
-    "\013DeliveredAt\030\006 \001(\0132\033.Diadoc.Api.Proto.Ti"
-    "mestamp\022K\n\016ResponseStatus\030\007 \002(\01623.Diadoc"
-    ".Api.Proto.Documents.RecipientResponseSt"
-    "atus\"\274\002\n\027AmendmentRequestDocflow\022\022\n\nIsFi"
-    "nished\030\001 \002(\010\022F\n\020AmendmentRequest\030\002 \002(\0132,"
-    ".Diadoc.Api.Proto.Docflow.SignedAttachme"
-    "ntV3\022+\n\006SentAt\030\003 \001(\0132\033.Diadoc.Api.Proto."
-    "Timestamp\0220\n\013DeliveredAt\030\004 \001(\0132\033.Diadoc."
-    "Api.Proto.Timestamp\022;\n\007Receipt\030\005 \001(\0132*.D"
-    "iadoc.Api.Proto.Docflow.ReceiptDocflowV3"
-    "\022\026\n\016AmendmentFlags\030\006 \002(\005\022\021\n\tPlainText\030\007 "
-    "\001(\t\"\365\002\n\023RevocationDocflowV3\022\022\n\nIsFinishe"
-    "d\030\001 \002(\010\022M\n\021RevocationRequest\030\002 \002(\01322.Dia"
-    "doc.Api.Proto.Docflow.RevocationRequestD"
-    "ocflow\022O\n\022RevocationResponse\030\003 \001(\01323.Dia"
-    "doc.Api.Proto.Docflow.RevocationResponse"
-    "Docflow\022\026\n\016InitiatorBoxId\030\004 \002(\t\022F\n\020Revoc"
-    "ationStatus\030\005 \002(\0162,.Diadoc.Api.Proto.Doc"
-    "uments.RevocationStatus\022J\n\022ResolutionEnt"
-    "ities\030\006 \001(\0132..Diadoc.Api.Proto.Docflow.R"
-    "esolutionEntitiesV3\"\241\002\n\030RevocationReques"
-    "tDocflow\022G\n\021RevocationRequest\030\001 \002(\0132,.Di"
-    "adoc.Api.Proto.Docflow.SignedAttachmentV"
-    "3\022+\n\006SentAt\030\002 \001(\0132\033.Diadoc.Api.Proto.Tim"
-    "estamp\0220\n\013DeliveredAt\030\003 \001(\0132\033.Diadoc.Api"
-    ".Proto.Timestamp\022J\n\023RoamingNotification\030"
-    "\004 \001(\0132-.Diadoc.Api.Proto.Docflow.Roaming"
-    "Notification\022\021\n\tPlainText\030\005 \001(\t\"\257\001\n\031Revo"
-    "cationResponseDocflow\022A\n\022RecipientSignat"
-    "ure\030\001 \001(\0132%.Diadoc.Api.Proto.Docflow.Sig"
-    "natureV3\022O\n\022SignatureRejection\030\002 \001(\01323.D"
-    "iadoc.Api.Proto.Docflow.SignatureRejecti"
-    "onDocflow\"\325\002\n\020ReceiptDocflowV3\022\022\n\nIsFini"
-    "shed\030\001 \002(\010\022G\n\021ReceiptAttachment\030\002 \001(\0132,."
-    "Diadoc.Api.Proto.Docflow.SignedAttachmen"
-    "tV3\022+\n\006SentAt\030\003 \001(\0132\033.Diadoc.Api.Proto.T"
-    "imestamp\0220\n\013DeliveredAt\030\004 \001(\0132\033.Diadoc.A"
-    "pi.Proto.Timestamp\022C\n\014Confirmation\030\005 \001(\013"
-    "2-.Diadoc.Api.Proto.Docflow.Confirmation"
-    "Docflow\022@\n\006Status\030\006 \002(\01620.Diadoc.Api.Pro"
-    "to.Documents.GeneralReceiptStatus", 3633);
+    "\022+\n\006SentAt\030\003 \001(\0132\033.Diadoc.Api.Proto.Time"
+    "stamp\0220\n\013DeliveredAt\030\004 \001(\0132\033.Diadoc.Api."
+    "Proto.Timestamp\022J\n\023RoamingNotification\030\005"
+    " \001(\0132-.Diadoc.Api.Proto.Docflow.RoamingN"
+    "otification\022P\n\025SenderSignatureStatus\030\006 \002"
+    "(\01621.Diadoc.Api.Proto.Documents.SenderSi"
+    "gnatureStatus\"\346\001\n\023ConfirmationDocflow\022\022\n"
+    "\nIsFinished\030\001 \002(\010\022L\n\026ConfirmationAttachm"
+    "ent\030\002 \001(\0132,.Diadoc.Api.Proto.Docflow.Sig"
+    "nedAttachmentV3\0220\n\013ConfirmedAt\030\003 \001(\0132\033.D"
+    "iadoc.Api.Proto.Timestamp\022;\n\007Receipt\030\004 \001"
+    "(\0132*.Diadoc.Api.Proto.Docflow.ReceiptDoc"
+    "flowV3\"\274\001\n\031SignatureRejectionDocflow\022H\n\022"
+    "SignatureRejection\030\001 \002(\0132,.Diadoc.Api.Pr"
+    "oto.Docflow.SignedAttachmentV3\022\020\n\010IsForm"
+    "al\030\002 \002(\010\0220\n\013DeliveredAt\030\003 \001(\0132\033.Diadoc.A"
+    "pi.Proto.Timestamp\022\021\n\tPlainText\030\004 \001(\t\"\233\003"
+    "\n\032ParticipantResponseDocflow\022\022\n\nIsFinish"
+    "ed\030\001 \002(\010\0228\n\tSignature\030\002 \001(\0132%.Diadoc.Api"
+    ".Proto.Docflow.SignatureV3\022;\n\005Title\030\003 \001("
+    "\0132,.Diadoc.Api.Proto.Docflow.SignedAttac"
+    "hmentV3\022F\n\tRejection\030\004 \001(\01323.Diadoc.Api."
+    "Proto.Docflow.SignatureRejectionDocflow\022"
+    "+\n\006SentAt\030\005 \001(\0132\033.Diadoc.Api.Proto.Times"
+    "tamp\0220\n\013DeliveredAt\030\006 \001(\0132\033.Diadoc.Api.P"
+    "roto.Timestamp\022K\n\016ResponseStatus\030\007 \002(\01623"
+    ".Diadoc.Api.Proto.Documents.RecipientRes"
+    "ponseStatus\"\274\002\n\027AmendmentRequestDocflow\022"
+    "\022\n\nIsFinished\030\001 \002(\010\022F\n\020AmendmentRequest\030"
+    "\002 \002(\0132,.Diadoc.Api.Proto.Docflow.SignedA"
+    "ttachmentV3\022+\n\006SentAt\030\003 \001(\0132\033.Diadoc.Api"
+    ".Proto.Timestamp\0220\n\013DeliveredAt\030\004 \001(\0132\033."
+    "Diadoc.Api.Proto.Timestamp\022;\n\007Receipt\030\005 "
+    "\001(\0132*.Diadoc.Api.Proto.Docflow.ReceiptDo"
+    "cflowV3\022\026\n\016AmendmentFlags\030\006 \002(\005\022\021\n\tPlain"
+    "Text\030\007 \001(\t\"\303\003\n\023RevocationDocflowV3\022\022\n\nIs"
+    "Finished\030\001 \002(\010\022M\n\021RevocationRequest\030\002 \002("
+    "\01322.Diadoc.Api.Proto.Docflow.RevocationR"
+    "equestDocflow\022O\n\022RevocationResponse\030\003 \001("
+    "\01323.Diadoc.Api.Proto.Docflow.RevocationR"
+    "esponseDocflow\022\026\n\016InitiatorBoxId\030\004 \002(\t\022F"
+    "\n\020RevocationStatus\030\005 \002(\0162,.Diadoc.Api.Pr"
+    "oto.Documents.RevocationStatus\022J\n\022Resolu"
+    "tionEntities\030\006 \001(\0132..Diadoc.Api.Proto.Do"
+    "cflow.ResolutionEntitiesV3\022L\n\024OuterDocfl"
+    "owEntities\030\007 \003(\0132..Diadoc.Api.Proto.Docf"
+    "low.OuterDocflowEntities\"\241\002\n\030RevocationR"
+    "equestDocflow\022G\n\021RevocationRequest\030\001 \002(\013"
+    "2,.Diadoc.Api.Proto.Docflow.SignedAttach"
+    "mentV3\022+\n\006SentAt\030\002 \001(\0132\033.Diadoc.Api.Prot"
+    "o.Timestamp\0220\n\013DeliveredAt\030\003 \001(\0132\033.Diado"
+    "c.Api.Proto.Timestamp\022J\n\023RoamingNotifica"
+    "tion\030\004 \001(\0132-.Diadoc.Api.Proto.Docflow.Ro"
+    "amingNotification\022\021\n\tPlainText\030\005 \001(\t\"\257\001\n"
+    "\031RevocationResponseDocflow\022A\n\022RecipientS"
+    "ignature\030\001 \001(\0132%.Diadoc.Api.Proto.Docflo"
+    "w.SignatureV3\022O\n\022SignatureRejection\030\002 \001("
+    "\01323.Diadoc.Api.Proto.Docflow.SignatureRe"
+    "jectionDocflow\"\325\002\n\020ReceiptDocflowV3\022\022\n\nI"
+    "sFinished\030\001 \002(\010\022G\n\021ReceiptAttachment\030\002 \001"
+    "(\0132,.Diadoc.Api.Proto.Docflow.SignedAtta"
+    "chmentV3\022+\n\006SentAt\030\003 \001(\0132\033.Diadoc.Api.Pr"
+    "oto.Timestamp\0220\n\013DeliveredAt\030\004 \001(\0132\033.Dia"
+    "doc.Api.Proto.Timestamp\022C\n\014Confirmation\030"
+    "\005 \001(\0132-.Diadoc.Api.Proto.Docflow.Confirm"
+    "ationDocflow\022@\n\006Status\030\006 \002(\01620.Diadoc.Ap"
+    "i.Proto.Documents.GeneralReceiptStatus\"\\"
+    "\n\014OuterDocflow\022\026\n\016DocflowNamedId\030\001 \002(\t\022\026"
+    "\n\016ParentEntityId\030\002 \002(\t\022\034\n\024OuterDocflowEn"
+    "tityId\030\003 \002(\t\"\213\001\n\024OuterDocflowEntities\022\026\n"
+    "\016DocflowNamedId\030\001 \002(\t\022\033\n\023DocflowFriendly"
+    "Name\030\002 \002(\t\022>\n\016StatusEntities\030\003 \003(\0132&.Dia"
+    "doc.Api.Proto.Docflow.StatusEntity\"z\n\014St"
+    "atusEntity\022@\n\nAttachment\030\001 \002(\0132,.Diadoc."
+    "Api.Proto.Docflow.SignedAttachmentV3\022(\n\006"
+    "Status\030\002 \002(\0132\030.Diadoc.Api.Proto.Status", 4238);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Docflow/DocflowV3.proto", &protobuf_RegisterTypes);
   DocflowV3::default_instance_ = new DocflowV3();
@@ -434,6 +524,9 @@ void protobuf_AddDesc_Docflow_2fDocflowV3_2eproto() {
   RevocationRequestDocflow::default_instance_ = new RevocationRequestDocflow();
   RevocationResponseDocflow::default_instance_ = new RevocationResponseDocflow();
   ReceiptDocflowV3::default_instance_ = new ReceiptDocflowV3();
+  OuterDocflow::default_instance_ = new OuterDocflow();
+  OuterDocflowEntities::default_instance_ = new OuterDocflowEntities();
+  StatusEntity::default_instance_ = new StatusEntity();
   DocflowV3::default_instance_->InitAsDefaultInstance();
   SenderTitleDocflow::default_instance_->InitAsDefaultInstance();
   ConfirmationDocflow::default_instance_->InitAsDefaultInstance();
@@ -444,6 +537,9 @@ void protobuf_AddDesc_Docflow_2fDocflowV3_2eproto() {
   RevocationRequestDocflow::default_instance_->InitAsDefaultInstance();
   RevocationResponseDocflow::default_instance_->InitAsDefaultInstance();
   ReceiptDocflowV3::default_instance_->InitAsDefaultInstance();
+  OuterDocflow::default_instance_->InitAsDefaultInstance();
+  OuterDocflowEntities::default_instance_->InitAsDefaultInstance();
+  StatusEntity::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_Docflow_2fDocflowV3_2eproto);
 }
 
@@ -467,6 +563,8 @@ const int DocflowV3::kRevocationFieldNumber;
 const int DocflowV3::kSenderReceiptFieldNumber;
 const int DocflowV3::kResolutionFieldNumber;
 const int DocflowV3::kResolutionEntitiesFieldNumber;
+const int DocflowV3::kOuterDocflowsFieldNumber;
+const int DocflowV3::kOuterDocflowEntitiesFieldNumber;
 #endif  // !_MSC_VER
 
 DocflowV3::DocflowV3()
@@ -586,6 +684,8 @@ void DocflowV3::Clear() {
       if (resolutionentities_ != NULL) resolutionentities_->::Diadoc::Api::Proto::Docflow::ResolutionEntitiesV3::Clear();
     }
   }
+  outerdocflows_.Clear();
+  outerdocflowentities_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -725,6 +825,34 @@ bool DocflowV3::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(98)) goto parse_OuterDocflows;
+        break;
+      }
+
+      // repeated .Diadoc.Api.Proto.Docflow.OuterDocflow OuterDocflows = 12;
+      case 12: {
+        if (tag == 98) {
+         parse_OuterDocflows:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_outerdocflows()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(98)) goto parse_OuterDocflows;
+        if (input->ExpectTag(106)) goto parse_OuterDocflowEntities;
+        break;
+      }
+
+      // repeated .Diadoc.Api.Proto.Docflow.OuterDocflowEntities OuterDocflowEntities = 13;
+      case 13: {
+        if (tag == 106) {
+         parse_OuterDocflowEntities:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_outerdocflowentities()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(106)) goto parse_OuterDocflowEntities;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -814,6 +942,18 @@ void DocflowV3::SerializeWithCachedSizes(
       11, this->proxyresponse(), output);
   }
 
+  // repeated .Diadoc.Api.Proto.Docflow.OuterDocflow OuterDocflows = 12;
+  for (int i = 0; i < this->outerdocflows_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      12, this->outerdocflows(i), output);
+  }
+
+  // repeated .Diadoc.Api.Proto.Docflow.OuterDocflowEntities OuterDocflowEntities = 13;
+  for (int i = 0; i < this->outerdocflowentities_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      13, this->outerdocflowentities(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -892,6 +1032,20 @@ void DocflowV3::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         11, this->proxyresponse(), target);
+  }
+
+  // repeated .Diadoc.Api.Proto.Docflow.OuterDocflow OuterDocflows = 12;
+  for (int i = 0; i < this->outerdocflows_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        12, this->outerdocflows(i), target);
+  }
+
+  // repeated .Diadoc.Api.Proto.Docflow.OuterDocflowEntities OuterDocflowEntities = 13;
+  for (int i = 0; i < this->outerdocflowentities_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        13, this->outerdocflowentities(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -979,6 +1133,22 @@ int DocflowV3::ByteSize() const {
     }
 
   }
+  // repeated .Diadoc.Api.Proto.Docflow.OuterDocflow OuterDocflows = 12;
+  total_size += 1 * this->outerdocflows_size();
+  for (int i = 0; i < this->outerdocflows_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->outerdocflows(i));
+  }
+
+  // repeated .Diadoc.Api.Proto.Docflow.OuterDocflowEntities OuterDocflowEntities = 13;
+  total_size += 1 * this->outerdocflowentities_size();
+  for (int i = 0; i < this->outerdocflowentities_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->outerdocflowentities(i));
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -1004,6 +1174,8 @@ void DocflowV3::MergeFrom(const ::google::protobuf::Message& from) {
 
 void DocflowV3::MergeFrom(const DocflowV3& from) {
   GOOGLE_CHECK_NE(&from, this);
+  outerdocflows_.MergeFrom(from.outerdocflows_);
+  outerdocflowentities_.MergeFrom(from.outerdocflowentities_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_sendertitle()) {
       mutable_sendertitle()->::Diadoc::Api::Proto::Docflow::SenderTitleDocflow::MergeFrom(from.sendertitle());
@@ -1086,6 +1258,8 @@ bool DocflowV3::IsInitialized() const {
   if (has_resolutionentities()) {
     if (!this->resolutionentities().IsInitialized()) return false;
   }
+  if (!::google::protobuf::internal::AllAreInitialized(this->outerdocflows())) return false;
+  if (!::google::protobuf::internal::AllAreInitialized(this->outerdocflowentities())) return false;
   return true;
 }
 
@@ -1101,6 +1275,8 @@ void DocflowV3::Swap(DocflowV3* other) {
     std::swap(senderreceipt_, other->senderreceipt_);
     std::swap(resolution_, other->resolution_);
     std::swap(resolutionentities_, other->resolutionentities_);
+    outerdocflows_.Swap(&other->outerdocflows_);
+    outerdocflowentities_.Swap(&other->outerdocflowentities_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -3374,6 +3550,7 @@ const int RevocationDocflowV3::kRevocationResponseFieldNumber;
 const int RevocationDocflowV3::kInitiatorBoxIdFieldNumber;
 const int RevocationDocflowV3::kRevocationStatusFieldNumber;
 const int RevocationDocflowV3::kResolutionEntitiesFieldNumber;
+const int RevocationDocflowV3::kOuterDocflowEntitiesFieldNumber;
 #endif  // !_MSC_VER
 
 RevocationDocflowV3::RevocationDocflowV3()
@@ -3476,6 +3653,7 @@ void RevocationDocflowV3::Clear() {
 #undef OFFSET_OF_FIELD_
 #undef ZR_
 
+  outerdocflowentities_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -3576,6 +3754,20 @@ bool RevocationDocflowV3::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(58)) goto parse_OuterDocflowEntities;
+        break;
+      }
+
+      // repeated .Diadoc.Api.Proto.Docflow.OuterDocflowEntities OuterDocflowEntities = 7;
+      case 7: {
+        if (tag == 58) {
+         parse_OuterDocflowEntities:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_outerdocflowentities()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(58)) goto parse_OuterDocflowEntities;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -3644,6 +3836,12 @@ void RevocationDocflowV3::SerializeWithCachedSizes(
       6, this->resolutionentities(), output);
   }
 
+  // repeated .Diadoc.Api.Proto.Docflow.OuterDocflowEntities OuterDocflowEntities = 7;
+  for (int i = 0; i < this->outerdocflowentities_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      7, this->outerdocflowentities(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -3695,6 +3893,13 @@ void RevocationDocflowV3::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         6, this->resolutionentities(), target);
+  }
+
+  // repeated .Diadoc.Api.Proto.Docflow.OuterDocflowEntities OuterDocflowEntities = 7;
+  for (int i = 0; i < this->outerdocflowentities_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        7, this->outerdocflowentities(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -3749,6 +3954,14 @@ int RevocationDocflowV3::ByteSize() const {
     }
 
   }
+  // repeated .Diadoc.Api.Proto.Docflow.OuterDocflowEntities OuterDocflowEntities = 7;
+  total_size += 1 * this->outerdocflowentities_size();
+  for (int i = 0; i < this->outerdocflowentities_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->outerdocflowentities(i));
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -3774,6 +3987,7 @@ void RevocationDocflowV3::MergeFrom(const ::google::protobuf::Message& from) {
 
 void RevocationDocflowV3::MergeFrom(const RevocationDocflowV3& from) {
   GOOGLE_CHECK_NE(&from, this);
+  outerdocflowentities_.MergeFrom(from.outerdocflowentities_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_isfinished()) {
       set_isfinished(from.isfinished());
@@ -3821,6 +4035,7 @@ bool RevocationDocflowV3::IsInitialized() const {
   if (has_resolutionentities()) {
     if (!this->resolutionentities().IsInitialized()) return false;
   }
+  if (!::google::protobuf::internal::AllAreInitialized(this->outerdocflowentities())) return false;
   return true;
 }
 
@@ -3832,6 +4047,7 @@ void RevocationDocflowV3::Swap(RevocationDocflowV3* other) {
     std::swap(initiatorboxid_, other->initiatorboxid_);
     std::swap(revocationstatus_, other->revocationstatus_);
     std::swap(resolutionentities_, other->resolutionentities_);
+    outerdocflowentities_.Swap(&other->outerdocflowentities_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -5025,6 +5241,995 @@ void ReceiptDocflowV3::Swap(ReceiptDocflowV3* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = ReceiptDocflowV3_descriptor_;
   metadata.reflection = ReceiptDocflowV3_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int OuterDocflow::kDocflowNamedIdFieldNumber;
+const int OuterDocflow::kParentEntityIdFieldNumber;
+const int OuterDocflow::kOuterDocflowEntityIdFieldNumber;
+#endif  // !_MSC_VER
+
+OuterDocflow::OuterDocflow()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Docflow.OuterDocflow)
+}
+
+void OuterDocflow::InitAsDefaultInstance() {
+}
+
+OuterDocflow::OuterDocflow(const OuterDocflow& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Docflow.OuterDocflow)
+}
+
+void OuterDocflow::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  docflownamedid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  parententityid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  outerdocflowentityid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+OuterDocflow::~OuterDocflow() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Docflow.OuterDocflow)
+  SharedDtor();
+}
+
+void OuterDocflow::SharedDtor() {
+  if (docflownamedid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete docflownamedid_;
+  }
+  if (parententityid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete parententityid_;
+  }
+  if (outerdocflowentityid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete outerdocflowentityid_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void OuterDocflow::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* OuterDocflow::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return OuterDocflow_descriptor_;
+}
+
+const OuterDocflow& OuterDocflow::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Docflow_2fDocflowV3_2eproto();
+  return *default_instance_;
+}
+
+OuterDocflow* OuterDocflow::default_instance_ = NULL;
+
+OuterDocflow* OuterDocflow::New() const {
+  return new OuterDocflow;
+}
+
+void OuterDocflow::Clear() {
+  if (_has_bits_[0 / 32] & 7) {
+    if (has_docflownamedid()) {
+      if (docflownamedid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        docflownamedid_->clear();
+      }
+    }
+    if (has_parententityid()) {
+      if (parententityid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        parententityid_->clear();
+      }
+    }
+    if (has_outerdocflowentityid()) {
+      if (outerdocflowentityid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        outerdocflowentityid_->clear();
+      }
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool OuterDocflow::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Docflow.OuterDocflow)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required string DocflowNamedId = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_docflownamedid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->docflownamedid().data(), this->docflownamedid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "docflownamedid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_ParentEntityId;
+        break;
+      }
+
+      // required string ParentEntityId = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_ParentEntityId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_parententityid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->parententityid().data(), this->parententityid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "parententityid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_OuterDocflowEntityId;
+        break;
+      }
+
+      // required string OuterDocflowEntityId = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_OuterDocflowEntityId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_outerdocflowentityid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->outerdocflowentityid().data(), this->outerdocflowentityid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "outerdocflowentityid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Docflow.OuterDocflow)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Docflow.OuterDocflow)
+  return false;
+#undef DO_
+}
+
+void OuterDocflow::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Docflow.OuterDocflow)
+  // required string DocflowNamedId = 1;
+  if (has_docflownamedid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->docflownamedid().data(), this->docflownamedid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "docflownamedid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->docflownamedid(), output);
+  }
+
+  // required string ParentEntityId = 2;
+  if (has_parententityid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->parententityid().data(), this->parententityid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "parententityid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->parententityid(), output);
+  }
+
+  // required string OuterDocflowEntityId = 3;
+  if (has_outerdocflowentityid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->outerdocflowentityid().data(), this->outerdocflowentityid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "outerdocflowentityid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->outerdocflowentityid(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Docflow.OuterDocflow)
+}
+
+::google::protobuf::uint8* OuterDocflow::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Docflow.OuterDocflow)
+  // required string DocflowNamedId = 1;
+  if (has_docflownamedid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->docflownamedid().data(), this->docflownamedid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "docflownamedid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->docflownamedid(), target);
+  }
+
+  // required string ParentEntityId = 2;
+  if (has_parententityid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->parententityid().data(), this->parententityid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "parententityid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->parententityid(), target);
+  }
+
+  // required string OuterDocflowEntityId = 3;
+  if (has_outerdocflowentityid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->outerdocflowentityid().data(), this->outerdocflowentityid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "outerdocflowentityid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->outerdocflowentityid(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Docflow.OuterDocflow)
+  return target;
+}
+
+int OuterDocflow::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required string DocflowNamedId = 1;
+    if (has_docflownamedid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->docflownamedid());
+    }
+
+    // required string ParentEntityId = 2;
+    if (has_parententityid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->parententityid());
+    }
+
+    // required string OuterDocflowEntityId = 3;
+    if (has_outerdocflowentityid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->outerdocflowentityid());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void OuterDocflow::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const OuterDocflow* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const OuterDocflow*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void OuterDocflow::MergeFrom(const OuterDocflow& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_docflownamedid()) {
+      set_docflownamedid(from.docflownamedid());
+    }
+    if (from.has_parententityid()) {
+      set_parententityid(from.parententityid());
+    }
+    if (from.has_outerdocflowentityid()) {
+      set_outerdocflowentityid(from.outerdocflowentityid());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void OuterDocflow::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void OuterDocflow::CopyFrom(const OuterDocflow& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool OuterDocflow::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
+
+  return true;
+}
+
+void OuterDocflow::Swap(OuterDocflow* other) {
+  if (other != this) {
+    std::swap(docflownamedid_, other->docflownamedid_);
+    std::swap(parententityid_, other->parententityid_);
+    std::swap(outerdocflowentityid_, other->outerdocflowentityid_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata OuterDocflow::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = OuterDocflow_descriptor_;
+  metadata.reflection = OuterDocflow_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int OuterDocflowEntities::kDocflowNamedIdFieldNumber;
+const int OuterDocflowEntities::kDocflowFriendlyNameFieldNumber;
+const int OuterDocflowEntities::kStatusEntitiesFieldNumber;
+#endif  // !_MSC_VER
+
+OuterDocflowEntities::OuterDocflowEntities()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Docflow.OuterDocflowEntities)
+}
+
+void OuterDocflowEntities::InitAsDefaultInstance() {
+}
+
+OuterDocflowEntities::OuterDocflowEntities(const OuterDocflowEntities& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Docflow.OuterDocflowEntities)
+}
+
+void OuterDocflowEntities::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  docflownamedid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  docflowfriendlyname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+OuterDocflowEntities::~OuterDocflowEntities() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Docflow.OuterDocflowEntities)
+  SharedDtor();
+}
+
+void OuterDocflowEntities::SharedDtor() {
+  if (docflownamedid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete docflownamedid_;
+  }
+  if (docflowfriendlyname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete docflowfriendlyname_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void OuterDocflowEntities::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* OuterDocflowEntities::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return OuterDocflowEntities_descriptor_;
+}
+
+const OuterDocflowEntities& OuterDocflowEntities::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Docflow_2fDocflowV3_2eproto();
+  return *default_instance_;
+}
+
+OuterDocflowEntities* OuterDocflowEntities::default_instance_ = NULL;
+
+OuterDocflowEntities* OuterDocflowEntities::New() const {
+  return new OuterDocflowEntities;
+}
+
+void OuterDocflowEntities::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    if (has_docflownamedid()) {
+      if (docflownamedid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        docflownamedid_->clear();
+      }
+    }
+    if (has_docflowfriendlyname()) {
+      if (docflowfriendlyname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        docflowfriendlyname_->clear();
+      }
+    }
+  }
+  statusentities_.Clear();
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool OuterDocflowEntities::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Docflow.OuterDocflowEntities)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required string DocflowNamedId = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_docflownamedid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->docflownamedid().data(), this->docflownamedid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "docflownamedid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_DocflowFriendlyName;
+        break;
+      }
+
+      // required string DocflowFriendlyName = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_DocflowFriendlyName:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_docflowfriendlyname()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->docflowfriendlyname().data(), this->docflowfriendlyname().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "docflowfriendlyname");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_StatusEntities;
+        break;
+      }
+
+      // repeated .Diadoc.Api.Proto.Docflow.StatusEntity StatusEntities = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_StatusEntities:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_statusentities()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_StatusEntities;
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Docflow.OuterDocflowEntities)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Docflow.OuterDocflowEntities)
+  return false;
+#undef DO_
+}
+
+void OuterDocflowEntities::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Docflow.OuterDocflowEntities)
+  // required string DocflowNamedId = 1;
+  if (has_docflownamedid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->docflownamedid().data(), this->docflownamedid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "docflownamedid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->docflownamedid(), output);
+  }
+
+  // required string DocflowFriendlyName = 2;
+  if (has_docflowfriendlyname()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->docflowfriendlyname().data(), this->docflowfriendlyname().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "docflowfriendlyname");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->docflowfriendlyname(), output);
+  }
+
+  // repeated .Diadoc.Api.Proto.Docflow.StatusEntity StatusEntities = 3;
+  for (int i = 0; i < this->statusentities_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, this->statusentities(i), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Docflow.OuterDocflowEntities)
+}
+
+::google::protobuf::uint8* OuterDocflowEntities::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Docflow.OuterDocflowEntities)
+  // required string DocflowNamedId = 1;
+  if (has_docflownamedid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->docflownamedid().data(), this->docflownamedid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "docflownamedid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->docflownamedid(), target);
+  }
+
+  // required string DocflowFriendlyName = 2;
+  if (has_docflowfriendlyname()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->docflowfriendlyname().data(), this->docflowfriendlyname().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "docflowfriendlyname");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->docflowfriendlyname(), target);
+  }
+
+  // repeated .Diadoc.Api.Proto.Docflow.StatusEntity StatusEntities = 3;
+  for (int i = 0; i < this->statusentities_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        3, this->statusentities(i), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Docflow.OuterDocflowEntities)
+  return target;
+}
+
+int OuterDocflowEntities::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required string DocflowNamedId = 1;
+    if (has_docflownamedid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->docflownamedid());
+    }
+
+    // required string DocflowFriendlyName = 2;
+    if (has_docflowfriendlyname()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->docflowfriendlyname());
+    }
+
+  }
+  // repeated .Diadoc.Api.Proto.Docflow.StatusEntity StatusEntities = 3;
+  total_size += 1 * this->statusentities_size();
+  for (int i = 0; i < this->statusentities_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->statusentities(i));
+  }
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void OuterDocflowEntities::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const OuterDocflowEntities* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const OuterDocflowEntities*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void OuterDocflowEntities::MergeFrom(const OuterDocflowEntities& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  statusentities_.MergeFrom(from.statusentities_);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_docflownamedid()) {
+      set_docflownamedid(from.docflownamedid());
+    }
+    if (from.has_docflowfriendlyname()) {
+      set_docflowfriendlyname(from.docflowfriendlyname());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void OuterDocflowEntities::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void OuterDocflowEntities::CopyFrom(const OuterDocflowEntities& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool OuterDocflowEntities::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+
+  if (!::google::protobuf::internal::AllAreInitialized(this->statusentities())) return false;
+  return true;
+}
+
+void OuterDocflowEntities::Swap(OuterDocflowEntities* other) {
+  if (other != this) {
+    std::swap(docflownamedid_, other->docflownamedid_);
+    std::swap(docflowfriendlyname_, other->docflowfriendlyname_);
+    statusentities_.Swap(&other->statusentities_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata OuterDocflowEntities::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = OuterDocflowEntities_descriptor_;
+  metadata.reflection = OuterDocflowEntities_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int StatusEntity::kAttachmentFieldNumber;
+const int StatusEntity::kStatusFieldNumber;
+#endif  // !_MSC_VER
+
+StatusEntity::StatusEntity()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Diadoc.Api.Proto.Docflow.StatusEntity)
+}
+
+void StatusEntity::InitAsDefaultInstance() {
+  attachment_ = const_cast< ::Diadoc::Api::Proto::Docflow::SignedAttachmentV3*>(&::Diadoc::Api::Proto::Docflow::SignedAttachmentV3::default_instance());
+  status_ = const_cast< ::Diadoc::Api::Proto::Status*>(&::Diadoc::Api::Proto::Status::default_instance());
+}
+
+StatusEntity::StatusEntity(const StatusEntity& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Diadoc.Api.Proto.Docflow.StatusEntity)
+}
+
+void StatusEntity::SharedCtor() {
+  _cached_size_ = 0;
+  attachment_ = NULL;
+  status_ = NULL;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+StatusEntity::~StatusEntity() {
+  // @@protoc_insertion_point(destructor:Diadoc.Api.Proto.Docflow.StatusEntity)
+  SharedDtor();
+}
+
+void StatusEntity::SharedDtor() {
+  if (this != default_instance_) {
+    delete attachment_;
+    delete status_;
+  }
+}
+
+void StatusEntity::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* StatusEntity::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return StatusEntity_descriptor_;
+}
+
+const StatusEntity& StatusEntity::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Docflow_2fDocflowV3_2eproto();
+  return *default_instance_;
+}
+
+StatusEntity* StatusEntity::default_instance_ = NULL;
+
+StatusEntity* StatusEntity::New() const {
+  return new StatusEntity;
+}
+
+void StatusEntity::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    if (has_attachment()) {
+      if (attachment_ != NULL) attachment_->::Diadoc::Api::Proto::Docflow::SignedAttachmentV3::Clear();
+    }
+    if (has_status()) {
+      if (status_ != NULL) status_->::Diadoc::Api::Proto::Status::Clear();
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool StatusEntity::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Diadoc.Api.Proto.Docflow.StatusEntity)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required .Diadoc.Api.Proto.Docflow.SignedAttachmentV3 Attachment = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_attachment()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_Status;
+        break;
+      }
+
+      // required .Diadoc.Api.Proto.Status Status = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_Status:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_status()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Diadoc.Api.Proto.Docflow.StatusEntity)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Diadoc.Api.Proto.Docflow.StatusEntity)
+  return false;
+#undef DO_
+}
+
+void StatusEntity::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Docflow.StatusEntity)
+  // required .Diadoc.Api.Proto.Docflow.SignedAttachmentV3 Attachment = 1;
+  if (has_attachment()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->attachment(), output);
+  }
+
+  // required .Diadoc.Api.Proto.Status Status = 2;
+  if (has_status()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->status(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Diadoc.Api.Proto.Docflow.StatusEntity)
+}
+
+::google::protobuf::uint8* StatusEntity::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Docflow.StatusEntity)
+  // required .Diadoc.Api.Proto.Docflow.SignedAttachmentV3 Attachment = 1;
+  if (has_attachment()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, this->attachment(), target);
+  }
+
+  // required .Diadoc.Api.Proto.Status Status = 2;
+  if (has_status()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        2, this->status(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Diadoc.Api.Proto.Docflow.StatusEntity)
+  return target;
+}
+
+int StatusEntity::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required .Diadoc.Api.Proto.Docflow.SignedAttachmentV3 Attachment = 1;
+    if (has_attachment()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->attachment());
+    }
+
+    // required .Diadoc.Api.Proto.Status Status = 2;
+    if (has_status()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->status());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void StatusEntity::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const StatusEntity* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const StatusEntity*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void StatusEntity::MergeFrom(const StatusEntity& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_attachment()) {
+      mutable_attachment()->::Diadoc::Api::Proto::Docflow::SignedAttachmentV3::MergeFrom(from.attachment());
+    }
+    if (from.has_status()) {
+      mutable_status()->::Diadoc::Api::Proto::Status::MergeFrom(from.status());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void StatusEntity::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void StatusEntity::CopyFrom(const StatusEntity& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool StatusEntity::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+
+  if (has_attachment()) {
+    if (!this->attachment().IsInitialized()) return false;
+  }
+  if (has_status()) {
+    if (!this->status().IsInitialized()) return false;
+  }
+  return true;
+}
+
+void StatusEntity::Swap(StatusEntity* other) {
+  if (other != this) {
+    std::swap(attachment_, other->attachment_);
+    std::swap(status_, other->status_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata StatusEntity::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = StatusEntity_descriptor_;
+  metadata.reflection = StatusEntity_reflection_;
   return metadata;
 }
 

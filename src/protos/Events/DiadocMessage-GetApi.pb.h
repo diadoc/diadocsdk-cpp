@@ -35,6 +35,7 @@
 #include "Events/ResolutionRequestInfo.pb.h"
 #include "Events/ResolutionRequestDenialInfo.pb.h"
 #include "Events/ResolutionRouteInfo.pb.h"
+#include "OuterDocflow.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace Diadoc {
@@ -153,11 +154,12 @@ enum AttachmentType {
   Edition = 71,
   DeletionRestoration = 72,
   TemplateTransformation = 73,
-  TemplateRefusal = 74
+  TemplateRefusal = 74,
+  OuterDocflow = 75
 };
 bool AttachmentType_IsValid(int value);
 const AttachmentType AttachmentType_MIN = UnknownAttachmentType;
-const AttachmentType AttachmentType_MAX = TemplateRefusal;
+const AttachmentType AttachmentType_MAX = OuterDocflow;
 const int AttachmentType_ARRAYSIZE = AttachmentType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* AttachmentType_descriptor();
@@ -1488,6 +1490,15 @@ class Entity : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Events::TemplateRefusalInfo* release_templaterefusalinfo();
   inline void set_allocated_templaterefusalinfo(::Diadoc::Api::Proto::Events::TemplateRefusalInfo* templaterefusalinfo);
 
+  // optional .Diadoc.Api.Proto.OuterDocflowInfo OuterDocflow = 29;
+  inline bool has_outerdocflow() const;
+  inline void clear_outerdocflow();
+  static const int kOuterDocflowFieldNumber = 29;
+  inline const ::Diadoc::Api::Proto::OuterDocflowInfo& outerdocflow() const;
+  inline ::Diadoc::Api::Proto::OuterDocflowInfo* mutable_outerdocflow();
+  inline ::Diadoc::Api::Proto::OuterDocflowInfo* release_outerdocflow();
+  inline void set_allocated_outerdocflow(::Diadoc::Api::Proto::OuterDocflowInfo* outerdocflow);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.Entity)
  private:
   inline void set_has_entitytype();
@@ -1542,6 +1553,8 @@ class Entity : public ::google::protobuf::Message {
   inline void clear_has_templatetransformationinfo();
   inline void set_has_templaterefusalinfo();
   inline void clear_has_templaterefusalinfo();
+  inline void set_has_outerdocflow();
+  inline void clear_has_outerdocflow();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1570,6 +1583,7 @@ class Entity : public ::google::protobuf::Message {
   ::std::string* version_;
   ::Diadoc::Api::Proto::Events::TemplateTransformationInfo* templatetransformationinfo_;
   ::Diadoc::Api::Proto::Events::TemplateRefusalInfo* templaterefusalinfo_;
+  ::Diadoc::Api::Proto::OuterDocflowInfo* outerdocflow_;
   bool needrecipientsignature_;
   bool needreceipt_;
   bool isapprovementsignature_;
@@ -5771,6 +5785,47 @@ inline void Entity::set_allocated_templaterefusalinfo(::Diadoc::Api::Proto::Even
     clear_has_templaterefusalinfo();
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Entity.TemplateRefusalInfo)
+}
+
+// optional .Diadoc.Api.Proto.OuterDocflowInfo OuterDocflow = 29;
+inline bool Entity::has_outerdocflow() const {
+  return (_has_bits_[0] & 0x08000000u) != 0;
+}
+inline void Entity::set_has_outerdocflow() {
+  _has_bits_[0] |= 0x08000000u;
+}
+inline void Entity::clear_has_outerdocflow() {
+  _has_bits_[0] &= ~0x08000000u;
+}
+inline void Entity::clear_outerdocflow() {
+  if (outerdocflow_ != NULL) outerdocflow_->::Diadoc::Api::Proto::OuterDocflowInfo::Clear();
+  clear_has_outerdocflow();
+}
+inline const ::Diadoc::Api::Proto::OuterDocflowInfo& Entity::outerdocflow() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Entity.OuterDocflow)
+  return outerdocflow_ != NULL ? *outerdocflow_ : *default_instance_->outerdocflow_;
+}
+inline ::Diadoc::Api::Proto::OuterDocflowInfo* Entity::mutable_outerdocflow() {
+  set_has_outerdocflow();
+  if (outerdocflow_ == NULL) outerdocflow_ = new ::Diadoc::Api::Proto::OuterDocflowInfo;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Entity.OuterDocflow)
+  return outerdocflow_;
+}
+inline ::Diadoc::Api::Proto::OuterDocflowInfo* Entity::release_outerdocflow() {
+  clear_has_outerdocflow();
+  ::Diadoc::Api::Proto::OuterDocflowInfo* temp = outerdocflow_;
+  outerdocflow_ = NULL;
+  return temp;
+}
+inline void Entity::set_allocated_outerdocflow(::Diadoc::Api::Proto::OuterDocflowInfo* outerdocflow) {
+  delete outerdocflow_;
+  outerdocflow_ = outerdocflow;
+  if (outerdocflow) {
+    set_has_outerdocflow();
+  } else {
+    clear_has_outerdocflow();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Entity.OuterDocflow)
 }
 
 // -------------------------------------------------------------------

@@ -40,6 +40,7 @@
 #include "ResolutionTarget.pb.h"
 #include "ForwardDocumentEvent.pb.h"
 #include "Events/DiadocMessage-PostApi.pb.h"
+#include "OuterDocflow.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace Diadoc {
@@ -53,6 +54,7 @@ void protobuf_AssignDesc_Documents_2fDocument_2eproto();
 void protobuf_ShutdownFile_Documents_2fDocument_2eproto();
 
 class Document;
+class LastOuterDocflow;
 class ResolutionStatus;
 class RecipientReceiptMetadata;
 class SenderReceiptMetadata;
@@ -998,6 +1000,18 @@ class Document : public ::google::protobuf::Message {
   inline ::std::string* release_version();
   inline void set_allocated_version(::std::string* version);
 
+  // repeated .Diadoc.Api.Proto.Documents.LastOuterDocflow LastOuterDocflows = 77;
+  inline int lastouterdocflows_size() const;
+  inline void clear_lastouterdocflows();
+  static const int kLastOuterDocflowsFieldNumber = 77;
+  inline const ::Diadoc::Api::Proto::Documents::LastOuterDocflow& lastouterdocflows(int index) const;
+  inline ::Diadoc::Api::Proto::Documents::LastOuterDocflow* mutable_lastouterdocflows(int index);
+  inline ::Diadoc::Api::Proto::Documents::LastOuterDocflow* add_lastouterdocflows();
+  inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::LastOuterDocflow >&
+      lastouterdocflows() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::LastOuterDocflow >*
+      mutable_lastouterdocflows();
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.Document)
  private:
   inline void set_has_indexkey();
@@ -1216,6 +1230,7 @@ class Document : public ::google::protobuf::Message {
   ::std::string* editingsettingid_;
   ::Diadoc::Api::Proto::Documents::SenderReceiptMetadata* senderreceiptmetadata_;
   ::std::string* version_;
+  ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::LastOuterDocflow > lastouterdocflows_;
   int lockmode_;
   friend void  protobuf_AddDesc_Documents_2fDocument_2eproto();
   friend void protobuf_AssignDesc_Documents_2fDocument_2eproto();
@@ -1223,6 +1238,102 @@ class Document : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static Document* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class LastOuterDocflow : public ::google::protobuf::Message {
+ public:
+  LastOuterDocflow();
+  virtual ~LastOuterDocflow();
+
+  LastOuterDocflow(const LastOuterDocflow& from);
+
+  inline LastOuterDocflow& operator=(const LastOuterDocflow& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const LastOuterDocflow& default_instance();
+
+  void Swap(LastOuterDocflow* other);
+
+  // implements Message ----------------------------------------------
+
+  LastOuterDocflow* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const LastOuterDocflow& from);
+  void MergeFrom(const LastOuterDocflow& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string ParentEntityId = 1;
+  inline bool has_parententityid() const;
+  inline void clear_parententityid();
+  static const int kParentEntityIdFieldNumber = 1;
+  inline const ::std::string& parententityid() const;
+  inline void set_parententityid(const ::std::string& value);
+  inline void set_parententityid(const char* value);
+  inline void set_parententityid(const char* value, size_t size);
+  inline ::std::string* mutable_parententityid();
+  inline ::std::string* release_parententityid();
+  inline void set_allocated_parententityid(::std::string* parententityid);
+
+  // required .Diadoc.Api.Proto.OuterDocflowInfo OuterDocflow = 2;
+  inline bool has_outerdocflow() const;
+  inline void clear_outerdocflow();
+  static const int kOuterDocflowFieldNumber = 2;
+  inline const ::Diadoc::Api::Proto::OuterDocflowInfo& outerdocflow() const;
+  inline ::Diadoc::Api::Proto::OuterDocflowInfo* mutable_outerdocflow();
+  inline ::Diadoc::Api::Proto::OuterDocflowInfo* release_outerdocflow();
+  inline void set_allocated_outerdocflow(::Diadoc::Api::Proto::OuterDocflowInfo* outerdocflow);
+
+  // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.LastOuterDocflow)
+ private:
+  inline void set_has_parententityid();
+  inline void clear_has_parententityid();
+  inline void set_has_outerdocflow();
+  inline void clear_has_outerdocflow();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* parententityid_;
+  ::Diadoc::Api::Proto::OuterDocflowInfo* outerdocflow_;
+  friend void  protobuf_AddDesc_Documents_2fDocument_2eproto();
+  friend void protobuf_AssignDesc_Documents_2fDocument_2eproto();
+  friend void protobuf_ShutdownFile_Documents_2fDocument_2eproto();
+
+  void InitAsDefaultInstance();
+  static LastOuterDocflow* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -5156,6 +5267,157 @@ inline void Document::set_allocated_version(::std::string* version) {
     version_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.Version)
+}
+
+// repeated .Diadoc.Api.Proto.Documents.LastOuterDocflow LastOuterDocflows = 77;
+inline int Document::lastouterdocflows_size() const {
+  return lastouterdocflows_.size();
+}
+inline void Document::clear_lastouterdocflows() {
+  lastouterdocflows_.Clear();
+}
+inline const ::Diadoc::Api::Proto::Documents::LastOuterDocflow& Document::lastouterdocflows(int index) const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Document.LastOuterDocflows)
+  return lastouterdocflows_.Get(index);
+}
+inline ::Diadoc::Api::Proto::Documents::LastOuterDocflow* Document::mutable_lastouterdocflows(int index) {
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.Document.LastOuterDocflows)
+  return lastouterdocflows_.Mutable(index);
+}
+inline ::Diadoc::Api::Proto::Documents::LastOuterDocflow* Document::add_lastouterdocflows() {
+  // @@protoc_insertion_point(field_add:Diadoc.Api.Proto.Documents.Document.LastOuterDocflows)
+  return lastouterdocflows_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::LastOuterDocflow >&
+Document::lastouterdocflows() const {
+  // @@protoc_insertion_point(field_list:Diadoc.Api.Proto.Documents.Document.LastOuterDocflows)
+  return lastouterdocflows_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::LastOuterDocflow >*
+Document::mutable_lastouterdocflows() {
+  // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Documents.Document.LastOuterDocflows)
+  return &lastouterdocflows_;
+}
+
+// -------------------------------------------------------------------
+
+// LastOuterDocflow
+
+// required string ParentEntityId = 1;
+inline bool LastOuterDocflow::has_parententityid() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void LastOuterDocflow::set_has_parententityid() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void LastOuterDocflow::clear_has_parententityid() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void LastOuterDocflow::clear_parententityid() {
+  if (parententityid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_->clear();
+  }
+  clear_has_parententityid();
+}
+inline const ::std::string& LastOuterDocflow::parententityid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.LastOuterDocflow.ParentEntityId)
+  return *parententityid_;
+}
+inline void LastOuterDocflow::set_parententityid(const ::std::string& value) {
+  set_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_ = new ::std::string;
+  }
+  parententityid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.LastOuterDocflow.ParentEntityId)
+}
+inline void LastOuterDocflow::set_parententityid(const char* value) {
+  set_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_ = new ::std::string;
+  }
+  parententityid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.LastOuterDocflow.ParentEntityId)
+}
+inline void LastOuterDocflow::set_parententityid(const char* value, size_t size) {
+  set_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_ = new ::std::string;
+  }
+  parententityid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.LastOuterDocflow.ParentEntityId)
+}
+inline ::std::string* LastOuterDocflow::mutable_parententityid() {
+  set_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    parententityid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.LastOuterDocflow.ParentEntityId)
+  return parententityid_;
+}
+inline ::std::string* LastOuterDocflow::release_parententityid() {
+  clear_has_parententityid();
+  if (parententityid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = parententityid_;
+    parententityid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void LastOuterDocflow::set_allocated_parententityid(::std::string* parententityid) {
+  if (parententityid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete parententityid_;
+  }
+  if (parententityid) {
+    set_has_parententityid();
+    parententityid_ = parententityid;
+  } else {
+    clear_has_parententityid();
+    parententityid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.LastOuterDocflow.ParentEntityId)
+}
+
+// required .Diadoc.Api.Proto.OuterDocflowInfo OuterDocflow = 2;
+inline bool LastOuterDocflow::has_outerdocflow() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void LastOuterDocflow::set_has_outerdocflow() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void LastOuterDocflow::clear_has_outerdocflow() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void LastOuterDocflow::clear_outerdocflow() {
+  if (outerdocflow_ != NULL) outerdocflow_->::Diadoc::Api::Proto::OuterDocflowInfo::Clear();
+  clear_has_outerdocflow();
+}
+inline const ::Diadoc::Api::Proto::OuterDocflowInfo& LastOuterDocflow::outerdocflow() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.LastOuterDocflow.OuterDocflow)
+  return outerdocflow_ != NULL ? *outerdocflow_ : *default_instance_->outerdocflow_;
+}
+inline ::Diadoc::Api::Proto::OuterDocflowInfo* LastOuterDocflow::mutable_outerdocflow() {
+  set_has_outerdocflow();
+  if (outerdocflow_ == NULL) outerdocflow_ = new ::Diadoc::Api::Proto::OuterDocflowInfo;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.LastOuterDocflow.OuterDocflow)
+  return outerdocflow_;
+}
+inline ::Diadoc::Api::Proto::OuterDocflowInfo* LastOuterDocflow::release_outerdocflow() {
+  clear_has_outerdocflow();
+  ::Diadoc::Api::Proto::OuterDocflowInfo* temp = outerdocflow_;
+  outerdocflow_ = NULL;
+  return temp;
+}
+inline void LastOuterDocflow::set_allocated_outerdocflow(::Diadoc::Api::Proto::OuterDocflowInfo* outerdocflow) {
+  delete outerdocflow_;
+  outerdocflow_ = outerdocflow;
+  if (outerdocflow) {
+    set_has_outerdocflow();
+  } else {
+    clear_has_outerdocflow();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.LastOuterDocflow.OuterDocflow)
 }
 
 // -------------------------------------------------------------------
