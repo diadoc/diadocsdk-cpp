@@ -893,6 +893,30 @@ class Template : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::LockMode lockmode() const;
   inline void set_lockmode(::Diadoc::Api::Proto::LockMode value);
 
+  // optional string MessageProxyBoxId = 11;
+  inline bool has_messageproxyboxid() const;
+  inline void clear_messageproxyboxid();
+  static const int kMessageProxyBoxIdFieldNumber = 11;
+  inline const ::std::string& messageproxyboxid() const;
+  inline void set_messageproxyboxid(const ::std::string& value);
+  inline void set_messageproxyboxid(const char* value);
+  inline void set_messageproxyboxid(const char* value, size_t size);
+  inline ::std::string* mutable_messageproxyboxid();
+  inline ::std::string* release_messageproxyboxid();
+  inline void set_allocated_messageproxyboxid(::std::string* messageproxyboxid);
+
+  // optional string MessageProxyDepartmentId = 12;
+  inline bool has_messageproxydepartmentid() const;
+  inline void clear_messageproxydepartmentid();
+  static const int kMessageProxyDepartmentIdFieldNumber = 12;
+  inline const ::std::string& messageproxydepartmentid() const;
+  inline void set_messageproxydepartmentid(const ::std::string& value);
+  inline void set_messageproxydepartmentid(const char* value);
+  inline void set_messageproxydepartmentid(const char* value, size_t size);
+  inline ::std::string* mutable_messageproxydepartmentid();
+  inline ::std::string* release_messageproxydepartmentid();
+  inline void set_allocated_messageproxydepartmentid(::std::string* messageproxydepartmentid);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.Template)
  private:
   inline void set_has_messageid();
@@ -913,6 +937,10 @@ class Template : public ::google::protobuf::Message {
   inline void clear_has_messagetodepartmentid();
   inline void set_has_lockmode();
   inline void clear_has_lockmode();
+  inline void set_has_messageproxyboxid();
+  inline void clear_has_messageproxyboxid();
+  inline void set_has_messageproxydepartmentid();
+  inline void clear_has_messageproxydepartmentid();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -928,6 +956,8 @@ class Template : public ::google::protobuf::Message {
   ::std::string* messagetodepartmentid_;
   bool isdeleted_;
   int lockmode_;
+  ::std::string* messageproxyboxid_;
+  ::std::string* messageproxydepartmentid_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dGetApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dGetApi_2eproto();
@@ -1842,6 +1872,30 @@ class TemplateToLetterTransformationInfo : public ::google::protobuf::Message {
   inline ::std::string* release_lettertodepartmentid();
   inline void set_allocated_lettertodepartmentid(::std::string* lettertodepartmentid);
 
+  // optional string LetterProxyBoxId = 5;
+  inline bool has_letterproxyboxid() const;
+  inline void clear_letterproxyboxid();
+  static const int kLetterProxyBoxIdFieldNumber = 5;
+  inline const ::std::string& letterproxyboxid() const;
+  inline void set_letterproxyboxid(const ::std::string& value);
+  inline void set_letterproxyboxid(const char* value);
+  inline void set_letterproxyboxid(const char* value, size_t size);
+  inline ::std::string* mutable_letterproxyboxid();
+  inline ::std::string* release_letterproxyboxid();
+  inline void set_allocated_letterproxyboxid(::std::string* letterproxyboxid);
+
+  // optional string LetterProxyDepartmentId = 6;
+  inline bool has_letterproxydepartmentid() const;
+  inline void clear_letterproxydepartmentid();
+  static const int kLetterProxyDepartmentIdFieldNumber = 6;
+  inline const ::std::string& letterproxydepartmentid() const;
+  inline void set_letterproxydepartmentid(const ::std::string& value);
+  inline void set_letterproxydepartmentid(const char* value);
+  inline void set_letterproxydepartmentid(const char* value, size_t size);
+  inline ::std::string* mutable_letterproxydepartmentid();
+  inline ::std::string* release_letterproxydepartmentid();
+  inline void set_allocated_letterproxydepartmentid(::std::string* letterproxydepartmentid);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo)
  private:
   inline void set_has_letterfromboxid();
@@ -1852,6 +1906,10 @@ class TemplateToLetterTransformationInfo : public ::google::protobuf::Message {
   inline void clear_has_letterfromdepartmentid();
   inline void set_has_lettertodepartmentid();
   inline void clear_has_lettertodepartmentid();
+  inline void set_has_letterproxyboxid();
+  inline void clear_has_letterproxyboxid();
+  inline void set_has_letterproxydepartmentid();
+  inline void clear_has_letterproxydepartmentid();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1861,6 +1919,8 @@ class TemplateToLetterTransformationInfo : public ::google::protobuf::Message {
   ::std::string* lettertoboxid_;
   ::std::string* letterfromdepartmentid_;
   ::std::string* lettertodepartmentid_;
+  ::std::string* letterproxyboxid_;
+  ::std::string* letterproxydepartmentid_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dGetApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dGetApi_2eproto();
@@ -3924,6 +3984,158 @@ inline void Template::set_lockmode(::Diadoc::Api::Proto::LockMode value) {
   set_has_lockmode();
   lockmode_ = value;
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Template.LockMode)
+}
+
+// optional string MessageProxyBoxId = 11;
+inline bool Template::has_messageproxyboxid() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+inline void Template::set_has_messageproxyboxid() {
+  _has_bits_[0] |= 0x00000400u;
+}
+inline void Template::clear_has_messageproxyboxid() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+inline void Template::clear_messageproxyboxid() {
+  if (messageproxyboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageproxyboxid_->clear();
+  }
+  clear_has_messageproxyboxid();
+}
+inline const ::std::string& Template::messageproxyboxid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Template.MessageProxyBoxId)
+  return *messageproxyboxid_;
+}
+inline void Template::set_messageproxyboxid(const ::std::string& value) {
+  set_has_messageproxyboxid();
+  if (messageproxyboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageproxyboxid_ = new ::std::string;
+  }
+  messageproxyboxid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Template.MessageProxyBoxId)
+}
+inline void Template::set_messageproxyboxid(const char* value) {
+  set_has_messageproxyboxid();
+  if (messageproxyboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageproxyboxid_ = new ::std::string;
+  }
+  messageproxyboxid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.Template.MessageProxyBoxId)
+}
+inline void Template::set_messageproxyboxid(const char* value, size_t size) {
+  set_has_messageproxyboxid();
+  if (messageproxyboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageproxyboxid_ = new ::std::string;
+  }
+  messageproxyboxid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.Template.MessageProxyBoxId)
+}
+inline ::std::string* Template::mutable_messageproxyboxid() {
+  set_has_messageproxyboxid();
+  if (messageproxyboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageproxyboxid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Template.MessageProxyBoxId)
+  return messageproxyboxid_;
+}
+inline ::std::string* Template::release_messageproxyboxid() {
+  clear_has_messageproxyboxid();
+  if (messageproxyboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = messageproxyboxid_;
+    messageproxyboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void Template::set_allocated_messageproxyboxid(::std::string* messageproxyboxid) {
+  if (messageproxyboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete messageproxyboxid_;
+  }
+  if (messageproxyboxid) {
+    set_has_messageproxyboxid();
+    messageproxyboxid_ = messageproxyboxid;
+  } else {
+    clear_has_messageproxyboxid();
+    messageproxyboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Template.MessageProxyBoxId)
+}
+
+// optional string MessageProxyDepartmentId = 12;
+inline bool Template::has_messageproxydepartmentid() const {
+  return (_has_bits_[0] & 0x00000800u) != 0;
+}
+inline void Template::set_has_messageproxydepartmentid() {
+  _has_bits_[0] |= 0x00000800u;
+}
+inline void Template::clear_has_messageproxydepartmentid() {
+  _has_bits_[0] &= ~0x00000800u;
+}
+inline void Template::clear_messageproxydepartmentid() {
+  if (messageproxydepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageproxydepartmentid_->clear();
+  }
+  clear_has_messageproxydepartmentid();
+}
+inline const ::std::string& Template::messageproxydepartmentid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Template.MessageProxyDepartmentId)
+  return *messageproxydepartmentid_;
+}
+inline void Template::set_messageproxydepartmentid(const ::std::string& value) {
+  set_has_messageproxydepartmentid();
+  if (messageproxydepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageproxydepartmentid_ = new ::std::string;
+  }
+  messageproxydepartmentid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Template.MessageProxyDepartmentId)
+}
+inline void Template::set_messageproxydepartmentid(const char* value) {
+  set_has_messageproxydepartmentid();
+  if (messageproxydepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageproxydepartmentid_ = new ::std::string;
+  }
+  messageproxydepartmentid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.Template.MessageProxyDepartmentId)
+}
+inline void Template::set_messageproxydepartmentid(const char* value, size_t size) {
+  set_has_messageproxydepartmentid();
+  if (messageproxydepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageproxydepartmentid_ = new ::std::string;
+  }
+  messageproxydepartmentid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.Template.MessageProxyDepartmentId)
+}
+inline ::std::string* Template::mutable_messageproxydepartmentid() {
+  set_has_messageproxydepartmentid();
+  if (messageproxydepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    messageproxydepartmentid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Template.MessageProxyDepartmentId)
+  return messageproxydepartmentid_;
+}
+inline ::std::string* Template::release_messageproxydepartmentid() {
+  clear_has_messageproxydepartmentid();
+  if (messageproxydepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = messageproxydepartmentid_;
+    messageproxydepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void Template::set_allocated_messageproxydepartmentid(::std::string* messageproxydepartmentid) {
+  if (messageproxydepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete messageproxydepartmentid_;
+  }
+  if (messageproxydepartmentid) {
+    set_has_messageproxydepartmentid();
+    messageproxydepartmentid_ = messageproxydepartmentid;
+  } else {
+    clear_has_messageproxydepartmentid();
+    messageproxydepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Template.MessageProxyDepartmentId)
 }
 
 // -------------------------------------------------------------------
@@ -6438,6 +6650,158 @@ inline void TemplateToLetterTransformationInfo::set_allocated_lettertodepartment
     lettertodepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo.LetterToDepartmentId)
+}
+
+// optional string LetterProxyBoxId = 5;
+inline bool TemplateToLetterTransformationInfo::has_letterproxyboxid() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void TemplateToLetterTransformationInfo::set_has_letterproxyboxid() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void TemplateToLetterTransformationInfo::clear_has_letterproxyboxid() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void TemplateToLetterTransformationInfo::clear_letterproxyboxid() {
+  if (letterproxyboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    letterproxyboxid_->clear();
+  }
+  clear_has_letterproxyboxid();
+}
+inline const ::std::string& TemplateToLetterTransformationInfo::letterproxyboxid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo.LetterProxyBoxId)
+  return *letterproxyboxid_;
+}
+inline void TemplateToLetterTransformationInfo::set_letterproxyboxid(const ::std::string& value) {
+  set_has_letterproxyboxid();
+  if (letterproxyboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    letterproxyboxid_ = new ::std::string;
+  }
+  letterproxyboxid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo.LetterProxyBoxId)
+}
+inline void TemplateToLetterTransformationInfo::set_letterproxyboxid(const char* value) {
+  set_has_letterproxyboxid();
+  if (letterproxyboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    letterproxyboxid_ = new ::std::string;
+  }
+  letterproxyboxid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo.LetterProxyBoxId)
+}
+inline void TemplateToLetterTransformationInfo::set_letterproxyboxid(const char* value, size_t size) {
+  set_has_letterproxyboxid();
+  if (letterproxyboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    letterproxyboxid_ = new ::std::string;
+  }
+  letterproxyboxid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo.LetterProxyBoxId)
+}
+inline ::std::string* TemplateToLetterTransformationInfo::mutable_letterproxyboxid() {
+  set_has_letterproxyboxid();
+  if (letterproxyboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    letterproxyboxid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo.LetterProxyBoxId)
+  return letterproxyboxid_;
+}
+inline ::std::string* TemplateToLetterTransformationInfo::release_letterproxyboxid() {
+  clear_has_letterproxyboxid();
+  if (letterproxyboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = letterproxyboxid_;
+    letterproxyboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void TemplateToLetterTransformationInfo::set_allocated_letterproxyboxid(::std::string* letterproxyboxid) {
+  if (letterproxyboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete letterproxyboxid_;
+  }
+  if (letterproxyboxid) {
+    set_has_letterproxyboxid();
+    letterproxyboxid_ = letterproxyboxid;
+  } else {
+    clear_has_letterproxyboxid();
+    letterproxyboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo.LetterProxyBoxId)
+}
+
+// optional string LetterProxyDepartmentId = 6;
+inline bool TemplateToLetterTransformationInfo::has_letterproxydepartmentid() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void TemplateToLetterTransformationInfo::set_has_letterproxydepartmentid() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void TemplateToLetterTransformationInfo::clear_has_letterproxydepartmentid() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void TemplateToLetterTransformationInfo::clear_letterproxydepartmentid() {
+  if (letterproxydepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    letterproxydepartmentid_->clear();
+  }
+  clear_has_letterproxydepartmentid();
+}
+inline const ::std::string& TemplateToLetterTransformationInfo::letterproxydepartmentid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo.LetterProxyDepartmentId)
+  return *letterproxydepartmentid_;
+}
+inline void TemplateToLetterTransformationInfo::set_letterproxydepartmentid(const ::std::string& value) {
+  set_has_letterproxydepartmentid();
+  if (letterproxydepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    letterproxydepartmentid_ = new ::std::string;
+  }
+  letterproxydepartmentid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo.LetterProxyDepartmentId)
+}
+inline void TemplateToLetterTransformationInfo::set_letterproxydepartmentid(const char* value) {
+  set_has_letterproxydepartmentid();
+  if (letterproxydepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    letterproxydepartmentid_ = new ::std::string;
+  }
+  letterproxydepartmentid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo.LetterProxyDepartmentId)
+}
+inline void TemplateToLetterTransformationInfo::set_letterproxydepartmentid(const char* value, size_t size) {
+  set_has_letterproxydepartmentid();
+  if (letterproxydepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    letterproxydepartmentid_ = new ::std::string;
+  }
+  letterproxydepartmentid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo.LetterProxyDepartmentId)
+}
+inline ::std::string* TemplateToLetterTransformationInfo::mutable_letterproxydepartmentid() {
+  set_has_letterproxydepartmentid();
+  if (letterproxydepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    letterproxydepartmentid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo.LetterProxyDepartmentId)
+  return letterproxydepartmentid_;
+}
+inline ::std::string* TemplateToLetterTransformationInfo::release_letterproxydepartmentid() {
+  clear_has_letterproxydepartmentid();
+  if (letterproxydepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = letterproxydepartmentid_;
+    letterproxydepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void TemplateToLetterTransformationInfo::set_allocated_letterproxydepartmentid(::std::string* letterproxydepartmentid) {
+  if (letterproxydepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete letterproxydepartmentid_;
+  }
+  if (letterproxydepartmentid) {
+    set_has_letterproxydepartmentid();
+    letterproxydepartmentid_ = letterproxydepartmentid;
+  } else {
+    clear_has_letterproxydepartmentid();
+    letterproxydepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.TemplateToLetterTransformationInfo.LetterProxyDepartmentId)
 }
 
 // -------------------------------------------------------------------
