@@ -192,7 +192,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(MessagePatch));
   Entity_descriptor_ = file->message_type(5);
-  static const int Entity_offsets_[29] = {
+  static const int Entity_offsets_[30] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, entitytype_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, entityid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, parententityid_),
@@ -222,6 +222,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, templaterefusalinfo_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, outerdocflow_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, revocationrequestinfo_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Entity, contenttypeid_),
   };
   Entity_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -446,7 +447,7 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
     "ssageIsDelivered\030\013 \001(\010:\005false\022\030\n\020Deliver"
     "edPatchId\030\014 \001(\t\022\017\n\007PatchId\030\r \002(\t\022<\n\013Mess"
     "ageType\030\017 \002(\0162\'.Diadoc.Api.Proto.Documen"
-    "ts.MessageType\"\252\013\n\006Entity\022J\n\nEntityType\030"
+    "ts.MessageType\"\301\013\n\006Entity\022J\n\nEntityType\030"
     "\001 \001(\0162#.Diadoc.Api.Proto.Events.EntityTy"
     "pe:\021UnknownEntityType\022\020\n\010EntityId\030\002 \002(\t\022"
     "\026\n\016ParentEntityId\030\003 \001(\t\022*\n\007Content\030\004 \001(\013"
@@ -482,63 +483,64 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto() {
     "efusalInfo\0228\n\014OuterDocflow\030\035 \001(\0132\".Diado"
     "c.Api.Proto.OuterDocflowInfo\022M\n\025Revocati"
     "onRequestInfo\030\036 \001(\0132..Diadoc.Api.Proto.E"
-    "vents.RevocationRequestInfo\"\272\001\n\013EntityPa"
-    "tch\022\020\n\010EntityId\030\001 \002(\t\022 \n\021DocumentIsDelet"
-    "ed\030\002 \001(\010:\005false\022\031\n\021MovedToDepartment\030\003 \001"
-    "(\t\022!\n\022DocumentIsRestored\030\004 \001(\010:\005false\022\037\n"
-    "\020ContentIsPatched\030\005 \001(\010:\005false\022\030\n\020Forwar"
-    "dedToBoxId\030\006 \001(\t\"\315\001\n\"TemplateToLetterTra"
-    "nsformationInfo\022\027\n\017LetterFromBoxId\030\001 \002(\t"
-    "\022\025\n\rLetterToBoxId\030\002 \002(\t\022\036\n\026LetterFromDep"
-    "artmentId\030\003 \001(\t\022\034\n\024LetterToDepartmentId\030"
-    "\004 \001(\t\022\030\n\020LetterProxyBoxId\030\005 \001(\t\022\037\n\027Lette"
-    "rProxyDepartmentId\030\006 \001(\t\"k\n\032TemplateTran"
-    "sformationInfo\022=\n\027TransformedToDocumentI"
-    "d\030\001 \001(\0132\034.Diadoc.Api.Proto.DocumentId\022\016\n"
-    "\006Author\030\002 \001(\t\"\235\001\n\023TemplateRefusalInfo\022V\n"
-    "\004Type\030\001 \002(\0162,.Diadoc.Api.Proto.Events.Te"
-    "mplateRefusalType:\032UnknownTemplateRefusa"
-    "lType\022\r\n\005BoxId\030\002 \002(\t\022\016\n\006Author\030\003 \001(\t\022\017\n\007"
-    "Comment\030\004 \001(\t*R\n\023TemplateRefusalType\022\036\n\032"
-    "UnknownTemplateRefusalType\020\000\022\013\n\007Refusal\020"
-    "\001\022\016\n\nWithdrawal\020\002*B\n\nEntityType\022\025\n\021Unkno"
-    "wnEntityType\020\000\022\016\n\nAttachment\020\001\022\r\n\tSignat"
-    "ure\020\002*\220\013\n\016AttachmentType\022\"\n\025UnknownAttac"
-    "hmentType\020\377\377\377\377\377\377\377\377\377\001\022\021\n\rNonformalized\020\000\022"
-    "\013\n\007Invoice\020\001\022\022\n\016InvoiceReceipt\020\002\022\027\n\023Invo"
-    "iceConfirmation\020\003\022\034\n\030InvoiceCorrectionRe"
-    "quest\020\004\022\025\n\021AttachmentComment\020\005\022\037\n\033Delive"
-    "ryFailureNotification\020\006\022\020\n\014EancomInvoic\020"
-    "\007\022\035\n\031SignatureRequestRejection\020\010\022(\n$EcrC"
-    "atConformanceCertificateMetadata\020\t\022\037\n\033Si"
-    "gnatureVerificationReport\020\n\022\032\n\026TrustConn"
-    "ectionRequest\020\013\022\n\n\006Torg12\020\014\022\023\n\017InvoiceRe"
-    "vision\020\r\022\025\n\021InvoiceCorrection\020\016\022\035\n\031Invoi"
-    "ceCorrectionRevision\020\017\022\031\n\025AcceptanceCert"
-    "ificate\020\020\022\022\n\016StructuredData\020\021\022\023\n\017Proform"
-    "aInvoice\020\022\022\r\n\tXmlTorg12\020\023\022\034\n\030XmlAcceptan"
-    "ceCertificate\020\024\022\027\n\023XmlTorg12BuyerTitle\020\025"
-    "\022&\n\"XmlAcceptanceCertificateBuyerTitle\020\026"
-    "\022\016\n\nResolution\020\027\022\025\n\021ResolutionRequest\020\030\022"
-    "\033\n\027ResolutionRequestDenial\020\031\022\r\n\tPriceLis"
-    "t\020\032\022\013\n\007Receipt\020\033\022\031\n\025XmlSignatureRejectio"
-    "n\020\034\022\025\n\021RevocationRequest\020\035\022\026\n\022PriceListA"
-    "greement\020\036\022\027\n\023CertificateRegistry\020\"\022\025\n\021R"
-    "econciliationAct\020#\022\014\n\010Contract\020$\022\n\n\006Torg"
-    "13\020%\022\022\n\016ServiceDetails\020&\022\027\n\023RoamingNotif"
-    "ication\020\'\022\032\n\026SupplementaryAgreement\020(\022\035\n"
-    "\031UniversalTransferDocument\020)\022\'\n#Universa"
-    "lTransferDocumentBuyerTitle\020*\022%\n!Univers"
-    "alTransferDocumentRevision\020-\022\037\n\033Universa"
-    "lCorrectionDocument\0201\022\'\n#UniversalCorrec"
-    "tionDocumentRevision\0202\022)\n%UniversalCorre"
-    "ctionDocumentBuyerTitle\0203\022\016\n\nCustomData\020"
-    "@\022\020\n\014MoveDocument\020A\022\'\n#ResolutionRouteAs"
-    "signmentAttachment\020B\022$\n ResolutionRouteR"
-    "emovalAttachment\020C\022\t\n\005Title\020D\022\020\n\014Cancell"
-    "ation\020E\022\013\n\007Edition\020G\022\027\n\023DeletionRestorat"
-    "ion\020H\022\032\n\026TemplateTransformation\020I\022\023\n\017Tem"
-    "plateRefusal\020J\022\020\n\014OuterDocflow\020K", 5992);
+    "vents.RevocationRequestInfo\022\025\n\rContentTy"
+    "peId\030\037 \001(\t\"\272\001\n\013EntityPatch\022\020\n\010EntityId\030\001"
+    " \002(\t\022 \n\021DocumentIsDeleted\030\002 \001(\010:\005false\022\031"
+    "\n\021MovedToDepartment\030\003 \001(\t\022!\n\022DocumentIsR"
+    "estored\030\004 \001(\010:\005false\022\037\n\020ContentIsPatched"
+    "\030\005 \001(\010:\005false\022\030\n\020ForwardedToBoxId\030\006 \001(\t\""
+    "\315\001\n\"TemplateToLetterTransformationInfo\022\027"
+    "\n\017LetterFromBoxId\030\001 \002(\t\022\025\n\rLetterToBoxId"
+    "\030\002 \002(\t\022\036\n\026LetterFromDepartmentId\030\003 \001(\t\022\034"
+    "\n\024LetterToDepartmentId\030\004 \001(\t\022\030\n\020LetterPr"
+    "oxyBoxId\030\005 \001(\t\022\037\n\027LetterProxyDepartmentI"
+    "d\030\006 \001(\t\"k\n\032TemplateTransformationInfo\022=\n"
+    "\027TransformedToDocumentId\030\001 \001(\0132\034.Diadoc."
+    "Api.Proto.DocumentId\022\016\n\006Author\030\002 \001(\t\"\235\001\n"
+    "\023TemplateRefusalInfo\022V\n\004Type\030\001 \002(\0162,.Dia"
+    "doc.Api.Proto.Events.TemplateRefusalType"
+    ":\032UnknownTemplateRefusalType\022\r\n\005BoxId\030\002 "
+    "\002(\t\022\016\n\006Author\030\003 \001(\t\022\017\n\007Comment\030\004 \001(\t*R\n\023"
+    "TemplateRefusalType\022\036\n\032UnknownTemplateRe"
+    "fusalType\020\000\022\013\n\007Refusal\020\001\022\016\n\nWithdrawal\020\002"
+    "*B\n\nEntityType\022\025\n\021UnknownEntityType\020\000\022\016\n"
+    "\nAttachment\020\001\022\r\n\tSignature\020\002*\220\013\n\016Attachm"
+    "entType\022\"\n\025UnknownAttachmentType\020\377\377\377\377\377\377\377"
+    "\377\377\001\022\021\n\rNonformalized\020\000\022\013\n\007Invoice\020\001\022\022\n\016I"
+    "nvoiceReceipt\020\002\022\027\n\023InvoiceConfirmation\020\003"
+    "\022\034\n\030InvoiceCorrectionRequest\020\004\022\025\n\021Attach"
+    "mentComment\020\005\022\037\n\033DeliveryFailureNotifica"
+    "tion\020\006\022\020\n\014EancomInvoic\020\007\022\035\n\031SignatureReq"
+    "uestRejection\020\010\022(\n$EcrCatConformanceCert"
+    "ificateMetadata\020\t\022\037\n\033SignatureVerificati"
+    "onReport\020\n\022\032\n\026TrustConnectionRequest\020\013\022\n"
+    "\n\006Torg12\020\014\022\023\n\017InvoiceRevision\020\r\022\025\n\021Invoi"
+    "ceCorrection\020\016\022\035\n\031InvoiceCorrectionRevis"
+    "ion\020\017\022\031\n\025AcceptanceCertificate\020\020\022\022\n\016Stru"
+    "cturedData\020\021\022\023\n\017ProformaInvoice\020\022\022\r\n\tXml"
+    "Torg12\020\023\022\034\n\030XmlAcceptanceCertificate\020\024\022\027"
+    "\n\023XmlTorg12BuyerTitle\020\025\022&\n\"XmlAcceptance"
+    "CertificateBuyerTitle\020\026\022\016\n\nResolution\020\027\022"
+    "\025\n\021ResolutionRequest\020\030\022\033\n\027ResolutionRequ"
+    "estDenial\020\031\022\r\n\tPriceList\020\032\022\013\n\007Receipt\020\033\022"
+    "\031\n\025XmlSignatureRejection\020\034\022\025\n\021Revocation"
+    "Request\020\035\022\026\n\022PriceListAgreement\020\036\022\027\n\023Cer"
+    "tificateRegistry\020\"\022\025\n\021ReconciliationAct\020"
+    "#\022\014\n\010Contract\020$\022\n\n\006Torg13\020%\022\022\n\016ServiceDe"
+    "tails\020&\022\027\n\023RoamingNotification\020\'\022\032\n\026Supp"
+    "lementaryAgreement\020(\022\035\n\031UniversalTransfe"
+    "rDocument\020)\022\'\n#UniversalTransferDocument"
+    "BuyerTitle\020*\022%\n!UniversalTransferDocumen"
+    "tRevision\020-\022\037\n\033UniversalCorrectionDocume"
+    "nt\0201\022\'\n#UniversalCorrectionDocumentRevis"
+    "ion\0202\022)\n%UniversalCorrectionDocumentBuye"
+    "rTitle\0203\022\016\n\nCustomData\020@\022\020\n\014MoveDocument"
+    "\020A\022\'\n#ResolutionRouteAssignmentAttachmen"
+    "t\020B\022$\n ResolutionRouteRemovalAttachment\020"
+    "C\022\t\n\005Title\020D\022\020\n\014Cancellation\020E\022\013\n\007Editio"
+    "n\020G\022\027\n\023DeletionRestoration\020H\022\032\n\026Template"
+    "Transformation\020I\022\023\n\017TemplateRefusal\020J\022\020\n"
+    "\014OuterDocflow\020K", 6015);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Events/DiadocMessage-GetApi.proto", &protobuf_RegisterTypes);
   BoxEventList::default_instance_ = new BoxEventList();
@@ -4276,6 +4278,7 @@ const int Entity::kTemplateTransformationInfoFieldNumber;
 const int Entity::kTemplateRefusalInfoFieldNumber;
 const int Entity::kOuterDocflowFieldNumber;
 const int Entity::kRevocationRequestInfoFieldNumber;
+const int Entity::kContentTypeIdFieldNumber;
 #endif  // !_MSC_VER
 
 Entity::Entity()
@@ -4337,6 +4340,7 @@ void Entity::SharedCtor() {
   templaterefusalinfo_ = NULL;
   outerdocflow_ = NULL;
   revocationrequestinfo_ = NULL;
+  contenttypeid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -4372,6 +4376,9 @@ void Entity::SharedDtor() {
   }
   if (version_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete version_;
+  }
+  if (contenttypeid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete contenttypeid_;
   }
   if (this != default_instance_) {
     delete content_;
@@ -4497,7 +4504,7 @@ void Entity::Clear() {
       if (cancellationinfo_ != NULL) cancellationinfo_->::Diadoc::Api::Proto::Events::CancellationInfo::Clear();
     }
   }
-  if (_has_bits_[24 / 32] & 520093696) {
+  if (_has_bits_[24 / 32] & 1056964608) {
     if (has_version()) {
       if (version_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         version_->clear();
@@ -4514,6 +4521,11 @@ void Entity::Clear() {
     }
     if (has_revocationrequestinfo()) {
       if (revocationrequestinfo_ != NULL) revocationrequestinfo_->::Diadoc::Api::Proto::Events::RevocationRequestInfo::Clear();
+    }
+    if (has_contenttypeid()) {
+      if (contenttypeid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        contenttypeid_->clear();
+      }
     }
   }
 
@@ -4973,6 +4985,23 @@ bool Entity::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(250)) goto parse_ContentTypeId;
+        break;
+      }
+
+      // optional string ContentTypeId = 31;
+      case 31: {
+        if (tag == 250) {
+         parse_ContentTypeId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_contenttypeid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->contenttypeid().data(), this->contenttypeid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "contenttypeid");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -5209,6 +5238,16 @@ void Entity::SerializeWithCachedSizes(
   if (has_revocationrequestinfo()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       30, this->revocationrequestinfo(), output);
+  }
+
+  // optional string ContentTypeId = 31;
+  if (has_contenttypeid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->contenttypeid().data(), this->contenttypeid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "contenttypeid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      31, this->contenttypeid(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -5451,6 +5490,17 @@ void Entity::SerializeWithCachedSizes(
         30, this->revocationrequestinfo(), target);
   }
 
+  // optional string ContentTypeId = 31;
+  if (has_contenttypeid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->contenttypeid().data(), this->contenttypeid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "contenttypeid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        31, this->contenttypeid(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -5653,6 +5703,13 @@ int Entity::ByteSize() const {
           this->revocationrequestinfo());
     }
 
+    // optional string ContentTypeId = 31;
+    if (has_contenttypeid()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->contenttypeid());
+    }
+
   }
   // repeated string Labels = 25;
   total_size += 2 * this->labels_size();
@@ -5778,6 +5835,9 @@ void Entity::MergeFrom(const Entity& from) {
     if (from.has_revocationrequestinfo()) {
       mutable_revocationrequestinfo()->::Diadoc::Api::Proto::Events::RevocationRequestInfo::MergeFrom(from.revocationrequestinfo());
     }
+    if (from.has_contenttypeid()) {
+      set_contenttypeid(from.contenttypeid());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -5867,6 +5927,7 @@ void Entity::Swap(Entity* other) {
     std::swap(templaterefusalinfo_, other->templaterefusalinfo_);
     std::swap(outerdocflow_, other->outerdocflow_);
     std::swap(revocationrequestinfo_, other->revocationrequestinfo_);
+    std::swap(contenttypeid_, other->contenttypeid_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

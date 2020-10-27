@@ -61,10 +61,11 @@ void protobuf_AssignDesc_Docflow_2fAttachmentV3_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(SignatureV3));
   SignedAttachmentV3_descriptor_ = file->message_type(1);
-  static const int SignedAttachmentV3_offsets_[3] = {
+  static const int SignedAttachmentV3_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SignedAttachmentV3, attachment_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SignedAttachmentV3, signature_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SignedAttachmentV3, comment_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SignedAttachmentV3, contenttypeid_),
   };
   SignedAttachmentV3_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -126,12 +127,12 @@ void protobuf_AddDesc_Docflow_2fAttachmentV3_2eproto() {
     "\030\005 \002(\010\022I\n\022VerificationResult\030\006 \001(\0132-.Dia"
     "doc.Api.Proto.SignatureVerificationResul"
     "t\0220\n\013DeliveredAt\030\007 \001(\0132\033.Diadoc.Api.Prot"
-    "o.Timestamp\"\273\001\n\022SignedAttachmentV3\0228\n\nAt"
+    "o.Timestamp\"\322\001\n\022SignedAttachmentV3\0228\n\nAt"
     "tachment\030\001 \002(\0132$.Diadoc.Api.Proto.Docflo"
     "w.Attachment\0228\n\tSignature\030\002 \001(\0132%.Diadoc"
     ".Api.Proto.Docflow.SignatureV3\0221\n\007Commen"
     "t\030\003 \001(\0132 .Diadoc.Api.Proto.Docflow.Entit"
-    "y", 641);
+    "y\022\025\n\rContentTypeId\030\004 \002(\t", 664);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Docflow/AttachmentV3.proto", &protobuf_RegisterTypes);
   SignatureV3::default_instance_ = new SignatureV3();
@@ -684,6 +685,7 @@ void SignatureV3::Swap(SignatureV3* other) {
 const int SignedAttachmentV3::kAttachmentFieldNumber;
 const int SignedAttachmentV3::kSignatureFieldNumber;
 const int SignedAttachmentV3::kCommentFieldNumber;
+const int SignedAttachmentV3::kContentTypeIdFieldNumber;
 #endif  // !_MSC_VER
 
 SignedAttachmentV3::SignedAttachmentV3()
@@ -706,10 +708,12 @@ SignedAttachmentV3::SignedAttachmentV3(const SignedAttachmentV3& from)
 }
 
 void SignedAttachmentV3::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   attachment_ = NULL;
   signature_ = NULL;
   comment_ = NULL;
+  contenttypeid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -719,6 +723,9 @@ SignedAttachmentV3::~SignedAttachmentV3() {
 }
 
 void SignedAttachmentV3::SharedDtor() {
+  if (contenttypeid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete contenttypeid_;
+  }
   if (this != default_instance_) {
     delete attachment_;
     delete signature_;
@@ -748,7 +755,7 @@ SignedAttachmentV3* SignedAttachmentV3::New() const {
 }
 
 void SignedAttachmentV3::Clear() {
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     if (has_attachment()) {
       if (attachment_ != NULL) attachment_->::Diadoc::Api::Proto::Docflow::Attachment::Clear();
     }
@@ -757,6 +764,11 @@ void SignedAttachmentV3::Clear() {
     }
     if (has_comment()) {
       if (comment_ != NULL) comment_->::Diadoc::Api::Proto::Docflow::Entity::Clear();
+    }
+    if (has_contenttypeid()) {
+      if (contenttypeid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        contenttypeid_->clear();
+      }
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -807,6 +819,23 @@ bool SignedAttachmentV3::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(34)) goto parse_ContentTypeId;
+        break;
+      }
+
+      // required string ContentTypeId = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_ContentTypeId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_contenttypeid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->contenttypeid().data(), this->contenttypeid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "contenttypeid");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -854,6 +883,16 @@ void SignedAttachmentV3::SerializeWithCachedSizes(
       3, this->comment(), output);
   }
 
+  // required string ContentTypeId = 4;
+  if (has_contenttypeid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->contenttypeid().data(), this->contenttypeid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "contenttypeid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->contenttypeid(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -883,6 +922,17 @@ void SignedAttachmentV3::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         3, this->comment(), target);
+  }
+
+  // required string ContentTypeId = 4;
+  if (has_contenttypeid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->contenttypeid().data(), this->contenttypeid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "contenttypeid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->contenttypeid(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -916,6 +966,13 @@ int SignedAttachmentV3::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->comment());
+    }
+
+    // required string ContentTypeId = 4;
+    if (has_contenttypeid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->contenttypeid());
     }
 
   }
@@ -954,6 +1011,9 @@ void SignedAttachmentV3::MergeFrom(const SignedAttachmentV3& from) {
     if (from.has_comment()) {
       mutable_comment()->::Diadoc::Api::Proto::Docflow::Entity::MergeFrom(from.comment());
     }
+    if (from.has_contenttypeid()) {
+      set_contenttypeid(from.contenttypeid());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -971,7 +1031,7 @@ void SignedAttachmentV3::CopyFrom(const SignedAttachmentV3& from) {
 }
 
 bool SignedAttachmentV3::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+  if ((_has_bits_[0] & 0x00000009) != 0x00000009) return false;
 
   if (has_attachment()) {
     if (!this->attachment().IsInitialized()) return false;
@@ -990,6 +1050,7 @@ void SignedAttachmentV3::Swap(SignedAttachmentV3* other) {
     std::swap(attachment_, other->attachment_);
     std::swap(signature_, other->signature_);
     std::swap(comment_, other->comment_);
+    std::swap(contenttypeid_, other->contenttypeid_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

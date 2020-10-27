@@ -541,15 +541,16 @@ void protobuf_AddDesc_Documents_2fDocument_2eproto() {
     "eceiptStatus\022\037\n\033GeneralReceiptStatusUnkn"
     "own\020\000\022%\n!GeneralReceiptStatusNotAcceptab"
     "le\020\001\022\027\n\023HaveToCreateReceipt\020\002\022\025\n\021Waiting"
-    "ForReceipt\020\003\022\014\n\010Finished\020\004*\353\001\n\027Recipient"
+    "ForReceipt\020\003\022\014\n\010Finished\020\004*\220\002\n\027Recipient"
     "ResponseStatus\022\"\n\036RecipientResponseStatu"
     "sUnknown\020\000\022(\n$RecipientResponseStatusNot"
     "Acceptable\020\001\022 \n\034WaitingForRecipientSigna"
     "ture\020\002\022\032\n\026WithRecipientSignature\020\003\022%\n!Re"
     "cipientSignatureRequestRejected\020\004\022\035\n\031Inv"
-    "alidRecipientSignature\020\005*R\n\013MessageType\022"
-    "\013\n\007Unknown\020\000\022\021\n\rMessageLetter\020\001\022\017\n\013Draft"
-    "Letter\020\002\022\022\n\016TemplateLetter\020\003", 8028);
+    "alidRecipientSignature\020\005\022#\n\037WithRecipien"
+    "tPartiallySignature\020\006*R\n\013MessageType\022\013\n\007"
+    "Unknown\020\000\022\021\n\rMessageLetter\020\001\022\017\n\013DraftLet"
+    "ter\020\002\022\022\n\016TemplateLetter\020\003", 8065);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Documents/Document.proto", &protobuf_RegisterTypes);
   Document::default_instance_ = new Document();
@@ -695,6 +696,7 @@ bool RecipientResponseStatus_IsValid(int value) {
     case 3:
     case 4:
     case 5:
+    case 6:
       return true;
     default:
       return false;

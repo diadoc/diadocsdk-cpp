@@ -45,22 +45,25 @@ enum AcceptanceCertificateDocumentStatus {
   UnknownAcceptanceCertificateDocumentStatus = 0,
   OutboundWaitingForRecipientSignature = 1,
   OutboundWithRecipientSignature = 2,
+  OutboundWithRecipientPartiallySignature = 16,
   OutboundRecipientSignatureRequestRejected = 3,
   OutboundWaitingForSenderSignature = 10,
   OutboundInvalidSenderSignature = 11,
-  OutboundNoRecipientSignatureRequest = 16,
+  OutboundNoRecipientSignatureRequest = 19,
   InboundWaitingForRecipientSignature = 4,
   InboundWithRecipientSignature = 5,
+  InboundWithRecipientPartiallySignature = 17,
   InboundRecipientSignatureRequestRejected = 6,
   InboundInvalidRecipientSignature = 12,
-  InboundNoRecipientSignatureRequest = 17,
+  InboundNoRecipientSignatureRequest = 20,
   InternalWaitingForRecipientSignature = 7,
   InternalWithRecipientSignature = 8,
+  InternalWithRecipientPartiallySignature = 18,
   InternalRecipientSignatureRequestRejected = 9,
   InternalWaitingForSenderSignature = 13,
   InternalInvalidSenderSignature = 14,
   InternalInvalidRecipientSignature = 15,
-  InternalNoRecipientSignatureRequest = 18
+  InternalNoRecipientSignatureRequest = 21
 };
 bool AcceptanceCertificateDocumentStatus_IsValid(int value);
 const AcceptanceCertificateDocumentStatus AcceptanceCertificateDocumentStatus_MIN = UnknownAcceptanceCertificateDocumentStatus;
