@@ -1264,7 +1264,7 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ResolutionRouteRemoval));
   TemplateToPost_descriptor_ = file->message_type(51);
-  static const int TemplateToPost_offsets_[9] = {
+  static const int TemplateToPost_offsets_[11] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, fromboxid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, toboxid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, messagefromboxid_),
@@ -1274,6 +1274,8 @@ void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, lockmode_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, fromdepartmentid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, todepartmentid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, messageproxyboxid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TemplateToPost, messageproxydepartmentid_),
   };
   TemplateToPost_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -2074,7 +2076,7 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
     "\0132\034.Diadoc.Api.Proto.DocumentId\"d\n\026Resol"
     "utionRouteRemoval\022\026\n\016ParentEntityId\030\001 \002("
     "\t\022\017\n\007RouteId\030\002 \002(\t\022\021\n\007Comment\030\003 \001(\t:\000\022\016\n"
-    "\006Labels\030\004 \003(\t\"\275\002\n\016TemplateToPost\022\021\n\tFrom"
+    "\006Labels\030\004 \003(\t\"\372\002\n\016TemplateToPost\022\021\n\tFrom"
     "BoxId\030\001 \002(\t\022\017\n\007ToBoxId\030\002 \002(\t\022\030\n\020MessageF"
     "romBoxId\030\003 \002(\t\022\026\n\016MessageToBoxId\030\004 \002(\t\022\035"
     "\n\025MessageToDepartmentId\030\005 \001(\t\022P\n\023Documen"
@@ -2082,35 +2084,36 @@ void protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto() {
     "ents.TemplateDocumentAttachment\0222\n\010LockM"
     "ode\030\007 \001(\0162\032.Diadoc.Api.Proto.LockMode:\004N"
     "one\022\030\n\020FromDepartmentId\030\010 \001(\t\022\026\n\016ToDepar"
-    "tmentId\030\t \001(\t\"\373\003\n\032TemplateDocumentAttach"
-    "ment\022A\n\017UnsignedContent\030\001 \002(\0132(.Diadoc.A"
-    "pi.Proto.Events.UnsignedContent\022\017\n\007Comme"
-    "nt\030\002 \001(\t\022\023\n\013TypeNamedId\030\003 \002(\t\022\020\n\010Functio"
-    "n\030\004 \001(\t\022\017\n\007Version\030\005 \001(\t\0227\n\010Metadata\030\006 \003"
-    "(\0132%.Diadoc.Api.Proto.Events.MetadataIte"
-    "m\022\022\n\nWorkflowId\030\007 \001(\005\022\030\n\020CustomDocumentI"
-    "d\030\010 \001(\t\022\030\n\020EditingSettingId\030\t \001(\t\022%\n\026Nee"
-    "dRecipientSignature\030\n \001(\010:\005false\022S\n\030Pred"
-    "efinedRecipientTitle\030\013 \001(\01321.Diadoc.Api."
-    "Proto.Events.PredefinedRecipientTitle\022\036\n"
-    "\017RefusalDisabled\030\014 \001(\010:\005false\0224\n\nCustomD"
-    "ata\030\r \003(\0132 .Diadoc.Api.Proto.CustomDataI"
-    "tem\"[\n\023TemplatePatchToPost\022D\n\010Refusals\030\001"
-    " \003(\01322.Diadoc.Api.Proto.Events.TemplateR"
-    "efusalAttachment\"P\n\031TemplateRefusalAttac"
-    "hment\022\022\n\nDocumentId\030\001 \002(\t\022\017\n\007Comment\030\002 \001"
-    "(\t\022\016\n\006Labels\030\003 \003(\t\"]\n\030PredefinedRecipien"
-    "tTitle\022A\n\017UnsignedContent\030\001 \002(\0132(.Diadoc"
-    ".Api.Proto.Events.UnsignedContent\"7\n\017Uns"
-    "ignedContent\022\017\n\007Content\030\001 \001(\014\022\023\n\013NameOnS"
-    "helf\030\002 \001(\t\"\223\001\n\034TemplateTransformationToP"
-    "ost\022\r\n\005BoxId\030\001 \002(\t\022\022\n\nTemplateId\030\002 \002(\t\022P"
-    "\n\027DocumentTransformations\030\003 \003(\0132/.Diadoc"
-    ".Api.Proto.Events.DocumentTransformation"
-    "\"F\n\026DocumentTransformation\022\022\n\nDocumentId"
-    "\030\001 \002(\t\022\030\n\020CustomDocumentId\030\002 \001(\t*/\n\030Cust"
-    "omDataPatchOperation\022\007\n\003Set\020\000\022\n\n\006Remove\020"
-    "\001", 17081);
+    "tmentId\030\t \001(\t\022\031\n\021MessageProxyBoxId\030\n \001(\t"
+    "\022 \n\030MessageProxyDepartmentId\030\013 \001(\t\"\373\003\n\032T"
+    "emplateDocumentAttachment\022A\n\017UnsignedCon"
+    "tent\030\001 \002(\0132(.Diadoc.Api.Proto.Events.Uns"
+    "ignedContent\022\017\n\007Comment\030\002 \001(\t\022\023\n\013TypeNam"
+    "edId\030\003 \002(\t\022\020\n\010Function\030\004 \001(\t\022\017\n\007Version\030"
+    "\005 \001(\t\0227\n\010Metadata\030\006 \003(\0132%.Diadoc.Api.Pro"
+    "to.Events.MetadataItem\022\022\n\nWorkflowId\030\007 \001"
+    "(\005\022\030\n\020CustomDocumentId\030\010 \001(\t\022\030\n\020EditingS"
+    "ettingId\030\t \001(\t\022%\n\026NeedRecipientSignature"
+    "\030\n \001(\010:\005false\022S\n\030PredefinedRecipientTitl"
+    "e\030\013 \001(\01321.Diadoc.Api.Proto.Events.Predef"
+    "inedRecipientTitle\022\036\n\017RefusalDisabled\030\014 "
+    "\001(\010:\005false\0224\n\nCustomData\030\r \003(\0132 .Diadoc."
+    "Api.Proto.CustomDataItem\"[\n\023TemplatePatc"
+    "hToPost\022D\n\010Refusals\030\001 \003(\01322.Diadoc.Api.P"
+    "roto.Events.TemplateRefusalAttachment\"P\n"
+    "\031TemplateRefusalAttachment\022\022\n\nDocumentId"
+    "\030\001 \002(\t\022\017\n\007Comment\030\002 \001(\t\022\016\n\006Labels\030\003 \003(\t\""
+    "]\n\030PredefinedRecipientTitle\022A\n\017UnsignedC"
+    "ontent\030\001 \002(\0132(.Diadoc.Api.Proto.Events.U"
+    "nsignedContent\"7\n\017UnsignedContent\022\017\n\007Con"
+    "tent\030\001 \001(\014\022\023\n\013NameOnShelf\030\002 \001(\t\"\223\001\n\034Temp"
+    "lateTransformationToPost\022\r\n\005BoxId\030\001 \002(\t\022"
+    "\022\n\nTemplateId\030\002 \002(\t\022P\n\027DocumentTransform"
+    "ations\030\003 \003(\0132/.Diadoc.Api.Proto.Events.D"
+    "ocumentTransformation\"F\n\026DocumentTransfo"
+    "rmation\022\022\n\nDocumentId\030\001 \002(\t\022\030\n\020CustomDoc"
+    "umentId\030\002 \001(\t*/\n\030CustomDataPatchOperatio"
+    "n\022\007\n\003Set\020\000\022\n\n\006Remove\020\001", 17142);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Events/DiadocMessage-PostApi.proto", &protobuf_RegisterTypes);
   MessageToPost::default_instance_ = new MessageToPost();
@@ -28611,6 +28614,8 @@ const int TemplateToPost::kDocumentAttachmentsFieldNumber;
 const int TemplateToPost::kLockModeFieldNumber;
 const int TemplateToPost::kFromDepartmentIdFieldNumber;
 const int TemplateToPost::kToDepartmentIdFieldNumber;
+const int TemplateToPost::kMessageProxyBoxIdFieldNumber;
+const int TemplateToPost::kMessageProxyDepartmentIdFieldNumber;
 #endif  // !_MSC_VER
 
 TemplateToPost::TemplateToPost()
@@ -28640,6 +28645,8 @@ void TemplateToPost::SharedCtor() {
   lockmode_ = 1;
   fromdepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   todepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  messageproxyboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  messageproxydepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -28669,6 +28676,12 @@ void TemplateToPost::SharedDtor() {
   }
   if (todepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete todepartmentid_;
+  }
+  if (messageproxyboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete messageproxyboxid_;
+  }
+  if (messageproxydepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete messageproxydepartmentid_;
   }
   if (this != default_instance_) {
   }
@@ -28729,9 +28742,21 @@ void TemplateToPost::Clear() {
       }
     }
   }
-  if (has_todepartmentid()) {
-    if (todepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-      todepartmentid_->clear();
+  if (_has_bits_[8 / 32] & 1792) {
+    if (has_todepartmentid()) {
+      if (todepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        todepartmentid_->clear();
+      }
+    }
+    if (has_messageproxyboxid()) {
+      if (messageproxyboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        messageproxyboxid_->clear();
+      }
+    }
+    if (has_messageproxydepartmentid()) {
+      if (messageproxydepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        messageproxydepartmentid_->clear();
+      }
     }
   }
   documentattachments_.Clear();
@@ -28897,6 +28922,40 @@ bool TemplateToPost::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(82)) goto parse_MessageProxyBoxId;
+        break;
+      }
+
+      // optional string MessageProxyBoxId = 10;
+      case 10: {
+        if (tag == 82) {
+         parse_MessageProxyBoxId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_messageproxyboxid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->messageproxyboxid().data(), this->messageproxyboxid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "messageproxyboxid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(90)) goto parse_MessageProxyDepartmentId;
+        break;
+      }
+
+      // optional string MessageProxyDepartmentId = 11;
+      case 11: {
+        if (tag == 90) {
+         parse_MessageProxyDepartmentId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_messageproxydepartmentid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->messageproxydepartmentid().data(), this->messageproxydepartmentid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "messageproxydepartmentid");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -29008,6 +29067,26 @@ void TemplateToPost::SerializeWithCachedSizes(
       9, this->todepartmentid(), output);
   }
 
+  // optional string MessageProxyBoxId = 10;
+  if (has_messageproxyboxid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->messageproxyboxid().data(), this->messageproxyboxid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "messageproxyboxid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      10, this->messageproxyboxid(), output);
+  }
+
+  // optional string MessageProxyDepartmentId = 11;
+  if (has_messageproxydepartmentid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->messageproxydepartmentid().data(), this->messageproxydepartmentid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "messageproxydepartmentid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      11, this->messageproxydepartmentid(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -29108,6 +29187,28 @@ void TemplateToPost::SerializeWithCachedSizes(
         9, this->todepartmentid(), target);
   }
 
+  // optional string MessageProxyBoxId = 10;
+  if (has_messageproxyboxid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->messageproxyboxid().data(), this->messageproxyboxid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "messageproxyboxid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        10, this->messageproxyboxid(), target);
+  }
+
+  // optional string MessageProxyDepartmentId = 11;
+  if (has_messageproxydepartmentid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->messageproxydepartmentid().data(), this->messageproxydepartmentid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "messageproxydepartmentid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        11, this->messageproxydepartmentid(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -29177,6 +29278,20 @@ int TemplateToPost::ByteSize() const {
           this->todepartmentid());
     }
 
+    // optional string MessageProxyBoxId = 10;
+    if (has_messageproxyboxid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->messageproxyboxid());
+    }
+
+    // optional string MessageProxyDepartmentId = 11;
+    if (has_messageproxydepartmentid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->messageproxydepartmentid());
+    }
+
   }
   // repeated .Diadoc.Api.Proto.Events.TemplateDocumentAttachment DocumentAttachments = 6;
   total_size += 1 * this->documentattachments_size();
@@ -29239,6 +29354,12 @@ void TemplateToPost::MergeFrom(const TemplateToPost& from) {
     if (from.has_todepartmentid()) {
       set_todepartmentid(from.todepartmentid());
     }
+    if (from.has_messageproxyboxid()) {
+      set_messageproxyboxid(from.messageproxyboxid());
+    }
+    if (from.has_messageproxydepartmentid()) {
+      set_messageproxydepartmentid(from.messageproxydepartmentid());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -29273,6 +29394,8 @@ void TemplateToPost::Swap(TemplateToPost* other) {
     std::swap(lockmode_, other->lockmode_);
     std::swap(fromdepartmentid_, other->fromdepartmentid_);
     std::swap(todepartmentid_, other->todepartmentid_);
+    std::swap(messageproxyboxid_, other->messageproxyboxid_);
+    std::swap(messageproxydepartmentid_, other->messageproxydepartmentid_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
