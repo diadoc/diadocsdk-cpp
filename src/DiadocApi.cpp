@@ -882,7 +882,7 @@ DiadocApi::WebFile DiadocApi::GenerateInvoiceCorrectionRequestXml(const std::wst
 	return WebFile(request);
 }
 
-DiadocApi::WebFile DiadocApi::GenerateRevocationRequestXml(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& attachmentId, const RevocationRequestInfo& revocationRequestInfo)
+DiadocApi::WebFile DiadocApi::GenerateRevocationRequestXml(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& attachmentId, const Diadoc::Api::Proto::Invoicing::RevocationRequestInfo& revocationRequestInfo)
 {
 	WppTraceDebugOut("GenerateRevocationRequestXml...");
 	std::wstringstream queryString;
@@ -1301,10 +1301,10 @@ DiadocApi::Bytes_t DiadocApi::ParseTitleXml(const std::wstring& boxId, const std
 	return PerformHttpRequest(buf.str(), content, L"POST");
 }
 
-RevocationRequestInfo DiadocApi::ParseRevocationRequestXml(const Bytes_t& xmlContent)
+Diadoc::Api::Proto::Invoicing::RevocationRequestInfo DiadocApi::ParseRevocationRequestXml(const Bytes_t& xmlContent)
 {
 	WppTraceDebugOut("ParseRevocationRequestXml...");
-	return FromProtoBytes<RevocationRequestInfo>(PerformHttpRequest(L"/ParseRevocationRequestXml", xmlContent, L"POST"));
+	return FromProtoBytes<Diadoc::Api::Proto::Invoicing::RevocationRequestInfo>(PerformHttpRequest(L"/ParseRevocationRequestXml", xmlContent, L"POST"));
 }
 
 SignatureRejectionInfo DiadocApi::ParseSignatureRejectionXml(const Bytes_t& xmlContent)
