@@ -35,6 +35,7 @@
 #include "Events/ResolutionRequestInfo.pb.h"
 #include "Events/ResolutionRequestDenialInfo.pb.h"
 #include "Events/ResolutionRouteInfo.pb.h"
+#include "Events/RevocationRequestInfo.pb.h"
 #include "OuterDocflow.pb.h"
 // @@protoc_insertion_point(includes)
 
@@ -1529,6 +1530,15 @@ class Entity : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::OuterDocflowInfo* release_outerdocflow();
   inline void set_allocated_outerdocflow(::Diadoc::Api::Proto::OuterDocflowInfo* outerdocflow);
 
+  // optional .Diadoc.Api.Proto.Events.RevocationRequestInfo RevocationRequestInfo = 30;
+  inline bool has_revocationrequestinfo() const;
+  inline void clear_revocationrequestinfo();
+  static const int kRevocationRequestInfoFieldNumber = 30;
+  inline const ::Diadoc::Api::Proto::Events::RevocationRequestInfo& revocationrequestinfo() const;
+  inline ::Diadoc::Api::Proto::Events::RevocationRequestInfo* mutable_revocationrequestinfo();
+  inline ::Diadoc::Api::Proto::Events::RevocationRequestInfo* release_revocationrequestinfo();
+  inline void set_allocated_revocationrequestinfo(::Diadoc::Api::Proto::Events::RevocationRequestInfo* revocationrequestinfo);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.Entity)
  private:
   inline void set_has_entitytype();
@@ -1585,6 +1595,8 @@ class Entity : public ::google::protobuf::Message {
   inline void clear_has_templaterefusalinfo();
   inline void set_has_outerdocflow();
   inline void clear_has_outerdocflow();
+  inline void set_has_revocationrequestinfo();
+  inline void clear_has_revocationrequestinfo();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1614,6 +1626,7 @@ class Entity : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Events::TemplateTransformationInfo* templatetransformationinfo_;
   ::Diadoc::Api::Proto::Events::TemplateRefusalInfo* templaterefusalinfo_;
   ::Diadoc::Api::Proto::OuterDocflowInfo* outerdocflow_;
+  ::Diadoc::Api::Proto::Events::RevocationRequestInfo* revocationrequestinfo_;
   bool needrecipientsignature_;
   bool needreceipt_;
   bool isapprovementsignature_;
@@ -6038,6 +6051,47 @@ inline void Entity::set_allocated_outerdocflow(::Diadoc::Api::Proto::OuterDocflo
     clear_has_outerdocflow();
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Entity.OuterDocflow)
+}
+
+// optional .Diadoc.Api.Proto.Events.RevocationRequestInfo RevocationRequestInfo = 30;
+inline bool Entity::has_revocationrequestinfo() const {
+  return (_has_bits_[0] & 0x10000000u) != 0;
+}
+inline void Entity::set_has_revocationrequestinfo() {
+  _has_bits_[0] |= 0x10000000u;
+}
+inline void Entity::clear_has_revocationrequestinfo() {
+  _has_bits_[0] &= ~0x10000000u;
+}
+inline void Entity::clear_revocationrequestinfo() {
+  if (revocationrequestinfo_ != NULL) revocationrequestinfo_->::Diadoc::Api::Proto::Events::RevocationRequestInfo::Clear();
+  clear_has_revocationrequestinfo();
+}
+inline const ::Diadoc::Api::Proto::Events::RevocationRequestInfo& Entity::revocationrequestinfo() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Entity.RevocationRequestInfo)
+  return revocationrequestinfo_ != NULL ? *revocationrequestinfo_ : *default_instance_->revocationrequestinfo_;
+}
+inline ::Diadoc::Api::Proto::Events::RevocationRequestInfo* Entity::mutable_revocationrequestinfo() {
+  set_has_revocationrequestinfo();
+  if (revocationrequestinfo_ == NULL) revocationrequestinfo_ = new ::Diadoc::Api::Proto::Events::RevocationRequestInfo;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Entity.RevocationRequestInfo)
+  return revocationrequestinfo_;
+}
+inline ::Diadoc::Api::Proto::Events::RevocationRequestInfo* Entity::release_revocationrequestinfo() {
+  clear_has_revocationrequestinfo();
+  ::Diadoc::Api::Proto::Events::RevocationRequestInfo* temp = revocationrequestinfo_;
+  revocationrequestinfo_ = NULL;
+  return temp;
+}
+inline void Entity::set_allocated_revocationrequestinfo(::Diadoc::Api::Proto::Events::RevocationRequestInfo* revocationrequestinfo) {
+  delete revocationrequestinfo_;
+  revocationrequestinfo_ = revocationrequestinfo;
+  if (revocationrequestinfo) {
+    set_has_revocationrequestinfo();
+  } else {
+    clear_has_revocationrequestinfo();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Entity.RevocationRequestInfo)
 }
 
 // -------------------------------------------------------------------
