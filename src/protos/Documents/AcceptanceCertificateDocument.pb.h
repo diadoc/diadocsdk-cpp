@@ -45,29 +45,29 @@ enum AcceptanceCertificateDocumentStatus {
   UnknownAcceptanceCertificateDocumentStatus = 0,
   OutboundWaitingForRecipientSignature = 1,
   OutboundWithRecipientSignature = 2,
-  OutboundWithRecipientPartiallySignature = 16,
+  OutboundWithRecipientPartiallySignature = 19,
   OutboundRecipientSignatureRequestRejected = 3,
   OutboundWaitingForSenderSignature = 10,
   OutboundInvalidSenderSignature = 11,
-  OutboundNoRecipientSignatureRequest = 19,
+  OutboundNoRecipientSignatureRequest = 16,
   InboundWaitingForRecipientSignature = 4,
   InboundWithRecipientSignature = 5,
-  InboundWithRecipientPartiallySignature = 17,
+  InboundWithRecipientPartiallySignature = 20,
   InboundRecipientSignatureRequestRejected = 6,
   InboundInvalidRecipientSignature = 12,
-  InboundNoRecipientSignatureRequest = 20,
+  InboundNoRecipientSignatureRequest = 17,
   InternalWaitingForRecipientSignature = 7,
   InternalWithRecipientSignature = 8,
-  InternalWithRecipientPartiallySignature = 18,
+  InternalWithRecipientPartiallySignature = 21,
   InternalRecipientSignatureRequestRejected = 9,
   InternalWaitingForSenderSignature = 13,
   InternalInvalidSenderSignature = 14,
   InternalInvalidRecipientSignature = 15,
-  InternalNoRecipientSignatureRequest = 21
+  InternalNoRecipientSignatureRequest = 18
 };
 bool AcceptanceCertificateDocumentStatus_IsValid(int value);
 const AcceptanceCertificateDocumentStatus AcceptanceCertificateDocumentStatus_MIN = UnknownAcceptanceCertificateDocumentStatus;
-const AcceptanceCertificateDocumentStatus AcceptanceCertificateDocumentStatus_MAX = InternalNoRecipientSignatureRequest;
+const AcceptanceCertificateDocumentStatus AcceptanceCertificateDocumentStatus_MAX = InternalWithRecipientPartiallySignature;
 const int AcceptanceCertificateDocumentStatus_ARRAYSIZE = AcceptanceCertificateDocumentStatus_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* AcceptanceCertificateDocumentStatus_descriptor();
