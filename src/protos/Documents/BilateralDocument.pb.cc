@@ -263,19 +263,19 @@ void protobuf_AddDesc_Documents_2fBilateralDocument_2eproto() {
     "\"\n\036UnknownBilateralDocumentStatus\020\000\022(\n$O"
     "utboundWaitingForRecipientSignature\020\001\022\"\n"
     "\036OutboundWithRecipientSignature\020\002\022+\n\'Out"
-    "boundWithRecipientPartiallySignature\020\020\022-"
+    "boundWithRecipientPartiallySignature\020\023\022-"
     "\n)OutboundRecipientSignatureRequestRejec"
     "ted\020\003\022%\n!OutboundWaitingForSenderSignatu"
     "re\020\n\022\"\n\036OutboundInvalidSenderSignature\020\013"
     "\022\'\n#InboundWaitingForRecipientSignature\020"
     "\004\022!\n\035InboundWithRecipientSignature\020\005\022*\n&"
-    "InboundWithRecipientPartiallySignature\020\021"
+    "InboundWithRecipientPartiallySignature\020\024"
     "\022,\n(InboundRecipientSignatureRequestReje"
     "cted\020\006\022$\n InboundInvalidRecipientSignatu"
     "re\020\014\022(\n$InternalWaitingForRecipientSigna"
     "ture\020\007\022\"\n\036InternalWithRecipientSignature"
     "\020\010\022+\n\'InternalWithRecipientPartiallySign"
-    "ature\020\022\022-\n)InternalRecipientSignatureReq"
+    "ature\020\025\022-\n)InternalRecipientSignatureReq"
     "uestRejected\020\t\022%\n!InternalWaitingForSend"
     "erSignature\020\r\022\"\n\036InternalInvalidSenderSi"
     "gnature\020\016\022%\n!InternalInvalidRecipientSig"
@@ -325,9 +325,9 @@ bool BilateralDocumentStatus_IsValid(int value) {
     case 13:
     case 14:
     case 15:
-    case 16:
-    case 17:
-    case 18:
+    case 19:
+    case 20:
+    case 21:
       return true;
     default:
       return false;
