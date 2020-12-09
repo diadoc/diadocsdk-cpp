@@ -50,15 +50,18 @@ enum BilateralDocumentStatus {
   UnknownBilateralDocumentStatus = 0,
   OutboundWaitingForRecipientSignature = 1,
   OutboundWithRecipientSignature = 2,
+  OutboundWithRecipientPartiallySignature = 16,
   OutboundRecipientSignatureRequestRejected = 3,
   OutboundWaitingForSenderSignature = 10,
   OutboundInvalidSenderSignature = 11,
   InboundWaitingForRecipientSignature = 4,
   InboundWithRecipientSignature = 5,
+  InboundWithRecipientPartiallySignature = 17,
   InboundRecipientSignatureRequestRejected = 6,
   InboundInvalidRecipientSignature = 12,
   InternalWaitingForRecipientSignature = 7,
   InternalWithRecipientSignature = 8,
+  InternalWithRecipientPartiallySignature = 18,
   InternalRecipientSignatureRequestRejected = 9,
   InternalWaitingForSenderSignature = 13,
   InternalInvalidSenderSignature = 14,
@@ -66,7 +69,7 @@ enum BilateralDocumentStatus {
 };
 bool BilateralDocumentStatus_IsValid(int value);
 const BilateralDocumentStatus BilateralDocumentStatus_MIN = UnknownBilateralDocumentStatus;
-const BilateralDocumentStatus BilateralDocumentStatus_MAX = InternalInvalidRecipientSignature;
+const BilateralDocumentStatus BilateralDocumentStatus_MAX = InternalWithRecipientPartiallySignature;
 const int BilateralDocumentStatus_ARRAYSIZE = BilateralDocumentStatus_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* BilateralDocumentStatus_descriptor();

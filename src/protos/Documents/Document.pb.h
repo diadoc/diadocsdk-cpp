@@ -204,11 +204,12 @@ enum RecipientResponseStatus {
   WaitingForRecipientSignature = 2,
   WithRecipientSignature = 3,
   RecipientSignatureRequestRejected = 4,
-  InvalidRecipientSignature = 5
+  InvalidRecipientSignature = 5,
+  WithRecipientPartiallySignature = 6
 };
 bool RecipientResponseStatus_IsValid(int value);
 const RecipientResponseStatus RecipientResponseStatus_MIN = RecipientResponseStatusUnknown;
-const RecipientResponseStatus RecipientResponseStatus_MAX = InvalidRecipientSignature;
+const RecipientResponseStatus RecipientResponseStatus_MAX = WithRecipientPartiallySignature;
 const int RecipientResponseStatus_ARRAYSIZE = RecipientResponseStatus_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* RecipientResponseStatus_descriptor();

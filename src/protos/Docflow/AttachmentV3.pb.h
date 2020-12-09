@@ -282,6 +282,18 @@ class SignedAttachmentV3 : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Docflow::Entity* release_comment();
   inline void set_allocated_comment(::Diadoc::Api::Proto::Docflow::Entity* comment);
 
+  // required string ContentTypeId = 4;
+  inline bool has_contenttypeid() const;
+  inline void clear_contenttypeid();
+  static const int kContentTypeIdFieldNumber = 4;
+  inline const ::std::string& contenttypeid() const;
+  inline void set_contenttypeid(const ::std::string& value);
+  inline void set_contenttypeid(const char* value);
+  inline void set_contenttypeid(const char* value, size_t size);
+  inline ::std::string* mutable_contenttypeid();
+  inline ::std::string* release_contenttypeid();
+  inline void set_allocated_contenttypeid(::std::string* contenttypeid);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Docflow.SignedAttachmentV3)
  private:
   inline void set_has_attachment();
@@ -290,6 +302,8 @@ class SignedAttachmentV3 : public ::google::protobuf::Message {
   inline void clear_has_signature();
   inline void set_has_comment();
   inline void clear_has_comment();
+  inline void set_has_contenttypeid();
+  inline void clear_has_contenttypeid();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -298,6 +312,7 @@ class SignedAttachmentV3 : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Docflow::Attachment* attachment_;
   ::Diadoc::Api::Proto::Docflow::SignatureV3* signature_;
   ::Diadoc::Api::Proto::Docflow::Entity* comment_;
+  ::std::string* contenttypeid_;
   friend void  protobuf_AddDesc_Docflow_2fAttachmentV3_2eproto();
   friend void protobuf_AssignDesc_Docflow_2fAttachmentV3_2eproto();
   friend void protobuf_ShutdownFile_Docflow_2fAttachmentV3_2eproto();
@@ -777,6 +792,82 @@ inline void SignedAttachmentV3::set_allocated_comment(::Diadoc::Api::Proto::Docf
     clear_has_comment();
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.SignedAttachmentV3.Comment)
+}
+
+// required string ContentTypeId = 4;
+inline bool SignedAttachmentV3::has_contenttypeid() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void SignedAttachmentV3::set_has_contenttypeid() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void SignedAttachmentV3::clear_has_contenttypeid() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void SignedAttachmentV3::clear_contenttypeid() {
+  if (contenttypeid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    contenttypeid_->clear();
+  }
+  clear_has_contenttypeid();
+}
+inline const ::std::string& SignedAttachmentV3::contenttypeid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.SignedAttachmentV3.ContentTypeId)
+  return *contenttypeid_;
+}
+inline void SignedAttachmentV3::set_contenttypeid(const ::std::string& value) {
+  set_has_contenttypeid();
+  if (contenttypeid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    contenttypeid_ = new ::std::string;
+  }
+  contenttypeid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.SignedAttachmentV3.ContentTypeId)
+}
+inline void SignedAttachmentV3::set_contenttypeid(const char* value) {
+  set_has_contenttypeid();
+  if (contenttypeid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    contenttypeid_ = new ::std::string;
+  }
+  contenttypeid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Docflow.SignedAttachmentV3.ContentTypeId)
+}
+inline void SignedAttachmentV3::set_contenttypeid(const char* value, size_t size) {
+  set_has_contenttypeid();
+  if (contenttypeid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    contenttypeid_ = new ::std::string;
+  }
+  contenttypeid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Docflow.SignedAttachmentV3.ContentTypeId)
+}
+inline ::std::string* SignedAttachmentV3::mutable_contenttypeid() {
+  set_has_contenttypeid();
+  if (contenttypeid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    contenttypeid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.SignedAttachmentV3.ContentTypeId)
+  return contenttypeid_;
+}
+inline ::std::string* SignedAttachmentV3::release_contenttypeid() {
+  clear_has_contenttypeid();
+  if (contenttypeid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = contenttypeid_;
+    contenttypeid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void SignedAttachmentV3::set_allocated_contenttypeid(::std::string* contenttypeid) {
+  if (contenttypeid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete contenttypeid_;
+  }
+  if (contenttypeid) {
+    set_has_contenttypeid();
+    contenttypeid_ = contenttypeid;
+  } else {
+    clear_has_contenttypeid();
+    contenttypeid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.SignedAttachmentV3.ContentTypeId)
 }
 
 

@@ -100,27 +100,31 @@ void protobuf_AddDesc_Documents_2fAcceptanceCertificateDocument_2eproto() {
     "DocumentStatus\022\r\n\005Total\030\002 \002(\t\022\013\n\003Vat\030\003 \001"
     "(\t\022\017\n\007Grounds\030\004 \001(\t\022V\n\rReceiptStatus\030\005 \001"
     "(\0162).Diadoc.Api.Proto.Documents.ReceiptS"
-    "tatus:\024UnknownReceiptStatus*\246\006\n#Acceptan"
+    "tatus:\024UnknownReceiptStatus*\254\007\n#Acceptan"
     "ceCertificateDocumentStatus\022.\n*UnknownAc"
     "ceptanceCertificateDocumentStatus\020\000\022(\n$O"
     "utboundWaitingForRecipientSignature\020\001\022\"\n"
-    "\036OutboundWithRecipientSignature\020\002\022-\n)Out"
-    "boundRecipientSignatureRequestRejected\020\003"
-    "\022%\n!OutboundWaitingForSenderSignature\020\n\022"
-    "\"\n\036OutboundInvalidSenderSignature\020\013\022\'\n#O"
-    "utboundNoRecipientSignatureRequest\020\020\022\'\n#"
-    "InboundWaitingForRecipientSignature\020\004\022!\n"
-    "\035InboundWithRecipientSignature\020\005\022,\n(Inbo"
-    "undRecipientSignatureRequestRejected\020\006\022$"
-    "\n InboundInvalidRecipientSignature\020\014\022&\n\""
-    "InboundNoRecipientSignatureRequest\020\021\022(\n$"
-    "InternalWaitingForRecipientSignature\020\007\022\""
-    "\n\036InternalWithRecipientSignature\020\010\022-\n)In"
-    "ternalRecipientSignatureRequestRejected\020"
-    "\t\022%\n!InternalWaitingForSenderSignature\020\r"
-    "\022\"\n\036InternalInvalidSenderSignature\020\016\022%\n!"
-    "InternalInvalidRecipientSignature\020\017\022\'\n#I"
-    "nternalNoRecipientSignatureRequest\020\022", 1276);
+    "\036OutboundWithRecipientSignature\020\002\022+\n\'Out"
+    "boundWithRecipientPartiallySignature\020\020\022-"
+    "\n)OutboundRecipientSignatureRequestRejec"
+    "ted\020\003\022%\n!OutboundWaitingForSenderSignatu"
+    "re\020\n\022\"\n\036OutboundInvalidSenderSignature\020\013"
+    "\022\'\n#OutboundNoRecipientSignatureRequest\020"
+    "\023\022\'\n#InboundWaitingForRecipientSignature"
+    "\020\004\022!\n\035InboundWithRecipientSignature\020\005\022*\n"
+    "&InboundWithRecipientPartiallySignature\020"
+    "\021\022,\n(InboundRecipientSignatureRequestRej"
+    "ected\020\006\022$\n InboundInvalidRecipientSignat"
+    "ure\020\014\022&\n\"InboundNoRecipientSignatureRequ"
+    "est\020\024\022(\n$InternalWaitingForRecipientSign"
+    "ature\020\007\022\"\n\036InternalWithRecipientSignatur"
+    "e\020\010\022+\n\'InternalWithRecipientPartiallySig"
+    "nature\020\022\022-\n)InternalRecipientSignatureRe"
+    "questRejected\020\t\022%\n!InternalWaitingForSen"
+    "derSignature\020\r\022\"\n\036InternalInvalidSenderS"
+    "ignature\020\016\022%\n!InternalInvalidRecipientSi"
+    "gnature\020\017\022\'\n#InternalNoRecipientSignatur"
+    "eRequest\020\025", 1410);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Documents/AcceptanceCertificateDocument.proto", &protobuf_RegisterTypes);
   AcceptanceCertificateMetadata::default_instance_ = new AcceptanceCertificateMetadata();
@@ -159,6 +163,9 @@ bool AcceptanceCertificateDocumentStatus_IsValid(int value) {
     case 16:
     case 17:
     case 18:
+    case 19:
+    case 20:
+    case 21:
       return true;
     default:
       return false;

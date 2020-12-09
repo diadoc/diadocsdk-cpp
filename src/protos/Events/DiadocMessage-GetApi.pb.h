@@ -1539,6 +1539,18 @@ class Entity : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Events::RevocationRequestInfo* release_revocationrequestinfo();
   inline void set_allocated_revocationrequestinfo(::Diadoc::Api::Proto::Events::RevocationRequestInfo* revocationrequestinfo);
 
+  // optional string ContentTypeId = 31;
+  inline bool has_contenttypeid() const;
+  inline void clear_contenttypeid();
+  static const int kContentTypeIdFieldNumber = 31;
+  inline const ::std::string& contenttypeid() const;
+  inline void set_contenttypeid(const ::std::string& value);
+  inline void set_contenttypeid(const char* value);
+  inline void set_contenttypeid(const char* value, size_t size);
+  inline ::std::string* mutable_contenttypeid();
+  inline ::std::string* release_contenttypeid();
+  inline void set_allocated_contenttypeid(::std::string* contenttypeid);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.Entity)
  private:
   inline void set_has_entitytype();
@@ -1597,6 +1609,8 @@ class Entity : public ::google::protobuf::Message {
   inline void clear_has_outerdocflow();
   inline void set_has_revocationrequestinfo();
   inline void clear_has_revocationrequestinfo();
+  inline void set_has_contenttypeid();
+  inline void clear_has_contenttypeid();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1627,6 +1641,7 @@ class Entity : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Events::TemplateRefusalInfo* templaterefusalinfo_;
   ::Diadoc::Api::Proto::OuterDocflowInfo* outerdocflow_;
   ::Diadoc::Api::Proto::Events::RevocationRequestInfo* revocationrequestinfo_;
+  ::std::string* contenttypeid_;
   bool needrecipientsignature_;
   bool needreceipt_;
   bool isapprovementsignature_;
@@ -6092,6 +6107,82 @@ inline void Entity::set_allocated_revocationrequestinfo(::Diadoc::Api::Proto::Ev
     clear_has_revocationrequestinfo();
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Entity.RevocationRequestInfo)
+}
+
+// optional string ContentTypeId = 31;
+inline bool Entity::has_contenttypeid() const {
+  return (_has_bits_[0] & 0x20000000u) != 0;
+}
+inline void Entity::set_has_contenttypeid() {
+  _has_bits_[0] |= 0x20000000u;
+}
+inline void Entity::clear_has_contenttypeid() {
+  _has_bits_[0] &= ~0x20000000u;
+}
+inline void Entity::clear_contenttypeid() {
+  if (contenttypeid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    contenttypeid_->clear();
+  }
+  clear_has_contenttypeid();
+}
+inline const ::std::string& Entity::contenttypeid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Entity.ContentTypeId)
+  return *contenttypeid_;
+}
+inline void Entity::set_contenttypeid(const ::std::string& value) {
+  set_has_contenttypeid();
+  if (contenttypeid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    contenttypeid_ = new ::std::string;
+  }
+  contenttypeid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Entity.ContentTypeId)
+}
+inline void Entity::set_contenttypeid(const char* value) {
+  set_has_contenttypeid();
+  if (contenttypeid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    contenttypeid_ = new ::std::string;
+  }
+  contenttypeid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Events.Entity.ContentTypeId)
+}
+inline void Entity::set_contenttypeid(const char* value, size_t size) {
+  set_has_contenttypeid();
+  if (contenttypeid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    contenttypeid_ = new ::std::string;
+  }
+  contenttypeid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Events.Entity.ContentTypeId)
+}
+inline ::std::string* Entity::mutable_contenttypeid() {
+  set_has_contenttypeid();
+  if (contenttypeid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    contenttypeid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Events.Entity.ContentTypeId)
+  return contenttypeid_;
+}
+inline ::std::string* Entity::release_contenttypeid() {
+  clear_has_contenttypeid();
+  if (contenttypeid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = contenttypeid_;
+    contenttypeid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void Entity::set_allocated_contenttypeid(::std::string* contenttypeid) {
+  if (contenttypeid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete contenttypeid_;
+  }
+  if (contenttypeid) {
+    set_has_contenttypeid();
+    contenttypeid_ = contenttypeid;
+  } else {
+    clear_has_contenttypeid();
+    contenttypeid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Entity.ContentTypeId)
 }
 
 // -------------------------------------------------------------------

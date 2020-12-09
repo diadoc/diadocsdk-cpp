@@ -259,23 +259,27 @@ void protobuf_AddDesc_Documents_2fBilateralDocument_2eproto() {
     "umentStatus:\036UnknownBilateralDocumentSta"
     "tus\022V\n\rReceiptStatus\030\002 \001(\0162).Diadoc.Api."
     "Proto.Documents.ReceiptStatus:\024UnknownRe"
-    "ceiptStatus*\224\005\n\027BilateralDocumentStatus\022"
+    "ceiptStatus*\232\006\n\027BilateralDocumentStatus\022"
     "\"\n\036UnknownBilateralDocumentStatus\020\000\022(\n$O"
     "utboundWaitingForRecipientSignature\020\001\022\"\n"
-    "\036OutboundWithRecipientSignature\020\002\022-\n)Out"
-    "boundRecipientSignatureRequestRejected\020\003"
-    "\022%\n!OutboundWaitingForSenderSignature\020\n\022"
-    "\"\n\036OutboundInvalidSenderSignature\020\013\022\'\n#I"
-    "nboundWaitingForRecipientSignature\020\004\022!\n\035"
-    "InboundWithRecipientSignature\020\005\022,\n(Inbou"
-    "ndRecipientSignatureRequestRejected\020\006\022$\n"
-    " InboundInvalidRecipientSignature\020\014\022(\n$I"
-    "nternalWaitingForRecipientSignature\020\007\022\"\n"
-    "\036InternalWithRecipientSignature\020\010\022-\n)Int"
-    "ernalRecipientSignatureRequestRejected\020\t"
-    "\022%\n!InternalWaitingForSenderSignature\020\r\022"
-    "\"\n\036InternalInvalidSenderSignature\020\016\022%\n!I"
-    "nternalInvalidRecipientSignature\020\017", 2474);
+    "\036OutboundWithRecipientSignature\020\002\022+\n\'Out"
+    "boundWithRecipientPartiallySignature\020\020\022-"
+    "\n)OutboundRecipientSignatureRequestRejec"
+    "ted\020\003\022%\n!OutboundWaitingForSenderSignatu"
+    "re\020\n\022\"\n\036OutboundInvalidSenderSignature\020\013"
+    "\022\'\n#InboundWaitingForRecipientSignature\020"
+    "\004\022!\n\035InboundWithRecipientSignature\020\005\022*\n&"
+    "InboundWithRecipientPartiallySignature\020\021"
+    "\022,\n(InboundRecipientSignatureRequestReje"
+    "cted\020\006\022$\n InboundInvalidRecipientSignatu"
+    "re\020\014\022(\n$InternalWaitingForRecipientSigna"
+    "ture\020\007\022\"\n\036InternalWithRecipientSignature"
+    "\020\010\022+\n\'InternalWithRecipientPartiallySign"
+    "ature\020\022\022-\n)InternalRecipientSignatureReq"
+    "uestRejected\020\t\022%\n!InternalWaitingForSend"
+    "erSignature\020\r\022\"\n\036InternalInvalidSenderSi"
+    "gnature\020\016\022%\n!InternalInvalidRecipientSig"
+    "nature\020\017", 2608);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Documents/BilateralDocument.proto", &protobuf_RegisterTypes);
   TrustConnectionRequestMetadata::default_instance_ = new TrustConnectionRequestMetadata();
@@ -321,6 +325,9 @@ bool BilateralDocumentStatus_IsValid(int value) {
     case 13:
     case 14:
     case 15:
+    case 16:
+    case 17:
+    case 18:
       return true;
     default:
       return false;
