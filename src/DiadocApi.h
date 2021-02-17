@@ -13,6 +13,7 @@
 #include "protos\Documents\DocumentProtocol.pb.h"
 #include "protos\Documents\DocumentZip.pb.h"
 #include "protos\Documents\Types\DocumentTypeDescription.pb.h"
+#include "protos\Documents\Types\DocumentTypeDescriptionV2.pb.h"
 #include "protos\Docflow\DocflowApi.pb.h"
 #include "protos\Forwarding\ForwardingApi.pb.h"
 #include "protos\Invoicing\InvoiceCorrectionRequestInfo.pb.h"
@@ -323,7 +324,7 @@ public:
 	Diadoc::Api::Proto::AsyncMethodResult DssSign(const std::wstring& boxId, const Diadoc::Api::Proto::Dss::DssSignRequest& request, const std::wstring& certificateThumbprint);
 	Diadoc::Api::Proto::Dss::DssSignResult DssSignResult(const std::wstring& boxId, const std::wstring& taskId);
 	Diadoc::Api::Proto::Documents::DocumentList GetDocumentsByMessageId(const std::wstring& boxId, const std::wstring& messageId);
-	Diadoc::Api::Proto::Documents::Types::GetDocumentTypesResponse GetDocumentTypes(const std::wstring& boxId);
+	Diadoc::Api::Proto::Documents::Types::GetDocumentTypesResponseV2 GetDocumentTypesV2(const std::wstring& boxId);
 
 	// WARN: [[deprecated]]
 	// WARN: Use DetectDocumentTitles method

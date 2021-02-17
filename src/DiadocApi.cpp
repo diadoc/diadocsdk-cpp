@@ -1832,12 +1832,12 @@ DocumentList DiadocApi::GetDocumentsByMessageId(const std::wstring& boxId, const
 	return FromProtoBytes<DocumentList>(bytes);
 }
 
-GetDocumentTypesResponse DiadocApi::GetDocumentTypes(const std::wstring& boxId)
+GetDocumentTypesResponseV2 DiadocApi::GetDocumentTypesV2(const std::wstring& boxId)
 {
-	WppTraceDebugOut("GetDocumentTypes...");
+	WppTraceDebugOut("GetDocumentTypesV2...");
 	std::wstringstream buf;
-	buf << L"/GetDocumentTypes?boxId=" << StringHelper::CanonicalizeUrl(boxId);
-	return FromProtoBytes<GetDocumentTypesResponse>(PerformHttpRequest(buf.str(), GET));
+	buf << L"/V2/GetDocumentTypes?boxId=" << StringHelper::CanonicalizeUrl(boxId);
+	return FromProtoBytes<GetDocumentTypesResponseV2>(PerformHttpRequest(buf.str(), GET));
 }
 
 DetectDocumentTypesResponse DiadocApi::DetectDocumentTypes(const std::wstring& boxId, const std::wstring& nameOnShelf)
