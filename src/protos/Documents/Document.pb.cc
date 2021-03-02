@@ -66,7 +66,7 @@ void protobuf_AssignDesc_Documents_2fDocument_2eproto() {
       "Documents/Document.proto");
   GOOGLE_CHECK(file != NULL);
   Document_descriptor_ = file->message_type(0);
-  static const int Document_offsets_[75] = {
+  static const int Document_offsets_[77] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, indexkey_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, messageid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, entityid_),
@@ -142,6 +142,8 @@ void protobuf_AssignDesc_Documents_2fDocument_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, senderreceiptmetadata_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, version_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, lastouterdocflows_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, proxyboxid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, proxydepartmentid_),
   };
   Document_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -361,7 +363,7 @@ void protobuf_AddDesc_Documents_2fDocument_2eproto() {
     "\032)Documents/UniversalTransferDocument.pr"
     "oto\032\026ResolutionTarget.proto\032\032ForwardDocu"
     "mentEvent.proto\032\"Events/DiadocMessage-Po"
-    "stApi.proto\032\022OuterDocflow.proto\"\267\'\n\010Docu"
+    "stApi.proto\032\022OuterDocflow.proto\"\346\'\n\010Docu"
     "ment\022\020\n\010IndexKey\030\001 \001(\t\022\021\n\tMessageId\030\002 \002("
     "\t\022\020\n\010EntityId\030\003 \002(\t\022\036\n\026CreationTimestamp"
     "Ticks\030\004 \002(\020\022\031\n\021CounteragentBoxId\030\005 \001(\t\022I"
@@ -488,69 +490,70 @@ void protobuf_AddDesc_Documents_2fDocument_2eproto() {
     "Documents.SenderReceiptMetadata\022\017\n\007Versi"
     "on\030L \002(\t\022G\n\021LastOuterDocflows\030M \003(\0132,.Di"
     "adoc.Api.Proto.Documents.LastOuterDocflo"
-    "w\"d\n\020LastOuterDocflow\022\026\n\016ParentEntityId\030"
-    "\001 \002(\t\0228\n\014OuterDocflow\030\002 \002(\0132\".Diadoc.Api"
-    ".Proto.OuterDocflowInfo\"\310\001\n\020ResolutionSt"
-    "atus\022W\n\004Type\030\001 \001(\01620.Diadoc.Api.Proto.Do"
-    "cuments.ResolutionStatusType:\027UnknownRes"
-    "olutionStatus\0222\n\006Target\030\002 \001(\0132\".Diadoc.A"
-    "pi.Proto.ResolutionTarget\022\024\n\014AuthorUserI"
-    "d\030\003 \002(\t\022\021\n\tAuthorFIO\030\004 \002(\t\"\320\001\n\030Recipient"
-    "ReceiptMetadata\022d\n\rReceiptStatus\030\001 \002(\01620"
-    ".Diadoc.Api.Proto.Documents.GeneralRecei"
-    "ptStatus:\033GeneralReceiptStatusUnknown\022N\n"
-    "\024ConfirmationMetadata\030\002 \001(\01320.Diadoc.Api"
-    ".Proto.Documents.ConfirmationMetadata\"}\n"
-    "\025SenderReceiptMetadata\022d\n\rReceiptStatus\030"
+    "w\022\022\n\nProxyBoxId\030N \001(\t\022\031\n\021ProxyDepartment"
+    "Id\030O \001(\t\"d\n\020LastOuterDocflow\022\026\n\016ParentEn"
+    "tityId\030\001 \002(\t\0228\n\014OuterDocflow\030\002 \002(\0132\".Dia"
+    "doc.Api.Proto.OuterDocflowInfo\"\310\001\n\020Resol"
+    "utionStatus\022W\n\004Type\030\001 \001(\01620.Diadoc.Api.P"
+    "roto.Documents.ResolutionStatusType:\027Unk"
+    "nownResolutionStatus\0222\n\006Target\030\002 \001(\0132\".D"
+    "iadoc.Api.Proto.ResolutionTarget\022\024\n\014Auth"
+    "orUserId\030\003 \002(\t\022\021\n\tAuthorFIO\030\004 \002(\t\"\320\001\n\030Re"
+    "cipientReceiptMetadata\022d\n\rReceiptStatus\030"
     "\001 \002(\01620.Diadoc.Api.Proto.Documents.Gener"
     "alReceiptStatus:\033GeneralReceiptStatusUnk"
-    "nown\"\223\001\n\024ConfirmationMetadata\022d\n\rReceipt"
+    "nown\022N\n\024ConfirmationMetadata\030\002 \001(\01320.Dia"
+    "doc.Api.Proto.Documents.ConfirmationMeta"
+    "data\"}\n\025SenderReceiptMetadata\022d\n\rReceipt"
     "Status\030\001 \002(\01620.Diadoc.Api.Proto.Document"
     "s.GeneralReceiptStatus:\033GeneralReceiptSt"
-    "atusUnknown\022\025\n\rDateTimeTicks\030\002 \002(\020\"\230\001\n\030A"
-    "mendmentRequestMetadata\022\026\n\016AmendmentFlag"
-    "s\030\001 \002(\005\022d\n\rReceiptStatus\030\002 \002(\01620.Diadoc."
-    "Api.Proto.Documents.GeneralReceiptStatus"
-    ":\033GeneralReceiptStatusUnknown\"Y\n\006Origin\022"
-    "<\n\013MessageType\030\001 \002(\0162\'.Diadoc.Api.Proto."
-    "Documents.MessageType\022\021\n\tMessageId\030\002 \002(\t"
-    "*\302\001\n\024ResolutionStatusType\022$\n\027UnknownReso"
-    "lutionStatus\020\377\377\377\377\377\377\377\377\377\001\022\010\n\004None\020\000\022\014\n\010App"
-    "roved\020\001\022\017\n\013Disapproved\020\002\022\030\n\024ApprovementR"
-    "equested\020\003\022\026\n\022SignatureRequested\020\004\022\023\n\017Si"
-    "gnatureDenied\020\005\022\024\n\020ActionsRequested\020\006*\262\001"
-    "\n\020RevocationStatus\022\033\n\027UnknownRevocationS"
-    "tatus\020\000\022\030\n\024RevocationStatusNone\020\001\022\035\n\031Rev"
-    "ocationIsRequestedByMe\020\002\022\030\n\024RequestsMyRe"
-    "vocation\020\003\022\026\n\022RevocationAccepted\020\004\022\026\n\022Re"
-    "vocationRejected\020\005*\256\001\n\031RoamingNotificati"
-    "onStatus\022$\n UnknownRoamingNotificationSt"
-    "atus\020\000\022!\n\035RoamingNotificationStatusNone\020"
-    "\001\022$\n RoamingNotificationStatusSuccess\020\002\022"
-    "\"\n\036RoamingNotificationStatusError\020\003*\300\001\n\025"
-    "SenderSignatureStatus\022 \n\034UnknownSenderSi"
-    "gnatureStatus\020\000\022\035\n\031WaitingForSenderSigna"
-    "ture\020\001\022\034\n\030SenderSignatureUnchecked\020\002\022\"\n\036"
-    "SenderSignatureCheckedAndValid\020\003\022$\n Send"
-    "erSignatureCheckedAndInvalid\020\004*\302\001\n\024Proxy"
-    "SignatureStatus\022\037\n\033UnknownProxySignature"
-    "Status\020\000\022\034\n\030ProxySignatureStatusNone\020\001\022\034"
-    "\n\030WaitingForProxySignature\020\002\022\026\n\022WithProx"
-    "ySignature\020\003\022\032\n\026ProxySignatureRejected\020\004"
-    "\022\031\n\025InvalidProxySignature\020\005*\234\001\n\024GeneralR"
-    "eceiptStatus\022\037\n\033GeneralReceiptStatusUnkn"
-    "own\020\000\022%\n!GeneralReceiptStatusNotAcceptab"
-    "le\020\001\022\027\n\023HaveToCreateReceipt\020\002\022\025\n\021Waiting"
-    "ForReceipt\020\003\022\014\n\010Finished\020\004*\220\002\n\027Recipient"
-    "ResponseStatus\022\"\n\036RecipientResponseStatu"
-    "sUnknown\020\000\022(\n$RecipientResponseStatusNot"
-    "Acceptable\020\001\022 \n\034WaitingForRecipientSigna"
-    "ture\020\002\022\032\n\026WithRecipientSignature\020\003\022%\n!Re"
-    "cipientSignatureRequestRejected\020\004\022\035\n\031Inv"
-    "alidRecipientSignature\020\005\022#\n\037WithRecipien"
-    "tPartiallySignature\020\006*R\n\013MessageType\022\013\n\007"
-    "Unknown\020\000\022\021\n\rMessageLetter\020\001\022\017\n\013DraftLet"
-    "ter\020\002\022\022\n\016TemplateLetter\020\003", 8065);
+    "atusUnknown\"\223\001\n\024ConfirmationMetadata\022d\n\r"
+    "ReceiptStatus\030\001 \002(\01620.Diadoc.Api.Proto.D"
+    "ocuments.GeneralReceiptStatus:\033GeneralRe"
+    "ceiptStatusUnknown\022\025\n\rDateTimeTicks\030\002 \002("
+    "\020\"\230\001\n\030AmendmentRequestMetadata\022\026\n\016Amendm"
+    "entFlags\030\001 \002(\005\022d\n\rReceiptStatus\030\002 \002(\01620."
+    "Diadoc.Api.Proto.Documents.GeneralReceip"
+    "tStatus:\033GeneralReceiptStatusUnknown\"Y\n\006"
+    "Origin\022<\n\013MessageType\030\001 \002(\0162\'.Diadoc.Api"
+    ".Proto.Documents.MessageType\022\021\n\tMessageI"
+    "d\030\002 \002(\t*\302\001\n\024ResolutionStatusType\022$\n\027Unkn"
+    "ownResolutionStatus\020\377\377\377\377\377\377\377\377\377\001\022\010\n\004None\020\000"
+    "\022\014\n\010Approved\020\001\022\017\n\013Disapproved\020\002\022\030\n\024Appro"
+    "vementRequested\020\003\022\026\n\022SignatureRequested\020"
+    "\004\022\023\n\017SignatureDenied\020\005\022\024\n\020ActionsRequest"
+    "ed\020\006*\262\001\n\020RevocationStatus\022\033\n\027UnknownRevo"
+    "cationStatus\020\000\022\030\n\024RevocationStatusNone\020\001"
+    "\022\035\n\031RevocationIsRequestedByMe\020\002\022\030\n\024Reque"
+    "stsMyRevocation\020\003\022\026\n\022RevocationAccepted\020"
+    "\004\022\026\n\022RevocationRejected\020\005*\256\001\n\031RoamingNot"
+    "ificationStatus\022$\n UnknownRoamingNotific"
+    "ationStatus\020\000\022!\n\035RoamingNotificationStat"
+    "usNone\020\001\022$\n RoamingNotificationStatusSuc"
+    "cess\020\002\022\"\n\036RoamingNotificationStatusError"
+    "\020\003*\300\001\n\025SenderSignatureStatus\022 \n\034UnknownS"
+    "enderSignatureStatus\020\000\022\035\n\031WaitingForSend"
+    "erSignature\020\001\022\034\n\030SenderSignatureUnchecke"
+    "d\020\002\022\"\n\036SenderSignatureCheckedAndValid\020\003\022"
+    "$\n SenderSignatureCheckedAndInvalid\020\004*\302\001"
+    "\n\024ProxySignatureStatus\022\037\n\033UnknownProxySi"
+    "gnatureStatus\020\000\022\034\n\030ProxySignatureStatusN"
+    "one\020\001\022\034\n\030WaitingForProxySignature\020\002\022\026\n\022W"
+    "ithProxySignature\020\003\022\032\n\026ProxySignatureRej"
+    "ected\020\004\022\031\n\025InvalidProxySignature\020\005*\234\001\n\024G"
+    "eneralReceiptStatus\022\037\n\033GeneralReceiptSta"
+    "tusUnknown\020\000\022%\n!GeneralReceiptStatusNotA"
+    "cceptable\020\001\022\027\n\023HaveToCreateReceipt\020\002\022\025\n\021"
+    "WaitingForReceipt\020\003\022\014\n\010Finished\020\004*\220\002\n\027Re"
+    "cipientResponseStatus\022\"\n\036RecipientRespon"
+    "seStatusUnknown\020\000\022(\n$RecipientResponseSt"
+    "atusNotAcceptable\020\001\022 \n\034WaitingForRecipie"
+    "ntSignature\020\002\022\032\n\026WithRecipientSignature\020"
+    "\003\022%\n!RecipientSignatureRequestRejected\020\004"
+    "\022\035\n\031InvalidRecipientSignature\020\005\022#\n\037WithR"
+    "ecipientPartiallySignature\020\006*R\n\013MessageT"
+    "ype\022\013\n\007Unknown\020\000\022\021\n\rMessageLetter\020\001\022\017\n\013D"
+    "raftLetter\020\002\022\022\n\016TemplateLetter\020\003", 8112);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Documents/Document.proto", &protobuf_RegisterTypes);
   Document::default_instance_ = new Document();
@@ -798,6 +801,8 @@ const int Document::kLockModeFieldNumber;
 const int Document::kSenderReceiptMetadataFieldNumber;
 const int Document::kVersionFieldNumber;
 const int Document::kLastOuterDocflowsFieldNumber;
+const int Document::kProxyBoxIdFieldNumber;
+const int Document::kProxyDepartmentIdFieldNumber;
 #endif  // !_MSC_VER
 
 Document::Document()
@@ -918,6 +923,8 @@ void Document::SharedCtor() {
   lockmode_ = 1;
   senderreceiptmetadata_ = NULL;
   version_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  proxyboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  proxydepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -986,6 +993,12 @@ void Document::SharedDtor() {
   }
   if (version_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete version_;
+  }
+  if (proxyboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete proxyboxid_;
+  }
+  if (proxydepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete proxydepartmentid_;
   }
   if (this != default_instance_) {
     delete content_;
@@ -1267,13 +1280,23 @@ void Document::Clear() {
     }
     lockmode_ = 1;
   }
-  if (_has_bits_[72 / 32] & 768) {
+  if (_has_bits_[72 / 32] & 6912) {
     if (has_senderreceiptmetadata()) {
       if (senderreceiptmetadata_ != NULL) senderreceiptmetadata_->::Diadoc::Api::Proto::Documents::SenderReceiptMetadata::Clear();
     }
     if (has_version()) {
       if (version_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         version_->clear();
+      }
+    }
+    if (has_proxyboxid()) {
+      if (proxyboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        proxyboxid_->clear();
+      }
+    }
+    if (has_proxydepartmentid()) {
+      if (proxydepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        proxydepartmentid_->clear();
       }
     }
   }
@@ -2435,6 +2458,40 @@ bool Document::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(618)) goto parse_LastOuterDocflows;
+        if (input->ExpectTag(626)) goto parse_ProxyBoxId;
+        break;
+      }
+
+      // optional string ProxyBoxId = 78;
+      case 78: {
+        if (tag == 626) {
+         parse_ProxyBoxId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_proxyboxid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->proxyboxid().data(), this->proxyboxid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "proxyboxid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(634)) goto parse_ProxyDepartmentId;
+        break;
+      }
+
+      // optional string ProxyDepartmentId = 79;
+      case 79: {
+        if (tag == 634) {
+         parse_ProxyDepartmentId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_proxydepartmentid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->proxydepartmentid().data(), this->proxydepartmentid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "proxydepartmentid");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -2981,6 +3038,26 @@ void Document::SerializeWithCachedSizes(
   for (int i = 0; i < this->lastouterdocflows_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       77, this->lastouterdocflows(i), output);
+  }
+
+  // optional string ProxyBoxId = 78;
+  if (has_proxyboxid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->proxyboxid().data(), this->proxyboxid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "proxyboxid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      78, this->proxyboxid(), output);
+  }
+
+  // optional string ProxyDepartmentId = 79;
+  if (has_proxydepartmentid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->proxydepartmentid().data(), this->proxydepartmentid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "proxydepartmentid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      79, this->proxydepartmentid(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -3568,6 +3645,28 @@ void Document::SerializeWithCachedSizes(
         77, this->lastouterdocflows(i), target);
   }
 
+  // optional string ProxyBoxId = 78;
+  if (has_proxyboxid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->proxyboxid().data(), this->proxyboxid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "proxyboxid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        78, this->proxyboxid(), target);
+  }
+
+  // optional string ProxyDepartmentId = 79;
+  if (has_proxydepartmentid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->proxydepartmentid().data(), this->proxydepartmentid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "proxydepartmentid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        79, this->proxydepartmentid(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -4053,6 +4152,20 @@ int Document::ByteSize() const {
           this->version());
     }
 
+    // optional string ProxyBoxId = 78;
+    if (has_proxyboxid()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->proxyboxid());
+    }
+
+    // optional string ProxyDepartmentId = 79;
+    if (has_proxydepartmentid()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->proxydepartmentid());
+    }
+
   }
   // repeated .Diadoc.Api.Proto.DocumentId InitialDocumentIds = 7;
   total_size += 1 * this->initialdocumentids_size();
@@ -4359,6 +4472,12 @@ void Document::MergeFrom(const Document& from) {
     if (from.has_version()) {
       set_version(from.version());
     }
+    if (from.has_proxyboxid()) {
+      set_proxyboxid(from.proxyboxid());
+    }
+    if (from.has_proxydepartmentid()) {
+      set_proxydepartmentid(from.proxydepartmentid());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -4535,6 +4654,8 @@ void Document::Swap(Document* other) {
     std::swap(senderreceiptmetadata_, other->senderreceiptmetadata_);
     std::swap(version_, other->version_);
     lastouterdocflows_.Swap(&other->lastouterdocflows_);
+    std::swap(proxyboxid_, other->proxyboxid_);
+    std::swap(proxydepartmentid_, other->proxydepartmentid_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     std::swap(_has_bits_[1], other->_has_bits_[1]);
     std::swap(_has_bits_[2], other->_has_bits_[2]);

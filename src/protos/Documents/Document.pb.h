@@ -1013,6 +1013,30 @@ class Document : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::LastOuterDocflow >*
       mutable_lastouterdocflows();
 
+  // optional string ProxyBoxId = 78;
+  inline bool has_proxyboxid() const;
+  inline void clear_proxyboxid();
+  static const int kProxyBoxIdFieldNumber = 78;
+  inline const ::std::string& proxyboxid() const;
+  inline void set_proxyboxid(const ::std::string& value);
+  inline void set_proxyboxid(const char* value);
+  inline void set_proxyboxid(const char* value, size_t size);
+  inline ::std::string* mutable_proxyboxid();
+  inline ::std::string* release_proxyboxid();
+  inline void set_allocated_proxyboxid(::std::string* proxyboxid);
+
+  // optional string ProxyDepartmentId = 79;
+  inline bool has_proxydepartmentid() const;
+  inline void clear_proxydepartmentid();
+  static const int kProxyDepartmentIdFieldNumber = 79;
+  inline const ::std::string& proxydepartmentid() const;
+  inline void set_proxydepartmentid(const ::std::string& value);
+  inline void set_proxydepartmentid(const char* value);
+  inline void set_proxydepartmentid(const char* value, size_t size);
+  inline ::std::string* mutable_proxydepartmentid();
+  inline ::std::string* release_proxydepartmentid();
+  inline void set_allocated_proxydepartmentid(::std::string* proxydepartmentid);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.Document)
  private:
   inline void set_has_indexkey();
@@ -1153,6 +1177,10 @@ class Document : public ::google::protobuf::Message {
   inline void clear_has_senderreceiptmetadata();
   inline void set_has_version();
   inline void clear_has_version();
+  inline void set_has_proxyboxid();
+  inline void clear_has_proxyboxid();
+  inline void set_has_proxydepartmentid();
+  inline void clear_has_proxydepartmentid();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1232,6 +1260,8 @@ class Document : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Documents::SenderReceiptMetadata* senderreceiptmetadata_;
   ::std::string* version_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::LastOuterDocflow > lastouterdocflows_;
+  ::std::string* proxyboxid_;
+  ::std::string* proxydepartmentid_;
   int lockmode_;
   friend void  protobuf_AddDesc_Documents_2fDocument_2eproto();
   friend void protobuf_AssignDesc_Documents_2fDocument_2eproto();
@@ -5298,6 +5328,158 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::La
 Document::mutable_lastouterdocflows() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Documents.Document.LastOuterDocflows)
   return &lastouterdocflows_;
+}
+
+// optional string ProxyBoxId = 78;
+inline bool Document::has_proxyboxid() const {
+  return (_has_bits_[2] & 0x00000800u) != 0;
+}
+inline void Document::set_has_proxyboxid() {
+  _has_bits_[2] |= 0x00000800u;
+}
+inline void Document::clear_has_proxyboxid() {
+  _has_bits_[2] &= ~0x00000800u;
+}
+inline void Document::clear_proxyboxid() {
+  if (proxyboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    proxyboxid_->clear();
+  }
+  clear_has_proxyboxid();
+}
+inline const ::std::string& Document::proxyboxid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Document.ProxyBoxId)
+  return *proxyboxid_;
+}
+inline void Document::set_proxyboxid(const ::std::string& value) {
+  set_has_proxyboxid();
+  if (proxyboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    proxyboxid_ = new ::std::string;
+  }
+  proxyboxid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Document.ProxyBoxId)
+}
+inline void Document::set_proxyboxid(const char* value) {
+  set_has_proxyboxid();
+  if (proxyboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    proxyboxid_ = new ::std::string;
+  }
+  proxyboxid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.Document.ProxyBoxId)
+}
+inline void Document::set_proxyboxid(const char* value, size_t size) {
+  set_has_proxyboxid();
+  if (proxyboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    proxyboxid_ = new ::std::string;
+  }
+  proxyboxid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.Document.ProxyBoxId)
+}
+inline ::std::string* Document::mutable_proxyboxid() {
+  set_has_proxyboxid();
+  if (proxyboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    proxyboxid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.Document.ProxyBoxId)
+  return proxyboxid_;
+}
+inline ::std::string* Document::release_proxyboxid() {
+  clear_has_proxyboxid();
+  if (proxyboxid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = proxyboxid_;
+    proxyboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void Document::set_allocated_proxyboxid(::std::string* proxyboxid) {
+  if (proxyboxid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete proxyboxid_;
+  }
+  if (proxyboxid) {
+    set_has_proxyboxid();
+    proxyboxid_ = proxyboxid;
+  } else {
+    clear_has_proxyboxid();
+    proxyboxid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.ProxyBoxId)
+}
+
+// optional string ProxyDepartmentId = 79;
+inline bool Document::has_proxydepartmentid() const {
+  return (_has_bits_[2] & 0x00001000u) != 0;
+}
+inline void Document::set_has_proxydepartmentid() {
+  _has_bits_[2] |= 0x00001000u;
+}
+inline void Document::clear_has_proxydepartmentid() {
+  _has_bits_[2] &= ~0x00001000u;
+}
+inline void Document::clear_proxydepartmentid() {
+  if (proxydepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    proxydepartmentid_->clear();
+  }
+  clear_has_proxydepartmentid();
+}
+inline const ::std::string& Document::proxydepartmentid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Document.ProxyDepartmentId)
+  return *proxydepartmentid_;
+}
+inline void Document::set_proxydepartmentid(const ::std::string& value) {
+  set_has_proxydepartmentid();
+  if (proxydepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    proxydepartmentid_ = new ::std::string;
+  }
+  proxydepartmentid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Documents.Document.ProxyDepartmentId)
+}
+inline void Document::set_proxydepartmentid(const char* value) {
+  set_has_proxydepartmentid();
+  if (proxydepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    proxydepartmentid_ = new ::std::string;
+  }
+  proxydepartmentid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Documents.Document.ProxyDepartmentId)
+}
+inline void Document::set_proxydepartmentid(const char* value, size_t size) {
+  set_has_proxydepartmentid();
+  if (proxydepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    proxydepartmentid_ = new ::std::string;
+  }
+  proxydepartmentid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Documents.Document.ProxyDepartmentId)
+}
+inline ::std::string* Document::mutable_proxydepartmentid() {
+  set_has_proxydepartmentid();
+  if (proxydepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    proxydepartmentid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.Document.ProxyDepartmentId)
+  return proxydepartmentid_;
+}
+inline ::std::string* Document::release_proxydepartmentid() {
+  clear_has_proxydepartmentid();
+  if (proxydepartmentid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = proxydepartmentid_;
+    proxydepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void Document::set_allocated_proxydepartmentid(::std::string* proxydepartmentid) {
+  if (proxydepartmentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete proxydepartmentid_;
+  }
+  if (proxydepartmentid) {
+    set_has_proxydepartmentid();
+    proxydepartmentid_ = proxydepartmentid;
+  } else {
+    clear_has_proxydepartmentid();
+    proxydepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.ProxyDepartmentId)
 }
 
 // -------------------------------------------------------------------
