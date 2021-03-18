@@ -1061,12 +1061,21 @@ class DocumentTemplateInfo : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Docflow::TemplateRefusalInfo* release_templaterefusalinfo();
   inline void set_allocated_templaterefusalinfo(::Diadoc::Api::Proto::Docflow::TemplateRefusalInfo* templaterefusalinfo);
 
+  // optional bool IsReusable = 5 [default = false];
+  inline bool has_isreusable() const;
+  inline void clear_isreusable();
+  static const int kIsReusableFieldNumber = 5;
+  inline bool isreusable() const;
+  inline void set_isreusable(bool value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Docflow.DocumentTemplateInfo)
  private:
   inline void set_has_letterparticipants();
   inline void clear_has_letterparticipants();
   inline void set_has_templaterefusalinfo();
   inline void clear_has_templaterefusalinfo();
+  inline void set_has_isreusable();
+  inline void clear_has_isreusable();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1076,6 +1085,7 @@ class DocumentTemplateInfo : public ::google::protobuf::Message {
   ::google::protobuf::RepeatedPtrField< ::std::string> transformedtoletterids_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::TemplateTransformationInfo > templatetransformationinfos_;
   ::Diadoc::Api::Proto::Docflow::TemplateRefusalInfo* templaterefusalinfo_;
+  bool isreusable_;
   friend void  protobuf_AddDesc_Docflow_2fDocumentInfoV3_2eproto();
   friend void protobuf_AssignDesc_Docflow_2fDocumentInfoV3_2eproto();
   friend void protobuf_ShutdownFile_Docflow_2fDocumentInfoV3_2eproto();
@@ -2874,6 +2884,30 @@ inline void DocumentTemplateInfo::set_allocated_templaterefusalinfo(::Diadoc::Ap
     clear_has_templaterefusalinfo();
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.DocumentTemplateInfo.TemplateRefusalInfo)
+}
+
+// optional bool IsReusable = 5 [default = false];
+inline bool DocumentTemplateInfo::has_isreusable() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void DocumentTemplateInfo::set_has_isreusable() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void DocumentTemplateInfo::clear_has_isreusable() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void DocumentTemplateInfo::clear_isreusable() {
+  isreusable_ = false;
+  clear_has_isreusable();
+}
+inline bool DocumentTemplateInfo::isreusable() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.DocumentTemplateInfo.IsReusable)
+  return isreusable_;
+}
+inline void DocumentTemplateInfo::set_isreusable(bool value) {
+  set_has_isreusable();
+  isreusable_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.DocumentTemplateInfo.IsReusable)
 }
 
 // -------------------------------------------------------------------

@@ -8463,6 +8463,13 @@ class TemplateToPost : public ::google::protobuf::Message {
   inline ::std::string* release_messageproxydepartmentid();
   inline void set_allocated_messageproxydepartmentid(::std::string* messageproxydepartmentid);
 
+  // optional bool IsReusable = 12 [default = false];
+  inline bool has_isreusable() const;
+  inline void clear_isreusable();
+  static const int kIsReusableFieldNumber = 12;
+  inline bool isreusable() const;
+  inline void set_isreusable(bool value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.TemplateToPost)
  private:
   inline void set_has_fromboxid();
@@ -8485,6 +8492,8 @@ class TemplateToPost : public ::google::protobuf::Message {
   inline void clear_has_messageproxyboxid();
   inline void set_has_messageproxydepartmentid();
   inline void clear_has_messageproxydepartmentid();
+  inline void set_has_isreusable();
+  inline void clear_has_isreusable();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -8498,9 +8507,10 @@ class TemplateToPost : public ::google::protobuf::Message {
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::TemplateDocumentAttachment > documentattachments_;
   ::std::string* fromdepartmentid_;
   ::std::string* todepartmentid_;
+  int lockmode_;
+  bool isreusable_;
   ::std::string* messageproxyboxid_;
   ::std::string* messageproxydepartmentid_;
-  int lockmode_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dPostApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dPostApi_2eproto();
@@ -28254,6 +28264,30 @@ inline void TemplateToPost::set_allocated_messageproxydepartmentid(::std::string
     messageproxydepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.TemplateToPost.MessageProxyDepartmentId)
+}
+
+// optional bool IsReusable = 12 [default = false];
+inline bool TemplateToPost::has_isreusable() const {
+  return (_has_bits_[0] & 0x00000800u) != 0;
+}
+inline void TemplateToPost::set_has_isreusable() {
+  _has_bits_[0] |= 0x00000800u;
+}
+inline void TemplateToPost::clear_has_isreusable() {
+  _has_bits_[0] &= ~0x00000800u;
+}
+inline void TemplateToPost::clear_isreusable() {
+  isreusable_ = false;
+  clear_has_isreusable();
+}
+inline bool TemplateToPost::isreusable() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.TemplateToPost.IsReusable)
+  return isreusable_;
+}
+inline void TemplateToPost::set_isreusable(bool value) {
+  set_has_isreusable();
+  isreusable_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.TemplateToPost.IsReusable)
 }
 
 // -------------------------------------------------------------------

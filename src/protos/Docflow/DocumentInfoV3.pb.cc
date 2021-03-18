@@ -197,11 +197,12 @@ void protobuf_AssignDesc_Docflow_2fDocumentInfoV3_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(DocumentDraftInfo));
   DocumentTemplateInfo_descriptor_ = file->message_type(7);
-  static const int DocumentTemplateInfo_offsets_[4] = {
+  static const int DocumentTemplateInfo_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentTemplateInfo, letterparticipants_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentTemplateInfo, transformedtoletterids_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentTemplateInfo, templatetransformationinfos_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentTemplateInfo, templaterefusalinfo_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentTemplateInfo, isreusable_),
   };
   DocumentTemplateInfo_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -370,7 +371,7 @@ void protobuf_AddDesc_Docflow_2fDocumentInfoV3_2eproto() {
     "iadoc.Api.Proto.ForwardDocumentEvent\022\016\n\006"
     "IsTest\030\003 \002(\010\"Y\n\021DocumentDraftInfo\022\022\n\nIsR"
     "ecycled\030\001 \002(\010\022\020\n\010IsLocked\030\002 \002(\010\022\036\n\026Trans"
-    "formedToLetterIds\030\003 \003(\t\"\251\002\n\024DocumentTemp"
+    "formedToLetterIds\030\003 \003(\t\"\304\002\n\024DocumentTemp"
     "lateInfo\022J\n\022LetterParticipants\030\001 \002(\0132..D"
     "iadoc.Api.Proto.Docflow.DocumentParticip"
     "ants\022\036\n\026TransformedToLetterIds\030\002 \003(\t\022Y\n\033"
@@ -378,12 +379,13 @@ void protobuf_AddDesc_Docflow_2fDocumentInfoV3_2eproto() {
     "oc.Api.Proto.Docflow.TemplateTransformat"
     "ionInfo\022J\n\023TemplateRefusalInfo\030\004 \001(\0132-.D"
     "iadoc.Api.Proto.Docflow.TemplateRefusalI"
-    "nfo\"\213\001\n\032TemplateTransformationInfo\022\030\n\020Tr"
-    "ansformationId\030\001 \002(\t\022=\n\027TransformedToDoc"
-    "umentId\030\002 \001(\0132\034.Diadoc.Api.Proto.Documen"
-    "tId\022\024\n\014AuthorUserId\030\003 \001(\t\"K\n\023TemplateRef"
-    "usalInfo\022\r\n\005BoxId\030\001 \002(\t\022\024\n\014AuthorUserId\030"
-    "\002 \001(\t\022\017\n\007Comment\030\003 \001(\t", 2422);
+    "nfo\022\031\n\nIsReusable\030\005 \001(\010:\005false\"\213\001\n\032Templ"
+    "ateTransformationInfo\022\030\n\020TransformationI"
+    "d\030\001 \002(\t\022=\n\027TransformedToDocumentId\030\002 \001(\013"
+    "2\034.Diadoc.Api.Proto.DocumentId\022\024\n\014Author"
+    "UserId\030\003 \001(\t\"K\n\023TemplateRefusalInfo\022\r\n\005B"
+    "oxId\030\001 \002(\t\022\024\n\014AuthorUserId\030\002 \001(\t\022\017\n\007Comm"
+    "ent\030\003 \001(\t", 2449);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Docflow/DocumentInfoV3.proto", &protobuf_RegisterTypes);
   DocumentInfoV3::default_instance_ = new DocumentInfoV3();
@@ -3347,6 +3349,7 @@ const int DocumentTemplateInfo::kLetterParticipantsFieldNumber;
 const int DocumentTemplateInfo::kTransformedToLetterIdsFieldNumber;
 const int DocumentTemplateInfo::kTemplateTransformationInfosFieldNumber;
 const int DocumentTemplateInfo::kTemplateRefusalInfoFieldNumber;
+const int DocumentTemplateInfo::kIsReusableFieldNumber;
 #endif  // !_MSC_VER
 
 DocumentTemplateInfo::DocumentTemplateInfo()
@@ -3372,6 +3375,7 @@ void DocumentTemplateInfo::SharedCtor() {
   _cached_size_ = 0;
   letterparticipants_ = NULL;
   templaterefusalinfo_ = NULL;
+  isreusable_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -3409,13 +3413,14 @@ DocumentTemplateInfo* DocumentTemplateInfo::New() const {
 }
 
 void DocumentTemplateInfo::Clear() {
-  if (_has_bits_[0 / 32] & 9) {
+  if (_has_bits_[0 / 32] & 25) {
     if (has_letterparticipants()) {
       if (letterparticipants_ != NULL) letterparticipants_->::Diadoc::Api::Proto::Docflow::DocumentParticipants::Clear();
     }
     if (has_templaterefusalinfo()) {
       if (templaterefusalinfo_ != NULL) templaterefusalinfo_->::Diadoc::Api::Proto::Docflow::TemplateRefusalInfo::Clear();
     }
+    isreusable_ = false;
   }
   transformedtoletterids_.Clear();
   templatetransformationinfos_.Clear();
@@ -3487,6 +3492,21 @@ bool DocumentTemplateInfo::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(40)) goto parse_IsReusable;
+        break;
+      }
+
+      // optional bool IsReusable = 5 [default = false];
+      case 5: {
+        if (tag == 40) {
+         parse_IsReusable:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &isreusable_)));
+          set_has_isreusable();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -3544,6 +3564,11 @@ void DocumentTemplateInfo::SerializeWithCachedSizes(
       4, this->templaterefusalinfo(), output);
   }
 
+  // optional bool IsReusable = 5 [default = false];
+  if (has_isreusable()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(5, this->isreusable(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -3585,6 +3610,11 @@ void DocumentTemplateInfo::SerializeWithCachedSizes(
         4, this->templaterefusalinfo(), target);
   }
 
+  // optional bool IsReusable = 5 [default = false];
+  if (has_isreusable()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(5, this->isreusable(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -3609,6 +3639,11 @@ int DocumentTemplateInfo::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->templaterefusalinfo());
+    }
+
+    // optional bool IsReusable = 5 [default = false];
+    if (has_isreusable()) {
+      total_size += 1 + 1;
     }
 
   }
@@ -3661,6 +3696,9 @@ void DocumentTemplateInfo::MergeFrom(const DocumentTemplateInfo& from) {
     if (from.has_templaterefusalinfo()) {
       mutable_templaterefusalinfo()->::Diadoc::Api::Proto::Docflow::TemplateRefusalInfo::MergeFrom(from.templaterefusalinfo());
     }
+    if (from.has_isreusable()) {
+      set_isreusable(from.isreusable());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -3696,6 +3734,7 @@ void DocumentTemplateInfo::Swap(DocumentTemplateInfo* other) {
     transformedtoletterids_.Swap(&other->transformedtoletterids_);
     templatetransformationinfos_.Swap(&other->templatetransformationinfos_);
     std::swap(templaterefusalinfo_, other->templaterefusalinfo_);
+    std::swap(isreusable_, other->isreusable_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
