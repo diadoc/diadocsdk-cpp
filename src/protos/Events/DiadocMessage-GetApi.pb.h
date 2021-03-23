@@ -655,6 +655,13 @@ class Message : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Events::TemplateToLetterTransformationInfo* release_templatetolettertransformationinfo();
   inline void set_allocated_templatetolettertransformationinfo(::Diadoc::Api::Proto::Events::TemplateToLetterTransformationInfo* templatetolettertransformationinfo);
 
+  // optional bool IsReusable = 24 [default = false];
+  inline bool has_isreusable() const;
+  inline void clear_isreusable();
+  static const int kIsReusableFieldNumber = 24;
+  inline bool isreusable() const;
+  inline void set_isreusable(bool value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.Message)
  private:
   inline void set_has_messageid();
@@ -699,6 +706,8 @@ class Message : public ::google::protobuf::Message {
   inline void clear_has_messagetype();
   inline void set_has_templatetolettertransformationinfo();
   inline void clear_has_templatetolettertransformationinfo();
+  inline void set_has_isreusable();
+  inline void clear_has_isreusable();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -727,6 +736,7 @@ class Message : public ::google::protobuf::Message {
   int lockmode_;
   int messagetype_;
   ::Diadoc::Api::Proto::Events::TemplateToLetterTransformationInfo* templatetolettertransformationinfo_;
+  bool isreusable_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto();
   friend void protobuf_AssignDesc_Events_2fDiadocMessage_2dGetApi_2eproto();
   friend void protobuf_ShutdownFile_Events_2fDiadocMessage_2dGetApi_2eproto();
@@ -918,6 +928,13 @@ class Template : public ::google::protobuf::Message {
   inline ::std::string* release_messageproxydepartmentid();
   inline void set_allocated_messageproxydepartmentid(::std::string* messageproxydepartmentid);
 
+  // optional bool IsReusable = 13 [default = false];
+  inline bool has_isreusable() const;
+  inline void clear_isreusable();
+  static const int kIsReusableFieldNumber = 13;
+  inline bool isreusable() const;
+  inline void set_isreusable(bool value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Events.Template)
  private:
   inline void set_has_messageid();
@@ -942,6 +959,8 @@ class Template : public ::google::protobuf::Message {
   inline void clear_has_messageproxyboxid();
   inline void set_has_messageproxydepartmentid();
   inline void clear_has_messageproxydepartmentid();
+  inline void set_has_isreusable();
+  inline void clear_has_isreusable();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -955,8 +974,9 @@ class Template : public ::google::protobuf::Message {
   ::std::string* messagetoboxid_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Events::Entity > entities_;
   ::std::string* messagetodepartmentid_;
-  bool isdeleted_;
   int lockmode_;
+  bool isdeleted_;
+  bool isreusable_;
   ::std::string* messageproxyboxid_;
   ::std::string* messageproxydepartmentid_;
   friend void  protobuf_AddDesc_Events_2fDiadocMessage_2dGetApi_2eproto();
@@ -3451,6 +3471,30 @@ inline void Message::set_allocated_templatetolettertransformationinfo(::Diadoc::
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Message.TemplateToLetterTransformationInfo)
 }
 
+// optional bool IsReusable = 24 [default = false];
+inline bool Message::has_isreusable() const {
+  return (_has_bits_[0] & 0x00800000u) != 0;
+}
+inline void Message::set_has_isreusable() {
+  _has_bits_[0] |= 0x00800000u;
+}
+inline void Message::clear_has_isreusable() {
+  _has_bits_[0] &= ~0x00800000u;
+}
+inline void Message::clear_isreusable() {
+  isreusable_ = false;
+  clear_has_isreusable();
+}
+inline bool Message::isreusable() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Message.IsReusable)
+  return isreusable_;
+}
+inline void Message::set_isreusable(bool value) {
+  set_has_isreusable();
+  isreusable_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Message.IsReusable)
+}
+
 // -------------------------------------------------------------------
 
 // Template
@@ -4164,6 +4208,30 @@ inline void Template::set_allocated_messageproxydepartmentid(::std::string* mess
     messageproxydepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Events.Template.MessageProxyDepartmentId)
+}
+
+// optional bool IsReusable = 13 [default = false];
+inline bool Template::has_isreusable() const {
+  return (_has_bits_[0] & 0x00001000u) != 0;
+}
+inline void Template::set_has_isreusable() {
+  _has_bits_[0] |= 0x00001000u;
+}
+inline void Template::clear_has_isreusable() {
+  _has_bits_[0] &= ~0x00001000u;
+}
+inline void Template::clear_isreusable() {
+  isreusable_ = false;
+  clear_has_isreusable();
+}
+inline bool Template::isreusable() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Events.Template.IsReusable)
+  return isreusable_;
+}
+inline void Template::set_isreusable(bool value) {
+  set_has_isreusable();
+  isreusable_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Events.Template.IsReusable)
 }
 
 // -------------------------------------------------------------------
