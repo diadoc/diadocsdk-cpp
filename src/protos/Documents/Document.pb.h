@@ -41,6 +41,7 @@
 #include "ForwardDocumentEvent.pb.h"
 #include "Events/DiadocMessage-PostApi.pb.h"
 #include "OuterDocflow.pb.h"
+#include "DocflowStatusV3.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace Diadoc {
@@ -1037,6 +1038,15 @@ class Document : public ::google::protobuf::Message {
   inline ::std::string* release_proxydepartmentid();
   inline void set_allocated_proxydepartmentid(::std::string* proxydepartmentid);
 
+  // required .Diadoc.Api.Proto.DocflowStatusV3 DocflowStatus = 80;
+  inline bool has_docflowstatus() const;
+  inline void clear_docflowstatus();
+  static const int kDocflowStatusFieldNumber = 80;
+  inline const ::Diadoc::Api::Proto::DocflowStatusV3& docflowstatus() const;
+  inline ::Diadoc::Api::Proto::DocflowStatusV3* mutable_docflowstatus();
+  inline ::Diadoc::Api::Proto::DocflowStatusV3* release_docflowstatus();
+  inline void set_allocated_docflowstatus(::Diadoc::Api::Proto::DocflowStatusV3* docflowstatus);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Documents.Document)
  private:
   inline void set_has_indexkey();
@@ -1181,6 +1191,8 @@ class Document : public ::google::protobuf::Message {
   inline void clear_has_proxyboxid();
   inline void set_has_proxydepartmentid();
   inline void clear_has_proxydepartmentid();
+  inline void set_has_docflowstatus();
+  inline void clear_has_docflowstatus();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1262,6 +1274,7 @@ class Document : public ::google::protobuf::Message {
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Documents::LastOuterDocflow > lastouterdocflows_;
   ::std::string* proxyboxid_;
   ::std::string* proxydepartmentid_;
+  ::Diadoc::Api::Proto::DocflowStatusV3* docflowstatus_;
   int lockmode_;
   friend void  protobuf_AddDesc_Documents_2fDocument_2eproto();
   friend void protobuf_AssignDesc_Documents_2fDocument_2eproto();
@@ -5480,6 +5493,47 @@ inline void Document::set_allocated_proxydepartmentid(::std::string* proxydepart
     proxydepartmentid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.ProxyDepartmentId)
+}
+
+// required .Diadoc.Api.Proto.DocflowStatusV3 DocflowStatus = 80;
+inline bool Document::has_docflowstatus() const {
+  return (_has_bits_[2] & 0x00002000u) != 0;
+}
+inline void Document::set_has_docflowstatus() {
+  _has_bits_[2] |= 0x00002000u;
+}
+inline void Document::clear_has_docflowstatus() {
+  _has_bits_[2] &= ~0x00002000u;
+}
+inline void Document::clear_docflowstatus() {
+  if (docflowstatus_ != NULL) docflowstatus_->::Diadoc::Api::Proto::DocflowStatusV3::Clear();
+  clear_has_docflowstatus();
+}
+inline const ::Diadoc::Api::Proto::DocflowStatusV3& Document::docflowstatus() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Documents.Document.DocflowStatus)
+  return docflowstatus_ != NULL ? *docflowstatus_ : *default_instance_->docflowstatus_;
+}
+inline ::Diadoc::Api::Proto::DocflowStatusV3* Document::mutable_docflowstatus() {
+  set_has_docflowstatus();
+  if (docflowstatus_ == NULL) docflowstatus_ = new ::Diadoc::Api::Proto::DocflowStatusV3;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Documents.Document.DocflowStatus)
+  return docflowstatus_;
+}
+inline ::Diadoc::Api::Proto::DocflowStatusV3* Document::release_docflowstatus() {
+  clear_has_docflowstatus();
+  ::Diadoc::Api::Proto::DocflowStatusV3* temp = docflowstatus_;
+  docflowstatus_ = NULL;
+  return temp;
+}
+inline void Document::set_allocated_docflowstatus(::Diadoc::Api::Proto::DocflowStatusV3* docflowstatus) {
+  delete docflowstatus_;
+  docflowstatus_ = docflowstatus;
+  if (docflowstatus) {
+    set_has_docflowstatus();
+  } else {
+    clear_has_docflowstatus();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Documents.Document.DocflowStatus)
 }
 
 // -------------------------------------------------------------------

@@ -30,6 +30,7 @@
 #include "Docflow/RoamingNotification.pb.h"
 #include "Docflow/ResolutionDocflowV3.pb.h"
 #include "OuterDocflowStatus.pb.h"
+#include "DocflowStatusV3.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace Diadoc {
@@ -225,6 +226,15 @@ class DocflowV3 : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities >*
       mutable_outerdocflowentities();
 
+  // required .Diadoc.Api.Proto.DocflowStatusV3 DocflowStatus = 14;
+  inline bool has_docflowstatus() const;
+  inline void clear_docflowstatus();
+  static const int kDocflowStatusFieldNumber = 14;
+  inline const ::Diadoc::Api::Proto::DocflowStatusV3& docflowstatus() const;
+  inline ::Diadoc::Api::Proto::DocflowStatusV3* mutable_docflowstatus();
+  inline ::Diadoc::Api::Proto::DocflowStatusV3* release_docflowstatus();
+  inline void set_allocated_docflowstatus(::Diadoc::Api::Proto::DocflowStatusV3* docflowstatus);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Docflow.DocflowV3)
  private:
   inline void set_has_sendertitle();
@@ -247,6 +257,8 @@ class DocflowV3 : public ::google::protobuf::Message {
   inline void clear_has_resolution();
   inline void set_has_resolutionentities();
   inline void clear_has_resolutionentities();
+  inline void set_has_docflowstatus();
+  inline void clear_has_docflowstatus();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -264,6 +276,7 @@ class DocflowV3 : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Docflow::ResolutionEntitiesV3* resolutionentities_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::OuterDocflow > outerdocflows_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::OuterDocflowEntities > outerdocflowentities_;
+  ::Diadoc::Api::Proto::DocflowStatusV3* docflowstatus_;
   friend void  protobuf_AddDesc_Docflow_2fDocflowV3_2eproto();
   friend void protobuf_AssignDesc_Docflow_2fDocflowV3_2eproto();
   friend void protobuf_ShutdownFile_Docflow_2fDocflowV3_2eproto();
@@ -2251,6 +2264,47 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Docflow::Oute
 DocflowV3::mutable_outerdocflowentities() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.Docflow.DocflowV3.OuterDocflowEntities)
   return &outerdocflowentities_;
+}
+
+// required .Diadoc.Api.Proto.DocflowStatusV3 DocflowStatus = 14;
+inline bool DocflowV3::has_docflowstatus() const {
+  return (_has_bits_[0] & 0x00001000u) != 0;
+}
+inline void DocflowV3::set_has_docflowstatus() {
+  _has_bits_[0] |= 0x00001000u;
+}
+inline void DocflowV3::clear_has_docflowstatus() {
+  _has_bits_[0] &= ~0x00001000u;
+}
+inline void DocflowV3::clear_docflowstatus() {
+  if (docflowstatus_ != NULL) docflowstatus_->::Diadoc::Api::Proto::DocflowStatusV3::Clear();
+  clear_has_docflowstatus();
+}
+inline const ::Diadoc::Api::Proto::DocflowStatusV3& DocflowV3::docflowstatus() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.DocflowV3.DocflowStatus)
+  return docflowstatus_ != NULL ? *docflowstatus_ : *default_instance_->docflowstatus_;
+}
+inline ::Diadoc::Api::Proto::DocflowStatusV3* DocflowV3::mutable_docflowstatus() {
+  set_has_docflowstatus();
+  if (docflowstatus_ == NULL) docflowstatus_ = new ::Diadoc::Api::Proto::DocflowStatusV3;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.DocflowV3.DocflowStatus)
+  return docflowstatus_;
+}
+inline ::Diadoc::Api::Proto::DocflowStatusV3* DocflowV3::release_docflowstatus() {
+  clear_has_docflowstatus();
+  ::Diadoc::Api::Proto::DocflowStatusV3* temp = docflowstatus_;
+  docflowstatus_ = NULL;
+  return temp;
+}
+inline void DocflowV3::set_allocated_docflowstatus(::Diadoc::Api::Proto::DocflowStatusV3* docflowstatus) {
+  delete docflowstatus_;
+  docflowstatus_ = docflowstatus;
+  if (docflowstatus) {
+    set_has_docflowstatus();
+  } else {
+    clear_has_docflowstatus();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.DocflowV3.DocflowStatus)
 }
 
 // -------------------------------------------------------------------
