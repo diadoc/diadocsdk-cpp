@@ -65,12 +65,13 @@ message ParticipantResponseDocflow
 message AmendmentRequestDocflow
 {
 	required bool IsFinished = 1;
-	required SignedAttachmentV3 AmendmentRequest = 2;
+	optional SignedAttachmentV3 AmendmentRequest = 2;
 	optional Timestamp SentAt = 3;
 	optional Timestamp DeliveredAt = 4;
 	optional ReceiptDocflowV3 Receipt = 5;
 	required int32 AmendmentFlags = 6;
 	optional string PlainText = 7;
+	optional ConfirmationDocflow ConfirmationDocflow = 8;
 }
 
 message RevocationDocflowV3

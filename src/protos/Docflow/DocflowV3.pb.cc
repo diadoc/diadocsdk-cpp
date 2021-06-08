@@ -177,7 +177,7 @@ void protobuf_AssignDesc_Docflow_2fDocflowV3_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ParticipantResponseDocflow));
   AmendmentRequestDocflow_descriptor_ = file->message_type(5);
-  static const int AmendmentRequestDocflow_offsets_[7] = {
+  static const int AmendmentRequestDocflow_offsets_[8] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AmendmentRequestDocflow, isfinished_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AmendmentRequestDocflow, amendmentrequest_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AmendmentRequestDocflow, sentat_),
@@ -185,6 +185,7 @@ void protobuf_AssignDesc_Docflow_2fDocflowV3_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AmendmentRequestDocflow, receipt_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AmendmentRequestDocflow, amendmentflags_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AmendmentRequestDocflow, plaintext_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AmendmentRequestDocflow, confirmationdocflow_),
   };
   AmendmentRequestDocflow_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -467,55 +468,57 @@ void protobuf_AddDesc_Docflow_2fDocflowV3_2eproto() {
     "stamp\0220\n\013DeliveredAt\030\006 \001(\0132\033.Diadoc.Api."
     "Proto.Timestamp\022K\n\016ResponseStatus\030\007 \002(\0162"
     "3.Diadoc.Api.Proto.Documents.RecipientRe"
-    "sponseStatus\"\274\002\n\027AmendmentRequestDocflow"
+    "sponseStatus\"\210\003\n\027AmendmentRequestDocflow"
     "\022\022\n\nIsFinished\030\001 \002(\010\022F\n\020AmendmentRequest"
-    "\030\002 \002(\0132,.Diadoc.Api.Proto.Docflow.Signed"
+    "\030\002 \001(\0132,.Diadoc.Api.Proto.Docflow.Signed"
     "AttachmentV3\022+\n\006SentAt\030\003 \001(\0132\033.Diadoc.Ap"
     "i.Proto.Timestamp\0220\n\013DeliveredAt\030\004 \001(\0132\033"
     ".Diadoc.Api.Proto.Timestamp\022;\n\007Receipt\030\005"
     " \001(\0132*.Diadoc.Api.Proto.Docflow.ReceiptD"
     "ocflowV3\022\026\n\016AmendmentFlags\030\006 \002(\005\022\021\n\tPlai"
-    "nText\030\007 \001(\t\"\303\003\n\023RevocationDocflowV3\022\022\n\nI"
-    "sFinished\030\001 \002(\010\022M\n\021RevocationRequest\030\002 \002"
-    "(\01322.Diadoc.Api.Proto.Docflow.Revocation"
-    "RequestDocflow\022O\n\022RevocationResponse\030\003 \001"
-    "(\01323.Diadoc.Api.Proto.Docflow.Revocation"
-    "ResponseDocflow\022\026\n\016InitiatorBoxId\030\004 \002(\t\022"
-    "F\n\020RevocationStatus\030\005 \002(\0162,.Diadoc.Api.P"
-    "roto.Documents.RevocationStatus\022J\n\022Resol"
-    "utionEntities\030\006 \001(\0132..Diadoc.Api.Proto.D"
-    "ocflow.ResolutionEntitiesV3\022L\n\024OuterDocf"
-    "lowEntities\030\007 \003(\0132..Diadoc.Api.Proto.Doc"
-    "flow.OuterDocflowEntities\"\241\002\n\030Revocation"
-    "RequestDocflow\022G\n\021RevocationRequest\030\001 \002("
-    "\0132,.Diadoc.Api.Proto.Docflow.SignedAttac"
-    "hmentV3\022+\n\006SentAt\030\002 \001(\0132\033.Diadoc.Api.Pro"
-    "to.Timestamp\0220\n\013DeliveredAt\030\003 \001(\0132\033.Diad"
-    "oc.Api.Proto.Timestamp\022J\n\023RoamingNotific"
-    "ation\030\004 \001(\0132-.Diadoc.Api.Proto.Docflow.R"
-    "oamingNotification\022\021\n\tPlainText\030\005 \001(\t\"\257\001"
-    "\n\031RevocationResponseDocflow\022A\n\022Recipient"
-    "Signature\030\001 \001(\0132%.Diadoc.Api.Proto.Docfl"
-    "ow.SignatureV3\022O\n\022SignatureRejection\030\002 \001"
-    "(\01323.Diadoc.Api.Proto.Docflow.SignatureR"
-    "ejectionDocflow\"\325\002\n\020ReceiptDocflowV3\022\022\n\n"
-    "IsFinished\030\001 \002(\010\022G\n\021ReceiptAttachment\030\002 "
-    "\001(\0132,.Diadoc.Api.Proto.Docflow.SignedAtt"
-    "achmentV3\022+\n\006SentAt\030\003 \001(\0132\033.Diadoc.Api.P"
-    "roto.Timestamp\0220\n\013DeliveredAt\030\004 \001(\0132\033.Di"
-    "adoc.Api.Proto.Timestamp\022C\n\014Confirmation"
-    "\030\005 \001(\0132-.Diadoc.Api.Proto.Docflow.Confir"
-    "mationDocflow\022@\n\006Status\030\006 \002(\01620.Diadoc.A"
-    "pi.Proto.Documents.GeneralReceiptStatus\""
-    "\\\n\014OuterDocflow\022\026\n\016DocflowNamedId\030\001 \002(\t\022"
-    "\026\n\016ParentEntityId\030\002 \002(\t\022\034\n\024OuterDocflowE"
-    "ntityId\030\003 \002(\t\"\213\001\n\024OuterDocflowEntities\022\026"
-    "\n\016DocflowNamedId\030\001 \002(\t\022\033\n\023DocflowFriendl"
-    "yName\030\002 \002(\t\022>\n\016StatusEntities\030\003 \003(\0132&.Di"
-    "adoc.Api.Proto.Docflow.StatusEntity\"z\n\014S"
-    "tatusEntity\022@\n\nAttachment\030\001 \002(\0132,.Diadoc"
-    ".Api.Proto.Docflow.SignedAttachmentV3\022(\n"
-    "\006Status\030\002 \002(\0132\030.Diadoc.Api.Proto.Status", 4319);
+    "nText\030\007 \001(\t\022J\n\023ConfirmationDocflow\030\010 \001(\013"
+    "2-.Diadoc.Api.Proto.Docflow.Confirmation"
+    "Docflow\"\303\003\n\023RevocationDocflowV3\022\022\n\nIsFin"
+    "ished\030\001 \002(\010\022M\n\021RevocationRequest\030\002 \002(\01322"
+    ".Diadoc.Api.Proto.Docflow.RevocationRequ"
+    "estDocflow\022O\n\022RevocationResponse\030\003 \001(\01323"
+    ".Diadoc.Api.Proto.Docflow.RevocationResp"
+    "onseDocflow\022\026\n\016InitiatorBoxId\030\004 \002(\t\022F\n\020R"
+    "evocationStatus\030\005 \002(\0162,.Diadoc.Api.Proto"
+    ".Documents.RevocationStatus\022J\n\022Resolutio"
+    "nEntities\030\006 \001(\0132..Diadoc.Api.Proto.Docfl"
+    "ow.ResolutionEntitiesV3\022L\n\024OuterDocflowE"
+    "ntities\030\007 \003(\0132..Diadoc.Api.Proto.Docflow"
+    ".OuterDocflowEntities\"\241\002\n\030RevocationRequ"
+    "estDocflow\022G\n\021RevocationRequest\030\001 \002(\0132,."
+    "Diadoc.Api.Proto.Docflow.SignedAttachmen"
+    "tV3\022+\n\006SentAt\030\002 \001(\0132\033.Diadoc.Api.Proto.T"
+    "imestamp\0220\n\013DeliveredAt\030\003 \001(\0132\033.Diadoc.A"
+    "pi.Proto.Timestamp\022J\n\023RoamingNotificatio"
+    "n\030\004 \001(\0132-.Diadoc.Api.Proto.Docflow.Roami"
+    "ngNotification\022\021\n\tPlainText\030\005 \001(\t\"\257\001\n\031Re"
+    "vocationResponseDocflow\022A\n\022RecipientSign"
+    "ature\030\001 \001(\0132%.Diadoc.Api.Proto.Docflow.S"
+    "ignatureV3\022O\n\022SignatureRejection\030\002 \001(\01323"
+    ".Diadoc.Api.Proto.Docflow.SignatureRejec"
+    "tionDocflow\"\325\002\n\020ReceiptDocflowV3\022\022\n\nIsFi"
+    "nished\030\001 \002(\010\022G\n\021ReceiptAttachment\030\002 \001(\0132"
+    ",.Diadoc.Api.Proto.Docflow.SignedAttachm"
+    "entV3\022+\n\006SentAt\030\003 \001(\0132\033.Diadoc.Api.Proto"
+    ".Timestamp\0220\n\013DeliveredAt\030\004 \001(\0132\033.Diadoc"
+    ".Api.Proto.Timestamp\022C\n\014Confirmation\030\005 \001"
+    "(\0132-.Diadoc.Api.Proto.Docflow.Confirmati"
+    "onDocflow\022@\n\006Status\030\006 \002(\01620.Diadoc.Api.P"
+    "roto.Documents.GeneralReceiptStatus\"\\\n\014O"
+    "uterDocflow\022\026\n\016DocflowNamedId\030\001 \002(\t\022\026\n\016P"
+    "arentEntityId\030\002 \002(\t\022\034\n\024OuterDocflowEntit"
+    "yId\030\003 \002(\t\"\213\001\n\024OuterDocflowEntities\022\026\n\016Do"
+    "cflowNamedId\030\001 \002(\t\022\033\n\023DocflowFriendlyNam"
+    "e\030\002 \002(\t\022>\n\016StatusEntities\030\003 \003(\0132&.Diadoc"
+    ".Api.Proto.Docflow.StatusEntity\"z\n\014Statu"
+    "sEntity\022@\n\nAttachment\030\001 \002(\0132,.Diadoc.Api"
+    ".Proto.Docflow.SignedAttachmentV3\022(\n\006Sta"
+    "tus\030\002 \002(\0132\030.Diadoc.Api.Proto.Status", 4395);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Docflow/DocflowV3.proto", &protobuf_RegisterTypes);
   DocflowV3::default_instance_ = new DocflowV3();
@@ -3079,6 +3082,7 @@ const int AmendmentRequestDocflow::kDeliveredAtFieldNumber;
 const int AmendmentRequestDocflow::kReceiptFieldNumber;
 const int AmendmentRequestDocflow::kAmendmentFlagsFieldNumber;
 const int AmendmentRequestDocflow::kPlainTextFieldNumber;
+const int AmendmentRequestDocflow::kConfirmationDocflowFieldNumber;
 #endif  // !_MSC_VER
 
 AmendmentRequestDocflow::AmendmentRequestDocflow()
@@ -3092,6 +3096,7 @@ void AmendmentRequestDocflow::InitAsDefaultInstance() {
   sentat_ = const_cast< ::Diadoc::Api::Proto::Timestamp*>(&::Diadoc::Api::Proto::Timestamp::default_instance());
   deliveredat_ = const_cast< ::Diadoc::Api::Proto::Timestamp*>(&::Diadoc::Api::Proto::Timestamp::default_instance());
   receipt_ = const_cast< ::Diadoc::Api::Proto::Docflow::ReceiptDocflowV3*>(&::Diadoc::Api::Proto::Docflow::ReceiptDocflowV3::default_instance());
+  confirmationdocflow_ = const_cast< ::Diadoc::Api::Proto::Docflow::ConfirmationDocflow*>(&::Diadoc::Api::Proto::Docflow::ConfirmationDocflow::default_instance());
 }
 
 AmendmentRequestDocflow::AmendmentRequestDocflow(const AmendmentRequestDocflow& from)
@@ -3111,6 +3116,7 @@ void AmendmentRequestDocflow::SharedCtor() {
   receipt_ = NULL;
   amendmentflags_ = 0;
   plaintext_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  confirmationdocflow_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -3128,6 +3134,7 @@ void AmendmentRequestDocflow::SharedDtor() {
     delete sentat_;
     delete deliveredat_;
     delete receipt_;
+    delete confirmationdocflow_;
   }
 }
 
@@ -3163,7 +3170,7 @@ void AmendmentRequestDocflow::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 127) {
+  if (_has_bits_[0 / 32] & 255) {
     ZR_(isfinished_, amendmentflags_);
     if (has_amendmentrequest()) {
       if (amendmentrequest_ != NULL) amendmentrequest_->::Diadoc::Api::Proto::Docflow::SignedAttachmentV3::Clear();
@@ -3181,6 +3188,9 @@ void AmendmentRequestDocflow::Clear() {
       if (plaintext_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         plaintext_->clear();
       }
+    }
+    if (has_confirmationdocflow()) {
+      if (confirmationdocflow_ != NULL) confirmationdocflow_->::Diadoc::Api::Proto::Docflow::ConfirmationDocflow::Clear();
     }
   }
 
@@ -3215,7 +3225,7 @@ bool AmendmentRequestDocflow::MergePartialFromCodedStream(
         break;
       }
 
-      // required .Diadoc.Api.Proto.Docflow.SignedAttachmentV3 AmendmentRequest = 2;
+      // optional .Diadoc.Api.Proto.Docflow.SignedAttachmentV3 AmendmentRequest = 2;
       case 2: {
         if (tag == 18) {
          parse_AmendmentRequest:
@@ -3295,6 +3305,19 @@ bool AmendmentRequestDocflow::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(66)) goto parse_ConfirmationDocflow;
+        break;
+      }
+
+      // optional .Diadoc.Api.Proto.Docflow.ConfirmationDocflow ConfirmationDocflow = 8;
+      case 8: {
+        if (tag == 66) {
+         parse_ConfirmationDocflow:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_confirmationdocflow()));
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -3329,7 +3352,7 @@ void AmendmentRequestDocflow::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->isfinished(), output);
   }
 
-  // required .Diadoc.Api.Proto.Docflow.SignedAttachmentV3 AmendmentRequest = 2;
+  // optional .Diadoc.Api.Proto.Docflow.SignedAttachmentV3 AmendmentRequest = 2;
   if (has_amendmentrequest()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->amendmentrequest(), output);
@@ -3368,6 +3391,12 @@ void AmendmentRequestDocflow::SerializeWithCachedSizes(
       7, this->plaintext(), output);
   }
 
+  // optional .Diadoc.Api.Proto.Docflow.ConfirmationDocflow ConfirmationDocflow = 8;
+  if (has_confirmationdocflow()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      8, this->confirmationdocflow(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -3383,7 +3412,7 @@ void AmendmentRequestDocflow::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->isfinished(), target);
   }
 
-  // required .Diadoc.Api.Proto.Docflow.SignedAttachmentV3 AmendmentRequest = 2;
+  // optional .Diadoc.Api.Proto.Docflow.SignedAttachmentV3 AmendmentRequest = 2;
   if (has_amendmentrequest()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -3427,6 +3456,13 @@ void AmendmentRequestDocflow::SerializeWithCachedSizes(
         7, this->plaintext(), target);
   }
 
+  // optional .Diadoc.Api.Proto.Docflow.ConfirmationDocflow ConfirmationDocflow = 8;
+  if (has_confirmationdocflow()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        8, this->confirmationdocflow(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -3444,7 +3480,7 @@ int AmendmentRequestDocflow::ByteSize() const {
       total_size += 1 + 1;
     }
 
-    // required .Diadoc.Api.Proto.Docflow.SignedAttachmentV3 AmendmentRequest = 2;
+    // optional .Diadoc.Api.Proto.Docflow.SignedAttachmentV3 AmendmentRequest = 2;
     if (has_amendmentrequest()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -3484,6 +3520,13 @@ int AmendmentRequestDocflow::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->plaintext());
+    }
+
+    // optional .Diadoc.Api.Proto.Docflow.ConfirmationDocflow ConfirmationDocflow = 8;
+    if (has_confirmationdocflow()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->confirmationdocflow());
     }
 
   }
@@ -3534,6 +3577,9 @@ void AmendmentRequestDocflow::MergeFrom(const AmendmentRequestDocflow& from) {
     if (from.has_plaintext()) {
       set_plaintext(from.plaintext());
     }
+    if (from.has_confirmationdocflow()) {
+      mutable_confirmationdocflow()->::Diadoc::Api::Proto::Docflow::ConfirmationDocflow::MergeFrom(from.confirmationdocflow());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -3551,7 +3597,7 @@ void AmendmentRequestDocflow::CopyFrom(const AmendmentRequestDocflow& from) {
 }
 
 bool AmendmentRequestDocflow::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000023) != 0x00000023) return false;
+  if ((_has_bits_[0] & 0x00000021) != 0x00000021) return false;
 
   if (has_amendmentrequest()) {
     if (!this->amendmentrequest().IsInitialized()) return false;
@@ -3565,6 +3611,9 @@ bool AmendmentRequestDocflow::IsInitialized() const {
   if (has_receipt()) {
     if (!this->receipt().IsInitialized()) return false;
   }
+  if (has_confirmationdocflow()) {
+    if (!this->confirmationdocflow().IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -3577,6 +3626,7 @@ void AmendmentRequestDocflow::Swap(AmendmentRequestDocflow* other) {
     std::swap(receipt_, other->receipt_);
     std::swap(amendmentflags_, other->amendmentflags_);
     std::swap(plaintext_, other->plaintext_);
+    std::swap(confirmationdocflow_, other->confirmationdocflow_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
