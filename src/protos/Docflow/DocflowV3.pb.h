@@ -865,7 +865,7 @@ class AmendmentRequestDocflow : public ::google::protobuf::Message {
   inline bool isfinished() const;
   inline void set_isfinished(bool value);
 
-  // required .Diadoc.Api.Proto.Docflow.SignedAttachmentV3 AmendmentRequest = 2;
+  // optional .Diadoc.Api.Proto.Docflow.SignedAttachmentV3 AmendmentRequest = 2;
   inline bool has_amendmentrequest() const;
   inline void clear_amendmentrequest();
   static const int kAmendmentRequestFieldNumber = 2;
@@ -920,6 +920,15 @@ class AmendmentRequestDocflow : public ::google::protobuf::Message {
   inline ::std::string* release_plaintext();
   inline void set_allocated_plaintext(::std::string* plaintext);
 
+  // optional .Diadoc.Api.Proto.Docflow.ConfirmationDocflow ConfirmationDocflow = 8;
+  inline bool has_confirmationdocflow() const;
+  inline void clear_confirmationdocflow();
+  static const int kConfirmationDocflowFieldNumber = 8;
+  inline const ::Diadoc::Api::Proto::Docflow::ConfirmationDocflow& confirmationdocflow() const;
+  inline ::Diadoc::Api::Proto::Docflow::ConfirmationDocflow* mutable_confirmationdocflow();
+  inline ::Diadoc::Api::Proto::Docflow::ConfirmationDocflow* release_confirmationdocflow();
+  inline void set_allocated_confirmationdocflow(::Diadoc::Api::Proto::Docflow::ConfirmationDocflow* confirmationdocflow);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Docflow.AmendmentRequestDocflow)
  private:
   inline void set_has_isfinished();
@@ -936,6 +945,8 @@ class AmendmentRequestDocflow : public ::google::protobuf::Message {
   inline void clear_has_amendmentflags();
   inline void set_has_plaintext();
   inline void clear_has_plaintext();
+  inline void set_has_confirmationdocflow();
+  inline void clear_has_confirmationdocflow();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -948,6 +959,7 @@ class AmendmentRequestDocflow : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Timestamp* deliveredat_;
   ::Diadoc::Api::Proto::Docflow::ReceiptDocflowV3* receipt_;
   ::std::string* plaintext_;
+  ::Diadoc::Api::Proto::Docflow::ConfirmationDocflow* confirmationdocflow_;
   friend void  protobuf_AddDesc_Docflow_2fDocflowV3_2eproto();
   friend void protobuf_AssignDesc_Docflow_2fDocflowV3_2eproto();
   friend void protobuf_ShutdownFile_Docflow_2fDocflowV3_2eproto();
@@ -3147,7 +3159,7 @@ inline void AmendmentRequestDocflow::set_isfinished(bool value) {
   // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.AmendmentRequestDocflow.IsFinished)
 }
 
-// required .Diadoc.Api.Proto.Docflow.SignedAttachmentV3 AmendmentRequest = 2;
+// optional .Diadoc.Api.Proto.Docflow.SignedAttachmentV3 AmendmentRequest = 2;
 inline bool AmendmentRequestDocflow::has_amendmentrequest() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -3409,6 +3421,47 @@ inline void AmendmentRequestDocflow::set_allocated_plaintext(::std::string* plai
     plaintext_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.AmendmentRequestDocflow.PlainText)
+}
+
+// optional .Diadoc.Api.Proto.Docflow.ConfirmationDocflow ConfirmationDocflow = 8;
+inline bool AmendmentRequestDocflow::has_confirmationdocflow() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void AmendmentRequestDocflow::set_has_confirmationdocflow() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void AmendmentRequestDocflow::clear_has_confirmationdocflow() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void AmendmentRequestDocflow::clear_confirmationdocflow() {
+  if (confirmationdocflow_ != NULL) confirmationdocflow_->::Diadoc::Api::Proto::Docflow::ConfirmationDocflow::Clear();
+  clear_has_confirmationdocflow();
+}
+inline const ::Diadoc::Api::Proto::Docflow::ConfirmationDocflow& AmendmentRequestDocflow::confirmationdocflow() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.AmendmentRequestDocflow.ConfirmationDocflow)
+  return confirmationdocflow_ != NULL ? *confirmationdocflow_ : *default_instance_->confirmationdocflow_;
+}
+inline ::Diadoc::Api::Proto::Docflow::ConfirmationDocflow* AmendmentRequestDocflow::mutable_confirmationdocflow() {
+  set_has_confirmationdocflow();
+  if (confirmationdocflow_ == NULL) confirmationdocflow_ = new ::Diadoc::Api::Proto::Docflow::ConfirmationDocflow;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.AmendmentRequestDocflow.ConfirmationDocflow)
+  return confirmationdocflow_;
+}
+inline ::Diadoc::Api::Proto::Docflow::ConfirmationDocflow* AmendmentRequestDocflow::release_confirmationdocflow() {
+  clear_has_confirmationdocflow();
+  ::Diadoc::Api::Proto::Docflow::ConfirmationDocflow* temp = confirmationdocflow_;
+  confirmationdocflow_ = NULL;
+  return temp;
+}
+inline void AmendmentRequestDocflow::set_allocated_confirmationdocflow(::Diadoc::Api::Proto::Docflow::ConfirmationDocflow* confirmationdocflow) {
+  delete confirmationdocflow_;
+  confirmationdocflow_ = confirmationdocflow;
+  if (confirmationdocflow) {
+    set_has_confirmationdocflow();
+  } else {
+    clear_has_confirmationdocflow();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.AmendmentRequestDocflow.ConfirmationDocflow)
 }
 
 // -------------------------------------------------------------------
