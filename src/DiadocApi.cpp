@@ -723,14 +723,14 @@ DiadocApi::PrintFormResult DiadocApi::GeneratePrintForm(const std::wstring& boxI
 TaskResult<DocumentProtocol> DiadocApi::GenerateDocumentProtocol(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& documentId)
 {
 	std::wstringstream buf;
-	buf << "?boxId=" << StringHelper::CanonicalizeUrl(boxId) << L"&messageId=" << StringHelper::CanonicalizeUrl(messageId) << L"&documentId=" << StringHelper::CanonicalizeUrl(documentId);
+	buf << "boxId=" << StringHelper::CanonicalizeUrl(boxId) << L"&messageId=" << StringHelper::CanonicalizeUrl(messageId) << L"&documentId=" << StringHelper::CanonicalizeUrl(documentId);
 	return PerformAsyncHttpRequest<DocumentProtocol>("GenerateDocumentProtocol", buf.str(), GET);
 }
 
 TaskResult<DocumentZipGenerationResult> DiadocApi::GenerateDocumentZip(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& documentId, bool fullDocflow)
 {
     std::wstringstream buf;
-    buf << "?boxId=" << StringHelper::CanonicalizeUrl(boxId) << L"&messageId=" << StringHelper::CanonicalizeUrl(messageId) << L"&documentId=" << StringHelper::CanonicalizeUrl(documentId);
+    buf << "boxId=" << StringHelper::CanonicalizeUrl(boxId) << L"&messageId=" << StringHelper::CanonicalizeUrl(messageId) << L"&documentId=" << StringHelper::CanonicalizeUrl(documentId);
     buf << L"&fullDocflow=" << (fullDocflow ? L"True" : L"False");
     return PerformAsyncHttpRequest<DocumentZipGenerationResult>("GenerateDocumentZip", buf.str(), GET);
 }
@@ -1762,7 +1762,7 @@ DiadocApi::Bytes_t DiadocApi::GetForwardedEntityContent(const std::wstring& boxI
 TaskResult<DocumentProtocol> DiadocApi::GenerateForwardedDocumentProtocol(const std::wstring& boxId, const ForwardedDocumentId& forwardedDocumentId)
 {
 	std::wstringstream buf;
-	buf << L"?boxId=" << StringHelper::CanonicalizeUrl(boxId);
+	buf << L"boxId=" << StringHelper::CanonicalizeUrl(boxId);
 	buf << L"&fromBoxId=" << StringHelper::Utf8ToUtf16(forwardedDocumentId.fromboxid());
 	buf << L"&messageId=" << StringHelper::Utf8ToUtf16(forwardedDocumentId.documentid().messageid());
 	buf << L"&documentId=" << StringHelper::Utf8ToUtf16(forwardedDocumentId.documentid().entityid());
