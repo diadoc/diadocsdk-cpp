@@ -204,10 +204,10 @@ void protobuf_AssignDesc_Docflow_2fDocumentInfo_2eproto() {
       sizeof(ContractDocumentInfo));
   SupplementaryAgreementDocumentInfo_descriptor_ = file->message_type(7);
   static const int SupplementaryAgreementDocumentInfo_offsets_[4] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SupplementaryAgreementDocumentInfo, total_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SupplementaryAgreementDocumentInfo, contracttype_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SupplementaryAgreementDocumentInfo, contractnumber_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SupplementaryAgreementDocumentInfo, contractdate_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SupplementaryAgreementDocumentInfo, contractdocumentdateandnumber_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SupplementaryAgreementDocumentInfo, documentdateandnumber_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SupplementaryAgreementDocumentInfo, total_),
   };
   SupplementaryAgreementDocumentInfo_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -389,28 +389,31 @@ void protobuf_AddDesc_Docflow_2fDocumentInfo_2eproto() {
     "ber\030\002 \001(\0132/.Diadoc.Api.Proto.Docflow.Doc"
     "umentDateAndNumber\"C\n\024ContractDocumentIn"
     "fo\022\025\n\rContractPrice\030\001 \001(\t\022\024\n\014ContractTyp"
-    "e\030\002 \001(\t\"w\n\"SupplementaryAgreementDocumen"
-    "tInfo\022\r\n\005Total\030\001 \001(\t\022\024\n\014ContractType\030\002 \001"
-    "(\t\022\026\n\016ContractNumber\030\003 \001(\t\022\024\n\014ContractDa"
-    "te\030\004 \001(\t\"\366\001\n\035UniversalTransferDocumentIn"
-    "fo\022\r\n\005Total\030\001 \001(\t\022\013\n\003Vat\030\002 \001(\t\022\024\n\014Curren"
-    "cyCode\030\003 \001(\005\022\017\n\007Grounds\030\004 \001(\t\022:\n\010Functio"
-    "n\030\005 \002(\0162(.Diadoc.Api.Proto.Invoicing.Fun"
-    "ctionType\022V\n\035OriginalDocumentDateAndNumb"
-    "er\030\006 \001(\0132/.Diadoc.Api.Proto.Docflow.Docu"
-    "mentDateAndNumber\"\342\003\n\037UniversalCorrectio"
-    "nDocumentInfo\022\020\n\010TotalInc\030\001 \001(\t\022\020\n\010Total"
-    "Dec\030\002 \001(\t\022\016\n\006VatInc\030\003 \001(\t\022\016\n\006VatDec\030\004 \001("
-    "\t\022\024\n\014CurrencyCode\030\005 \001(\005\022\017\n\007Grounds\030\006 \001(\t"
-    "\022:\n\010Function\030\007 \002(\0162(.Diadoc.Api.Proto.In"
-    "voicing.FunctionType\022V\n\035OriginalDocument"
-    "DateAndNumber\030\010 \001(\0132/.Diadoc.Api.Proto.D"
-    "ocflow.DocumentDateAndNumber\022^\n%Original"
-    "DocumentRevisionDateAndNumber\030\t \001(\0132/.Di"
-    "adoc.Api.Proto.Docflow.DocumentDateAndNu"
-    "mber\022`\n\'OriginalDocumentCorrectionDateAn"
-    "dNumber\030\n \001(\0132/.Diadoc.Api.Proto.Docflow"
-    ".DocumentDateAndNumber", 3102);
+    "e\030\002 \001(\t\"\361\001\n\"SupplementaryAgreementDocume"
+    "ntInfo\022\024\n\014ContractType\030\001 \001(\t\022V\n\035Contract"
+    "DocumentDateAndNumber\030\002 \002(\0132/.Diadoc.Api"
+    ".Proto.Docflow.DocumentDateAndNumber\022N\n\025"
+    "DocumentDateAndNumber\030\003 \002(\0132/.Diadoc.Api"
+    ".Proto.Docflow.DocumentDateAndNumber\022\r\n\005"
+    "Total\030\004 \001(\t\"\366\001\n\035UniversalTransferDocumen"
+    "tInfo\022\r\n\005Total\030\001 \001(\t\022\013\n\003Vat\030\002 \001(\t\022\024\n\014Cur"
+    "rencyCode\030\003 \001(\005\022\017\n\007Grounds\030\004 \001(\t\022:\n\010Func"
+    "tion\030\005 \002(\0162(.Diadoc.Api.Proto.Invoicing."
+    "FunctionType\022V\n\035OriginalDocumentDateAndN"
+    "umber\030\006 \001(\0132/.Diadoc.Api.Proto.Docflow.D"
+    "ocumentDateAndNumber\"\342\003\n\037UniversalCorrec"
+    "tionDocumentInfo\022\020\n\010TotalInc\030\001 \001(\t\022\020\n\010To"
+    "talDec\030\002 \001(\t\022\016\n\006VatInc\030\003 \001(\t\022\016\n\006VatDec\030\004"
+    " \001(\t\022\024\n\014CurrencyCode\030\005 \001(\005\022\017\n\007Grounds\030\006 "
+    "\001(\t\022:\n\010Function\030\007 \002(\0162(.Diadoc.Api.Proto"
+    ".Invoicing.FunctionType\022V\n\035OriginalDocum"
+    "entDateAndNumber\030\010 \001(\0132/.Diadoc.Api.Prot"
+    "o.Docflow.DocumentDateAndNumber\022^\n%Origi"
+    "nalDocumentRevisionDateAndNumber\030\t \001(\0132/"
+    ".Diadoc.Api.Proto.Docflow.DocumentDateAn"
+    "dNumber\022`\n\'OriginalDocumentCorrectionDat"
+    "eAndNumber\030\n \001(\0132/.Diadoc.Api.Proto.Docf"
+    "low.DocumentDateAndNumber", 3225);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Docflow/DocumentInfo.proto", &protobuf_RegisterTypes);
   DocumentInfo::default_instance_ = new DocumentInfo();
@@ -1481,6 +1484,9 @@ void DocumentInfo::CopyFrom(const DocumentInfo& from) {
 bool DocumentInfo::IsInitialized() const {
   if ((_has_bits_[0] & 0x00020000) != 0x00020000) return false;
 
+  if (has_supplementaryagreementinfo()) {
+    if (!this->supplementaryagreementinfo().IsInitialized()) return false;
+  }
   if (has_universaltransferdocumentinfo()) {
     if (!this->universaltransferdocumentinfo().IsInitialized()) return false;
   }
@@ -3849,10 +3855,10 @@ void ContractDocumentInfo::Swap(ContractDocumentInfo* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
-const int SupplementaryAgreementDocumentInfo::kTotalFieldNumber;
 const int SupplementaryAgreementDocumentInfo::kContractTypeFieldNumber;
-const int SupplementaryAgreementDocumentInfo::kContractNumberFieldNumber;
-const int SupplementaryAgreementDocumentInfo::kContractDateFieldNumber;
+const int SupplementaryAgreementDocumentInfo::kContractDocumentDateAndNumberFieldNumber;
+const int SupplementaryAgreementDocumentInfo::kDocumentDateAndNumberFieldNumber;
+const int SupplementaryAgreementDocumentInfo::kTotalFieldNumber;
 #endif  // !_MSC_VER
 
 SupplementaryAgreementDocumentInfo::SupplementaryAgreementDocumentInfo()
@@ -3862,6 +3868,8 @@ SupplementaryAgreementDocumentInfo::SupplementaryAgreementDocumentInfo()
 }
 
 void SupplementaryAgreementDocumentInfo::InitAsDefaultInstance() {
+  contractdocumentdateandnumber_ = const_cast< ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber*>(&::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::default_instance());
+  documentdateandnumber_ = const_cast< ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber*>(&::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::default_instance());
 }
 
 SupplementaryAgreementDocumentInfo::SupplementaryAgreementDocumentInfo(const SupplementaryAgreementDocumentInfo& from)
@@ -3874,10 +3882,10 @@ SupplementaryAgreementDocumentInfo::SupplementaryAgreementDocumentInfo(const Sup
 void SupplementaryAgreementDocumentInfo::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  total_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   contracttype_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  contractnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  contractdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  contractdocumentdateandnumber_ = NULL;
+  documentdateandnumber_ = NULL;
+  total_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -3887,19 +3895,15 @@ SupplementaryAgreementDocumentInfo::~SupplementaryAgreementDocumentInfo() {
 }
 
 void SupplementaryAgreementDocumentInfo::SharedDtor() {
-  if (total_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete total_;
-  }
   if (contracttype_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete contracttype_;
   }
-  if (contractnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete contractnumber_;
-  }
-  if (contractdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete contractdate_;
+  if (total_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete total_;
   }
   if (this != default_instance_) {
+    delete contractdocumentdateandnumber_;
+    delete documentdateandnumber_;
   }
 }
 
@@ -3926,24 +3930,20 @@ SupplementaryAgreementDocumentInfo* SupplementaryAgreementDocumentInfo::New() co
 
 void SupplementaryAgreementDocumentInfo::Clear() {
   if (_has_bits_[0 / 32] & 15) {
-    if (has_total()) {
-      if (total_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        total_->clear();
-      }
-    }
     if (has_contracttype()) {
       if (contracttype_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         contracttype_->clear();
       }
     }
-    if (has_contractnumber()) {
-      if (contractnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        contractnumber_->clear();
-      }
+    if (has_contractdocumentdateandnumber()) {
+      if (contractdocumentdateandnumber_ != NULL) contractdocumentdateandnumber_->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::Clear();
     }
-    if (has_contractdate()) {
-      if (contractdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        contractdate_->clear();
+    if (has_documentdateandnumber()) {
+      if (documentdateandnumber_ != NULL) documentdateandnumber_->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::Clear();
+    }
+    if (has_total()) {
+      if (total_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        total_->clear();
       }
     }
   }
@@ -3961,26 +3961,9 @@ bool SupplementaryAgreementDocumentInfo::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional string Total = 1;
+      // optional string ContractType = 1;
       case 1: {
         if (tag == 10) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_total()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->total().data(), this->total().length(),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "total");
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(18)) goto parse_ContractType;
-        break;
-      }
-
-      // optional string ContractType = 2;
-      case 2: {
-        if (tag == 18) {
-         parse_ContractType:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_contracttype()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
@@ -3990,37 +3973,46 @@ bool SupplementaryAgreementDocumentInfo::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(26)) goto parse_ContractNumber;
+        if (input->ExpectTag(18)) goto parse_ContractDocumentDateAndNumber;
         break;
       }
 
-      // optional string ContractNumber = 3;
-      case 3: {
-        if (tag == 26) {
-         parse_ContractNumber:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_contractnumber()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->contractnumber().data(), this->contractnumber().length(),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "contractnumber");
+      // required .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber ContractDocumentDateAndNumber = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_ContractDocumentDateAndNumber:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_contractdocumentdateandnumber()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_ContractDate;
+        if (input->ExpectTag(26)) goto parse_DocumentDateAndNumber;
         break;
       }
 
-      // optional string ContractDate = 4;
+      // required .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber DocumentDateAndNumber = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_DocumentDateAndNumber:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_documentdateandnumber()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_Total;
+        break;
+      }
+
+      // optional string Total = 4;
       case 4: {
         if (tag == 34) {
-         parse_ContractDate:
+         parse_Total:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_contractdate()));
+                input, this->mutable_total()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->contractdate().data(), this->contractdate().length(),
+            this->total().data(), this->total().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "contractdate");
+            "total");
         } else {
           goto handle_unusual;
         }
@@ -4053,44 +4045,36 @@ failure:
 void SupplementaryAgreementDocumentInfo::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo)
-  // optional string Total = 1;
-  if (has_total()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->total().data(), this->total().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "total");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->total(), output);
-  }
-
-  // optional string ContractType = 2;
+  // optional string ContractType = 1;
   if (has_contracttype()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->contracttype().data(), this->contracttype().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
       "contracttype");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->contracttype(), output);
+      1, this->contracttype(), output);
   }
 
-  // optional string ContractNumber = 3;
-  if (has_contractnumber()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->contractnumber().data(), this->contractnumber().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "contractnumber");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->contractnumber(), output);
+  // required .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber ContractDocumentDateAndNumber = 2;
+  if (has_contractdocumentdateandnumber()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->contractdocumentdateandnumber(), output);
   }
 
-  // optional string ContractDate = 4;
-  if (has_contractdate()) {
+  // required .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber DocumentDateAndNumber = 3;
+  if (has_documentdateandnumber()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, this->documentdateandnumber(), output);
+  }
+
+  // optional string Total = 4;
+  if (has_total()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->contractdate().data(), this->contractdate().length(),
+      this->total().data(), this->total().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "contractdate");
+      "total");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->contractdate(), output);
+      4, this->total(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -4103,18 +4087,7 @@ void SupplementaryAgreementDocumentInfo::SerializeWithCachedSizes(
 ::google::protobuf::uint8* SupplementaryAgreementDocumentInfo::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo)
-  // optional string Total = 1;
-  if (has_total()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->total().data(), this->total().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "total");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->total(), target);
-  }
-
-  // optional string ContractType = 2;
+  // optional string ContractType = 1;
   if (has_contracttype()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->contracttype().data(), this->contracttype().length(),
@@ -4122,29 +4095,32 @@ void SupplementaryAgreementDocumentInfo::SerializeWithCachedSizes(
       "contracttype");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->contracttype(), target);
+        1, this->contracttype(), target);
   }
 
-  // optional string ContractNumber = 3;
-  if (has_contractnumber()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->contractnumber().data(), this->contractnumber().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "contractnumber");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->contractnumber(), target);
+  // required .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber ContractDocumentDateAndNumber = 2;
+  if (has_contractdocumentdateandnumber()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        2, this->contractdocumentdateandnumber(), target);
   }
 
-  // optional string ContractDate = 4;
-  if (has_contractdate()) {
+  // required .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber DocumentDateAndNumber = 3;
+  if (has_documentdateandnumber()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        3, this->documentdateandnumber(), target);
+  }
+
+  // optional string Total = 4;
+  if (has_total()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->contractdate().data(), this->contractdate().length(),
+      this->total().data(), this->total().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "contractdate");
+      "total");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->contractdate(), target);
+        4, this->total(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -4159,32 +4135,32 @@ int SupplementaryAgreementDocumentInfo::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional string Total = 1;
-    if (has_total()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->total());
-    }
-
-    // optional string ContractType = 2;
+    // optional string ContractType = 1;
     if (has_contracttype()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->contracttype());
     }
 
-    // optional string ContractNumber = 3;
-    if (has_contractnumber()) {
+    // required .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber ContractDocumentDateAndNumber = 2;
+    if (has_contractdocumentdateandnumber()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->contractnumber());
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->contractdocumentdateandnumber());
     }
 
-    // optional string ContractDate = 4;
-    if (has_contractdate()) {
+    // required .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber DocumentDateAndNumber = 3;
+    if (has_documentdateandnumber()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->documentdateandnumber());
+    }
+
+    // optional string Total = 4;
+    if (has_total()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->contractdate());
+          this->total());
     }
 
   }
@@ -4214,17 +4190,17 @@ void SupplementaryAgreementDocumentInfo::MergeFrom(const ::google::protobuf::Mes
 void SupplementaryAgreementDocumentInfo::MergeFrom(const SupplementaryAgreementDocumentInfo& from) {
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_total()) {
-      set_total(from.total());
-    }
     if (from.has_contracttype()) {
       set_contracttype(from.contracttype());
     }
-    if (from.has_contractnumber()) {
-      set_contractnumber(from.contractnumber());
+    if (from.has_contractdocumentdateandnumber()) {
+      mutable_contractdocumentdateandnumber()->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::MergeFrom(from.contractdocumentdateandnumber());
     }
-    if (from.has_contractdate()) {
-      set_contractdate(from.contractdate());
+    if (from.has_documentdateandnumber()) {
+      mutable_documentdateandnumber()->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::MergeFrom(from.documentdateandnumber());
+    }
+    if (from.has_total()) {
+      set_total(from.total());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -4243,16 +4219,17 @@ void SupplementaryAgreementDocumentInfo::CopyFrom(const SupplementaryAgreementDo
 }
 
 bool SupplementaryAgreementDocumentInfo::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000006) != 0x00000006) return false;
 
   return true;
 }
 
 void SupplementaryAgreementDocumentInfo::Swap(SupplementaryAgreementDocumentInfo* other) {
   if (other != this) {
-    std::swap(total_, other->total_);
     std::swap(contracttype_, other->contracttype_);
-    std::swap(contractnumber_, other->contractnumber_);
-    std::swap(contractdate_, other->contractdate_);
+    std::swap(contractdocumentdateandnumber_, other->contractdocumentdateandnumber_);
+    std::swap(documentdateandnumber_, other->documentdateandnumber_);
+    std::swap(total_, other->total_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

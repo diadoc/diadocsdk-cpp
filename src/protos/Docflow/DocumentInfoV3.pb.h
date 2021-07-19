@@ -273,6 +273,18 @@ class DocumentInfoV3 : public ::google::protobuf::Message {
   inline ::Diadoc::Api::Proto::Documents::Origin* release_origin();
   inline void set_allocated_origin(::Diadoc::Api::Proto::Documents::Origin* origin);
 
+  // optional string EditingSettingId = 19 [default = ""];
+  inline bool has_editingsettingid() const;
+  inline void clear_editingsettingid();
+  static const int kEditingSettingIdFieldNumber = 19;
+  inline const ::std::string& editingsettingid() const;
+  inline void set_editingsettingid(const ::std::string& value);
+  inline void set_editingsettingid(const char* value);
+  inline void set_editingsettingid(const char* value, size_t size);
+  inline ::std::string* mutable_editingsettingid();
+  inline ::std::string* release_editingsettingid();
+  inline void set_allocated_editingsettingid(::std::string* editingsettingid);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Docflow.DocumentInfoV3)
  private:
   inline void set_has_fullversion();
@@ -307,6 +319,8 @@ class DocumentInfoV3 : public ::google::protobuf::Message {
   inline void clear_has_templateinfo();
   inline void set_has_origin();
   inline void clear_has_origin();
+  inline void set_has_editingsettingid();
+  inline void clear_has_editingsettingid();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -330,6 +344,7 @@ class DocumentInfoV3 : public ::google::protobuf::Message {
   ::Diadoc::Api::Proto::Docflow::DocumentDraftInfo* draftinfo_;
   ::Diadoc::Api::Proto::Docflow::DocumentTemplateInfo* templateinfo_;
   ::Diadoc::Api::Proto::Documents::Origin* origin_;
+  ::std::string* editingsettingid_;
   friend void  protobuf_AddDesc_Docflow_2fDocumentInfoV3_2eproto();
   friend void protobuf_AssignDesc_Docflow_2fDocumentInfoV3_2eproto();
   friend void protobuf_ShutdownFile_Docflow_2fDocumentInfoV3_2eproto();
@@ -2009,6 +2024,82 @@ inline void DocumentInfoV3::set_allocated_origin(::Diadoc::Api::Proto::Documents
     clear_has_origin();
   }
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.DocumentInfoV3.Origin)
+}
+
+// optional string EditingSettingId = 19 [default = ""];
+inline bool DocumentInfoV3::has_editingsettingid() const {
+  return (_has_bits_[0] & 0x00040000u) != 0;
+}
+inline void DocumentInfoV3::set_has_editingsettingid() {
+  _has_bits_[0] |= 0x00040000u;
+}
+inline void DocumentInfoV3::clear_has_editingsettingid() {
+  _has_bits_[0] &= ~0x00040000u;
+}
+inline void DocumentInfoV3::clear_editingsettingid() {
+  if (editingsettingid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    editingsettingid_->clear();
+  }
+  clear_has_editingsettingid();
+}
+inline const ::std::string& DocumentInfoV3::editingsettingid() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.DocumentInfoV3.EditingSettingId)
+  return *editingsettingid_;
+}
+inline void DocumentInfoV3::set_editingsettingid(const ::std::string& value) {
+  set_has_editingsettingid();
+  if (editingsettingid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    editingsettingid_ = new ::std::string;
+  }
+  editingsettingid_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.DocumentInfoV3.EditingSettingId)
+}
+inline void DocumentInfoV3::set_editingsettingid(const char* value) {
+  set_has_editingsettingid();
+  if (editingsettingid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    editingsettingid_ = new ::std::string;
+  }
+  editingsettingid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Docflow.DocumentInfoV3.EditingSettingId)
+}
+inline void DocumentInfoV3::set_editingsettingid(const char* value, size_t size) {
+  set_has_editingsettingid();
+  if (editingsettingid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    editingsettingid_ = new ::std::string;
+  }
+  editingsettingid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Docflow.DocumentInfoV3.EditingSettingId)
+}
+inline ::std::string* DocumentInfoV3::mutable_editingsettingid() {
+  set_has_editingsettingid();
+  if (editingsettingid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    editingsettingid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.DocumentInfoV3.EditingSettingId)
+  return editingsettingid_;
+}
+inline ::std::string* DocumentInfoV3::release_editingsettingid() {
+  clear_has_editingsettingid();
+  if (editingsettingid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = editingsettingid_;
+    editingsettingid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void DocumentInfoV3::set_allocated_editingsettingid(::std::string* editingsettingid) {
+  if (editingsettingid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete editingsettingid_;
+  }
+  if (editingsettingid) {
+    set_has_editingsettingid();
+    editingsettingid_ = editingsettingid;
+  } else {
+    clear_has_editingsettingid();
+    editingsettingid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.DocumentInfoV3.EditingSettingId)
 }
 
 // -------------------------------------------------------------------

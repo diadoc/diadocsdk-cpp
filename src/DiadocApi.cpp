@@ -1409,12 +1409,12 @@ Diadoc::Api::Proto::UserV2 DiadocApi::UpdateMyUser(Diadoc::Api::Proto::Users::Us
 	return FromProtoBytes<Diadoc::Api::Proto::UserV2>(PerformHttpRequest(L"/UpdateMyUser", ToProtoBytes(userToUpdate), POST));
 }
 
-Diadoc::Api::Proto::CertificateList DiadocApi::GetMyCertificates(const std::wstring& boxId)
+Diadoc::Api::Proto::Certificates::CertificateList DiadocApi::GetMyCertificates(const std::wstring& boxId)
 {
     WppTraceDebugOut("GetMyCertificates...");
     std::wstringstream buf;
     buf << L"/GetMyCertificates?boxId=" << StringHelper::CanonicalizeUrl(boxId);
-    return FromProtoBytes<Diadoc::Api::Proto::CertificateList>(PerformHttpRequest(buf.str(), GET));
+    return FromProtoBytes<Diadoc::Api::Proto::Certificates::CertificateList>(PerformHttpRequest(buf.str(), GET));
 }
 
 Diadoc::Api::Proto::Departments::Department DiadocApi::GetDepartmentByFullId(const std::wstring& boxId, const std::wstring& departmentId)

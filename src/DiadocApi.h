@@ -54,7 +54,7 @@
 #include "protos\AcquireCounteragent.pb.h"
 #include "protos\CustomPrintFormDetection.pb.h"
 #include "protos\Registration\RegistrationRequest.pb.h"
-#include "protos\CertificateList.pb.h"
+#include "protos\Certificates\CertificateList.pb.h"
 #include "DocumentFilter.h"
 #include "HttpSession.h"
 #include "TaskResult.h"
@@ -271,7 +271,7 @@ public:
 	Diadoc::Api::Proto::User GetMyUser();
 	Diadoc::Api::Proto::UserV2 GetMyUserV2();
 	Diadoc::Api::Proto::UserV2 UpdateMyUser(Diadoc::Api::Proto::Users::UserToUpdate& userToUpdate);
-	Diadoc::Api::Proto::CertificateList GetMyCertificates(const std::wstring& boxId);
+	Diadoc::Api::Proto::Certificates::CertificateList GetMyCertificates(const std::wstring& boxId);
 
 	Diadoc::Api::Proto::Departments::Department GetDepartmentByFullId(const std::wstring& boxId, const std::wstring& departmentId);
 	Diadoc::Api::Proto::Departments::DepartmentList GetDepartments(const std::wstring& boxId, int* page = NULL, int* count = NULL);

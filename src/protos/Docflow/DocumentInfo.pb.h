@@ -1128,22 +1128,10 @@ class SupplementaryAgreementDocumentInfo : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional string Total = 1;
-  inline bool has_total() const;
-  inline void clear_total();
-  static const int kTotalFieldNumber = 1;
-  inline const ::std::string& total() const;
-  inline void set_total(const ::std::string& value);
-  inline void set_total(const char* value);
-  inline void set_total(const char* value, size_t size);
-  inline ::std::string* mutable_total();
-  inline ::std::string* release_total();
-  inline void set_allocated_total(::std::string* total);
-
-  // optional string ContractType = 2;
+  // optional string ContractType = 1;
   inline bool has_contracttype() const;
   inline void clear_contracttype();
-  static const int kContractTypeFieldNumber = 2;
+  static const int kContractTypeFieldNumber = 1;
   inline const ::std::string& contracttype() const;
   inline void set_contracttype(const ::std::string& value);
   inline void set_contracttype(const char* value);
@@ -1152,49 +1140,55 @@ class SupplementaryAgreementDocumentInfo : public ::google::protobuf::Message {
   inline ::std::string* release_contracttype();
   inline void set_allocated_contracttype(::std::string* contracttype);
 
-  // optional string ContractNumber = 3;
-  inline bool has_contractnumber() const;
-  inline void clear_contractnumber();
-  static const int kContractNumberFieldNumber = 3;
-  inline const ::std::string& contractnumber() const;
-  inline void set_contractnumber(const ::std::string& value);
-  inline void set_contractnumber(const char* value);
-  inline void set_contractnumber(const char* value, size_t size);
-  inline ::std::string* mutable_contractnumber();
-  inline ::std::string* release_contractnumber();
-  inline void set_allocated_contractnumber(::std::string* contractnumber);
+  // required .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber ContractDocumentDateAndNumber = 2;
+  inline bool has_contractdocumentdateandnumber() const;
+  inline void clear_contractdocumentdateandnumber();
+  static const int kContractDocumentDateAndNumberFieldNumber = 2;
+  inline const ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber& contractdocumentdateandnumber() const;
+  inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* mutable_contractdocumentdateandnumber();
+  inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* release_contractdocumentdateandnumber();
+  inline void set_allocated_contractdocumentdateandnumber(::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* contractdocumentdateandnumber);
 
-  // optional string ContractDate = 4;
-  inline bool has_contractdate() const;
-  inline void clear_contractdate();
-  static const int kContractDateFieldNumber = 4;
-  inline const ::std::string& contractdate() const;
-  inline void set_contractdate(const ::std::string& value);
-  inline void set_contractdate(const char* value);
-  inline void set_contractdate(const char* value, size_t size);
-  inline ::std::string* mutable_contractdate();
-  inline ::std::string* release_contractdate();
-  inline void set_allocated_contractdate(::std::string* contractdate);
+  // required .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber DocumentDateAndNumber = 3;
+  inline bool has_documentdateandnumber() const;
+  inline void clear_documentdateandnumber();
+  static const int kDocumentDateAndNumberFieldNumber = 3;
+  inline const ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber& documentdateandnumber() const;
+  inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* mutable_documentdateandnumber();
+  inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* release_documentdateandnumber();
+  inline void set_allocated_documentdateandnumber(::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* documentdateandnumber);
+
+  // optional string Total = 4;
+  inline bool has_total() const;
+  inline void clear_total();
+  static const int kTotalFieldNumber = 4;
+  inline const ::std::string& total() const;
+  inline void set_total(const ::std::string& value);
+  inline void set_total(const char* value);
+  inline void set_total(const char* value, size_t size);
+  inline ::std::string* mutable_total();
+  inline ::std::string* release_total();
+  inline void set_allocated_total(::std::string* total);
 
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo)
  private:
-  inline void set_has_total();
-  inline void clear_has_total();
   inline void set_has_contracttype();
   inline void clear_has_contracttype();
-  inline void set_has_contractnumber();
-  inline void clear_has_contractnumber();
-  inline void set_has_contractdate();
-  inline void clear_has_contractdate();
+  inline void set_has_contractdocumentdateandnumber();
+  inline void clear_has_contractdocumentdateandnumber();
+  inline void set_has_documentdateandnumber();
+  inline void clear_has_documentdateandnumber();
+  inline void set_has_total();
+  inline void clear_has_total();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::std::string* total_;
   ::std::string* contracttype_;
-  ::std::string* contractnumber_;
-  ::std::string* contractdate_;
+  ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* contractdocumentdateandnumber_;
+  ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* documentdateandnumber_;
+  ::std::string* total_;
   friend void  protobuf_AddDesc_Docflow_2fDocumentInfo_2eproto();
   friend void protobuf_AssignDesc_Docflow_2fDocumentInfo_2eproto();
   friend void protobuf_ShutdownFile_Docflow_2fDocumentInfo_2eproto();
@@ -3864,91 +3858,15 @@ inline void ContractDocumentInfo::set_allocated_contracttype(::std::string* cont
 
 // SupplementaryAgreementDocumentInfo
 
-// optional string Total = 1;
-inline bool SupplementaryAgreementDocumentInfo::has_total() const {
+// optional string ContractType = 1;
+inline bool SupplementaryAgreementDocumentInfo::has_contracttype() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void SupplementaryAgreementDocumentInfo::set_has_total() {
+inline void SupplementaryAgreementDocumentInfo::set_has_contracttype() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void SupplementaryAgreementDocumentInfo::clear_has_total() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void SupplementaryAgreementDocumentInfo::clear_total() {
-  if (total_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    total_->clear();
-  }
-  clear_has_total();
-}
-inline const ::std::string& SupplementaryAgreementDocumentInfo::total() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.Total)
-  return *total_;
-}
-inline void SupplementaryAgreementDocumentInfo::set_total(const ::std::string& value) {
-  set_has_total();
-  if (total_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    total_ = new ::std::string;
-  }
-  total_->assign(value);
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.Total)
-}
-inline void SupplementaryAgreementDocumentInfo::set_total(const char* value) {
-  set_has_total();
-  if (total_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    total_ = new ::std::string;
-  }
-  total_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.Total)
-}
-inline void SupplementaryAgreementDocumentInfo::set_total(const char* value, size_t size) {
-  set_has_total();
-  if (total_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    total_ = new ::std::string;
-  }
-  total_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.Total)
-}
-inline ::std::string* SupplementaryAgreementDocumentInfo::mutable_total() {
-  set_has_total();
-  if (total_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    total_ = new ::std::string;
-  }
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.Total)
-  return total_;
-}
-inline ::std::string* SupplementaryAgreementDocumentInfo::release_total() {
-  clear_has_total();
-  if (total_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    return NULL;
-  } else {
-    ::std::string* temp = total_;
-    total_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    return temp;
-  }
-}
-inline void SupplementaryAgreementDocumentInfo::set_allocated_total(::std::string* total) {
-  if (total_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete total_;
-  }
-  if (total) {
-    set_has_total();
-    total_ = total;
-  } else {
-    clear_has_total();
-    total_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.Total)
-}
-
-// optional string ContractType = 2;
-inline bool SupplementaryAgreementDocumentInfo::has_contracttype() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void SupplementaryAgreementDocumentInfo::set_has_contracttype() {
-  _has_bits_[0] |= 0x00000002u;
-}
 inline void SupplementaryAgreementDocumentInfo::clear_has_contracttype() {
-  _has_bits_[0] &= ~0x00000002u;
+  _has_bits_[0] &= ~0x00000001u;
 }
 inline void SupplementaryAgreementDocumentInfo::clear_contracttype() {
   if (contracttype_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
@@ -4016,156 +3934,162 @@ inline void SupplementaryAgreementDocumentInfo::set_allocated_contracttype(::std
   // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.ContractType)
 }
 
-// optional string ContractNumber = 3;
-inline bool SupplementaryAgreementDocumentInfo::has_contractnumber() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+// required .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber ContractDocumentDateAndNumber = 2;
+inline bool SupplementaryAgreementDocumentInfo::has_contractdocumentdateandnumber() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void SupplementaryAgreementDocumentInfo::set_has_contractnumber() {
-  _has_bits_[0] |= 0x00000004u;
+inline void SupplementaryAgreementDocumentInfo::set_has_contractdocumentdateandnumber() {
+  _has_bits_[0] |= 0x00000002u;
 }
-inline void SupplementaryAgreementDocumentInfo::clear_has_contractnumber() {
-  _has_bits_[0] &= ~0x00000004u;
+inline void SupplementaryAgreementDocumentInfo::clear_has_contractdocumentdateandnumber() {
+  _has_bits_[0] &= ~0x00000002u;
 }
-inline void SupplementaryAgreementDocumentInfo::clear_contractnumber() {
-  if (contractnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    contractnumber_->clear();
-  }
-  clear_has_contractnumber();
+inline void SupplementaryAgreementDocumentInfo::clear_contractdocumentdateandnumber() {
+  if (contractdocumentdateandnumber_ != NULL) contractdocumentdateandnumber_->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::Clear();
+  clear_has_contractdocumentdateandnumber();
 }
-inline const ::std::string& SupplementaryAgreementDocumentInfo::contractnumber() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.ContractNumber)
-  return *contractnumber_;
+inline const ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber& SupplementaryAgreementDocumentInfo::contractdocumentdateandnumber() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.ContractDocumentDateAndNumber)
+  return contractdocumentdateandnumber_ != NULL ? *contractdocumentdateandnumber_ : *default_instance_->contractdocumentdateandnumber_;
 }
-inline void SupplementaryAgreementDocumentInfo::set_contractnumber(const ::std::string& value) {
-  set_has_contractnumber();
-  if (contractnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    contractnumber_ = new ::std::string;
-  }
-  contractnumber_->assign(value);
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.ContractNumber)
+inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* SupplementaryAgreementDocumentInfo::mutable_contractdocumentdateandnumber() {
+  set_has_contractdocumentdateandnumber();
+  if (contractdocumentdateandnumber_ == NULL) contractdocumentdateandnumber_ = new ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.ContractDocumentDateAndNumber)
+  return contractdocumentdateandnumber_;
 }
-inline void SupplementaryAgreementDocumentInfo::set_contractnumber(const char* value) {
-  set_has_contractnumber();
-  if (contractnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    contractnumber_ = new ::std::string;
-  }
-  contractnumber_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.ContractNumber)
+inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* SupplementaryAgreementDocumentInfo::release_contractdocumentdateandnumber() {
+  clear_has_contractdocumentdateandnumber();
+  ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* temp = contractdocumentdateandnumber_;
+  contractdocumentdateandnumber_ = NULL;
+  return temp;
 }
-inline void SupplementaryAgreementDocumentInfo::set_contractnumber(const char* value, size_t size) {
-  set_has_contractnumber();
-  if (contractnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    contractnumber_ = new ::std::string;
-  }
-  contractnumber_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.ContractNumber)
-}
-inline ::std::string* SupplementaryAgreementDocumentInfo::mutable_contractnumber() {
-  set_has_contractnumber();
-  if (contractnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    contractnumber_ = new ::std::string;
-  }
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.ContractNumber)
-  return contractnumber_;
-}
-inline ::std::string* SupplementaryAgreementDocumentInfo::release_contractnumber() {
-  clear_has_contractnumber();
-  if (contractnumber_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    return NULL;
+inline void SupplementaryAgreementDocumentInfo::set_allocated_contractdocumentdateandnumber(::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* contractdocumentdateandnumber) {
+  delete contractdocumentdateandnumber_;
+  contractdocumentdateandnumber_ = contractdocumentdateandnumber;
+  if (contractdocumentdateandnumber) {
+    set_has_contractdocumentdateandnumber();
   } else {
-    ::std::string* temp = contractnumber_;
-    contractnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    return temp;
+    clear_has_contractdocumentdateandnumber();
   }
-}
-inline void SupplementaryAgreementDocumentInfo::set_allocated_contractnumber(::std::string* contractnumber) {
-  if (contractnumber_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete contractnumber_;
-  }
-  if (contractnumber) {
-    set_has_contractnumber();
-    contractnumber_ = contractnumber;
-  } else {
-    clear_has_contractnumber();
-    contractnumber_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.ContractNumber)
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.ContractDocumentDateAndNumber)
 }
 
-// optional string ContractDate = 4;
-inline bool SupplementaryAgreementDocumentInfo::has_contractdate() const {
+// required .Diadoc.Api.Proto.Docflow.DocumentDateAndNumber DocumentDateAndNumber = 3;
+inline bool SupplementaryAgreementDocumentInfo::has_documentdateandnumber() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void SupplementaryAgreementDocumentInfo::set_has_documentdateandnumber() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void SupplementaryAgreementDocumentInfo::clear_has_documentdateandnumber() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void SupplementaryAgreementDocumentInfo::clear_documentdateandnumber() {
+  if (documentdateandnumber_ != NULL) documentdateandnumber_->::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber::Clear();
+  clear_has_documentdateandnumber();
+}
+inline const ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber& SupplementaryAgreementDocumentInfo::documentdateandnumber() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.DocumentDateAndNumber)
+  return documentdateandnumber_ != NULL ? *documentdateandnumber_ : *default_instance_->documentdateandnumber_;
+}
+inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* SupplementaryAgreementDocumentInfo::mutable_documentdateandnumber() {
+  set_has_documentdateandnumber();
+  if (documentdateandnumber_ == NULL) documentdateandnumber_ = new ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.DocumentDateAndNumber)
+  return documentdateandnumber_;
+}
+inline ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* SupplementaryAgreementDocumentInfo::release_documentdateandnumber() {
+  clear_has_documentdateandnumber();
+  ::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* temp = documentdateandnumber_;
+  documentdateandnumber_ = NULL;
+  return temp;
+}
+inline void SupplementaryAgreementDocumentInfo::set_allocated_documentdateandnumber(::Diadoc::Api::Proto::Docflow::DocumentDateAndNumber* documentdateandnumber) {
+  delete documentdateandnumber_;
+  documentdateandnumber_ = documentdateandnumber;
+  if (documentdateandnumber) {
+    set_has_documentdateandnumber();
+  } else {
+    clear_has_documentdateandnumber();
+  }
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.DocumentDateAndNumber)
+}
+
+// optional string Total = 4;
+inline bool SupplementaryAgreementDocumentInfo::has_total() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
-inline void SupplementaryAgreementDocumentInfo::set_has_contractdate() {
+inline void SupplementaryAgreementDocumentInfo::set_has_total() {
   _has_bits_[0] |= 0x00000008u;
 }
-inline void SupplementaryAgreementDocumentInfo::clear_has_contractdate() {
+inline void SupplementaryAgreementDocumentInfo::clear_has_total() {
   _has_bits_[0] &= ~0x00000008u;
 }
-inline void SupplementaryAgreementDocumentInfo::clear_contractdate() {
-  if (contractdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    contractdate_->clear();
+inline void SupplementaryAgreementDocumentInfo::clear_total() {
+  if (total_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    total_->clear();
   }
-  clear_has_contractdate();
+  clear_has_total();
 }
-inline const ::std::string& SupplementaryAgreementDocumentInfo::contractdate() const {
-  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.ContractDate)
-  return *contractdate_;
+inline const ::std::string& SupplementaryAgreementDocumentInfo::total() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.Total)
+  return *total_;
 }
-inline void SupplementaryAgreementDocumentInfo::set_contractdate(const ::std::string& value) {
-  set_has_contractdate();
-  if (contractdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    contractdate_ = new ::std::string;
+inline void SupplementaryAgreementDocumentInfo::set_total(const ::std::string& value) {
+  set_has_total();
+  if (total_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    total_ = new ::std::string;
   }
-  contractdate_->assign(value);
-  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.ContractDate)
+  total_->assign(value);
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.Total)
 }
-inline void SupplementaryAgreementDocumentInfo::set_contractdate(const char* value) {
-  set_has_contractdate();
-  if (contractdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    contractdate_ = new ::std::string;
+inline void SupplementaryAgreementDocumentInfo::set_total(const char* value) {
+  set_has_total();
+  if (total_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    total_ = new ::std::string;
   }
-  contractdate_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.ContractDate)
+  total_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.Total)
 }
-inline void SupplementaryAgreementDocumentInfo::set_contractdate(const char* value, size_t size) {
-  set_has_contractdate();
-  if (contractdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    contractdate_ = new ::std::string;
+inline void SupplementaryAgreementDocumentInfo::set_total(const char* value, size_t size) {
+  set_has_total();
+  if (total_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    total_ = new ::std::string;
   }
-  contractdate_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.ContractDate)
+  total_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.Total)
 }
-inline ::std::string* SupplementaryAgreementDocumentInfo::mutable_contractdate() {
-  set_has_contractdate();
-  if (contractdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    contractdate_ = new ::std::string;
+inline ::std::string* SupplementaryAgreementDocumentInfo::mutable_total() {
+  set_has_total();
+  if (total_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    total_ = new ::std::string;
   }
-  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.ContractDate)
-  return contractdate_;
+  // @@protoc_insertion_point(field_mutable:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.Total)
+  return total_;
 }
-inline ::std::string* SupplementaryAgreementDocumentInfo::release_contractdate() {
-  clear_has_contractdate();
-  if (contractdate_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+inline ::std::string* SupplementaryAgreementDocumentInfo::release_total() {
+  clear_has_total();
+  if (total_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     return NULL;
   } else {
-    ::std::string* temp = contractdate_;
-    contractdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    ::std::string* temp = total_;
+    total_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     return temp;
   }
 }
-inline void SupplementaryAgreementDocumentInfo::set_allocated_contractdate(::std::string* contractdate) {
-  if (contractdate_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete contractdate_;
+inline void SupplementaryAgreementDocumentInfo::set_allocated_total(::std::string* total) {
+  if (total_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete total_;
   }
-  if (contractdate) {
-    set_has_contractdate();
-    contractdate_ = contractdate;
+  if (total) {
+    set_has_total();
+    total_ = total;
   } else {
-    clear_has_contractdate();
-    contractdate_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_total();
+    total_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.ContractDate)
+  // @@protoc_insertion_point(field_set_allocated:Diadoc.Api.Proto.Docflow.SupplementaryAgreementDocumentInfo.Total)
 }
 
 // -------------------------------------------------------------------

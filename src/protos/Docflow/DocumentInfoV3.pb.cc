@@ -64,7 +64,7 @@ void protobuf_AssignDesc_Docflow_2fDocumentInfoV3_2eproto() {
       "Docflow/DocumentInfoV3.proto");
   GOOGLE_CHECK(file != NULL);
   DocumentInfoV3_descriptor_ = file->message_type(0);
-  static const int DocumentInfoV3_offsets_[18] = {
+  static const int DocumentInfoV3_offsets_[19] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfoV3, fullversion_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfoV3, messagetype_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfoV3, workflowid_),
@@ -83,6 +83,7 @@ void protobuf_AssignDesc_Docflow_2fDocumentInfoV3_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfoV3, draftinfo_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfoV3, templateinfo_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfoV3, origin_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DocumentInfoV3, editingsettingid_),
   };
   DocumentInfoV3_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -330,7 +331,7 @@ void protobuf_AddDesc_Docflow_2fDocumentInfoV3_2eproto() {
     "s/Document.proto\032\016LockMode.proto\032\032Forwar"
     "dDocumentEvent.proto\032\027DocumentDirection."
     "proto\032\"Events/DiadocMessage-PostApi.prot"
-    "o\032\024CustomDataItem.proto\"\352\006\n\016DocumentInfo"
+    "o\032\024CustomDataItem.proto\"\206\007\n\016DocumentInfo"
     "V3\0222\n\013FullVersion\030\001 \002(\0132\035.Diadoc.Api.Pro"
     "to.FullVersion\022<\n\013MessageType\030\002 \002(\0162\'.Di"
     "adoc.Api.Proto.Documents.MessageType\022\022\n\n"
@@ -352,40 +353,40 @@ void protobuf_AddDesc_Docflow_2fDocumentInfoV3_2eproto() {
     ".DocumentDraftInfo\022D\n\014TemplateInfo\030\021 \001(\013"
     "2..Diadoc.Api.Proto.Docflow.DocumentTemp"
     "lateInfo\0222\n\006Origin\030\022 \001(\0132\".Diadoc.Api.Pr"
-    "oto.Documents.Origin\"\351\001\n\024DocumentPartici"
-    "pants\022=\n\006Sender\030\001 \002(\0132-.Diadoc.Api.Proto"
-    ".Docflow.DocumentParticipant\022<\n\005Proxy\030\002 "
-    "\001(\0132-.Diadoc.Api.Proto.Docflow.DocumentP"
-    "articipant\022@\n\tRecipient\030\003 \001(\0132-.Diadoc.A"
-    "pi.Proto.Docflow.DocumentParticipant\022\022\n\n"
-    "IsInternal\030\004 \002(\010\":\n\023DocumentParticipant\022"
-    "\r\n\005BoxId\030\001 \002(\t\022\024\n\014DepartmentId\030\002 \001(\t\"w\n\r"
-    "DocumentLinks\0220\n\nInitialIds\030\001 \003(\0132\034.Diad"
-    "oc.Api.Proto.DocumentId\0224\n\016SubordinateId"
-    "s\030\002 \003(\0132\034.Diadoc.Api.Proto.DocumentId\"z\n"
-    "\nPacketInfo\022,\n\010LockMode\030\001 \002(\0162\032.Diadoc.A"
-    "pi.Proto.LockMode\022\020\n\010PacketId\030\002 \001(\t\022,\n\007A"
-    "ddedAt\030\003 \001(\0132\033.Diadoc.Api.Proto.Timestam"
-    "p\"\200\001\n\022DocumentLetterInfo\022\023\n\013IsEncrypted\030"
-    "\001 \002(\010\022E\n\025ForwardDocumentEvents\030\002 \003(\0132&.D"
-    "iadoc.Api.Proto.ForwardDocumentEvent\022\016\n\006"
-    "IsTest\030\003 \002(\010\"Y\n\021DocumentDraftInfo\022\022\n\nIsR"
-    "ecycled\030\001 \002(\010\022\020\n\010IsLocked\030\002 \002(\010\022\036\n\026Trans"
-    "formedToLetterIds\030\003 \003(\t\"\304\002\n\024DocumentTemp"
-    "lateInfo\022J\n\022LetterParticipants\030\001 \002(\0132..D"
-    "iadoc.Api.Proto.Docflow.DocumentParticip"
-    "ants\022\036\n\026TransformedToLetterIds\030\002 \003(\t\022Y\n\033"
-    "TemplateTransformationInfos\030\003 \003(\01324.Diad"
-    "oc.Api.Proto.Docflow.TemplateTransformat"
-    "ionInfo\022J\n\023TemplateRefusalInfo\030\004 \001(\0132-.D"
-    "iadoc.Api.Proto.Docflow.TemplateRefusalI"
-    "nfo\022\031\n\nIsReusable\030\005 \001(\010:\005false\"\213\001\n\032Templ"
-    "ateTransformationInfo\022\030\n\020TransformationI"
-    "d\030\001 \002(\t\022=\n\027TransformedToDocumentId\030\002 \001(\013"
-    "2\034.Diadoc.Api.Proto.DocumentId\022\024\n\014Author"
-    "UserId\030\003 \001(\t\"K\n\023TemplateRefusalInfo\022\r\n\005B"
-    "oxId\030\001 \002(\t\022\024\n\014AuthorUserId\030\002 \001(\t\022\017\n\007Comm"
-    "ent\030\003 \001(\t", 2449);
+    "oto.Documents.Origin\022\032\n\020EditingSettingId"
+    "\030\023 \001(\t:\000\"\351\001\n\024DocumentParticipants\022=\n\006Sen"
+    "der\030\001 \002(\0132-.Diadoc.Api.Proto.Docflow.Doc"
+    "umentParticipant\022<\n\005Proxy\030\002 \001(\0132-.Diadoc"
+    ".Api.Proto.Docflow.DocumentParticipant\022@"
+    "\n\tRecipient\030\003 \001(\0132-.Diadoc.Api.Proto.Doc"
+    "flow.DocumentParticipant\022\022\n\nIsInternal\030\004"
+    " \002(\010\":\n\023DocumentParticipant\022\r\n\005BoxId\030\001 \002"
+    "(\t\022\024\n\014DepartmentId\030\002 \001(\t\"w\n\rDocumentLink"
+    "s\0220\n\nInitialIds\030\001 \003(\0132\034.Diadoc.Api.Proto"
+    ".DocumentId\0224\n\016SubordinateIds\030\002 \003(\0132\034.Di"
+    "adoc.Api.Proto.DocumentId\"z\n\nPacketInfo\022"
+    ",\n\010LockMode\030\001 \002(\0162\032.Diadoc.Api.Proto.Loc"
+    "kMode\022\020\n\010PacketId\030\002 \001(\t\022,\n\007AddedAt\030\003 \001(\013"
+    "2\033.Diadoc.Api.Proto.Timestamp\"\200\001\n\022Docume"
+    "ntLetterInfo\022\023\n\013IsEncrypted\030\001 \002(\010\022E\n\025For"
+    "wardDocumentEvents\030\002 \003(\0132&.Diadoc.Api.Pr"
+    "oto.ForwardDocumentEvent\022\016\n\006IsTest\030\003 \002(\010"
+    "\"Y\n\021DocumentDraftInfo\022\022\n\nIsRecycled\030\001 \002("
+    "\010\022\020\n\010IsLocked\030\002 \002(\010\022\036\n\026TransformedToLett"
+    "erIds\030\003 \003(\t\"\304\002\n\024DocumentTemplateInfo\022J\n\022"
+    "LetterParticipants\030\001 \002(\0132..Diadoc.Api.Pr"
+    "oto.Docflow.DocumentParticipants\022\036\n\026Tran"
+    "sformedToLetterIds\030\002 \003(\t\022Y\n\033TemplateTran"
+    "sformationInfos\030\003 \003(\01324.Diadoc.Api.Proto"
+    ".Docflow.TemplateTransformationInfo\022J\n\023T"
+    "emplateRefusalInfo\030\004 \001(\0132-.Diadoc.Api.Pr"
+    "oto.Docflow.TemplateRefusalInfo\022\031\n\nIsReu"
+    "sable\030\005 \001(\010:\005false\"\213\001\n\032TemplateTransform"
+    "ationInfo\022\030\n\020TransformationId\030\001 \002(\t\022=\n\027T"
+    "ransformedToDocumentId\030\002 \001(\0132\034.Diadoc.Ap"
+    "i.Proto.DocumentId\022\024\n\014AuthorUserId\030\003 \001(\t"
+    "\"K\n\023TemplateRefusalInfo\022\r\n\005BoxId\030\001 \002(\t\022\024"
+    "\n\014AuthorUserId\030\002 \001(\t\022\017\n\007Comment\030\003 \001(\t", 2477);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Docflow/DocumentInfoV3.proto", &protobuf_RegisterTypes);
   DocumentInfoV3::default_instance_ = new DocumentInfoV3();
@@ -439,6 +440,7 @@ const int DocumentInfoV3::kLetterInfoFieldNumber;
 const int DocumentInfoV3::kDraftInfoFieldNumber;
 const int DocumentInfoV3::kTemplateInfoFieldNumber;
 const int DocumentInfoV3::kOriginFieldNumber;
+const int DocumentInfoV3::kEditingSettingIdFieldNumber;
 #endif  // !_MSC_VER
 
 DocumentInfoV3::DocumentInfoV3()
@@ -484,6 +486,7 @@ void DocumentInfoV3::SharedCtor() {
   draftinfo_ = NULL;
   templateinfo_ = NULL;
   origin_ = NULL;
+  editingsettingid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -498,6 +501,9 @@ void DocumentInfoV3::SharedDtor() {
   }
   if (customdocumentid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete customdocumentid_;
+  }
+  if (editingsettingid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete editingsettingid_;
   }
   if (this != default_instance_) {
     delete fullversion_;
@@ -578,12 +584,17 @@ void DocumentInfoV3::Clear() {
       if (draftinfo_ != NULL) draftinfo_->::Diadoc::Api::Proto::Docflow::DocumentDraftInfo::Clear();
     }
   }
-  if (_has_bits_[16 / 32] & 196608) {
+  if (_has_bits_[16 / 32] & 458752) {
     if (has_templateinfo()) {
       if (templateinfo_ != NULL) templateinfo_->::Diadoc::Api::Proto::Docflow::DocumentTemplateInfo::Clear();
     }
     if (has_origin()) {
       if (origin_ != NULL) origin_->::Diadoc::Api::Proto::Documents::Origin::Clear();
+    }
+    if (has_editingsettingid()) {
+      if (editingsettingid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        editingsettingid_->clear();
+      }
     }
   }
 
@@ -867,6 +878,23 @@ bool DocumentInfoV3::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(154)) goto parse_EditingSettingId;
+        break;
+      }
+
+      // optional string EditingSettingId = 19 [default = ""];
+      case 19: {
+        if (tag == 154) {
+         parse_EditingSettingId:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_editingsettingid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->editingsettingid().data(), this->editingsettingid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "editingsettingid");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -1008,6 +1036,16 @@ void DocumentInfoV3::SerializeWithCachedSizes(
       18, this->origin(), output);
   }
 
+  // optional string EditingSettingId = 19 [default = ""];
+  if (has_editingsettingid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->editingsettingid().data(), this->editingsettingid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "editingsettingid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      19, this->editingsettingid(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -1142,6 +1180,17 @@ void DocumentInfoV3::SerializeWithCachedSizes(
         18, this->origin(), target);
   }
 
+  // optional string EditingSettingId = 19 [default = ""];
+  if (has_editingsettingid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->editingsettingid().data(), this->editingsettingid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "editingsettingid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        19, this->editingsettingid(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -1262,6 +1311,13 @@ int DocumentInfoV3::ByteSize() const {
           this->origin());
     }
 
+    // optional string EditingSettingId = 19 [default = ""];
+    if (has_editingsettingid()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->editingsettingid());
+    }
+
   }
   // repeated .Diadoc.Api.Proto.Events.MetadataItem Metadata = 8;
   total_size += 1 * this->metadata_size();
@@ -1359,6 +1415,9 @@ void DocumentInfoV3::MergeFrom(const DocumentInfoV3& from) {
     if (from.has_origin()) {
       mutable_origin()->::Diadoc::Api::Proto::Documents::Origin::MergeFrom(from.origin());
     }
+    if (from.has_editingsettingid()) {
+      set_editingsettingid(from.editingsettingid());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -1427,6 +1486,7 @@ void DocumentInfoV3::Swap(DocumentInfoV3* other) {
     std::swap(draftinfo_, other->draftinfo_);
     std::swap(templateinfo_, other->templateinfo_);
     std::swap(origin_, other->origin_);
+    std::swap(editingsettingid_, other->editingsettingid_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
