@@ -171,7 +171,7 @@ public:
 	WebFile GenerateInvoiceDocumentReceiptXml(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& attachmentId, const Diadoc::Api::Proto::Invoicing::Signer);
 	WebFile GenerateInvoiceCorrectionRequestXml(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& attachmentId, const Diadoc::Api::Proto::Invoicing::InvoiceCorrectionRequestInfo& correctionInfo);
 
-	WebFile GenerateRevocationRequestXml(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& attachmentId, const Diadoc::Api::Proto::Invoicing::RevocationRequestInfo& revocationRequestInfo);
+	WebFile GenerateRevocationRequestXml(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& attachmentId, const Diadoc::Api::Proto::Invoicing::RevocationRequestInfo& revocationRequestInfo, const std::wstring& contentTypeId = L"");
 	WebFile GenerateSignatureRejectionXml(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& attachmentId, const Diadoc::Api::Proto::Invoicing::SignatureRejectionInfo& signatureRejectionInfo);
 
 	WebFile GenerateInvoiceXml(const Diadoc::Api::Proto::Invoicing::InvoiceInfo& invoiceInfo, bool disableValidation = false);

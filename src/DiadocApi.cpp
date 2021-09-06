@@ -882,11 +882,6 @@ DiadocApi::WebFile DiadocApi::GenerateInvoiceCorrectionRequestXml(const std::wst
 	return WebFile(request);
 }
 
-DiadocApi::WebFile DiadocApi::GenerateRevocationRequestXml(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& attachmentId, const Diadoc::Api::Proto::Invoicing::RevocationRequestInfo& revocationRequestInfo)
-{
-	return GenerateRevocationRequestXml(boxId, messageId, attachmentId, revocationRequestInfo, L"");
-}
-
 DiadocApi::WebFile DiadocApi::GenerateRevocationRequestXml(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& attachmentId, const Diadoc::Api::Proto::Invoicing::RevocationRequestInfo& revocationRequestInfo, const std::wstring& contentTypeId)
 {
 	WppTraceDebugOut("GenerateRevocationRequestXml...");
