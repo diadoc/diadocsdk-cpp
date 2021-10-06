@@ -1,5 +1,3 @@
-import "Invoicing/ExtendedSigner.proto";
-
 package Diadoc.Api.Proto.Documents.Types;
 
 message DetectedDocumentType {

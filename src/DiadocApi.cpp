@@ -882,11 +882,13 @@ DiadocApi::WebFile DiadocApi::GenerateInvoiceCorrectionRequestXml(const std::wst
 	return WebFile(request);
 }
 
-DiadocApi::WebFile DiadocApi::GenerateRevocationRequestXml(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& attachmentId, const Diadoc::Api::Proto::Invoicing::RevocationRequestInfo& revocationRequestInfo)
+DiadocApi::WebFile DiadocApi::GenerateRevocationRequestXml(const std::wstring& boxId, const std::wstring& messageId, const std::wstring& attachmentId, const Diadoc::Api::Proto::Invoicing::RevocationRequestInfo& revocationRequestInfo, const std::wstring& contentTypeId)
 {
 	WppTraceDebugOut("GenerateRevocationRequestXml...");
 	std::wstringstream queryString;
-	queryString << L"/GenerateRevocationRequestXml?boxId=" << StringHelper::CanonicalizeUrl(boxId) << L"&messageId=" << StringHelper::CanonicalizeUrl(messageId) << L"&attachmentId=" << StringHelper::CanonicalizeUrl(attachmentId);
+	queryString << L"/V2/GenerateRevocationRequestXml?boxId=" << StringHelper::CanonicalizeUrl(boxId) << L"&messageId=" << StringHelper::CanonicalizeUrl(messageId) << L"&attachmentId=" << StringHelper::CanonicalizeUrl(attachmentId);
+	if (!contentTypeId.empty())
+		queryString << L"&contentTypeId=" << StringHelper::CanonicalizeUrl(contentTypeId);
 	auto requestBody = ToProtoBytes(revocationRequestInfo);
 	auto connect = session_.Connect(api_url_.c_str(), api_port_);
 	auto request = connect.OpenRequest(POST.c_str(), queryString.str().c_str(), NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, connection_flags_);
