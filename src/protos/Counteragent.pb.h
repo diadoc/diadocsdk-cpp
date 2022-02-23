@@ -27,6 +27,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "Organization.pb.h"
 #include "DocumentId.pb.h"
+#include "TotalCountType.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace Diadoc {
@@ -141,10 +142,19 @@ class CounteragentList : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Counteragent >*
       mutable_counteragents();
 
+  // required .Diadoc.Api.Proto.TotalCountType TotalCountType = 3;
+  inline bool has_totalcounttype() const;
+  inline void clear_totalcounttype();
+  static const int kTotalCountTypeFieldNumber = 3;
+  inline ::Diadoc::Api::Proto::TotalCountType totalcounttype() const;
+  inline void set_totalcounttype(::Diadoc::Api::Proto::TotalCountType value);
+
   // @@protoc_insertion_point(class_scope:Diadoc.Api.Proto.CounteragentList)
  private:
   inline void set_has_totalcount();
   inline void clear_has_totalcount();
+  inline void set_has_totalcounttype();
+  inline void clear_has_totalcounttype();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -152,6 +162,7 @@ class CounteragentList : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Counteragent > counteragents_;
   ::google::protobuf::int32 totalcount_;
+  int totalcounttype_;
   friend void  protobuf_AddDesc_Counteragent_2eproto();
   friend void protobuf_AssignDesc_Counteragent_2eproto();
   friend void protobuf_ShutdownFile_Counteragent_2eproto();
@@ -542,6 +553,31 @@ inline ::google::protobuf::RepeatedPtrField< ::Diadoc::Api::Proto::Counteragent 
 CounteragentList::mutable_counteragents() {
   // @@protoc_insertion_point(field_mutable_list:Diadoc.Api.Proto.CounteragentList.Counteragents)
   return &counteragents_;
+}
+
+// required .Diadoc.Api.Proto.TotalCountType TotalCountType = 3;
+inline bool CounteragentList::has_totalcounttype() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CounteragentList::set_has_totalcounttype() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CounteragentList::clear_has_totalcounttype() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CounteragentList::clear_totalcounttype() {
+  totalcounttype_ = 0;
+  clear_has_totalcounttype();
+}
+inline ::Diadoc::Api::Proto::TotalCountType CounteragentList::totalcounttype() const {
+  // @@protoc_insertion_point(field_get:Diadoc.Api.Proto.CounteragentList.TotalCountType)
+  return static_cast< ::Diadoc::Api::Proto::TotalCountType >(totalcounttype_);
+}
+inline void CounteragentList::set_totalcounttype(::Diadoc::Api::Proto::TotalCountType value) {
+  assert(::Diadoc::Api::Proto::TotalCountType_IsValid(value));
+  set_has_totalcounttype();
+  totalcounttype_ = value;
+  // @@protoc_insertion_point(field_set:Diadoc.Api.Proto.CounteragentList.TotalCountType)
 }
 
 // -------------------------------------------------------------------

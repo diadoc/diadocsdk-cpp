@@ -46,9 +46,10 @@ void protobuf_AssignDesc_Counteragent_2eproto() {
       "Counteragent.proto");
   GOOGLE_CHECK(file != NULL);
   CounteragentList_descriptor_ = file->message_type(0);
-  static const int CounteragentList_offsets_[2] = {
+  static const int CounteragentList_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CounteragentList, totalcount_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CounteragentList, counteragents_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CounteragentList, totalcounttype_),
   };
   CounteragentList_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -156,28 +157,31 @@ void protobuf_AddDesc_Counteragent_2eproto() {
 
   ::Diadoc::Api::Proto::protobuf_AddDesc_Organization_2eproto();
   ::Diadoc::Api::Proto::protobuf_AddDesc_DocumentId_2eproto();
+  ::Diadoc::Api::Proto::protobuf_AddDesc_TotalCountType_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\022Counteragent.proto\022\020Diadoc.Api.Proto\032\022"
-    "Organization.proto\032\020DocumentId.proto\"]\n\020"
-    "CounteragentList\022\022\n\nTotalCount\030\001 \002(\005\0225\n\r"
-    "Counteragents\030\002 \003(\0132\036.Diadoc.Api.Proto.C"
-    "ounteragent\"\313\002\n\014Counteragent\022\020\n\010IndexKey"
-    "\030\001 \001(\t\0224\n\014Organization\030\002 \002(\0132\036.Diadoc.Ap"
-    "i.Proto.Organization\022V\n\rCurrentStatus\030\003 "
-    "\001(\0162$.Diadoc.Api.Proto.CounteragentStatu"
-    "s:\031UnknownCounteragentStatus\022\037\n\027LastEven"
-    "tTimestampTicks\030\004 \002(\020\022\037\n\027MessageFromCoun"
-    "teragent\030\006 \001(\t\022\035\n\025MessageToCounteragent\030"
-    "\007 \001(\t\022:\n\024InvitationDocumentId\030\010 \001(\0132\034.Di"
-    "adoc.Api.Proto.DocumentId\"R\n\033Counteragen"
-    "tCertificateList\0223\n\014Certificates\030\001 \003(\0132\035"
-    ".Diadoc.Api.Proto.Certificate\")\n\013Certifi"
-    "cate\022\032\n\022RawCertificateData\030\001 \002(\014*\251\001\n\022Cou"
-    "nteragentStatus\022\035\n\031UnknownCounteragentSt"
-    "atus\020\000\022\024\n\020IsMyCounteragent\020\001\022\r\n\tInvitesM"
-    "e\020\002\022\021\n\rIsInvitedByMe\020\003\022\r\n\tRejectsMe\020\005\022\022\n"
-    "\016IsRejectedByMe\020\006\022\031\n\025NotInCounteragentLi"
-    "st\020\007", 804);
+    "Organization.proto\032\020DocumentId.proto\032\024To"
+    "talCountType.proto\"\227\001\n\020CounteragentList\022"
+    "\022\n\nTotalCount\030\001 \002(\005\0225\n\rCounteragents\030\002 \003"
+    "(\0132\036.Diadoc.Api.Proto.Counteragent\0228\n\016To"
+    "talCountType\030\003 \002(\0162 .Diadoc.Api.Proto.To"
+    "talCountType\"\313\002\n\014Counteragent\022\020\n\010IndexKe"
+    "y\030\001 \001(\t\0224\n\014Organization\030\002 \002(\0132\036.Diadoc.A"
+    "pi.Proto.Organization\022V\n\rCurrentStatus\030\003"
+    " \001(\0162$.Diadoc.Api.Proto.CounteragentStat"
+    "us:\031UnknownCounteragentStatus\022\037\n\027LastEve"
+    "ntTimestampTicks\030\004 \002(\020\022\037\n\027MessageFromCou"
+    "nteragent\030\006 \001(\t\022\035\n\025MessageToCounteragent"
+    "\030\007 \001(\t\022:\n\024InvitationDocumentId\030\010 \001(\0132\034.D"
+    "iadoc.Api.Proto.DocumentId\"R\n\033Counterage"
+    "ntCertificateList\0223\n\014Certificates\030\001 \003(\0132"
+    "\035.Diadoc.Api.Proto.Certificate\")\n\013Certif"
+    "icate\022\032\n\022RawCertificateData\030\001 \002(\014*\251\001\n\022Co"
+    "unteragentStatus\022\035\n\031UnknownCounteragentS"
+    "tatus\020\000\022\024\n\020IsMyCounteragent\020\001\022\r\n\tInvites"
+    "Me\020\002\022\021\n\rIsInvitedByMe\020\003\022\r\n\tRejectsMe\020\005\022\022"
+    "\n\016IsRejectedByMe\020\006\022\031\n\025NotInCounteragentL"
+    "ist\020\007", 885);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Counteragent.proto", &protobuf_RegisterTypes);
   CounteragentList::default_instance_ = new CounteragentList();
@@ -222,6 +226,7 @@ bool CounteragentStatus_IsValid(int value) {
 #ifndef _MSC_VER
 const int CounteragentList::kTotalCountFieldNumber;
 const int CounteragentList::kCounteragentsFieldNumber;
+const int CounteragentList::kTotalCountTypeFieldNumber;
 #endif  // !_MSC_VER
 
 CounteragentList::CounteragentList()
@@ -243,6 +248,7 @@ CounteragentList::CounteragentList(const CounteragentList& from)
 void CounteragentList::SharedCtor() {
   _cached_size_ = 0;
   totalcount_ = 0;
+  totalcounttype_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -278,7 +284,21 @@ CounteragentList* CounteragentList::New() const {
 }
 
 void CounteragentList::Clear() {
-  totalcount_ = 0;
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CounteragentList*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  ZR_(totalcount_, totalcounttype_);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
   counteragents_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -318,6 +338,26 @@ bool CounteragentList::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(18)) goto parse_Counteragents;
+        if (input->ExpectTag(24)) goto parse_TotalCountType;
+        break;
+      }
+
+      // required .Diadoc.Api.Proto.TotalCountType TotalCountType = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_TotalCountType:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Diadoc::Api::Proto::TotalCountType_IsValid(value)) {
+            set_totalcounttype(static_cast< ::Diadoc::Api::Proto::TotalCountType >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(3, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -358,6 +398,12 @@ void CounteragentList::SerializeWithCachedSizes(
       2, this->counteragents(i), output);
   }
 
+  // required .Diadoc.Api.Proto.TotalCountType TotalCountType = 3;
+  if (has_totalcounttype()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      3, this->totalcounttype(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -380,6 +426,12 @@ void CounteragentList::SerializeWithCachedSizes(
         2, this->counteragents(i), target);
   }
 
+  // required .Diadoc.Api.Proto.TotalCountType TotalCountType = 3;
+  if (has_totalcounttype()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      3, this->totalcounttype(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -397,6 +449,12 @@ int CounteragentList::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->totalcount());
+    }
+
+    // required .Diadoc.Api.Proto.TotalCountType TotalCountType = 3;
+    if (has_totalcounttype()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->totalcounttype());
     }
 
   }
@@ -438,6 +496,9 @@ void CounteragentList::MergeFrom(const CounteragentList& from) {
     if (from.has_totalcount()) {
       set_totalcount(from.totalcount());
     }
+    if (from.has_totalcounttype()) {
+      set_totalcounttype(from.totalcounttype());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -455,7 +516,7 @@ void CounteragentList::CopyFrom(const CounteragentList& from) {
 }
 
 bool CounteragentList::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+  if ((_has_bits_[0] & 0x00000005) != 0x00000005) return false;
 
   if (!::google::protobuf::internal::AllAreInitialized(this->counteragents())) return false;
   return true;
@@ -465,6 +526,7 @@ void CounteragentList::Swap(CounteragentList* other) {
   if (other != this) {
     std::swap(totalcount_, other->totalcount_);
     counteragents_.Swap(&other->counteragents_);
+    std::swap(totalcounttype_, other->totalcounttype_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
