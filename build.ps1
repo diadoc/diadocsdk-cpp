@@ -49,6 +49,7 @@ Param(
     [ValidateSet("Debug", "Release", "RelWithDebInfo", "MinSizeRel")]
     [string]$Configuration = "RelWithDebInfo",
     [ValidateSet("",
+        "Visual Studio 17 2022",
         "Visual Studio 14 2015",
         "Visual Studio 14 2015 Win64",
         "Visual Studio 14 2015 ARM",
