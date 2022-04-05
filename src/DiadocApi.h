@@ -55,6 +55,7 @@
 #include "protos\CustomPrintFormDetection.pb.h"
 #include "protos\Registration\RegistrationRequest.pb.h"
 #include "protos\Certificates\CertificateList.pb.h"
+#include "protos\Workflows\DocumentWorkflowSettings.pb.h"
 #include "DocumentFilter.h"
 #include "HttpSession.h"
 #include "TaskResult.h"
@@ -344,6 +345,8 @@ public:
 
 	Diadoc::Api::Proto::Registration::RegistrationResponse Register(const Diadoc::Api::Proto::Registration::RegistrationRequest& request);
 	void RegisterConfirm(const Diadoc::Api::Proto::Registration::RegistrationConfirmRequest& request);
+
+	Diadoc::Api::Proto::Workflows::DocumentWorkflowSettingsList GetWorkflowsSettings(const std::wstring& boxId);
 
 protected:
 	DiadocApi::Bytes_t PerformHttpRequest(const std::wstring & queryString, const Bytes_t & requestBody, const std::wstring & method);

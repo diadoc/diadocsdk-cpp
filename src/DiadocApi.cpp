@@ -1915,3 +1915,10 @@ void DiadocApi::RegisterConfirm(const Diadoc::Api::Proto::Registration::Registra
 	WppTraceDebugOut("RegisterConfirm...");
 	PerformHttpRequest(L"/RegisterConfirm", ToProtoBytes(request), POST);
 }
+
+Diadoc::Api::Proto::Workflows::DocumentWorkflowSettingsList DiadocApi::GetWorkflowsSettings(const std::wstring& boxId)
+{
+	std::wstringstream buf;
+	buf << L"/GetWorkflowsSettings?boxId=" << StringHelper::CanonicalizeUrl(boxId);
+	return FromProtoBytes<Diadoc::Api::Proto::Workflows::DocumentWorkflowSettingsList>(PerformHttpRequest(buf.str(), GET));
+}
