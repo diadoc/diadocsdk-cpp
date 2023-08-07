@@ -48,11 +48,12 @@ enum DssConfirmType {
   None = 0,
   Sms = 1,
   MyDss = 2,
-  Applet = 3
+  Applet = 3,
+  MobileSdk = 4
 };
 bool DssConfirmType_IsValid(int value);
 const DssConfirmType DssConfirmType_MIN = ConfirmTypeUnknown;
-const DssConfirmType DssConfirmType_MAX = Applet;
+const DssConfirmType DssConfirmType_MAX = MobileSdk;
 const int DssConfirmType_ARRAYSIZE = DssConfirmType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* DssConfirmType_descriptor();

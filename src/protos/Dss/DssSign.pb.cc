@@ -179,17 +179,17 @@ void protobuf_AddDesc_Dss_2fDssSign_2eproto() {
     "SigningResult\022[\n\021FileSigningStatus\030\001 \001(\016"
     "2*.Diadoc.Api.Proto.Dss.DssFileSigningSt"
     "atus:\024UnknownSigningStatus\022\021\n\tSignature\030"
-    "\002 \001(\014*[\n\016DssConfirmType\022\037\n\022ConfirmTypeUn"
+    "\002 \001(\014*j\n\016DssConfirmType\022\037\n\022ConfirmTypeUn"
     "known\020\377\377\377\377\377\377\377\377\377\001\022\010\n\004None\020\000\022\007\n\003Sms\020\001\022\t\n\005M"
-    "yDss\020\002\022\n\n\006Applet\020\003*;\n\013DssOperator\022\023\n\017Ope"
-    "ratorUnknown\020\000\022\013\n\007Megafon\020\001\022\n\n\006Kontur\020\002*"
-    "X\n\024DssFileSigningStatus\022\030\n\024UnknownSignin"
-    "gStatus\020\000\022\024\n\020SigningCompleted\020\001\022\020\n\014Signi"
-    "ngError\020\002*\253\001\n\022DssOperationStatus\022\013\n\007Unkn"
-    "own\020\000\022\016\n\nInProgress\020\001\022\r\n\tCompleted\020\002\022\022\n\016"
-    "CanceledByUser\020\003\022\013\n\007Timeout\020\004\022\013\n\007Crashed"
-    "\020\005\022\037\n\033UserHasUnconfirmedOperation\020\006\022\032\n\026O"
-    "perationRetryRequired\020\007", 1103);
+    "yDss\020\002\022\n\n\006Applet\020\003\022\r\n\tMobileSdk\020\004*;\n\013Dss"
+    "Operator\022\023\n\017OperatorUnknown\020\000\022\013\n\007Megafon"
+    "\020\001\022\n\n\006Kontur\020\002*X\n\024DssFileSigningStatus\022\030"
+    "\n\024UnknownSigningStatus\020\000\022\024\n\020SigningCompl"
+    "eted\020\001\022\020\n\014SigningError\020\002*\253\001\n\022DssOperatio"
+    "nStatus\022\013\n\007Unknown\020\000\022\016\n\nInProgress\020\001\022\r\n\t"
+    "Completed\020\002\022\022\n\016CanceledByUser\020\003\022\013\n\007Timeo"
+    "ut\020\004\022\013\n\007Crashed\020\005\022\037\n\033UserHasUnconfirmedO"
+    "peration\020\006\022\032\n\026OperationRetryRequired\020\007", 1118);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Dss/DssSign.proto", &protobuf_RegisterTypes);
   DssSignRequest::default_instance_ = new DssSignRequest();
@@ -220,6 +220,7 @@ bool DssConfirmType_IsValid(int value) {
     case 1:
     case 2:
     case 3:
+    case 4:
       return true;
     default:
       return false;
