@@ -56,6 +56,7 @@
 #include "protos\Registration\RegistrationRequest.pb.h"
 #include "protos\Certificates\CertificateList.pb.h"
 #include "protos\Workflows\DocumentWorkflowSettings.pb.h"
+#include "protos\ResolutionRouteList.pb.h"
 #include "DocumentFilter.h"
 #include "HttpSession.h"
 #include "TaskResult.h"
@@ -83,6 +84,8 @@ public:
 
 	Diadoc::Api::Proto::Events::BoxEventList GetNewEvents(const std::wstring& boxId, const std::wstring& afterMessageId = std::wstring());
 	Diadoc::Api::Proto::Events::BoxEvent GetEvent(const std::wstring& boxId, const std::wstring& eventId);
+
+	Diadoc::Api::Proto::ResolutionRouteList GetResolutionRoutesForOrganization(const std::wstring& orgId);
 
 	Diadoc::Api::Proto::Events::Message PostDiadocMessage(const Diadoc::Api::Proto::Events::MessageToPost& msg, const std::wstring& operationId = std::wstring());
 	Diadoc::Api::Proto::Events::MessagePatch PostMessagePatch(const Diadoc::Api::Proto::Events::MessagePatchToPost& patch, const std::wstring& operationId = std::wstring());

@@ -503,6 +503,14 @@ BoxEvent DiadocApi::GetEvent(const std::wstring& boxId, const std::wstring& even
 	return FromProtoBytes<BoxEvent>(PerformHttpRequest(buf.str(), GET));
 }
 
+ResolutionRouteList DiadocApi::GetResolutionRoutesForOrganization(const std::wstring& orgId)
+{
+	WppTraceDebugOut(L"GetResolutionRoutesForOrganization...");
+	std::wstringstream buf;
+	buf << L"/GetResolutionRoutesForOrganization?orgId=" << StringHelper::CanonicalizeUrl(orgId);
+	return FromProtoBytes<ResolutionRouteList>(PerformHttpRequest(buf.str(), GET));
+}
+
 Diadoc::Api::Proto::Events::BoxEvent DiadocApi::GetLastEvent(const std::wstring& boxId)
 {
 	WppTraceDebugOut("GetLastEvent...");
