@@ -123,7 +123,8 @@ message Entity {
 	optional TemplateRefusalInfo TemplateRefusalInfo = 28;
 	optional OuterDocflowInfo OuterDocflow = 29;	
 	optional RevocationRequestInfo RevocationRequestInfo = 30;
-	optional string ContentTypeId = 31;
+	optional string ContentTypeId 31;
+ 	optional MoveDocumentInfo MoveDocumentInfo = 34;
 }
 
 message EntityPatch {
@@ -133,6 +134,11 @@ message EntityPatch {
 	optional bool DocumentIsRestored = 4 [default = false];
 	optional bool ContentIsPatched = 5 [default = false];
 	optional string ForwardedToBoxId = 6;
+}
+
+message MoveDocumentInfo {
+	required string MovedFromDepartment = 1;
+	required string MovedToDepartment = 2;
 }
 
 message TemplateToLetterTransformationInfo
