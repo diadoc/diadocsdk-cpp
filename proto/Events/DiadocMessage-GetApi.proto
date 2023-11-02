@@ -95,6 +95,7 @@ message MessagePatch {
 message Entity {
 	optional EntityType EntityType = 1 [default = UnknownEntityType];
 	required string EntityId = 2;
+ 	optional string AuthorUserId = 33;
 	optional string ParentEntityId = 3;
 	optional Content Content = 4;											// null <=> there is no content for this entity (very unlikely to happen)
 	optional AttachmentType AttachmentType = 5 [default = UnknownAttachmentType];	// only for EntityType.Attachment
@@ -122,7 +123,8 @@ message Entity {
 	optional TemplateRefusalInfo TemplateRefusalInfo = 28;
 	optional OuterDocflowInfo OuterDocflow = 29;	
 	optional RevocationRequestInfo RevocationRequestInfo = 30;
-	optional string ContentTypeId = 31;
+	optional string ContentTypeId 31;
+ 	optional MoveDocumentInfo MoveDocumentInfo = 34;
 }
 
 message EntityPatch {
@@ -132,6 +134,11 @@ message EntityPatch {
 	optional bool DocumentIsRestored = 4 [default = false];
 	optional bool ContentIsPatched = 5 [default = false];
 	optional string ForwardedToBoxId = 6;
+}
+
+message MoveDocumentInfo {
+	required string MovedFromDepartment = 1;
+	required string MovedToDepartment = 2;
 }
 
 message TemplateToLetterTransformationInfo
